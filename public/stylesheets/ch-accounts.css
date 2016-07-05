@@ -20,7 +20,7 @@
 }
 
 .two-column-accounts .accounts-row-spacer {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .two-column-accounts .form-control {
@@ -51,4 +51,9 @@
   font-family: inherit;
   font-size: inherit;
   padding-right: 0;
+}
+
+p.company-details {
+  background-color: #DEE0E2;
+  padding: 0.5em;
 }

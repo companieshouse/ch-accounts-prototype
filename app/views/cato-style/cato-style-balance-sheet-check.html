@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  CATO-style layout
+  Balance sheet - check your answers
 {% endblock %}
 
 {% block content %}
@@ -15,14 +15,17 @@
 </div>
 
 
-  <a class="link-back" href="cato-layout">Back</a>
+  <a class="link-back" href="cato-style-balance-sheet">Back</a>
 
-  <h1 class="heading-xlarge">Balance sheet
-    <span class="heading-secondary">Check your answers</span>
+  <p class="company-details">Filing for <span class="heading-small">A TEST COMPANY LIMITED</span> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+  <h1 class="heading-xlarge">Check your answers
+    <span class="heading-secondary">Balance sheet</span>
   </h1>
 
   <table class="check-your-answers">
-  <caption class="visuallyhidden">Balance sheet - check your answers</caption>.
+  <caption class="visuallyhidden">Balance sheet - check your answers</caption>
     <thead>
       <tr>
         <th class="check-your-answers-section"><h2 class="heading-medium">Fixed assets</h2></th>
@@ -95,6 +98,12 @@
     </thead>
     <tbody>
       <tr>
+        <td>Prepayments and accrued income</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£1,000</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Prepayments and accrued income</span></a></td>
+      </tr>
+      <tr>
         <td>Creditors - amounts falling due within one year</td>
         <td class="numeric">£1,000</td>
         <td class="numeric">£1,000</td>
@@ -132,6 +141,12 @@
         <td>Provision for liabilities</td>
         <td class="numeric">£4,500</td>
         <td class="numeric">£4,500</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Provision for liabilities</span></a></td>
+      </tr>
+      <tr>
+        <td>Accruals and deferred income</td>
+        <td class="numeric">£100</td>
+        <td class="numeric">£250</td>
         <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Provision for liabilities</span></a></td>
       </tr>
       <tr class="total">
@@ -178,8 +193,7 @@
   </table>
 <br>
   <div class="form-group">
-    <p><a href="" class="button">Save and continue</a></p>
-    <a class="link-back" href="cato-layout">Back</a>
+    <p><a href="javascript:void(0)" class="button">Save and continue</a></p>
   </div>
 
 </main>

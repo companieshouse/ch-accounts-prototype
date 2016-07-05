@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  CATO-style layout
+  Balance sheet
 {% endblock %}
 
 {% block content %}
@@ -13,9 +13,10 @@
   </p>
 </div>
 
-<a class="link-back" href="index">Back</a>
+<a class="link-back" href="cato-style-profit-and-loss-check">Back</a>
 
 
+<p class="company-details">Filing for <span class="heading-small">A TEST COMPANY LIMITED</span> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
 
   <h1 class="heading-xlarge">Balance sheet</h1>
 
@@ -51,7 +52,7 @@
     </div>
     <div class="column-quarter">
       <div class="form-group">
-        <label for="intangible-assets-current"><span class="visuallyhidden">Intangible assets (previous year)</span>
+        <label for="intangible-assets-previous"><span class="visuallyhidden">Intangible assets (previous year)</span>
           <input type="number" class="form-control" id="intangible-assets-previous">
         </label>
       </div>
@@ -236,8 +237,40 @@
     <!--End total current assets-->
 
 
-    <!--Start creditors - amounts falling due within one year-->
+
+    <!--Start prepayments and accrued income-->
     <div class="grid-row accounts-row-spacer">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Prepayments and accrued income</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Prepayments and accrued income help goes here</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="prepayments-and-and-accrued-income-previous"><span class="visuallyhidden">Prepayments and accrued income (previous year)</span>
+            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-previous">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="prepayments-and-and-accrued-income-current"><span class="visuallyhidden">Prepayments and accrued income (current year)</span>
+            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-current">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End prepayments and accrued income-->
+
+
+
+
+
+    <!--Start creditors - amounts falling due within one year-->
+    <div class="grid-row">
       <div class="column-half">
           <details>
             <summary><span class="summary">Creditors - amounts falling due within one year</span></summary>
@@ -327,7 +360,7 @@
           <details>
             <summary><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Debts you expect to settle within a year - for example, unpaid supplier invoices, bank loans or overdrafts.</p>
+              <p>Debts you expect to settle after more than 1 year - for example, bank loans with instalments due after more than a year. </p>
             </div>
           </details>
       </div>
@@ -367,7 +400,7 @@
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="provision-for-liabilities"><span class="visuallyhidden">Provision for liabilities (current year)</span>
+          <label for="provision-for-liabilities-current"><span class="visuallyhidden">Provision for liabilities (current year)</span>
             <input type="number" class="form-control" id="provision-for-liabilities-current">
           </label>
         </div>
@@ -376,7 +409,32 @@
     <!--End provision for liabilities-->
 
 
-
+    <!--Start accruals and deferred income-->
+    <div class="grid-row">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Accruals and deferred income</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Help for accruals and deferred income goes here.</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="accruals-and-deferred-income-previous"><span class="visuallyhidden">Accruals and deferred income (previous year)</span>
+            <input type="number" class="form-control" id="accruals-and-deferred-income-previous">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="accruals-and-deferred-income-current"><span class="visuallyhidden">Accruals and deferred income (current year)</span>
+            <input type="number" class="form-control" id="accruals-and-deferred-income-current">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End accruals and deferred income-->
 
         <!--Start total net assets (liabilities)-->
         <div class="grid-row accounts-total">
@@ -524,7 +582,7 @@
           <!--End total shareholders' funds-->
 
       <div class="form-group">
-        <a class="button" href="cato-layout-check">Save and continue</a>
+        <a class="button" href="cato-style-balance-sheet-check">Save and continue</a>
       </div>
 
 </form>

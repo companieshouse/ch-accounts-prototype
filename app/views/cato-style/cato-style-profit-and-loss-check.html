@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Profit and loss - check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="two-column-accounts">
+<div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+
+  <a class="link-back" href="cato-style-profit-and-loss">Back</a>
+
+  <p class="company-details">Filing for <span class="heading-small">A TEST COMPANY LIMITED</span> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+  <h1 class="heading-xlarge">Check your answers
+    <span class="heading-secondary">Profit and loss</span>
+  </h1>
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Balance sheet - check your answers</caption>
+    <thead>
+      <tr>
+        <th class="check-your-answers-section"></th>
+        <th class="numeric">2015</th>
+        <th class="numeric">2016</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gross profit or loss</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£1,000</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Gross profit or loss</span></a></td>
+      </tr>
+      <tr>
+        <td>Distribution costs</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£1,000</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Distribution costs</span></a></td>
+      </tr>
+      <tr>
+        <td>Administrative expenses</td>
+        <td class="numeric">£2,000</td>
+        <td class="numeric">£2,000</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Administrative expenses</span></a></td>
+      </tr>
+      <tr class="total">
+        <td>Operating profit (loss)</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£1,000</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Interest receivable and similar income</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£1,000</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Interest receivable and similar income</span></a></td>
+      </tr>
+      <tr class="total">
+        <td>Profit (loss) on ordinary activities before taxation</td>
+        <td class="numeric">£2,500</td>
+        <td class="numeric">£2,500</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tax on profit or loss on ordinary activities</td>
+        <td class="numeric">£4,500</td>
+        <td class="numeric">£4,500</td>
+        <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Tax on profit or loss on ordinary activities</span></a></td>
+      </tr>
+      <tr class="total">
+        <td>Profit (loss) for the financial year</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£1,000</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div class="form-group">
+    <p><a href="cato-style-balance-sheet" class="button">Save and continue</a></p>
+  </div>
+
+</main>
+
+{% endblock %}

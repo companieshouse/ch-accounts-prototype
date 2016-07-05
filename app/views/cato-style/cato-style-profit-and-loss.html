@@ -1,0 +1,275 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Profit and loss
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<a class="link-back" href="/index">Back</a>
+
+
+<p class="company-details">Filing for <span class="heading-small">A TEST COMPANY LIMITED</span> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<h1 class="heading-xlarge">Profit and loss</h1>
+
+
+  <div class="grid-row" id="accounts-header">
+    <div class="column-half">
+      &nbsp;
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2015</h2>
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2016</h2>
+    </div>
+  </div>
+
+
+
+<form action="/" method="post" class="form">
+
+
+  <!--Start gross profit or loss-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+      <label class="form-label" for="intangible-assets-previous">
+        <details>
+          <summary><span class="summary">Gross profit or loss</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Gross profit or loss help goes here.</p>
+          </div>
+        </details>
+      </label>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="gross-profit-or-loss-previous"><span class="visuallyhidden">Gross profit or loss (previous year)</span>
+          <input type="number" class="form-control" id="gross-profit-or-loss-previous">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="gross-profit-or-loss-current"><span class="visuallyhidden">Gross profit or loss (current year)</span>
+          <input type="number" class="form-control" id="gross-profit-or-loss-current">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End gross profit or loss-->
+
+  <!--Start distribution costs -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Distribution costs</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Costs like packaging, transporting or storing the goods or services sold.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="distribution-costs-previous"><span class="visuallyhidden">Distribution costs (previous year)</span>
+          <input type="number" class="form-control" id="distribution-costs-previous">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="distribution-costs-current"><span class="visuallyhidden">Distribution costs (current year)</span>
+          <input type="number" class="form-control" id="distribution-costs-current">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End  distribution costs-->
+
+  <!--Start administrative expenses-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Administrative expenses</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>'Intangible assets' plus 'tangible assets'.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="administrative-expenses-previous"><span class="visuallyhidden">Administrative expenses (previous year)</span>
+          <input type="number" class="form-control" id="administrative-expenses-previous">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="administrative-expenses-current"><span class="visuallyhidden">Administrative expenses (current year)</span>
+          <input type="number" class="form-control" id="administrative-expenses-current">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End administrative expenses-->
+
+
+
+
+  <!--Start operating profit (loss)-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary"> Operating profit (loss)</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>'Gross profit' minus 'distribution costs', minus 'administrative expenses', plus 'other operating income'. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="operating-profit-loss-previous"><span class="visuallyhidden"> Operating profit (loss) (previous year)</span>
+          <input type="number" class="form-control" id="operating-profit-loss-previous">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="operating-profit-loss-current"><span class="visuallyhidden"> Operating profit (loss) (current year)</span>
+          <input type="number" class="form-control" id="operating-profit-loss-current">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End operating profit (loss)-->
+
+
+
+
+    <!--Start interest receivable and similar income-->
+    <div class="grid-row accounts-row-spacer">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Interest receivable and similar income</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Interest earned or owed to the company eg bank interest, interest from loans.</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="interest-receivable-and-similar-income-current"><span class="visuallyhidden">Interest receivable and similar income (previous year)</span>
+            <input type="number" class="form-control" id="interest-receivable-and-similar-income-previous">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="interest-receivable-and-similar-income-current"><span class="visuallyhidden">Interest receivable and similar income (current year)</span>
+            <input type="number" class="form-control" id="interest-receivable-and-similar-income-current">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End interest receivable and similar income-->
+
+    <!--Start profit (loss) on ordinary activities before taxation -->
+    <div class="grid-row accounts-total">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Profit (loss) on ordinary activities before taxation</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>'Operating profit' plus 'interest receivable', minus 'interest payable'.</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="profit-loss-on-ordinary-activities-before-taxation-previous"><span class="visuallyhidden">Profit (loss) on ordinary activities before taxation (previous year)</span>
+            <input type="number" class="form-control" id="profit-loss-on-ordinary-activities-before-taxation-previous">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="profit-loss-on-ordinary-activities-before-taxation-current"><span class="visuallyhidden">Profit (loss) on ordinary activities before taxation (current year)</span>
+            <input type="number" class="form-control" id="profit-loss-on-ordinary-activities-before-taxation-current">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End profit (loss) on ordinary activities before taxation -->
+
+
+    <!--Start tax on profit or loss on ordinary activities-->
+    <div class="grid-row accounts-row-spacer">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Tax on profit or loss on ordinary activities</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Taxable income is 'profit or loss on ordinary activities before tax' minus any reliefs due. You can work out the Corporation Tax due on taxable income using the <a href="https://www.gov.uk/corporation-tax-rates" target="_blank" rel="external">latest rates</a>.</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="tax-on-profit-or-loss-on-ordinary-activities-previous"><span class="visuallyhidden">Tax on profit or loss on ordinary activities (previous year)</span>
+            <input type="number" class="form-control" id="tax-on-profit-or-loss-on-ordinary-activities-previous">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="tax-on-profit-or-loss-on-ordinary-activities-current"><span class="visuallyhidden">Tax on profit or loss on ordinary activities (current year)</span>
+            <input type="number" class="form-control" id="tax-on-profit-or-loss-on-ordinary-activities-current">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End tax on profit or loss on ordinary activities-->
+
+
+
+    <!--Start profit (loss) for the financial year-->
+    <div class="grid-row accounts-total">
+      <div class="column-half">
+        <details>
+          <summary><span class="summary">Profit (loss) for the financial year</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>'Profit or loss on ordinary activities before tax' minus 'tax on profit or loss ordinary activities'.</p>
+          </div>
+        </details>
+            </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="profit-loss-for-the-financial-year-previous"><span class="visuallyhidden">Profit (loss) for the financial year (previous year)</span>
+            <input type="number" class="form-control" id="profit-loss-for-the-financial-year-previous">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="profit-loss-for-the-financial-year-current"><span class="visuallyhidden"> Profit (loss) for the financial year (current year)</span>
+            <input type="number" class="form-control" id="profit-loss-for-the-financial-year-current">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End profit (loss) for the financial year-->
+
+
+      <div class="form-group">
+        <a class="button" href="cato-style-profit-and-loss-check">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
