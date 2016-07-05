@@ -1,0 +1,54 @@
+.two-column-accounts form-control {
+  text-align: right;
+}
+
+.two-column-accounts #accounts-header {
+  text-align: center;
+}
+
+.two-column-accounts #accounts-header .heading-medium {
+  margin: 0;
+}
+
+.two-column-accounts .accounts-total {
+  font-weight: 700;
+}
+
+.two-column-accounts .accounts-total .form-control {
+  border-right: none;
+  border-left: none;
+}
+
+.two-column-accounts .accounts-row-spacer {
+  margin-top: 3em;
+}
+
+.two-column-accounts .form-control {
+  width: 100%;
+}
+
+.two-column-accounts .heading-small {
+  margin: 0;
+}
+
+.two-column-accounts table.check-your-answers thead th {
+  padding: 2em 0 1em;
+}
+
+.two-column-accounts table.check-your-answers th.check-your-answers-section {
+  width: 60%;
+}
+
+.two-column-accounts table.check-your-answers th.check-your-answers-section h2.heading-medium {
+  margin: 0;
+}
+
+.two-column-accounts table.check-your-answers tr.total td {
+  font-weight: 700;
+}
+
+.two-column-accounts table.check-your-answers td.numeric {
+  font-family: inherit;
+  font-size: inherit;
+  padding-right: 0;
+}

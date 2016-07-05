@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  CATO-style layout
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="two-column-accounts">
+<div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+  <a class="link-back" href="question-intangible-assets">Back</a>
+
+  <h1 class="heading-xlarge">Balance sheet
+    <span class="heading-secondary">Check your answers</span>
+  </h1>
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Balance sheet - check your answers</caption>.
+    <thead>
+      <tr>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Fixed assets</h2></th>
+        <th class="numeric">2015</th>
+        <th class="numeric">2016</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Intangible assets</td>
+        <td class="numeric">£1,000</td>
+        <td class="numeric">£2,000</td>
+        <td class="change-answer"><a href="question-intangible-assets">Change <span class="visuallyhidden">Intangible assets</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div class="form-group">
+    <p><a href="question-tangible-assets" class="button">Save and continue</a></p>
+  </div>
+
+</main>
+
+{% endblock %}

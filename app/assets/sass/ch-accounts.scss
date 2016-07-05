@@ -1,0 +1,29 @@
+// Additional styles for CH accounts
+
+.two-column-accounts {
+  form-control {text-align:right;}
+  #accounts-header {
+    text-align:center;
+      .heading-medium {
+        margin:0;
+    }
+  }
+  .accounts-total {
+    font-weight:700;
+    .form-control {
+      border-right:none;
+      border-left:none;
+    }
+  }
+  .accounts-row-spacer { margin-top: 3em;}
+  .form-control {width:100%}
+  .heading-small {margin:0;}
+  table.check-your-answers {
+    thead th {padding:2em 0 1em;}
+    th.check-your-answers-section {width:60%;
+      h2.heading-medium { margin:0;}
+    }
+    tr.total td {font-weight: 700;}
+    td.numeric {font-family: inherit; font-size: inherit; padding-right:0;}
+  }
+}
