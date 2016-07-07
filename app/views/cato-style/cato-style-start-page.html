@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Accounts - Start
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="">Your details</a></li>
+    <li><a href="" id="recent_filings">Your filings</a></li>
+    <li><a href="" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+<a class="link-back" href="/chs/chs-profile-page">Back</a>
+
+
+
+      <h1 class="heading-xlarge">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed porta leo, quis interdum justo. Suspendisse potenti. In porta ex at sapien ultricies.</p>
+
+        <ol class="list list-number">
+          <li>Eligibility</li>
+          <li>Directors' report</li>
+          <li>Balance sheet</li>
+          <li>Notes</li>
+          <li>Approval</li>
+          <li>Submission</li>
+        </ol>
+
+    <h2 class="heading-medium">Before you start</h2>
+    <ul class="list list-bullet">
+      <li>Vivamus tincidunt, purus in auctor feugiat.</li>
+      <li>Ex arcu scelerisque mi, id congue mauris augue ac purus.</li>
+      <li>Ut vel libero tristique, mollis ante vel</li>
+    </ul>
+
+    <div class="notice">
+      <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
+      <strong class="bold-small">Etiam iaculis ligula at eros ullamcorper interdum. Ut eu fermentum dolor. Nunc fringilla congue efficitur.</strong>
+    </div>
+<br>
+      <p>
+        <a class="button" href="cato-style-eligibility" role="button">Are you eligible?</a>
+      </p>
+
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}
