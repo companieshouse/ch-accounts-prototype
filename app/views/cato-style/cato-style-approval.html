@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Approval
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="">Your details</a></li>
+    <li><a href="" id="recent_filings">Your filings</a></li>
+    <li><a href="" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+<a class="link-back" href="cato-style-balance-sheet-statements">Back</a>
+
+<form class="form" method="get" action="">
+
+
+      <h1 class="heading-xlarge">Approve your accounts</h1>
+
+      <h2 class="heading-medium">Print or save your accounts before filing (optional)</h2>
+
+      <p>You can print or save your draft accounts to review them before filing.</p>
+
+      <ul class="list list-bullet">
+        <li><a id="" href="javascript:void(0)" target="_blank">Print your draft accounts</a>
+        <span class="form-hint">(Opens in a new tab or window)</span></li>
+        <li><a id="" href="javascript:void(0)" target="_blank">Save your draft accounts in HTML </a>
+        <span class="form-hint"> (You'll be asked where to save the file, or it will download to a folder on your computer)</span></li>
+      </ul>
+
+      <h2 class="heading-medium">1. Approve your statutory accounts ready for submission</h2>
+      <p> You must have at least one approver. Choose from the list or add a different approver. </p>
+
+      <div class="form-group">
+        <fieldset>
+
+          <legend class="visuallyhidden">1. Approve your statutory accounts ready for submission</legend>
+
+          <label class="block-label" for="john-smith">
+            <input type="checkbox" id="john-smith" value="British" name="john-smith">
+            John Smith
+          </label>
+
+          <label class="block-label" for="david-edwards">
+            <input type="checkbox" id="david-edwards" value="Irish" name="james-smith">
+            David Edwards
+          </label>
+
+          <label data-target="other-approver-reveal" class="block-label" for="different-approver">
+            <input type="checkbox" id="different-approver" value="Wales" name="different-approver" aria-controls="other-approver-reveal" aria-expanded="false">
+            A different approver
+          </label>
+
+          <div id="other-approver-reveal" class="panel panel-border-narrow js-hidden" aria-hidden="true">
+            <label class="form-label" for="other-approver">
+              What is the name of the approver?
+            </label>
+            <input type="text" id="other-approver" class="form-control">
+          </div>
+
+        </fieldset>
+      </div>
+
+
+      <h2 class="heading-medium">2. Agree to approval statement</h2>
+
+      <div class="form-group">
+        <fieldset>
+
+          <legend class="visuallyhidden">2. Agree to approval statement</legend>
+
+          <label class="block-label" for="approval-statement">
+            <input type="checkbox" id="approval-statement" value="" name="approval-statement">
+            The statutory accounts have been approved by the director/board of directors.
+          </label>
+
+        </fieldset>
+      </div>
+
+      <h2 class="heading-medium">3. Enter the date of approval</h2>
+
+      <fieldset class="form-group">
+      <legend class="visuallyhidden">3. Enter the date of approval</legend>
+        <div class="form-date">
+
+          <p class="form-hint">For example, 31 3 2016</p>
+
+          <div class="form-group form-group-day">
+            <label for="approval-day">Day</label>
+            <input type="number" max="31" min="0" pattern="[0-9]*" name="approval-day" id="approval-day" class="form-control">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="approval-month">Month</label>
+            <input type="number" max="12" min="0" pattern="[0-9]*" name="approval-month" id="approval-month" class="form-control">
+          </div>
+
+          <div class="form-group form-group-year">
+            <label for="approval-year">Year</label>
+            <input type="number" max="2014" min="0" pattern="[0-9]*" name="approval-year" id="approval-year" class="form-control">
+          </div>
+
+        </div>
+      </fieldset>
+
+       </form>
+      <div class="form-group">
+        <a class="button" href="cato-style-submission" role="button">Submit your accounts</a>
+      </div>
+
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Balance Sheet Statements
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="">Your details</a></li>
+    <li><a href="" id="recent_filings">Your filings</a></li>
+    <li><a href="" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+<a class="link-back" href="cato-style-balance-sheet-check">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Balance sheet statements</h1>
+
+      <p>You’re legally required to include statements describing your accounts with your balance sheet.</p>
+      <p>The statements confirm that your accounts:</p>
+       <ul class=" list list-bullet">
+           <li>follow the required standards</li>
+           <li>don’t need to be audited (reviewed by an independent accountant)</li>
+       </ul>
+      <form class="form" method="get" action="">
+
+
+        <div class="form-group">
+        <fieldset>
+
+
+          <legend class="visuallyhidden">Balance sheet statements</legend>
+
+          <label class="block-label" for="section 477">
+            <input type="checkbox" id="section 477" value="" name="section 477">
+            For the year ending 31 March 2016 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.
+          </label>
+
+          <label class="block-label" for="section 476">
+            <input type="checkbox" id="section 476" value="" name="section 476">
+             The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.
+          </label>
+
+          <label class="block-label" for="preparation-of-accounts">
+            <input type="checkbox" id="npreparation-of-accounts" value="" name="preparation-of-accounts">
+              The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.
+          </label>
+
+        </fieldset>
+      </div>
+
+
+      <h2 class="heading-medium">Confirmation</h2>
+      <p>You must check this box because?</p>
+
+      <div class="form-group">
+      <fieldset>
+
+        <legend class="visuallyhidden">What is your nationality?</legend>
+
+        <label class="block-label" for="nationality_british">
+          <input type="checkbox" id="nationality_british" value="British" name="nationality_british">
+           I agree to the legal statements - include them with my balance sheet.
+        </label>
+
+      </fieldset>
+      </div>
+
+
+            </form>
+      <div class="form-group">
+        <a class="button" href="cato-style-approval" role="button">Save and continue to Approval</a>
+      </div>
+
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Approval
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="">Your details</a></li>
+    <li><a href="" id="recent_filings">Your filings</a></li>
+    <li><a href="" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+  <div class="govuk-box-highlight">
+    <h1 class="bold-large">Accounts submission complete</h1>
+    <p>Your reference number is<br>
+      <strong class="heading-medium">AB1234C-567-8</strong>
+    </p>
+  </div>
+
+  <p>We have sent you a confirmation email to <strong>username@email.co.uk</strong> and you can also see something in <a href="">your filings</a>.</p>
+
+  <h2 class="heading-medium">What happens next</h2>
+  <ol class="list list-number">
+    <li>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+    <li>Vestibulum id ligula porta felis euismod semper</li>
+    <li>Integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+  </ol>
+
+
+  <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+      <div class="form-group">
+        <a class="button" href="/chs/chs-profile-page" role="button">Go back to your company profile</a>
+      </div>
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}

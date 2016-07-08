@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  A TEST COMPANY LIMITED - Overview (free company information from Companies House)
+  THE GIRLS&#39; DAY SCHOOL TRUST - Overview (free company information from Companies House)
 {% endblock %}
 
 {% block proposition_header %}
@@ -33,7 +33,10 @@
 
     <nav class="content" role="navigation">
       <ul id="navigation" class="mobile-hidden">
-        <li><a href="javascript:void(0" id="user-signin">Sign in / Register</a></li>
+        <li class="user" id="signed-in-user">username@email.co.uk: </li>
+        <li><a href="">Your details</a></li>
+        <li><a href="" id="recent_filings">Your filings</a></li>
+        <li><a href="" id="user-signout">Sign out</a></li>
       </ul>
     </nav>
 
@@ -54,11 +57,7 @@
               <p class="heading-xlarge" id="company-name">A TEST COMPANY LIMITED</p>
               <p id="company-number">Company number  <strong>01234567</strong></p>
             </div>
-            <div class="column-third actions">
-              <ul class="action-button-list">
-                <li><a id="file-for-this-company" class="button" href="chs-login-page">File for this company</a></li>
-              </ul>
-            </div>
+
           </div>
 
           <div class="section-tabs js-tabs">
@@ -72,7 +71,8 @@
 
           <dl>
           <dt>Registered office address</dt>
-          <dd class="text data">12 Holton Road, Holton Heath, Poole, Dorset, BH16 6LT</dd>
+          <dd class="text data">12 Holton Road, Holton Heath, Poole, Dorset, BH16 6LT
+          <br><a href="javascript:void(0)" class="normal">Change address</a></dd>
           </dl>
 
 
@@ -103,9 +103,10 @@
 
           <h2 class="heading-medium"><strong>Accounts</strong></h2>
 
-          <p> Next accounts made up to <strong>31 December 2016</strong>
-          <br>due by <strong>30 September 2017</strong>  </p>
-          <p>Last accounts made up to<strong>31 December 2015</strong></p>
+          <p>Next accounts made up to <strong>31 December 2016</strong>
+          <br>due by <strong>30 September 2017</strong><br>
+          <a href="/cato-style/cato-style-start-page">File accounts</a></p>
+          <p>Last accounts made up to <strong>31 December 2015</strong></p>
           </div>
 
           <div class="column-half">

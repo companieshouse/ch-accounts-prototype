@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Directors' report  - check your answers
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main"  class="two-column-accounts">
+
+    <div class="phase-banner-alpha">
+    <p>
+      <strong class="phase-tag">ALPHA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">username@email.co.uk: </li>
+      <li><a href="">Your details</a></li>
+      <li><a href="" id="recent_filings">Your filings</a></li>
+      <li><a href="" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
+
+  <p class="company-details">Filing for <a class="heading-small" href="">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+  <a class="link-back" href="cato-style-directors-report-1">Back</a>
+
+  <h1 class="heading-xlarge">Check your answers (needs changing)
+    <span class="heading-secondary">Directors' report - Officers</span>
+  </h1>
+
+  <p class="heading-small text">Something about this information has been prepoluated and they need to check it and amend as necessary (how do they change it, via WebFiling?)</p>
+  <table class="check-your-answers">
+    <thead>
+      <tr>
+        <th><h2 class="heading-medium">Directors at the end of the period</h2></th>
+        <th><h2 class="heading-small">Date of birth</h2></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Smith</td>
+        <td>1 April 1980</td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Directors at the end of the period</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>James Arthur Smith</td>
+        <td>14 March 1965</td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Exporter name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th><h2 class="heading-medium">Directors appointed</h2></th>
+        <th>Date appointed</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>James Arthur Smith</td>
+        <td>2 February 2016</td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Directors appointed</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th><h2 class="heading-medium">Directors resigned</h2></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No directors resigned during the period</td>
+        <td></td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Directors resigned</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th><h2 class="heading-medium">Secretaries</h2></th>
+        <th>Date of birth</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr. Brian Edwards</td>
+        <td>31 November 1999</td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Secretaries</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+    <div class="form-group">
+      <p><a href="cato-style-directors-report-2" class="button">Save and continue</a></p>
+    </div>
+    <details role="group">
+            <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="false"><i class="arrow arrow-closed" aria-hidden="true">►</i><span class="summary">Help with date of birth</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true" style="display: none;">
+              <p>
+                If you don’t know your exact date of birth, use the one you put on official documents (for example, your passport or driving licence).
+              </p>
+              <p>
+                If you can’t provide your date of birth you’ll have to send copies of identity documents through the post.
+              </p>
+            </div>
+          </details>
+
+
+</main>
+
+{% endblock %}
