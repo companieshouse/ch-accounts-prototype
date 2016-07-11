@@ -41,7 +41,7 @@
 }
 
 .two-column-accounts table.check-your-answers th.check-your-answers-section {
-  width: 60%;
+  width: 50%;
 }
 
 .two-column-accounts table.check-your-answers tr.total td {
@@ -52,6 +52,12 @@
   font-family: inherit;
   font-size: inherit;
   padding-right: 0;
+}
+
+.two-column-accounts table.check-your-answers td.add-note {
+  font-weight: 700;
+  text-align: right;
+  width: 15%;
 }
 
 p.company-details {

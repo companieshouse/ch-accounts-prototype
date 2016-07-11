@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Choose type of accounts
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+<a class="link-back" href="cato-style-eligibility">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Choose type of accounts</h1>
+
+      <p>Based on what you've told us, you can file any of the following types of accounts:</p>
+
+      <form class="form" method="get" action="">
+
+
+        <div class="form-group">
+        <fieldset>
+
+
+          <legend class="visuallyhidden">Balance sheet statements</legend>
+
+          <label class="block-label" for="micro">
+            <input type="radio" id="micro" value="" name="micro">
+            <span class="heading-small">Micro accounts</span><br>
+            Lorem ipsum dolor sit amet, facete theophrastus id pri, sea id congue invidunt, vivendo eligendi ei vel.
+          </label>
+
+          <label class="block-label" for="abridged">
+            <input type="radio" id="abridged" value="" name="abridged">
+            <span class="heading-small">Abridged accounts</span><br>
+            At vix mentitum scaevola, pro in hinc dictas melius, pro praesent definitionem ei.
+          </label>
+
+          <label class="block-label" for="full">
+            <input type="radio" id="full" value="" name="full">
+            <span class="heading-small">Full accounts</span><br>
+            Esse elaboraret ius ut, eu mei noluisse laboramus omittantur. Ex assum fierent oportere vim, persius persequeris cum id. Inani electram efficiantur mea in.
+           </label>
+
+           <label class="block-label" for="dormant">
+             <input type="radio" id="dormant" value="" name="dormant">
+             <span class="heading-small">Dormant accounts</span><br>
+             Vel nulla novum ei. Quo sint impedit percipit ex. At eum liber ancillae, movet numquam ius in, nam consulatu necessitatibus ex.
+            </label>
+
+        </fieldset>
+      </div>
+
+
+
+
+            </form>
+      <div class="form-group">
+        <a class="button" href="cato-style-directors-report-1-check" role="button">Save and continue</a>
+      </div>
+
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}
