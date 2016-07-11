@@ -41,7 +41,7 @@
 }
 
 .two-column-accounts table.check-your-answers th.check-your-answers-section {
-  width: 50%;
+  width: 45%;
 }
 
 .two-column-accounts table.check-your-answers tr.total td {
@@ -54,9 +54,9 @@
   padding-right: 0;
 }
 
-.two-column-accounts table.check-your-answers td.add-note {
+.two-column-accounts table.check-your-answers th.notes,
+.two-column-accounts table.check-your-answers td.notes {
   font-weight: 700;
-  text-align: right;
   width: 15%;
 }
 

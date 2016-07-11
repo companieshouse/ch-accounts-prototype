@@ -31,11 +31,11 @@
         margin: 0;
       }
     }
-    th.check-your-answers-section {width: 50%;
-    }
+    th.check-your-answers-section {width: 45%;}
     tr.total td {font-weight: 700;}
     td.numeric {font-family: inherit; font-size: inherit; padding-right: 0;}
-    td.add-note {font-weight: 700; text-align: right; width: 15%;}
+    th.notes,
+    td.notes {font-weight: 700; width: 15%;}
 
   }
 }
