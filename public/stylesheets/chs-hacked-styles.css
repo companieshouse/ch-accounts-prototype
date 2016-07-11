@@ -4,9 +4,9 @@
 
 ul#navigation {
   border-bottom: 1px solid #bfc1c3;
+  font-size: .9em;
   margin-bottom: 1em;
-  padding: 0.8em 0;
-  font-size: 0.9em;
+  padding: .8em 0;
   text-align: right;
 }
 
@@ -21,7 +21,7 @@ ul#navigation li {
 
 .search-bar-active {
   background: #dee0e2 none repeat scroll 0 0;
-  padding: 0.5em;
+  padding: .5em;
 }
 
 .searchfield input {
@@ -53,17 +53,17 @@ sup.label {
   background-color: #f47738;
   color: #fff;
   display: inline-block;
-  font-size: 0.8em;
-  padding: 0.1em 0.3em;
+  font-size: .8em;
+  padding: .1em .3em;
   position: relative;
-  top: 0.3em;
+  top: .3em;
 }
 
 ul.search-tabs {
   border-bottom: 1px solid #bfc1c3;
+  font-size: .8em;
   margin-bottom: 30px;
   overflow: auto;
-  font-size: 0.8em;
   padding-top: 2.75em;
 }
 
@@ -96,9 +96,9 @@ main.search .results-list p {
 
 main.search .results-list p.meta {
   color: #6f777b;
+  font-size: 16px;
   padding: 0 0 3px;
   word-wrap: break-word;
-  font-size: 16px;
 }
 
 main.search .results-list li {
@@ -106,18 +106,14 @@ main.search .results-list li {
 }
 
 main.search .results-list h3 a {
-  text-decoration: none;
   color: #005ea5;
   font-size: 20px;
   font-weight: normal;
-}
-
-main.search .results-list h3 a:hover, main.search .results-list h3 a:focus {
-  color: #2e8aca;
+  text-decoration: none;
 }
 
 main.search .results-list h3 a:hover, main.search .results-list h3 a:focus, main.search .results-list h3 a:visited {
-  color: #005ea5;
+  color: #2b8cc4;
   text-decoration: underline;
 }
 
@@ -132,7 +128,9 @@ ul.pager li {
   padding: 0 1.4em 0 0;
 }
 
-strong, b, .data {
+strong,
+b,
+.data {
   font-weight: bold;
 }
 
@@ -150,7 +148,7 @@ strong, b, .data {
 
 .section-tabs::after {
   clear: both;
-  content: "";
+  content: '';
   display: block;
 }
 
@@ -199,7 +197,6 @@ strong, b, .data {
   border-style: solid solid none;
   border-width: 1px 1px medium;
   display: block;
-  font-family: "proxima_nova",Arial,sans-serif;
   font-size: 19px;
   font-weight: bold;
   line-height: 1.31579;
@@ -225,14 +222,14 @@ strong, b, .data {
   }
 }
 
-.section-tabs ul a:hover .label, .section-tabs ul a:focus .label {
+.section-tabs ul a:hover .label,
+.section-tabs ul a:focus .label {
   text-decoration: underline;
 }
 
 @media (max-width: 640px) {
   .section-tabs ul a {
     border-bottom: 1px solid #bfc1c3;
-    font-family: "proxima_nova",Arial,sans-serif;
     font-size: 16px;
     font-weight: normal;
     line-height: 1.25;
@@ -323,6 +320,12 @@ strong, b, .data {
 }
 
 .company-header .actions {
-  text-align: right;
   margin-top: 1.5em;
+  text-align: right;
+}
+
+ol.example-icon-list i {
+  margin-right: .5em;
+  position: relative;
+  top: .2em;
 }

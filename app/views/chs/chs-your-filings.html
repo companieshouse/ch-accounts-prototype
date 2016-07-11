@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your filings
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main" class="search">
+
+      <div class="phase-banner-alpha">
+      <p>
+        <strong class="phase-tag">ALPHA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li class="user" id="signed-in-user">username@email.co.uk: </li>
+        <li><a href="javascript:void(0)">Your details</a></li>
+        <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+        <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+      </ul>
+    </nav>
+
+    <a class="link-back" href="/cato-style/cato-style-submission">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Your filings</h1>
+    </header>
+
+
+    <p class="text">This is a list of company information filed by <strong>user@email.co.uk</strong> within the last 30 days.</p>
+
+    <table class="" id="rf_table">
+    <thead>
+      <tr>
+      <th>Date &amp; Time</th>
+      <th>Company number</th>
+      <th>Submission number</th>
+      <th>Filing description</th>
+      <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>
+        <ul>
+          <li>11 July 2016</li>
+          <li>07:51:58 am</li>
+        </ul>
+      </td>
+      <td>01234567</td>
+      <td>AB1234C-567-8</td>
+      <td>
+        <ul>
+        <li>(XXXX) Accounts</li>
+        <li><a href="javascript:void(0)" id="viewSubmission00">View submission</a></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li>Processing</li>
+        <br>
+        </ul>
+      </td>
+      </tr>
+    </tbody>
+    </table>
+
+</main>
+
+{% endblock %}
