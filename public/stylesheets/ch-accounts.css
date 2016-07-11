@@ -60,6 +60,11 @@
   width: 15%;
 }
 
+.two-column-accounts table.check-your-answers tr.to-be-completed td,
+.two-column-accounts table.check-your-answers tr.to-be-completed th {
+  color: #6f777b;
+}
+
 p.company-details {
   font-size: .9em;
 }

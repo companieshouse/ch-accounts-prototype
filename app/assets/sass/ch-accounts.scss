@@ -36,6 +36,9 @@
     td.numeric {font-family: inherit; font-size: inherit; padding-right: 0;}
     th.notes,
     td.notes {font-weight: 700; width: 15%;}
+    tr.to-be-completed td,
+    tr.to-be-completed th {
+      color: $secondary-text-colour;}
 
   }
 }
