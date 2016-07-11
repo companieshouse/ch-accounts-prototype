@@ -2,6 +2,20 @@
   font-weight: normal;
 }
 
+#global-header a#logo {
+  background-image: url("/public/images/royal-coat-of-arms-white.png");
+  background-position: 10px top;
+  background-size: 47px 42px;
+  padding: 8px 0 2px 62px;
+  width: 400px;
+}
+
+#global-header a#proposition-name {
+  position: relative;
+  top: .35em;
+  padding-left: 1em;
+}
+
 ul#navigation {
   border-bottom: 1px solid #bfc1c3;
   font-size: .9em;
