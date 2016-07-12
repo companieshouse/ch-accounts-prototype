@@ -5,6 +5,7 @@ Balance sheet - check your answers
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <main id="content" role="main" class="two-column-accounts">
   <div class="phase-banner-alpha">
@@ -18,16 +19,16 @@ Balance sheet - check your answers
   <nav class="content" role="navigation">
     <ul id="navigation" class="mobile-hidden">
       <li class="user" id="signed-in-user">username@email.co.uk: </li>
-      <li><a href="">Your details</a></li>
-      <li><a href="" id="recent_filings">Your filings</a></li>
-      <li><a href="" id="user-signout">Sign out</a></li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
     </ul>
   </nav>
 
 <p class="company-details">Filing for <span class="heading-small">A TEST COMPANY LIMITED</span> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
 
 
-<a class="link-back" href="/index">Back</a>
+<a class="link-back" href="question-tangible-assets">Back</a>
 
   <h1 class="heading-xlarge">Balance sheet
     <span class="heading-secondary">Check your answers</span>
@@ -37,6 +38,7 @@ Balance sheet - check your answers
   <caption class="visuallyhidden">Balance sheet - check your answers</caption>.
     <thead>
       <tr>
+        <th class="complete"></th>
         <th class="check-your-answers-section"><h2 class="heading-medium">Fixed assets</h2></th>
         <th class="numeric">2015</th>
         <th class="numeric">2016</th>
@@ -45,18 +47,21 @@ Balance sheet - check your answers
     </thead>
     <tbody>
       <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Intangible assets</td>
         <td class="numeric">£1,000</td>
         <td class="numeric">£2,000</td>
         <td class="change-answer"><a href="question-intangible-assets">Change <span class="visuallyhidden">Intangible assets</span></a></td>
       </tr>
       <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Tangible assets</td>
         <td class="numeric">£500</td>
         <td class="numeric">£1,250</td>
         <td class="change-answer"><a href="question-tangible-assets">Change <span class="visuallyhidden">Tangible assets</span></a></td>
       </tr>
-      <tr>
+      <tr class="total">
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Total fixed assets</td>
         <td class="numeric">£1,500</td>
         <td class="numeric">£3,250</td>
@@ -65,6 +70,7 @@ Balance sheet - check your answers
     </tbody>
     <thead>
       <tr class="to-be-completed">
+        <th class="complete"></th>
         <th class="check-your-answers-section"><h2 class="heading-medium">Current assets</h2></th>
         <th class="numeric"></th>
         <th class="numeric"></th>
@@ -73,24 +79,28 @@ Balance sheet - check your answers
     </thead>
     <tbody>
       <tr class="to-be-completed">
+        <td></td>
         <td>Stocks</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
         <td></td>
       </tr>
       <tr class="to-be-completed">
+        <td></td>
         <td>Debtors</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
         <td></td>
       </tr>
       <tr class="to-be-completed">
+        <td></td>
         <td>Cash at bank and in hand</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
         <td></td>
       </tr>
       <tr class="to-be-completed total">
+        <td></td>
         <td>Total current assets</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
@@ -99,6 +109,7 @@ Balance sheet - check your answers
     </tbody>
     <thead>
       <tr class="to-be-completed">
+        <th class="complete"></th>
         <th class="check-your-answers-section"></th>
         <th class="numeric"></th>
         <th class="numeric"></th>
@@ -107,18 +118,21 @@ Balance sheet - check your answers
     </thead>
     <tbody>
       <tr class="to-be-completed">
+        <td></td>
         <td>Prepayments and accrued income</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
         <td></td>
       </tr>
       <tr class="to-be-completed">
+        <td></td>
         <td>Creditors - amounts falling due within one year</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
         <td></td>
       </tr>
       <tr class="to-be-completed total">
+        <td></td>
         <td>Net current assets (liabilities)</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
@@ -127,6 +141,7 @@ Balance sheet - check your answers
     </tbody>
     <thead>
       <tr class="to-be-completed">
+        <th class="complete"></th>
         <th class="check-your-answers-section"></th>
         <th class="numeric"></th>
         <th class="numeric"></th>
@@ -135,6 +150,7 @@ Balance sheet - check your answers
     </thead>
     <tbody>
       <tr class="to-be-completed total">
+        <td></td>
         <td>Total assets less current liabilities</td>
         <td class="numeric">–</td>
         <td class="numeric">–</td>
@@ -143,6 +159,7 @@ Balance sheet - check your answers
     </tbody>
   <thead>
     <tr class="to-be-completed">
+      <th class="complete"></th>
       <th class="check-your-answers-section"></th>
       <th class="numeric"></th>
       <th class="numeric"></th>
@@ -151,24 +168,28 @@ Balance sheet - check your answers
   </thead>
   <tbody>
     <tr class="to-be-completed">
+      <td></td>
       <td>Creditors - amounts falling due after more than one year</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
       <td></td>
     </tr>
     <tr class="to-be-completed">
+      <td></td>
       <td>Provision for liabilities</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
       <td></td>
     </tr>
     <tr class="to-be-completed">
+      <td></td>
       <td>Accruals and deferred income</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
       <td></td>
     </tr>
     <tr class="to-be-completed total">
+      <td></td>
       <td>Total net assets (liabilities)</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
@@ -177,6 +198,7 @@ Balance sheet - check your answers
   </tbody>
   <thead>
     <tr class="to-be-completed">
+      <th class="complete"></th>
       <th class="check-your-answers-section"><h2 class="heading-medium">Capital and reserves</h2></th>
       <th class="numeric"></th>
       <th class="numeric"></th>
@@ -185,24 +207,28 @@ Balance sheet - check your answers
   </thead>
   <tbody>
     <tr class="to-be-completed">
+      <td></td>
       <td>Called up share capital</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
       <td></td>
     </tr>
     <tr class="to-be-completed">
+      <td></td>
       <td>Revaluation reserve</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
       <td></td>
     </tr>
     <tr class="to-be-completed">
+      <td></td>
       <td>Profit and loss account</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
       <td></td>
     </tr>
     <tr class="to-be-completed total">
+      <td></td>
       <td>Total shareholders' funds</td>
       <td class="numeric">–</td>
       <td class="numeric">–</td>
@@ -212,7 +238,7 @@ Balance sheet - check your answers
   </table>
 <br>
   <div class="form-group">
-    <p><a href="question-tangible-assets" class="button">Save and continue</a></p>
+    <p><a href="javascript:void(0)" class="button">Save and continue to Stocks</a></p>
   </div>
 
 </main>

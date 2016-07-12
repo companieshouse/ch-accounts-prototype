@@ -60,9 +60,20 @@
   width: 15%;
 }
 
+.two-column-accounts table.check-your-answers th.complete,
+.two-column-accounts table.check-your-answers td.complete {
+  width: 4%;
+}
+
 .two-column-accounts table.check-your-answers tr.to-be-completed td,
 .two-column-accounts table.check-your-answers tr.to-be-completed th {
   color: #6f777b;
+}
+
+.two-column-accounts table.check-your-answers .accounts-success {
+  color: #00823b;
+  margin: 0 auto;
+  display: block;
 }
 
 p.company-details {

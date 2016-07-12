@@ -35,11 +35,19 @@
     tr.total td {font-weight: 700;}
     td.numeric {font-family: inherit; font-size: inherit; padding-right: 0;}
     th.notes,
-    td.notes {font-weight: 700; width: 15%;}
+    td.notes {
+      font-weight: 700; width: 15%;
+    }
+
+    th.complete,
+    td.complete {
+      width:4%;
+     }
     tr.to-be-completed td,
     tr.to-be-completed th {
       color: $secondary-text-colour;}
 
+    .accounts-success {color: $button-colour; margin: 0 auto; display:block;}
   }
 }
 
