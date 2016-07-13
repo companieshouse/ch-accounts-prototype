@@ -87,3 +87,12 @@ p.company-details {
 .group-textarea details summary {
   font-weight: normal;
 }
+
+h1 .circle,
+h2 .circle,
+h3 .circle {
+  font-size: 21px;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+}
