@@ -41,13 +41,14 @@
 
     th.complete,
     td.complete {
-      width:4%;
+      width: 4%;
      }
+
     tr.to-be-completed td,
     tr.to-be-completed th {
       color: $secondary-text-colour;}
 
-    .accounts-success {color: $button-colour; margin: 0 auto; display:block;}
+    .accounts-success {color: $button-colour; display: block; margin: 0 auto;}
   }
 }
 

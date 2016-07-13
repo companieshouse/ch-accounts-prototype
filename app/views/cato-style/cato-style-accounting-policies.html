@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Accounting policies
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a> | UTR: 012345678<br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+<a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Accounting policies</h1>
+
+      <p>You must provide information on all policies that apply to your company as shown on your prepared accounts.</p>
+      <p>Accounting policies are usually found as Note 1 of your prepared accounts.</p>
+
+      <form class="form" method="get" action="">
+
+
+        <div class="form-group">
+        <fieldset>
+
+          <h2 class="heading-medium">Basis of preparation</h2>
+          <legend class="visuallyhidden">Basis of preparation</legend>
+
+          <label class="block-label" for="1">
+            <input type="radio" id="1" value="" name="basis-of-preparation">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tria genera bonorum; Tum Piso: Quoniam igitur aliquid omnes, quid Lucius noster? Non est ista, inquam, Piso, magna dissensio. Ab hoc autem quaedam non melius quam veteres, quaedam omnino relicta. Sed tempus est, si videtur, et recta quidem ad me. Etenim nec iustitia nec amicitia esse omnino poterunt, nisi ipsae per se expetuntur.
+          </label>
+
+          <label data-target="2-reveal" class="block-label" for="2">
+            <input type="radio" id="2" value="" name="basis-of-preparation" aria-controls="micro" aria-expanded="false">
+            I want to provide my own statement.
+          </label>
+                  <div id="2-reveal" class="panel panel-border-narrow js-hidden" aria-hidden="true">
+                  <textarea type="text" id="" class="form-control" rows="10"></textarea>
+                  </div>
+
+        </fieldset>
+      </div>
+
+
+
+
+
+            </form>
+      <div class="form-group">
+        <a class="button" href="cato-style-approval" role="button">Save and continue to Approval</a>
+      </div>
+
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}
