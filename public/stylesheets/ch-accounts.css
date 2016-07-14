@@ -31,6 +31,10 @@
   margin: 0;
 }
 
+.two-column-accounts input[type="number"] {
+  text-align: right;
+}
+
 .two-column-accounts table.check-your-answers thead th {
   padding: 2em 0 1em;
 }
