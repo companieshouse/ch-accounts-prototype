@@ -389,3 +389,7 @@ ol.example-icon-list i {
 .chs-email table td {
   padding: .7em 1em;
 }
+
+.action-button-list li {
+  padding-bottom: .7em;
+}

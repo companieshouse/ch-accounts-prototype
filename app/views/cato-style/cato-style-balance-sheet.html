@@ -51,14 +51,20 @@
   <!--Start intangible assets-->
   <div class="grid-row">
     <div class="column-half">
-      <label class="form-label" for="intangible-assets-previous">
         <details>
           <summary><span class="summary">Intangible assets</span></summary>
           <div class="panel panel-border-narrow">
             <p>The value of the company's non-physical assets - for example, patents, trademarks, licences, goodwill (taking account of depreciation).</p>
           </div>
         </details>
-      </label>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="intangible-assets-current"><span class="visuallyhidden">Intangible assets (current year)</span>
+          <input type="number" class="form-control" id="intangible-assets-current">
+        </label>
+      </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
@@ -67,13 +73,7 @@
         </label>
       </div>
     </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="intangible-assets-current"><span class="visuallyhidden">Intangible assets (current year)</span>
-          <input type="number" class="form-control" id="intangible-assets-current">
-        </label>
-      </div>
-    </div>
+
   </div>
   <!--End intangible assets-->
 
@@ -89,15 +89,15 @@
     </div>
     <div class="column-quarter">
       <div class="form-group">
-        <label class="form-label" for="tangible-assets-previous"><span class="visuallyhidden">Tangible assets (previous year)</span>
-          <input type="number" class="form-control" id="tangible-assets-previous">
+        <label for="tangible-assets-current"><span class="visuallyhidden">Tangible assets (current year)</span>
+          <input type="number" class="form-control" id="tangible-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
-        <label for="tangible-assets-current"><span class="visuallyhidden">Tangible assets (current year)</span>
-          <input type="number" class="form-control" id="tangible-assets-current">
+        <label class="form-label" for="tangible-assets-previous"><span class="visuallyhidden">Tangible assets (previous year)</span>
+          <input type="number" class="form-control" id="tangible-assets-previous">
         </label>
       </div>
     </div>
@@ -116,18 +116,19 @@
     </div>
     <div class="column-quarter">
       <div class="form-group">
-        <label class="form-label" for="total-fixed-assets-previous"><span class="visuallyhidden">Total fixed assets (previous year)</span>
-          <input type="number" class="form-control" id="total-fixed-assets-previous">
-        </label>
-      </div>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
         <label for="total-fixed-assets-current"><span class="visuallyhidden">Total fixed assets (current year)</span>
           <input type="number" class="form-control" id="total-fixed-assets-current">
         </label>
       </div>
     </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="total-fixed-assets-previous"><span class="visuallyhidden">Total fixed assets (previous year)</span>
+          <input type="number" class="form-control" id="total-fixed-assets-previous">
+        </label>
+      </div>
+    </div>
+
   </div>
   <!--End total fixed assets-->
 
@@ -147,18 +148,19 @@
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="stocks-current"><span class="visuallyhidden">Stocks (previous year)</span>
-            <input type="number" class="form-control" id="stocks-previous">
-          </label>
-        </div>
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
           <label for="stocks-current"><span class="visuallyhidden">Stocks (current year)</span>
             <input type="number" class="form-control" id="stocks-current">
           </label>
         </div>
       </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="stocks-current"><span class="visuallyhidden">Stocks (previous year)</span>
+            <input type="number" class="form-control" id="stocks-previous">
+          </label>
+        </div>
+      </div>
+
     </div>
     <!--End stocks-->
 
@@ -172,17 +174,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="debtors-previous"><span class="visuallyhidden">Debtors (previous year)</span>
-            <input type="number" class="form-control" id="debtors-previous">
+          <label for="debtors-current"><span class="visuallyhidden">Debtors (current year)</span>
+            <input type="number" class="form-control" id="debtors-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="debtors-current"><span class="visuallyhidden">Debtors (current year)</span>
-            <input type="number" class="form-control" id="debtors-current">
+          <label class="form-label" for="debtors-previous"><span class="visuallyhidden">Debtors (previous year)</span>
+            <input type="number" class="form-control" id="debtors-previous">
           </label>
         </div>
       </div>
@@ -200,17 +203,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="cash-at-bank-and-in-hand-previous"><span class="visuallyhidden">Cash at bank and in hand (previous year)</span>
-            <input type="number" class="form-control" id="cash-at-bank-and-in-hand-previous">
+          <label for="cash-at-bank-and-in-hand-current"><span class="visuallyhidden">Cash at bank and in hand (current year)</span>
+            <input type="number" class="form-control" id="cash-at-bank-and-in-hand-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="cash-at-bank-and-in-hand-current"><span class="visuallyhidden">Cash at bank and in hand (current year)</span>
-            <input type="number" class="form-control" id="cash-at-bank-and-in-hand-current">
+          <label class="form-label" for="cash-at-bank-and-in-hand-previous"><span class="visuallyhidden">Cash at bank and in hand (previous year)</span>
+            <input type="number" class="form-control" id="cash-at-bank-and-in-hand-previous">
           </label>
         </div>
       </div>
@@ -229,17 +233,18 @@
           </div>
         </details>
             </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="total-current-assets-previous"><span class="visuallyhidden">Total current assets (previous year)</span>
-            <input type="number" class="form-control" id="total-current-assets-previous">
+          <label for="total-fixed-current-current"><span class="visuallyhidden">Total current assets (current year)</span>
+            <input type="number" class="form-control" id="total-current-assets-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="total-fixed-current-current"><span class="visuallyhidden">Total current assets (current year)</span>
-            <input type="number" class="form-control" id="total-current-assets-current">
+          <label class="form-label" for="total-current-assets-previous"><span class="visuallyhidden">Total current assets (previous year)</span>
+            <input type="number" class="form-control" id="total-current-assets-previous">
           </label>
         </div>
       </div>
@@ -258,17 +263,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="prepayments-and-and-accrued-income-previous"><span class="visuallyhidden">Prepayments and accrued income (previous year)</span>
-            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-previous">
+          <label for="prepayments-and-and-accrued-income-current"><span class="visuallyhidden">Prepayments and accrued income (current year)</span>
+            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="prepayments-and-and-accrued-income-current"><span class="visuallyhidden">Prepayments and accrued income (current year)</span>
-            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-current">
+          <label class="form-label" for="prepayments-and-and-accrued-income-previous"><span class="visuallyhidden">Prepayments and accrued income (previous year)</span>
+            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-previous">
           </label>
         </div>
       </div>
@@ -289,17 +295,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous"><span class="visuallyhidden">Creditors - amounts falling due within one year (previous year)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-within-one-year-previous">
+          <label for="creditors-amounts-falling-due-within-one-year-current"><span class="visuallyhidden">Creditors - amounts falling due within one year (current year)</span>
+            <input type="number" class="form-control" id="creditors-amounts-falling-due-within-one-year-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="creditors-amounts-falling-due-within-one-year-current"><span class="visuallyhidden">Creditors - amounts falling due within one year (current year)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-within-one-year-current">
+          <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous"><span class="visuallyhidden">Creditors - amounts falling due within one year (previous year)</span>
+            <input type="number" class="form-control" id="creditors-amounts-falling-due-within-one-year-previous">
           </label>
         </div>
       </div>
@@ -318,17 +325,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="net-current-assets-liabilities-previous"><span class="visuallyhidden">Net current assets (liabilities) (previous year)</span>
-            <input type="number" class="form-control" id="net-current-assets-liabilities-previous">
+          <label for="net-current-assets-liabilities-current"><span class="visuallyhidden">Net current assets (liabilities) (current year)</span>
+            <input type="number" class="form-control" id="net-current-assets-liabilities-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="net-current-assets-liabilities-current"><span class="visuallyhidden">Net current assets (liabilities) (current year)</span>
-            <input type="number" class="form-control" id="net-current-assets-liabilities-current">
+          <label class="form-label" for="net-current-assets-liabilities-previous"><span class="visuallyhidden">Net current assets (liabilities) (previous year)</span>
+            <input type="number" class="form-control" id="net-current-assets-liabilities-previous">
           </label>
         </div>
       </div>
@@ -346,17 +354,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="total-assets-less-current-liabilities-previous"><span class="visuallyhidden">Net current assets (liabilities) (previous year)</span>
-            <input type="number" class="form-control" id="total-assets-less-current-liabilities-previous">
+          <label for="total-assets-less-current-liabilities-current"><span class="visuallyhidden">Net current assets (liabilities) (current year)</span>
+            <input type="number" class="form-control" id="total-assets-less-current-liabilities-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="total-assets-less-current-liabilities-current"><span class="visuallyhidden">Net current assets (liabilities) (current year)</span>
-            <input type="number" class="form-control" id="total-assets-less-current-liabilities-current">
+          <label class="form-label" for="total-assets-less-current-liabilities-previous"><span class="visuallyhidden">Net current assets (liabilities) (previous year)</span>
+            <input type="number" class="form-control" id="total-assets-less-current-liabilities-previous">
           </label>
         </div>
       </div>
@@ -374,17 +383,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous"><span class="visuallyhidden">Creditors - amounts falling due within one year (previous year)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous">
+          <label for="creditors-amounts-falling-due-after-more-than-one-year-current"><span class="visuallyhidden">Creditors - amounts falling due within one year (current year)</span>
+            <input type="number" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="creditors-amounts-falling-due-after-more-than-one-year-current"><span class="visuallyhidden">Creditors - amounts falling due within one year (current year)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current">
+          <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous"><span class="visuallyhidden">Creditors - amounts falling due within one year (previous year)</span>
+            <input type="number" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous">
           </label>
         </div>
       </div>
@@ -401,17 +411,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="provision-for-liabilities-previous"><span class="visuallyhidden">Provision for liabilities (previous year)</span>
-            <input type="number" class="form-control" id="provision-for-liabilities-previous">
+          <label for="provision-for-liabilities-current"><span class="visuallyhidden">Provision for liabilities (current year)</span>
+            <input type="number" class="form-control" id="provision-for-liabilities-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="provision-for-liabilities-current"><span class="visuallyhidden">Provision for liabilities (current year)</span>
-            <input type="number" class="form-control" id="provision-for-liabilities-current">
+          <label class="form-label" for="provision-for-liabilities-previous"><span class="visuallyhidden">Provision for liabilities (previous year)</span>
+            <input type="number" class="form-control" id="provision-for-liabilities-previous">
           </label>
         </div>
       </div>
@@ -429,17 +440,18 @@
             </div>
           </details>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
-          <label class="form-label" for="accruals-and-deferred-income-previous"><span class="visuallyhidden">Accruals and deferred income (previous year)</span>
-            <input type="number" class="form-control" id="accruals-and-deferred-income-previous">
+          <label for="accruals-and-deferred-income-current"><span class="visuallyhidden">Accruals and deferred income (current year)</span>
+            <input type="number" class="form-control" id="accruals-and-deferred-income-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
-          <label for="accruals-and-deferred-income-current"><span class="visuallyhidden">Accruals and deferred income (current year)</span>
-            <input type="number" class="form-control" id="accruals-and-deferred-income-current">
+          <label class="form-label" for="accruals-and-deferred-income-previous"><span class="visuallyhidden">Accruals and deferred income (previous year)</span>
+            <input type="number" class="form-control" id="accruals-and-deferred-income-previous">
           </label>
         </div>
       </div>
@@ -456,17 +468,18 @@
                 </div>
               </details>
           </div>
+
           <div class="column-quarter">
             <div class="form-group">
-              <label class="form-label" for="total-net-assets-liabilities-previous"><span class="visuallyhidden">Total net assets (liabilities) (previous year)</span>
-                <input type="number" class="form-control" id="total-net-assets-liabilities-previous">
+              <label for="total-net-assets-liabilities-current"><span class="visuallyhidden">Total net assets (liabilities) (current year)</span>
+                <input type="number" class="form-control" id="total-net-assets-liabilities-current">
               </label>
             </div>
           </div>
           <div class="column-quarter">
             <div class="form-group">
-              <label for="total-net-assets-liabilities-current"><span class="visuallyhidden">Total net assets (liabilities) (current year)</span>
-                <input type="number" class="form-control" id="total-net-assets-liabilities-current">
+              <label class="form-label" for="total-net-assets-liabilities-previous"><span class="visuallyhidden">Total net assets (liabilities) (previous year)</span>
+                <input type="number" class="form-control" id="total-net-assets-liabilities-previous">
               </label>
             </div>
           </div>
@@ -490,17 +503,18 @@
                 </details>
               </label>
             </div>
+
             <div class="column-quarter">
               <div class="form-group">
-                <label for="called-up-share-capital-current"><span class="visuallyhidden">Called up share capital (previous year)</span>
-                  <input type="number" class="form-control" id="called-up-share-capital-previous">
+                <label for="called-up-share-capital-current"><span class="visuallyhidden">Called up share capital (current year)</span>
+                  <input type="number" class="form-control" id="called-up-share-capital-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
-                <label for="called-up-share-capital-current"><span class="visuallyhidden">Called up share capital (current year)</span>
-                  <input type="number" class="form-control" id="called-up-share-capital-current">
+                <label for="called-up-share-capital-current"><span class="visuallyhidden">Called up share capital (previous year)</span>
+                  <input type="number" class="form-control" id="called-up-share-capital-previous">
                 </label>
               </div>
             </div>
@@ -517,17 +531,18 @@
                   </div>
                 </details>
             </div>
+
             <div class="column-quarter">
               <div class="form-group">
-                <label class="form-label" for="revaluation-reserve-previous"><span class="visuallyhidden">Revaluation reserve (previous year)</span>
-                  <input type="number" class="form-control" id="revaluation-reserve-previous">
+                <label for="revaluation-reserve-current"><span class="visuallyhidden">Revaluation reserve (current year)</span>
+                  <input type="number" class="form-control" id="revaluation-reserve-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
-                <label for="revaluation-reserve-current"><span class="visuallyhidden">Revaluation reserve (current year)</span>
-                  <input type="number" class="form-control" id="revaluation-reserve-current">
+                <label class="form-label" for="revaluation-reserve-previous"><span class="visuallyhidden">Revaluation reserve (previous year)</span>
+                  <input type="number" class="form-control" id="revaluation-reserve-previous">
                 </label>
               </div>
             </div>
@@ -545,17 +560,18 @@
                   </div>
                 </details>
             </div>
+
             <div class="column-quarter">
               <div class="form-group">
-                <label class="form-label" for="profit-and-loss-account-previous"><span class="visuallyhidden">Profit and loss account (previous year)</span>
-                  <input type="number" class="form-control" id="profit-and-loss-account-previous">
+                <label for="profit-and-loss-account-current"><span class="visuallyhidden">Profit and loss account (current year)</span>
+                  <input type="number" class="form-control" id="profit-and-loss-account-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
-                <label for="profit-and-loss-account-current"><span class="visuallyhidden">Profit and loss account (current year)</span>
-                  <input type="number" class="form-control" id="profit-and-loss-account-current">
+                <label class="form-label" for="profit-and-loss-account-previous"><span class="visuallyhidden">Profit and loss account (previous year)</span>
+                  <input type="number" class="form-control" id="profit-and-loss-account-previous">
                 </label>
               </div>
             </div>
@@ -574,17 +590,18 @@
                 </div>
               </details>
             </div>
+
             <div class="column-quarter">
               <div class="form-group">
-                <label class="form-label" for="total-shareholders-funds-previous"><span class="visuallyhidden"> Total shareholders' funds (previous year)</span>
-                  <input type="number" class="form-control" id="total-shareholders-funds-previous">
+                <label for="total-shareholders-funds-current"><span class="visuallyhidden"> Total shareholders' funds (current year)</span>
+                  <input type="number" class="form-control" id="total-shareholders-funds-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
-                <label for="total-shareholders-funds-current"><span class="visuallyhidden"> Total shareholders' funds (current year)</span>
-                  <input type="number" class="form-control" id="total-shareholders-funds-current">
+                <label class="form-label" for="total-shareholders-funds-previous"><span class="visuallyhidden"> Total shareholders' funds (previous year)</span>
+                  <input type="number" class="form-control" id="total-shareholders-funds-previous">
                 </label>
               </div>
             </div>
