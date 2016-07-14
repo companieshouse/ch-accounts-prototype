@@ -343,3 +343,14 @@ ol.example-icon-list i {
   position: relative;
   top: .2em;
 }
+
+.get-started .destination {
+  display: block;
+  font-size: 14px;
+  font-size-adjust: .5;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top: .5em;
+  max-width: 13em;
+  text-transform: none;
+}

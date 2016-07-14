@@ -41,7 +41,10 @@
 
       <h1 class="heading-xlarge">Directors' report - information</h1>
 
-      <p class="">These fields are all optional – complete any that are included in your accounts.</p>
+
+      <div class="panel panel-border-wide">
+        <p class="">These fields are all optional – complete any that are included in your accounts.</p>
+      </div>
 
       <form class="form" method="post" action="/">
 
@@ -91,9 +94,10 @@
 
       <!-- Additional information -->
       <div class="form-group">
-        <label for="additional-information" class="form-label-bold"><h2 class="heading-medium">Additional information</h2>
+        <label for="additional-information" class="form-label-bold"><h2 class="heading-medium">Additional information</h2></label>
+
           <details role="group">
-          <summary role="button" aria-controls="additional-information-help" tabindex="3" aria-expanded="false"><span class="visuallyhidden">Additional information</span><span class="summary">What is this?</span></summary>
+          <summary role="button" aria-controls="additional-information-help" tabindex="3" aria-expanded="false"><span class="summary">What is this?</span></summary><span class="visuallyhidden">Additional information</span>
           <div class="panel panel-border-narrow" id="additional-information-help" aria-hidden="true" style="display: none;">
             <p>Add any other information you'd like to include in the directors' report, for example:</p>
             <ul class="list list-bullet">
@@ -103,8 +107,11 @@
           </div>
           </details>
           <textarea type="text" id="additional-information" class="form-control" rows="5"></textarea>
-        </label>
+
       </div>
+
+
+
 
     </div><!--group-textarea-->
 
