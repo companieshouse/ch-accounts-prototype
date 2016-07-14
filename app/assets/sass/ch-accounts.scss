@@ -1,5 +1,6 @@
 // Additional styles for CH accounts
 @import 'colours';
+@import 'typography';
 
 .two-column-accounts {
   form-control {text-align: right;}
@@ -68,3 +69,11 @@ p.company-details {
 h1 .circle,
 h2 .circle,
 h3 .circle {font-size: 21px; margin-right: 5px; position: relative; top: -2px;}
+
+header {
+  span {
+    @include core-24;
+    color: $secondary-text-colour;
+    display: block;
+  }
+}

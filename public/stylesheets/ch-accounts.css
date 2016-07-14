@@ -100,3 +100,21 @@ h3 .circle {
   position: relative;
   top: -2px;
 }
+
+header span {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  color: #6f777b;
+  display: block;
+}
+
+@media (min-width: 641px) {
+  header span {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+}
