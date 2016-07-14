@@ -354,3 +354,38 @@ ol.example-icon-list i {
   max-width: 13em;
   text-transform: none;
 }
+
+.chs-email ul {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  padding-top: 1em;
+}
+
+@media (min-width: 641px) {
+  .chs-email ul {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.chs-email ul li {
+  padding-bottom: 1em;
+}
+
+.chs-email table {
+  background-color: #f8f8f8;
+  margin: 2em 0;
+}
+
+.chs-email table th {
+  background-color: #dee0e2;
+  padding: .7em 1em;
+}
+
+.chs-email table td {
+  padding: .7em 1em;
+}
