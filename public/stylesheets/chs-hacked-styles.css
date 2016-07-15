@@ -7,9 +7,13 @@
 }
 
 #global-header a#proposition-name {
+  padding-left: 1em;
   position: relative;
   top: .35em;
-  padding-left: 1em;
+}
+
+.normal {
+  font-weight: normal;
 }
 
 ul#navigation {
@@ -379,7 +383,7 @@ ol.example-icon-list i {
 
 .chs-email table th {
   background-color: #dee0e2;
-  padding: .7em 1em;
+  padding: 7em 1em;
 }
 
 .chs-email table td {
