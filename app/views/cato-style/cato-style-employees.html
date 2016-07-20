@@ -1,0 +1,98 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Employees
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+
+
+  <h1 class="heading-xlarge">Employees</h1>
+
+  <div class="grid-row" id="accounts-header">
+    <div class="column-half">
+      &nbsp;
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2016</h2>
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2015</h2>
+    </div>
+  </div>
+
+
+
+<form action="/" method="post" class="form">
+
+
+  <!--Start average number of employees -->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Average number of employees </span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The average number of persons employed by the company during the accounting period.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="average-number-of-employees-current"><span class="visuallyhidden">Average number of employees  (current year)</span>
+          <input type="number" class="form-control" id="average-number-of-employees-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="average-number-of-employees-previous"><span class="visuallyhidden">Average number of employees  (previous year)</span>
+          <input type="number" class="form-control" id="average-number-of-employees-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End average number of employees -->
+
+
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Additional information (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
+        <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="cato-style-balance-sheet-notes">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
