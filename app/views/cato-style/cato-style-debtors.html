@@ -1,0 +1,193 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Debtors
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+
+
+  <h1 class="heading-xlarge">Debtors</h1>
+
+  <div class="grid-row" id="accounts-header">
+    <div class="column-half">
+      &nbsp;
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2016</h2>
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2015</h2>
+    </div>
+  </div>
+
+
+
+<form action="/" method="post" class="form">
+
+
+
+  <!--Start Trade debtors-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Trade debtors</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Trade debtors are customers who owe money for goods or services your company has provided as part of its normal trading activities.</p>
+            <p>on’t include any bad or doubtful debts you’re aware of or have made provision for.</p>
+            <p>Trade debtors who are due to settle after more than one year should be reported as additional information.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="trade-debtors-current"><span class="visuallyhidden">Trade debtors (current year)</span>
+          <input type="number" class="form-control" id="trade-debtors-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="trade-debtors-previous"><span class="visuallyhidden">Trade debtors (previous year)</span>
+          <input type="number" class="form-control" id="trade-debtors-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Trade debtors-->
+
+  <!--Start Prepayments and accrued income -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Prepayments and accrued income</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Prepayments are goods or services your company has paid for, but has not received (as at the end of the accounting period).</p>
+            <p>Accrued income is income earned by your company (and included in your turnover), but not yet charged for (invoiced) – this type of income is not a trade debtor or other debtor.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="prepayments-and-accrued-income-current"><span class="visuallyhidden">Prepayments and accrued income (current year)</span>
+          <input type="number" class="form-control" id="prepayments-and-accrued-income-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="prepayments-and-accrued-income-revious"><span class="visuallyhidden">Prepayments and accrued income (previous year)</span>
+          <input type="number" class="form-control" id="prepayments-and-accrued-income-previous">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Prepayments and accrued income -->
+
+  <!--Start Other debtors-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Other debtors</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Other debtors are customers owing money who are not included as trade debtors.</p>
+          <p>Other debtors who are due to settle after more than one year should be reported as additional information.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="other-debtors-current"><span class="visuallyhidden">Other debtors (current year)</span>
+          <input type="number" class="form-control" id="other-debtors-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="other-debtors-previous"><span class="visuallyhidden">Other debtors (previous year)</span>
+          <input type="number" class="form-control" id="other-debtors-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Other debtors-->
+
+
+  <!--Start total-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Total</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total of all debtors for the accounting period.</p>
+          <p>This is calculated by adding together trade debtors, prepayments and accrued income, and other debtors.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="total-debtors-current"><span class="visuallyhidden">Total debtors (current year)</span>
+          <input type="number" class="form-control" id="total-debtors-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="total-debtors-previous"><span class="visuallyhidden">Total debtors(previous year)</span>
+          <input type="number" class="form-control" id="total-debtors-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End total ordinary shares -->
+
+
+
+
+
+
+
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Additional information (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
+        <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="cato-style-balance-sheet-notes">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
