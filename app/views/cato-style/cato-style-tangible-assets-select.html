@@ -1,0 +1,84 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Tangible assets
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+
+  <div class="text">
+
+  <h1 class="heading-xlarge">Tangible assets</h1>
+
+  <div class="panel panel-border-wide">
+    <p>As you have made an entry for tangible assets on the balance sheet, you are required to select at least one tangible assets note.</p>
+  </div>
+
+     <div class="form-group">
+               <fieldset>
+
+                 <legend class="visuallyhidden">Select tangible assets note(s)</legend>
+
+                 <label class="block-label" for="tangible-assets-land-and-buildings">
+                   <input type="checkbox" id="tangible-assets-land-and-buildings" value="land-and-buildings" name="land-and-buildings">
+                   <span class="heading-small">Land and buildings</span><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                 </label>
+
+                 <label class="block-label" for="tangible-assets-plant-and-machinery">
+                   <input type="checkbox" id="tangible-assets-plant-and-machinery" value="lant-and-machinery" name="lant-and-machinery">
+                   <span class="heading-small">Plant and machinery</span><br>
+                   Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+                 </label>
+
+                 <label class="block-label" for="tangible-assets-fixtures-and-fittings">
+                   <input type="checkbox" id="tangible-assets-fixtures-and-fittings" value="fixtures-and-fittings" name="fixtures-and-fittings">
+                   <span class="heading-small">Fixtures and fittings</span><br>
+                   Curabitur tortor. Pellentesque nibh. Aenean quam.
+                 </label>
+
+                 <label class="block-label" for="tangible-assets-office-equipment">
+                   <input type="checkbox" id="tangible-assets-office-equipment" value="office-equipment" name="office-equipment">
+                   <span class="heading-small">Office equipment</span><br>
+                  In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
+                 </label>
+
+                 <label class="block-label" for="tangible-assets-motor-vehicles">
+                   <input type="checkbox" id="tangible-assets-motor-vehicles" value="motor-vehicles" name="motor-vehicles">
+                   <span class="heading-small">Motor vehicles</span><br>
+                   Integer euismod lacus luctus magna.
+                 </label>
+
+               </fieldset>
+             </div>
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="cato-style-balance-sheet-notes">Save and continue</a>
+      </div>
+
+</div><!--text-->
+</form>
+</main>
+{% endblock %}

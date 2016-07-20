@@ -1,0 +1,421 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Intangible assets: Goodwill
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+
+
+  <h1 class="heading-xlarge">Intangible assets: Goodwill</h1>
+
+  <div class="grid-row" id="accounts-header">
+    <div class="column-half">
+      &nbsp;
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2016</h2>
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2015</h2>
+    </div>
+  </div>
+
+
+
+<form action="/" method="post" class="form">
+
+<h2 class="heading-medium">Cost</h2>
+
+  <!--Start Cost at-->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">At 1 Jun 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cost or valuation of all goodwill assets at the start of the financial period.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="start-cost-at-current"><span class="visuallyhidden">Cost at 1 Jun 2015 (current year)</span>
+          <input type="number" class="form-control" id="start-cost-at-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="start-cost-at-previous"><span class="visuallyhidden">Cost at 1 Jun 2015 (previous year)</span>
+          <input type="number" class="form-control" id="start-cost-at-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Cost at-->
+
+  <!--Start Additions-->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Additions</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cost of all goodwill assets acquired during the financial period.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="additions-current"><span class="visuallyhidden">Additions (current year)</span>
+          <input type="number" class="form-control" id="additions-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="additions-previous"><span class="visuallyhidden">Additions (previous year)</span>
+          <input type="number" class="form-control" id="additions-previous">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Additions-->
+
+
+  <!--Start Disposals-->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Disposals</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cost or valuation (at the date of disposal) of all goodwill assets that were disposed of (for example, sold) during the financial period.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="disposals-current"><span class="visuallyhidden">Disposals (current year)</span>
+          <input type="number" class="form-control" id="disposals-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="disposals-previous"><span class="visuallyhidden">Disposals (previous year)</span>
+          <input type="number" class="form-control" id="disposals-previous">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Disposals-->
+
+
+
+  <!--Start Revaluations -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Revaluations</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The valuation figure of all goodwill assets revalued during the financial period. If the revaluation results in a reduction in the value of the asset, then enter a negative figure using a minus sign.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="revaluations-current"><span class="visuallyhidden">Revaluations (current year)</span>
+          <input type="number" class="form-control" id="revaluations-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="revaluations-previous"><span class="visuallyhidden">Revaluations (previous year)</span>
+          <input type="number" class="form-control" id="revaluations-previous">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Revaluations  -->
+
+
+  <!--Start Transfers -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Transfers</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cost or valuation of all goodwill assets that have been transferred during the financial period. If the asset is being transferred out, then enter a negative figure using a minus sign.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="transfers-current"><span class="visuallyhidden">Transfers (current year)</span>
+          <input type="number" class="form-control" id="transfers-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="transfers-previous"><span class="visuallyhidden">Transfers (previous year)</span>
+          <input type="number" class="form-control" id="transfers-previous">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Transfers -->
+
+  <!--Start total cost at-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">At 31 May 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total cost or valuation of all goodwill assets at the end of the financial period.</p>
+          <p>This is calculated by adding together any additions, revaluations and transfers to the cost or valuation of the asset(s) at the start of the financial period, and then subtracting any disposals.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="end-cost-at-current"><span class="visuallyhidden">Total cost at 31 May 2016 (current year)</span>
+          <input type="number" class="form-control" id="end-cost-at-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="end-cost-at-previous"><span class="visuallyhidden">Total cost at 31 May 2016 (previous year)</span>
+          <input type="number" class="form-control" id="end-cost-at-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End total cost at -->
+
+
+
+  <h2 class="heading-medium">Amortisation</h2>
+
+  <!--Start Amortisation start  at-->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">At 1 Jun 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cumulative amount of amortisation of all goodwill assets at the start of the financial period.</p>
+            <p>Amortisation is the reduction in value of an intangible (non-physical) asset over its useful economic lifetime. It’s similar to the depreciation value of a tangible (physical) asset..</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="start-amortisation-at-current"><span class="visuallyhidden">Amortisation at 1 Jun 2015 (current year)</span>
+          <input type="number" class="form-control" id="start-amortisation-at-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="start-amortisation-at-previous"><span class="visuallyhidden">Amortisation at 1 Jun 2015 (previous year)</span>
+          <input type="number" class="form-control" id="start-amortisation-at-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Amortisation start  at-->
+
+  <!--Start On disposals -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">On disposals </span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The amortisation of all goodwill assets for the financial period.</p>
+            <p>Amortisation is the reduction in value of an intangible (non-physical) asset over its useful economic lifetime. It’s similar to the depreciation value of a tangible (physical) asset.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="on-disposals-current"><span class="visuallyhidden">On disposals (current year)</span>
+          <input type="number" class="form-control" id="on-disposals-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="on-disposals-previous"><span class="visuallyhidden">On disposals (previous year)</span>
+          <input type="number" class="form-control" id="on-disposals-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End On disposals -->
+
+  <!--Start Other adjustments -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Other adjustments</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Any other amortisation adjustment on all goodwill assets.</p>
+            <p>Amortisation is the reduction in value of an intangible (non-physical) asset over its useful economic lifetime. It’s similar to the depreciation value of a tangible (physical) asset.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="other-adjustments-current"><span class="visuallyhidden">Other adjustments (current year)</span>
+          <input type="number" class="form-control" id="other-adjustments-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="other-adjustments-previous"><span class="visuallyhidden">Other adjustments (previous year)</span>
+          <input type="number" class="form-control" id="other-adjustments-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Other adjustments-->
+
+
+  <!--Start total Amortisation at-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">At 31 May 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total amortisation value of all goodwill assets at the end of the financial period.</p>
+          <p>This is calculated by adding together any goodwill assets provided during the period, other adjustments and the amortisation value at the start of the financial period, and then subtracting any disposals.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="end-amortisation-at-current"><span class="visuallyhidden">Total amortisation at 31 May 2016 (current year)</span>
+          <input type="number" class="form-control" id="end-amortisation-at-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="end-amortisation-at-previous"><span class="visuallyhidden">Total amortisation at 31 May 2016 (previous year)</span>
+          <input type="number" class="form-control" id="end-amortisation-at-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End total Amortisation at -->
+
+
+  <h2 class="heading-medium">Net book value</h2>
+
+
+
+
+    <!--Start Net book value at 31 May 2015-->
+    <div class="grid-row accounts-total">
+      <div class="column-half">
+        <details>
+          <summary><span class="summary">At 31 May 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total amortisation value of all goodwill assets at the end of the financial period.</p>
+            <p>This is calculated by adding together any goodwill assets provided during the period, other adjustments and the amortisation value at the start of the financial period, and then subtracting any disposals.
+</p>
+          </div>
+        </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="net-book-value-at-31-may-2015-current"><span class="visuallyhidden">Net book value at 31 May 2015 (current year)</span>
+            <input type="number" class="form-control" id="net-book-value-at-31-may-2015-current">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="net-book-value-at-31-may-2015-previous"><span class="visuallyhidden">Net book value at 31 May 2015 (previous year)</span>
+            <input type="number" class="form-control" id="net-book-value-at-31-may-2015-previous">
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End Net book value at 31 May 2015 -->
+
+  <!--Start Net book value at 31 May 2016-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">At 31 May 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The net book value of all goodwill assets at the end of the previous financial period (balance sheet date).</p>
+          <p>This will be the total cost or valuation of all goodwill assets at the end of the previous financial period, minus the total amortisation value of all goodwill assets at the end of the previous financial period.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="net-book-value-at-31-may-2016-current"><span class="visuallyhidden">Net book value at 31 May 2016 (current year)</span>
+          <input type="number" class="form-control" id="net-book-value-at-31-may-2016-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="net-book-value-at-31-may-2016-previous"><span class="visuallyhidden">Net book value at 31 May 2016 (previous year)</span>
+          <input type="number" class="form-control" id="net-book-value-at-31-may-2016-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Net book value at 31 May 2016-->
+
+
+
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="cato-style-balance-sheet-notes">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
