@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-  
+
   res.render('index');
 
 });
@@ -40,5 +40,29 @@ router.get('/examples/over-18', function (req, res) {
 });
 
 // add your routes here
+
+router.get('cato-style/cato-style-intangible-assets-select', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var intangibleassets = req.query.intangibleassets;
+
+  if (intangibleassets == "goodwill"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-intangible-assets-goodwill");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-intangible-assets-other');
+
+  }
+
+});
+
+
+
+
+
 
 module.exports = router;
