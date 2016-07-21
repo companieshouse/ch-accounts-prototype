@@ -1,0 +1,161 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Revaluation reserve
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+
+
+  <h1 class="heading-xlarge">Revaluation reserve</h1>
+
+  <div class="grid-row" id="accounts-header">
+    <div class="column-half">
+      &nbsp;
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2016</h2>
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2015</h2>
+    </div>
+  </div>
+
+
+
+<form action="/" method="post" class="form">
+
+
+
+  <!--Start balance at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">At 1 June 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total amount of revaluation reserve (surplus or deficit) at the start of the financial period.</p>
+            <p>The figure is typically pre-populated with the revaluation reserve figure entered in your balance sheet for the previous year.</p>
+            <p>If the revaluation results in a deficit (reduction in value) of the asset, then a negative value will be entered using a minus sign.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="balance-at-start-current"><span class="visuallyhidden">Balance at 1 June 2015 (current year)</span>
+          <input type="number" class="form-control" id="balance-at-start-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="balance-at-start-previous"><span class="visuallyhidden">Balance at 1 June 2015 (previous year)</span>
+          <input type="number" class="form-control" id="balance-at-start-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End balance at start-->
+
+  <!--Start Surplus or deficit arising from revaluation  -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Surplus or deficit arising from revaluation</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cumulative surplus or deficit (increase or reduction) in the value of your company's tangible (physical) and intangible (non-physical) assets following a revaluation. For example, an increase in the value of land following a revaluation.</p>
+            <p>If the revaluation results in a deficit (reduction in value) of the asset, then enter a negative value using a minus sign.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="surplus-or-deficit-arising-from-revaluation-current"><span class="visuallyhidden">Surplus or deficit arising from revaluation (current year)</span>
+          <input type="number" class="form-control" id="surplus-or-deficit-arising-from-revaluation-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="surplus-or-deficit-arising-from-revaluation-revious"><span class="visuallyhidden">~Surplus or deficit arising from revaluation (previous year)</span>
+          <input type="number" class="form-control" id="surplus-or-deficit-arising-from-revaluation-previous">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Surplus or deficit arising from revaluation  -->
+
+  <!--Start balance at end-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">At 31 May 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total amount of revaluation reserve at the end of the accounting period.</p>
+          <p>This is calculated by adding together the revaluation reserve at the start of the accounting period and the surplus arising from revaluations (or subtracting the deficit arising from revaluations).</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="balance-at-end-current"><span class="visuallyhidden">Balance at 31 May 2016 (current year)</span>
+          <input type="number" class="form-control" id="balance-at-end-current">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="balance-at-end-previous"><span class="visuallyhidden">Balance at 31 May 2016 (previous year)</span>
+          <input type="number" class="form-control" id="other-balance-at-end-previous">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End balance at end--->
+
+
+
+
+
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Additional information (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
+        <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="cato-style-balance-sheet-notes">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
