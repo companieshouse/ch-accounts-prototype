@@ -1,0 +1,128 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Review your filing
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<main id="content" role="main" class="two-column-accounts">
+<div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a class="link-back" href="cato-style-balance-sheet">Back</a>
+
+  <h1 class="heading-xlarge">Review your filing</h1>
+
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Review your filing</caption>
+    <thead>
+      <tr>
+        <th class="complete"></th>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet</h2></th>
+        <th class="change-answer"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Balance sheet figures completed</td>
+        <td class="change-answer"><a href="cato-style-financial-commitments">Change <span class="visuallyhidden">Balance sheet figures</span></a></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Balance sheet statements completed</td>
+        <td class="change-answer"><a href="cato-style-loans-to-directors">Change <span class="visuallyhidden">Balance sheet statements</span></a></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th class="complete"></th>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Notes to the accounts</h2></th>
+        <th class="change-answer"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Accounting policies</td>
+        <td class="change-answer"><a href="cato-style-accounting-policies-check">Change<span class="visuallyhidden">Accounting policies</span></a></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Profit before tax</td>
+        <td class="change-answer"><a href="cato-style-profit-before-tax">Change<span class="visuallyhidden">Profit before tax</span></a></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Dividends</td>
+        <td class="change-answer"><a href="cato-style-dividends">Change<span class="visuallyhidden">Dividends</span></a></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Employees</td>
+        <td class="change-answer"><a href="cato-style-employees">Change<span class="visuallyhidden">Employees</span></a></td>
+      </tr>
+        <tr>
+          <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+          <td>Intangible assets</td>
+          <td class="change-answer"><a href="cato-style-intangible-assets-select">Change<span class="visuallyhidden">Intangible assets</span></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+          <td>Tangible assets</td>
+          <td class="change-answer"><a href="cato-style-tangible-assets-select">Change<span class="visuallyhidden">Tangible assets</span></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+          <td>Called up share capital</td>
+          <td class="change-answer"><a href="cato-style-called-up-share-capital">Change<span class="visuallyhidden">Called up share capital</span></a></td>
+        </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th class="complete"></th>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Approve accounts</h2></th>
+        <th class="change-answer"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Statutory accounts approved by <span class="heading-small">Joe Bloggs</span>, date of approval  <span class="heading-small">1 January 2016</span></td>
+        <td class="change-answer"><a href="cato-style-financial-commitments">Change <span class="visuallyhidden">Balance sheet figures</span></a></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Statutory accounts approved by  <span class="heading-small">John Doe</span>, date of approval  <span class="heading-small">1 January 2016</span></td>
+        <td class="change-answer"><a href="cato-style-loans-to-directors">Change <span class="visuallyhidden">Balance sheet statements</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div class="form-group">
+    <p><a href="cato-style-submission" class="button">Submit your accounts</a></p>
+  </div>
+
+</main>
+
+{% endblock %}
