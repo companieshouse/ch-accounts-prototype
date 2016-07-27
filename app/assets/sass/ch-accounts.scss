@@ -25,7 +25,7 @@
   .form-control {width: 100%;}
   .heading-small {margin: 0;}
   input[type="number"] {
-      text-align: right;
+    text-align: right;
   }
   table.check-your-answers {
     thead th {padding: 2em 0 1em;
@@ -35,12 +35,17 @@
         margin: 0;
       }
     }
-    th.check-your-answers-section {width: 45%;}
+    th.check-your-answers-section {width: 75%;}
     tr.total td {font-weight: 700;}
     td.numeric {font-family: inherit; font-size: inherit; padding-right: 0;}
     th.notes,
     td.notes {
       width: 15%;
+    }
+
+    th.current-year-note-value,
+    th.previous-year-note-value {
+    //  text-align: right;
     }
 
     th.complete,
