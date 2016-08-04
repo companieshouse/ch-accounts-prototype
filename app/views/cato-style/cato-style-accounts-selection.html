@@ -1,0 +1,106 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Confirm your company account dates
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+<a class="link-back" href="cato-style-start-page">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Confirm your company account dates</h1>
+      <p>Our records show you need to file accounts for for the period:</p>
+      <span class="heading-medium">31 December 2015 to 31 March 2016</span>
+      <p class="form-hint">These should be the dates you have prepared your accounts to.</p>
+
+      <h2 class="heading-medium">Are these the dates you want to file your accounts for?</h2>
+      <form>
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Are these the dates you want to file your accounts for?</legend>
+
+        <div class="form-group">
+
+          <label class="block-label" for="dates-yes">
+            <input id="dates-yes" type="radio" name="confirm-dates" value="Yes">
+            Yes
+          </label>
+
+          <label class="block-label" data-target="dates-no-reveal" for="dates-no">
+            <input id="dates-no" type="radio" name="confirm-dates" value="No">
+            No
+          </label>
+          <div class="panel panel-border-narrow js-hidden" id="dates-no-reveal">
+            <p>You can change the end date of the period you're filing for by up to 7 days.</p>
+            <div class="form-group">
+              <fieldset>
+                <legend>
+                  <span class="form-label-bold">
+                    Enter a new end date
+                  </span>
+                  <span id="new-end-date-hint" class="form-hint">For example, 31 3 2016</span>
+                </legend>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="new-end-date-day" class="form-label">Day</label>
+                    <input type="number" aria-describedby="new-end-date-hint" max="31" min="0" pattern="[0-9]*" name="new-end-date-day" id="new-end-date-day" class="form-control">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label for="new-end-date-month" class="form-label">Month</label>
+                    <input type="number" max="12" min="0" pattern="[0-9]*" name="new-end-date-month" id="new-end-date-month" class="form-control">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label for="new-end-date-year" class="form-label">Year</label>
+                    <input type="number" max="2016" min="0" pattern="[0-9]*" name="new-end-date-year" id="new-end-date-year" class="form-control">
+                  </div>
+                </div>
+              </fieldset>
+            </div><!--form-group-->
+            <p>To change this date by more than 7 days, or to change the start date of the period you want to file for, you need to...</p>
+          </div>
+
+        </div>
+
+      </fieldset>
+    </form>
+
+
+      <p><a class="button" href="cato-style-about-your-business" role="button">Continue to about your business</a></p>
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}

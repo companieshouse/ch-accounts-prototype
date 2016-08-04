@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-   Accounts
+   About your business
 {% endblock %}
 
 {% block proposition_header %}
@@ -36,33 +36,35 @@
 
 <div class="text">
 
-<a class="link-back" href="/chs/chs-profile-page-logged-in">Back</a>
+<a class="link-back" href="cato-style-accounts-selection">Back</a>
 
 
 
-      <h1 class="heading-xlarge">Accounts</h1>
-      <p>This service provides for the minimum statutory filing only (a balance sheet and, if applicable, related notes).</p>
-      <details>
-        <summary><span class="summary">I want to file something different</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>Something about filing using CATO or software filing</p>
-        </div>
-      </details>
-      <br>
-      <p>You can't use this service if your accounts are being audited.</p>
-      <details>
-        <summary><span class="summary">My accounts are audited</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>Something about filing using CATO or software filing</p>
-        </div>
-      </details>
+      <h1 class="heading-xlarge">About your business</h1>
+      <p>Your answers to these questions will help us provide you with the correct type of filing.</p>
 
-      <h2 class="heading-medium">Before you start</h2>
-      <p>You'll need your accounts already prepared, with figures rounded to whole numbers.</p>
+      <h2 class="heading-medium">Was your tunrover?</h2>
+
+      <form>
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Do you already have a personal user account?</legend>
+
+        <label class="block-label" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+          Yes
+        </label>
+        <label class="block-label" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+          No
+        </label>
+
+      </fieldset>
+      </form>
 
 
 
-      <p><a class="button" href="cato-style-accounts-dates" role="button">Continue to company account dates</a></p>
+      <p><a class="button" href="cato-style-accounts-selection" role="button">Continue</a></p>
 
   </div><!-- text-->
 
