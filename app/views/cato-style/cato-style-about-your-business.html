@@ -33,7 +33,7 @@
 </nav>
 
 <p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
-
+<form>
 <div class="text">
 
 <a class="link-back" href="cato-style-accounts-selection">Back</a>
@@ -43,31 +43,71 @@
       <h1 class="heading-xlarge">About your business</h1>
       <p>Your answers to these questions will help us provide you with the correct type of filing.</p>
 
-      <h2 class="heading-medium">Was your tunrover?</h2>
 
-      <form>
+      <h2 class="heading-medium">Was your turnover £632,000 or less?</h2>
+
+      <div class="form-group">
       <fieldset class="inline">
 
-        <legend class="visuallyhidden">Do you already have a personal user account?</legend>
+        <legend class="visuallyhidden">Was your turnover £632,000 or less?</legend>
 
-        <label class="block-label" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label class="block-label" for="turnover-yes">
+          <input id="turnover-yes" type="radio" name="turnover" value="Yes">
           Yes
         </label>
-        <label class="block-label" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label class="block-label" for="turnover-no">
+          <input id="turnover-no" type="radio" name="turnover" value="No">
           No
         </label>
 
       </fieldset>
-      </form>
+
+      <h2 class="heading-medium">Was your balance sheet £316,000 or less?</h2>
+
+
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Was your balance sheet £316,000 or less?</legend>
+
+        <label class="block-label" for="balance-sheet-yes">
+          <input id="balance-sheet-yes" type="radio" name="balance-sheet" value="Yes">
+          Yes
+        </label>
+        <label class="block-label" for="balance-sheet-no">
+          <input id="balance-sheet-no" type="radio" name="balance-sheet" value="No">
+          No
+        </label>
+
+      </fieldset>
+
+      <h2 class="heading-medium">Did you have an average of 10 employees or fewer during the period?</h2>
+
+
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Did you have an average of 10 employees or fewer during the period?</legend>
+
+        <label class="block-label" for="employees-yes">
+          <input id="employees-yes" type="radio" name="employees" value="Yes">
+          Yes
+        </label>
+        <label class="block-label" for="employees-no">
+          <input id="employees-no" type="radio" name="employees" value="No">
+          No
+        </label>
+
+      </fieldset>
+    </div><!--form-group-->
 
 
 
-      <p><a class="button" href="cato-style-accounts-selection" role="button">Continue</a></p>
 
+      <div class="form-group">
+        <a class="button" href="cato-style-choose-micros" role="button">Continue</a>
+      </div><!--form-group-->
   </div><!-- text-->
-
+</form>
 </main>
+<a href="/cato-style/cato-style-choose-full-or-abridged" style="max-width:960px; margin: 0 auto 1em; display:block; color:grey">Ineligible</a>
 
 {% endblock %}

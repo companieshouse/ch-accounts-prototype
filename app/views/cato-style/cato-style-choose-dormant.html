@@ -1,0 +1,95 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Was the company dormant for the entire year you're filing for?
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+<div class="text">
+  <form action="/cato-style/cato-style-start-page-dormant" method="get" class="form">
+
+<a class="link-back" href="cato-style-choose-micros">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Was the company dormant for the entire year you're filing for?</h1>
+
+      <p class="form-hint">Some text explaining why this question matters. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+      <br>
+
+
+
+      <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Was the company dormant for the entire year you're filing for?</legend>
+
+        <label class="block-label" for="dormant-yes">
+          <input id="dormant-yes" type="radio" name="dormant" value="dormant-yes">
+          Yes
+        </label>
+        <label class="block-label" for="dormant-no">
+          <input id="dormant-no" type="radio" name="dormant" value="dormant-no">
+          No
+        </label>
+
+      </fieldset>
+
+    </div><!--form-group-->
+
+    <details class="form-group">
+
+    <summary><span class="summary">Not sure if your company was dormant?</span></summary>
+
+    <div class="panel panel-border-narrow">
+      <p>Companies House considers your company to be dormant if it had no transactions in the financial year that you'd be expected to include in your accounts.</p>
+      <p>Your company would still be dormant if you made the following transactions (you wouldn't include these in your accounts):</p>
+      <ul class="list list-bullet">
+          <li>filing fees paid to Companies House</li>
+          <li>penalties for filing the accounts late</li>
+          <li>money paid for shares when the company was incorporated</li>
+      </ul>
+    </div>
+
+  </details>
+
+
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div><!--form-group-->
+      </form>
+  </div><!-- text-->
+
+
+</main>
+
+{% endblock %}

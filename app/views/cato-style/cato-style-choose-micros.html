@@ -1,0 +1,83 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Micro-entity accounts
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<div class="text">
+  <form action="/cato-style/cato-style-choose-dormant" method="get" class="form">
+
+<a class="link-back" href="cato-style-about-your-business">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Your company is eligible to file micro-entity accounts</h1>
+
+
+      <p class="form-hint">Some text explaining why the user might (or might not) want to choose to file micro-entity accounts. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+
+
+      <h2 class="heading-medium">Do you want to file micro-entity accounts?</h2>
+
+      <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Do you want to file micro-entity accounts?</legend>
+
+        <label class="block-label" for="micro-yes">
+          <input id="micro-yes" type="radio" name="micro" value="micros-yes">
+          Yes
+        </label>
+        <label class="block-label" for="micro-no">
+          <input id="micro-no" type="radio" name="micro" value="micros-no">
+          No
+        </label>
+
+      </fieldset>
+
+    </div><!--form-group-->
+
+
+
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div><!--form-group-->
+    </form>
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}

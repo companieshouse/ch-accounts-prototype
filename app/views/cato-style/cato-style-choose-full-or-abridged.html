@@ -1,0 +1,79 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Abridged or full accounts
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+<form>
+<div class="text">
+
+<a class="link-back" href="cato-style-about-your-business">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Your company is eligible to file abridged or full accounts</h1>
+
+      <p class="form-hint">Some text explaining why the user might (or might not) want to choose to file abridged or full accounts. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+
+
+      <h2 class="heading-medium">Which type of accounts do you want to file?</h2>
+
+      <div class="form-group">
+      <fieldset>
+
+        <legend class="visuallyhidden">Which type of accounts do you want to file?</legend>
+
+        <label class="block-label" for="abridged-yes">
+          <input id="abridged-yes" type="radio" name="abridged-or-full" value="abridged">
+          Abridged accounts
+        </label>
+        <label class="block-label" for="full-yes">
+          <input id="full-yes" type="radio" name="abridged-or-full" value="full">
+          Full accounts
+        </label>
+
+      </fieldset>
+
+    </div><!--form-group-->
+
+
+
+
+      <div class="form-group">
+        <a class="button" href="cato-style-choose-dormant" role="button">Continue</a>
+      </div><!--form-group-->
+  </div><!-- text-->
+</form>
+
+</main>
+
+{% endblock %}

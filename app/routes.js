@@ -39,22 +39,43 @@ router.get('/examples/over-18', function (req, res) {
 
 });
 
-// add your routes here
+// Micro-account yes or no
 
-router.get('cato-style/cato-style-intangible-assets-select', function (req, res) {
+router.get('/cato-style/cato-style-choose-dormant', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)
-  var intangibleassets = req.query.intangibleassets;
+  var micro = req.query.micro;
 
-  if (intangibleassets == "goodwill"){
+  if (micro == "micros-no"){
 
     // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-intangible-assets-goodwill");
+    res.redirect("/cato-style/cato-style-choose-full-or-abridged");
 
   } else {
 
     // if over18 is any other value (or is missing) render the page requested
-    res.render('cato-style/cato-style-intangible-assets-other');
+    res.render('cato-style/cato-style-choose-dormant');
+
+  }
+
+});
+
+// Micro-account > Dormant yes or no
+
+router.get('/cato-style/cato-style-start-page-dormant', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var dormant = req.query.dormant;
+
+  if (dormant == "dormant-no"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-micros");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-start-page-dormant');
 
   }
 
