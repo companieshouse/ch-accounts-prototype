@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-   Abridged or full accounts
+   Filing full or abridged accounts
 {% endblock %}
 
 {% block proposition_header %}
@@ -33,17 +33,19 @@
 </nav>
 
 <p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
-<form>
 <div class="text">
+  <form action="/cato-style/cato-style-choose-dormant-abridged" method="get" class="form">
 
 <a class="link-back" href="cato-style-about-your-business">Back</a>
 
+      <h1 class="heading-xlarge">Filing full or abridged accounts</h1>
 
-
-      <h1 class="heading-xlarge">Your company is eligible to file abridged or full accounts</h1>
-
-      <p class="form-hint">Some text explaining why the user might (or might not) want to choose to file abridged or full accounts. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
-
+      <p>If your company:</p>
+      <ul class="list list-bullet">
+        <li>does not qualify as a micro-entity, or</li>
+        <li>qualifies as a micro-entity but you do not wish to file micro-entity accounts</li>
+      </ul>
+      <p>you have two options regarding filing accounts with Companies House: abridged accounts or full accounts.</p>
 
       <h2 class="heading-medium">Which type of accounts do you want to file?</h2>
 
@@ -53,12 +55,14 @@
         <legend class="visuallyhidden">Which type of accounts do you want to file?</legend>
 
         <label class="block-label" for="abridged-yes">
-          <input id="abridged-yes" type="radio" name="abridged-or-full" value="abridged">
+          <input id="abridged-yes" type="radio" name="abridgedfull" value="abridged-yes">
           Abridged accounts
+          <span class="form-hint">You can prepare/file abridged accounts if all of the shareholders of the company agree. Abridged accounts require less disclosure than full accounts</span>
         </label>
         <label class="block-label" for="full-yes">
-          <input id="full-yes" type="radio" name="abridged-or-full" value="full">
+          <input id="full-yes" type="radio" name="abridgedfull" value="full-yes">
           Full accounts
+          <span class="form-hint">This is the maximum level of disclosure required for filing with Companies House</span>
         </label>
 
       </fieldset>
@@ -69,10 +73,11 @@
 
 
       <div class="form-group">
-        <a class="button" href="cato-style-choose-dormant" role="button">Continue</a>
+        <input type="submit" class="button" value="Continue">
       </div><!--form-group-->
-  </div><!-- text-->
 </form>
+</div><!-- text-->
+
 
 </main>
 

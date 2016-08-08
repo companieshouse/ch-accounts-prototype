@@ -60,7 +60,28 @@ router.get('/cato-style/cato-style-choose-dormant', function (req, res) {
 
 });
 
-// Micro-account > Dormant yes or no
+// Full or abridged
+
+router.get('/cato-style/cato-style-choose-dormant-abridged', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var abridgedfull = req.query.abridgedfull;
+
+  if (abridgedfull == "full-yes"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-choose-dormant-full");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-choose-dormant-abridged');
+
+  }
+
+});
+
+// Micro-accounts > Dormant yes or no
 
 router.get('/cato-style/cato-style-start-page-dormant', function (req, res) {
 
@@ -80,6 +101,50 @@ router.get('/cato-style/cato-style-start-page-dormant', function (req, res) {
   }
 
 });
+
+// Full accounts > Dormant yes or no
+
+router.get('/cato-style/cato-style-start-page-dormant-full', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var dormant = req.query.dormant;
+
+  if (dormant == "dormant-no"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-full");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-start-page-dormant-full');
+
+  }
+
+});
+
+// Abridged accounts > Dormant yes or no
+
+router.get('/cato-style/cato-style-start-page-dormant-abridged', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var dormant = req.query.dormant;
+
+  if (dormant == "dormant-no"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-abridged");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-start-page-dormant-abridged');
+
+  }
+
+});
+
+
 
 
 
