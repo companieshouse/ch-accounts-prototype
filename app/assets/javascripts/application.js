@@ -125,3 +125,13 @@ $(document).ready(function() {
   toggleContent.showHideCheckboxToggledContent();
 
 });
+
+//Balance sheet statements
+$(function(){
+  $('#confirmation').on('change',function(){
+     $('.confirmation-child').prop('checked',$(this).prop('checked'));
+  });
+  $('.confirmation-child').on('change',function(){
+     $('#confirmation').prop('checked',$('.confirmation-child:checked').length ? true: false);
+  });
+});
