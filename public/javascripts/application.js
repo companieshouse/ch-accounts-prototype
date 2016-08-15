@@ -135,3 +135,14 @@ $(function(){
      $('#confirmation').prop('checked',$('.confirmation-child:checked').length ? true: false);
   });
 });
+
+//About your business (2 from 3 for Micro eligibility)
+$('.micro-eligibility').click(function() {
+  if($('input[type=radio][value="Yes"]:checked').length > 1) {
+    window.location.replace("/cato-style/cato-style-choose-micros");
+  }
+ else {
+   window.location.replace("/cato-style/cato-style-choose-full-or-abridged");
+ }
+ return false;
+});
