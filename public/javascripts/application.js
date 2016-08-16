@@ -137,6 +137,17 @@ $(function(){
 });
 
 //About your business (2 from 3 for Micro eligibility)
+$('.micro-eligibility-questions').click(function(){
+  if($(this).find('input[type="radio"]:checked').length > 2)
+    {
+       $(".button").removeClass("disabled");
+    }
+  else
+    {
+      //$(".button").addClass("disabled");
+    }
+});
+
 $('.micro-eligibility').click(function() {
   if($('input[type=radio][value="Yes"]:checked').length > 1) {
     window.location.replace("/cato-style/cato-style-choose-micros");
