@@ -75,7 +75,7 @@ $(document).ready(function() {
        var total = +totalfixedassetscurrent + +netcurrentassetsliabilitiescurrent;
        $('#total-assets-less-current-liabilities-current').val(total);
      }
-     $('#total-fixed-assets-current, #net-current-assets-liabilities-current').change(compute);
+     $('#total-fixed-assets-current, #net-current-assets-liabilities-current, #creditors-amounts-falling-due-within-one-year-current').change(compute);
 });
 
 // Total assets less current liabilities (previous year))
@@ -86,7 +86,7 @@ $(document).ready(function() {
        var total = +totalfixedassetsprevious + +netcurrentassetsliabilitiesprevious;
        $('#total-assets-less-current-liabilities-previous').val(total);
      }
-     $('#total-fixed-assets-previous, #net-current-assets-liabilities-previous').change(compute);
+     $('#total-fixed-assets-previous, #net-current-assets-liabilities-previous, #creditors-amounts-falling-due-within-one-year-previous').change(compute);
 });
 
 //Total net assets (liabilities)  (current year)
