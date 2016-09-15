@@ -3,10 +3,11 @@ $(document).ready(function() {
   function compute() {
        var intangibleassetscurrent = $('#intangible-assets-current').val();
        var tangibleassetscurrent = $('#tangible-assets-current').val();
-       var total = +intangibleassetscurrent + +tangibleassetscurrent;
+       var investmentsfixedassetscurrent = $('#investments-fixed-assets-current').val();
+       var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent;
        $('#total-fixed-assets-current').val(total);
      }
-     $('#intangible-assets-current, #tangible-assets-current').change(compute);
+     $('#intangible-assets-current, #tangible-assets-current, #investments-fixed-assets-current').change(compute);
 });
 
 // Total fixed assets (previous year))
@@ -14,10 +15,11 @@ $(document).ready(function() {
   function compute() {
        var intangibleassetsprevious = $('#intangible-assets-previous').val();
        var tangibleassetsprevious = $('#tangible-assets-previous').val();
-       var total = +intangibleassetsprevious + +tangibleassetsprevious;
+       var investmentsfixedassetsprevious = $('#investments-fixed-assets-previous').val();
+       var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious;
        $('#total-fixed-assets-previous').val(total);
      }
-     $('#intangible-assets-previous, #tangible-assets-previous').change(compute);
+     $('#intangible-assets-previous, #tangible-assets-previous, #investments-fixed-assets-previous').change(compute);
 });
 
 // Total current assets (current year))
@@ -26,10 +28,11 @@ $(document).ready(function() {
        var stockscurrent = $('#stocks-current').val();
        var debtorscurrent = $('#debtors-current').val();
        var cashatbankandinhandcurrent = $('#cash-at-bank-and-in-hand-current').val();
-       var total = +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent;
+       var investmentscurrentassetscurrent = $('#investments-current-assets-current').val();
+       var total = +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent;
        $('#total-current-assets-current').val(total);
      }
-     $('#stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current').change(compute);
+     $('#stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current, #investments-current-assets-current').change(compute);
 });
 
 // Total current assets (previous year))
@@ -38,10 +41,11 @@ $(document).ready(function() {
        var stocksprevious = $('#stocks-previous').val();
        var debtorsprevious = $('#debtors-previous').val();
        var cashatbankandinhandprevious = $('#cash-at-bank-and-in-hand-previous').val();
-       var total = +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious;
+       var investmentscurrentassetsprevious = $('#investments-current-assets-previous').val();
+       var total = +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious + +investmentscurrentassetsprevious;
        $('#total-current-assets-previous').val(total);
      }
-     $('#stocks-previous, #debtors-previous, #cash-at-bank-and-in-hand-previous').change(compute);
+     $('#stocks-previous, #debtors-previous, #cash-at-bank-and-in-hand-previous, #investments-current-assets-previous').change(compute);
 });
 
 // Net current assets (liabilities) (current year))
@@ -118,11 +122,13 @@ $(document).ready(function() {
   function compute() {
        var calledupsharecapitalcurrent = $('#called-up-share-capital-current').val();
        var revaluationreservecurrent = $('#revaluation-reserve-current').val();
+       var sharepremiumaccountcurrent = $('#share-premium-account-current').val();
        var profitandlossaccountcurrent = $('#profit-and-loss-account-current').val();
-       var total = +calledupsharecapitalcurrent + +revaluationreservecurrent + +profitandlossaccountcurrent;
+       var otherreservescurrent = $('#other-reserves-current').val();
+       var total = +calledupsharecapitalcurrent + +revaluationreservecurrent + +sharepremiumaccountcurrent + +profitandlossaccountcurrent + +otherreservescurrent;
        $('#total-shareholders-funds-current').val(total);
      }
-     $('#called-up-share-capital-current, #revaluation-reserve-current, #profit-and-loss-account-current').change(compute);
+     $('#called-up-share-capital-current, #revaluation-reserve-current, #share-premium-account-current, #profit-and-loss-account-current, #other-reserves-current').change(compute);
 });
 
 // Total shareholders' funds (previous year)
@@ -130,9 +136,11 @@ $(document).ready(function() {
   function compute() {
        var calledupsharecapitalprevious = $('#called-up-share-capital-previous').val();
        var revaluationreserveprevious = $('#revaluation-reserve-previous').val();
+       var sharepremiumaccountprevious = $('#share-premium-account-previous').val();
        var profitandlossaccountprevious = $('#profit-and-loss-account-previous').val();
-       var total = +calledupsharecapitalprevious + +revaluationreserveprevious + +profitandlossaccountprevious;
+       var otherreservesprevious = $('#other-reserves-previous').val();
+       var total = +calledupsharecapitalprevious + +revaluationreserveprevious + +sharepremiumaccountprevious + +profitandlossaccountprevious + +otherreservesprevious;
        $('#total-shareholders-funds-previous').val(total);
      }
-     $('#called-up-share-capital-previous, #revaluation-reserve-previous, #profit-and-loss-account-previous').change(compute);
+     $('#called-up-share-capital-previous, #revaluation-reserve-previous, #share-premium-account-previous, #profit-and-loss-account-previous, #other-reserves-previous').change(compute);
 });
