@@ -144,7 +144,32 @@ router.get('/cato-style/cato-style-start-page-dormant-abridged', function (req, 
 
 });
 
+// Choose type of accounts
 
+router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
+
+  var choosetypeaccounts = req.query.choosetypeaccounts;
+
+    if (choosetypeaccounts == "micro"){
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-micros");
+
+    } else   if (choosetypeaccounts == "full"){
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-full");
+
+
+      } else if (choosetypeaccounts == "dormant"){
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-dormant");
+
+  } else {
+
+    res.render('cato-style/cato-style-start-page-abridged');
+
+  }
+
+});
 
 
 
