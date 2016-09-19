@@ -121,26 +121,26 @@ $(document).ready(function() {
 $(document).ready(function() {
   function compute() {
        var calledupsharecapitalcurrent = $('#called-up-share-capital-current').val();
-       var revaluationreservecurrent = $('#revaluation-reserve-current').val();
        var sharepremiumaccountcurrent = $('#share-premium-account-current').val();
-       var profitandlossaccountcurrent = $('#profit-and-loss-account-current').val();
+       var revaluationreservecurrent = $('#revaluation-reserve-current').val();
        var otherreservescurrent = $('#other-reserves-current').val();
-       var total = +calledupsharecapitalcurrent + +revaluationreservecurrent + +sharepremiumaccountcurrent + +profitandlossaccountcurrent + +otherreservescurrent;
+       var profitandlossaccountcurrent = $('#profit-and-loss-account-current').val();
+       var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +revaluationreservecurrent + +otherreservescurrent + +profitandlossaccountcurrent;
        $('#total-shareholders-funds-current').val(total);
      }
-     $('#called-up-share-capital-current, #revaluation-reserve-current, #share-premium-account-current, #profit-and-loss-account-current, #other-reserves-current').change(compute);
+     $('#called-up-share-capital-current, #share-premium-account-current, #revaluation-reserve-current, #other-reserves-current, #profit-and-loss-account-current').change(compute);
 });
 
 // Total shareholders' funds (previous year)
 $(document).ready(function() {
   function compute() {
        var calledupsharecapitalprevious = $('#called-up-share-capital-previous').val();
-       var revaluationreserveprevious = $('#revaluation-reserve-previous').val();
        var sharepremiumaccountprevious = $('#share-premium-account-previous').val();
-       var profitandlossaccountprevious = $('#profit-and-loss-account-previous').val();
+       var revaluationreserveprevious = $('#revaluation-reserve-previous').val();
        var otherreservesprevious = $('#other-reserves-previous').val();
-       var total = +calledupsharecapitalprevious + +revaluationreserveprevious + +sharepremiumaccountprevious + +profitandlossaccountprevious + +otherreservesprevious;
+       var profitandlossaccountprevious = $('#profit-and-loss-account-previous').val();
+       var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +revaluationreserveprevious + +otherreservesprevious + +profitandlossaccountprevious;
        $('#total-shareholders-funds-previous').val(total);
      }
-     $('#called-up-share-capital-previous, #revaluation-reserve-previous, #share-premium-account-previous, #profit-and-loss-account-previous, #other-reserves-previous').change(compute);
+     $('#called-up-share-capital-previous, #share-premium-account-previous, #revaluation-reserve-previous, #other-reserves-previous, #profit-and-loss-account-previous').change(compute);
 });

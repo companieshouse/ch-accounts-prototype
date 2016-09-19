@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %}
+ {% extends "layout-chs.html" %}
 
 {% block page_title %}
   Balance sheet
@@ -576,6 +576,36 @@
           </div>
           <!--End called up share capital-->
 
+
+          <!--Start share premium account-->
+          <div class="grid-row">
+            <div class="column-half">
+                <details>
+                  <summary><span class="summary">Share premium account</span></summary>
+                  <div class="panel panel-border-narrow">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                  </div>
+                </details>
+            </div>
+
+            <div class="column-quarter">
+              <div class="form-group">
+                <label for="share-premium-account-current"><span class="visuallyhidden">Share premium account (current year)</span>
+                  <input type="number" class="form-control" id="share-premium-account-current">
+                </label>
+              </div>
+            </div>
+            <div class="column-quarter">
+              <div class="form-group">
+                <label class="form-label" for="share-premium-account-previous"><span class="visuallyhidden">Share premium account (previous year)</span>
+                  <input type="number" class="form-control" id="share-premium-account-previous">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End share premium account-->
+
+
           <!--Start revaluation reserve-->
           <div class="grid-row">
             <div class="column-half">
@@ -605,11 +635,11 @@
           <!--End revaluation reserve-->
 
 
-          <!--Start share premium account-->
+          <!--Start other reserves-->
           <div class="grid-row">
             <div class="column-half">
                 <details>
-                  <summary><span class="summary">Share premium account</span></summary>
+                  <summary><span class="summary">Other reserves</span></summary>
                   <div class="panel panel-border-narrow">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
                   </div>
@@ -618,20 +648,20 @@
 
             <div class="column-quarter">
               <div class="form-group">
-                <label for="share-premium-account-current"><span class="visuallyhidden">Share premium account (current year)</span>
-                  <input type="number" class="form-control" id="share-premium-account-current">
+                <label for="other-reserves-current"><span class="visuallyhidden">Other reserves (current year)</span>
+                  <input type="number" class="form-control" id="other-reserves-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
-                <label class="form-label" for="share-premium-account-previous"><span class="visuallyhidden">Share premium account (previous year)</span>
-                  <input type="number" class="form-control" id="share-premium-account-previous">
+                <label class="form-label" for="other-reserves-previous"><span class="visuallyhidden">Other reserves (previous year)</span>
+                  <input type="number" class="form-control" id="other-reserves-previous">
                 </label>
               </div>
             </div>
           </div>
-          <!--End share premium account-->
+          <!--End other reserves-->
 
 
           <!--Start profit and loss account-->
@@ -664,33 +694,7 @@
 
 
 
-          <!--Start other reserves-->
-          <div class="grid-row">
-            <div class="column-half">
-                <details>
-                  <summary><span class="summary">Other reserves</span></summary>
-                  <div class="panel panel-border-narrow">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
-                  </div>
-                </details>
-            </div>
 
-            <div class="column-quarter">
-              <div class="form-group">
-                <label for="other-reserves-current"><span class="visuallyhidden">Other reserves (current year)</span>
-                  <input type="number" class="form-control" id="other-reserves-current">
-                </label>
-              </div>
-            </div>
-            <div class="column-quarter">
-              <div class="form-group">
-                <label class="form-label" for="other-reserves-previous"><span class="visuallyhidden">Other reserves (previous year)</span>
-                  <input type="number" class="form-control" id="other-reserves-previous">
-                </label>
-              </div>
-            </div>
-          </div>
-          <!--End other reserves-->
 
 
 
