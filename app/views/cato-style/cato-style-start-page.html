@@ -41,8 +41,10 @@
 
 
       <h1 class="heading-xlarge">File your accounts</h1>
-      <p class="heading-small">This service provides for the minimum statutory filing only (a balance sheet and related notes).</p>
-      <details open="open">
+      <form action="/cato-style/cato-style-accounts-dates" method="get" class="form">
+
+      <p class="heading-small form-group">This service provides for the minimum statutory filing only (a balance sheet and related notes).</p>
+      <details>
         <summary><span class="summary">I want to file more than the minimum statutory filing</span></summary>
         <div class="panel panel-border-narrow">
           <p>Something about filing using the HMRC <a href="https://www.gov.uk/file-your-company-accounts-and-tax-return" target="_blank">File your accounts and Company Tax Return<span class="visuallyhidden"> Link opens in a new tab/window</span></a> service or Companies House <a href="https://www.gov.uk/government/organisations/companies-house/about/about-our-services#software-filing" target="_blank">software filing<span class="visuallyhidden"> Link opens in a new tab/window</span></a>.</p>
@@ -51,7 +53,7 @@
       <br>
       <p>You can't use this service if your accounts are being audited.</p>
       <details>
-        <summary><span class="summary">My accounts are audited</span></summary>
+        <summary><span class="summary">My accounts are being audited</span></summary>
         <div class="panel panel-border-narrow">
           <p>Something about filing using the HMRC <a href="https://www.gov.uk/file-your-company-accounts-and-tax-return" target="_blank">File your accounts and Company Tax Return<span class="visuallyhidden"> Link opens in a new tab/window</span></a> service or Companies House <a href="https://www.gov.uk/government/organisations/companies-house/about/about-our-services#software-filing" target="_blank">software filing<span class="visuallyhidden"> Link opens in a new tab/window</span></a>.</p>
         </div>
@@ -59,13 +61,29 @@
 
       <h2 class="heading-medium">Before you start</h2>
       <p>You'll need your accounts already prepared, with figures rounded to whole numbers.</p>
+      <fieldset class="form-group">
+
+        <legend class="visuallyhidden">I have my accounts already prepared</legend>
+
+        <label class="block-label" for="accounts-prepared">
+        <input id="accounts-prepared" name="prepared" type="checkbox" value="prepared-yes">
+          I have my accounts already prepared
+        </label>
+      </fieldset>
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue to company account dates" id="accounts-start-button">
+      </div>
+
+            </form>
 
 
 
-      <p><a class="button" href="cato-style-accounts-dates" role="button">Continue to company account dates</a></p>
 
-  </div><!-- text-->
 
-</main>
 
-{% endblock %}
+        </div><!-- text-->
+
+      </main>
+
+      {% endblock %}
