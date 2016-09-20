@@ -36,11 +36,12 @@
 
 <div class="text">
 
-<a class="link-back" href="cato-style-balance-sheet-statements">Back</a>
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
 
       <h1 class="heading-xlarge">Balance sheet statements</h1>
+      <form action="/cato-style/cato-style-balance-sheet-notes" method="get" class="form">
 
       <div class="notice">
       <p>
@@ -54,7 +55,6 @@
            <li>follow the required standards</li>
            <li>don’t need to be audited (reviewed by an independent accountant)</li>
        </ul>
-      <form class="form" method="get" action="">
 
 
         <details>
@@ -118,11 +118,11 @@
       </div>
 
 
-            </form>
       <div class="form-group">
-        <a class="button" href="cato-style-balance-sheet-notes" role="button">Save and continue to Balance Sheet notes</a>
+        <input type="submit" class="button" value="Save and continue to Balance Sheet notes" id="statements-button">
       </div>
 
+    </form>
 
 
 
