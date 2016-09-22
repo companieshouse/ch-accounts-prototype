@@ -1,0 +1,332 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Tangible assets
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+  <h1 class="heading-xlarge">Tangible assets</h1>
+
+
+
+  <form action="/" method="post" class="form" id="">
+
+  <h2 class="heading-medium">Cost</h2>
+
+
+
+  <!--Start Cost at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Cost at 1 April 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-at-start"><span class="visuallyhidden">Cost at 1 April 2015</span>
+          <input type="number" class="form-control" id="tangible-cost-at-start">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Cost at start-->
+
+  <!--Start Additions  -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Additions</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-additions"><span class="visuallyhidden">Additions</span>
+          <input type="number" class="form-control" id="tangible-cost-additions">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Additions  -->
+
+  <!--Start Disposals-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Disposals</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-disposals"><span class="visuallyhidden">Disposals</span>
+          <input type="number" class="form-control" id="tangible-cost-disposals">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Disposals--->
+
+
+
+  <!--Start Transfers-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Transfers</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-transfers"><span class="visuallyhidden">Transfers</span>
+          <input type="number" class="form-control" id="tangible-cost-transfers">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Transfers-->
+
+  <!--Start Cost at end-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Cost at 31 March 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-at-end"><span class="visuallyhidden">Cost at 31 March 2016</span>
+          <input type="number" class="form-control" id="tangible-cost-at-end">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Cost at end--->
+
+
+
+
+  <h2 class="heading-medium">Amortisation</h2>
+
+
+
+  <!--Start Amortisation at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Amortisation at 1 April 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-amortisation-at-start"><span class="visuallyhidden">Amortisation at 1 April 2015</span>
+          <input type="number" class="form-control" id="tangible-amortisation-at-start">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Amortisation at start-->
+
+  <!--Start Additions  -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Additions</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-amortisation-additions"><span class="visuallyhidden">Additions</span>
+          <input type="number" class="form-control" id="tangible-amortisation-additions">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Additions  -->
+
+  <!--Start Charge for year-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Charge for year</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-amortisation-charge-for-year"><span class="visuallyhidden">Charge for year</span>
+          <input type="number" class="form-control" id="tangible-amortisation-charge-for-year">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Charge for year--->
+
+
+
+  <!--Start On disposals-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">On disposals</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-amortisation-on-disposals"><span class="visuallyhidden">On disposals</span>
+          <input type="number" class="form-control" id="tangible-amortisation-on-disposals">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End On disposals-->
+
+  <!--Start Other adjustments-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Other adjustments</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-amortisation-other-adjustments"><span class="visuallyhidden">Other adjustments</span>
+          <input type="number" class="form-control" id="tangible-amortisation-other-adjustments">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Other adjustments-->
+
+  <!--Start Amortisation at end-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Amortisation at 31 March 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-amortisation-at-end"><span class="visuallyhidden">Amortisation at 31 March 2016</span>
+          <input type="number" class="form-control" id="tangible-amortisation-at-end">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Amortisation at end--->
+
+
+    <h2 class="heading-medium">Net book value</h2>
+
+
+
+    <!--Start Amortisation at start-->
+    <div class="grid-row  accounts-total accounts-row-spacer">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Net book value at 31 March 2016</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+            </div>
+          </details>
+      </div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="tangible-net-book-value-end"><span class="visuallyhidden">Net book value at 31 March 2016</span>
+            <input type="number" class="form-control" id="tangible-net-book-value-end">
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End Amortisation at start-->
+
+    <!--Start Additions  -->
+    <div class="grid-row accounts-total">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Net book value at 31 March 2015</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum turpis, ut ornare arcu. Cras finibus diam arcu, at efficitur velit imperdiet in. Cras euismod sem eget odio vehicula, vel hendrerit velit pulvinar. </p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="tangible-net-book-value-start"><span class="visuallyhidden">Net book value at 31 March 2015</span>
+            <input type="number" class="form-control" id="tangible-net-book-value-start">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End Additions  -->
+
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="cato-style-balance-sheet-notes">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
