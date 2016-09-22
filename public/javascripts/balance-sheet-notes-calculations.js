@@ -15,14 +15,13 @@ $(document).ready(function() {
 $(document).ready(function() {
   function compute() {
        var tangibleamortisationatstart = $('#tangible-amortisation-at-start').val();
-       var tangibleamortisationadditions = $('#tangible-amortisation-additions').val();
        var tangibleamortisationchargeforyear = $('#tangible-amortisation-charge-for-year').val();
        var tangibleamortisationondisposals = $('#tangible-amortisation-on-disposals').val();
        var tangibleamortisationotheradjustments = $('#tangible-amortisation-other-adjustments').val();
-       var total = +tangibleamortisationatstart + +tangibleamortisationadditions + +tangibleamortisationchargeforyear + +tangibleamortisationondisposals + +tangibleamortisationotheradjustments;
+       var total = +tangibleamortisationatstart + +tangibleamortisationchargeforyear + +tangibleamortisationondisposals + +tangibleamortisationotheradjustments;
        $('#tangible-amortisation-at-end').val(total);
      }
-     $('#tangible-amortisation-at-start, #tangible-amortisation-additions, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
+     $('#tangible-amortisation-at-start, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
 });
 
 // Tangible assets: net book value end
@@ -33,7 +32,7 @@ $(document).ready(function() {
        var total = +tangiblecostatend - +tangibleamortisationatend;
        $('#tangible-net-book-value-end').val(total);
      }
-     $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers, #tangible-amortisation-at-start, #tangible-amortisation-additions, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
+     $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers, #tangible-amortisation-at-start, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
 });
 
 // Tangible assets: net book value start
@@ -68,14 +67,13 @@ $(document).ready(function() {
 $(document).ready(function() {
   function compute() {
        var intangibleamortisationatstart = $('#intangible-amortisation-at-start').val();
-       var intangibleamortisationadditions = $('#intangible-amortisation-additions').val();
        var intangibleamortisationchargeforyear = $('#intangible-amortisation-charge-for-year').val();
        var intangibleamortisationondisposals = $('#intangible-amortisation-on-disposals').val();
        var intangibleamortisationotheradjustments = $('#intangible-amortisation-other-adjustments').val();
-       var total = +intangibleamortisationatstart + +intangibleamortisationadditions + +intangibleamortisationchargeforyear + +intangibleamortisationondisposals + +intangibleamortisationotheradjustments;
+       var total = +intangibleamortisationatstart + +intangibleamortisationchargeforyear + +intangibleamortisationondisposals + +intangibleamortisationotheradjustments;
        $('#intangible-amortisation-at-end').val(total);
      }
-     $('#intangible-amortisation-at-start, #intangible-amortisation-additions, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);
+     $('#intangible-amortisation-at-start, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);
 });
 
 // Intangible assets: net book value end
@@ -86,7 +84,7 @@ $(document).ready(function() {
        var total = +intangiblecostatend - +intangibleamortisationatend;
        $('#intangible-net-book-value-end').val(total);
      }
-     $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-transfers, #intangible-amortisation-at-start, #intangible-amortisation-additions, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);
+     $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-transfers, #intangible-amortisation-at-start, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);
 });
 
 // Intangible assets: net book value start
