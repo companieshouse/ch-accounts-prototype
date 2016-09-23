@@ -97,3 +97,15 @@ $(document).ready(function() {
      }
      $('#intangible-cost-at-start, #intangible-amortisation-at-start').change(compute);
 });
+
+// Revaluation reserve: End
+
+$(document).ready(function() {
+  function compute() {
+      var revaluationbalanceatstart = $('#revaluation-balance-at-start').val();
+      var surplusordeficitarisingfromrevaluation = $('#surplus-or-deficit-arising-from-revaluation').val();
+       var total = +revaluationbalanceatstart + +surplusordeficitarisingfromrevaluation;
+       $('#revaluation-balance-at-end').val(total);
+     }
+     $('#revaluation-balance-at-start, #surplus-or-deficit-arising-from-revaluation').change(compute);
+});
