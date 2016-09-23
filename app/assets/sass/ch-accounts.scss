@@ -99,3 +99,8 @@ header {
     display: block;
   }
 }
+.subheading {
+  @include core-19;
+  color: $secondary-text-colour;
+  display: block;
+}

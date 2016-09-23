@@ -144,3 +144,21 @@ header span {
     line-height: 1.25;
   }
 }
+
+.subheading {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  color: #6f777b;
+  display: block;
+}
+
+@media (min-width: 641px) {
+  .subheading {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
