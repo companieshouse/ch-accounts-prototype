@@ -1,4 +1,4 @@
-// Tangible assets: Cost AT END
+// Tangible assets note: Cost AT END
 $(document).ready(function() {
   function compute() {
        var tangiblecostatstart = $('#tangible-cost-at-start').val();
@@ -11,7 +11,7 @@ $(document).ready(function() {
      $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers').change(compute);
 });
 
-// Tangible assets: Amortisation AT END
+// Tangible assets note: Amortisation AT END
 $(document).ready(function() {
   function compute() {
        var tangibleamortisationatstart = $('#tangible-amortisation-at-start').val();
@@ -24,7 +24,7 @@ $(document).ready(function() {
      $('#tangible-amortisation-at-start, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
 });
 
-// Tangible assets: net book value end
+// Tangible assets note: net book value end
 $(document).ready(function() {
   function compute() {
        var tangiblecostatend = $('#tangible-cost-at-end').val();
@@ -35,7 +35,7 @@ $(document).ready(function() {
      $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers, #tangible-amortisation-at-start, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
 });
 
-// Tangible assets: net book value start
+// Tangible assets note: net book value start
 $(document).ready(function() {
   function compute() {
       var tangiblecostatstart = $('#tangible-cost-at-start').val();
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 
 
-// Intangible assets: Cost AT END
+// Intangible assets note: Cost AT END
 $(document).ready(function() {
   function compute() {
        var intangiblecostatstart = $('#intangible-cost-at-start').val();
@@ -63,7 +63,7 @@ $(document).ready(function() {
      $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-transfers').change(compute);
 });
 
-// Intangible assets: Amortisation AT END
+// Intangible assets note: Amortisation AT END
 $(document).ready(function() {
   function compute() {
        var intangibleamortisationatstart = $('#intangible-amortisation-at-start').val();
@@ -76,7 +76,7 @@ $(document).ready(function() {
      $('#intangible-amortisation-at-start, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);
 });
 
-// Intangible assets: net book value end
+// Intangible assets note: net book value end
 $(document).ready(function() {
   function compute() {
        var intangiblecostatend = $('#intangible-cost-at-end').val();
@@ -87,7 +87,7 @@ $(document).ready(function() {
      $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-transfers, #intangible-amortisation-at-start, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);
 });
 
-// Intangible assets: net book value start
+// Intangible assets note: net book value start
 $(document).ready(function() {
   function compute() {
       var intangiblecostatstart = $('#intangible-cost-at-start').val();
@@ -98,7 +98,7 @@ $(document).ready(function() {
      $('#intangible-cost-at-start, #intangible-amortisation-at-start').change(compute);
 });
 
-// Revaluation reserve: End
+// Revaluation reserve note: End
 
 $(document).ready(function() {
   function compute() {
@@ -108,4 +108,32 @@ $(document).ready(function() {
        $('#revaluation-balance-at-end').val(total);
      }
      $('#revaluation-balance-at-start, #surplus-or-deficit-arising-from-revaluation').change(compute);
+});
+
+
+
+// Debtors note: current year
+
+$(document).ready(function() {
+  function compute() {
+      var tradedebtorscurrent = $('#trade-debtors-current').val();
+      var prepaymentsandaccruedincomecurrent = $('#prepayments-and-accrued-income-current').val();
+      var otherdebtorscurrent = $('#other-debtors-current').val();
+      var total = +tradedebtorscurrent + +prepaymentsandaccruedincomecurrent + +otherdebtorscurrent;
+       $('#total-debtors-current').val(total);
+     }
+     $('#trade-debtors-current, #prepayments-and-accrued-income-current, #other-debtors-current').change(compute);
+});
+
+// Debtors note: previous year
+
+$(document).ready(function() {
+  function compute() {
+      var tradedebtorsprevious = $('#trade-debtors-previous').val();
+      var prepaymentsandaccruedincomeprevious = $('#prepayments-and-accrued-income-previous').val();
+      var otherdebtorsprevious = $('#other-debtors-previous').val();
+      var total = +tradedebtorsprevious + +prepaymentsandaccruedincomeprevious + +otherdebtorsprevious;
+       $('#total-debtors-previous').val(total);
+     }
+     $('#trade-debtors-previous, #prepayments-and-accrued-income-previous, #other-debtors-previous').change(compute);
 });
