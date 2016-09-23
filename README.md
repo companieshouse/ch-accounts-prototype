@@ -1,4 +1,4 @@
-# GOV.UK Prototype kit
+# File your accounts prototype
 
 ## News
 
@@ -10,11 +10,88 @@ The prototype kit provides a simple way to make interactive prototypes that look
 
 Read the [project principles](docs/principles.md).
 
-## Security
+> You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
 
-If you publish your prototypes online, they **must** be protected by a [username and password](docs/guides/publishing-on-heroku.md). This is to prevent members of the public finding prototypes and thinking they are real services.
+## Installation instructions
 
-You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately. 
+You need Node.js to run this prototype. To check if you have it installed try:
+
+```
+node --version
+```
+
+Your version should be 4.4.2
+
+If you don't have Node, download it here: [http://nodejs.org/](http://nodejs.org/).
+
+## Getting started
+
+#### Install dependencies
+
+Open a command line app (Terminal on OSX) and change to the unzipped directory. Then run:
+
+```
+npm install
+```
+
+npm install by itself doesn't really tell you what it is doing. To see what is happening during install, instead run this:
+
+```
+npm install --verbose
+```
+
+This will install extra code that the prototype kit needs.
+
+#### Run the app
+
+```
+node start.js
+```
+
+Go to [localhost:3000](http://localhost:3000) in your browser.
+
+If you want to view multiple prototypes at the same time you can give them unique port numbers, like this:
+
+```
+PORT=3005 node start.js
+```
+
+To avoid conflicts we recommend using ports between 3000 and 3009. To change the port number permanently, edit the port variable in /server.js.
+
+#### Hot reload
+
+Any code changes should update in the browser without you restarting the app.
+
+## Heroku Deployment
+
+#### Setup Remote - one time activity
+
+Open a command line app (Terminal on OSX) and navigate to repo dir. Then run:
+
+```
+git remote add heroku git@heroku.com:ch-accounts-prototype-dev.git
+```
+
+Check heroku remote is set:
+
+```
+git remote -v
+```
+shows heroku remote set
+```
+heroku	git@heroku.com:ch-accounts-prototype-dev.git (fetch)
+heroku	git@heroku.com:ch-accounts-prototype-dev.git (push)
+```
+
+#### Deploy changes to Heroku
+
+Make sure you push from up to date master branch:
+
+```
+git push heroku master
+```
+
+Go to [https://ch-accounts-prototype-dev.herokuapp.com](https://ch-accounts-prototype-dev.herokuapp.com) in your browser.
 
 ## Installation instructions
 
