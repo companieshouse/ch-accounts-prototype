@@ -137,3 +137,16 @@ $(document).ready(function() {
      }
      $('#trade-debtors-previous, #prepayments-and-accrued-income-previous, #other-debtors-previous').change(compute);
 });
+
+// Loans to director note
+
+$(document).ready(function() {
+  function compute() {
+      var loanstodirectorsbalanceatstart = $('#loans-to-directors-balance-at-start').val();
+      var loanstodirectorsadvancesorcreditsmade = $('#loans-to-directors-advances-or-credits-made').val();
+      var loanstodirectorsadvancesorcreditsrepaid = $('#loans-to-directors-advances-or-credits-repaid').val();
+      var total = +loanstodirectorsbalanceatstart + +loanstodirectorsadvancesorcreditsmade - +loanstodirectorsadvancesorcreditsrepaid;
+       $('#loans-to-directors-balance-at-end').val(total);
+     }
+     $('#loans-to-directors-balance-at-start, #loans-to-directors-advances-or-credits-made, #loans-to-directors-advances-or-credits-repaid').change(compute);
+});
