@@ -42,7 +42,30 @@
     </div>
   </div>
 
+  <div class="panel panel-border-wide">
+    <p class="form-hint"><strong>These are the figures you entered on the balance sheet:</strong></p>
 
+    <!--Start debtors-->
+    <div class="grid-row">
+      <div class="column-half form-hint">Debtors</div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="debtors-current"><span class="mobile-only-label">Debtors (2016)</span>
+            <input type="number" class="form-control read-only" id="debtors-current" value="100" disabled>
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="debtors-previous"><span class="mobile-only-label">Debtors (2015)</span>
+            <input type="number" class="form-control read-only" id="debtors-previous" value="100" disabled>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End debtors-->
+</div>  <!--End panel-->
 
 <form action="/" method="post" class="form">
 

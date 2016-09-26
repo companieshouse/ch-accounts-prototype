@@ -32,7 +32,46 @@ Intangible assets
 
 
 
-  <form action="/" method="post" class="form" id="balance-sheet">
+  <form action="/" method="post" class="form" id="">
+
+  <div class="panel panel-border-wide">
+    <p class="form-hint"><strong>These are the figures you entered on the balance sheet:</strong></p>
+
+    <div class="grid-row" id="accounts-header">
+      <div class="column-half">
+        &nbsp;
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">2016</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">2015</h2>
+      </div>
+    </div>
+    <br>
+    <!--Start intangible assets-->
+    <div class="grid-row">
+      <div class="column-half form-hint">Intangible assets</div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
+            <input type="number" class="form-control read-only" id="intangible-assets-current" value="100" disabled>
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
+            <input type="number" class="form-control read-only" id="intangible-assets-previous" value="100" disabled>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End intangible assets-->
+</div>  <!--End panel-->
+
 
   <h2 class="heading-medium">Cost</h2>
 

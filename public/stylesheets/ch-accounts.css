@@ -17,6 +17,10 @@
   margin: 0;
 }
 
+.two-column-accounts .read-only {
+  border-color: #bfc1c3;
+}
+
 .two-column-accounts .mobile-only-label {
   position: absolute;
   /*Hidden on desktop, but can be read by screenreaders*/

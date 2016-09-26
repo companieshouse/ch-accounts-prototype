@@ -13,6 +13,9 @@
       margin: 0;
     }
   }
+  .read-only {
+    border-color: $border-colour;
+  }
 
   .mobile-only-label {
     position: absolute; /*Hidden on desktop, but can be read by screenreaders*/
