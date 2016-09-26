@@ -114,29 +114,29 @@ $(document).ready(function() {
 
 // Debtors note: current year
 
-$(document).ready(function() {
-  function compute() {
-      var tradedebtorscurrent = $('#trade-debtors-current').val();
-      var prepaymentsandaccruedincomecurrent = $('#prepayments-and-accrued-income-current').val();
-      var otherdebtorscurrent = $('#other-debtors-current').val();
-      var total = +tradedebtorscurrent + +prepaymentsandaccruedincomecurrent + +otherdebtorscurrent;
-       $('#total-debtors-current').val(total);
-     }
-     $('#trade-debtors-current, #prepayments-and-accrued-income-current, #other-debtors-current').change(compute);
-});
+//$(document).ready(function() {
+//  function compute() {
+//      var tradedebtorscurrent = $('#trade-debtors-current').val();
+//      var prepaymentsandaccruedincomecurrent = $('#prepayments-and-accrued-income-current').val();
+//      var otherdebtorscurrent = $('#other-debtors-current').val();
+//      var total = +tradedebtorscurrent + +prepaymentsandaccruedincomecurrent + +otherdebtorscurrent;
+//       $('#total-debtors-current').val(total);
+//     }
+//     $('#trade-debtors-current, #prepayments-and-accrued-income-current, #other-debtors-current').change(compute);
+//});
 
 // Debtors note: previous year
 
-$(document).ready(function() {
-  function compute() {
-      var tradedebtorsprevious = $('#trade-debtors-previous').val();
-      var prepaymentsandaccruedincomeprevious = $('#prepayments-and-accrued-income-previous').val();
-      var otherdebtorsprevious = $('#other-debtors-previous').val();
-      var total = +tradedebtorsprevious + +prepaymentsandaccruedincomeprevious + +otherdebtorsprevious;
-       $('#total-debtors-previous').val(total);
-     }
-     $('#trade-debtors-previous, #prepayments-and-accrued-income-previous, #other-debtors-previous').change(compute);
-});
+//$(document).ready(function() {
+//  function compute() {
+//      var tradedebtorsprevious = $('#trade-debtors-previous').val();
+//      var prepaymentsandaccruedincomeprevious = $('#prepayments-and-accrued-income-previous').val();
+//      var otherdebtorsprevious = $('#other-debtors-previous').val();
+//      var total = +tradedebtorsprevious + +prepaymentsandaccruedincomeprevious + +otherdebtorsprevious;
+//       $('#total-debtors-previous').val(total);
+//     }
+//     $('#trade-debtors-previous, #prepayments-and-accrued-income-previous, #other-debtors-previous').change(compute);
+//});
 
 // Loans to director note
 
