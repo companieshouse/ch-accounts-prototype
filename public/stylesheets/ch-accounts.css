@@ -79,6 +79,10 @@
   width: 75%;
 }
 
+.two-column-accounts table.check-your-answers th.note-completed {
+  width: 5%;
+}
+
 .two-column-accounts table.check-your-answers tr.total td {
   font-weight: 700;
 }

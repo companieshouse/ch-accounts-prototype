@@ -7,6 +7,7 @@
 {% block content %}
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+
 <main id="content" role="main" class="two-column-accounts">
 <div class="phase-banner-alpha">
   <p>
@@ -28,25 +29,26 @@
 <p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
 
 
-<a class="link-back" href="cato-style-balance-sheet">Back</a>
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
-<h1 class="heading-xlarge">Balance sheet notes</h1>
+  <h1 class="heading-xlarge">Balance sheet notes</h1>
 
-<div class="text">
-  <p>You need to add notes about some of the figures you entered in your balance sheet.</p>
+  <div class="text">
+    <p>You need to add notes about some of the figures you entered in your balance sheet.</p>
 
-  <div class="panel panel-border-narrow">
-  <p>Some notes are optional – complete any that are included in your accounts.</p>
+    <div class="panel panel-border-narrow">
+    <p>Some notes are optional – complete any that are included in your accounts.</p>
+    </div>
+
   </div>
 
-</div>
-
-<table class="check-your-answers">
-<caption class="visuallyhidden">Balance sheet - notes</caption>
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Mandatory notes</caption>
   <thead>
     <tr>
-      <th class="complete"></th>
-      <th class="check-your-answers-section"></th>
+      <th class="note-completed"></th>
+      <th class="heading-medium">Mandatory notes</th>
+      <th></th>
       <th class="change-answer"></th>
     </tr>
   </thead>
@@ -54,97 +56,107 @@
     <tr>
       <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
       <td>Accounting policies</td>
-      <td class="change-answer"><a href="cato-style-accounting-policies-check">Change note<span class="visuallyhidden">Accounting policies</span></a></td>
-    </tr>
-    <tr>
       <td></td>
-      <td>Profit before tax</td>
-      <td class="change-answer"><a href="cato-style-profit-before-tax">Add note<span class="visuallyhidden">Profit before tax</span></a></td>
+      <td class="change-answer"><a href="cato-style-accounting-policies">Change note<span class="visuallyhidden">Accounting policies</span></a></td>
     </tr>
-    <tr>
-      <td></td>
-      <td>Dividends</td>
-      <td class="change-answer"><a href="cato-style-dividends">Add note<span class="visuallyhidden">Dividends</span></a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Employees</td>
-      <td class="change-answer"><a href="cato-style-employees">Add note<span class="visuallyhidden">Employees</span></a></td>
-    </tr>
+
       <tr>
-        <td></td>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Intangible assets</td>
-        <td class="change-answer"><a href="cato-style-intangible-assets-select">Add note<span class="visuallyhidden">Intangible assets</span></a></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-abridged-intangible-note">Change note<span class="visuallyhidden">Intangible assets</span></a></td>
       </tr>
       <tr>
         <td></td>
         <td>Tangible assets</td>
-        <td class="change-answer"><a href="cato-style-tangible-assets-select">Add note <span class="visuallyhidden">Tangible assets</span></a></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-abridged-tangible-note">Add note <span class="visuallyhidden">Tangible assets</span></a></td>
       </tr>
+
+      <!--<tr>
+        <td>Called up share capital</td>
+        <td></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-called-up-share-capital">Add note <span class="visuallyhidden">Called up share capital</span></a></td>
+      </tr>-->
       <tr>
         <td></td>
+        <td>Revaluation reserve</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-revaluation-reserve">Add note <span class="visuallyhidden">Revaluation reserve</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Optional notes</caption>
+  <thead>
+    <tr>
+      <th class="note-completed"></th>
+      <th class="heading-medium">Optional notes</th>
+      <th></th>
+      <th class="change-answer"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td></td>
+        <td>Employees</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-employees">Add note<span class="visuallyhidden">Employees</span></a></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Debtors</td>
-        <td class="change-answer"><a href="cato-style-debtors">Add note <span class="visuallyhidden">Debtors</span></a></td>
+        <td><!--£15--></td>
+        <td class="change-answer"><a href="cato-style-debtors">Change note<span class="visuallyhidden">Debtors</span></a></td>
       </tr>
       <tr>
         <td></td>
         <td>Creditors - amounts falling due within one year</td>
+        <td><!--£25--></td>
         <td class="change-answer"><a href="cato-style-creditors-amounts-falling-due-within-one-year">Add note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
       </tr>
       <tr>
-        <td></td>
+        <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Creditors - amounts falling due after more than one year</td>
-        <td class="change-answer"><a href="cato-style-creditors-amounts-falling-due-after-one-year">Add note <span class="visuallyhidden">Creditors - amounts falling due after more than one year</span></a></td>
+        <td><!--£25--></td>
+        <td class="change-answer"><a href="cato-style-creditors-amounts-falling-due-after-one-year">Change note<span class="visuallyhidden">Creditors - amounts falling due after more than one year</span></a></td>
       </tr>
-      <tr>
-        <td></td>
-        <td>Called up share capital</td>
-        <td class="change-answer"><a href="cato-style-called-up-share-capital">Add note <span class="visuallyhidden">Called up share capital</span></a></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Revaluation reserve</td>
-        <td class="change-answer"><a href="cato-style-revaluation-reserve">Add note <span class="visuallyhidden">Revaluation reserve</span></a></td>
-      </tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th class="complete"></th>
-        <th class="check-your-answers-section"><h2 class="heading-medium">Additional notes</h2></th>
-        <th class="change-answer"></th>
-      </tr>
-    </thead>
-    <tbody>
       <tr>
         <td></td>
         <td>Financial commitments</td>
-        <td class="change-answer"><a href="cato-style-financial-commitments">Add note (optional) <span class="visuallyhidden">Financial commitments</span></a></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-financial-commitments">Add note <span class="visuallyhidden">Financial commitments</span></a></td>
       </tr>
       <tr>
         <td></td>
         <td>Loans to directors</td>
-        <td class="change-answer"><a href="cato-style-loans-to-directors">Add note (optional) <span class="visuallyhidden">Loans to directors</span></a></td>
+        <td></td>
+      <td class="change-answer"><a href="cato-style-loans-to-directors">Add note <span class="visuallyhidden">Loans to directors</span></a></td>
       </tr>
       <tr>
         <td></td>
         <td>Changes in presentation and prior period adjustments</td>
-        <td class="change-answer"><a href="cato-style-financial-changes-in-presentation">Add note (optional) <span class="visuallyhidden">Changes in presentation and prior period adjustments</span></a></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-financial-changes-in-presentation">Add note <span class="visuallyhidden">Changes in presentation and prior period adjustments</span></a></td>
       </tr>
       <tr>
         <td></td>
         <td>Related party transactions</td>
-        <td class="change-answer"><a href="cato-style-related-party-transactions">Add note (optional) <span class="visuallyhidden">Related party transactions</span></a></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-related-party-transactions">Add note <span class="visuallyhidden">Related party transactions</span></a></td>
       </tr>
       <tr>
         <td></td>
         <td>Post balance sheet events</td>
-        <td class="change-answer"><a href="cato-style-post-balance-sheet-events">Add note (optional) <span class="visuallyhidden">Post balance sheet events</span></a></td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-post-balance-sheet-events">Add note <span class="visuallyhidden">Post balance sheet events</span></a></td>
       </tr>
     </tbody>
   </table>
 <br>
   <div class="form-group">
-    <p><a href="cato-style-balance-sheet-statements" class="button">Save and continue to Balance sheet statements</a></p>
+    <p><a href="cato-style-approval" class="button">Continue to Approval</a></p>
   </div>
 
 </main>
