@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  Accounting policies
+  Accounting policies note
 {% endblock %}
 
 {% block proposition_header %}
@@ -40,11 +40,11 @@
 
 
       <div class="text">
-      <h1 class="heading-xlarge">Accounting policies</h1>
+      <h1 class="heading-xlarge">Accounting policies note</h1>
 
-      <p>You must provide information on all policies that apply to your company as shown on your prepared accounts.</p>
-      <p>Accounting policies are usually found as Note 1 of your prepared accounts.</p>
-      </div><!--text-->
+      <p>Use the notes on this page to describe the methods and measurements you've used to prepare your company accounts.</p>
+      <p>Some accounting policies notes are optional - complete any that are included in your accounts.</p>
+    </div>
 
       <form class="form" method="get" action="">
 
@@ -52,18 +52,25 @@
       <div class="form-group">
       <fieldset>
 
-        <h2 class="heading-medium">Basis of preparation</h2>
+        <h2 class="heading-medium text">Choose the statement that reflects the way your accounts were prepared:</h2>
+        <details class="text">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Choose the statement that reflects the way your accounts were prepared</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>This note is about the accounting standards you've prepared your accounts to. As a small company you're likely to have prepared your full accounts for shareholders or members using the simpler provisions of Section 1A (Small Entities) of Financial Reporting Standard 102. Your accounts should include a statement about the basis of measurement and preparation.</p>
+          </div>
+        </details>
         <legend class="visuallyhidden">Basis of preparation</legend>
         <label class="block-label text" for="1">
         <input type="radio" id="1" value="" name="basis-of-preparation">
-          The financial statements have been prepared under the historical cost convention.
+          These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102
         </label>
         <label data-target="2-reveal" class="block-label" for="2">
           <input type="radio" id="2" value="" name="basis-of-preparation" aria-controls="micro" aria-expanded="false">
-          I want to provide my own basis of preparation policy.
+          These accounts have been prepared in accordance with another standard
         </label>
         <div id="2-reveal" class="panel panel-border-narrow js-hidden" aria-hidden="true">
           <label class="visuallyhidden" for="2-textarea"></label>
+          Enter the basis of measurement and preparation for your accounts:
           <textarea type="text" id="2-textarea" class="form-control" rows="10"></textarea>
         </div>
 
@@ -75,7 +82,7 @@
       <div class="form-group">
       <fieldset>
 
-        <h2 class="heading-medium">Turnover policy</h2>
+        <h2 class="heading-medium">Turnover policy (optional)</h2>
         <details class="text">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Turnover policy</span>
           <div class="panel panel-border-narrow form-hint">
@@ -95,7 +102,7 @@
       <div class="form-group">
       <fieldset>
 
-        <h2 class="heading-medium">Tangible assets depreciation policy</h2>
+        <h2 class="heading-medium">Tangible fixed assets depreciation policy (optional)</h2>
         <details class="text">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Tangible assets depreciation policy</span>
           <div class="panel panel-border-narrow form-hint">
@@ -113,12 +120,13 @@
       <div class="form-group">
       <fieldset>
 
-        <h2 class="heading-medium">Intangible assets amortisation policy</h2>
+        <h2 class="heading-medium">Intangible fixed assets amortisation policy (optional)</h2>
         <details class="text">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Intangible assets amortisation policy</span>
           <div class="panel panel-border-narrow form-hint">
             <p>If you have intangible (non-physical) fixed assets, this policy describes how the amortisation (reduction in value) of each asset is calculated over its expected useful lifetime. Amortisation is similar to the depreciation value of a tangible (physical) asset.</p>
-            <p>For example, 'Annual amortisation of goodwill is calculated at 25% to write off the cost of the asset, minus its residual value, over its estimated useful lifetime'.</p>
+For example, 'Annual amortisation of goodwill is calculated at 25% to write off the cost of the asset, minus its residual value, over its estimated useful lifetime'.
+</p>
           </div>
         </details>
         <legend class="visuallyhidden">Intangible assets amortisation policy</legend>
@@ -131,12 +139,12 @@
       <div class="form-group">
       <fieldset>
 
-        <h2 class="heading-medium">Valuation information policy</h2>
+        <h2 class="heading-medium">Valuation information policy (optional)</h2>
         <details class="text">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Valuation information policy</span>
           <div class="panel panel-border-narrow form-hint">
-            <p>If you have stocks or work in progress, this note describes how they are valued. Stocks should be valued at the lower of either cost or ‘net realisable value’ (the realistic resale value mine the cost of selling it).</p>
-            <p>For example, ‘Stocks and work in progress are valued at the lower of cost and net realisable value, after making allowances for obsolete and slow-moving items. Cost includes all direct expenditure and overheads’.</p>
+            <p>If you have stocks or work in progress, this note describes how they are valued. Stocks should be valued at the lower of either cost or ‘net realisable value’ (the realistic resale value minus the cost of selling it).</p>
+            <p>For example, 'Stocks and work in progress are valued at the lower of cost and net realisable value, after making allowances for obsolete and slow-moving items. Cost includes all direct expenditure and overheads'.
           </div>
         </details>
         <legend class="visuallyhidden">Valuation information policy</legend>
@@ -149,7 +157,7 @@
       <div class="form-group">
       <fieldset>
 
-        <h2 class="heading-medium">Other policy</h2>
+        <h2 class="heading-medium">Other accounting policies (optional)</h2>
         <details class="text">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Other policy</span>
           <div class="panel panel-border-narrow form-hint">
@@ -169,7 +177,7 @@
       </div>
     </form>
       <div class="form-group">
-        <a class="button" href="cato-style-accounting-policies-check" role="button">Save and continue</a>
+        <a class="button" href="cato-style-balance-sheet-notes" role="button">Save and continue</a>
       </div>
 
 
