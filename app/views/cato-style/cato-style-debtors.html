@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  Debtors
+  Debtors note
 {% endblock %}
 
 {% block content %}
@@ -28,7 +28,9 @@
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
-  <h1 class="heading-xlarge">Debtors</h1>
+  <h1 class="heading-xlarge">Debtors note
+    <span class="subheading text">Use this note to record information about people who owe money for goods or services your company provided as part of its normal trading activities</span>
+</h1>
 
 
   <div class="grid-row form-hint" id="accounts-header">
@@ -36,10 +38,10 @@
       &nbsp;
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">2016</h2>
+      <h2 class="heading-small">1 April 2015 to<br>31 March 2016</h2>
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">2015</h2>
+      <h2 class="heading-small">1 April 2014 to<br>31 March 2015</h2>
     </div>
   </div>
 
@@ -48,6 +50,7 @@
     <!--Start debtors-->
     <div class="grid-row">
       <div class="column-half form-hint">Debtors</div>
+
 
       <div class="column-quarter">
         <div class="form-group">
@@ -76,7 +79,7 @@
         <details>
           <summary><span class="summary">Debtors due after more than one year</span></summary>
           <div class="panel panel-border-narrow">
-            <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>
+            <p class="form-hint">Enter the amount owed by debtors who are due to pay their debt in full after more than one year from the end of the period.</p>
           </div>
         </details>
     </div>
@@ -115,7 +118,7 @@
       <summary><span class="summary">Additional information (optional) </span></summary>
       <div class="panel panel-border-narrow">
         <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
-        <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>
+        <!--<p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>-->
         <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
       </div>
     </details>

@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  Post balance sheet events
+  Post balance sheet events note
 {% endblock %}
 
 {% block content %}
@@ -28,17 +28,10 @@
 <a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
 <div class="text">
 
-  <h1 class="heading-xlarge">Post balance sheet events</h1>
+  <h1 class="heading-xlarge">Post balance sheet events note</h1>
   <form action="/" method="post" class="form">
     <label class="visuallyhidden" for="textarea">Post balance sheet events</label>
-    <details class="text">
-      <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Turnover policy</span>
-      <div class="panel panel-border-narrow form-hint">
-        <p>Post balance sheet events are favourable (or unfavourable) events which occurred between the balance sheet date and the date the financial statements were authorised for issue.</p>
-        <p>Adjusting events are where an adjustment to the figures is necessary. For example, if a trade debtor is declared bankrupt after the balance sheet date and the money they owe cannot be recovered.</p>
-        <p>Non-adjusting events are where no adjustment to the figures is necessary. These events only need to be disclosed as a note, giving the nature of the event and estimated financial impact (or state that an estimate can't be made).</p>
-      </div>
-    </details>
+    <p class="form-hint">Enter details of any events which happened between the balance sheet date and the date your company accounts were authorised if they had an impact on your accounts. For example, if a trade debtor was declared bankrupt after the balance sheet date and the money they owe can't be recovered.</p>
   <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
     <div class="form-group accounts-row-spacer">
       <a class="button" href="cato-style-post-balance-sheet-events-check">Save and continue</a>

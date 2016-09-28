@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  Related party transactions
+  Related party transactions note
 {% endblock %}
 
 {% block content %}
@@ -28,16 +28,32 @@
 <a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
 <div class="text">
 
-  <h1 class="heading-xlarge">Related party transactions</h1>
+  <h1 class="heading-xlarge">Related party transactions note  <span class="subheading">Use this note to record transactions between related parties, for example, selling a company asset for more or less than market value or paying them rent or consultancy fees. Parties are 'related' when one has control or significant influence over the other, for example directors and investors (or close family members of either).
+  </span></h1>
+
+  <div class="form-group">
+  <fieldset>
+
+    <h2 class="heading-medium text">What sort of transaction was this?</h2>
+    <legend class="visuallyhidden">What sort of transaction was this?</legend>
+    <label class="block-label text" for="1">
+    <input type="radio" id="1" value="" name="sort-of-transaction">
+      Money given to the company by a related party
+    </label>
+    <label class="block-label" for="2">
+      <input type="radio" id="2" value="" name="sort-of-transaction">
+      Money given to a related party by the company
+    </label>
 
 
+  </fieldset>
+  </div>
 
-  <h2 class="heading-medium"><span class="circle circle-step">1</span> Related party transactions</h2>
 
   <details>
     <summary><span class="summary">Name of related party</span></summary>
     <div class="panel panel-border-narrow">
-      <p>The name of the related party over whom the controlling party has influence. Only provide the transaction details for each individual related party. You can report more transactions for related parties if you need to.</p>
+      <p>Enter the name of the person the transaction was with.</p>
     </div>
   </details>
   <div class="form-group">
@@ -45,34 +61,21 @@
     <input type="text" id="name-of-related-party" class="form-control">
   </div>
 
-  <details>
-    <summary><span class="summary">Relationship</span></summary>
-    <div class="panel panel-border-narrow">
-      <p>The relationship between the controlling and related parties. For example, business partner or employee.</p>
-    </div>
-  </details>
-  <div class="form-group">
-    <label for="relationship" class="visuallyhidden">Relationship</label>
-    <input type="text" id="relationship" class="form-control">
-  </div>
 
   <details>
     <summary><span class="summary">Description of the transaction</span></summary>
     <div class="panel panel-border-narrow">
-      <p>A brief description of the transaction between both parties. For example, the loan of an asset.</p>
+      <p>Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</p>
     </div>
   </details>
   <div class="form-group">
     <label for="description-transaction" class="visuallyhidden">Description of the transaction</label>
-    <input type="text" id="description-transaction" class="form-control">
+    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
   </div>
-
-
 </div><!--text-->
-<br>
 
 
-  <h2 class="heading-medium"><span class="circle circle-step">2</span> Sub-heading needed here</h2>
+
 
     <!--Start balance at start-->
     <div class="grid-row accounts-row-spacer">
@@ -80,7 +83,7 @@
           <details>
             <summary><span class="summary">Balance at 1 April 2015 (optional)</span></summary>
             <div class="panel panel-border-narrow">
-              <p>The amount due to or from the director for this transaction at the start of the accounting period.</p>
+              <p>Enter the amount paid or owed to or by this related party at the start of the period youre filing for.</p>
             </div>
           </details>
       </div>
@@ -103,7 +106,7 @@
         <details>
           <summary><span class="summary">Balance at 31 March 2016 (optional)</span></summary>
           <div class="panel panel-border-narrow">
-            <p>The amount of the advance or credit repaid by the director for this particular transaction.</p>
+            <p>Enter the amount paid or owed to or by this related party at the end of the period youre filing for.</p>
           </div>
         </details>
       </div>
@@ -122,7 +125,7 @@
       <summary><span class="summary">Additional information (optional)</span></summary>
       <div class="panel panel-border-narrow">
         <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
-        <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>
+        <p class="form-hint">Enter any other information about related party transactions made in this period. For example, details of provisions made for doubtful debts or debts written off during the period, either due to be paid to or from related parties.</p>
         <textarea type="text" id="" class="form-control" rows="10"></textarea>
       </div>
     </details>
@@ -130,7 +133,7 @@
 
 
     <div class="text">
-          <h2 class="heading-medium"><span class="circle circle-step">3</span> Do you have more related party transactions to report?</h2>
+          <h2 class="heading-medium">Do you have more related party transactions to report?</h2>
 
                    <div class="form-group">
                      <fieldset class="inline">

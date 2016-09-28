@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  Financial commitments note
+  Resume your abridged accounts?
 {% endblock %}
 
 {% block content %}
@@ -26,19 +26,37 @@
 
 
 <a class="link-back" href="cato-style-balance-sheet-notes">Back</a>
+<form action="/" method="post" class="form">
+
 <div class="text">
+  <h1 class="heading-xlarge">Resume your abridged accounts?</h1>
 
-  <h1 class="heading-xlarge">Financial commitments note</h1>
+  <p>Last time you logged in, you were filing abridged accounts which you have not completed. Would you like to:</p>
 
-  <form action="/" method="post" class="form">
-    <label class="visuallyhidden" for="textarea">Financial commitments</label>
-    <p class="form-hint">Use this note to record the total amount (or estimated amount) your company has committed to spend on future assets.</p>
-    <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
-    <div class="form-group accounts-row-spacer">
-      <a class="button" href="cato-style-financial-commitments-check">Save and continue</a>
-    </div>
-  </form>
-</div><!--text-->
+  <div class="form-group">
+  <fieldset>
 
+    <legend class="visuallyhidden">Basis of preparation</legend>
+    <label class="block-label text" for="1">
+    <input type="radio" id="1" value="" name="basis-of-preparation">
+      Continue with your abridged accounts
+    </label>
+    <label class="block-label" for="2">
+      <input type="radio" id="2" value="" name="basis-of-preparation" aria-controls="micro" aria-expanded="false">
+        Delete these abridged accounts and start something else (not sure of wording here! -JF)
+    </label>
+
+  </fieldset>
+  </div>
+
+
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="javascript:void(0)">Save and continue</a>
+      </div>
+</div>
+</form>
 </main>
 {% endblock %}
