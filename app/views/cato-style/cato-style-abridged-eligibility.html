@@ -1,0 +1,71 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Eligibility
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">username@email.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+      <form action="/cato-style/cato-style-accounts-dates" method="get" class="form">
+
+
+                    <h1 class="heading-xlarge">Eligibility</h1>
+                    <p>To file abridged accounts, your accounts must meet <strong>at least two of the following:</strong></p>
+                    <ul class="list list-bullet">
+                      <li>Turnover must not be more than £10.2 million</li>
+                      <li>Balance sheet total must not be more than £5.1 million</li>
+                      <li>The average number of employees during the year must not be more than 50</li>
+                    </ul>
+
+
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue to Account dates" id="">
+      </div>
+
+            </form>
+
+
+
+
+
+
+        </div><!-- text-->
+
+      </main>
+
+      {% endblock %}
