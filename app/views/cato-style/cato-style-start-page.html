@@ -41,7 +41,7 @@
 
 
       <h1 class="heading-xlarge">File your accounts</h1>
-      <form action="/cato-style/cato-style-abridged-eligibility" method="get" class="form">
+      <form action="/cato-style/cato-style-accounts-dates" method="get" class="form">
 
       <div class="panel panel-border-wide">
       <h2 class="heading-medium">You can only file abridged accounts</h2>
@@ -49,7 +49,18 @@
         <p>We can't accept full or micro-entity company accounts starting on or after 1 January 2016. These will be available to file in the coming months.</p>
         <p>You can file abridged accounts if you have prepared them. If you don't have abridged accounts, you can come back later to file accounts in full or micro-entity format.</p>
 
-        <div class="form-group">
+
+          <details>
+            <summary><span class="summary">Is your company eligibile to file abridged accounts?</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>To file abridged accounts, your accounts must meet <strong>at least two of the following:</strong></p>
+              <ul class="list list-bullet">
+                <li>Turnover must not be more than £10.2 million</li>
+                <li>Balance sheet total must not be more than £5.1 million</li>
+                <li>The average number of employees during the year must not be more than 50</li>
+              </ul>
+            </div>
+          </details>
           <details>
             <summary><span class="summary">Not sure what type of accounts you have?</span></summary>
             <div class="panel panel-border-narrow">
@@ -60,14 +71,8 @@
               </ul>
             </div>
           </details>
-        <!--  <details>
-            <summary><span class="summary">I haven't prepared my accounts</span></summary>
-            <div class="panel panel-border-narrow">
-              <p>D'oh!</p>
-            </div>
-          </details>-->
-        </div>
-        
+
+
       </div>
       <!--
       <p class="heading-small form-group">This service provides for the minimum statutory filing only (a balance sheet and related notes).</p>
@@ -107,7 +112,7 @@
 
 
       <div class="form-group">
-        <input type="submit" class="button" value="Continue to Eligibility" id="accounts-start-button">
+        <input type="submit" class="button" value="Continue to Account dates" id="accounts-start-button">
       </div>
 
             </form>
