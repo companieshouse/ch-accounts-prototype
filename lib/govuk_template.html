@@ -62,7 +62,7 @@
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="{{ homepage_url|default('https://www.gov.uk') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="logo" class="content">
+            <a href="{{ homepage_url|default('/index') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="logo" class="content">
               <img src="{{ asset_path }}images/gov.uk_logotype_crown_invert_trans.png?0.17.3" width="35" height="31" alt=""> {{ global_header_text|default('GOV.UK') }}
             </a>
           </div>

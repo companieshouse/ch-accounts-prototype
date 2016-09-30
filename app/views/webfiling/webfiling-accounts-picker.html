@@ -1,0 +1,123 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Companies House
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br />Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br/>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="headerClick" href="javascript:void(0)">Change account details</a></li>
+			<li><a class="headerClick" href="javascript:void(0)">My recent filings</a></li>
+
+			    <li><a class="headerClick" href="javascript:void(0)">Company authentication</a></li>
+                <li><a class="headerClick" href="javascript:void(0)">File for a different company</a></li>
+			    <li><a class="headerClick" href="javascript:void(0)">Company overview</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+
+<div class="container-content">
+
+
+
+	<h1 class="large-heading"><strong>Choose your accounts</strong></h1>
+
+	<section class="complete">
+    <h2>Next Annual Accounts should be made up to:</h2>
+    <p class="answer">31 March 2016<a href="runpage?page=formLoader&amp;formLoader.targetFormId=AA01" class="changelink">Change</a> </p>
+    <p class="help">DO NOT file your accounts until you have received confirmation that the change has been accepted.</p>
+
+    <h2 class="complete">Must be delivered to Companies House no later than:</h2>
+    <p class="answer">31 December 2016</p></section>
+
+
+    <div class="accountsPicker">
+      <a href="/chs/chs-start-page" class="largeFont"><span id="abridgedccounts">Abridged Accounts</span><strong>(Companies House service)</strong><br>
+  These audit exempt accounts are suitable for companies to input figures from already prepared and approved abridged accounts.</a>
+        <a href="javascript:void(0)" class="largeFont"><span id="abbreviatedAccounts">Abbreviated Accounts</span>
+		These audit exempt accounts are suitable for companies to input abbreviated figures from their full accounts that have already been prepared and approved.</a>
+
+
+        <a href="javascript:void(0)" class="largeFont"><span id="dormantAccounts">Dormant Company Accounts</span>
+     	These accounts are suitable for companies limited by shares or by guarantee that have never traded.</a>
+
+      <div class="clear"></div>
+
+            <a href="javascript:void(0)" class="largeFont"><span id="microEntities">Micro-entity Accounts</span>
+          	These audit exempt accounts are suitable for companies that fall within the micro-entity definition.</a>
+
+
+
+
+        <a href="javascript:void(0)" class="largeFont"><span>Full Accounts (with abbreviated option)</span>
+		These accounts are suitable for full accounts figures, from which the abbreviated figures are extracted for Companies House.</a>
+
+
+        <a href="javascript:void(0)" class="largeFont"><span>Full Accounts with Companies House and HMRC</span>
+		These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</a>
+
+
+        </div> <!--End of div class="accountsPicker"-->
+
+    <hr/>
+
+    <p><a href="javascript:void(0)" class="negative right">Back</a></p>
+
+	</div>
+
+	<div class="clear"></div>
+
+</div>
+		<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)" target="_blank">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+</div>   <!--End of div id="container"-->
+{% endblock %}
