@@ -1,0 +1,88 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Companies House
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br />Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br/>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="headerClick" href="javascript:void(0)">Change account details</a></li>
+			<li><a class="headerClick" href="javascript:void(0)">My recent filings</a></li>
+
+			    <li><a class="headerClick" href="javascript:void(0)">Company authentication</a></li>
+                <li><a class="headerClick" href="javascript:void(0)">File for a different company</a></li>
+			    <li><a class="headerClick" href="javascript:void(0)">Company overview</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+
+<div class="container-content">
+
+
+
+	<h1 class="large-heading"><strong>Abridged accounts on the new Companies House service</strong></h1>
+<img src="/public/images/chs-screengrab.png" style="border: 1px solid #006699; float: right; margin-left:25px;">
+<p>You can file abridged accounts on the new Companies House service.</p>
+<p><strong>You'll need to login (or register) on the new service - your existing WebFiling login details will not work.</strong></p>
+<p><a class="button positive regular" href="/chs/chs-login-page">Go to the new Companies House service</a></p>
+
+    <p><a href="javascript:void(0)" class="negative" style="float:none; padding-left:0 !important;">Back</a></p>
+
+	</div>
+
+	<div class="clear"></div>
+
+</div>
+		<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)" target="_blank">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+</div>   <!--End of div id="container"-->
+{% endblock %}
