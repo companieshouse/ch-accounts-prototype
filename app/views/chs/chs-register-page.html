@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  Sign in to Companies House
+  Register with Companies House
 {% endblock %}
 
 {% block proposition_header %}
@@ -32,33 +32,29 @@
 
 
     <header class="text">
-    	<h1 id="page-header" class="heading-xlarge">Sign in to Companies House</h1>
+    	<h1 id="page-header" class="heading-xlarge">Register with Companies House</h1>
     </header>
 
 
     <form enctype="multipart/form-data" method="POST" action="/oauth2/user/signin" class="form " name="signin">
       <fieldset>
-        <legend class="visuallyhidden">Sign in details</legend>
+        <legend class="visuallyhidden">Register with Companies House</legend>
 
         <div class="form-group ">
-          <label class="form-label" for="signin_email">Email address</label>
+          <label class="form-label" for="signin_email">Enter email address</label>
           <input type="email" class="form-control" autocomplete="off" value="" id="signin_email" name="signin_email">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="password">Password</label>
+          <label class="form-label" for="password">Re-enter email address</label>
           <input type="password" class="form-control password" value="" id="password" name="password" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <a href="chs-authenticate-page" class="button" id="submit">Sign in</a>
+          <a href="chs-authenticate-page" class="button" id="submit">Send registration email</a>
         </div>
 
-        <div class="form-group">
-          <p class="action-link"><a class="button-link" id="register" href="chs-register-page">Register</a></p>
-          <input type="hidden" value="" id="request" name="request">
-          <p><a id="forgotten_password" href="/">Forgotten your password?</a></p>
-        </div>
+    
 
       </fieldset>
     </form>
