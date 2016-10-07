@@ -41,13 +41,10 @@
   }
 }
 
-.two-column-accounts .accounts-total {
-  font-weight: 700;
-}
-
 .two-column-accounts .accounts-total .form-control {
   border-left: 0;
   border-right: 0;
+  font-weight: 700;
 }
 
 .two-column-accounts .accounts-row-spacer {
