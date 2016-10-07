@@ -47,6 +47,10 @@
   font-weight: 700;
 }
 
+.two-column-accounts .accounts-total details {
+  font-weight: 700;
+}
+
 .two-column-accounts .accounts-row-spacer {
   margin-top: 2em;
 }
