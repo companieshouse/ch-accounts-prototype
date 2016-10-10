@@ -2218,7 +2218,7 @@ p.errorRightIcon, span.errorRightIcon {
 }
 
 p.warning, span.warning {
-  background: #FFFFA3 url(/images/exclamationTriangleOrange-24.png) no-repeat 5px 3px;
+  background: #FFFFA3 url(/public/images/exclamationTriangleOrange-24.png) no-repeat 5px 3px;
   color: #333;
   display: block;
   margin: 5px 0 0 -41px;
