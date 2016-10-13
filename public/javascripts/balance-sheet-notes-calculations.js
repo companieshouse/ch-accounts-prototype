@@ -11,39 +11,39 @@ $(document).ready(function() {
      $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers').change(compute);
 });
 
-// Tangible assets note: Amortisation AT END
+// Tangible assets note: depreciation AT END
 $(document).ready(function() {
   function compute() {
-       var tangibleamortisationatstart = $('#tangible-amortisation-at-start').val();
-       var tangibleamortisationchargeforyear = $('#tangible-amortisation-charge-for-year').val();
-       var tangibleamortisationondisposals = $('#tangible-amortisation-on-disposals').val();
-       var tangibleamortisationotheradjustments = $('#tangible-amortisation-other-adjustments').val();
-       var total = +tangibleamortisationatstart + +tangibleamortisationchargeforyear + +tangibleamortisationondisposals + +tangibleamortisationotheradjustments;
-       $('#tangible-amortisation-at-end').val(total);
+       var tangibledepreciationatstart = $('#tangible-depreciation-at-start').val();
+       var tangibledepreciationchargeforyear = $('#tangible-depreciation-charge-for-year').val();
+       var tangibledepreciationondisposals = $('#tangible-depreciation-on-disposals').val();
+       var tangibledepreciationotheradjustments = $('#tangible-depreciation-other-adjustments').val();
+       var total = +tangibledepreciationatstart + +tangibledepreciationchargeforyear + +tangibledepreciationondisposals + +tangibledepreciationotheradjustments;
+       $('#tangible-depreciation-at-end').val(total);
      }
-     $('#tangible-amortisation-at-start, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
+     $('#tangible-depreciation-at-start, #tangible-depreciation-charge-for-year, #tangible-depreciation-on-disposals, #tangible-depreciation-other-adjustments').change(compute);
 });
 
 // Tangible assets note: net book value end
 $(document).ready(function() {
   function compute() {
        var tangiblecostatend = $('#tangible-cost-at-end').val();
-       var tangibleamortisationatend = $('#tangible-amortisation-at-end').val();
-       var total = +tangiblecostatend - +tangibleamortisationatend;
+       var tangibledepreciationatend = $('#tangible-depreciation-at-end').val();
+       var total = +tangiblecostatend - +tangibledepreciationatend;
        $('#tangible-net-book-value-end').val(total);
      }
-     $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers, #tangible-amortisation-at-start, #tangible-amortisation-charge-for-year, #tangible-amortisation-on-disposals, #tangible-amortisation-other-adjustments').change(compute);
+     $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers, #tangible-depreciation-at-start, #tangible-depreciation-charge-for-year, #tangible-depreciation-on-disposals, #tangible-depreciation-other-adjustments').change(compute);
 });
 
 // Tangible assets note: net book value start
 $(document).ready(function() {
   function compute() {
       var tangiblecostatstart = $('#tangible-cost-at-start').val();
-      var tangibleamortisationatstart = $('#tangible-amortisation-at-start').val();
-       var total = +tangiblecostatstart - +tangibleamortisationatstart;
+      var tangibledepreciationatstart = $('#tangible-depreciation-at-start').val();
+       var total = +tangiblecostatstart - +tangibledepreciationatstart;
        $('#tangible-net-book-value-start').val(total);
      }
-     $('#tangible-cost-at-start, #tangible-amortisation-at-start').change(compute);
+     $('#tangible-cost-at-start, #tangible-depreciation-at-start').change(compute);
 });
 
 

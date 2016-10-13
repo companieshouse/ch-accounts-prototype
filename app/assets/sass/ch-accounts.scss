@@ -50,7 +50,7 @@
   input[type="number"] {
     text-align: right;
   }
-  table.check-your-answers {
+table.check-your-answers {
     thead th {padding: 2em 0 1em;
 
       h2.heading-medium,
@@ -86,6 +86,12 @@
   }
 }
 
+.review-reveal {
+  padding:0.5em 0 0.2em 1em;
+  .column-one-half p {text-align:left}
+  .column-one-quarter p {text-align:right}
+
+}
 p.company-details {
   font-size: .9em;
 }
