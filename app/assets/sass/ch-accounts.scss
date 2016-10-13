@@ -83,15 +83,15 @@ table.check-your-answers {
       color: $secondary-text-colour;}
 
     .accounts-success {color: $button-colour; display: block; margin: 0 auto;}
+    .review-reveal {
+      padding:0.5em 0 0.2em 1em;
+      .column-one-half p {text-align:left}
+      .column-one-quarter p {text-align:right}
+    }
   }
 }
 
-.review-reveal {
-  padding:0.5em 0 0.2em 1em;
-  .column-one-half p {text-align:left}
-  .column-one-quarter p {text-align:right}
 
-}
 p.company-details {
   font-size: .9em;
 }

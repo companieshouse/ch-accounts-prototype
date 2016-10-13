@@ -115,15 +115,15 @@
   margin: 0 auto;
 }
 
-.review-reveal {
+.two-column-accounts table.check-your-answers .review-reveal {
   padding: 0.5em 0 0.2em 1em;
 }
 
-.review-reveal .column-one-half p {
+.two-column-accounts table.check-your-answers .review-reveal .column-one-half p {
   text-align: left;
 }
 
-.review-reveal .column-one-quarter p {
+.two-column-accounts table.check-your-answers .review-reveal .column-one-quarter p {
   text-align: right;
 }
 
