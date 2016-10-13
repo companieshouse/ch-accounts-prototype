@@ -59,8 +59,14 @@
 
 
       <h2 class="heading-medium">Who approved the accounts?</h2>
-      <p> You must have at least one approver. <!--Choose from the list or add a different approver.--> </p>
+      <!--<p class="form-hint">You must have at least one approver.</p>-->
+      <p class="form-hint">This must be a company director, for example, "John Smith".</p>
 
+
+      <label class="form-label visually-hidden" for="who-approved">Who approved the accounts?</label>
+      <input class="form-control" id="who-approved" type="text">
+
+<!--
       <div class="form-group">
         <fieldset>
 
@@ -71,10 +77,6 @@
             John Smith
           </label>
 
-          <!--<label class="block-label" for="david-edwards">
-            <input type="checkbox" id="david-edwards" value="Irish" name="name-of-approver">
-            David Edwards
-          </label>-->
 
           <label data-target="other-approver-reveal" class="block-label" for="different-approver">
             <input type="radio" id="different-approver" value="Wales" name="name-of-approver" aria-controls="other-approver-reveal" aria-expanded="false">
@@ -89,7 +91,7 @@
           </div>
 
         </fieldset>
-      </div>
+      </div>-->
 
 
 
