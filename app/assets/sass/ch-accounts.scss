@@ -89,6 +89,21 @@ table.check-your-answers {
       .column-one-half p {text-align:left}
       .column-one-quarter p {text-align:right}
     }
+    #delete-summary {
+      p {color:$error-colour;}
+      .button {
+        background-color:$error-colour;
+        &:hover  {
+          background-color:$error-button-hover;
+        }
+      }
+      .no-delete {
+        left: 1em;
+        position: relative;
+        top: 0.5em;
+        color:$error-colour;
+      }
+    }
   }
 }
 
@@ -118,21 +133,4 @@ header {
   @include core-19;
   color: $secondary-text-colour;
   display: block;
-}
-
-#delete-summary {
-  margin:3em 0 -1em 0;
-  p {color:$error-colour;}
-  .button {
-    background-color:$error-colour;
-    &:hover  {
-      background-color:$error-button-hover;
-    }
-  }
-  .no-delete {
-    left: 1em;
-    position: relative;
-    top: 0.5em;
-    color:$error-colour;
-  }
 }

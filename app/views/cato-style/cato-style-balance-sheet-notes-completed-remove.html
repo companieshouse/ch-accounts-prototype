@@ -92,10 +92,7 @@
 
 
 
-  <div class="error-summary" id="delete-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-    <p><strong>Are you sure you want to delete the Employees note?</strong></p>
-    <p><a href="javascript:void(0)" class="button">Yes, delete</a> <a class="no-delete " href="javascript:void(0)">No, keep</a></p>
-  </div>
+
 
 
   <table class="check-your-answers">
@@ -109,6 +106,12 @@
     </tr>
   </thead>
   <tbody>
+      <tr>
+        <td colspan="4" class="error-summary" id="delete-summary">
+        <p><strong>Are you sure you want to delete the Employees note?</strong></p>
+        <p><a href="javascript:void(0)" class="button">Yes, delete <span class="visuallyhidden">Employees note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep <span class="visuallyhidden">Employees note</span></a></p>
+        </td>
+      </tr>
       <tr>
         <td><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
         <td>Employees</td>

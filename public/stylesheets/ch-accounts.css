@@ -127,6 +127,25 @@
   text-align: right;
 }
 
+.two-column-accounts table.check-your-answers #delete-summary p {
+  color: #b10e1e;
+}
+
+.two-column-accounts table.check-your-answers #delete-summary .button {
+  background-color: #b10e1e;
+}
+
+.two-column-accounts table.check-your-answers #delete-summary .button:hover {
+  background-color: #8e0513;
+}
+
+.two-column-accounts table.check-your-answers #delete-summary .no-delete {
+  left: 1em;
+  position: relative;
+  top: 0.5em;
+  color: #b10e1e;
+}
+
 p.company-details {
   font-size: .9em;
 }
@@ -182,27 +201,4 @@ header span {
     font-size: 19px;
     line-height: 1.3157894737;
   }
-}
-
-#delete-summary {
-  margin: 3em 0 -1em 0;
-}
-
-#delete-summary p {
-  color: #b10e1e;
-}
-
-#delete-summary .button {
-  background-color: #b10e1e;
-}
-
-#delete-summary .button:hover {
-  background-color: #8e0513;
-}
-
-#delete-summary .no-delete {
-  left: 1em;
-  position: relative;
-  top: 0.5em;
-  color: #b10e1e;
 }
