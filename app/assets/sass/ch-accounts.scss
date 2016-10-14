@@ -120,7 +120,7 @@ header {
   display: block;
 }
 
-.remove-summary {
+#delete-summary {
   margin:3em 0 -1em 0;
   p {color:$error-colour;}
   .button {
@@ -129,7 +129,7 @@ header {
       background-color:$error-button-hover;
     }
   }
-  .no-remove {
+  .no-delete {
     left: 1em;
     position: relative;
     top: 0.5em;
