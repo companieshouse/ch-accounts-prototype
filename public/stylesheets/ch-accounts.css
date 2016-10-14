@@ -183,3 +183,26 @@ header span {
     line-height: 1.3157894737;
   }
 }
+
+.remove-summary {
+  margin: 3em 0 -1em 0;
+}
+
+.remove-summary p {
+  color: #b10e1e;
+}
+
+.remove-summary .button {
+  background-color: #b10e1e;
+}
+
+.remove-summary .button:hover {
+  background-color: #8e0513;
+}
+
+.remove-summary .no-remove {
+  left: 1em;
+  position: relative;
+  top: 0.5em;
+  color: #b10e1e;
+}

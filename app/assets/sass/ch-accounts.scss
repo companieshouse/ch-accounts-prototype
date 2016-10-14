@@ -1,6 +1,7 @@
 // Additional styles for CH accounts
 @import 'colours';
 @import 'typography';
+$error-button-hover: #8e0513;
 
 .two-column-accounts {
   form-control {text-align: right;}
@@ -117,4 +118,21 @@ header {
   @include core-19;
   color: $secondary-text-colour;
   display: block;
+}
+
+.remove-summary {
+  margin:3em 0 -1em 0;
+  p {color:$error-colour;}
+  .button {
+    background-color:$error-colour;
+    &:hover  {
+      background-color:$error-button-hover;
+    }
+  }
+  .no-remove {
+    left: 1em;
+    position: relative;
+    top: 0.5em;
+    color:$error-colour;
+  }
 }
