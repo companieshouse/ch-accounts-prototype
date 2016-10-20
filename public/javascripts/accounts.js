@@ -21,11 +21,10 @@ $(document).ready(function(){
 });
 
 //Balance sheet statements page - disabled continue/next button, until user agrees to statements
-$(document).ready(function(){
-  $('#statements-button').attr('disabled', 'true'); // Disables Next button on page load
-  $('input:checkbox[name=confirmation]').click(function() {
-      var checkval = $(this).val();
-      $('#statements-button').prop('disabled', !(checkval == 'agree'));
-
-  });
-});
+//$(document).ready(function(){
+//  $('#statements-button').attr('disabled', 'true'); // Disables Next button on page load
+//  $('input:checkbox[name=confirmation]').click(function() {
+//      var checkval = $(this).val();
+//      $('#statements-button').prop('disabled', !(checkval == 'agree'));
+//
+//});
