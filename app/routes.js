@@ -171,7 +171,26 @@ router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
 
 });
 
+// More Loans to Directors
 
+router.get('/cato-style/cato-style-loans-to-directors', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var moreloansdirectors = req.query.moreloansdirectors;
+
+  if (moreloansdirectors == "no"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-balance-sheet-notes-completed-6");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-loans-to-directors');
+
+  }
+
+});
 
 
 module.exports = router;
