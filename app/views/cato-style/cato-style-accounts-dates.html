@@ -38,6 +38,10 @@
 
 <a class="link-back" href="cato-style-start-page">Back</a>
 
+{% include 'includes/error.html' %}
+
+
+<form action="/cato-style/cato-style-start-page-abridged" method="get" class="form">
 
 
       <h1 class="heading-xlarge">Confirm your company account dates</h1>
@@ -46,8 +50,8 @@
       <p class="form-hint">These should be the dates you have prepared your accounts to.</p>
 
       <h2 class="heading-medium">Do you want to change your company account dates?</h2>
-      <form>
-      <fieldset class="inline">
+
+      <fieldset class="inline" data-required data-error="Choose yes or no">
 
         <legend class="visuallyhidden">Do you want to change your company account dates?</legend>
 
@@ -62,10 +66,13 @@
             <input id="dates-no" type="radio" name="confirm-dates" value="No">
             No
           </label>
+          </fieldset>
+
+
           <div class="panel panel-border-narrow js-hidden" id="dates-yes-reveal">
             <p>You can change the end date of the period you're filing for by up to 7 days.</p>
             <div class="form-group">
-              <fieldset>
+              <fieldset class="inline">
                 <label class="block-label" for="24-march-2016">
                      <input id="24-march-2016" type="radio" name="change-date" value="24 March 2016">
                      24 March 2016
@@ -133,7 +140,9 @@
 
 
 
-      <p><a class="button" href="cato-style-start-page-abridged" role="button">Continue</a></p>
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div><!--form-group-->
     </form>
   </div><!-- text-->
 
