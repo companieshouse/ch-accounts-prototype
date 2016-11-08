@@ -100,7 +100,7 @@ function validate(e) {
 
           $('.error-summary-list:first').append(
             String(
-              '<li><a href="#' + id + '"> ' + text + errorMessage.() + '</a></li>'
+              '<li><a href="#' + id + '"> ' + text + errorMessage.toLowerCase() + '</a></li>'
             )
           );
         }
