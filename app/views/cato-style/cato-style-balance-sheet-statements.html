@@ -39,9 +39,9 @@
 
   {% include 'includes/error.html' %}
 
+  <form action="/cato-style/cato-style-balance-sheet-notes" method="get" class="form">
 
       <h1 class="heading-xlarge">Balance sheet statements</h1>
-      <form action="/cato-style/cato-style-balance-sheet-notes" method="get" class="form">
 
       <div class="notice">
       <p>
@@ -64,18 +64,18 @@
 
       <h2 class="heading-medium">Confirmation</h2>
 
-      <div class="form-group">
+
       <fieldset data-required data-error="You must agree to the legal statements">
 
         <legend class="visuallyhidden">Confirmation</legend>
-
+      <div class="form-group">
         <label class="block-label" for="confirmation">
           <input type="checkbox" id="confirmation" value="agree" name="confirmation">
            I agree to the legal statements - include them with my balance sheet.
         </label>
-
-      </fieldset>
       </div>
+      </fieldset>
+
 
 
       <div class="form-group">
