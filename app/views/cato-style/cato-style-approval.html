@@ -38,7 +38,10 @@
 
   <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
-<form class="form" method="get" action="">
+  {% include 'includes/error.html' %}
+
+
+  <form action="/cato-style/cato-style-submission" method="get" class="form">
 
 
       <h1 class="heading-xlarge">Approve your accounts</h1>
@@ -52,101 +55,65 @@
       <h2 class="heading-medium">Who approved the accounts?</h2>
       <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
       <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
-
-
-      <label class="form-label visually-hidden" for="who-approved">Who approved the accounts?</label>
-      <!--<input class="form-control" id="who-approved" type="text">-->
-
-
       <div class="form-group">
-        <fieldset>
-
+        <fieldset data-required data-error="You must choose a director">
           <legend class="visuallyhidden">Who approved the accounts?</legend>
-
-          <label class="block-label" for="john-smith">
-            <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
-            John Smith
-          </label>
-
-
-          <label class="block-label" for="david-smith">
-            <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
-            David Smith
-          </label>
-
-<!--
-          <label data-target="other-approver-reveal" class="block-label" for="different-approver">
-            <input type="radio" id="different-approver" value="Wales" name="name-of-approver" aria-controls="other-approver-reveal" aria-expanded="false">
-            A different approver
-          </label>
-
-          <div id="other-approver-reveal" class="panel panel-border-narrow js-hidden" aria-hidden="true">
-            <label class="form-label" for="other-approver">
-              What is the name of the approver?
-            </label>
-            <input type="text" id="other-approver" class="form-control">
-          </div>
--->
+            <div class="form-group">
+              <label class="block-label" for="john-smith">
+                <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
+                John Smith
+              </label>
+              <label class="block-label" for="david-smith">
+                <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
+                David Smith
+              </label>
+            </div>
         </fieldset>
       </div>
 
 
-<!--
-      <h2 class="heading-medium">Agree to approval statement</h2>
-
-      <div class="form-group">
-        <fieldset>
-
-          <legend class="visuallyhidden">Agree to approval statement</legend>
-
-          <label class="block-label" for="approval-statement">
-            <input type="checkbox" id="approval-statement" value="" name="approval-statement">
-            The abridged accounts have been approved by the director/board of directors
-          </label>
-
-        </fieldset>
-      </div>
 
 
--->
+
       <h2 class="heading-medium">When were the accounts approved?</h2>
 
-      <fieldset class="form-group">
-      <legend class="visuallyhidden">When were they approved?</legend>
-        <div class="form-date">
+      <div class="form-group">
+          <legend class="visuallyhidden">When were the accounts approved?</legend>
 
-          <p class="form-hint">This is the date the accounts were approved by the director. For example, 31 3 2016</p>
+          <fieldset>
+            <div class="form-date">
+              <p class="form-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2016</p>
 
-          <div class="form-group form-group-day">
-            <label for="approval-day">Day</label>
-            <input type="number" max="31" min="0" pattern="[0-9]*" name="approval-day" id="approval-day" class="form-control">
-          </div>
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label>
+                <input class="form-control" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+              </div>
 
-          <div class="form-group form-group-month">
-            <label for="approval-month">Month</label>
-            <input type="number" max="12" min="0" pattern="[0-9]*" name="approval-month" id="approval-month" class="form-control">
-          </div>
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label>
+                   <input class="form-control" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" min="0" max="12">
+                </div>
 
-          <div class="form-group form-group-year">
-            <label for="approval-year">Year</label>
-            <input type="number" max="2014" min="0" pattern="[0-9]*" name="approval-year" id="approval-year" class="form-control">
-          </div>
-
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label>
+                <input class="form-control" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" min="0" max="2016">
+              </div>
+            </div>
+          </fieldset>
         </div>
-      </fieldset>
 
 
+
+
+
+      <p>&nbsp;</p>
 
       <h2 class="heading-medium">Now submit your abridged accounts</h2>
       <p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-        <div class="form-group">
-          <p><a href="cato-style-submission" class="button">Submit your abridged accounts</a></p>
-        </div>
-
-
-
-       </form>
-
+      <div class="form-group">
+        <input type="submit" class="button" value="Submit your abridged accounts">
+      </div><!--form-group-->
+    </form>
 
 
 
