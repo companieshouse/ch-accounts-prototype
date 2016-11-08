@@ -54,7 +54,7 @@ function validate(e) {
 
           $('.error-summary-list:first').append(
             String(
-              '<li><a href="#' + id + '"> ' + text + errorMessage + '</a></li>'
+              '<li> &#8226; <a href="#' + id + '"> ' + text + errorMessage + '</a></li>'
             )
           );
         }
