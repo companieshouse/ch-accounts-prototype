@@ -144,3 +144,16 @@ $(document).ready(function() {
      }
      $('#called-up-share-capital-previous, #share-premium-account-previous, #revaluation-reserve-previous, #other-reserves-previous, #profit-and-loss-account-previous').change(compute);
 });
+
+
+// Show a warning when user tries to amend a figure
+
+$('#tangible-assets-current').focus(function() {
+    $('div.warning-overview').show();
+    $(document).bind('focusin.warning-overview click.warning-overview',function(e) {
+        if ($(e.target).closest('.warning-overview, #tangible-assets-current').length) return;
+        $(document).unbind('.warning-overview');
+        $('div.warning-overview').fadeOut('medium');
+    });
+});
+$('div.warning-overview').hide();

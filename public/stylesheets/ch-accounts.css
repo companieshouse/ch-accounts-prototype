@@ -202,3 +202,15 @@ header span {
     line-height: 1.3157894737;
   }
 }
+
+.warning-overview {
+  background-color: #fff2d3;
+  border: 3px solid #ffbf47;
+  display: block;
+  margin: 0.5em 0 1em;
+  padding: 0.5em;
+}
+
+.warning-overview p {
+  margin: 0;
+}
