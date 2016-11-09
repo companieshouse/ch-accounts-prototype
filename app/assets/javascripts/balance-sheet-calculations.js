@@ -148,7 +148,7 @@ $(document).ready(function() {
 
 // Show a warning when user tries to amend a figure
 
-$('#tangible-assets-current').focus(function() {
+$('#tangible-assets-current').change(function() {
     $('div.warning-overview').show();
     $(document).bind('focusin.warning-overview click.warning-overview',function(e) {
         if ($(e.target).closest('.warning-overview, #tangible-assets-current').length) return;
