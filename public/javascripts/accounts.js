@@ -79,3 +79,15 @@ function attachOnChangeListener(arr, total, substract){
 		});
 	}
 }
+
+
+
+
+
+// Show message when user clicks Delete Employees note
+$(function() {
+    $('#employees-delete').click(function() {
+        $('#employees-delete-warning').show();
+        return false;
+    });
+});
