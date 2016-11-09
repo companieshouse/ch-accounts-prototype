@@ -135,11 +135,40 @@ header {
   display: block;
 }
 
-.warning-overview {
-    background-color: rgb(255, 242, 211);
+
+.warning-with-triangle {
+    top:25px;
+    position: relative;
+    background-color: lighten( $focus-colour, 30% );
     border: 3px solid $focus-colour;
-    display: block;
-    margin: 0.5em 0 1em;;
+    width: auto;
+    height: auto;
     padding: 0.5em;
+    margin-bottom: 1.5em;
     & p {margin:0;}
+}
+.warning-with-triangle:after,
+.warning-with-triangle:before {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.warning-with-triangle:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: lighten( $focus-colour, 30% );
+    border-width: 19px;
+    left: 80%;
+    margin-left: -19px;
+}
+.warning-with-triangle:before {
+    border-color: rgba(113, 158, 206, 0);
+    border-bottom-color: $focus-colour;
+    border-width: 23px;
+    left: 80%;
+    margin-left: -23px;
 }

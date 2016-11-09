@@ -203,14 +203,44 @@ header span {
   }
 }
 
-.warning-overview {
-  background-color: #fff2d3;
+.warning-with-triangle {
+  top: 25px;
+  position: relative;
+  background-color: #fff4e0;
   border: 3px solid #ffbf47;
-  display: block;
-  margin: 0.5em 0 1em;
+  width: auto;
+  height: auto;
   padding: 0.5em;
+  margin-bottom: 1.5em;
 }
 
-.warning-overview p {
+.warning-with-triangle p {
   margin: 0;
+}
+
+.warning-with-triangle:after,
+.warning-with-triangle:before {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.warning-with-triangle:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff4e0;
+  border-width: 19px;
+  left: 80%;
+  margin-left: -19px;
+}
+
+.warning-with-triangle:before {
+  border-color: rgba(113, 158, 206, 0);
+  border-bottom-color: #ffbf47;
+  border-width: 23px;
+  left: 80%;
+  margin-left: -23px;
 }
