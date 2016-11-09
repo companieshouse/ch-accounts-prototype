@@ -4,11 +4,12 @@ $(document).ready(function() {
        var tangiblecostatstart = $('#tangible-cost-at-start').val();
        var tangiblecostadditions = $('#tangible-cost-additions').val();
        var tangiblecostdisposals = $('#tangible-cost-disposals').val();
+       var tangiblecostrevaluations = $('#tangible-cost-revaluations').val();
        var tangiblecosttransfers = $('#tangible-cost-transfers').val();
-       var total = +tangiblecostatstart + +tangiblecostadditions + +tangiblecostdisposals + +tangiblecosttransfers;
+       var total = +tangiblecostatstart + +tangiblecostadditions + +tangiblecostdisposals + +tangiblecostrevaluations + +tangiblecosttransfers;
        $('#tangible-cost-at-end').val(total);
      }
-     $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-transfers').change(compute);
+     $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-revaluations, #tangible-cost-transfers').change(compute);
 });
 
 // Tangible assets note: depreciation AT END
@@ -56,11 +57,12 @@ $(document).ready(function() {
        var intangiblecostatstart = $('#intangible-cost-at-start').val();
        var intangiblecostadditions = $('#intangible-cost-additions').val();
        var intangiblecostdisposals = $('#intangible-cost-disposals').val();
+       var intangiblecostrevaluations = $('#intangible-cost-revaluations').val();
        var intangiblecosttransfers = $('#intangible-cost-transfers').val();
-       var total = +intangiblecostatstart + +intangiblecostadditions + +intangiblecostdisposals + +intangiblecosttransfers;
+       var total = +intangiblecostatstart + +intangiblecostadditions + +intangiblecostdisposals + +intangiblecostrevaluations + +intangiblecosttransfers;
        $('#intangible-cost-at-end').val(total);
      }
-     $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-transfers').change(compute);
+     $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-revaluations, #intangible-cost-transfers').change(compute);
 });
 
 // Intangible assets note: Amortisation AT END
