@@ -149,11 +149,11 @@ $(document).ready(function() {
 // Show a warning when user tries to amend a figure
 
 $('#tangible-assets-current').change(function() {
-    $('div.warning-with-triangle').fadeIn('medium');
+    $('div.warning-with-triangle').show();
     $(document).bind('focusin.warning-with-triangle click.warning-with-triangle',function(e) {
         if ($(e.target).closest('.warning-with-triangle, #tangible-assets-current').length) return;
         $(document).unbind('.warning-with-triangle');
-        $('div.warning-with-triangle').fadeOut('medium');
+        $('div.warning-with-triangle').hide();
     });
 });
 $('div.warning-with-triangle').hide();

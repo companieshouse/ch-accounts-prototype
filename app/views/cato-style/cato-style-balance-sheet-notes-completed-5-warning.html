@@ -1,0 +1,164 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Balance sheet notes
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<main id="content" role="main" class="two-column-accounts">
+<div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+  <h1 class="heading-xlarge">Balance sheet notes</h1>
+
+  <div class="text">
+    <p>You need to add notes about some of the figures you entered in your balance sheet.</p>
+  </div>
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Mandatory notes</caption>
+  <thead>
+    <tr>
+      <th class=" heading-large" colspan="4">
+    Mandatory notes
+        <span class="form-hint text">Based on your balance sheet entries, you must supply these notes. You can add other notes later if you need to.</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="note-completed"><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+      <td>Accounting policies</td>
+      <td></td>
+      <td class="change-answer"><a href="cato-style-accounting-policies">Change note <span class="visuallyhidden">Accounting policies</span></a></td>
+    </tr>
+      <tr>
+        <td class="note-completed"><i class="fa fa-exclamation-triangle fa-lg accounts-update" aria-hidden="true"></i></td>
+        <td>Tangible assets
+            <span class="warning-note">You need to change this note</span>
+        </td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-abridged-tangible-note-errors">Change note <span class="visuallyhidden">Tangible assets</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Optional notes</caption>
+  <thead>
+    <tr>
+      <th class=" heading-medium" colspan="4">Optional notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr id="employees-delete-warning"  style="display: none;">
+        <td colspan="4" class="error-summary" id="delete-summary">
+        <p><strong>Are you sure you want to delete the Employees note?</strong></p>
+        <p><a href="javascript:void(0)" class="button">Yes, delete <span class="visuallyhidden">Employees note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep <span class="visuallyhidden">Employees note</span></a></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="note-completed"><i class="fa fa-check fa-lg accounts-success" aria-hidden="true"></i></td>
+        <td>Employees</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-employees" id="employees-delete">Delete note<span class="visuallyhidden">Employees</span></a> | <a href="cato-style-employees">Change note<span class="visuallyhidden">Employees</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Fixed assets investments</td>
+        <td><!--£15--></td>
+        <td class="change-answer"><a href="cato-style-fixed-assets-investments-note">Add note<span class="visuallyhidden">Fixed assets investments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Current assets investments</td>
+        <td><!--£15--></td>
+        <td class="change-answer"><a href="cato-style-current-assets-investments-note">Add note<span class="visuallyhidden">Current assets investments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Debtors</td>
+        <td><!--£15--></td>
+        <td class="change-answer"><a href="cato-style-debtors">Add note<span class="visuallyhidden">Debtors</span></a> </td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Creditors - amounts falling due within one year</td>
+        <td><!--£25--></td>
+        <td class="change-answer"><a href="cato-style-creditors-amounts-falling-due-within-one-year">Add note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Creditors - amounts falling due after more than one year</td>
+        <td><!--£25--></td>
+        <td class="change-answer"><a href="cato-style-creditors-amounts-falling-due-after-one-year">Add note<span class="visuallyhidden">Creditors - amounts falling due after more than one year</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Financial commitments</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-financial-commitments">Add note <span class="visuallyhidden">Financial commitments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Loans to directors</td>
+        <td></td>
+      <td class="change-answer"><a href="cato-style-loans-to-directors">Add note <span class="visuallyhidden">Loans to directors</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Changes in presentation and prior period adjustments</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-financial-changes-in-presentation">Add note <span class="visuallyhidden">Changes in presentation and prior period adjustments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Related party transactions</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-related-party-transactions">Add note <span class="visuallyhidden">Related party transactions</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>Post balance sheet events</td>
+        <td></td>
+        <td class="change-answer"><a href="cato-style-post-balance-sheet-events">Add note <span class="visuallyhidden">Post balance sheet events</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div class="form-group">
+    <p><a href="cato-style-review" class="button">Continue to Review</a></p>
+  </div>
+
+</main>
+
+{% endblock %}

@@ -115,6 +115,12 @@
   margin: 0 auto;
 }
 
+.two-column-accounts table.check-your-answers .accounts-update {
+  color: #ffbf47;
+  display: block;
+  margin: 0 auto;
+}
+
 .two-column-accounts table.check-your-answers .review-reveal {
   padding: 0.5em 0 0.2em 1em;
 }
@@ -243,4 +249,11 @@ header span {
   border-width: 23px;
   left: 80%;
   margin-left: -23px;
+}
+
+.warning-note {
+  background-color: #fff4e0;
+  border: 3px solid #ffbf47;
+  padding: 0 0.3em;
+  margin-left: 0.5em;
 }
