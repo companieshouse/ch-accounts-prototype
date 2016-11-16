@@ -178,4 +178,7 @@ header {
   border: 3px solid $focus-colour;
   padding:0 0.3em;
   margin-left:0.5em;
+  &.warning-note-large {
+  padding:.5em;
+  margin-left:0;}
 }

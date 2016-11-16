@@ -35,7 +35,18 @@
     	<h1 id="page-header" class="heading-xlarge">Sign in to Companies House</h1>
     </header>
 
-<p class="warning-note warning-note-large text">Your existing WebFiling or WebCheck password will not work with this service, you will need to <a href="chs-register-page">register</a>.</p>
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        Sign in failed
+      </h1>
+      <p>WebFiling and WebCheck users will need to register for this service</p>
+
+      <ul class="error-summary-list">
+        <li><a href="#password">Invalid email address or password, 4 attempts remain.</a></li>
+      </ul>
+
+    </div>
 
     <form enctype="multipart/form-data" method="POST" action="/oauth2/user/signin" class="form " name="signin">
       <fieldset>
@@ -43,16 +54,17 @@
 
         <div class="form-group ">
           <label class="form-label" for="signin_email">Email address</label>
-          <input type="email" class="form-control" autocomplete="off" value="" id="signin_email" name="signin_email">
+          <input type="email" class="form-control" autocomplete="off" value="user@testcompany.co.uk" id="signin_email" name="signin_email">
         </div>
 
-        <div class="form-group">
+        <div class="form-group error">
           <label class="form-label" for="password">Password</label>
-          <input type="password" class="form-control password" value="" id="password" name="password" autocomplete="off">
+          <span class="error-message">Invalid email address or password, 4 attempts remain.</span>
+          <input type="password" class="form-control password" value="12345678" id="password" name="password" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <a href="chs-login-page-error" class="button" id="submit">Sign in</a>
+          <a href="chs-authenticate-page" class="button" id="submit">Sign in</a>
         </div>
 
         <div class="form-group">
