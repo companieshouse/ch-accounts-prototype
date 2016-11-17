@@ -144,7 +144,7 @@ router.get('/cato-style/cato-style-start-page-dormant-abridged', function (req, 
 
 });
 
-// Choose type of accounts
+// Choose type of accounts (replaced by "Which type of accounts have you prepared?")
 
 router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
 
@@ -166,6 +166,25 @@ router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
   } else {
 
     res.render('cato-style/cato-style-start-page-abridged');
+
+  }
+
+});
+
+// Which type of accounts have you prepared?")
+
+router.get('/cato-style/cato-style-start-page', function (req, res) {
+
+  var choosetypeaccounts = req.query.choosetypeaccounts;
+
+    if (choosetypeaccounts == "dontknow"){
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-about-your-business");
+
+
+  } else {
+
+    res.render('cato-style/cato-style-start-page');
 
   }
 
