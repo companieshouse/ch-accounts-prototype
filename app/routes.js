@@ -146,30 +146,30 @@ router.get('/cato-style/cato-style-start-page-dormant-abridged', function (req, 
 
 // Choose type of accounts (replaced by "Which type of accounts have you prepared?")
 
-router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
+// router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
 
-  var choosetypeaccounts = req.query.choosetypeaccounts;
+//   var choosetypeaccounts = req.query.choosetypeaccounts;
 
-    if (choosetypeaccounts == "micro"){
+//     if (choosetypeaccounts == "micro"){
     // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-start-page-micros");
+//     res.redirect("/cato-style/cato-style-start-page-micros");
 
-    } else   if (choosetypeaccounts == "full"){
+//     } else   if (choosetypeaccounts == "full"){
     // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-start-page-full");
+//     res.redirect("/cato-style/cato-style-start-page-full");
 
 
-      } else if (choosetypeaccounts == "dormant"){
+//      } else if (choosetypeaccounts == "dormant"){
     // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-start-page-dormant");
+//     res.redirect("/cato-style/cato-style-start-page-dormant");
 
-  } else {
+//   } else {
 
-    res.render('cato-style/cato-style-start-page-abridged');
+//     res.render('cato-style/cato-style-start-page-abridged');
 
-  }
+//   }
 
-});
+// });
 
 // Which type of accounts have you prepared?")
 

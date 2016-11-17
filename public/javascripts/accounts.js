@@ -10,15 +10,15 @@ $(document).ready(function() {
 });
 
 //Start page - disabled next button, until user confirms they have a set of prepared accounts ready
-$(document).ready(function(){
-  $('#accounts-start-button').attr('disabled', 'true'); // Disables Next button on page load
-  $('input:checkbox[name=prepared]').click(function() {
-      var checkval = $(this).val();
-    //  $('#choose-accounts-button').prop('disabled', !(checkval == 'abridged' || checkval == 'micro' || checkval == 'dormant'));
-      $('#accounts-start-button').prop('disabled', !(checkval == 'prepared-yes'));
+//$(document).ready(function(){
+//  $('#accounts-start-button').attr('disabled', 'true'); // Disables Next button on page load
+//  $('input:checkbox[name=prepared]').click(function() {
+//      var checkval = $(this).val();
+//    //  $('#choose-accounts-button').prop('disabled', !(checkval == 'abridged' || checkval == 'micro' || checkval == 'dormant'));
+//      $('#accounts-start-button').prop('disabled', !(checkval == 'prepared-yes'));
 
-  });
-});
+//  });
+//});
 
 //Balance sheet statements page - disabled continue/next button, until user agrees to statements
 //$(document).ready(function(){
@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 
 
-//// Copied from DEV version, reveals help as soon as user interacts with numeruc inputs
+//// Copied from DEV version, reveals help as soon as user interacts with numeric inputs
 $(function() {
 
 	// Fixed assets
@@ -90,4 +90,41 @@ $(function() {
         $('#employees-delete-warning').show();
         return false;
     });
+});
+
+
+
+
+
+
+//Balance sheet statements
+//$(function(){
+//  $('#confirmation').on('change',function(){
+//     $('.confirmation-child').prop('checked',$(this).prop('checked'));
+//  });
+//  $('.confirmation-child').on('change',function(){
+//     $('#confirmation').prop('checked',$('.confirmation-child:checked').length ? true: false);
+//  });
+// });
+
+//About your business (2 from 3 for Micro eligibility)
+$('.micro-eligibility-questions').click(function(){
+  if($(this).find('input[type="radio"]:checked').length > 2)
+    {
+       $(".button").removeClass("disabled");
+    }
+  else
+    {
+      //$(".button").addClass("disabled");
+    }
+});
+
+$('.micro-eligibility').click(function() {
+  if($('input[type=radio][value="Yes"]:checked').length > 1) {
+    window.location.replace("/cato-style/cato-style-choose-micros");
+  }
+ else {
+   window.location.replace("/cato-style/cato-style-choose-full-or-abridged");
+ }
+ return false;
 });
