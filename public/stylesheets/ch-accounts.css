@@ -82,6 +82,8 @@
 
 .two-column-accounts table.check-your-answers td.note-completed {
   width: 5%;
+  padding-top: .2em;
+  padding-bottom: 0;
 }
 
 .two-column-accounts table.check-your-answers tr.total td {
@@ -113,12 +115,14 @@
   color: #00823b;
   display: block;
   margin: 0 auto;
+  font-size: 1em;
 }
 
 .two-column-accounts table.check-your-answers .accounts-update {
   color: #ffbf47;
   display: block;
   margin: 0 auto;
+  font-size: 1em;
 }
 
 .two-column-accounts table.check-your-answers .review-reveal {

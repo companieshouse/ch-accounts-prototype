@@ -60,7 +60,7 @@ table.check-your-answers {
       }
     }
     th.check-your-answers-section {width: 75%;}
-    td.note-completed {width: 5%;}
+    td.note-completed {width: 5%; padding-top:.2em; padding-bottom: 0;}
 
     tr.total td {font-weight: 700;}
     td.numeric {font-family: inherit; font-size: inherit; padding-right: 0;}
@@ -83,8 +83,8 @@ table.check-your-answers {
     tr.to-be-completed th {
       color: $secondary-text-colour;}
 
-    .accounts-success {color: $button-colour; display: block; margin: 0 auto;}
-    .accounts-update {color: $focus-colour; display: block; margin: 0 auto;}
+    .accounts-success {color: $button-colour; display: block; margin: 0 auto; font-size: 1em}
+    .accounts-update {color: $focus-colour; display: block; margin: 0 auto; font-size: 1em}
     .review-reveal {
       padding:0.5em 0 0.2em 1em;
       .column-one-half p {text-align:left}
