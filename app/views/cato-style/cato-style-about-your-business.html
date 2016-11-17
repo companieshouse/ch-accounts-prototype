@@ -41,71 +41,108 @@
 
 
       <h1 class="heading-xlarge">About your business</h1>
-      <p>Your answers to these questions will help us provide you with the correct type of filing.</p>
+      <p class="lede">Your answers to these questions will determine which types of accounts you are eligible to file.</p>
 
 
       <h2 class="heading-medium">Was your turnover £632,000 or less?</h2>
 
       <div class="micro-eligibility-questions">
 
-      <div class="form-group">
-      <fieldset class="inline">
+            <div class="form-group">
 
-        <legend class="visuallyhidden">Was your turnover £632,000 or less?</legend>
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Was your turnover £632,000 or less?</legend>
+              <label class="block-label" for="turnover-yes">
+                <input id="turnover-yes" type="radio" name="turnover" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="turnover-no" data-target="turnover-2-hidden">
+                <input id="turnover-no" type="radio" name="turnover" value="No">
+                No
+              </label>
+            </fieldset>
 
-        <label class="block-label" for="turnover-yes">
-          <input id="turnover-yes" type="radio" name="turnover" value="Yes">
-          Yes
-        </label>
-        <label class="block-label" for="turnover-no">
-          <input id="turnover-no" type="radio" name="turnover" value="No">
-          No
-        </label>
+            <div class="js-hidden" id="turnover-2-hidden">
+                <h2 class="heading-medium">Was your turnover £6.5 million or less? </h2>
+                <fieldset class="inline">
+                  <legend class="visuallyhidden"> Was your turnover £6.5 million or less? </legend>
+                  <label class="block-label" for="turnover-2-yes">
+                    <input id="turnover-2-yes" type="radio" name="turnover-2" value="Yes">
+                    Yes
+                  </label>
+                  <label class="block-label" for="turnover-2-no">
+                    <input id="turnover-2-no" type="radio" name="turnover-2" value="No">
+                    No
+                  </label>
+                </fieldset>
+            </div><!--js-hidden-->
 
-      </fieldset>
+            <h2 class="heading-medium">Was your balance sheet total £316,000 or less?</h2>
+            <span class="form-hint">This is the sum of the total fixed assets plus total current assets.</span>
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Was your balance sheet total £316,000 or less?</legend>
+              <label class="block-label" for="balance-sheet-yes">
+                <input id="balance-sheet-yes" type="radio" name="balance-sheet" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="balance-sheet-no" data-target="balance-sheet-2-hidden">
+                <input id="balance-sheet-no" type="radio" name="balance-sheet" value="No">
+                No
+              </label>
+            </fieldset>
 
-      <h2 class="heading-medium">Was your balance sheet £316,000 or less?</h2>
+            <div class="js-hidden" id="balance-sheet-2-hidden">
+                <h2 class="heading-medium">Was your balance sheet total £3.26 million or less?</h2>
+                <span class="form-hint">This is the sum of the total fixed assets plus total current assets.</span>
+                <fieldset class="inline">
+                  <legend class="visuallyhidden">Was your balance sheet total £3.26 million or less?</legend>
+                  <label class="block-label" for="balance-sheet-2-yes">
+                    <input id="balance-sheet-2-yes" type="radio" name="balance-sheet-2" value="Yes">
+                    Yes
+                  </label>
+                  <label class="block-label" for="balance-sheet-2-no">
+                    <input id="balance-sheet-2-no" type="radio" name="balance-sheet-2" value="No">
+                    No
+                  </label>
+                </fieldset>
+            </div><!--js-hidden-->
+
+            <h2 class="heading-medium">Did you have an average of 10 employees or fewer during the period?</h2>
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Did you have an average of 10 employees or fewer during the period?</legend>
+              <label class="block-label" for="employees-yes">
+                <input id="employees-yes" type="radio" name="employees" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="employees-no" data-target="employees-2-hidden">
+                <input id="employees-no" type="radio" name="employees" value="No">
+                No
+              </label>
+            </fieldset>
+
+            <div class="js-hidden" id="employees-2-hidden">
+                <h2 class="heading-medium">Did you have an average of 50 employees or fewer during the period?</h2>
+                <fieldset class="inline">
+                  <legend class="visuallyhidden">Did you have an average of 50 employees or fewer during the period?</legend>
+                  <label class="block-label" for="employees-2-yes">
+                    <input id="employees-2-yes" type="radio" name="employees-2" value="Yes">
+                    Yes
+                  </label>
+                  <label class="block-label" for="employees-2-no">
+                    <input id="employees-2-no" type="radio" name="employees-2" value="No">
+                    No
+                  </label>
+                </fieldset>
+            </div><!--js-hidden-->
+
+          </div><!--form-group-->
 
 
-      <fieldset class="inline">
 
-        <legend class="visuallyhidden">Was your balance sheet £316,000 or less?</legend>
+          <div class="form-group">
+            <input type="submit" class="button micro-eligibility disabled" value="Continue">
+          </div><!--form-group-->
 
-        <label class="block-label" for="balance-sheet-yes">
-          <input id="balance-sheet-yes" type="radio" name="balance-sheet" value="Yes">
-          Yes
-        </label>
-        <label class="block-label" for="balance-sheet-no">
-          <input id="balance-sheet-no" type="radio" name="balance-sheet" value="No">
-          No
-        </label>
-
-      </fieldset>
-
-      <h2 class="heading-medium">Did you have an average of 10 employees or fewer during the period?</h2>
-
-
-      <fieldset class="inline">
-
-        <legend class="visuallyhidden">Did you have an average of 10 employees or fewer during the period?</legend>
-
-        <label class="block-label" for="employees-yes">
-          <input id="employees-yes" type="radio" name="employees" value="Yes">
-          Yes
-        </label>
-        <label class="block-label" for="employees-no">
-          <input id="employees-no" type="radio" name="employees" value="No">
-          No
-        </label>
-
-      </fieldset>
-    </div><!--form-group-->
-
-
-
-    <div class="form-group">
-      <input type="submit" class="button micro-eligibility disabled" value="Continue">
-    </div><!--form-group-->
   </div><!--micro-eligibility-questions-->
 
 
