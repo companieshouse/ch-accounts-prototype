@@ -173,7 +173,7 @@ router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
 
 // Which type of accounts have you prepared?")
 
-router.get('/cato-style/cato-style-start-page', function (req, res) {
+router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
 
   var choosetypeaccounts = req.query.choosetypeaccounts;
 
@@ -184,7 +184,7 @@ router.get('/cato-style/cato-style-start-page', function (req, res) {
 
   } else {
 
-    res.render('cato-style/cato-style-start-page');
+    res.render('cato-style/cato-style-start-page-abridged');
 
   }
 

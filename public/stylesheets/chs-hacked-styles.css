@@ -393,3 +393,10 @@ ol.example-icon-list i {
 .action-button-list li {
   padding-bottom: .7em;
 }
+
+.destination {
+  font-size: 16px;
+  display: block;
+  padding-top: .5em;
+  max-width: 13em;
+}
