@@ -1,0 +1,79 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Register with Companies House
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main" class="search">
+
+      <div class="phase-banner-alpha">
+      <p>
+        <strong class="phase-tag">ALPHA</strong>
+        <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">
+      Register with Companies House
+      </h1>
+    </header>
+
+      <div class="text">
+      <p>This is a new service so you'll need to register.</p>
+      <p>The email address you registered for WebFiling was<br>
+      <span class="heading-medium">user@testcompany.co.uk</span></p>
+
+      <form action="chs-choose-password" method="get" class="form">
+
+        <h2 class="heading-medium">
+          Do you want to use the same email address for the Companies House service?
+        </h2>
+
+        <form>
+          <div class="form-group">
+            <fieldset class="inline">
+
+              <legend class="visually-hidden">Do you want to use the same email address for the Companies House service?</legend>
+
+              <label class="block-label" for="radio-inline-1">
+                <input id="radio-inline-1" type="radio" name="chsfromwebfiling" value="yes">
+                Yes
+              </label>
+              <label class="block-label" for="radio-inline-2">
+                <input id="radio-inline-2" type="radio" name="chsfromwebfiling" value="no">
+                No
+              </label>
+
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+
+          </form>
+        </div><!--Text-->
+        </main>
+
+
+
+
+{% endblock %}
