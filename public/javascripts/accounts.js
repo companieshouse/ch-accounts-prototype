@@ -109,13 +109,13 @@ $(function() {
 
 //About your business (2 from 3 for Micro eligibility)
 $('.micro-eligibility-questions').click(function(){
-  if($(this).find('input[type="radio"]:checked').length > 2)
+  if($(this).find('input[type="radio"]:checked').length > 3)
     {
        $(".button").removeClass("disabled");
     }
   else
     {
-      //$(".button").addClass("disabled");
+      $(".button").addClass("disabled");
     }
 });
 
