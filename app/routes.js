@@ -211,7 +211,28 @@ router.get('/cato-style/cato-style-loans-to-directors', function (req, res) {
 
 });
 
-// CHS from WebFiling
+// WebFiling to CHS
+
+router.get('/chs/chs-from-webfiling', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var gotochs = req.query.gotochs;
+
+  if (gotochs == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/webfiling/webfiling-accounts-picker");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('chs/chs-from-webfiling');
+
+  }
+
+});
+
+// CHS from WebFiling (Register, CHS)
 
 router.get('/chs/chs-choose-password', function (req, res) {
 
