@@ -7,8 +7,18 @@
 
 {% block content %}
 
-
-
+<style type="text/css">
+.bubble {
+  display:inline;
+  background-color:#006699;
+  color:white;
+  padding:0.2em .5em;
+  float:right;
+  border-radius: 15px;
+  position:relative;
+  top:20px;
+  margin-top:-30px;}
+</style>
 
 
 <div id="container">
@@ -62,36 +72,29 @@
     <h2 class="complete">Must be delivered to Companies House no later than:</h2>
     <p class="answer">31 December 2016</p></section>
 
+    <div class="message warning">
+    <h2 class="margin-left-5 margin-top-5">Abbreviated Accounts</h2>
+    <p><strong>The Companies Act 2006 no longer permits companies to file abbreviated accounts.</strong></p>
+    <p> Your company will need to file accounts of a different type (full accounts, micro-entity accounts or abridged accounts).</p>
+    </div>
 
     <div class="accountsPicker">
+
+      <a href="javascript:void(0)" class="largeFont"><span id="microEntities">Micro-entity accounts</span>
+      These audit exempt accounts are suitable for companies that fall within the micro-entity definition.</a>
+
+    <span class="bubble">New</span>
       <a href="/webfiling/webfiling-before-chs" class="largeFont"><span id="abridgedccounts">Abridged accounts</span>
-  These audit exempt accounts are suitable for companies to input figures from already prepared and approved abridged accounts.</a>
-        <a href="javascript:void(0)" class="largeFont"><span id="abbreviatedAccounts">Abbreviated accounts</span>
-		These audit exempt accounts are suitable for companies to input abbreviated figures from their full accounts that have already been prepared and approved.</a>
+      These audit exempt accounts are suitable for companies to input figures from already prepared and approved abridged accounts.</a>
 
+      <a href="javascript:void(0)" class="largeFont"><span>Full accounts with Companies House and HMRC</span>
+      These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</a>
 
-        <a href="javascript:void(0)" class="largeFont"><span id="dormantAccounts">Dormant company accounts</span>
-     	These accounts are suitable for companies limited by shares or by guarantee that have never traded.</a>
+      <a href="javascript:void(0)" class="largeFont"><span id="dormantAccounts">Dormant company accounts</span>
+      These accounts are suitable for companies limited by shares or by guarantee that have never traded.</a>
 
-      <div class="clear"></div>
+      </div> <!--End of div class="accountsPicker"-->
 
-            <a href="javascript:void(0)" class="largeFont"><span id="microEntities">Micro-entity accounts</span>
-          	These audit exempt accounts are suitable for companies that fall within the micro-entity definition.</a>
-
-
-
-
-        <a href="javascript:void(0)" class="largeFont"><span>Full accounts (with abbreviated option)</span>
-		These accounts are suitable for full accounts figures, from which the abbreviated figures are extracted for Companies House.</a>
-
-
-        <a href="javascript:void(0)" class="largeFont"><span>Full accounts with Companies House and HMRC</span>
-		These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</a>
-
-
-        </div> <!--End of div class="accountsPicker"-->
-
-    <hr/>
 
     <p><a href="javascript:void(0)" class="negative right">Back</a></p>
 
