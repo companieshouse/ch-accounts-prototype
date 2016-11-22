@@ -4,7 +4,7 @@ $(document).ready(function() {
     $('input:radio[name=choosetypeaccounts]').click(function() {
         var checkval = $(this).val();
       //  $('#choose-accounts-button').prop('disabled', !(checkval == 'abridged' || checkval == 'micro' || checkval == 'dormant'));
-        $('#choose-accounts-button').prop('disabled', !(checkval == 'abridged'|| checkval == 'dontknow'));
+        $('#choose-accounts-button').prop('disabled', !(checkval == 'abridged'));
 
     });
 });
