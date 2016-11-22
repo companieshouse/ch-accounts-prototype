@@ -1,0 +1,64 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Abridged accounts
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+
+
+
+<div class="text">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+  <form action="/chs/chs-start-page" method="get" class="form">
+
+
+      <h1 class="heading-xlarge">Abridged accounts</h1>
+
+
+        <h2 class="heading-medium">Before you start</h2>
+         <ul class="list list-bullet">
+           <li>The abridged accounts need to be prepared, with figures rounded to whole numbers. Round down income, and round up spending.</li>
+           <li>The abridged accounts should have been approved by the director/board of directors.</li>
+         </ul>
+
+
+
+         <div class="form-group">
+           <input type="submit" class="button" value="File abridged accounts" id="">
+           <span class="destination"> on the Companies House service</span>
+         </div>
+
+       </form>
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}
