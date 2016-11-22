@@ -71,7 +71,7 @@
                 <input id="dormant-yes" type="radio" name="dormant" value="Yes">
                 Yes
               </label>
-              <label class="block-label" for="dormant-no">
+              <label class="block-label" for="dormant-no" data-target="the-rest">
                 <input id="dormant-no" type="radio" name="dormant" value="No">
                 No
               </label>
@@ -80,6 +80,7 @@
 
 
 
+            <div class="js-hidden" id="the-rest">
 
       <h2 class="heading-medium">Was your turnover £632,000 or less?</h2>
 
@@ -172,7 +173,40 @@
                 </fieldset>
             </div><!--js-hidden-->
 
-          </div><!--form-group-->
+
+
+
+          <h2 class="heading-medium">Do you want to include profit and loss or a directors report?</h2>
+          <span class="form-hint" style="position:relative; top:-20px;">Some help text</span>
+
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Do you want to include profit and loss and/or a directors report?</legend>
+            <label class="block-label" for="profit-yes">
+              <input id="profit-yes" type="radio" name="profit" value="Yes">
+              Yes
+            </label>
+            <label class="block-label" for="profit-no">
+              <input id="profit-no" type="radio" name="profit" value="No">
+              No
+            </label>
+          </fieldset>
+
+          <h2 class="heading-medium">Do you want to include detailed notes or less detailed notes?</h2>
+          <span class="form-hint" style="position:relative; top:-20px;">Some help text</span>
+
+          <fieldset class="">
+            <legend class="visuallyhidden">Do you want to include detailed notes or less detailed notes?</legend>
+            <label class="block-label" for="notes-detailed">
+              <input id="notes-detailed" type="radio" name="notes" value="Yes">
+              Detailed notes
+            </label>
+            <label class="block-label" for="notes-less-detailed">
+              <input id="notes-less-detailed" type="radio" name="notes" value="No">
+              Less detailed notes
+            </label>
+          </fieldset>
+</div><!--rest-hidden-->
+        </div><!--form-group-->
 
 
 
