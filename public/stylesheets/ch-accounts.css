@@ -266,3 +266,12 @@ header span {
   padding: .5em;
   margin-left: 0;
 }
+
+h1 span.circle {
+  position: relative;
+  top: -.5em;
+}
+
+.example-icon-list span {
+  padding-left: 2em;
+}
