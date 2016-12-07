@@ -6,7 +6,7 @@ $(document).ready(function() {
        var tangiblecostdisposals = $('#tangible-cost-disposals').val();
        var tangiblecostrevaluations = $('#tangible-cost-revaluations').val();
        var tangiblecosttransfers = $('#tangible-cost-transfers').val();
-       var total = +tangiblecostatstart + +tangiblecostadditions + +tangiblecostdisposals + +tangiblecostrevaluations + +tangiblecosttransfers;
+       var total = +tangiblecostatstart + +tangiblecostadditions - +tangiblecostdisposals + +tangiblecostrevaluations + +tangiblecosttransfers;
        $('#tangible-cost-at-end').val(total);
      }
      $('#tangible-cost-at-start, #tangible-cost-additions, #tangible-cost-disposals, #tangible-cost-revaluations, #tangible-cost-transfers').change(compute);
@@ -19,7 +19,7 @@ $(document).ready(function() {
        var tangibledepreciationchargeforyear = $('#tangible-depreciation-charge-for-year').val();
        var tangibledepreciationondisposals = $('#tangible-depreciation-on-disposals').val();
        var tangibledepreciationotheradjustments = $('#tangible-depreciation-other-adjustments').val();
-       var total = +tangibledepreciationatstart + +tangibledepreciationchargeforyear + +tangibledepreciationondisposals + +tangibledepreciationotheradjustments;
+       var total = +tangibledepreciationatstart + +tangibledepreciationchargeforyear - +tangibledepreciationondisposals + +tangibledepreciationotheradjustments;
        $('#tangible-depreciation-at-end').val(total);
      }
      $('#tangible-depreciation-at-start, #tangible-depreciation-charge-for-year, #tangible-depreciation-on-disposals, #tangible-depreciation-other-adjustments').change(compute);
