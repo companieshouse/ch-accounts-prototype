@@ -275,3 +275,15 @@ h1 span.circle {
 .example-icon-list span {
   padding-left: 2em;
 }
+
+#company-number {
+  margin-top: -3em;
+}
+
+#action-buttons {
+  margin: 1.5em 0 3em;
+}
+
+#action-buttons a {
+  margin-right: .5em;
+}
