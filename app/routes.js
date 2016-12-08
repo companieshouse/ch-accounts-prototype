@@ -39,156 +39,7 @@ router.get('/examples/over-18', function (req, res) {
 
 });
 
-// Micro-account yes or no
 
-router.get('/cato-style/cato-style-choose-dormant', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var micro = req.query.micro;
-
-  if (micro == "micros-no"){
-
-    // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-choose-full-or-abridged");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('cato-style/cato-style-choose-dormant');
-
-  }
-
-});
-
-// Full or abridged
-
-router.get('/cato-style/cato-style-choose-dormant-abridged', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var abridgedfull = req.query.abridgedfull;
-
-  if (abridgedfull == "full-yes"){
-
-    // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-choose-dormant-full");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('cato-style/cato-style-choose-dormant-abridged');
-
-  }
-
-});
-
-// Micro-accounts > Dormant yes or no
-
-router.get('/cato-style/cato-style-start-page-dormant', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var dormant = req.query.dormant;
-
-  if (dormant == "dormant-no"){
-
-    // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-start-page-micros");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('cato-style/cato-style-start-page-dormant');
-
-  }
-
-});
-
-// Full accounts > Dormant yes or no
-
-router.get('/cato-style/cato-style-start-page-dormant-full', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var dormant = req.query.dormant;
-
-  if (dormant == "dormant-no"){
-
-    // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-start-page-full");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('cato-style/cato-style-start-page-dormant-full');
-
-  }
-
-});
-
-// Abridged accounts > Dormant yes or no
-
-router.get('/cato-style/cato-style-start-page-dormant-abridged', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var dormant = req.query.dormant;
-
-  if (dormant == "dormant-no"){
-
-    // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-start-page-abridged");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('cato-style/cato-style-start-page-dormant-abridged');
-
-  }
-
-});
-
-// Choose type of accounts (replaced by "Which type of accounts have you prepared?")
-
-// router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
-
-//   var choosetypeaccounts = req.query.choosetypeaccounts;
-
-//     if (choosetypeaccounts == "micro"){
-    // redirect to the relevant page
-//     res.redirect("/cato-style/cato-style-start-page-micros");
-
-//     } else   if (choosetypeaccounts == "full"){
-    // redirect to the relevant page
-//     res.redirect("/cato-style/cato-style-start-page-full");
-
-
-//      } else if (choosetypeaccounts == "dormant"){
-    // redirect to the relevant page
-//     res.redirect("/cato-style/cato-style-start-page-dormant");
-
-//   } else {
-
-//     res.render('cato-style/cato-style-start-page-abridged');
-
-//   }
-
-// });
-
-// Which type of accounts have you prepared?")
-
-router.get('/cato-style/cato-style-start-page-abridged', function (req, res) {
-
-  var choosetypeaccounts = req.query.choosetypeaccounts;
-
-    if (choosetypeaccounts == "dontknow"){
-    // redirect to the relevant page
-    res.redirect("/cato-style/cato-style-about-your-business");
-
-
-  } else {
-
-    res.render('cato-style/cato-style-start-page-abridged');
-
-  }
-
-});
 
 // More Loans to Directors
 
@@ -253,5 +104,184 @@ router.get('/chs/chs-choose-password', function (req, res) {
 
 });
 
+// WIZARD - is the company trading
+
+router.get('/cato-style/wizard/wizard-ever-traded', function (req, res) {
+
+  // get the answer from the query string
+  var trading = req.query.trading;
+  if (trading == "Yes"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/wizard/wizard-turnover");
+
+  } else {
+    // if trading is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-ever-traded');
+  }
+
+});
+
+// WIZARD - has the company ever traded
+
+router.get('/cato-style/cato-style-start-page-dormant', function (req, res) {
+
+  // get the answer from the query string
+  var evertraded = req.query.evertraded;
+  if (evertraded == "Yes"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-cato");
+
+  } else {
+    // if evertraded is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-start-page-dormant');
+  }
+
+});
+
+// WIZARD - Was the company's turnover more than £632,000?
+
+router.get('/cato-style/wizard/wizard-balance-sheet-less', function (req, res) {
+
+  // get the answer from the query string
+  var turnover632 = req.query.turnover632;
+  if (turnover632 == "Yes"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/wizard/wizard-balance-sheet-more");
+
+  } else {
+    // if turnover632 is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-balance-sheet-less');
+  }
+
+});
+
+// WIZARD - Was the company's balance sheet total less than £316,000?
+
+router.get('/cato-style/wizard/wizard-employees-more', function (req, res) {
+
+  // get the answer from the query string
+  var balanceless = req.query.balanceless;
+  if (balanceless == "Yes"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/wizard/wizard-employees-less");
+
+  } else {
+    // if balanceless is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-employees-more');
+  }
+
+});
+
+// WIZARD - Was the company's balance sheet total more than £316,000?
+
+router.get('/cato-style/wizard/wizard-breakdown', function (req, res) {
+
+  // get the answer from the query string
+  var balancemore = req.query.balancemore;
+  if (balancemore == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/wizard/wizard-employees-less");
+
+  } else {
+    // if balancemore is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-breakdown');
+  }
+
+});
+
+// WIZARD - Did the company employ an average more than 10 employees during the year?
+
+router.get('/cato-style/wizard/wizard-breakdown', function (req, res) {
+
+  // get the answer from the query string
+  var employeemore = req.query.employeemore;
+  if (employeemore == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/wizard/wizard-micros-abridged");
+
+  } else {
+    // if employeemore is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-breakdown');
+  }
+
+});
+
+// WIZARD - Did the company employ an average less than 10 employees during the year?
+
+router.get('/cato-style/wizard/wizard-micros-abridged', function (req, res) {
+
+  // get the answer from the query string
+  var employeeless = req.query.employeeless;
+  if (employeeless == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/wizard/wizard-breakdown");
+
+  } else {
+    // if employeeless is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-micros-abridged');
+  }
+
+});
+
+// WIZARD - You are eligible to file micro-entity accounts or abridged accounts
+
+router.get('/cato-style/cato-style-start-page-micros', function (req, res) {
+
+  // get the answer from the query string
+  var microabridged = req.query.microabridged;
+  if (microabridged == "abridged"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-abridged");
+
+  } else {
+    // if microabridged is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-start-page-micros');
+  }
+
+});
+
+// WIZARD - Do you want to give a breakdown?
+
+router.get('/cato-style/wizard/wizard-joint', function (req, res) {
+
+  // get the answer from the query string
+  var breakdown = req.query.breakdown;
+  if (breakdown == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-abridged");
+
+  } else {
+    // if breakdown is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-joint');
+  }
+
+});
+
+// WIZARD - Do you want to give a file to both Companies House and HMRC?
+
+router.get('/cato-style/cato-style-start-page-cato-full', function (req, res) {
+
+  // get the answer from the query string
+  var joint = req.query.joint;
+  if (joint == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/cato-style/cato-style-start-page-full-software");
+
+  } else {
+    // if joint is any other value (or is missing) render the page requested
+    res.render('cato-style/cato-style-start-page-cato-full');
+  }
+
+});
 
 module.exports = router;

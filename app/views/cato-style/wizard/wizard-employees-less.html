@@ -1,0 +1,80 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Did the company employ an average of less than 10 employees during the year?
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+<form action="/cato-style/wizard/wizard-micros-abridged" method="get" class="form">
+
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  <div class="text">
+
+      <h1 class="heading-xlarge">Did the company employ an average of less than 10 employees during the year?</h1>
+
+      <details class="form-group">
+        <summary><span class="summary">Not sure if your company employed an average of less than 10 employees during the year?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Lorem ipsum dolor sit amet, zril neless noluisse vix no, falli fastidii in cum. Ei quidam luptatum vix, iudico postea regione pro et, vel an quando euismod neglegentur. In homero singulis vix, est ea atqui expetenda imperdiet, eum bonorum aliquando cu. Ius ad eius quas dissentiunt. Nam expetenda urbanitas at.</p>
+        </div>
+      </details>
+
+
+            <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Did the company employ an average of less than 10 employees during the year?</legend>
+              <label class="block-label" for="employee-less-yes">
+                <input id="employee-less-yes" type="radio" name="employeeless" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="employee-less-no">
+                <input id="employee-less-no" type="radio" name="employeeless" value="No">
+                No
+              </label>
+            </fieldset>
+
+
+
+        </div><!--form-group-->
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Save and continue">
+        </div><!--form-group-->
+
+  </div><!-- text-->
+</form>
+</main>
+
+{% endblock %}

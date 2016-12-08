@@ -1,0 +1,80 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Was the company's balance sheet total more than £316,000?
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+<form action="/cato-style/wizard/wizard-breakdown" method="get" class="form">
+
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  <div class="text">
+
+      <h1 class="heading-xlarge">Was the company's balance sheet total more than £316,000?</h1>
+
+      <details class="form-group">
+        <summary><span class="summary">Not sure of your company's balance sheet total?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The company's balance sheet total is the sum of the total fixed assets plus total current assets</p>
+        </div>
+      </details>
+
+
+            <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Was the company's balance sheet total more than £316,000</legend>
+              <label class="block-label" for="balance-more-yes">
+                <input id="balance-more-yes" type="radio" name="balancemore" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="balance-more-no">
+                <input id="balance-more-no" type="radio" name="balancemore" value="No">
+                No
+              </label>
+            </fieldset>
+
+
+
+        </div><!--form-group-->
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Save and continue">
+        </div><!--form-group-->
+
+  </div><!-- text-->
+</form>
+</main>
+
+{% endblock %}
