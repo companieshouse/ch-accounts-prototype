@@ -194,20 +194,20 @@ router.get('/cato-style/wizard/wizard-breakdown', function (req, res) {
 
 });
 
-// WIZARD - Did the company employ an average more than 10 employees during the year?
+// WIZARD - Did the company employ an average of more than 10 employees during the year?
 
-router.get('/cato-style/wizard/wizard-breakdown', function (req, res) {
+router.get('/cato-style/wizard/wizard-micros-abridged', function (req, res) {
 
   // get the answer from the query string
   var employeemore = req.query.employeemore;
-  if (employeemore == "No"){
+  if (employeemore == "Yes"){
 
     // redirect to the relevant page
-    res.redirect("/cato-style/wizard/wizard-micros-abridged");
+    res.redirect("/cato-style/wizard/wizard-breakdown");
 
   } else {
-    // if employeemore is any other value (or is missing) render the page requested
-    res.render('cato-style/wizard/wizard-breakdown');
+    // if employeeless is any other value (or is missing) render the page requested
+    res.render('cato-style/wizard/wizard-micros-abridged');
   }
 
 });
