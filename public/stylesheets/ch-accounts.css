@@ -179,11 +179,10 @@ h3 .circle {
 
 header span {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 18px;
+  line-height: 1.2;
   color: #6f777b;
   display: block;
 }
@@ -197,11 +196,10 @@ header span {
 
 .subheading {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   color: #6f777b;
   display: block;
 }

@@ -357,11 +357,10 @@ ol.example-icon-list i {
 
 .chs-email ul {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
   padding-top: 1em;
 }
 
