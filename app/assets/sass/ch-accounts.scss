@@ -1,7 +1,7 @@
 // Additional styles for CH accounts
 @import 'colours';
 @import 'typography';
-@import 'icons';
+
 $error-button-hover: #8e0513;
 
 .two-column-accounts {
@@ -194,6 +194,12 @@ h1 span.circle {
   position: relative;
   top:-.2em;
 }
+.icon-important {
+    background-image: url("/public/images/icon-important-2x.png"); // Having to add this her, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
+}
+
+
+
 //Restyling CHS profile
 #company-number {
   margin-top:-3em;
