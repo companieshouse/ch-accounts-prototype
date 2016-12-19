@@ -1,6 +1,7 @@
 // Additional styles for CH accounts
 @import 'colours';
 @import 'typography';
+@import 'icons';
 $error-button-hover: #8e0513;
 
 .two-column-accounts {
@@ -108,6 +109,9 @@ table.check-your-answers {
   }
 }
 
+.form-group .inline-multiple label {
+  margin-bottom:.5em;
+}
 
 p.company-details {
   font-size: .9em;
@@ -186,8 +190,9 @@ h1 span.circle {
   position:relative;
   top:-.5em;
 }
-.example-icon-list span {
-  padding-left:2em;
+.example-icon-list span.circle {
+  position: relative;
+  top:-.2em;
 }
 //Restyling CHS profile
 #company-number {
