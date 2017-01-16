@@ -39,7 +39,6 @@
 
   <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
-  {% include 'includes/error.html' %}
 
 
   <form action="/cato-style/cato-style-submission" method="get" class="form">
@@ -57,17 +56,21 @@
       <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
       <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
       <div class="form-group">
-        <fieldset data-required data-error="You must choose a director">
+        <fieldset>
           <legend class="visuallyhidden">Who approved the accounts?</legend>
             <div class="form-group">
-              <label class="block-label selection-button-radio" for="john-smith">
+
+              <label class="form-label visuallyhidden" for="name">Who approved the accounts?</label>
+              <input class="form-control" id="name" type="text">
+            <!--  <label class="block-label selection-button-radio" for="john-smith">
                 <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
                 John Smith
               </label>
               <label class="block-label" for="david-smith">
                 <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
                 David Smith
-              </label>
+              </label>-->
+
             </div>
         </fieldset>
       </div>

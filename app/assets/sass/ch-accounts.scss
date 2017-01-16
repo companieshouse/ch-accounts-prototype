@@ -197,6 +197,14 @@ h1 span.circle {
 .icon-important {
     background-image: url("/public/images/icon-important.png"); // Having to add this here, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
 }
+#accounts-start-page {
+  .form-hint {
+    margin: 0 0 1em 2em;
+  }
+  li span {
+    margin-right: .9em;
+  }
+}
 
 
 
