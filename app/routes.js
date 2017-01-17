@@ -72,7 +72,7 @@ router.get('/chs/chs-from-webfiling', function (req, res) {
   if (gotochs == "No"){
 
     // redirect to the relevant page
-    res.redirect("/webfiling/webfiling-accounts-picker");
+    res.redirect("/webfiling/webfiling-hmrc-third-party");
 
   } else {
 
