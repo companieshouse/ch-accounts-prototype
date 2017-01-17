@@ -1,4 +1,4 @@
-# File your accounts prototype
+# File company accounts prototype
 
 ## About the prototype kit
 
