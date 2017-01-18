@@ -227,10 +227,12 @@ h1 span.circle {
       margin-bottom:.5em;
     }
   }
-  #search .searchfield input {
+  #search .searchfield input,
+  #profile .searchfield input {
     width: 75%;
   }
-  #search a:link {
+  #search a:link,
+  #profile a:link {
     float: right;
   }
 }
