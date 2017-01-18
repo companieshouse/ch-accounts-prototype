@@ -218,3 +218,19 @@ h1 span.circle {
     margin-right: .5em;
   }
 }
+@media (max-width: 640px) {
+  #company-number {
+    margin-top:-1em !important;
+  }
+  #action-buttons {
+    a {
+      margin-bottom:.5em;
+    }
+  }
+  #search .searchfield input {
+    width: 75%;
+  }
+  #search a:link {
+    float: right;
+  }
+}
