@@ -13,6 +13,13 @@
 {% endblock %}
 
 {% block content %}
+
+<style type="text/css">
+a.button-start {
+  background-image: url("/public/images/icon-pointer.png"); // Having to add this here, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
+}
+</style>
+
 <main id="content" role="main">
   <div class="phase-banner-alpha">
   <p>
@@ -55,12 +62,12 @@ or abridged accounts).</p>
       </ul>
 <br>
       <p class="get-started group" id="get-started">
-            <a role="button" class="button button-start" data-transaction-slug="file-an-annual-return-with-companies-house" rel="external" href="/chs/chs-choose-accounts">Start now</a>
+            <a role="button" class="button button-start" data-transaction-slug="file-company-accounts-with-companies-house" rel="external" href="/chs/chs-choose-accounts">Start now</a>
             <!--  <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;"> on the Companies House service</span>-->
           </p>
 
 
-
+<p class "button-sart">Test</p>
 
 
 
