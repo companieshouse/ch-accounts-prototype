@@ -14,7 +14,21 @@
 
 {% block content %}
 
+<style type="text/css">
+.bubble {
+  display:inline;
+  background-color: #f47738;
+  color:white;
+  padding:0.2em .5em;
+  border-radius: 15px;
+  font-weight:normal;
+  font-size:0.7em;
+  position:relative;
+  left:.5em;
+  top:-0.1em;
 
+}
+</style>
 
 
 
@@ -35,116 +49,68 @@
 
 
     <header class="text">
-    	<h1 id="page-header" class="heading-xlarge">Which type of company accounts have you prepared?</h1>
+    	<h1 id="page-header" class="heading-xlarge">Which type of accounts have you prepared?</h1>
     </header>
 
-    <form action="/cato-style/cato-style-start-page-abridged" method="get" class="form">
 
 
-    <div class="form-group">
-        <fieldset>
-
-          <legend class="visually-hidden">Where do you live?</legend>
-
-          <label class="block-label" for="choose-micro">
-            <input id="choose-micro" type="radio" name="choosetypeaccounts" value="micro">
-            <span class="heading-small">Micro-entity accounts</span><br>
-             Shorter balance sheet, and optional footnotes
-          </label>
-
-          <label class="block-label" for="choose-abridged">
-            <input id="choose-abridged" type="radio" name="choosetypeaccounts" value="abridged">
-            <span class="heading-small">Abridged accounts</span><br>
-             Balance sheet and less detailed notes
-          </label>
-
-          <label class="block-label" for="choose-filleted-full">
-            <input id="choose-filleted-full" type="radio" name="choosetypeaccounts" value="filleted">
-            <span class="heading-small">Filleted-full accounts</span><br>
-             Balance sheet and more detailed notes
-          </label>
 
 
-          <label class="block-label" for="choose-full-ch-hmrc">
-            <input id="choose-full-ch-hmrc" type="radio" name="choosetypeaccounts" value="fullchhmrc">
-            <span class="heading-small">Full accounts<br>(for filing with both Companies House and HMRC)</span><br>
-             Balance sheet, profit and loss, directors' report and detailed notes
-          </label>
+    <div class="grid-row">
 
-          <p class="form-block">or</p>
-          <label class="block-label" for="choose-dont-know">
-            <input id="choose-dont-know" type="radio" name="choosetypeaccounts" value="dontknow">
-            I don't know which type of accounts I have prepared
-          </label>
+        <div class="column-half">
+          	<h2 class="heading-medium">Micro-entity accounts</h2>
+            Must meet at least 2 of the following:
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £632,000</li>
+              <li>Balance sheet total is no more than £316,000</li>
+              <li>Average number of employees is no more than 10</li>
+            </ul>
+            <p class="get-started group" id="">
+              <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File micro-entity accounts</a>
+            </p>
+        </div>
 
-        </fieldset>
+        <div class="column-half">
+          	<h2 class="heading-medium">Abridged accounts <span class="bubble">New</span></h2>
+            Must meet at least 2 of the following:
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £10.2 million</li>
+              <li>Balance sheet total is no more than £5.1 million</li>
+              <li>Average number of employees is no more than 50</li>
+            </ul>
+             <p class="get-started group" id="">
+              <a role="button" class="button" data-transaction-slug="" rel="external" href="/cato-style/cato-style-start-page-abridged">File abridged accounts</a>
+            </p>
+        </div>
+
       </div>
 
 
-<!--
-    <div class="grid-row">
+        <div class="grid-row">
 
-        <div class="column-one-third">
-          	<h2 class="heading-medium">Abridged Accounts</h2>
-            <p>These audit exempt accounts are suitable for companies to input figures from already prepared and approved abridged accounts.</p>
-            <p class="get-started group" id="">
-              <a role="button" class="button" data-transaction-slug="" rel="external" href="/chs/chs-choose-abridged">File abridged accounts</a>
-            </p>
-        </div>
 
-        <div class="column-one-third">
-          	<h2 class="heading-medium">Abbreviated Accounts</h2>
-            <p>These audit exempt accounts are suitable for companies to input abbreviated figures from their already prepared and approved full accounts.</p>
-            <p class="get-started group" id="">
-              <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File abbreviated accounts</a>
-            </p>
-        </div>
-
-        <div class="column-one-third">
-          	<h2 class="heading-medium">Dormant Company Accounts</h2>
-            <p>These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
-            <p class="get-started group" id="">
-              <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File dormant accounts</a>
-            </p>
-        </div>
-
-    </div>
-
-    <div class="grid-row">
-        <div class="column-one-third">
-          <h2 class="heading-medium">Micro-entity Accounts</h2>
-          <p>These audit exempt accounts are suitable for companies that fall within <a href="javascript:void(0)">the micro-entity definition</a>.</p>
-          <p class="get-started group" id="">
-            <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File micro-entity accounts</a>
-          </p>
-        </div>
-
-        <div class="column-one-third">
-            <h2 class="heading-medium">Full Accounts <span class="subheading">(with abbreviated option)</span></h2>
-            <p>These accounts are suitable for full accounts figures, from which the abbreviated figures are extracted for Companies House.</p>
-            <p class="get-started group" id="">
-              <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File full accounts</a>
-            </p>
-        </div>
-
-        <div class="column-one-third">
+        <div class="column-half">
             <h2 class="heading-medium">Full Accounts <span class="subheading">with Companies House and HMRC</span></h2>
             <p>These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC</p>
             <p class="get-started group" id="">
               <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File full accounts</a>
-              <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;">on HMRC's tax service</span>
+              <span class="destination" style="display:block; font-size:16px; margin-top: 0; max-width: 13em;">on HMRC's tax service</span>
 
             </p>
         </div>
 
+        <div class="column-half">
+            <h2 class="heading-medium">Dormant Company Accounts</h2>
+            <p>These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
+            <p class="get-started group" id="">
+             <a role="button" class="button" data-transaction-slug="" rel="external" href="javascript:void(0)">File dormant accounts</a>
+           </p>
+        </div>
+
     </div>
-  -->
 
-  <div class="form-group">
-    <input type="submit" class="button" value="Next" id="choose-accounts-button">
-  </div>
 
-  </form>
 
 </main>
 
