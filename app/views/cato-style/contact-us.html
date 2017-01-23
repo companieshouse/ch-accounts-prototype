@@ -1,0 +1,44 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Contact us
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+<form action="/" method="post" class="form">
+
+<div class="text">
+  <h1 class="heading-xlarge">Contact us</h1>
+
+      <p>You may find the answer to your enquiry on the <a href="https://www.gov.uk/government/organisations/companies-house">Companies House website</a> or you can <a href="mailto:enquiries@companieshouse.gov.uk">email us</a>.</p>
+      <h2 class="heading-medium">Contact Centre</h2>
+          <ul class="text-list">
+          <li>Monday to Friday 8.30am to 6pm</li>
+          <li>Phone: +44 (0)303 1234 500 (<a href="https://www.gov.uk/call-charges">national call rate</a>)</li>
+          <li>Minicom: 02920 381245</li>
+      </ul>
+</div>
+</form>
+</main>
+{% endblock %}
