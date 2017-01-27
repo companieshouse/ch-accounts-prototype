@@ -1,0 +1,58 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Authentication code requested
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main" class="">
+
+      <div class="phase-banner-alpha">
+      <p>
+        <strong class="phase-tag">ALPHA</strong>
+        <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+    <div class="text">
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">Authentication code requested</h1>
+    </header>
+
+
+    <p>An authentication code has been requested for <br>
+    <span id="company_details" class="heading-medium">A TEST COMPANY LIMITED (01234567)</span></p>
+
+
+    <p>The code will be sent by post to the registered office address below (normally within 5 working days):</p>
+    <p id="ro_address">
+    <strong>1 Any Street<br>
+    Anytown<br>
+    Cardiff<br>
+    CF14 3UZ</strong>
+    </p>
+
+    <div class="form-group">
+      <a href="auth-code-letter" class="">Continue</a>
+    </div>
+
+  </div><!--text-->
+</main>
+
+{% endblock %}
