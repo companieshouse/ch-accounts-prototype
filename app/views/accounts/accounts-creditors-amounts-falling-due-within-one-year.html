@@ -1,0 +1,42 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Creditors - amounts falling due within one year note
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+<a class="link-back" href="accounts-balance-sheet-notes">Back</a>
+
+  <div class="text">
+  <h1 class="heading-xlarge">Creditors - amounts falling due within one year note</h1>
+  <form action="/" method="post" class="form">
+    <label class="visuallyhidden" for="textarea">Creditors - amounts falling due within one year</label>
+    <p class="form-hint">Use this note to record information about people or businesses that your company owes, but who you expect to pay within one year from the end of the period you're filing for. Include information about money owed to secured creditors, for example bank loans or overdrafts.</p>
+    <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+    <div class="form-group accounts-row-spacer">
+      <a class="button" href="accounts-balance-sheet-notes-completed-7">Save and continue</a>
+    </div>
+  </form>
+  </div><!--text-->
+
+</main>
+{% endblock %}

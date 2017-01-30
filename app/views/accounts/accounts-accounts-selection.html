@@ -1,0 +1,142 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Confirm your company account dates
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+<div class="text">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Confirm your company account dates</h1>
+      <p>Our records show you need to file accounts for for the period:</p>
+      <span class="heading-medium">1 April 2015 to 31 March 2016</span>
+      <p class="form-hint">These should be the dates you have prepared your accounts to.</p>
+
+      <h2 class="heading-medium">Are these the dates you want to file your accounts for?</h2>
+      <form>
+      <fieldset class="inline">
+
+        <legend class="visuallyhidden">Are these the dates you want to file your accounts for?</legend>
+
+        <div class="form-group">
+
+          <label class="block-label" for="dates-yes">
+            <input id="dates-yes" type="radio" name="confirm-dates" value="Yes">
+            Yes
+          </label>
+
+          <label class="block-label" data-target="dates-no-reveal" for="dates-no">
+            <input id="dates-no" type="radio" name="confirm-dates" value="No">
+            No
+          </label>
+          <div class="panel panel-border-narrow js-hidden" id="dates-no-reveal">
+            <p>You can change the end date of the period you're filing for by up to 7 days.</p>
+            <div class="form-group">
+              <fieldset>
+                <label class="block-label" for="24-march-2016">
+                 <input id="24-march-2016" type="radio" name="change-date" value="24 March 2016">
+                 24 March 2016
+               </label>
+               <label class="block-label" for="1-april-2016">
+                 <input id="1-april-2016" type="radio" name="change-date" value="1 April 2016">
+                 1 April 2016
+               </label>
+               <label class="block-label" for="25-march-2016">
+                 <input id="25-march-2016" type="radio" name="change-date" value="25 March 2016">
+                 25 March 2016
+               </label>
+               <label class="block-label" for="2-april-2016">
+                 <input id="2-april-2016" type="radio" name="change-date" value="2 April 2016">
+                 2 April 2016
+               </label>
+               <label class="block-label" for="26-march-2016">
+                 <input id="26-march-2016" type="radio" name="change-date" value="26 March 2016">
+                 26 March 2016
+               </label>
+               <label class="block-label" for="3-april-2016">
+                 <input id="3-april-2016" type="radio" name="change-date" value="3 April 2016">
+                 3 April 2016
+               </label>
+               <label class="block-label" for="27-march-2016">
+                 <input id="27-march-2016" type="radio" name="change-date" value="27 March 2016">
+                 27 March 2016
+               </label>
+               <label class="block-label" for="4-april-2016">
+                 <input id="4-april-2016" type="radio" name="change-date" value="4 April 2016s">
+                 4 April 2016
+               </label>
+               <label class="block-label" for="28-march-2016">
+                 <input id="28-march-2016" type="radio" name="change-date" value="28 March 2016">
+                 28 March 2016
+               </label>
+               <label class="block-label" for="5-april-2016">
+                 <input id="5-april-2016" type="radio" name="change-date" value="5 April 2016">
+                 5 April 2016
+               </label>
+               <label class="block-label" for="29-march-2016">
+                 <input id="29-march-2016" type="radio" name="change-date" value="29 March 2016">
+                 29 March 2016
+               </label>
+               <label class="block-label" for="6-april-2016">
+                 <input id="6-april-2016" type="radio" name="change-date" value="6 April 2016">
+                 6 April 2016
+               </label>
+               <label class="block-label" for="30-march-2016">
+                 <input id="30-march-2016" type="radio" name="change-date" value="30 March 2016">
+                 30 March 2016
+               </label>
+               <label class="block-label" for="7-april-2016">
+                 <input id="7-april-2016" type="radio" name="change-date" value="7 April 2016">
+                 7 April 2016
+               </label>
+              </fieldset>
+            </div><!--form-group-->
+            <p>To change this date by more than 7 days, or to change the start date of the period you want to file for, you need to <a href="javascript:void(0)">file a form XYZ</a>.</p>
+          </div>
+
+        </div>
+
+      </fieldset>
+    </form>
+
+
+      <p><a class="button" href="accounts-about-your-business" role="button">Continue to about your business</a></p>
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}

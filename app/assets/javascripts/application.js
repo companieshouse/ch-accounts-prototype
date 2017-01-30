@@ -150,10 +150,10 @@ $('.micro-eligibility-questions').click(function(){
 
 $('.micro-eligibility').click(function() {
   if($('input[type=radio][value="Yes"]:checked').length > 1) {
-    window.location.replace("/cato-style/cato-style-choose-micros");
+    window.location.replace("/accounts/accounts-choose-micros");
   }
  else {
-   window.location.replace("/cato-style/cato-style-choose-full-or-abridged");
+   window.location.replace("/accounts/accounts-choose-full-or-abridged");
  }
  return false;
 });

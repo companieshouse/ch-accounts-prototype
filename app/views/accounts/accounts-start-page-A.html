@@ -1,0 +1,138 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   File abridged accounts
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
+
+<div class="text">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+      <h1 class="heading-xlarge">File abridged accounts</h1>
+      <form action="/accounts/accounts-accounts-dates" method="get" class="form">
+
+        <p>Use this service to file prepared and approved abridged accounts.</p>
+
+
+        <details>
+          <summary><span class="summary">Not sure what type of accounts you have?</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Our example accounts may help you identify which type of accounts you've prepared.</p>
+            <ul class="list list-bullet">
+              <li><a href="javascript:void(0)">Word or similar: accounts for private limited companies (88KB)</a></li>
+              <li><a href="javascript:void(0)">PDF: accounts for private limited companies (24KB)</a></li>
+            </ul>
+          </div>
+        </details>
+
+
+
+        <!--<div class="panel panel-border-wide">
+      <h2 class="heading-medium">You can only file abridged accounts</h2>
+        <p>This service doesn't yet support all of the changes to the Financial Reporting Standards introduced on 1 January 2016.</p>
+        <p>We can't accept dormant, full or micro-entity company accounts starting on or after 1 January 2016. These will be available to file in the coming months. If you need to file those accounts now or need to file abbreviated accounts starting before 1 Jan 2016 please use <a href="/webfiling/webfiling-login-page">our WebFiling service</a>.</p>
+
+
+          <details>
+            <summary><span class="summary">Is your company eligible to file abridged accounts?</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>To file abridged accounts, your accounts must meet <strong>at least two of the following:</strong></p>
+              <ul class="list list-bullet">
+                <li>Turnover must not be more than £10.2 million</li>
+                <li>Balance sheet total must not be more than £5.1 million</li>
+                <li>The average number of employees during the year must not be more than 50</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary><span class="summary">Not sure what type of accounts you have?</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Our example accounts may help you identify which type of accounts you've prepared.</p>
+              <ul class="list list-bullet">
+                <li><a href="javascript:void(0)">Word or similar: accounts for private limited companies (88KB)</a></li>
+                <li><a href="javascript:void(0)">PDF: accounts for private limited companies (24KB)</a></li>
+              </ul>
+            </div>
+          </details>
+
+
+      </div>
+      <!--
+      <p class="heading-small form-group">This service provides for the minimum statutory filing only (a balance sheet and related notes).</p>
+      <details>
+        <summary><span class="summary">I want to file more than the minimum statutory filing</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Something about filing using the HMRC <a href="https://www.gov.uk/file-your-company-accounts-and-tax-return" target="_blank">File your accounts and Company Tax Return<span class="visuallyhidden"> Link opens in a new tab/window</span></a> service or Companies House <a href="https://www.gov.uk/government/organisations/companies-house/about/about-our-services#software-filing" target="_blank">software filing<span class="visuallyhidden"> Link opens in a new tab/window</span></a>.</p>
+        </div>
+      </details>
+      <br>
+      <p>You can't use this service if your accounts are being audited.</p>
+      <details>
+        <summary><span class="summary">My accounts are being audited</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Something about filing using the HMRC <a href="https://www.gov.uk/file-your-company-accounts-and-tax-return" target="_blank">File your accounts and Company Tax Return<span class="visuallyhidden"> Link opens in a new tab/window</span></a> service or Companies House <a href="https://www.gov.uk/government/organisations/companies-house/about/about-our-services#software-filing" target="_blank">software filing<span class="visuallyhidden"> Link opens in a new tab/window</span></a>.</p>
+        </div>
+      </details>-->
+
+
+
+
+
+
+
+      <h2 class="heading-medium">Before you start</h2>
+      <ul class="list list-bullet">
+        <li>The abridged accounts need to be prepared, with figures rounded to whole numbers. Round down income, and round up spending.</li>
+        <li>The abridged accounts should have been approved by the director/board of directors.</li>
+      </ul>
+
+
+
+      <div class="form-group">
+        <input type="submit" class="button button-start" value="Start" id="">
+      </div>
+
+            </form>
+
+
+
+
+
+
+        </div><!-- text-->
+
+      </main>
+
+      {% endblock %}

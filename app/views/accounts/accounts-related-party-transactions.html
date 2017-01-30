@@ -1,0 +1,168 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Related party transactions note
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a class="link-back" href="accounts-balance-sheet-notes">Back</a>
+<div class="text">
+
+  <h1 class="heading-xlarge">Related party transactions note  <span class="subheading">Use this note to record transactions between related parties, for example, selling a company asset for more or less than market value or paying them rent or consultancy fees. Parties are 'related' when one has control or significant influence over the other, for example directors and investors (or close family members of either).
+  </span></h1>
+
+  <div class="form-group">
+  <fieldset>
+
+    <h2 class="heading-medium text">What sort of transaction was this?</h2>
+    <legend class="visuallyhidden">What sort of transaction was this?</legend>
+    <label class="block-label text" for="1">
+    <input type="radio" id="1" value="" name="sort-of-transaction">
+      Money given to the company by a related party
+    </label>
+    <label class="block-label" for="2">
+      <input type="radio" id="2" value="" name="sort-of-transaction">
+      Money given to a related party by the company
+    </label>
+
+
+  </fieldset>
+  </div>
+
+
+  <details>
+    <summary><span class="summary">Name of related party</span></summary>
+    <div class="panel panel-border-narrow">
+      <p>Enter the name of the person the transaction was with.</p>
+    </div>
+  </details>
+  <div class="form-group">
+    <label for="name-of-related-party" class="visuallyhidden">Name of related party</label>
+    <input type="text" id="name-of-related-party" class="form-control">
+  </div>
+
+
+  <details>
+    <summary><span class="summary">Description of the transaction</span></summary>
+    <div class="panel panel-border-narrow">
+      <p>Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</p>
+    </div>
+  </details>
+  <div class="form-group">
+    <label for="description-transaction" class="visuallyhidden">Description of the transaction</label>
+    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+  </div>
+</div><!--text-->
+
+
+
+
+    <!--Start balance at start-->
+    <div class="grid-row accounts-row-spacer">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Balance at 1 April 2015 (optional)</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Enter the amount paid or owed to or by this related party at the start of the period youre filing for.</p>
+            </div>
+          </details>
+      </div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="balance-at-start"><span class="visuallyhidden">Balance at 1 April 2015 (optional)</span>
+            <input type="number" class="form-control" id="balance-at-start">
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End balance at start-->
+
+
+    <!--Start balance at end-->
+    <div class="grid-row">
+      <div class="column-half">
+        <details>
+          <summary><span class="summary">Balance at 31 March 2016 (optional)</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Enter the amount paid or owed to or by this related party at the end of the period youre filing for.</p>
+          </div>
+        </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="balance-at-end"><span class="visuallyhidden">Balance at 31 March 2016 (optional)</span>
+            <input type="number" class="form-control" id="balance-at-end">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End balance at end--->
+
+
+    <details class="text">
+      <summary><span class="summary">Add additional information? (optional)</span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+        <p class="form-hint">Enter any other information about related party transactions made in this period. For example, details of provisions made for doubtful debts or debts written off during the period, either due to be paid to or from related parties.</p>
+        <textarea type="text" id="" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+
+
+    <div class="text">
+          <h2 class="heading-medium">Do you have more related party transactions to report?</h2>
+
+                   <div class="form-group">
+                     <fieldset class="inline">
+
+                       <legend class="visuallyhidden">Do you have more related party transactions to report?</legend>
+
+                       <label class="block-label" for="more-related-transactions-yes">
+                         <input type="radio" value="Yes" name="more-related-transactions" id="more-related-transactions-yes">
+                          Yes
+                       </label>
+
+                       <label class="block-label" for="more-related-transactionsno">
+                         <input type="radio" value="no" name="more-related-transactions" id="more-related-transactions-no">
+                         No
+                       </label>
+
+                     </fieldset>
+                   </div>
+
+
+
+
+        <div class="form-group accounts-row-spacer">
+          <a class="button" href="accounts-balance-sheet-notes">Save and continue</a>
+        </div>
+
+    </div><!--text-->
+
+
+
+</main>
+{% endblock %}

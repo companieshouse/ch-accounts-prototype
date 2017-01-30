@@ -1,0 +1,78 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   Was the company's turnover more than £632,000?
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+<form action="/accounts/wizard/wizard-balance-sheet-less" method="get" class="form">
+<div class="text">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+      <h1 class="heading-xlarge">Was the company's turnover more than £632,000?</h1>
+      <details class="form-group">
+        <summary><span class="summary">Not sure of your company's turnover?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>If you sell books and the total sales of books during the accounting period amounts to £10,000 then that is your turnover.</p>
+        </div>
+      </details>
+
+
+            <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden"> Was the company's turnover more than £632,000?</legend>
+              <label class="block-label" for="turnover632-yes">
+                <input id="turnover632-yes" type="radio" name="turnover632" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="turnover632-no">
+                <input id="turnover632-no" type="radio" name="turnover632" value="No">
+                No
+              </label>
+            </fieldset>
+
+
+
+        </div><!--form-group-->
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Save and continue">
+        </div><!--form-group-->
+
+  </div><!-- text-->
+</form>
+</main>
+
+{% endblock %}

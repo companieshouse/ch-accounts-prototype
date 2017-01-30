@@ -1,0 +1,159 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Revaluation reserve note
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+<a class="link-back" href="accounts-balance-sheet-notes">Back</a>
+
+
+  <h1 class="heading-xlarge">Revaluation reserve note</h1>
+
+
+
+<form action="/" method="post" class="form">
+
+
+    <div class="grid-row form-hint" id="accounts-header">
+      <div class="column-half">
+        &nbsp;
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">2015 to 2016</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">2014 to 2015</h2>
+      </div>
+    </div>
+    <p class="form-hint"><strong>These are the figures you entered on the balance sheet:</strong></p>
+
+    <!--Start revaluation reserve-->
+    <div class="grid-row">
+      <div class="column-half form-hint">Revaluation reserve</div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="revaluation-reserve-current"><span class="mobile-only-label">Revaluation reserve (2016)</span>
+            <input type="number" class="form-control read-only" id="revaluation-reserve-current" value="15000" disabled>
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="revaluation-reserve-previous"><span class="mobile-only-label">Revaluation reserve (2015)</span>
+            <input type="number" class="form-control read-only" id="revaluation-reserve-previous" value="19150" disabled>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End revaluation reserve-->
+
+
+  <!--Start balance at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">At 1 April 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total amount of revaluation reserve (surplus or deficit) at the start of the financial period.</p>
+            <p>The figure is typically pre-populated with the revaluation reserve figure entered in your balance sheet for the previous year.</p>
+            <p>If the revaluation results in a deficit (reduction in value) of the asset, then a negative value will be entered using a minus sign.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="revaluation-balance-at-start"><span class="visuallyhidden">Balance at 1 April 2015</span>
+          <input type="number" class="form-control" id="revaluation-balance-at-start">
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End balance at start-->
+
+  <!--Start Surplus or deficit arising from revaluation  -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Surplus or deficit arising from revaluation</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cumulative surplus or deficit (increase or reduction) in the value of your company's tangible (physical) and intangible (non-physical) assets following a revaluation. For example, an increase in the value of land following a revaluation.</p>
+            <p>If the revaluation results in a deficit (reduction in value) of the asset, then enter a negative value using a minus sign.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="surplus-or-deficit-arising-from-revaluation"><span class="visuallyhidden">Surplus or deficit arising from revaluation</span>
+          <input type="number" class="form-control" id="surplus-or-deficit-arising-from-revaluation">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Surplus or deficit arising from revaluation  -->
+
+  <!--Start balance at end-->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">At 31 March 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total amount of revaluation reserve at the end of the accounting period.</p>
+          <p>This is calculated by adding together the revaluation reserve at the start of the accounting period and the surplus arising from revaluations (or subtracting the deficit arising from revaluations).</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="revaluation-balance-at-end"><span class="visuallyhidden">Balance at 31 March 2016</span>
+          <input type="number" class="form-control" id="revaluation-balance-at-end" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End balance at end--->
+
+
+
+
+
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Additional information (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="accounts-balance-sheet-notes-completed-4">Save and continue</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}

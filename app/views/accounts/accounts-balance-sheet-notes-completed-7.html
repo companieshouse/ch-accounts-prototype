@@ -1,0 +1,253 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Balance sheet notes
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<main id="content" role="main" class="two-column-accounts">
+<div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+  <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span> Balance sheet notes</h1>
+  <div class="text">
+    <p class="lede">You need to provide additional information about some of the figures you entered in your balance sheet.</p>
+  </div>
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Mandatory notes</caption>
+  <thead>
+  <!--  <tr>
+      <th class=" heading-large" colspan="4">
+    Mandatory notes
+    <span class="form-hint text">Based on your balance sheet entries, you <strong>must</strong> supply these notes.</span>
+      </th>
+    </tr>-->
+  </thead>
+  <tbody>
+    <tr>
+      <td class="note-completed">
+        <span class="fa-stack fa-lg accounts-success">
+          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-check fa-stack-1x fa-inverse" aria-hidden="true"></i>
+        </span>
+        <span class="visuallyhidden">Accounting policies completed</span>
+      </td>
+      <td>Accounting policies</td>
+      <td></td>
+      <td class="change-answer"><a href="accounts-accounting-policies">Change note <span class="visuallyhidden">Accounting policies</span></a></td>
+    </tr>
+      <tr>
+        <td class="note-completed">
+          <span class="fa-stack fa-lg accounts-success">
+            <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+            <i class="fa fa-check fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+          <span class="visuallyhidden">Tangible assets completed</span>
+        </td>
+        <td>Tangible assets</td>
+        <td></td>
+        <td class="change-answer"><a href="accounts-abridged-tangible-note">Change note <span class="visuallyhidden">Tangible assets</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+  <table class="check-your-answers form-group">
+    <caption class="visuallyhidden">Other notes</caption>
+    <thead class="">
+        <tr>
+          <th class="heading-large" colspan="4">Other notes
+            <span class="form-hint text">You should include these notes if you have them in your prepared and approved accounts.</span>
+          </th>
+          <th></th>
+          <th class="change-answer"></th>
+        </tr>
+      </thead>
+  <tbody>
+    <!--
+      <tr id="employees-delete-warning"  style="display: none;">
+        <td colspan="4" class="error-summary" id="delete-summary">
+        <p><strong>Are you sure you want to delete the Employees note?</strong></p>
+        <p><a href="javascript:void(0)" class="button">Yes, delete <span class="visuallyhidden">Employees note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep <span class="visuallyhidden">Employees note</span></a></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="note-completed">
+          <span class="fa-stack fa-lg accounts-success">
+            <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+            <i class="fa fa-check fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+          <span class="visuallyhidden">Employees note completed</span>
+        </td>
+        <td>Employees</td>
+        <td></td>
+        <td class="change-answer"><a href="accounts-employees" id="employees-delete">Delete note<span class="visuallyhidden">Employees</span></a> | <a href="accounts-employees">Change note<span class="visuallyhidden">Employees</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+          <summary><span class="summary">Fixed assets investments</span></summary>
+          <div class="panel panel-border-narrow text">
+            <p>Provides a more detailed breakdown of the fixed asset investments figure you entered on your balance sheet</p>
+          </div>
+        </details>
+      </td>
+      <td></td>
+        <td class="change-answer"><a href="accounts-fixed-assets-investments-note">Add note<span class="visuallyhidden">Fixed assets investments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+          <summary><span class="summary">Current assets investments</span></summary>
+          <div class="panel panel-border-narrow text">
+            <p>Provides a more detailed breakdown of the current assets investment figure you entered on your balance sheet</p>
+          </div>
+        </details>
+      </td>
+      <td></td>
+        <td class="change-answer"><a href="accounts-current-assets-investments-note">Add note<span class="visuallyhidden">Current assets investments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+        <details>
+        <summary><span class="summary">Debtors</span></summary>
+        <div class="panel panel-border-narrow text">
+          <p>Provides information about people who owe money for goods or services your company provided as part of its normal trading activities</p>
+        </div>
+      </details>
+    </td>
+    <td></td>
+        <td class="change-answer"><a href="accounts-debtors">Add note<span class="visuallyhidden">Debtors</span></a></td>
+      </tr>-->
+      <tr>
+        <td class="note-completed">
+          <span class="fa-stack fa-lg accounts-success">
+            <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+            <i class="fa fa-check fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+          <span class="visuallyhidden">Creditors - amounts falling due within one year note completed</span>
+        </td>
+        <td>Creditors - amounts falling due within one year</td>
+        <td></td>
+        <td class="change-answer"><a href="/accounts/accounts-balance-sheet-notes-completed-remove#delete-summary">Delete note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a> | <a href="accounts-creditors-amounts-falling-due-within-one-year">Change note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
+      </tr>
+      <!--<tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+          <summary><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
+          <div class="panel panel-border-narrow text">
+            <p>Provides information about people or businesses that your company owes, but who you expect to pay after more than one year from the end of the period you're filing for</p>
+          </div>
+        </details>
+      </td>
+        <td></td>
+        <td class="change-answer"><a href="accounts-creditors-amounts-falling-due-after-one-year">Add note<span class="visuallyhidden">Creditors - amounts falling due after more than one year</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+          <summary><span class="summary">Financial commitments</span></summary>
+              <div class="panel panel-border-narrow text">
+                <p>Provides information on the total amount (or estimated amount) your company has committed to spend on future assets</p>
+              </div>
+            </details>
+          </td>
+        <td></td>
+        <td class="change-answer"><a href="accounts-financial-commitments">Add note <span class="visuallyhidden">Financial commitments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+            <summary><span class="summary">Loans to directors</span></summary>
+            <div class="panel panel-border-narrow text">
+              <p>Provides information about transactions with your company's directors, such as advances and credits, or loans guaranteed by a director</p>
+            </div>
+          </details>
+        </td>
+      <td></td>
+      <td class="change-answer"><a href="accounts-loans-to-directors">Add note <span class="visuallyhidden">Loans to directors</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+            <summary><span class="summary">Changes in presentation and prior period adjustments</span></summary>
+            <div class="panel panel-border-narrow text">
+              <p>Provides information on changes you've made to your accounts to accommodate changes in accounting standards</p>
+            </div>
+          </details>
+        </td>
+        <td></td>
+        <td class="change-answer"><a href="accounts-financial-changes-in-presentation">Add note <span class="visuallyhidden">Changes in presentation and prior period adjustments</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+            <summary><span class="summary">Related party transactions</span></summary>
+            <div class="panel panel-border-narrow text">
+              <p>Provides information on transactions between related parties (for example directors and investors)</p>
+            </div>
+          </details>
+        </td>
+        <td></td>
+        <td class="change-answer"><a href="accounts-related-party-transactions">Add note <span class="visuallyhidden">Related party transactions</span></a></td>
+      </tr>
+      <tr>
+        <td class="note-completed"></td>
+        <td>
+          <details>
+            <summary><span class="summary">Post balance sheet events</span></summary>
+            <div class="panel panel-border-narrow text">
+              <p>Provides information on events which happened between the balance sheet date and the date your company accounts were authorised if they had an impact on your accounts</p>
+            </div>
+          </details>
+        </td>
+          <td></td>
+        <td class="change-answer"><a href="accounts-post-balance-sheet-events">Add note <span class="visuallyhidden">Post balance sheet events</span></a></td>
+      </tr>-->
+    </tbody>
+  </table>
+
+  <div class="form-group">
+    <p><a href="accounts-review" class="button">Save and continue</a></p>
+  </div>
+
+</main>
+
+{% endblock %}

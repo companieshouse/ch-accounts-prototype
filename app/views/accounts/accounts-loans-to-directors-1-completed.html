@@ -1,0 +1,155 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Loans to directors note
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+<form action="/accounts/accounts-loans-to-directors" method="get" class="form">
+
+
+
+<div class="text">
+
+  <h1 class="heading-xlarge">Review your loans to directors note</h1>
+
+</div><!--text-->
+
+
+
+  <table class="check-your-answers">
+    <caption class="visuallyhidden">Review your loans to directors note</caption>
+      <thead>
+        <tr>
+          <th class="check-your-answers-section"><h2 class="heading-medium">John Smith</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <details>
+              <summary><span class="summary">Description of the transaction</span></summary>
+              <div class="panel panel-border-narrow">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et dolor sed ex hendrerit imperdiet sed congue dolor. Quisque sed nisl est. Nunc in velit nec mi semper pretium quis et lectus. Quisque hendrerit lectus vel sapien mollis, at dictum velit mattis.</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <details>
+              <summary><span class="summary">Sub-heading needed here</span></summary>
+              <div class="review-reveal">
+
+
+                <div class="grid-row">
+                  <div class="column-one-half">
+                    <p>Balance at 1 April 2015</p>
+                  </div>
+                  <div class="column-one-half">
+                    <p>£X,XXX</p>
+                  </div>
+                </div><!--grid-row-->
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Advances or credits made</p>
+                </div>
+                <div class="column-one-half">
+                  <p>£X,XXX</p>
+                </div>
+              </div><!--grid-row-->
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Advances or credits repaid</p>
+                </div>
+                <div class="column-one-half">
+                  <p>£X,XXX</p>
+                </div>
+              </div><!--grid-row-->
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p class=""><strong>Balance at 31 March 2016</strong></p>
+                </div>
+                <div class="column-one-half">
+                  <p><strong>£X,XXX</strong></p>
+                </div>
+              </div><!--grid-row-->
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Additional information</p>
+                </div>
+                <div class="column-one-half">
+                  <p>Sed at dolor mauris. Fusce justo dolor, facilisis sed ipsum eget, interdum scelerisque urna. Nullam leo nisl, viverra id venenatis id, sagittis quis orci. In efficitur enim dolor, ut aliquet urna ultrices sed</p>
+                </div>
+              </div><!--grid-row-->
+
+
+
+            </div><!--review-reveal-->
+            </details>
+
+
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <br>
+    <p><a href="/accounts/accounts-balance-sheet-completed" class="button">Amend John Smith note</a></p>
+
+
+
+<div class="text form-group">
+      <h2 class="heading-medium">Do you have more loans with directors to report?</h2>
+
+               <div class="form-group">
+                 <fieldset class="inline">
+
+                   <legend class="visuallyhidden">
+                     Do you have more transactions with directors to report?
+                   </legend>
+
+                   <label class="block-label" for="more-director-transactions-yes">
+                     <input type="radio" value="Yes" name="moreloansdirectors" id="more-director-transactions-yes">
+                      Yes
+                   </label>
+
+                   <label class="block-label" for="more-director-transactions-no">
+                     <input type="radio" value="no" name="moreloansdirectors" id="more-director-transactions-no">
+                     No
+                   </label>
+
+                 </fieldset>
+               </div>
+
+
+
+
+    <div class="form-group accounts-row-spacer">
+      <input type="submit" class="button" value="Save and continue">
+    </div>
+
+
+</main>
+{% endblock %}
