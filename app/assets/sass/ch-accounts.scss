@@ -214,13 +214,10 @@ h1 span.circle {
   background-color: $secondary-text-colour;
   color: $page-colour;
   width:100%;
-  padding:.5em 0 1em 0;
+  padding:.5em 0 .8em;
   height:1em;
+    div {text-align: center;}
 }
-#autosave-message-1, #autosave-message-2,  {
-  text-align:center;
-}
-
 
 
 
