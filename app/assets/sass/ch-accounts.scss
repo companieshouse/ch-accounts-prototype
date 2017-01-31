@@ -206,6 +206,19 @@ h1 span.circle {
   }
 }
 
+//Autosave alert
+#autosave-message {
+    background-color: lighten( $focus-colour, 30% );
+    border: 3px solid $focus-colour;
+    padding:.5em;
+    position: fixed;
+    top:4em;
+    left:1em;
+}
+
+
+
+
 //Save modal
 #save-modal {
   border: 2px solid $border-colour;
