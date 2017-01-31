@@ -207,13 +207,18 @@ h1 span.circle {
 }
 
 //Autosave alert
+#autosave-container {
+  position: fixed;
+  bottom:0;
+  left:0;
+  background-color: $secondary-text-colour;
+  color: $page-colour;
+  width:100%;
+  padding:.5em 0 1em 0;
+  height:1em;
+}
 #autosave-message {
-    background-color: lighten( $focus-colour, 30% );
-    border: 3px solid $focus-colour;
-    padding:.5em;
-    position: fixed;
-    bottom:1em;
-    left:1em;
+  text-align:center;
 }
 
 
