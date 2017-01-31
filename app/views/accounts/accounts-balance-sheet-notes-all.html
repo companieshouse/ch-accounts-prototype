@@ -5,17 +5,18 @@
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 $('document').ready(function(){
 
-    $('#autosave-container').hide();
-
+    $('#autosave-message-1').hide();
+    $('#autosave-message-2').hide();
     window.setTimeout(
         function(){
-            $('#aautosave-container').show();
-            setInterval(function(){ $('#autosave-container').toggle(); }, 3000);
+            $('#autosave-message-1').show();
+            setInterval(function(){ $('#autosave-message-1').toggle(); }, 3000);
         }
         ,9000);
 });
@@ -249,7 +250,9 @@ $('document').ready(function(){
 
 
 <div id="autosave-container">
-  <p id="autosave-message">Autosaving your company accounts...</p>
+  <p id="autosave-message-1">Saving... <i class="fa fa-spinner fa-pulse fa-fw"></i></p>
+  <p id="autosave-message-2">Your abridged accounts were last saved 5 seconds ago</p>
+
 </div>
 
 
