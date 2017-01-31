@@ -10,12 +10,12 @@
 <script type="text/javascript">
 $('document').ready(function(){
 
-    $('#autosave-message').hide();
+    $('#autosave-container').hide();
 
     window.setTimeout(
         function(){
-            $('#aautosave-message').show();
-            setInterval(function(){ $('#autosave-message').toggle(); }, 3000);
+            $('#aautosave-container').show();
+            setInterval(function(){ $('#autosave-container').toggle(); }, 3000);
         }
         ,9000);
 });
