@@ -5,6 +5,44 @@
 {% endblock %}
 
 {% block content %}
+
+
+<!-- Stuff for mock "auto-save" feature-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var counter = 0,
+        divs = $('#div1, #div2, #div3');
+
+    function showDiv () {
+        divs.hide() // hide all divs
+            .filter(function (index) { return index == counter % 3; }) // figure out correct div to show
+            .show('fast'); // and show it
+
+        counter++;
+    }; // function to loop through divs and show correct div
+
+    showDiv(); // show first div
+
+    setInterval(function () {
+        showDiv(); // show next div
+    }, 10 * 1000); // do this every 10 seconds
+
+});
+</script>
+<style type="text/css" media="screen">
+         .js .display { display:none; }
+      </style>
+
+<!--End Stuff for mock "auto-save" feature-->
+
+
+
+
+
 <main id="content" role="main" class="two-column-accounts">
  <div class="phase-banner-alpha">
  <p>
@@ -745,5 +783,20 @@
      </div>
 
 </form>
+
+
+
+
+
+<!--
+<div id="autosave-container">
+  <div id="div1" class="display">Autosaving... <i class="fa fa-spinner fa-pulse fa-fw"></i></div>
+  <div id="div2" class="display">Your abridged accounts were last saved 5 seconds ago</div>
+  <div id="div3" class="display"></div>
+</div>
+-->
+
+
+
 </main>
 {% endblock %}
