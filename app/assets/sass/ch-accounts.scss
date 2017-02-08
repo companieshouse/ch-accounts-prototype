@@ -219,9 +219,23 @@ h1 span.circle {
   height:1em;
     div {text-align: center;}
 }
-
-
-
+//Panel styles within other elements
+h1 .panel {
+  font-size:0.5em;
+  margin:1em 0;
+}
+th .panel {
+  font-size:0.6em;
+  margin:1em 0;
+}
+@media (max-width: 640px) {
+  h1 .panel {
+    font-size:0.5em;
+  }
+  th .panel {
+    font-size:0.7em;
+  }
+}
 //Save modal
 #save-modal {
   border: 2px solid $border-colour;
