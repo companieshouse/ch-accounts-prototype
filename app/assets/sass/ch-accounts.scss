@@ -237,8 +237,17 @@ h1 span.circle {
     .button:first-of-type {margin-bottom:1em;}
   }
 }
+//Notification counter
 
-
+.notification-counter {
+    top: -6px;
+    right:-1px;
+    position:relative;
+    background-color: $error-colour;
+    color: $page-colour;
+    padding: 2px 7px 0;
+    border-radius:15px;
+}
 
 
 //Restyling CHS profile
