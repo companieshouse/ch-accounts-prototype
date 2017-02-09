@@ -14,13 +14,14 @@
 
 {% block content %}
 
-<style type="text/css">
-.embedded-PDF {
-  height:100vh;
-  border-bottom: 1em solid #3C3C3C;
-  margin:1em 0;
-}
-</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+          $("#close-PDF").removeClass("hidden");
+  });
+</script>
+
+
 
 
 
@@ -35,7 +36,7 @@
     <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
   </p>
 </div>
-
+<!--
 <nav class="content" role="navigation">
   <ul id="navigation" class="mobile-hidden">
     <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
@@ -44,20 +45,20 @@
     <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
   </ul>
 </nav>
-
+-->
 
 
 
 
   <div class="embedded-PDF">
   <object data="/public/pdf/abridged-accounts-sample.pdf#view=FitB&scrollbar=1" type="application/pdf" height="100%" width="100%">
-    <iframe src="/public/pdf/abridged-accounts-sample.pdf#scrollbar=1" height="100%" width="100%">
+    <iframe src="/public/pdf/abridged-accounts-sample.pdf#view=FitB&scrollbar=1" height="100%" width="100%">
     This browser does not support PDFs. Please download the PDF to view it: <a href="/public/pdf/abridged-accounts-sample.pdf">Download PDF</a>
     </iframe>
   </object>
   </div>
 
-  <input type="button" value="Return to Approve your accounts" onclick="self.close()" class="button">
+  <input type="button" id="close-PDF" value="Return to Approve your accounts" onclick="self.close()" class="button hidden">
 
 
 
