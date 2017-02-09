@@ -13,6 +13,21 @@
 {% endblock %}
 
 {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+          $("a.PDF").addClass("hidden");
+          $("a.pop").removeClass("hidden");
+
+  });
+</script>
+<script>
+function openWin() {
+    window.open("/public/pdf/confirmation-sample.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=200");
+}
+</script>
+
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
@@ -66,10 +81,16 @@
     <li>You can go to '<a href="/chs/chs-your-filings">Your filings</a>' to check the status or get a copy of what you have filed</li>
   </ul>
 
+
+
   <ul class="fa-ul form-group">
-    <li><i class="fa-li fa fa-print"></i><a id="" href="/public/pdf/confirmation-sample.pdf" download="/public/pdf/confirmation-sample.pdf">View/save a copy this page</a>
-      <span class="form-hint">(You will be asked to save or open a PDF)</span></li>
+    <li><i class="fa-li fa fa-print"></i>
+      <!--<a id="" href="/public/pdf/confirmation-sample.pdf" download="/public/pdf/confirmation-sample.pdf">View/save a copy this page</a>-->
+      <a id="" href="javascript:void(0)" onclick="openWin()" class="pop hidden">View/save a copy this page</a>
+      <a id="" href="/public/pdf/confirmation-sample.pdf" class="PDF" target="_blank">View/save a copy this page</a>
+      <span class="form-hint">(Opens PDF in new window)</span></li>
   </ul>
+
 
 <!--  <p><a href="javascript:window.print()" class="fa fa-print fa-2x" aria-hidden="true" style="text-decoration:none; padding-left:15px;"></a></p>-->
 
