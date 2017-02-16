@@ -14,6 +14,7 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
 
@@ -46,38 +47,295 @@
     </header>
 
 
-    <p class="text">This is a list of company information filed by <strong>user@testcompany.co.uk</strong> within the last 30 days.</p>
+    <p class="form-group">This is a list of company information filed by <strong>user@testcompany.co.uk</strong> within the last 30 days.</p>
 
-    <table class="" id="rf_table">
+
+    <table id="rf_table">
     <thead>
       <tr>
-      <th>Time and date</th>
-      <th>Company name and number</th>
-      <th>Submission number</th>
-      <th>Filing description</th>
-      <th>Status</th>
+        <th>Received</th>
+        <th>Company</th>
+        <th>Submission number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>
-        <ul>
-          <li>12:33pm on<br> 16 February 2017</li>
-        </ul>
-      </td>
-      <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-      <td>9873479264091</td>
-      <td>
-        <ul>
-        <li>Abridged accounts</li>
-        <li><a href="javascript:void(0)" id="viewSubmission00">View submission</a></li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-        <li>Processing</li>
-        </ul>
-      </td>
+        <td>12:33pm on 16 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479264091</td>
+        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
+        <td><strong>Unfinished</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">Resume</a><br><a href="javascript:void(0)" id="viewSubmission00">Delete</a></td>
+      </tr>
+      <tr>
+        <td>7:05pm on 11 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479134502</td>
+        <td><strong>Confirmation statement</strong> made on 1 February 2017 with updates</td>
+        <td><strong>Processing</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Re-pay</a></td>
+      </tr>
+      <tr>
+        <td>8:32am on 27 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>9873379120006</td>
+        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
+        <td><strong>Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+      <tr>
+        <td>2.56pm on 26 January 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873379120006</td>
+        <td><strong>Termination of appointment</strong> of Jane Miranda Richardson as a director on 31 August 2015</td>
+        <td><strong>Rejected</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Resubmit</a></td>
+      </tr>
+      <tr>
+        <td>9:58am on 23 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>987337433456</td>
+        <td><strong>Appointment</strong> of David Smith as a director on 23 January 2017</td>
+        <td><strong>Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+    </tbody>
+    </table>
+
+    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+
+
+    <table id="rf_table">
+    <thead>
+      <tr>
+        <th>Received</th>
+        <th>Company</th>
+        <th>Submission number</th>
+        <th>Description</th>
+        <th class="status">Status</th>
+        <th class="actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12:33pm on 16 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479264091</td>
+        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
+        <td class="status"><strong>Unfinished</strong></td>
+        <td class="actions"><a href="javascript:void(0)" id="viewSubmission00">Resume</a><br><a href="javascript:void(0)" id="viewSubmission00">Delete</a></td>
+      </tr>
+      <tr>
+        <td>7:05pm on 11 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479134502</td>
+        <td><strong>Confirmation statement</strong> made on 1 February 2017 with updates</td>
+        <td class="status"><strong>Processing</strong></td>
+        <td class="actions"><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Re-pay</a></td>
+      </tr>
+      <tr>
+        <td>8:32am on 27 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>9873379120006</td>
+        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
+        <td class="status"><strong>Accepted</strong></td>
+        <td class="actions"><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+      <tr>
+        <td>2.56pm on 26 January 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873379120006</td>
+        <td><strong>Termination of appointment</strong> of Jane Miranda Richardson as a director on 31 August 2015</td>
+        <td class="status"><strong>Rejected</strong></td>
+        <td class="actions"><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Resubmit</a></td>
+      </tr>
+      <tr>
+        <td>9:58am on 23 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>987337433456</td>
+        <td><strong>Appointment</strong> of David Smith as a director on 23 January 2017</td>
+        <td class="status"><strong>Accepted</strong></td>
+        <td class="actions"><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+    </tbody>
+    </table>
+
+    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+
+    <table id="rf_table">
+    <thead>
+      <tr>
+        <th>Received</th>
+        <th>Company</th>
+        <th>Submission number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12:33pm on<br>16 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479264091</td>
+        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
+        <td><strong class="generic">Unfinished</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">Resume</a><br><a href="javascript:void(0)" id="viewSubmission00">Delete</a></td>
+      </tr>
+      <tr>
+        <td>7:05pm on<br> 11 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479134502</td>
+        <td><strong>Confirmation statement</strong> made on 1 February 2017 with updates</td>
+        <td><strong class="generic">Processing</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Re-pay</a></td>
+      </tr>
+      <tr>
+        <td>8:32am on<br> 27 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>9873379120006</td>
+        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
+        <td><strong class="generic">Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+      <tr>
+        <td>2.56pm on<br> 26 January 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873379120006</td>
+        <td><strong>Termination of appointment</strong> of Jane Miranda Richardson as a director on 31 August 2015</td>
+        <td><strong class="generic">Rejected</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Resubmit</a></td>
+      </tr>
+      <tr>
+        <td>9:58am on 23 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>987337433456</td>
+        <td><strong>Appointment</strong> of David Smith as a director on 23 January 2017</td>
+        <td><strong class="generic">Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+    </tbody>
+    </table>
+
+
+    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+
+    <table id="rf_table">
+    <thead>
+      <tr>
+        <th>Received</th>
+        <th>Company</th>
+        <th>Submission number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12:33pm on<br>16 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479264091</td>
+        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
+        <td><strong class="unfinished">Unfinished</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">Resume</a><br><a href="javascript:void(0)" id="viewSubmission00">Delete</a></td>
+      </tr>
+      <tr>
+        <td>7:05pm on<br> 11 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479134502</td>
+        <td><strong>Confirmation statement</strong> made on 1 February 2017 with updates</td>
+        <td><strong class="processing">Processing</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Re-pay</a></td>
+      </tr>
+      <tr>
+        <td>8:32am on<br> 27 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>9873379120006</td>
+        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
+        <td><strong class="accepted">Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+      <tr>
+        <td>2.56pm on<br> 26 January 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873379120006</td>
+        <td><strong>Termination of appointment</strong> of Jane Miranda Richardson as a director on 31 August 2015</td>
+        <td><strong class="rejected">Rejected</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Resubmit</a></td>
+      </tr>
+      <tr>
+        <td>9:58am on 23 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>987337433456</td>
+        <td><strong>Appointment</strong> of David Smith as a director on 23 January 2017</td>
+        <td><strong class="accepted">Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+    </tbody>
+    </table>
+
+
+    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+
+
+    <table id="rf_table">
+    <thead>
+      <tr>
+        <th>Received</th>
+        <th>Company</th>
+        <th>Submission number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="unfinished">
+        <td>12:33pm on<br>16 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479264091</td>
+        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
+        <td><strong class="unfinished">Unfinished</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">Resume</a><br><a href="javascript:void(0)" id="viewSubmission00">Delete</a></td>
+      </tr>
+      <tr class="processing">
+        <td>7:05pm on<br> 11 February 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873479134502</td>
+        <td><strong>Confirmation statement</strong> made on 1 February 2017 with updates</td>
+        <td><strong class="processing">Processing</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Re-pay</a></td>
+      </tr>
+      <tr class="accepted">
+        <td>8:32am on<br> 27 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>9873379120006</td>
+        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
+        <td><strong class="accepted">Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
+      </tr>
+      <tr class="rejected">
+        <td>2.56pm on<br> 26 January 2017</td>
+        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
+        <td>9873379120006</td>
+        <td><strong>Termination of appointment</strong> of Jane Miranda Richardson as a director on 31 August 2015</td>
+        <td><strong class="rejected">Rejected</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Resubmit</a></td>
+      </tr>
+      <tr class="accepted">
+        <td>9:58am on 23 January 2017</td>
+        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
+        <td>987337433456</td>
+        <td><strong>Appointment</strong> of David Smith as a director on 23 January 2017</td>
+        <td><strong class="accepted">Accepted</strong></td>
+        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
       </tr>
     </tbody>
     </table>
