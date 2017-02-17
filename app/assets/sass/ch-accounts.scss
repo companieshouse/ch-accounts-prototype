@@ -194,11 +194,11 @@ table#rf_table {
         font-weight:normal;
         margin-bottom: 1em;
         @include core-19;
-        span {
-          display:block;
-          @include core-24;
-          font-weight: 700;
-        }
+          span {
+            display:block;
+            @include core-24;
+            font-weight: 700;
+          }
         }
       }
       .status {
