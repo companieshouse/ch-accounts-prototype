@@ -109,12 +109,16 @@ table.check-your-answers {
     }
   }
 }
-//Your filings table
+//Your filings  - all needs reworking based on final chosen design//
+//Your filings  - all needs reworking based on final chosen design//
+//Your filings  - all needs reworking based on final chosen design//
+//Your filings  - all needs reworking based on final chosen design//
+
 table#rf_table {
   tr td, {
     @include core-16;
     strong {
-      &.unfinished {
+      &.incomplete {
         background-color: $secondary-text-colour;
         color: #fff;
         padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
@@ -173,6 +177,58 @@ table#rf_table {
     background-color: #ffeaec;
   }
 }
+.your-filings {
+  .one-filing {
+    border-bottom:1em solid $panel-colour;
+    margin-bottom:2em;
+  }
+  .grid-row {
+    @include core-16;
+      strong {
+        display:block;
+          a:first-of-type {
+            padding-right:1em;
+          }
+      }
+      .bold-medium {
+        font-weight:normal;
+        margin-bottom: 1em;
+        @include core-19;
+        span {
+          display:block;
+          @include core-24;
+          font-weight: 700;
+        }
+        }
+      }
+      .status {
+        border:2px solid;
+        border-radius:30px;
+        text-align: center;
+        text-transform: uppercase;
+        width:15%;
+        float:right;
+        margin:0 0 1em;
+        &.accepted {
+          color:$button-colour;
+        }
+        &.rejected {
+          color:$error-colour;
+        }
+        &.incomplete {
+          color:$secondary-text-colour;
+        }
+        strong {
+          padding:.5em;
+        }
+    }
+}
+
+
+
+
+
+//END Your filings
 
 .form-group .inline-multiple label {
   margin-bottom:.5em;
