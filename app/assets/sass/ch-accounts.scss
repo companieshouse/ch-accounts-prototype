@@ -268,6 +268,13 @@ header {
   color: $secondary-text-colour;
   display: block;
 }
+.circle-subheading {
+  @include core-36;
+  color: $secondary-text-colour;
+  display: block;
+  margin-left: 1.5em;
+
+}
 
 
 .warning-with-triangle {
@@ -326,6 +333,9 @@ h1 span.circle {
 }
 .icon-important {
     background-image: url("/public/images/icon-important.png"); // Having to add this here, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
+}
+.icon-file-download {
+    background-image: url("/public/images/icon-file-download.png"); // Having to add this here, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
 }
 #accounts-start-page {
   .form-hint {

@@ -11,6 +11,7 @@
 
 
 
+
 <div id="container">
     <!-- FILE_START::header.tmpl -->
 <div class="headerLogo">
@@ -47,46 +48,29 @@
 </div>
 <!-- FILE_END::userHeaderBar.tmpl -->
 
+
 <div class="container-content">
 
 
 
-	<h1 class="large-heading"><strong>Filing abridged accounts using our new service</strong></h1>
-
-<p>You can file abridged accounts using our new service.</p>
-
-  <p>Abridged accounts must meet <strong>at least 2</strong> of the following criteria:</p>
-  <ol style="list-style: decimal">
-    <li>Turnover can't exceed £10.2 million</li>
-    <li>The balance sheet total can't be more than £5.1 million (this is the sum of the total fixed assets plus total current assets)</li>
-    <li>There can't be more than an average of 50 employees during the year</li>
-  </ol>
+	<h1 class="large-heading"><strong>File abridged accounts to Companies House</strong></h1>
 
 
-  <div class="clear"></div>
-  <form action="/chs/chs-from-webfiling" method="get" class="form">
+	<h2 class="large-heading">There are currently two ways to file abridged company accounts to Companies House:</h2>
 
-<h2>Do you still want to file abridged accounts?</h2>
-  <fieldset class="inline">
 
-       <legend class="visually-hidden">Do you already have a personal user account?</legend>
+	<h3 class="large-heading margin-top-30">1. Using the Companies House-HMRC joint filing service:</h3>
+  <p>This will require signing up for a <a href="https://www.gov.uk/government-gateway" target="_blank">Government Gateway<span class="visuallyhidden"> Link opens in a new tab/window<span></a> account, or using your existing Government Gateway credentials to sign in. This will allow you to file your tax return to HMRC at the same time.</p>
+  <p><a href="javascript:void(0)" class="button positive regular">Go to HMRC to use the joint filing accounts service</a></p>
 
-       <label class="block-label" for="radio-inline-1">
-         <input id="radio-inline-1" type="radio" name="gotochs" value="Yes">
-         Yes, take me to the new filing service
-       </label>
-       <label class="block-label" for="radio-inline-2">
-         <input id="radio-inline-2" type="radio" name="gotochs" value="No">
-         No, my accounts don't meet the above criteria
-       </label>
 
-     </fieldset>
+  <h3 class="large-heading margin-top-50">2. Using third party software</h3>
+  <p>This service is open to everyone, but will mostly benefit those who file frequently - on a daily or weekly basis. The more documents you file, the more appropriate software filing is likely to be.</p>
+  <p><a href="javascript:void(0)" class="button positive regular">Go to HMRC to use the joint filing accounts service</a></p>
 
-     <input type="submit" class="positive regular button margin-top-10" value="Next" id="">
-<form>
-    <!--<p><a href="javascript:void(0)" class="negative" style="float:none; padding-left:0 !important;">Back</a></p>-->
+  <p><a href="webfiling-before-chs" class="negative right">Back</a></p>
 
-	</div>
+  </div>
 
 	<div class="clear"></div>
 
@@ -111,4 +95,5 @@
 <!-- Piwik -->
 
 </div>   <!--End of div id="container"-->
+
 {% endblock %}

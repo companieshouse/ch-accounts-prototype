@@ -1,0 +1,82 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Filing abridged accounts using our new service
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main" class="search">
+
+      <div class="phase-banner-alpha">
+      <p>
+        <strong class="phase-tag">ALPHA</strong>
+        <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Filing abridged accounts using our new service</h1>
+    </header>
+
+
+
+
+      <p>You can file using the new service if:</p>
+      <ul class="list list-bullet text">
+        <li>your balance sheet doesn’t include intangible assets, fixed asset investments, or revaluation reserve</li>
+        <li>you only need to supply an accounting policies note (and, if needed, a tangible assets note)</li>
+        <li>you don't need to change the date the accounts are made up to</li>
+      </ul>
+
+
+      <h2 class="heading-medium">Do you still want to file using the new service?</h2>
+
+      <form action="/accounts/accounts-start-page-abridged" method="get" class="form">
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visually-hidden">Do you still want to file using the new service?</legend>
+
+            <label class="block-label selection-button-radio" for="release1yes">
+              <input id="release1yes" type="radio" name="chsrelease1" value="Yes">
+              Yes my accounts meet the above criteria
+            </label>
+            <label class="block-label selection-button-radio" for="release1no">
+              <input id="release1no" type="radio" name="chsrelease1" value="No">
+              No, my accounts don't meet the above criteria
+            </label>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Next" id="">
+        </div>
+      </form>
+
+
+
+
+</main>
+
+{% endblock %}

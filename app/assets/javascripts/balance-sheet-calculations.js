@@ -4,7 +4,9 @@ $(document).ready(function() {
        var intangibleassetscurrent = $('#intangible-assets-current').val();
        var tangibleassetscurrent = $('#tangible-assets-current').val();
        var investmentsfixedassetscurrent = $('#investments-fixed-assets-current').val();
-       var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent;
+      // var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent;
+       var total = tangibleassetscurrent; //For Release 1 only, when we only want tangible assets
+
        $('#total-fixed-assets-current').val(total);
      }
      $('#intangible-assets-current, #tangible-assets-current, #investments-fixed-assets-current').change(compute);
@@ -16,7 +18,9 @@ $(document).ready(function() {
        var intangibleassetsprevious = $('#intangible-assets-previous').val();
        var tangibleassetsprevious = $('#tangible-assets-previous').val();
        var investmentsfixedassetsprevious = $('#investments-fixed-assets-previous').val();
-       var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious;
+       //var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious;
+       var total = tangibleassetsprevious; //For Release 1 only, when we only want tangible assets
+
        $('#total-fixed-assets-previous').val(total);
      }
      $('#intangible-assets-previous, #tangible-assets-previous, #investments-fixed-assets-previous').change(compute);
@@ -125,7 +129,8 @@ $(document).ready(function() {
        var revaluationreservecurrent = $('#revaluation-reserve-current').val();
        var otherreservescurrent = $('#other-reserves-current').val();
        var profitandlossaccountcurrent = $('#profit-and-loss-account-current').val();
-       var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +revaluationreservecurrent + +otherreservescurrent + +profitandlossaccountcurrent;
+       //var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +revaluationreservecurrent + +otherreservescurrent + +profitandlossaccountcurrent;
+       var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +otherreservescurrent + +profitandlossaccountcurrent; // For Release 1 only, when we don't ask for revaluation reserve
        $('#total-shareholders-funds-current').val(total);
      }
      $('#called-up-share-capital-current, #share-premium-account-current, #revaluation-reserve-current, #other-reserves-current, #profit-and-loss-account-current').change(compute);
@@ -139,7 +144,9 @@ $(document).ready(function() {
        var revaluationreserveprevious = $('#revaluation-reserve-previous').val();
        var otherreservesprevious = $('#other-reserves-previous').val();
        var profitandlossaccountprevious = $('#profit-and-loss-account-previous').val();
-       var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +revaluationreserveprevious + +otherreservesprevious + +profitandlossaccountprevious;
+       //var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +revaluationreserveprevious + +otherreservesprevious + +profitandlossaccountprevious;
+       var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +otherreservesprevious + +profitandlossaccountprevious; // For Release 1 only, when we don't ask for revaluation reserve
+
        $('#total-shareholders-funds-previous').val(total);
      }
      $('#called-up-share-capital-previous, #share-premium-account-previous, #revaluation-reserve-previous, #other-reserves-previous, #profit-and-loss-account-previous').change(compute);

@@ -24,7 +24,7 @@
 </script>
 <script>
 function openWin() {
-    window.open("/public/pdf/abridged-accounts-sample.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=200");
+    window.open("/public/pdf/abridged-accounts-sample.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=500, left=200");
 }
 </script>
 
@@ -63,7 +63,7 @@ function openWin() {
   <form action="/accounts/accounts-submission" method="get" class="form">
 
 
-      <h1 class="heading-xlarge"><span class="circle circle-step-large">6</span> Approve your accounts</h1>
+      <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span> Approve your accounts</h1>
 
 
 
@@ -75,20 +75,24 @@ function openWin() {
       <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
       <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
       <div class="form-group">
-        <fieldset data-required data-error="You must choose a director">
-          <legend class="visuallyhidden">Who approved the accounts?</legend>
-            <div class="form-group">
-              <label class="block-label selection-button-radio" for="john-smith">
-                <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
-                John Smith
-              </label>
-              <label class="block-label selection-button-radio" for="david-smith">
-                <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
-                David Smith
-              </label>
+              <fieldset>
+                <legend class="visuallyhidden">Who approved the accounts?</legend>
+                  <div class="form-group">
+
+                    <label class="form-label visuallyhidden" for="name">Who approved the accounts?</label>
+                    <input class="form-control" id="name" type="text">
+                  <!--  <label class="block-label selection-button-radio" for="john-smith">
+                      <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
+                      John Smith
+                    </label>
+                    <label class="block-label" for="david-smith">
+                      <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
+                      David Smith
+                    </label>-->
+
+                  </div>
+              </fieldset>
             </div>
-        </fieldset>
-      </div>
 
 
 
