@@ -75,9 +75,8 @@ function openWin() {
       <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
       <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
       <div class="form-group">
-              <fieldset>
+              <fieldset data-required data-error=" You provide the name of a director">
                 <legend class="visuallyhidden">Who approved the accounts?</legend>
-                  <div class="form-group">
 
                     <label class="form-label visuallyhidden" for="name">Who approved the accounts?</label>
                     <input class="form-control" id="name" type="text">
@@ -90,7 +89,6 @@ function openWin() {
                       David Smith
                     </label>-->
 
-                  </div>
               </fieldset>
             </div>
 
