@@ -70,7 +70,7 @@ $(document).ready(function() {
    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
    <li><a href="javascript:void(0)">Your details</a></li>
    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-   <li><a href="/chs/chs-start-page-signed-out" id="user-signout">Sign out</a></li>
+   <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
  </ul>
 </nav>
 
@@ -159,14 +159,14 @@ $(document).ready(function() {
    <div class="column-quarter">
      <div class="form-group">
        <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="tangible-assets-current">
+         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="tangible-assets-current" value="37440" >
        </label>
      </div>
    </div>
    <div class="column-quarter">
      <div class="form-group">
        <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="tangible-assets-previous">
+         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="tangible-assets-previous" value="30740" >
        </label>
      </div>
    </div>
@@ -218,14 +218,14 @@ $(document).ready(function() {
    <div class="column-quarter">
      <div class="form-group">
        <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="total-fixed-assets-current" readonly>
+         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="total-fixed-assets-current" value="37440" readonly>
        </label>
      </div>
    </div>
    <div class="column-quarter">
      <div class="form-group">
        <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="total-fixed-assets-previous" readonly>
+         <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="total-fixed-assets-previous"  value="30740" readonly>
        </label>
      </div>
    </div>
