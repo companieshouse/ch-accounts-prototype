@@ -109,9 +109,9 @@ router.get('/chs/chs-choose-password', function (req, res) {
 router.get('/accounts/accounts-start-page-abridged', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)
-  var resumefromprofile = req.query.resumefromprofile;
+  var chsrelease1 = req.query.chsrelease1;
 
-  if (resumefromprofile == "no"){
+  if (chsrelease1 == "No"){
 
     // redirect to the relevant page
     res.redirect("/chs/chs-choose-accounts");
@@ -130,9 +130,9 @@ router.get('/accounts/accounts-start-page-abridged', function (req, res) {
 router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)
-  var chsrelease1 = req.query.chsrelease1;
+  var resumefromprofile = req.query.resumefromprofile;
 
-  if (chsrelease1 == "No"){
+  if (resumefromprofile == "no"){
 
     // redirect to the relevant page
     res.redirect("/accounts/accounts-start-page");
