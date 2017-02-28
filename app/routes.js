@@ -146,6 +146,27 @@ router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
 
 });
 
+// Do you have a creditors note?
+
+router.get('/accounts/accounts-review', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var creditorsnoteyn = req.query.creditorsnoteyn;
+
+  if (creditorsnoteyn == "Yes"){
+
+    // redirect to the relevant page
+    res.redirect("/accounts/accounts-creditors-amounts-falling-due-within-one-year");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('accounts/accounts-review');
+
+  }
+
+});
+
 // WIZARD - is the company trading
 
 router.get('/accounts/wizard/wizard-ever-traded', function (req, res) {

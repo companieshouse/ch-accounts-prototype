@@ -1,0 +1,60 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - other
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+  <div class="phase-banner-alpha">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+  Balance sheet notes
+  <span class="circle-subheading">Other</span>
+</h1>
+<h1 class="heading-medium text">
+  Do your prepared accounts include a "Creditors - amounts falling due within one year" note?
+</h1>
+
+<form action="/accounts/accounts-review" method="get" class="form">
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+
+      <label class="block-label selection-button-radio" for="creditorsnoteyes">
+        <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="creditorsnoteyes">
+        <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="No">
+        No
+      </label>
+
+    </fieldset>
+  <div class="accounts-row-spacer">
+    <input type="submit" class="button" value="Next" id="">
+  </div>
+</form>
+</main>
+{% endblock %}
