@@ -17,12 +17,8 @@
 
 <style type="text/css">
 .button {padding-top:0.3em; padding-bottom: 0.2em; margin-top:0.4em;}
-.searchfield .button {
-  position: re
-  position: relative;
-  top:-7px;
-}
 </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
 <script type="text/javascript">
 $(document).ready(function() {
 
@@ -69,30 +65,7 @@ function eraseCookie(name) {
   createCookie(name,"",-1);
 }
 </script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javscript">
-$(document).ready(function(){
-$("a.bookmark").click(function(e){
- e.preventDefault(); // this will prevent the anchor tag from going the user off to the link
- var bookmarkUrl = this.href;
- var bookmarkTitle = this.title;
- if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-         alert("This function is not available in Google Chrome. Click the star symbol at the end of the address-bar or hit Ctrl-D (Command+D for Macs) to create a bookmark.");
- }else if (window.sidebar) { // For Mozilla Firefox Bookmark
-     window.sidebar.addPanel(bookmarkTitle, bookmarkUrl,"");
- } else if( window.external || document.all) { // For IE Favorite
-     window.external.AddFavorite( bookmarkUrl, bookmarkTitle);
- } else if(window.opera) { // For Opera Browsers
-     $("a.bookmark").attr("href",bookmarkUrl);
-     $("a.bookmark").attr("title",bookmarkTitle);
-     $("a.bookmark").attr("rel","sidebar");
- } else { // for other browsers which does not support
-      alert('Your browser does not support this bookmark action');
-      return false;
-    }
-  });
-});
-</script>
+
 
 
 
