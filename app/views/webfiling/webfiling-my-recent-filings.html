@@ -1,0 +1,93 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Your filings
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+  <div class="grid_3 alpha userMenu">
+
+  <!-- FILE_START::userHeaderBar.tmpl -->
+
+
+  <p>Signed in to <br>Companies House
+  <!-- jfrancis@companieshouse.gov.uk --><br>
+  <a href="javascript:void(0)">Sign out</a>
+  </p>
+
+  <ul style="padding-left:0;">
+  <li><a class="headerClick" href="javascript:void(0)">Change account details</a></li>
+  <li><a class="headerClick" href="javascript:void(0)">My recent filings</a></li>
+
+  </ul>
+  </div>
+  <!-- FILE_END::userHeaderBar.tmpl -->
+
+
+
+  <div class="grid_13">
+
+          <h1 class="">My recent filings</h1>
+
+          <p>Below are details of WebFiled company data for <strong>neil.shadrach@corryn.com</strong>. The items below are for the last 10 days ONLY. It is not possible to view copies of company accounts that were downloaded as templates.</p>
+          <p> Please allow up to 3 hours for newly submitted documents to be available to view/download (normally available within 10 minutes).</p>
+          <div class="message warning">
+          <h2 class="margin-left-5 margin-top-5">Important</h2>
+          <p>A message telling user that filings made on the new Companies House service (or whatever we call it) won't be shown here so they need to <a href="/chs/chs-start-page">login on that new service</a> and check "Your filings"</p>
+          </div>
+
+          <div class="submission message">
+          There are currently no transactions in your area
+          </div>
+
+
+                <p><a href="javascript:history.back()" class="negative right">Back</a></p>
+        </div><!--End of div class="grid_12 omega"-->
+    <div class="clear"></div>
+</div>
+
+<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)" target="_blank">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+<a id="i18nLink" href="javascript:void(0)" class="language">Cymraeg</a>
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+
+
+</div>
+{% endblock %}
