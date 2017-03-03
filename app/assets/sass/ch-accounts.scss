@@ -114,76 +114,69 @@ table.check-your-answers {
 //Your filings  - all needs reworking based on final chosen design//
 //Your filings  - all needs reworking based on final chosen design//
 
-table#rf_table {
-  tr td, {
-    @include core-16;
-    strong {
-      &.incomplete {
-        background-color: $secondary-text-colour;
-        color: #fff;
-        padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-        margin-top:.1em;
-        display:inline-block;
-      }
-      &.processing {
-        background-color: $black;
-        color: #fff;
-        padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-        margin-top:.1em;
-        display:inline-block;
-      }
-      &.accepted {
-        background-color: $button-colour;
-        color: #fff;
-        padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-        margin-top:.1em;
-        display:inline-block;
-      }
-      &.rejected {
-        background-color: $error-colour;
-        color: #fff;
-        padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-        margin-top:.1em;
-        display:inline-block;
-      }
-      &.generic {
-        border: 2px solid $black;
-        padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-        margin-top:.1em;
-        display:inline-block;
-      }
-    }
-    a {
-      display:inline-block;
-      margin-bottom:.5em;
-    }
-  }
-  tr th, {
-    @include core-16;
-    font-weight:700;
-  }
-  tr td, tr th {
-    vertical-align: top;
-  }
-  th.status, td.status {
-    background-color: $panel-colour;
-    padding-right: 1em;
-    padding-left:1em;
-  }
-  th.actions, td.actions {
-    padding-left:1em;
-  }
-  tr.rejected {
-    background-color: #ffeaec;
-  }
-}
+
 .your-filings {
+  table#rf_table {
+    margin-bottom:1em;
+    tr td, {
+      @include core-16;
+      strong {
+        &.incomplete {
+          background-color: $secondary-text-colour;
+          color: #fff;
+          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
+          margin-top:.1em;
+          display:inline-block;
+        }
+        &.processing {
+          background-color: $black;
+          color: #fff;
+          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
+          margin-top:.1em;
+          display:inline-block;
+        }
+        &.accepted {
+          background-color: $button-colour;
+          color: #fff;
+          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
+          margin-top:.1em;
+          display:inline-block;
+        }
+        &.rejected {
+          background-color: $error-colour;
+          color: #fff;
+          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
+          margin-top:.1em;
+          display:inline-block;
+        }
+        &.generic {
+          border: 2px solid $black;
+          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
+          margin-top:.1em;
+          display:inline-block;
+        }
+      }
+      a {
+        display:inline-block;
+        margin-bottom:.5em;
+      }
+    }
+    tr th, {
+      @include core-16;
+      font-weight:700;
+    }
+    tr {
+     th.description {width:70%;}
+     th.status {width:15%;}
+     th.actions {width:15%;}
+
+    }
+  }
   .one-filing {
     border-bottom:1em solid $panel-colour;
     margin-bottom:2em;
   }
   .grid-row {
-    @include core-16;
       strong {
         display:block;
           a:first-of-type {
@@ -201,38 +194,7 @@ table#rf_table {
           }
         }
       }
-      .status {
-        border:2px solid;
-        border-radius:30px;
-        text-align: center;
-        text-transform: uppercase;
-        width:15%;
-        float:right;
-        margin:0 0 1em;
-        &.accepted {
-          color:$button-colour;
-        }
-        &.rejected {
-          color:$error-colour;
-        }
-        &.incomplete {
-          color:$secondary-text-colour;
-        }
-        strong {
-          padding:.5em;
-        }
-    }
 }
-.your-filings2 {
-  .status {
-    float:left;
-    width:15%;
-  }
-  .your-filings-actions {
-    float:right;
-  }
-}
-
 
 
 
