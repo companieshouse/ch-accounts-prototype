@@ -120,42 +120,10 @@ table.check-your-answers {
     margin-bottom:1em;
     tr td, {
       @include core-16;
-      strong {
-        &.incomplete {
-          background-color: $secondary-text-colour;
-          color: #fff;
-          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-          margin-top:.1em;
-          display:inline-block;
+      strong.status {
+          font-weight:700;
+          font-size:1.2em;
         }
-        &.processing {
-          background-color: $black;
-          color: #fff;
-          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-          margin-top:.1em;
-          display:inline-block;
-        }
-        &.accepted {
-          background-color: $button-colour;
-          color: #fff;
-          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-          margin-top:.1em;
-          display:inline-block;
-        }
-        &.rejected {
-          background-color: $error-colour;
-          color: #fff;
-          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-          margin-top:.1em;
-          display:inline-block;
-        }
-        &.generic {
-          border: 2px solid $black;
-          padding:.4em .5em .2em; // this padding, margin-top, and block could go on the strong, save repeating it 4 times
-          margin-top:.1em;
-          display:inline-block;
-        }
-      }
       a {
         display:inline-block;
         margin-bottom:.5em;
@@ -166,15 +134,21 @@ table.check-your-answers {
       font-weight:700;
     }
     tr {
-     th.description {width:70%;}
-     th.status {width:15%;}
+     th.description {width:65%;}
+     th.status {width:20%;}
      th.actions {width:15%;}
-
+      .rejected {
+        color:$error-colour;
+        margin-left:-3.1em;
+          .icon-important {
+            background-image: url("/public/images/icon-important-red.png");
+          }
+        }
     }
+
   }
   .one-filing {
-    border-bottom:1em solid $panel-colour;
-    margin-bottom:2em;
+    margin-bottom:3em;
   }
   .grid-row {
       strong {
