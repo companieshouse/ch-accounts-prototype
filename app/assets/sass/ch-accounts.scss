@@ -117,7 +117,6 @@ table.check-your-answers {
 
 .your-filings {
   table#rf_table {
-    margin-bottom:1em;
     tr td, {
       @include core-16;
       strong.status {
@@ -126,7 +125,7 @@ table.check-your-answers {
         }
       a {
         display:inline-block;
-        margin-bottom:.5em;
+        font-size:1.1em;
       }
     }
     tr th, {
@@ -134,9 +133,9 @@ table.check-your-answers {
       font-weight:700;
     }
     tr {
-     th.description {width:65%;}
+     th.description {width:60%;}
      th.status {width:20%;}
-     th.actions {width:15%;}
+     th.actions {width:20%;}
       .rejected {
         color:$error-colour;
         margin-left:-3.1em;
@@ -149,6 +148,23 @@ table.check-your-answers {
   }
   .one-filing {
     margin-bottom:3em;
+    background-color: $highlight-colour;
+    padding:1em;
+    clear:both;
+    .heading-medium {margin-top:0}
+    &.accepted {
+      border-left: 8px solid $button-colour;
+    }
+    &.rejected {
+      border-left: 8px solid $error-colour;
+        .notice {
+          color:$error-colour;
+            margin-left:-3.1em;
+            .icon-important {
+              background-image: url("/public/images/icon-important-red.png");
+            }
+          }
+    }
   }
   .grid-row {
       strong {
