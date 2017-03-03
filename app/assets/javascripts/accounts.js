@@ -84,10 +84,10 @@ function attachOnChangeListener(arr, total, substract){
 
 
 
-// Show message when user clicks Delete Employees note
+// Show message when user clicks Delete something, eg Creditors note 
 $(function() {
-    $('#employees-delete').click(function() {
-        $('#employees-delete-warning').show();
+    $('#content-delete').click(function() {
+        $('#content-delete-warning').show();
         return false;
     });
 });
