@@ -5,6 +5,11 @@ Balance sheet notes - other
 {% endblock %}
 
 {% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
 <main id="content" role="main" class="two-column-accounts">
 {% include "includes/phase_banner_beta.html" %}
 
@@ -27,29 +32,34 @@ Balance sheet notes - other
   Balance sheet notes
   <span class="circle-subheading">Creditors - amounts falling due within one year</span>
 </h1>
-<h1 class="heading-medium">
-  Do your prepared accounts include a "Creditors - amounts falling due within one year" note?
-</h1>
 
-<form action="/accounts/accounts-review" method="get" class="form">
-  <div class="form-group">
-    <fieldset class="inline">
+<div class="left-indent">
 
-      <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+  <h2 class="heading-medium">
+    Do your prepared accounts include a "Creditors - amounts falling due within one year" note?
+  </h2>
 
-      <label class="block-label selection-button-radio" for="creditorsnoteyes">
-        <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
-        Yes
-      </label>
-      <label class="block-label selection-button-radio" for="creditorsnoteno">
-        <input id="creditorsnoteno" type="radio" name="creditorsnoteyn" value="No">
-        No
-      </label>
+  <form action="/accounts/accounts-review" method="get" class="form">
+    <div class="form-group">
+      <fieldset class="inline">
 
-    </fieldset>
-  <div class="accounts-row-spacer">
-    <input type="submit" class="button" value="Next" id="">
-  </div>
+        <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+
+        <label class="block-label selection-button-radio" for="creditorsnoteyes">
+          <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="creditorsnoteno">
+          <input id="creditorsnoteno" type="radio" name="creditorsnoteyn" value="No">
+          No
+        </label>
+
+      </fieldset>
+    <div class="accounts-row-spacer">
+      <input type="submit" class="button" value="Next" id="">
+    </div>
+
+</div><!--left-indent-->
 </div><!--text-->
 </form>
 </main>

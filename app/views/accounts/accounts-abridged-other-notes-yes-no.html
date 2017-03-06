@@ -1,0 +1,63 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - other
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+  Balance sheet notes
+  <span class="circle-subheading">Other</span>
+</h1>
+
+<div class="left-indent">
+<h2 class="heading-medium">
+  Do your prepared accounts include any other notes?
+  <span class="form-hint">For example, "Employees", "Fixed asset investements" or "Debtors"</span>
+</h2>
+
+
+
+
+<form action="/accounts/accounts-abridged-other-notes" method="get" class="form">
+  <div class="form-group">
+    <fieldset class="inline">
+      <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+      <label class="block-label selection-button-radio" for="othernotesyes">
+        <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="othernotesno">
+        <input id="othernotesno" type="radio" name="othernotes" value="No">
+        No
+      </label>
+    </div><!--form-group-->
+    </fieldset>
+
+  <div class="accounts-row-spacer">
+    <input type="submit" class="button" value="Next" id="">
+  </div>
+</div><!--left-indent-->
+
+
+</form>
+</main>
+{% endblock %}

@@ -117,6 +117,7 @@ table.check-your-answers {
 
 .your-filings {
   table#rf_table {
+    margin-top:1.5em;
     tr td, {
       @include core-16;
       strong.status {
@@ -159,7 +160,6 @@ table.check-your-answers {
       border-left: 8px solid $error-colour;
         .notice {
           color:$error-colour;
-            margin-left:-3.1em;
             .icon-important {
               background-image: url("/public/images/icon-important-red.png");
             }
@@ -297,6 +297,9 @@ h1 span.circle {
     margin-right: .9em;
   }
 }
+
+//Indent -
+.left-indent {margin-left:2.8em}
 
 //Autosave alert
 #autosave-container {

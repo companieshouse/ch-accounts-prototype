@@ -167,6 +167,42 @@ router.get('/accounts/accounts-review', function (req, res) {
 
 });
 
+
+// Do you have Other notes?
+
+router.get('/accounts/accounts-abridged-other-notes', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var othernotes = req.query.othernotes;
+
+  if (othernotes == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/accounts/accounts-review");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('accounts/accounts-abridged-other-notes');
+
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // WIZARD - is the company trading
 
 router.get('/accounts/wizard/wizard-ever-traded', function (req, res) {
