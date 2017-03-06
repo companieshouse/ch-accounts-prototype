@@ -299,7 +299,13 @@ h1 span.circle {
 }
 
 //Indent -
-.left-indent {margin-left:2.8em}
+.left-indent {
+  margin-left:2.8em;
+  textarea.form-control {
+      width:100%;
+    }
+}
+
 
 //Autosave alert
 #autosave-container {
