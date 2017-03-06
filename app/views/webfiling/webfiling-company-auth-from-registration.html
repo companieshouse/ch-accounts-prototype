@@ -1,0 +1,148 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Company authentication
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+                <div class="grid_3 alpha userMenu">
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br>Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="" href="javascript:void(0)">Change account details</a></li>
+			<li><a class="" href="webfiling-my-recent-filings">My recent filings</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+                </div>
+
+        <div class="container-content signIn">
+
+                <h1 class="">Sign in to a company</h1>
+
+
+                <div class="information message">
+                                <p class="header">Thank you for registering your email address
+                                </p><p>To file documents using WebFiling, you also need an authentication code.</p>
+                            </div>
+
+
+
+            <form action="" method="post">
+
+
+
+
+
+<!-- FILE_START::companySignInForm.tmpl -->
+                <input style="display:none" type="password">
+				<fieldset class="selection-group">
+					<legend><div>Where was the company registered?</div></legend>
+					<ul style="padding-left:0;">
+						<li>
+							<input name="companySignInPage.companySignInForm.coType" id="companySignInPage.EW" value="EW" checked="checked" type="radio">
+							<label for="companySignInPage.EW">England / Wales</label>
+						</li>
+						<li>
+							<input name="companySignInPage.companySignInForm.coType" id="companySignInPage.SC" value="SC" type="radio">
+							<label for="companySignInPage.SC">Scotland</label>
+						</li>
+						<li>
+							<input name="companySignInPage.companySignInForm.coType" id="companySignInPage.NI" value="NI" type="radio">
+							<label for="companySignInPage.NI">Northern Ireland</label>
+						</li>
+					</ul>
+				</fieldset>
+
+				<fieldset>
+					<legend class="hidden">Company sign in information</legend>
+					<div class="string">
+						<label for="companySignInPage.coNum">
+							<span>Company number</span>
+							<input id="companySignInPage.coNum" name="companySignInPage.companySignInForm.coNum" maxlength="8" value="" class="medium" type="text">
+
+						</label>
+					</div>
+					<div class="string">
+						<label for="companySignInPage.authCode">
+							<span>Authentication code</span>
+							<input name="companySignInPage.companySignInForm.authCode" id="companySignInPage.authCode" maxlength="8" value="" class="medium" type="password">
+
+						</label>
+					</div>
+
+
+					<p><a href="webfiling-request-auth-1">Request an authentication code</a></p>
+
+				</fieldset>
+
+<!-- FILE_END::companySignInForm.tmpl -->
+
+<a href="webfiling-profile" class="button positive regular"><strong>Sign in</strong></a>
+            <input name="__VIEWSTATE" value="1d5c08eJytlLuO4zYUhidZDAK4C1KlCBAgSLVAVpLvBrbQ1SOKlOUhtbLVBJKskWlZF0v0SGSZIg+UIo+QMs8UeRYBkh0g26Q4LAiCON//kef+q2+0e200+jmpShbRMm20N3d3d/ejP6Tp4TCfpKA/hY8HZV/u6KTqPZEfXUEnV7HbUf+k9q7hblw/50jsBTYCmRi+gshediVJcXPeI/PsojhEyRVS6i8BwbVr8LNDnnZe8hZQ4j8jx58yqYw3gsu2QAzBp9iGXN6wGHCoj0ELbWcZY46zGH5Qw7K+HqbTzM/rS4qrOvqQ7deauadhBrKQWoVaaL6qNpLsqe/fDyxfJ1VRRyXHNCvt0ouydPRbMpMO89l/wuVZj3zeY3PWMzMTyMw4OmmAxdsOQV1i5tElDeoQAd4hhfSUv62F+YyELxRykaVJYY95Thlv7C4GoHOkBhE89uDiorRZIzNoX7DZewYewkDztZM8OB0yVB09ou1wba/3qlArFa4nJcpeQL57BfJTPSykiZI8bUa/xmNFTuafQnH+zlkOKZOdjy2p/Jiyw6Rbslx/50Bz0vJEeJEMZK1iRX0M51OQBLVch9dgV4Sb6BzIhZWe6zAj24czx0GtOSWtCy3bm48U3BLPVfeAarx9afRH/aVRmrYP1bVNVyuLnmmZrVa+vVo9VU2BWcTS0e+zNE7i+P+yEO9AJ9oFw0hAoo8Vri8YaQKetM+IJz1k84/PaJGPXWd+2597Di8dwYvBiH1xPGATvwdwBxxo246vdCq6KeE3IWaPOsO3yQQPgN++NuG3w9eJmtGf6XIppa8sfAIlk5yhoXngEs0mJ2uD807BJ8tDp62CzIVAxqNNjPX4sLHxCS8qTOWNwAzAbVWR7uxALFxo1m4SAIZK+Nm/k7TtM6eK0ubV2pllSOTCWyw6g4br4zEM/mGysIO9vre2urkjijrA/vAa9l871iD0l++tJirSrmry1eo2Sprq/CJZ/3usfPbAbex8MdSXQ735C8H/j7Y=" data-postback="0" type="hidden">
+</form>
+
+<p class="secondary-link margin-top-30">Are you a lender? <a href="/help/en/stdwf/charges.html" target="_blank">Find out how to request a lender authentication code</a>.</p>
+
+
+
+
+        </div><!--End of div class="grid_12 omega"-->
+    <div class="clear"></div>
+</div>
+
+<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)" target="_blank">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+<a id="i18nLink" href="javascript:void(0)" class="language">Cymraeg</a>
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+
+
+</div>
+{% endblock %}
