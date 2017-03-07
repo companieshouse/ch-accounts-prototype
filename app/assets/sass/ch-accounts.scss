@@ -152,7 +152,13 @@ table.check-your-answers {
     background-color: $highlight-colour;
     padding:1em;
     clear:both;
-    .heading-medium {margin-top:0}
+    .heading-medium {
+      margin-top:0;
+      span {
+        @include core-19;
+        display:block;
+      }
+    }
     &.accepted {
       border-left: 8px solid $button-colour;
     }
