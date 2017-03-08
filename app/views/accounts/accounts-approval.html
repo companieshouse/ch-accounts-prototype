@@ -70,6 +70,7 @@ function openWin() {
       <h2 class="heading-medium">Who approved the accounts?</h2>
       <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
       <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
+
       <div class="form-group">
               <fieldset data-required data-error=" You need to provide the name of a director">
                 <legend class="visuallyhidden">Who approved the accounts?</legend>
@@ -94,10 +95,12 @@ function openWin() {
 
       <h2 class="heading-medium">When were the accounts approved?</h2>
 
-      <div class="form-group">
+
+      <fieldset >
+
           <legend class="visuallyhidden">When were the accounts approved?</legend>
 
-          <fieldset>
+
             <div class="form-date">
               <p class="form-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2016</p>
 
@@ -116,8 +119,9 @@ function openWin() {
                 <input class="form-control" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" min="0" max="2016">
               </div>
             </div>
+
           </fieldset>
-        </div>
+
   <p>&nbsp;</p>
 
 

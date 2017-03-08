@@ -26,41 +26,44 @@ Balance sheet notes - other
 
 
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
 
-<div class="text">
-<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
-  Balance sheet notes
-  <span class="circle-subheading">Creditors - amounts falling due within one year</span>
-</h1>
 
-<div class="left-indent">
+  <div class="text">
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+    Balance sheet notes
+    <span class="circle-subheading">Creditors - amounts falling due within one year</span>
+    </h1>
 
-  <h2 class="heading-medium">
-    Do your prepared accounts include a "Creditors - amounts falling due within one year" note?
-  </h2>
+      <div class="left-indent">
 
-  <form action="/accounts/accounts-review" method="get" class="form">
-    <div class="form-group">
-      <fieldset class="inline">
+      <h2 class="heading-medium">
+      Do your prepared accounts include a "Creditors - amounts falling due within one year" note?
+      </h2>
 
-        <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+        <form action="/accounts/accounts-review" method="get" class="form">
+            <fieldset class="inline" data-required data-error=" Please confirm if you want to include a 'creditors - amounts falling due within one year' note">
+              <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+              <div class="form-group">
 
-        <label class="block-label selection-button-radio" for="creditorsnoteyes">
-          <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
-          Yes
-        </label>
-        <label class="block-label selection-button-radio" for="creditorsnoteno">
-          <input id="creditorsnoteno" type="radio" name="creditorsnoteyn" value="No">
-          No
-        </label>
+              <label class="block-label selection-button-radio" for="creditorsnoteyes">
+                <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
+                Yes
+              </label>
+              <label class="block-label selection-button-radio" for="creditorsnoteno">
+                <input id="creditorsnoteno" type="radio" name="creditorsnoteyn" value="No">
+                No
+                </label>
+              </div><!--form-group-->
 
-      </fieldset>
-    <div class="accounts-row-spacer">
-      <input type="submit" class="button" value="Next" id="">
-    </div>
+            </fieldset>
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
 
-</div><!--left-indent-->
-</div><!--text-->
-</form>
+      </div><!--left-indent-->
+  </div><!--text-->
+
 </main>
 {% endblock %}
