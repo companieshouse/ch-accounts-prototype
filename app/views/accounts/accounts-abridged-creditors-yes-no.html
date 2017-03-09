@@ -41,12 +41,12 @@ Balance sheet notes - other
       Do your prepared accounts include a "Creditors - amounts falling due within one year" note?
       </h2>
 
-        <form action="/accounts/accounts-review" method="get" class="form">
+        <form action="" method="get" class="form">
             <fieldset class="inline" data-required data-error=" Please confirm if you want to include a 'creditors - amounts falling due within one year' note">
               <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
               <div class="form-group">
 
-              <label class="block-label selection-button-radio" for="creditorsnoteyes">
+              <label class="block-label selection-button-radio" for="creditorsnoteyes" data-target="creditorsnoteyes-reveal">
                 <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
                 Yes
               </label>
@@ -57,8 +57,19 @@ Balance sheet notes - other
               </div><!--form-group-->
 
             </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="creditorsnoteyes-reveal">
+              <p class="form-hint">Use this note to record information about people or businesses that your company owes, but who you expect to pay within one year from the end of the period you're filing for. Include information about money owed to secured creditors, for example bank loans or overdrafts.</p>
+              <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+
+              </div>
+
+
+
           <div class="accounts-row-spacer">
-            <input type="submit" class="button" value="Next" id="">
+            <a href="/accounts/accounts-reviews"class="button">Next</a>
           </div>
         </form>
 

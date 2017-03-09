@@ -148,24 +148,24 @@ router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
 
 // Do you have a creditors note?
 
-router.get('/accounts/accounts-review', function (req, res) {
+//router.get('/accounts/accounts-review', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)
-  var creditorsnoteyn = req.query.creditorsnoteyn;
+  //var creditorsnoteyn = req.query.creditorsnoteyn;
 
-  if (creditorsnoteyn == "Yes"){
+//  if (creditorsnoteyn == "Yes"){
 
     // redirect to the relevant page
-    res.redirect("/accounts/accounts-creditors-amounts-falling-due-within-one-year");
+//    res.redirect("/accounts/accounts-creditors-amounts-falling-due-within-one-year");
 
-  } else {
+//  } else {
 
     // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-review');
+  //  res.render('accounts/accounts-review');
 
-  }
+//  }
 
-});
+//});
 
 
 // Do you have Other notes?
