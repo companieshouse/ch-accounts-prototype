@@ -131,16 +131,22 @@ table.check-your-answers {
       }
     }
     tr th, {
-      @include core-16;
-      font-weight:700;
+      font-weight:normal;
     }
     tr {
      th.description {width:60%;}
      th.status {width:20%;}
      th.actions {width:20%;}
+     td.rejected-type {
+       padding-right:4em;  //Ensures rejected status (which has icon) has text in line with other statuses
+     }
+     .notice {
+       margin-left:-3em;  //Ensures rejected status (which has icon) has text in line with other statuses
+     }
       .rejected {
         color:$error-colour;
         margin-left:-3.1em;
+
           .icon-important {
             background-image: url("/public/images/icon-important-red.png");
           }
@@ -191,6 +197,27 @@ table.check-your-answers {
           }
         }
       }
+    .no-table {
+      .column-description {
+        width:33%;
+      }
+      .column-reference {
+        width:33%;
+      }
+      .column-status {
+        width:17%;
+      }
+      .column-actions {
+        width:17%;
+        strong {
+          font-weight:normal;
+          font-size:0.9em;
+            a:first-of-type {
+                padding-right: 0;
+            }
+         }
+      }
+    }
 }
 
 
