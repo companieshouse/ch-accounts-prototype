@@ -42,97 +42,54 @@
     </header>
 
 
-    <p class="form-group">This is a list of company information filed by <strong>jsmith@testcompany.co.uk</strong> within the last 30 days.</p>
+    <p class="form-group">This is a list of company information filed by <strong>jsmith@testcompany.co.uk</strong></p>
+
+    <div class="your-filings">
 
 
 
-    <table id="rf_table">
-    <caption class="visuallyhidden">This is a list of company information filed by jsmith@testcompany.co.uk within the last 30 days</caption>
-    <thead>
-      <tr>
-        <th>Received</th>
-        <th>Company</th>
-        <th>Submission number</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>12:33pm on<br>16 February 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>776846-998567-228911-1</td>
-        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
-        <td><strong class="processing">Processing</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-      <tr>
-        <td>7:05pm on<br> 11 February 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>777763-231092-999642-1</td>
-        <td><strong>Confirmation statement</strong> made on 1 February 2017 with updates</td>
-        <td><strong class="incomplete">Incomplete</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">Resume</a><br><a href="javascript:void(0)" id="viewSubmission00">Delete</a></td>
-      </tr>
-      <tr>
-        <td>2.56pm on<br> 26 January 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>444657-998675-222242-9</td>
-        <td><strong>Termination of appointment</strong> of Jane Miranda Richardson as a director on 25 January 2017</td>
-        <td><strong class="rejected">Rejected</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a><br><a href="javascript:void(0)" id="viewSubmission00">Resubmit</a></td>
-      </tr>
-      <tr>
-        <td>8:32am on<br> 27 January 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>556742-444632-000078-1</td>
-        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
-        <td><strong class="accepted">Accepted</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-      <tr>
-        <td>2:55pm on<br> 15 November 2016</td>
-        <td>ACME WIDGETS LIMITED<br>(08765678)</td>
-        <td>887567-333533-556748-5</td>
-        <td>Declaration of satisfaction of mortgage/charge </td>
-        <td><strong class="accepted">Accepted</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-      <tr>
-        <td>9:58am on 23 January 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>009844-453245-775637-1</td>
-        <td><strong>Appointment</strong> of David Smith as a director on 23 January 2017</td>
-        <td><strong class="accepted">Accepted</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-      <tr>
-        <td>8:32am on<br> 20 January 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>998352-445673-887465-1</td>
-        <td><strong>Appointment</strong> of Arthur Smith as a director on 27 January 2017</td>
-        <td><strong class="accepted">Accepted</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-      <tr>
-        <td>11:00 on<br> 5 January 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>998764-445637-776462-1</td>
-        <td><strong>Memorandum and Articles of Association</strong></td>
-        <td><strong class="accepted">Accepted</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-      <tr>
-        <td>3:52pm on<br> 1 January 2017</td>
-        <td>A TEST COMPANY LIMITED<br>(01234567)</td>
-        <td>0092345-556875-998735-1</td>
-        <td><strong> Incorporation </strong></td>
-        <td><strong class="accepted">Accepted</strong></td>
-        <td><a href="javascript:void(0)" id="viewSubmission00">View</a></td>
-      </tr>
-    </tbody>
-    </table>
+
+
+                <div class="one-filing">
+
+                    <h2 class="heading-medium">A TEST COMPANY LIMITED <span>Company number <strong>01234567</strong></span></h2>
+                    <div class="grid-row">
+                      <div class="column-third">
+                        Description<strong>Annual accounts</strong>
+                      </div>
+                      <div class="column-third">
+                        Reference number<strong> 776846-998567-228911</strong>
+                      </div>
+                      <div class="column-third">
+                        Received on<strong>15 March 2017 at 12:33pm</strong>
+                      </div>
+                    </div><!--grid-row-->
+
+
+                    <table id="rf_table">
+                    <caption class="visuallyhidden">This is a list of company information filed by jsmith@testcompany.co.uk</caption>
+                    <thead>
+                      <tr>
+                        <th class="description"></th>
+                        <th class="status">Status</th>
+                        <th class="actions">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Abridged accounts</strong> made up to 31 March 2016</td>
+                        <td><strong class="status">Processing</strong></td>
+                        <td><a href="/public/pdf/abridged-accounts-sample.pdf" id="">View</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  </div><!--One Filing-->
+
+
+      </div><!--your filings-->
+
+
 
 
 
