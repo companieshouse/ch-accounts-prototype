@@ -83,7 +83,7 @@ $(document).ready(function() {
   </p>
 
   <ul class="error-summary-list">
-    <li><a href="error-message-tangible-assets-current">Descriptive link to the question with an error</a></li>
+    <li><a href="#error-message-tangible-assets-current">Descriptive link to the question with an error</a></li>
   </ul>
 
 </div>
@@ -190,7 +190,7 @@ $(document).ready(function() {
      <div class="form-group">
        <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
        </label>
-       <!-- the error message span usually goes here, but it's now in a seprate grid-row snippet above this one-->
+       <!-- <span class="error-message"...> usually goes here, but it's now in a seprate grid-row snippet above this one-->
 
        <input type="number" onkeypress="" class="form-control form-control-error" id="tangible-assets-current">
        <!-- originally the input was INSIDE the label, but the error styling on the input only works when the input is a direct descendant of the .error class, so have moved input AFTER the label-->
