@@ -101,10 +101,10 @@ $(document).ready(function() {
      &nbsp;
    </div>
    <div class="column-quarter">
-     <h2 class="heading-small">31 March 2015 to<br> 31 March 2016</h2>
+     <h2 class="heading-small">31 March 2015 to<br> 31 March 2016<br>£</h2>
    </div>
    <div class="column-quarter">
-     <h2 class="heading-small">31 March 2014 to<br> 31 March 2015</h2>
+     <h2 class="heading-small">31 March 2014 to<br> 31 March 2015<br>£</h2>
    </div>
  </div>
 
@@ -187,13 +187,12 @@ $(document).ready(function() {
        </details>
    </div>
    <div class="column-quarter">
-     <div class="form-group">
+     <div class="form-group error">
        <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-       </label>
        <!-- <span class="error-message"...> usually goes here, but it's now in a seprate grid-row snippet above this one-->
 
-       <input type="number" onkeypress="" class="form-control form-control-error" id="tangible-assets-current">
-       <!-- originally the input was INSIDE the label, but the error styling on the input only works when the input is a direct descendant of the .error class, so have moved input AFTER the label-->
+       <input type="number" onkeypress="" class="form-control" id="tangible-assets-current">
+     </label>
      </div>
    </div>
    <div class="column-quarter">

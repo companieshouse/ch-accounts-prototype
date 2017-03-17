@@ -16,6 +16,11 @@ $error-button-hover: #8e0513;
       margin: 0;
     }
   }
+  .error {
+    border:none; ///errors on Balance sheet
+    padding-left:0;
+    input {border: 4px solid $error-colour;}
+  }
   .read-only {
     border-color: $border-colour;
   }
