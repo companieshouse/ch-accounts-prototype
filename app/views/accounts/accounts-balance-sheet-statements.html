@@ -61,15 +61,17 @@
       <h2 class="heading-medium">Confirmation</h2>
 
 
-      <fieldset>
+      <fieldset data-required="" data-error="You must agree to the legal statements">
 
-        <legend class="visuallyhidden">Confirmation</legend>
-        <div class="multiple-choice">
-          <input id="confirmation" name="confirmation" value="true" type="checkbox">
-          <label for="confirmation">I agree to the legal statements - include them with my balance sheet.</label>
-        </div>
+              <legend class="visuallyhidden">Confirmation</legend>
+              <div class="form-group">
+                <label class="block-label selection-button-checkbox" for="confirmation">
+                  <input id="confirmation" value="agree" name="confirmation" type="checkbox">
+                  I agree to the legal statements - include them with my balance sheet.
+                </label>
+              </div>
 
-      </fieldset>
+            </fieldset>
 
 
 

@@ -1,113 +1,40 @@
-# File company accounts prototype
+# GOV.UK Prototype kit
+
+## News
+
+**Upgrading from version 1 to 2:** the latest version of the kit (2.0.0 and later) is not compatible with previous versions. If you update your old prototypes you'll need to [convert them as well](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit).
 
 ## About the prototype kit
 
-The prototype kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research
+The prototype kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
 
-Read the [project principles](docs/principles.md).
+Read the [project principles](https://govuk-prototype-kit.herokuapp.com/docs/principles).
 
-> You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
+## Security
 
-## Installation instructions
+If you publish your prototypes online, they **must** be protected by a [username and password](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
 
-You need Node.js to run this prototype. To check if you have it installed try:
-
-```
-node --version
-```
-
-Your version should be 4.4.2
-
-If you don't have Node, download it here: [http://nodejs.org/](http://nodejs.org/).
-
-## Getting started
-
-#### Install dependencies
-
-Open a command line app (Terminal on OSX) and change to the unzipped directory. Then run:
-
-```
-npm install
-```
-
-npm install by itself doesn't really tell you what it is doing. To see what is happening during install, instead run this:
-
-```
-npm install --verbose
-```
-
-This will install extra code that the prototype kit needs.
-
-#### Run the app
-
-```
-node start.js
-```
-
-Go to [localhost:3000](http://localhost:3000) in your browser.
-
-If you want to view multiple prototypes at the same time you can give them unique port numbers, like this:
-
-```
-PORT=3005 node start.js
-```
-
-To avoid conflicts we recommend using ports between 3000 and 3009. To change the port number permanently, edit the port variable in /server.js.
-
-#### Hot reload
-
-Any code changes should update in the browser without you restarting the app.
-
-## Heroku Deployment
-
-#### Setup Remote - one time activity
-
-Open a command line app (Terminal on OSX) and navigate to repo dir. Then run:
-
-```
-git remote add heroku git@heroku.com:ch-accounts-prototype-dev.git
-```
-
-Check heroku remote is set:
-
-```
-git remote -v
-```
-shows heroku remote set
-```
-heroku	git@heroku.com:ch-accounts-prototype-dev.git (fetch)
-heroku	git@heroku.com:ch-accounts-prototype-dev.git (push)
-```
-
-#### Deploy changes to Heroku
-
-Make sure you push from up to date master branch:
-
-```
-git push heroku master
-```
-
-Go to [https://ch-accounts-prototype-dev.herokuapp.com](https://ch-accounts-prototype-dev.herokuapp.com) in your browser.
+You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
 
 ## Installation instructions
 
-- [Installation guide for new users (non technical)](docs/install/introduction.md)
-- [Installation guide for developers (technical)](docs/developer-install-instructions.md)
+- [Installation guide for new users (non technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/introduction)
+- [Installation guide for developers (technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/developer-install-instructions)
 
 ## Guides
 
-1. [Setting up git](docs/guides/setting-up-git.md)
-2. [Publishing on the web (Heroku)](docs/guides/publishing-on-heroku.md)
-3. [Using GOV.UK Verify](docs/guides/using-verify.md)
+1. [Setting up git](https://govuk-prototype-kit.herokuapp.com/docs/setting-up-git)
+2. [Publishing on the web (Heroku)](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku)
+3. [Using GOV.UK Verify](https://govuk-prototype-kit.herokuapp.com/docs/using-verify)
 
 ## Other documentation
 
-- [Prototype kit principles](docs/principles.md)
-- [Making pages](docs/making-pages.md)
-- [Writing CSS](docs/writing-css.md)
-- [Updating the kit to the latest version](docs/updating-the-kit.md)
-- [Tips and tricks](docs/tips-and-tricks.md)
-- [Creating routes (server-side programming)](docs/creating-routes.md)
+- [Prototype kit principles](https://govuk-prototype-kit.herokuapp.com/docs/principles)
+- [Making pages](https://govuk-prototype-kit.herokuapp.com/docs/making-pages)
+- [Writing CSS](https://govuk-prototype-kit.herokuapp.com/docs/writing-css)
+- [Updating the kit to the latest version](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit)
+- [Tips and tricks](https://govuk-prototype-kit.herokuapp.com/docs/tips-and-tricks)
+- [Creating routes (server-side programming)](https://govuk-prototype-kit.herokuapp.com/docs/creating-routes)
 
 ## Community
 
