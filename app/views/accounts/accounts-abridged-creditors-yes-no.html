@@ -42,17 +42,21 @@ Balance sheet notes - other
       </h2>
 
         <form action="" method="get" class="form">
-          <fieldset class="inline" data-required data-error=" Please confirm if you want to include a 'creditors - amounts falling due within one year' note">
-            <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
-            <div class="multiple-choice">
-              <input id="creditorsnoteyes" type="radio" name="creditorsnoteyn" value="Yes">
-              <label class="block-label selection-button-radio" for="creditorsnoteyes" data-target="creditorsnoteyes-reveal">Yes</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="creditorsnoteno" type="radio" name="creditorsnoteyn" value="No">
-              <label class="block-label selection-button-radio" for="creditorsnoteno">No</label>
-            </div>
-          </fieldset>
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'creditors - amounts falling due within one year' note">
+                  <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="creditorsnoteyes" data-target="creditorsnoteyes-reveal">
+                    <input id="creditorsnoteyes" name="creditorsnoteyn" value="Yes" aria-controls="creditorsnoteyes-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="creditorsnoteno">
+                    <input id="creditorsnoteno" name="creditorsnoteyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
 
 
 
