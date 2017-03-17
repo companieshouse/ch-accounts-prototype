@@ -61,21 +61,21 @@
 
 
 
-      <fieldset data-required data-error=" You must choose the statement that reflects the way your accounts were prepared">
+      <fieldset>
 
         <legend class="visuallyhidden">Basis of preparation</legend>
-        <div class="form-group">
-
-        <label class="block-label text selection-button-radio" for="1">
+        <div class="multiple-choice">
           <input type="radio" id="1" value="" name="basis-of-preparation">
+          <label class="block-label text selection-button-radio" for="1">
           These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102
-        </label>
-
-        <label data-target="2-reveal" class="block-label text selection-button-radio" for="2">
+          </label>
+        </div>
+        <div class="multiple-choice">
           <input type="radio" id="2" value="" name="basis-of-preparation" aria-controls="micro" aria-expanded="false">
+          <label data-target="2-reveal" class="block-label text selection-button-radio" for="2">
           These accounts have been prepared in accordance with another standard
-        </label>
-      </div><!--form-group-->
+          </label>
+        </div><!--multiple-choice-->
 
       </fieldset>
 
@@ -89,24 +89,20 @@
 
 
       <h1 class="heading-medium">Do you want to add additional accounting policies?</h1>
-        <fieldset class="inline" data-required data-error=" Please confirm if you want to include any additional accounting policies">
+      <fieldset class="inline form-group">
 
-          <div class="form-group">
-            <legend class="visuallyhidden">Do you want to add additional accounting policies?</legend>
+        <legend class="visuallyhidden">Do you want to add additional accounting policies?</legend>
+        <div class="multiple-choice">
+          <input id="policies-yes" type="radio" name="policies" value="Yes">
+          <label class="block-label selection-button-radio" data-target="additional" for="policies-yes">Yes</label>
+        </div><!--multiple-choice-->
 
-            <label class="block-label selection-button-radio" data-target="additional" for="policies-yes">
-              <input id="policies-yes" type="radio" name="policies" value="Yes">
-              Yes
-            </label>
+        <div class="multiple-choice">
+          <input id="policies-no" type="radio" name="policies" value="No">
+          <label class="block-label selection-button-radio" for="policies-no">No</label>
+        </div><!--multiple-choice-->
 
-            <label class="block-label selection-button-radio" for="policies-no">
-              <input id="policies-no" type="radio" name="policies" value="No">
-              No
-            </label>
-
-          </div><!--form-group-->
-
-        </fieldset >
+      </fieldset>
 
                               <div class="panel panel-border-narrow js-hidden" id="additional">
                                 <p class="heading-small form-group">Complete all items that are included in your prepared accounts</p>
