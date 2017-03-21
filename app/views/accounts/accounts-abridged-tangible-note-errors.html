@@ -34,45 +34,54 @@ Tangible assets note
 
 </div>
 
-  <h1 class="heading-xlarge">Tangible assets note</h1>
 
 
+<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+  Balance sheet notes
+  <span class="circle-subheading">Tangible assets</span>
+</h1>
+
+<div class="left-indent">
+  <br>
+  <div class="panel panel-border-wide">
+    <p>Provide additional information about your tangible assets value from your balance sheet</p>
+  </div>
 
   <form action="/" method="post" class="form" id="">
 
 
 
-      <div class="grid-row form-hint" id="accounts-header">
+  <!--    <div class="grid-row form-hint" id="accounts-header">
         <div class="column-half">
           &nbsp;
         </div>
         <div class="column-quarter">
-          <h2 class="heading-small">2015 to 2016</h2>
+          <h2 class="heading-small">31 March 2015 to<br> 31 March 2016<br>£</h2>
         </div>
         <div class="column-quarter">
-          <h2 class="heading-small">2014 to 2015</h2>
+          <h2 class="heading-small">31 March 2014 to<br> 31 March 2015<br>£</h2>
         </div>
       </div>
-      <p class="form-hint"><strong>These are the figures you entered on the balance sheet:</strong></p>
+      <p class="form-hint"><strong>These are the figures you entered on the balance sheet:</strong></p>-->
 
       <!--Start tangible assets-->
-      <div class="grid-row">
+    <!--  <div class="grid-row">
         <div class="column-half form-hint">Tangible assets</div>
         <div class="column-quarter">
           <div class="form-group">
             <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-              <input type="number" class="form-control read-only" id="tangible-assets-current" value="47440" disabled>
+              <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control read-only" id="tangible-assets-current" value="37440" disabled>
             </label>
           </div>
         </div>
         <div class="column-quarter">
           <div class="form-group">
             <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-              <input type="number" class="form-control read-only" id="tangible-assets-previous" value="30740" disabled>
+              <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control read-only" id="tangible-assets-previous" value="30740" disabled>
             </label>
           </div>
         </div>
-      </div>
+      </div>-->
       <!--End tangible assets-->
 
 
@@ -80,6 +89,7 @@ Tangible assets note
 
 
   <h2 class="heading-medium">Cost</h2>
+
 
 
 
@@ -330,7 +340,7 @@ Tangible assets note
           <div class="column-half">&nbsp;
           </div>
           <div class="column-quarter">
-            <span class="error-message" id="error-message-full-name">'Net book value at 31 March 2016' must match what you entered on the Balance Sheet (£47440)</span>
+            <span class="error-message" id="error-message-full-name">'Net book value at 31 March 2016' must match what you entered on the balance sheet (£47440)</span>
           </div>
     </div>
 
@@ -397,5 +407,7 @@ Tangible assets note
       </div>
 
 </form>
+</div><!--left-indent-->
+
 </main>
 {% endblock %}
