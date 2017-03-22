@@ -6,54 +6,47 @@
 
 {% block content %}
 
-<!-- Stuff for mock "auto-save" feature-->
+<!-- For testing only, NOT FOR PRODUCTION-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
 
-    var counter = 0,
-        divs = $('#div1, #div2, #div3'),
-        intervals = [1, 3, 8];
-
-    $("#autosave-container").hide()
-    divs.hide();
-
-    function showNextDiv () {
-        if (counter % 3 == 2) { // mod 2 is the third (empty) div since the array is zero indexed!
-            $("#autosave-container").hide()
-        } else {
-            $("#autosave-container").show()
-        }
-
-        divs.hide() // hide all divs
-            .filter(function (index) { return index == counter % 3; }) // figure out correct div to show
-            .show('fast'); // and show it
-
-        setTimeout(function () {
-            showNextDiv(); // show next div
-        }, intervals[counter % 3] * 1000); // do this every X seconds
-
-        counter++;
-    }; // function to loop through divs and show correct div
-
-    var keyPressed = false;
-    $("body").keyup(function() {
-        if (keyPressed) {
-            return;
-        }
-        keyPressed = true;
-
-        showNextDiv(); // show first div
-    });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+  $("#creditors-amounts-falling-due-within-one-year-current").keyup(function () {
+    if ($('#creditors-amounts-falling-due-within-one-year-current').val().indexOf('(') >= 0) {
+      $('#creditors-bracket-error').css("display", "block"),
+      $('#creditors-amounts-falling-due-within-one-year-current').css("border-color", "#B10E1E");
+      $('#creditors-amounts-falling-due-within-one-year-current').css("border-width", "3px");
+    }
+    else {
+      $('#creditors-bracket-error').css("display", "none");
+      $('#creditors-amounts-falling-due-within-one-year-current').css("border-color", "#000000");
+      $('#creditors-amounts-falling-due-within-one-year-current').css("border-width", "2px");
+    }
+  });
 });
 </script>
-<style type="text/css" media="screen">
-         .js .display { display:none; }
-      </style>
+<script>
+$(document).ready(function () {
+  $("#tangible-assets-current").keyup(function () {
+    if ($('#tangible-assets-current').val().indexOf(',') >= 0) {
+      $('#tangible-comma-error').css("display", "block"),
+      $('#tangible-assets-current').css("border-color", "#B10E1E");
+      $('#tangible-assets-current').css("border-width", "3px");
+    }
+    else {
+      $('#tangible-comma-error').css("display", "none");
+      $('#tangible-assets-current').css("border-color", "#000000");
+      $('#tangible-assets-current').css("border-width", "2px");
+    }
+  });
+});
+</script>
 
-<!--End Stuff for mock "auto-save" feature-->
+
+<!--End for testing only, NOT FOR PRODUCTION-->
+
 
 
 
@@ -143,6 +136,12 @@ $(document).ready(function() {
  </div>-->
  <!--End intangible assets-->
 
+ <div class="grid-row" id="tangible-comma-error" style="display:none; margin-bottom:-2em;">
+   <div class="column-half">&nbsp;</div>
+   <div class="column-quarter"><span class="error-message" id="">Please enter this value without commas, brackets or other symbols</span></div>
+   <div class="column-quarter">&nbsp;</div>
+ </div>
+
  <!--Start tangible assets-->
  <div class="grid-row">
    <div class="column-half">
@@ -163,7 +162,7 @@ $(document).ready(function() {
    <div class="column-quarter">
      <div class="form-group">
        <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-         <input type="number"  onkeypress="" class="form-control" id="tangible-assets-current">
+         <input type="text" onkeypress="" class="form-control" id="tangible-assets-current"><!-- changed type to text to get error validation (character) to work-->
        </label>
      </div>
    </div>
@@ -423,7 +422,11 @@ $(document).ready(function() {
 
 
 
-
+  <div class="grid-row" id="creditors-bracket-error" style="display:none; margin-bottom:-2em;">
+    <div class="column-half">&nbsp;</div>
+    <div class="column-quarter"><span class="error-message" id="">Please enter this value without commas, brackets or other symbols</span></div>
+    <div class="column-quarter">&nbsp;</div>
+  </div>
 
    <!--Start creditors - amounts falling due within one year-->
    <div class="grid-row accounts-row-spacer">
@@ -446,7 +449,7 @@ $(document).ready(function() {
      <div class="column-quarter">
        <div class="form-group">
          <label for="creditors-amounts-falling-due-within-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-within-one-year-current">
+           <input type="text"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-within-one-year-current"> <!-- changed type to text to get error validation (character) to work-->
          </label>
        </div>
      </div>
