@@ -14,7 +14,7 @@
 <script>
 $(document).ready(function () {
   $("#creditors-amounts-falling-due-within-one-year-current").keyup(function () {
-    if ($('#creditors-amounts-falling-due-within-one-year-current').val().indexOf('(') >= 0) {
+    if ($('#creditors-amounts-falling-due-within-one-year-current').val().indexOf('(') >= 0 || $('#creditors-amounts-falling-due-within-one-year-current').val().indexOf(',') >= 0 || $('#creditors-amounts-falling-due-within-one-year-current').val().indexOf('-') >= 0 )  {
       $('#creditors-bracket-error').css("display", "block"),
       $('#creditors-amounts-falling-due-within-one-year-current').css("border-color", "#B10E1E");
       $('#creditors-amounts-falling-due-within-one-year-current').css("border-width", "3px");
@@ -30,7 +30,7 @@ $(document).ready(function () {
 <script>
 $(document).ready(function () {
   $("#tangible-assets-current").keyup(function () {
-    if ($('#tangible-assets-current').val().indexOf(',') >= 0) {
+    if ($('#tangible-assets-current').val().indexOf('(') >= 0 || $('#tangible-assets-current').val().indexOf(',') >= 0 || $('#tangible-assets-current').val().indexOf('-') >= 0 )  {
       $('#tangible-comma-error').css("display", "block"),
       $('#tangible-assets-current').css("border-color", "#B10E1E");
       $('#tangible-assets-current').css("border-width", "3px");
