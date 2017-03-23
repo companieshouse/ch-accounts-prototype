@@ -1,0 +1,435 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Companies House
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br />Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br/>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="" href="javascript:void(0)">Change account details</a></li>
+      <li><a class="" href="webfiling-my-recent-filings">My recent filings</a></li>
+
+			    <li><a class="" href="javascript:void(0)">Company authentication</a></li>
+                <li><a class="" href="javascript:void(0)">File for a different company</a></li>
+			    <li><a class="" href="javascript:void(0)">Company overview</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+
+	<div class="grid_13 omega">
+    <!-- FILE_START::companyHeaderBar.tmpl -->
+    <a href="javascript:void(0)" id="tabFormListing" class="right allForms">All forms</a>
+
+<div class="clear"></div>
+
+<!-- FILE_START::superSecureText.tmpl -->
+
+
+<style type="text/css">
+    #large-warning-toggle {
+        color: #069;
+        background-color: transparent;
+    }
+    .large-warning-container {
+        background: #ffffa3 none repeat scroll 0 0;
+        border: 3px solid #000;
+        border-radius: 3px;
+        color: #333;
+        display: block;
+        margin: 25px 0;
+        padding: 5px 15px;
+    }
+
+</style>
+<!-- FILE_END::superSecureText.tmpl -->
+
+
+<div class="companyHeader">
+	<h1 class="width-11">A TEST COMPANY LIMITED</h1>
+	<p>Company Number <strong> 01234567</strong></p>
+	<p>A Private Limited Company incorporated on <strong>27 November 1996</strong></p>
+
+
+
+        <p class="label ROA">
+            Registered office address is
+            <!-- FILE_START::displayROAddressInline.tmpl -->
+<strong>
+
+          1 Any Street, Cardiff, Wales, CF12 3AB
+
+</strong>
+<!-- FILE_END::displayROAddressInline.tmpl -->
+
+            <a href="javascript:void(0)" id="changeRO" class="">Change address</a>
+        </p>
+
+</div><!--End of div id="container"-->
+
+<div class="clear"></div>
+
+            <ul class="status">
+
+                <li class="pendingEmail">
+
+
+                        Receiving email reminders<br />
+                        <a href="javascript:void(0)"> Manage eReminders<span class="hidden"> email notifications</span></a>
+
+
+                </li>
+
+
+					<li class="proofUnlocked">
+
+                            Protect your company<br />
+                            <a href="javascript:void(0)" class="none">Join PROOF<span class="hidden"> to get protected by PROOF</span></a>
+
+
+
+					</li>
+
+
+                 <li class="emailCompanySummary">
+
+                        Current company information<br />
+                        <a href="javascript:void(0)"><span class="hidden">Current company information</span>Request email</a>
+
+                </li>
+
+
+
+
+                            <li class="manageRegisters">
+                                Company register details<br />
+                                <a href="javascript:void(0)">
+                                <span class="hidden">Company register details</span>Manage registers</a>
+                            </li>
+
+
+
+
+				<div class="clear"></div>
+            </ul>
+
+<!-- FILE_END::companyHeaderBar.tmpl -->
+
+
+    <!-- FILE_START::viewControl.tmpl -->
+<form name="menutabform" method="post" id="menutabform" action="">
+
+<div class="clear"></div>
+<input type="hidden" name="__VIEWSTATE" value="c16a54eJzdlz2v41gdhweWFVIKhED029AQMWPHjuNcaYX8FsfH5zgvPs5N0iC/xe92Yjuxj0s+DAXFFhQUW25ByWfiJLMMA1pxR8MVBYWlxDqOzpPf8//Z/vKnv5S/lEej3/tV2bpJGdbyF2/evPnZ6Ft3GgiBGII+PW6DyaHcJ3zVr4cstoaEvw77feJkUY8c0tua0LdaNCAtIiiVQettOgQVptViC9eoQxisvT1gh0ZsbTRArHAToogtrp+J39wQ8XvYzgxz7tlEzDjLnN3Pz9YmKc2BFJMmqek1k+XFFJGJzmsi9iD2z9u+3xZydNC3iVxIBSgkWHubS/Q13f9XRVhe396SsFMoV13lb5swD/02DL7/PvqLEHq+570iX/fZfJFxMdfAwE4P4B6Y0DBMZ9JJ9JdViaAN6rQedapjYN6mbL94sF2bsF6GbkADc+vRn080rLn7WjRBCJM0G58H7YYGZ5jgC8vwhcHBYbHCg31xAehMpkbY5tZQvFCCmm2hcbG1fq3auYnRTDf9pXkHUND2joB6pZcGqZKghUor+vqe0s8fJGc3CnHt+llYj77zxZkrCiEgbapqqy6RnI2lF2jvsVLMy3oPY48F6WylVp4sj83pQjEGhQ9L47g2oFrMZ/DC+t6z3xanAK1ZND6Aed6oQXOsKy6ShD2Xp4ZTLox4tbrIDeeuyxkPGYE6tY9WKxtKBNf1lpdrlZPlstMF3kL1VYojD5AgjMeM2hZlFrO77pYO74Z2FwN5cdgV1S266Vufv3PxL9n31vX96lq2SRmpbhs2Slvno9pnp9OQ//cMCXlnzp0bwnvHPoq5Ndht65T71UBYY0AtgifPgIRdtXSDRBzAoF257/NQzA1/te0eAIff/atNEr9LTIvu9ddKVZzdMgmbZUWdenpaJDnd1tOTYzw9naq6sFu6w9E3My5gxemrjQsG3H9bB2KT7npxkDokGb12l6uTHIbn1tJHcn0UwuhPk1kQiJMXGFiLEQfM5BB7O4QcfmJnDUGqMbnbjjWBaVWpa7IYuMOnVtocEqZfQZsOSnNZNmVHEuYqMVd8PhRHWmCSdkgOEf0kkcVmknaP/TMvSlSdTokf1jBp2odAf2QYlxG4/8iXyshOHRYPOwulwcpyeNZOAbAZOrQZizC2TMRkgzUskGd9Gp8SxRNYu8RM4hW8eQAqvKycV0Vxvreztk1oMxdyJu2lrLM3D7bfvsh2bvzmA9h3jHjyXpAvlXo76xhLu7BYy3qcGr2NEUND6y2t6hEzhVh1KJjP+leYJM4cYPtsqYSCn/ZrfwwSTKfMdKZ0utafMF2QYJ+pWw+a8hFoZmHlB12OZN0oDP2gH+J7oI7UMVmvvxfyJ3fo0V85hmeE4NUG6QTIZw9SVtOwZobtdsjOOA4zN4i16f3/O9vU0Di5RFW+pLXRoVRTkYwwHbVyvE0f99jfPEL0H/VBPtyK3tZhtHqIKQVBHTbvu+1v4YQX53T0CJtCxuxSydleVnmyYOfSVozzSgXLXbNdHgfn+RmQi7gUc+Vw3C9Zgt5Fplr5azUel/sLEa7F9dl6t9Pmh/oY+Kzb8FxhR83YWZ5vprOWze2zUvUV785O/PWE5TQwvNQIN0YHmxTvx9TDuXQeNkdeGo/VzULvdCZxV7sZMXQ0FEe8VksgI2Gu53vrJlxPfP5MO/542AnVLa5N3FV3+t+9qDB9ojoldeG2SVU+SpRe0f6z7r/1BDEUhFd8AJl8vgiVfhE4xtZYZNsssROikFxVVf2u9FGnQiuH4iCFA5CS9zL/6gfD/z+ye/pivj8o+jen+ck7/c/vMR93sJpMAdRK615Pop81MFqYmRDC4h7mlvYTDVPfKNcsPQwUVPiULv7g74dS/sNXi9otwq6qs6cn//3KxyrlHy8SLy64v2j8iB4/pscXfweVeVPu" data-postback="0"/>
+</form>
+
+<!-- FILE_START::viewCompanyProfileControl.tmpl -->
+<div id="formlist">
+
+    <div class="grid_5 alpha hidden">
+
+            <p class="label ROA">Registered office address</p>
+
+
+<!-- FILE_START::displayAddressControl.tmpl -->
+
+<p class="margin-top-10 bold">
+
+
+        1 Any Street<br>Cardiff<br>Wales<br>CF12 3AB</p>
+
+
+<!-- FILE_END::displayAddressControl.tmpl -->
+
+        <a href="javascript:void(0)" id="changeRO" class="">Change address</a>
+    </div>
+
+    <div class="grid_6 alpha accounting-dates">
+<!-- FILE_START::displayAccountingDatesControl.tmpl -->
+			<h2 class="infolabel ">Accounts due</h2>
+
+            <p class="label">Next accounts made up to </p>
+
+            <p class="value"><strong>31 March 2016</strong> due by<br /><strong>31 December 2016</strong></p>
+
+            	<p class="label">Last accounts made up to</p>
+            	<p class="value"><strong>31 March 2015</strong></p>
+
+
+            <p class="margin-top-20"><a href="javascript:void(0)" class="">Change accounting reference date</a></p>
+
+            <p><a id="fileAccountsLink" href="webfiling-accounts-picker-chs-search" class="button positive regular">File company accounts</a></p>
+
+
+<!-- FILE_END::displayAccountingDatesControl.tmpl -->
+</div>
+    <div class="grid_7 omega confirmation-statement">
+<!-- FILE_START::displayConfirmationStatementDatesControl.tmpl -->
+
+
+
+
+            <h2 class="infolabel">First confirmation statement due</h2>
+
+
+
+
+
+
+    <a href="javascript:void(0)" class="margin-top-minus-20 margin-bottom-20" target="_blank">
+    Help with confirmation statement<span class="hidden"> Link opens in a new window</span>
+    </a>
+
+    <p class="label">Confirmation Statement Date</p>
+    <p class="value">
+        <strong id="CSMUD">19 January 2017</strong>
+    </p>
+
+    <p class="label">Next statement to be filed by</p>
+    <p class="value">
+        <strong id="CSDue">2 February 2017</strong>
+    </p>
+
+    <p>Your payment period is from
+        <strong id="CSPayStart">19 January 2016</strong><br/>
+        to
+        <strong id="CSPayEnd">18 January 2017</strong>
+    </p>
+
+
+
+            <p class="margin-top-20">
+
+                    <a id="fileCS01Link" href="javascript:void(0)" class="button positive regular">File confirmation statement</a>
+
+            </p>
+
+
+
+
+
+
+
+<!-- FILE_END::displayConfirmationStatementDatesControl.tmpl -->
+
+
+</div>
+    <div class="clear"></div>
+
+
+
+            <!-- FILE_START::pscsListingCtrl.tmpl -->
+<!-- FILE_START::pscsListing_include.tmpl -->
+    <table id="psc-listing">
+         <caption><span class="hidden">Persons with Significant Control (PSC)</span></caption>
+        <thead>
+
+        <tr>
+            <th class="listing-heading">
+
+                    <h2>Persons with Significant Control (PSC)</h2>
+
+            </th>
+        </tr>
+        <!-- choosePSC -->
+        <tr>
+
+                <th></th>
+
+        </tr>
+        </thead>
+        <tbody id="tbodyPSC">
+
+            <tr><td>There are currently no persons with significant control registered.
+
+            </td></tr>
+
+        </tbody>
+    </table>
+
+<!-- FILE_END::pscsListing_include.tmpl -->
+
+
+<!-- FILE_END::pscsListingCtrl.tmpl -->
+
+
+            <!-- FILE_START::pscStatementListing_include.tmpl -->
+        <table id="psc-listing-statements">
+
+	<caption><span class="hidden">Persons of significant control (PSCs) - Statements</span></caption>
+                <thead>
+                <tr>
+                        <th class="name">Statement</th>
+                        <th class="dob">Date notified</th>
+                        <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+
+            <tr><td colspan="3">There are currently no persons with significant control statements registered.</td></tr>
+
+            </tbody>
+        </table>
+<!-- FILE_END::pscStatementListing_include.tmpl -->
+
+
+
+                <a href="javascript:void(0)" class="margin-right-30">Add a PSC notification</a>
+
+
+
+
+
+
+    <!-- FILE_START::officersListingCtrl.tmpl -->
+
+    <!-- FILE_START::officersListing_include.tmpl -->
+    <table id="dir-sec-listing">
+        <caption><span class="hidden">Directors and Secretaries</span></caption>
+        <thead>
+        <tr>
+            <th class="listing-heading">
+
+
+
+                    <h2>Directors and Secretaries</h2>
+
+
+            </th>
+	</tr>
+	<tr>
+
+	    <th class="name">Name</th>
+	    <th class="role">Role</th>
+            <th class="dob">Date of birth</th>
+            <th colspan="2">&nbsp;</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+
+            <tr>
+
+                <td>John SMITH</td>
+                <td>
+
+                    Secretary
+
+
+                </td>
+                <td>&nbsp;</td>
+                <td><a href="javascript:void(0)">Edit <span class="hidden">John SMITH</span></a></td>
+                <td><a href="javascript:void(0)">Remove<span class="hidden"> John SMITH</span></a></td>
+            </tr>
+
+            <tr>
+
+                <td>John DOE</td>
+                <td>
+                    Director
+
+
+
+                </td>
+                <td>1 February 1954</td>
+                <td><a href="javascript:void(0)">Edit <span class="hidden">John DOE</span></a></td>
+                <td><a href="javascript:void(0)">Remove<span class="hidden"> John DOE</span></a></td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+<!-- FILE_END::officersListing_include.tmpl -->
+
+
+
+    <p>
+
+
+        <a href="javascript:void(0)" class="">Appoint a director</a>
+        <a href="javascript:void(0)" class="margin-left-30">Appoint a secretary</a>
+
+
+
+
+
+   </p>
+
+<!-- FILE_END::officersListingCtrl.tmpl -->
+
+
+
+    <div class="clear"></div>
+
+    <!-- FILE_START::jquery.tmpl -->
+
+</div>
+<!-- FILE_END::viewCompanyProfileControl.tmpl -->
+
+
+<div class="clear"></div>
+
+<!-- FILE_END::viewControl.tmpl -->
+
+	</div>
+	<div class="clear"></div>
+
+
+</div>
+	<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+<a id="i18nLink" href="javascript:void(0)" class="language">Cymraeg</a>
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+
+
+
+</div>   <!--End of div id="container"-->
+{% endblock %}
