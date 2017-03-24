@@ -14,7 +14,6 @@
 
 {% block content %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
   $(document).ready(function(){
           $("a.PDF").addClass("hidden");
@@ -75,7 +74,7 @@ function openWin() {
                 <legend class="visuallyhidden">Who approved the accounts?</legend>
 
                     <label class="form-label visuallyhidden" for="name">Who approved the accounts?</label>
-                    <input class="form-control" id="name" type="text">
+                    <input class="form-control" id="name" type="text" style="width:100%;">
                   <!--  <label class="block-label selection-button-radio" for="john-smith">
                       <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
                       John Smith
@@ -125,8 +124,7 @@ function openWin() {
 
 
   <h2 class="heading-medium">View your accounts before submitting</h2>
-    <ul class="fa-ul">
-      <li><i class="fa-li fa fa-file"></i>
+
       <!--<a href="/public/pdf/abridged-accounts-sample.pdf" download="/public/pdf/abridged-accounts-sample.pdf">View your draft accounts</a>-->
         <a id="" href="javascript:void(0)" onclick="openWin()" class="pop hidden">Save or print a copy of your accounts<span class="visuallyhidden"> (Opens PDF in new window)</span</a>
         <a id="" href="/public/pdf/abridged-accounts-sample.pdf" class="PDF" target="_blank">Save or print a copy of your accounts<span class="visuallyhidden"> (Opens PDF in new window)</span></a>
