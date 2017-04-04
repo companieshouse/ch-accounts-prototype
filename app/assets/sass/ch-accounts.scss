@@ -139,9 +139,9 @@ table.check-your-answers {
       font-weight:normal;
     }
     tr {
-     th.description {width:60%;}
-     th.status {width:20%;}
-     th.actions {width:20%;}
+     th.description {width:67%;}
+     th.status {width:15%;}
+     th.actions {width:15%;}
      td.rejected-type {
        padding-right:4em;  //Ensures rejected status (which has icon) has text in line with other statuses
      }
@@ -171,11 +171,8 @@ table.check-your-answers {
         display:block;
       }
     }
-    &.accepted {
-      border-left: 8px solid $button-colour;
-    }
+
     &.rejected {
-      border-left: 8px solid $error-colour;
         .notice {
           color:$error-colour;
             .icon-important {
