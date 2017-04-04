@@ -1,7 +1,7 @@
 {% extends "layout-webfiling.html" %}
 
 {% block page_title %}
-Register with Companies House
+  Sign in to Companies House
 {% endblock %}
 
 
@@ -24,38 +24,79 @@ Register with Companies House
 
 
 <div class="container_16" id="mainContent">
-	<h1 class="large-heading"><strong>Something</strong></h1>
 
-<div class="grid_11 alpha">
-<p>We’re currently developing a new service for filing accounts with Companies house. If you’re filing abridged accounts, you can use our new Beta service now. To be able to access all our new services as they become available, you’ll need to register.</p>
-<p>To do this you'll need:</p>
-<ul>
-	<li>to set a password (this service uses different password rules, you may not be able to use your WebFiling password)</li>
-	<li>your company authentication code from Companies House</li>
-	<li>a valid email address. You can use the same email as you do for Webfiling</li>
-</ul>
-<p class="margin-top-30 margin-bottom-20"><a class="button positive regular" title="Something" href="/chs/chs-login-page-from-WF">Something</a></p>
-<!--<p><a class="button positive regular" title="Something" href="javascript:void(0)">I'm already registered, sign in to the new service</a>-->
-</div>
-<div class="grid_1">
+<div class="grid_3 alpha userMenu">
+        <p><a href="webfiling-register">Register</a></p>
 </div>
 
-<div class="grid_4 beta">
-	<p><strong>What can you do when signed in to Companies House WebFiling?</strong></p>
-	<ul style="padding-left:0;">
-		<li>File your company's confirmation statement / annual return</li>
-		<li>File your company's annual accounts</li>
-		<li>File your company's director / secretary changes and other information</li>
-		<li class="noBullet"><a href="javascript:void(0)" class="">Who can use WebFiling?</a></li>
-	</ul>
+        <div class="container-content login">
 
+        <div class="error message">
+          <p><a href="javascript:void(0)">Warning about bogus emails</a></p>
+        </div>
+        <div class="error message">
+          <p><a href="http://ow.ly/LJHpM">Warning - Latest scam re. Late Filing Penalty.</a></p>
+        </div>
+
+
+    <h1>Sign in to Companies House WebFiling</h1>
+
+
+
+
+
+         <div class="grid_6 alpha">
+
+
+
+
+        <form id="login" method="post" action="">
+
+					<h2>Security update</h2>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit id augue quis viverra. Nulla egestas, mauris pellentesque consequat sollicitudin, ex ante pharetra ante, ut convallis turpis lacus sed risus. Ut efficitur quam in ante ultricies, a consequat tortor suscipit.</p>
+
+            <a href="/chs/chs-login-page-from-WF" class="button positive regular"><strong>Update password</strong></a>
+
+
+            <p class="margin-top-20"><a href="javascript:void(0)" class="">Forgotten your password?</a></p>
+
+
+
+
+
+
+
+        </form>
+
+                </div><!--End of div class="grid_8 alpha"-->
+
+                <div class="grid_5 omega">
+
+                <p><strong>What can you do when signed in to Companies House WebFiling?</strong></p>
+                <ul style="padding-left:0;">
+                <li>File your company's confirmation statement / annual return</li>
+                   <li>File your company's annual accounts</li>
+                <li>File your company's director / secretary changes and other information</li>
+                   <li class="noBullet"><a href="javascript:void(0)" class="">Who can use WebFiling?</a></li>
+                   </ul>
+
+
+
+                </div>    <!--End of div class="grid_5 omega"-->
+
+                <!--  <div class="clear"></div>
+                  <div class="message warning">
+                  <p><strong>Accounts</strong><br>
+                    The Companies Act 2006 no longer permits companies to file abbreviated accounts.</p>
+                    <p>Your company will need to file accounts of a different type (full accounts, micro-entity accounts,<br> or <a href="/chs/chs-start-page">abridged accounts on the new Companies House service<span class="hidden"> Link opens in new tab/window</span></a>).</p>
+                  </div>-->
+
+        </div><!--End of div class="grid_12 omega"-->
+    <div class="clear"></div>
 </div>
-<div class="clear"></div>
 
-
-
-</div>
-	<!-- FILE_START::footer.tmpl -->
+<!-- FILE_START::footer.tmpl -->
 	<div id="footer">
 
         <div class="container_16">
@@ -73,8 +114,9 @@ Register with Companies House
         </div>
 
     </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
 
 
 
-</div>   <!--End of div id="container"-->
+</div>
 {% endblock %}
