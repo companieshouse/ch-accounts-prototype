@@ -41,14 +41,29 @@
     	<h1 id="page-header" class="heading-xlarge">Your filings</h1>
     </header>
 
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
-    <p class="form-group">This is a list of company information filed by <strong>jsmith@testcompany.co.uk</strong></p>
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        2 of your filings have been rejected
+      </h1>
+
+      <p>Maybe some information about rejection and what it means.</p>
+
+      <ul class="error-summary-list">
+        <li><a href="#your-filings-4">Abridged accounts made up to 31 March 2015 </a></li>
+        <li><a href="#your-filings-6">Appointment of Bob Jones as a Director</a></li>
+
+      </ul>
+
+    </div>
+
+    <!--<p class="form-group">This is a list of company information filed by <strong>jsmith@testcompany.co.uk</strong></p>-->
 
     <div class="your-filings">
 
 
 
-      <div class="one-filing no-table">
+      <div class="one-filing no-table" id="your-filings-1">
 
           <h2 class="heading-medium">A TEST COMPANY LIMITED <span>Company number <strong>01234567</strong></span></h2>
           <div class="grid-row">
@@ -76,7 +91,7 @@
 
 
 
-        <div class="one-filing">
+        <div class="one-filing" id="your-filings-2">
 
           <h2 class="heading-medium">ANOTHER COMPANY LIMITED <span>Company number <strong>11223344</strong></span></h2>
             <div class="grid-row">
@@ -118,7 +133,7 @@
 
 
 
-          <div class="one-filing">
+          <div class="one-filing" id="your-filings-3">
 
               <h2 class="heading-medium">A TEST COMPANY LIMITED <span>Company number <strong>01234567</strong></span></h2>
               <div class="grid-row">
@@ -157,7 +172,7 @@
 
 
 
-          <div class="one-filing rejected">
+          <div class="one-filing rejected" id="your-filings-4">
 
           <h2 class="heading-medium">ANOTHER COMPANY WITH A VERY LONG NAME THAT GOES ACROSS MORE THAN ONE LINE LIMITED <span>Company number <strong>98765432</strong></span></h2>
           <div class="grid-row">
@@ -213,7 +228,7 @@
 
         </div><!--One Filing-->
 
-        <div class="one-filing accepted">
+        <div class="one-filing accepted" id="your-filings-5">
 
             <h2 class="heading-medium">A TEST COMPANY LIMITED <span>Company number <strong>01234567</strong></span></h2>
             <div class="grid-row">
@@ -252,7 +267,7 @@
 
 
 
-        <div class="one-filing rejected">
+        <div class="one-filing rejected" id="your-filings-6">
 
             <h2 class="heading-medium">ANOTHER COMPANY LIMITED <span>Company number <strong>11223344</strong></span></h2>
             <div class="grid-row">
