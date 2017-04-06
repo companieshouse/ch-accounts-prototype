@@ -13,19 +13,7 @@
 {% endblock %}
 
 {% block content %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-          $("a.PDF").addClass("hidden");
-          $("a.pop").removeClass("hidden");
 
-  });
-</script>
-<script>
-function openWin() {
-    window.open("/public/pdf/confirmation-sample.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=200");
-}
-</script>
 
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -79,13 +67,8 @@ function openWin() {
 
 
 
-
-  <ul class="fa-ul form-group">
-    <li><i class="fa-li fa fa-print"></i>
-    <!--<a href="/public/pdf/abridged-accounts-sample.pdf" download="/public/pdf/abridged-accounts-sample.pdf">View your draft accounts</a>-->
-      <a id="" href="javascript:void(0)" onclick="openWin()" class="pop hidden">Save/print a copy of this page<span class="visuallyhidden"> (Opens PDF in new window)</span</a>
-      <a id="" href="/public/pdf/confirmation-sample.pdf" class="PDF" target="_blank">Save/print a copy of this page<span class="visuallyhidden"> (Opens PDF in new window)</span></a>
-    <span class="form-hint">(Opens PDF in new window)</span></li>
+  <!-- This PRINT relies on Javascript, so should be completely hidden when Javascript is not available -->
+  <p><i class="fa fa-print" style="margin-right:.4em;"></i> <a href="javascript:window.print()">Print this page for your records</a></p>
   </ul>
 
 
