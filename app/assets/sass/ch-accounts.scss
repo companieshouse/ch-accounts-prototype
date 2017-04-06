@@ -139,8 +139,8 @@ table.check-your-answers {
       font-weight:normal;
     }
     tr {
-     th.description {width:67%;}
-     th.status {width:15%;}
+     th.description {width:68%;}
+     th.status {width:18%;}
      th.actions {width:15%;}
      td.rejected-type {
        padding-right:4em;  //Ensures rejected status (which has icon) has text in line with other statuses
@@ -157,7 +157,6 @@ table.check-your-answers {
           }
         }
     }
-
   }
   .one-filing {
     margin-bottom:2em;
@@ -218,6 +217,18 @@ table.check-your-answers {
                 padding-right: 0;
             }
          }
+      }
+    }
+    a.admin-link {
+      font-size:16px !important;
+      color:$white;
+      background-color:$link-colour;
+      text-decoration: none;
+      padding:2px 8px;
+      margin: 0.5em 0.5em 0.5em 0;
+      &:hover, &:focus {
+        background-color:$link-hover-colour;
+
       }
     }
 }
