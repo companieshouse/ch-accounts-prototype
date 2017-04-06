@@ -15,7 +15,33 @@
 {% block content %}
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style type="text/css">
+.hidden {
+    display: none;
+}
+.unhidden {
+    display: inline-block;
+}
+.toggle {
+  background-color: rgb(177, 14, 30);
+  color:#fff !important;
+  text-decoration: none !important;
+  padding: 0 .3em;
+  margin-left:.3em;
+}
+.toggle:hover {
+  cursor:pointer;
+}
+</style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".toggle").click(function () {
+        $("li.toggle-link").addClass("hidden");
+    });
+});
+</script>
 
 
 
@@ -40,6 +66,21 @@
     	<h1 id="page-header" class="heading-xlarge">Your filings</h1>
     </header>
 
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        2 of your filings have been rejected
+      </h1>
+
+      <p>Maybe some information about rejection and what it means.</p>
+
+      <ul class="error-summary-list">
+        <li class="toggle-link unhidden"><a href="#your-filings-4" id="your-filings-alert-4">Abridged accounts made up to 31 March 2015</a> <a class="toggle" onclick="">Don't show me this again</a></li>
+        <li class="unhidden"><a href="#your-filings-6" id="your-filings-alert-6">Appointment of Bob Jones as a Director</a> <a class="toggle" onclick="">Don't show me this again</a></li>
+
+      </ul>
+
+    </div>
 
     <!--<p class="form-group">This is a list of company information filed by <strong>jsmith@testcompany.co.uk</strong></p>-->
 
