@@ -125,6 +125,28 @@ router.get('/accounts/accounts-start-page-abridged', function (req, res) {
 
 });
 
+
+// CHS Release 1 question (no company search - directly into accounts)
+
+router.get('/accounts/accounts-start-page-abridged-direct', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var chsrelease1 = req.query.chsrelease1;
+
+  if (chsrelease1 == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/chs/chs-choose-accounts-direct");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('accounts/accounts-start-page-abridged-direct');
+
+  }
+
+});
+
 // Resume accounts (from CHS profile when logged back in)
 
 router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
