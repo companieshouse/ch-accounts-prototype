@@ -1,0 +1,71 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  File abridged accounts with Companies House
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+
+<div class="text">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+  <form action="/chs/chs-login-page-test" method="get" class="form">
+
+
+      <h1 class="heading-xlarge">File abridged accounts with Companies House </h1>
+
+
+               <h2 class="heading-medium">Before you start </h2>
+
+               <p>You'll need:</p>
+
+               <ul class="list list-bullet">
+                 <li>your email address and password you used to sign up for the Companies House online service</li>
+                 <li>the authentication code Companies House sent you</li>
+               </ul>
+
+               <h3 class="heading-small">If you’re filing for the first time </h3>
+
+            <p>You can <a rel="external" href="javascript:void(0)">register online.</a> You’ll need your email address and create a password.</p>
+            <p>Once registered, we’ll post an  <a rel="external" href="javascript:void(0)">authentication code</a> to your registered office. If your company already has a code, a reminder will be sent.</p>
+            <p>Allow up to 5 days for delivery of your code.</p>
+            <p>For security reasons your code can’t be provided by email or over the phone.</p>
+
+
+         <div class="form-group">
+           <input type="submit" class="button" value="File abridged accounts" id="">
+           <span class="destination"> on the Companies House website</span>
+         </div>
+
+
+
+
+       </form>
+
+
+
+
+
+
+
+  </div><!-- text-->
+
+</main>
+
+{% endblock %}
