@@ -14,7 +14,25 @@
 
 {% block content %}
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+  $("#choose-password").keyup(function () {
+    if ($('#choose-password').val().indexOf('pa55w0rd') >= 0)  {
+      $('#webfiling-password').css("display", "block"),
+      $('#webfiling-password-summary').css("display", "block"),
+      $('#choose-password').css("border-color", "#B10E1E");
+      $('#choose-password').css("border-width", "3px");
+    }
+    else {
+      $('#webfiling-password').css("display", "none");
+      $('#webfiling-password-summary').css("display", "none");
+      $('#choose-password').css("border-color", "#000000");
+      $('#choose-password').css("border-width", "2px");
+    }
+  });
+});
+</script>
 
 
 
@@ -24,15 +42,29 @@
 
 {% include "includes/phase_banner_beta.html" %}
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+<div class="error-summary" id="webfiling-password-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none;">
 
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        Sign in failed
+      </h1>
+      <ul class="error-summary-list">
+        <li><a href="#password">Invalid email address or password, 4 attempts remain.</a></li>
+      </ul>
+
+      <h2 class="heading-small">WebFiling users</h2>
+      <p>We have updated the security of our <strong>WebFiling</strong> user accounts, and so we need to ask all WebFiling users to reset their passwords. You can do this by clicking <a class="" id="register" href="chs-register-page-direct">register</a>.</p>
+
+
+</div>
 
     <header class="text">
     	<h1 id="page-header" class="heading-xlarge">Sign in to Companies House</h1>
     </header>
 
 
-    <form enctype="multipart/form-data" method="POST" action="/oauth2/user/signin" class="form " name="signin">
+<!--<p class="warning-note warning-note-large text">Your existing WebFiling or WebCheck password will not work with this service, you will need to <a href="chs-register-page">register</a>.</p>-->
+
+    <form method="" action="" class="form " name="">
       <fieldset>
         <legend class="visuallyhidden">Sign in details</legend>
 
@@ -42,18 +74,19 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="password">Password</label>
-          <input type="password" class="form-control password" value="" id="password" name="password" autocomplete="off">
+          <label class="form-label" for="choose-password">Password</label>
+          <span class="error-message" id="webfiling-password" style="display:none;  margin:0 0 0.7em;">Invalid email address or password, 4 attempts remain.</span>
+          <input type="password" class="form-control password" value="" id="choose-password" name="password" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <a href="chs-authenticate-page-test" class="button" id="submit">Sign in</a>
+          <a href="/chs/chs-company-selection-page-from-WF" class="button" id="submit">Sign in</a>
         </div>
 
         <div class="form-group">
-          <p class="action-link"><a class="button-link" id="register" href="chs-register-page">Register</a></p>
+          <p class="action-link"><a class="button-link" id="register" href="chs-register-page-direct">Register</a></p>
           <input type="hidden" value="" id="request" name="request">
-          <p><a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a></p>
+          <p><a id="forgotten_password" href="chs-forgot-password">Forgotten your password?</a></p>
         </div>
 
       </fieldset>
