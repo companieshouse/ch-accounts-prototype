@@ -43,13 +43,15 @@
 
       <div class="form-group">
         <label class="form-label" for="auth_code">Company number</label>
-        <input type="password" class="form-control medium" maxlength="6" value="" id="auth_code" name="auth_code" autocomplete="off">
-        <details style="margin-top:.7em;">
+        <span class="form-hint">This is the 8 character reference that uniquely identifies your company.</span>
+        <details style="margin-bottom:.7em;">
           <summary><span class="summary">Not sure of your company number?</span></summary>
             <div class="panel panel-border-narrow text">
               <p>You'll find your company number on any correspondence from Companies House, or you can <a href="javascript:void(0)">search for your company on our service</a>.</p>
             </div>
           </details>
+          <input type="number" class="form-control medium" maxlength="8" value="" id="auth_code" name="auth_code" autocomplete="off">
+
       </div>
       <div class="form-group">
         <label class="form-label" for="auth_code">Authentication code</label>
