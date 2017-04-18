@@ -190,9 +190,9 @@ router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
 //});
 
 
-// Do you have Other notes?
+// Do you have Other notes - send them to Review or to the Employees note?
 
-router.get('/accounts/accounts-abridged-other-notes', function (req, res) {
+router.get('/accounts/accounts-abridged-employees-yes-no', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)
   var othernotes = req.query.othernotes;
@@ -205,11 +205,13 @@ router.get('/accounts/accounts-abridged-other-notes', function (req, res) {
   } else {
 
     // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-abridged-other-notes');
+    res.render('accounts/accounts-abridged-employees-yes-no');
 
   }
 
 });
+
+
 
 
 

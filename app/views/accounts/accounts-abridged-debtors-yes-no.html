@@ -1,0 +1,148 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - Debtors
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+      Balance sheet notes
+      <span class="circle-subheading">Debtors</span>
+    </h1>
+  </div><!--text-->
+
+
+    <div class="left-indent">
+        <div class="text">
+          <h2 class="heading-medium">Do your prepared accounts include a "Debtors" note?</h2>
+        </div><!--text-->
+
+    <form action="/accounts/accounts-abridged-creditors-within-yes-no" method="get" class="form">
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'debtors' note">
+                  <legend class="visually-hidden">Do your prepared accounts include a "Debtors" note?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="debtorsnoteyes" data-target="debtorsnoteyes-reveal">
+                    <input id="debtorsnoteyes" name="debtorsnoteyn" value="Yes" aria-controls="debtorsnoteyes-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="debtorsnoteno">
+                    <input id="debtorsnoteno" name="debtorsnoteyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="debtorsnoteyes-reveal">
+
+              <p class="form-hint">Use this note to record information about people who owe money for goods or services your company provided as part of its normal trading activities</p>
+
+
+
+                <div class="grid-row form-hint" id="accounts-header">
+                  <div class="column-half">
+                    &nbsp;
+                  </div>
+                  <div class="column-quarter">
+                    <h2 class="heading-small">31 March 2015 to<br> 31 March 2016<br>£</h2>
+                  </div>
+                  <div class="column-quarter">
+                    <h2 class="heading-small">31 March 2014 to<br> 31 March 2015<br>£</h2>
+                  </div>
+                </div>
+
+
+
+
+
+
+                <!--Start Trade debtors-->
+                <div class="grid-row accounts-row-spacer">
+                  <div class="column-half">
+                      <details>
+                        <summary><span class="summary">Debtors due after more than one year</span></summary>
+                          <p class="form-hint">Enter the amount owed by debtors who are due to pay their debt in full after more than one year from the end of the period.</p>
+                      </details>
+                  </div>
+
+                  <div class="column-quarter">
+                    <div class="form-group">
+                      <label for="debtors-due-more-one-year-current"><span class="visuallyhidden">Debtors due after more than one year (current year)</span>
+                        <input type="number" class="form-control" id="debtors-due-more-one-year-current">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column-quarter">
+                    <div class="form-group">
+                      <label for="debtors-due-more-one-year-previous"><span class="visuallyhidden">Debtors due after more than one year (previous year)</span>
+                        <input type="number" class="form-control" id="debtors-due-more-one-year-previous">
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+                <!--End Trade debtors-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <details class="accounts-row-spacer text">
+                    <summary><span class="summary">Add additional information? (optional) </span></summary>
+                      <label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+                      <!--<p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>-->
+                      <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+                  </details>
+
+
+
+
+          </div>
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div><!--left-indent-->
+
+
+</main>
+{% endblock %}
