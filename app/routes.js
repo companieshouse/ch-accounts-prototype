@@ -200,7 +200,7 @@ router.get('/accounts/accounts-abridged-employees-yes-no', function (req, res) {
   if (othernotes == "No"){
 
     // redirect to the relevant page
-    res.redirect("/accounts/accounts-review");
+    res.redirect("/accounts/accounts-review-no-other-notes");
 
   } else {
 
