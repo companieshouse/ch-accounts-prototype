@@ -42,7 +42,7 @@
     <fieldset class="inline">
       <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
       <label class="block-label selection-button-radio" for="othernotesyes" data-target="other-notes-reveal">
-        <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
+        <input id="othernotesyes" type="radio" name="othernotes" value="Yes" checked="checked">
         Yes
       </label>
       <label class="block-label selection-button-radio" for="othernotesno">
@@ -57,7 +57,7 @@
 
 
 
-<div class="panel panel-border-narrow js-hidden accounts-row-spacer" id="other-notes-reveal">
+<div class="panel panel-border-narrow accounts-row-spacer" id="other-notes-reveal">
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Other notes</caption>
@@ -84,7 +84,7 @@
         </details>
       </td>
         <td></td>
-        <td class="change-answer"><a href="accounts-employees">Add&nbsp;note<span class="visuallyhidden">Employees</span></a></td>
+        <td class="change-answer"><a href="accounts-employees" id="content-delete">Delete note<span class="visuallyhidden">Employees</span></a> | <a href="accounts-employees">Change note<span class="visuallyhidden">Employees</span></a></td>
       </tr>
       <tr>
         <td>

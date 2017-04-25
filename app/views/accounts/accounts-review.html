@@ -145,10 +145,10 @@
             <p><strong>Total assets less current liabilities</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>£68,570</p>
+            <p><strong>£68,570</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>£37,040</p>
+            <p><strong>£37,040</strong></p>
           </div>
         </div><!--grid-row-->
         <br>
@@ -258,24 +258,20 @@
           </details>
         </td>
       </tr>
-    </tbody>
-    <thead>
+
       <tr>
         <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet notes</h2></th>
       </tr>
-    </thead>
-    <tbody>
+
       <tr>
         <td>
           <details>
             <summary><span class="summary">Accounting policies note</span></summary>
             <div class="review-reveal">
-              <ul class="list list-bullet">
-                <li>These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</li>
-                <li><span class="heading-small">Turnover policy</span><br>
-                  Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</li>
-              </ul>
-              <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> accounting policies note</span></a></p>
+              <p>These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</p>
+                <p><span class="heading-small">Turnover policy</span><br>
+                  Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</p>
+                   <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> accounting policies note</span></a></p>
             </div><!--review-reveal-->
           </details>
         </td>
@@ -447,7 +443,6 @@
             <summary><span class="summary">Debtors note</span></summary>
             <div class="review-reveal">
 
-              <div class="review-reveal">
                 <div class="grid-row">
                   <div class="column-one-half">&nbsp;
                   </div>
@@ -644,24 +639,31 @@
                 <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> note</span></a></p>
               </div><!--delete-summary-->
             </div><!--content-delete-warning-->
-
           </div><!--review-reveal-->
           </details>
         </td>
       </tr>
-
-
-
     </tbody>
   </table>
-<br>
-<!--<div class="panel panel-border-wide">
-  <p>You can print or save a copy of your draft accounts on the next page.</p>
-</div>-->
 
-  <div class="form-group">
-    <p><a href="accounts-approval" class="button">Next</a></p>
-  </div>
+  <h2 class="heading-medium">Have you included all the balance sheet notes from your prepared accounts?</h2>
+  <form action="/accounts/accounts-abridged-fixed-assets-yes-no" method="get" class="form">
+      <fieldset class="inline">
+        <legend class="visually-hidden">Do your prepared accounts include any other notes?</legend>
+        <label class="block-label selection-button-radio" for="othernotesyes">
+          <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="othernotesno">
+          <input id="othernotesno" type="radio" name="othernotes" value="No">
+          No
+        </label>
+      </fieldset>
+
+    <div class="accounts-row-spacer">
+      <input type="submit" class="button" value="Next" id="">
+    </div>
+
 </div><!--left-indent-->
 
 </main>
