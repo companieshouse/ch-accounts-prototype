@@ -218,7 +218,7 @@ router.get('/accounts/accounts-abridged-fixed-assets-yes-no', function (req, res
   // get the answer from the query string (eg. ?over18=false)
   var othernotes = req.query.othernotes;
 
-  if (othernotes == "No"){
+  if (othernotes == "Yes"){
 
     // redirect to the relevant page
     res.redirect("/accounts/accounts-approval");
