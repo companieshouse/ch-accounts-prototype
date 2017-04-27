@@ -22,6 +22,8 @@
 
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
+{% include 'includes/error.html' %}
+
 <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
   Balance sheet notes
   <span class="circle-subheading">Other</span>
@@ -39,7 +41,9 @@
 
 
 <form action="/accounts/accounts-abridged-employees-yes-no" method="get" class="form">
-    <fieldset class="inline">
+  <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include any other notes">
+    <div class="form-group">
+
       <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
       <label class="block-label selection-button-radio" for="othernotesyes" data-target="other-notes-reveal">
         <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
@@ -49,6 +53,7 @@
         <input id="othernotesno" type="radio" name="othernotes" value="No">
         No
       </label>
+    </div>
     </fieldset>
 
 
@@ -57,7 +62,7 @@
 
 
 
-<div class="panel panel-border-narrow js-hidden accounts-row-spacer" id="other-notes-reveal">
+<div class="panel panel-border-narrow js-hidden" id="other-notes-reveal">
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Other notes</caption>
@@ -217,8 +222,8 @@
 </div><!--other-notes-reveal-->
 
 
-  <div class="form-group accounts-row-spacer">
-    <a class="button" href="javascript:void(0)">Next</a>
+  <div class="form-group">
+    <input type="submit" class="button" value="Next" id="">
   </div>
 
 </div><!--left-indent-->
@@ -226,7 +231,7 @@
 
 
 
-
+</form>
 </main>
 
 {% endblock %}
