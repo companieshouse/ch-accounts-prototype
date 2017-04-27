@@ -22,6 +22,8 @@ Balance sheet notes - Employees
 
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
+{% include 'includes/error.html' %}
+
 
 <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
   Balance sheet notes
@@ -38,7 +40,9 @@ Balance sheet notes - Employees
 
 
 <form action="/accounts/accounts-abridged-employees-yes-no" method="get" class="form">
-    <fieldset class="inline">
+    <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include any other notes">
+      <div class="form-group">
+
       <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
       <label class="block-label selection-button-radio" for="othernotesyes">
         <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
@@ -48,9 +52,10 @@ Balance sheet notes - Employees
         <input id="othernotesno" type="radio" name="othernotes" value="No">
         No
       </label>
+    </div>
     </fieldset>
 
-  <div class="accounts-row-spacer">
+  <div>
     <input type="submit" class="button" value="Next" id="">
   </div>
 
