@@ -26,6 +26,7 @@
 
   <h1 class="heading-xlarge"><span class="circle circle-step-large">4</span> Review your abridged accounts</h1>
 
+  <form action="/accounts/accounts-approval" method="get" class="form">
 
   <div class="left-indent">
 
@@ -646,19 +647,9 @@
     </tbody>
   </table>
 
-  <h2 class="heading-medium">Have you included all the balance sheet notes from your prepared accounts?</h2>
-  <form action="/accounts/accounts-abridged-fixed-assets-yes-no" method="get" class="form">
-      <fieldset class="inline">
-        <legend class="visually-hidden">Do your prepared accounts include any other notes?</legend>
-        <label class="block-label selection-button-radio" for="othernotesyes">
-          <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
-          Yes
-        </label>
-        <label class="block-label selection-button-radio" for="othernotesno">
-          <input id="othernotesno" type="radio" name="othernotes" value="No">
-          No
-        </label>
-      </fieldset>
+<p class="accounts-row-spacer">
+  <a href="/accounts/accounts-abridged-fixed-assets-yes-no">Add additional balance sheet notes?</a>
+</p>
 
     <div class="accounts-row-spacer">
       <input type="submit" class="button" value="Next" id="">
