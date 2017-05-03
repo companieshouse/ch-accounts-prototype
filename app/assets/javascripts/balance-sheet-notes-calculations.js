@@ -152,3 +152,14 @@ $(document).ready(function() {
      }
      $('#loans-to-directors-balance-at-start, #loans-to-directors-advances-or-credits-made, #loans-to-directors-advances-or-credits-repaid').change(compute);
 });
+
+$(document).ready(function() {
+  function compute() {
+      var loanstodirectorsbalanceatstart2 = $('#loans-to-directors-balance-at-start-2').val();
+      var loanstodirectorsadvancesorcreditsmade2 = $('#loans-to-directors-advances-or-credits-made-2').val();
+      var loanstodirectorsadvancesorcreditsrepaid2 = $('#loans-to-directors-advances-or-credits-repaid-2').val();
+      var total = +loanstodirectorsbalanceatstart2 + +loanstodirectorsadvancesorcreditsmade2 - +loanstodirectorsadvancesorcreditsrepaid2;
+       $('#loans-to-directors-balance-at-end-2').val(total);
+     }
+     $('#loans-to-directors-balance-at-start-2, #loans-to-directors-advances-or-credits-made-2, #loans-to-directors-advances-or-credits-repaid-2').change(compute);
+});
