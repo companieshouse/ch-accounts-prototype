@@ -114,7 +114,7 @@ router.get('/accounts/accounts-start-page-abridged', function (req, res) {
   if (chsrelease1 == "No"){
 
     // redirect to the relevant page
-    res.redirect("/chs/chs-choose-accounts");
+    res.redirect("/chs/chs-alternative-abridged-filing-options");
 
   } else {
 
