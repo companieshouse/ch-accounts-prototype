@@ -129,17 +129,14 @@ router.get('/accounts/accounts-start-page-abridged', function (req, res) {
 
 router.get('/accounts/accounts-start-page-no-gov-uk', function (req, res) {
 
-  // get the answer from the query string (eg. ?over18=false)
   var chsrelease1 = req.query.chsrelease1;
 
   if (chsrelease1 == "No"){
 
-    // redirect to the relevant page
     res.redirect("/chs/chs-alternative-abridged-filing-options");
 
   } else {
 
-    // if over18 is any other value (or is missing) render the page requested
     res.render('accounts/accounts-start-page-no-gov-uk');
 
   }
