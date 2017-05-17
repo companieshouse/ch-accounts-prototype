@@ -260,9 +260,9 @@ router.get('/accounts/accounts-abridged-fixed-assets-yes-no', function (req, res
 
 router.get('/accounts/accounts-abridged-tangible-note-errors', function (req, res) {
 
-  var test = req.query.test;
+  var tangiblecostatstart = req.query.tangiblecostatstart;
 
-  if (test == "51260"){
+  if (tangiblecostatstart == "51260"){
 
     res.redirect("/accounts/accounts-abridged-employees-yes-no-completed");
 
