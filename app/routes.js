@@ -255,10 +255,24 @@ router.get('/accounts/accounts-abridged-fixed-assets-yes-no', function (req, res
 
 
 
+// tangible asset note - testing when user changes a figure on the balance sheet (so renders note invalid
 
 
+router.get('/accounts/accounts-abridged-tangible-note-errors', function (req, res) {
 
+  var test = req.query.test;
 
+  if (test == "51260"){
+
+    res.redirect("/accounts/accounts-abridged-employees-yes-no-completed");
+
+  } else {
+
+    res.render('accounts/accounts-abridged-tangible-note-errors');
+
+  }
+
+});
 
 
 
