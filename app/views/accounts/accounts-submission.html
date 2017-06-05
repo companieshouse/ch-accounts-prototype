@@ -23,10 +23,10 @@
    function DisplayCurrentTime() {
        var date = new Date();
        var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-       var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+       var am_pm = date.getHours() >= 12 ? "pm" : "am";
        hours = hours < 10 ? "" + hours : hours;
        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-       time = hours + ":" + minutes + " " + am_pm;
+       time = hours + ":" + minutes + am_pm;
        var lblTime = document.getElementById("lblTime");
        lblTime.innerHTML = time;
    };
