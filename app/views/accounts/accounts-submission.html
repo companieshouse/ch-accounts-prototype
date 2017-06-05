@@ -14,7 +14,23 @@
 
 {% block content %}
 
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+   window.onload = function () {
+       DisplayCurrentTime();
+   };
+   function DisplayCurrentTime() {
+       var date = new Date();
+       var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+       var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+       hours = hours < 10 ? "" + hours : hours;
+       var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+       time = hours + ":" + minutes + " " + am_pm;
+       var lblTime = document.getElementById("lblTime");
+       lblTime.innerHTML = time;
+   };
+</script>
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -50,7 +66,7 @@
       Company number 01234567</p>
     <h1 class="bold-large">Abridged accounts received</h1>
     <br>
-    <p>on <strong class="heading-medium">8 June 2017</strong> at <strong class="heading-medium">12:33pm</strong></p>
+    <p>on <strong class="heading-medium">8 June 2017</strong> at <strong class="heading-medium"><span id="lblTime"></span></strong></p>
     <p>Reference number<br>
     <strong class="heading-medium">776846-998567-228911</strong></p>
   </div>
