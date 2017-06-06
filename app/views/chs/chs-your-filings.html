@@ -28,6 +28,7 @@ function openWin() {
 </script>
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 
 
 
@@ -75,7 +76,7 @@ function openWin() {
                         Reference number<strong> 776846-998567-228911</strong>
                       </div>
                       <div class="column-third">
-                        Received on<strong>8 June 2017 at X:XXpm</strong>
+                        Received on<strong><span id="displayMoment"></span> at X:XXpm</strong>
                       </div>
                     </div><!--grid-row-->
 
@@ -108,5 +109,14 @@ function openWin() {
 
 
 </main>
-
+<script type="text/javascript">
+( function()
+{
+// instantiate a Moment object
+var NowMoment = moment().format('D MMMM YYYY');
+// display value of NowMoment in #displayMoment div
+var eDisplayMoment = document.getElementById('displayMoment');
+eDisplayMoment.innerHTML = NowMoment;
+})();
+</script>
 {% endblock %}
