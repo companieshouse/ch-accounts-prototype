@@ -31,7 +31,7 @@
        lblTime.innerHTML = time;
    };
 </script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -67,7 +67,7 @@
       Company number 01234567</p>
     <h1 class="bold-large">Abridged accounts received</h1>
     <br>
-    <p>on <strong class="heading-medium">8 June 2017</strong> at <strong class="heading-medium"><span id="lblTime"></span></strong></p>
+    <p>on <span id="displayMoment" class="bold-medium"></span> at <strong class="heading-medium"><span id="lblTime"></span></strong></p>
     <p>Reference number<br>
     <strong class="heading-medium">776846-998567-228911</strong></p>
   </div>
@@ -81,7 +81,6 @@
     <li>A second email will be sent to confirm that your filing has been processed (normally within 2 working days)</li>
     <li>You can go to '<a href="/chs/chs-your-filings">Your filings</a>' to check the status or get a copy of what you have filed</li>
   </ul>
-
 
 
 
@@ -103,5 +102,16 @@
   </div><!-- text-->
 
 </main>
+
+<script type="text/javascript">
+( function()
+{
+// instantiate a Moment object
+var NowMoment = moment().format('D MMMM YYYY');
+// display value of NowMoment in #displayMoment div
+var eDisplayMoment = document.getElementById('displayMoment');
+eDisplayMoment.innerHTML = NowMoment;
+})();
+</script>
 
 {% endblock %}
