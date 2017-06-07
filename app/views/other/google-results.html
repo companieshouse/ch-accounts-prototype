@@ -64,9 +64,9 @@ strong {
     margin: 20px 0 0 20px;
 }
 #searchbox {
-    margin: 0 0 5px 10px;
+    margin: 0 0 0 10px;
     padding: 10px;
-    width: 550px;
+    width: 600px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
     position: relative;
     top: -15px;
@@ -74,19 +74,26 @@ strong {
 ul {
     display: block;
     margin-left: 110px;
+    margin-top:0;
 }
 ul li {
     display: inline;
     color: grey;
     font-size: 14px;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 ul li.active {
-    display: inline;
+    display: inline-block;
+    width: 40px;
+    padding-bottom: 10px;
+    text-align: center;
     color: rgb(66, 133, 244);
     font-size: 14px;
     margin-right: 20px;
-    border-bottom: 2px solid rgb(66, 133, 244)
+    border-bottom: 3px solid rgb(66, 133, 244)
+}
+ul li.settings {
+    margin-left: 80px;
 }
 .count {
     font-size: 14px;
@@ -111,6 +118,9 @@ ul li.active {
         <li>News</li>
         <li>Images</li>
         <li>More</li>
+        <li class="settings">Settings</li>
+        <li>Tools</li>
+
       </ul>
   </div>
   <div id="container">
