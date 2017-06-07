@@ -264,7 +264,7 @@ router.get('/accounts/accounts-abridged-tangible-note-errors', function (req, re
 
   if (tangiblecosttransfers == "18600"){
 
-    res.redirect("/accounts/accounts-abridged-employees-yes-no-completed");
+    res.redirect("/accounts/accounts-review-amended-tangible-figure");
 
   } else {
 
