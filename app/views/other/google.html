@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google</title>
+        <link type="shortcut icon" href="https://www.google.com/images/branding/product/ico/googleg_lodp.ico">
+        <meta charset="utf-8" />
+    </head>
+<style type="text/css">
+
+#main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#nav-top {
+    position: absolute;
+    top: 0;
+    width: 170px;
+    height: 50px;
+    right: 0;
+}
+
+#name {
+    font-family: sans-serif;
+    color: gray;
+    font-weight: lighter;
+    font-size: 14px;
+    display: inline;
+    position: relative;
+    top: 20px;
+}
+
+.twolinks:link {
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 11px;
+    display: inline;
+    margin-left: 10px;
+    position: relative;
+    top: 0px;
+}
+
+.twolinksimage:link {
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 11px;
+    display: inline;
+    margin-left: 10px;
+    position: relative;
+    top: 12px;
+}
+
+.twolinks:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.twolinks:hover {
+    text-decoration: underline;
+}
+
+#ninedots {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    margin-left: 20px;
+}
+
+#notif {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    background-color: gray;
+    top: 20px;
+    left: 240px;
+}
+
+#name-div {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    background-color: #2178b8;
+    left: 100px;
+    top: 12px;
+}
+
+#name-div p {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+#center-div {
+    position: absolute;
+    width: 700px;
+    height: 350px;
+    top: 45%;
+    margin-top: -175px;
+    left: 50%;
+    margin-left: -350px;
+}
+
+#logo {
+    position: absolute;
+    height: 80px;
+    width: 245px;
+    left: 50%;
+    top: 50px;
+    margin-left: -136px;
+}
+
+#searchbox {
+    position: absolute;
+    width: 450px;
+    height: 32px;
+    top: 150px;
+    color: black;
+    font-family: sans-serif;
+    font-size: 16px;
+    left: 15%;
+}
+
+.twobuttons {
+    position: absolute;
+    width: 130px;
+    height: 35px;
+    background-color: #f2f2f2;
+    top: 210px;
+    text-align: center;
+}
+
+.twobuttons p {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: gray;
+    margin-top: 1em;
+    font-size: 12px;
+}
+
+#nav-bottom {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    bottom: 0;
+    background: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+}
+
+#nav-bottom-left {
+    position: absolute;
+    width: 250px;
+    height: 20px;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+}
+
+#nav-bottom-right {
+    position: absolute;
+    width: 250px;
+    height: 20px;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.nav-bottom-a:link {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #777;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.nav-bottom-a:visited {
+    text-decoration: none;
+    color: #777;
+}
+
+.nav-bottom-a:hover {
+    text-decoration: underline;
+}
+</style>
+<body>
+<div id="content" role="main">
+
+    <div id="nav-top">
+        <a href="#" class="twolinks">
+            Gmail
+        </a>
+        <a href="#" class="twolinks">
+            Images
+        </a>
+        <a href="http://www.google.com/intl/en/options/" class="twolinksimage"><img id=app-logo src="http://s9.postimg.org/ntos9fb57/grid.png"></a>
+    </div>
+
+    <form action="../search/Serp" class="form">
+    <div id="center-div">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" id="logo" />
+        <input type="text" id="searchbox" action="/gov-uk/gov-uk-start-page-test" />
+        <a href="google-results">
+            <div class="twobuttons" style="left: 200px;">
+                <p>Google Search</p>
+            </div>
+        </a>
+        <a href="../search/Serp">
+            <div class="twobuttons" style="left: 355px;">
+                <p>I'm Feeling Lucky</p>
+            </div>
+        </a>
+    </div>
+    <div id="nav-bottom">
+        <div id="nav-bottom-left">
+            <a href="" class="nav-bottom-a">
+                Advertising
+            </a>
+            <a href="" class="nav-bottom-a">
+                Business
+            </a>
+            <a href="" class="nav-bottom-a">
+                About
+            </a>
+        </div>
+        <div id="nav-bottom-right">
+            <a href="" class="nav-bottom-a">
+                Privacy
+            </a>
+            <a href="" class="nav-bottom-a">
+                Terms
+            </a>
+            <a href="" class="nav-bottom-a">
+                Settings
+            </a>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>
