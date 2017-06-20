@@ -230,6 +230,33 @@ router.get('/accounts/accounts-abridged-employees-yes-no', function (req, res) {
 
 });
 
+
+
+
+// Do you have Other accounting policies - send them to Review or to the Employees note?
+
+router.get('/accounts/accounts-turnover-policy-yes-no', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var otherpolicies = req.query.otherpolicies;
+
+  if (otherpolicies == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/accounts/accounts-abridged-tangible-note");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('accounts/accounts-turnover-policy-yes-no');
+
+  }
+
+});
+
+
+
+
 // Do you have Other notes, second chance (ie did you miss any on the Review screen)
 
 router.get('/accounts/accounts-abridged-fixed-assets-yes-no', function (req, res) {

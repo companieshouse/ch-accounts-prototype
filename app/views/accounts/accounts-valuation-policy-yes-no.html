@@ -1,0 +1,93 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - Valuation information policy
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+      Balance sheet notes
+      <span class="circle-subheading">Valuation information policy</span>
+    </h1>
+  </div>
+
+    <div class="left-indent">
+      <div class="text">
+        <h2 class="heading-medium">Do your prepared accounts include a "Valuation information" policy?</h2>
+
+
+    <form action="/accounts/accounts-other-accounting-policy-yes-no" method="get" class="form">
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'Valuation information' policy">
+                  <legend class="visually-hidden">Do your prepared accounts include a "Valuation information" policy?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
+                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="employeesnoteno">
+                    <input id="employeesnoteno" name="employeesnoteyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
+
+                            <fieldset>
+
+                              <details class="text form-group" role="group">
+                              <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">What's this?</span></summary><span class="visuallyhidden">Turnover policy</span>
+                              <div class=" form-hint" id="details-content-1" aria-hidden="true">
+                                <p>If you have stocks or work in progress, this policy describes how they are valued. Stocks should be valued at the lower of either cost or ‘net realisable value’ (the realistic resale value minus the cost of selling it).</p>
+                                <p>For example, 'Stocks and work in progress are valued at the lower of cost and net realisable value, after making allowances for obsolete and slow-moving items. Cost includes all direct expenditure and overheads'.</p>
+                              </div>
+                            </details>
+                            <legend class="visuallyhidden">Turnover policy</legend>
+                              <label class="visuallyhidden" for="other-1"></label>
+                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+
+                          </fieldset>
+
+              </div>
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div>
+      </div><!--left-indent-->
+
+</main>
+{% endblock %}
