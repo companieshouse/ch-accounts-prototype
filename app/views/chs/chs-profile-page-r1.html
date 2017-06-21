@@ -15,9 +15,6 @@
 {% block content %}
 
 
-<style type="text/css">
-.button {padding-top:0.3em; padding-bottom: 0.2em; margin-top:0.4em;}
-</style>
 
 
 
@@ -30,11 +27,7 @@
 
     <nav class="content" role="navigation">
       <ul id="navigation" class="mobile-hidden">
-        <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:</li>
-        <li><a href="javascript:void(0)">Your details</a></li>
-        <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-        <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-        <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+        <li><a href="javascript:void(0)" id="user-signin">Sign in / Register</a></li>
       </ul>
     </nav>
 
@@ -43,24 +36,24 @@
           <div class="column-full-width">
             <form id="search" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
               <div class="searchfield search-bar-active">
-                <input type="search" autocomplete="off" name="q" id="site-search-text" placeholder="Search for a company or officer" class="js-search-focus " />
+                <input type="search" autocomplete="off" name="q" id="site-search-text" placeholder="Search for a company or officer" autofocus class="js-search-focus " />
                 <a href="#" id="search-submit" class="search-submit enable-view2 button">Search</a>
                 <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
               </div>
             </form>
           </div>
 
-          <div class=" company-header">
+          <div class="company-header">
               <p class="heading-xlarge" id="company-name">A TEST COMPANY LIMITED</p>
               <p id="company-number">Company number  <strong>01234567</strong></p>
               <div id="action-buttons">
                 <a id="" class="button" href="javascript:void(0)">Follow this company</a>
-                <!--<a id="file-for-this-company" class="button" href="chs-login-page-no-gov-uk">File for this company</a>-->
+                <a id="file-for-this-company" class="button" href="chs-login-page-r1">File for this company</a>
                 <!--  <a id="" class="button" href="javascript:void(0)">Download all this company's data</a>-->
               </div>
           </div>
 
-          <div class="section-tabs js-tabs" id="overview-tabs">
+          <div class="section-tabs js-tabs">
             <ul>
               <li class="active"><h1><a href="javascript:void(0)" id="company-overview-tab"><span class="visuallyhidden">Company </span>Overview<span class="visuallyhidden"> for A TEST COMPANY LIMITED (01234567)</span></a></h1></li>
               <li><a href="javascript:void(0)" id="filing-history-tab">Filing history<span class="visuallyhidden"> for A TEST COMPANY LIMITED (01234567)</span></a></li>
@@ -69,12 +62,9 @@
           </div>
 
 
-
-
           <dl>
           <dt>Registered office address</dt>
-          <dd class="text data">1 Any Street, Cardiff, Wales, CF12 3AB
-          <br><a href="javascript:void(0)" class="normal">Change address</a></dd>
+          <dd class="text data">1 Any Street, Cardiff, Wales, CF12 3AB</dd>
           </dl>
 
 
@@ -105,9 +95,8 @@
 
           <h2 class="heading-medium"><strong>Accounts</strong></h2>
 
-          <p>Next accounts made up to <strong>31 March 2017</strong>
-          <br>due by <strong>31 December 2017</strong><br>
-          <a href="chs-choose-abridged-or-other" class="normal button" id="overview-accounts">File accounts</a></p>
+          <p> Next accounts made up to <strong>31 March 2017</strong>
+          <br>due by <strong>31 December 2017</strong>  </p>
           <p>Last accounts made up to <strong>31 March 2016</strong></p>
           </div>
 
@@ -130,6 +119,8 @@
               <span id="sic0">01234 - Example only</span>
             </li>
           </ul>
+
+
     </main>
 
 

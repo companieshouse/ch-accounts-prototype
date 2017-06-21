@@ -1,0 +1,116 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Which type of accounts have you prepared?
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.bubble {
+  display:inline;
+  background-color: #f47738;
+  color:white;
+  padding:0.2em .5em;
+  border-radius: 15px;
+  font-weight:normal;
+  font-size:0.7em;
+  position:relative;
+  left:.5em;
+  top:-0.1em;
+
+}
+</style>
+
+
+
+
+
+    <main id="content" role="main" class="search">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Which type of accounts have you prepared?</h1>
+    </header>
+
+    <div class="panel panel-border-wide">
+      <p>
+        If you’re not sure, you may want to ask an accountant.
+      </p>
+    </div>
+
+
+
+    <div class="grid-row">
+
+        <div class="column-half">
+          	<h2 class="heading-medium">Micro-entity accounts</h2>
+            Must meet at least 2 of the following:
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £632,000</li>
+              <li>Balance sheet total is no more than £316,000</li>
+              <li>Average number of employees is no more than 10</li>
+            </ul>
+            <p class="get-started group" id="">
+              <a role="button" class="button" data-transaction-slug="" rel="external" href="/accounts/accounts-start-page-micros">File micro-entity accounts</a>
+            </p>
+        </div>
+
+        <div class="column-half">
+          	<h2 class="heading-medium">Abridged accounts</h2>
+            Must meet at least 2 of the following:
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £10.2 million</li>
+              <li>Balance sheet total is no more than £5.1 million</li>
+              <li>Average number of employees is no more than 50</li>
+            </ul>
+             <p class="get-started group" id="">
+              <a role="button" class="button" data-transaction-slug="" rel="external" href="/chs/chs-start-page-r1">File abridged accounts</a>
+            </p>
+        </div>
+
+      </div>
+
+
+        <div class="grid-row">
+
+
+        <div class="column-half">
+            <h2 class="heading-medium">Full Accounts <span class="subheading">with Companies House and HMRC</span></h2>
+            <p>These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC</p>
+            <p class="get-started group" id="">
+              <a role="button" class="button" data-transaction-slug="" rel="external" href="/accounts/accounts-start-page-full">File full accounts</a>
+              <span class="destination" style="display:block; font-size:16px; margin-top: 0; max-width: 13em;">on HMRC's tax service</span>
+
+            </p>
+        </div>
+
+        <div class="column-half">
+            <h2 class="heading-medium">Dormant Company Accounts</h2>
+            <p>These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
+            <p class="get-started group" id="">
+              <a role="button" class="button" data-transaction-slug="" rel="external" href="/accounts/accounts-start-page-dormant">File dormant accounts</a>
+           </p>
+        </div>
+
+    </div>
+
+
+
+</main>
+
+{% endblock %}
