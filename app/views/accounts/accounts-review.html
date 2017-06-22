@@ -9,6 +9,11 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Javascript that opens/closes details tags - NOT PRODUCTION READY -->
+<script>
+  $(document).ready(function(){  //Only show the button if javascript is on
+          $("a#expand").removeClass("hidden");
+  });
+</script>
 <script type="text/javascript">
 var elems = document.getElementsByTagName("details");
 function openAll() {
@@ -57,7 +62,7 @@ function closeAll() {
 
   <div class="left-indent">
 
-  <a class="button" onclick="openAll()" id="expand">Show all</a>
+  <a class="button hidden" onclick="openAll()" id="expand">Show all</a>
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Review your abridged accounts</caption>
