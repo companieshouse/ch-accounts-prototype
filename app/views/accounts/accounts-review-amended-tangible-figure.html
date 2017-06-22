@@ -7,6 +7,34 @@
 {% block content %}
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Javascript that opens/closes details tags - NOT PRODUCTION READY -->
+<script type="text/javascript">
+var elems = document.getElementsByTagName("details");
+function openAll() {
+    var x = document.getElementsByTagName("details");
+    var i;
+    for (i = 0; i < x.length; i++) {
+         x[i].setAttribute("open", "true");
+    }
+    document.getElementById("expand").setAttribute( "onClick", "javascript: closeAll();" );
+    document.getElementById("expand").innerHTML = "Hide all";
+}
+function closeAll() {
+    var x = document.getElementsByTagName("details");
+    var i;
+    for (i = 0; i < x.length; i++) {
+         x[i].removeAttribute("open", "true");
+    }
+    document.getElementById("expand").setAttribute( "onClick", "javascript: openAll();" );
+    document.getElementById("expand").innerHTML = "Show all";
+}
+</script>
+<!-- Javascript that opens/closes details tags - NOT PRODUCTION READY -->
+
+
+
 <main id="content" role="main" class="two-column-accounts">
 {% include "includes/phase_banner_beta.html" %}
 
@@ -30,6 +58,8 @@
   <form action="/accounts/accounts-approval" method="get" class="form">
 
   <div class="left-indent">
+
+  <a class="button" onclick="openAll()" id="expand">Show all</a>
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Review your abridged accounts</caption>
