@@ -59,6 +59,8 @@ $error-button-hover: #8e0513;
   input[type="number"] {
     text-align: right;
   }
+//Check your answers
+#expand {float:right;} // Expand all link/button
 table.check-your-answers {
     thead th {padding: 2em 0 1em;
 
