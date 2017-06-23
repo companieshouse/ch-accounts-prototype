@@ -8,6 +8,10 @@
   a {
     margin-right: .5em;
   }
+  a#manage-company-authentication {
+    margin-top:.7em;
+    display:inline-block;
+  }
 }
 @media (max-width: 640px) {
   #company-number {
@@ -15,7 +19,11 @@
   }
   #action-buttons {
     a {
-      margin-bottom:.5em;
+      margin-bottom:0;
+    }
+    a#manage-company-authentication {
+      text-align: center;
+      display: block;
     }
   }
   #search .searchfield input,
