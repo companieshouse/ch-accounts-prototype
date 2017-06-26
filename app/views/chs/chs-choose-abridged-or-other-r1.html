@@ -41,6 +41,9 @@
 
 
     <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
     <div class="text">
 
 
@@ -53,7 +56,7 @@
 
       <p>You can only file abridged accounts here.</p>
 
-      <p>If you want to file other types of accounts (dormant, micro-entity or full), use  <a href="">our WebFiling service</a>.</p>
+      <p>If you want to file other types of accounts (dormant, micro-entity or full), use  <a href="/webfiling/webfiling-login-page-chs-search">our WebFiling service</a>.</p>
 
       <div class="panel panel-border-wide text">
         <p>  If you’re not sure which types of accounts you want to file, you may want to ask an accountant.</p>
@@ -87,8 +90,8 @@
           <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
 
           <form action="/accounts/accounts-start-page-r1" method="get" class="form">
-            <div class="form-group">
-              <fieldset class="inline">
+              <fieldset class="inline" data-required="" data-error="Please confirm if your prepared abridged accounts meet the criteria">
+                <div class="form-group">
 
                 <legend class="visually-hidden">Do your prepared abridged accounts meet the criteria?</legend>
 
@@ -99,24 +102,34 @@
                 <label class="block-label selection-button-radio" for="release1no">
                   <input id="release1no" type="radio" name="chsr1" value="No">
                   No
-                </label>
+                </div><!--form-group-->
 
               </fieldset>
-            </div>
 
-            <div class="form-group">
-              <input type="submit" class="button" value="Next" id="">
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Next">
+          </div>
+
+          </div><!--left-indent-->
+
+
+          </div><!--text-->
+
           </form>
 
 
 
-
-
-    </div>
-
-
-
-</main>
+          </main>
 
 {% endblock %}
