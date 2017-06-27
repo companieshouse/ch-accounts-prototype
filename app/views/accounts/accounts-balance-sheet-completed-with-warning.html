@@ -20,22 +20,25 @@
 
 
 
+
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
-  <h1 class="heading-xlarge"><span class="circle circle-step-large">2</span> Balance sheet</h1>
-
-  <p class="warning-note warning-note-large"><strong>Some items are optional.</strong> Complete any that are included in your accounts.</p>
+<h1 class="heading-xlarge"><span class="circle circle-step-large">2</span> Balance sheet
+  <div class="panel panel-border-wide">
+    <p class="warning">Complete all items that are included in your prepared accounts.</p>
+  </div>
+</h1>
 
   <div class="grid-row" id="accounts-header">
     <div class="column-half">
       &nbsp;
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">31 March 2016 to<br> 31 March 2017<br>£</h2>
+      <h2 class="heading-small">31 March 2016 to<br>31 March 2017<br>£</h2>
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">31 March 2015 to<br> 31 March 2016<br>£</h2>
+      <h2 class="heading-small">31 March 2015 to<br>31 March 2016<br>£</h2>
     </div>
   </div>
 
@@ -46,55 +49,84 @@
 <h2 class="heading-medium">Fixed assets</h2>
 
   <!--Start intangible assets-->
-  <div class="grid-row">
+  <!--<div class="grid-row">
     <div class="column-half">
         <details>
           <summary><span class="summary">Intangible assets</span></summary>
           <div class="panel panel-border-narrow">
-            <p>The value of the company's non-physical assets - for example, patents, trademarks, licences, goodwill (taking account of depreciation).</p>
-          </div>
+            <p>The value after depreciation of your company's assets that are not physical. Examples include:</p>
+            <ul class="list list-bullet">
+               <li>patents</li>
+               <li>trademarks</li>
+               <li>copyrights</li>
+               <li>brand value</li>
+               <li>goodwill</li>
+           </div>
         </details>
     </div>
 
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-          <input type="number" class="form-control" id="intangible-assets-current">
+          <input type="number"  onkeypress="" class="form-control" id="intangible-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-          <input type="number" class="form-control" id="intangible-assets-previous">
+          <input type="number"  onkeypress="" class="form-control" id="intangible-assets-previous">
         </label>
       </div>
     </div>
 
-  </div>
+  </div>-->
   <!--End intangible assets-->
+
+  <div class="grid-row"> <!-- this grid-row chunk only appear when an error message is to be shown-->
+    <div class="column-half">&nbsp;
+    </div>
+    <div class="column-quarter">
+    </div>
+    <div class="column-quarter">
+      <p class="warning-note warning-note-large">
+        <strong>Warning</strong><br /> Removing the 'tangible assets' figure here will result in the removal of your previously completed 'tangible fixed assets' note</p></div>
+    </p>
+  </div>
+
+
 
   <!--Start tangible assets-->
   <div class="grid-row">
-    <div class="column-half">
+   <div class="column-half">
         <details>
           <summary><span class="summary">Tangible assets</span></summary>
           <div class="panel panel-border-narrow">
-            <p>The value of the company's physical assets used in the business - for example, machinery, fixtures and fittings, office equipment, vehicles, buildings, land (taking account of depreciation).</p>
-          </div>
+            <p>The value of physical assets your business owns, after depreciation. Examples include:</p>
+            <ul class="list list-bullet">
+               <li>machinery</li>
+               <li>fixtures and fittings</li>
+               <li>office equipment</li>
+               <li>vehicles</li>
+               <li>land and buildings</li>
+           </ul>
+         </div>
         </details>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-          <input type="number" class="form-control" id="tangible-assets-current">
+          <input type="number"  onkeypress="" class="form-control" id="tangible-assets-current" value="">
         </label>
+        <!--<div class="warning-with-triangle">
+          <p>Updating the tangible assets figure will mean you'll need to change your <strong>tangible assets note</strong>.</p>
+        </div>-->
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-          <input type="number" class="form-control" id="tangible-assets-previous">
+          <input type="number"  onkeypress="" class="form-control" id="tangible-assets-previous" value="30740">
         </label>
       </div>
     </div>
@@ -102,53 +134,59 @@
   <!--End tangible assets-->
 
   <!--Start investments (fixed assets) -->
-  <div class="grid-row">
+  <!--<div class="grid-row">
     <div class="column-half">
         <details>
           <summary><span class="summary">Investments</span> <span class="mobile-only-label">(fixed assets)</span></summary>
           <div class="panel panel-border-narrow">
-            <p>Fixed asset investments are those intended to be held for the medium to long term in order to, for example, generate income - so these would not include investments such as shares in public companies held for resale.</p>
-          </div>
+            <p>Fixed asset investment refers to any investment made this reporting period in assets used to generate income that will be held for more than one year.Examples include:</p>
+            <ul class="list list-bullet">
+               <li>new vehicles</li>
+               <li>buildings and refurbishment</li>
+               <li>equipment</li>
+           </div>
         </details>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="investments-fixed-assets-current"><span class="mobile-only-label">Investments (fixed assets) (2016)</span>
-          <input type="number" class="form-control" id="investments-fixed-assets-current">
+          <input type="number"  onkeypress="" class="form-control" id="investments-fixed-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="investments-fixed-assets-previous"><span class="mobile-only-label">Investments (fixed assets) (2015)</span>
-          <input type="number" class="form-control" id="investments-fixed-assets-previous">
+          <input type="number"  onkeypress="" class="form-control" id="investments-fixed-assets-previous">
         </label>
       </div>
     </div>
-  </div>
+  </div>-->
   <!--End investments (fixed assets)-->
 
   <!--Start total fixed assets-->
   <div class="grid-row accounts-total">
     <div class="column-half">
-      <details>
+      <strong class="no-help">Total fixed assets</strong>
+
+      <!--<details>
         <summary><span class="summary">Total fixed assets</span></summary>
         <div class="panel panel-border-narrow">
-          <p><strong>Calculation:</strong> 'Intangible assets' plus 'tangible assets' plus 'Investments'.</p>
+          <p><strong>Calculation:</strong> 'Intangible assets' plus 'tangible assets' plus 'investments'.</p>
         </div>
-      </details>
+      </details>-->
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-          <input type="number" class="form-control" id="total-fixed-assets-current">
+          <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-current" value="" readonly>
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-          <input type="number" class="form-control" id="total-fixed-assets-previous">
+          <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-previous" value="30740" readonly>
         </label>
       </div>
     </div>
@@ -165,21 +203,25 @@
           <details>
             <summary><span class="summary">Stocks</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Sometimes knows as 'inventories' - the value of goods or services bought or made, but not yet sold. For example, raw materials, balance of long-term contracts.</p>
-            </div>
+              <p>Goods and services for resale, but unsold as on the date of the balance sheet. Examples include:</p>
+              <ul class="list list-bullet">
+                 <li>raw materials</li>
+                 <li>the balance of long term contracts</li>
+             </ul>
+           </div>
           </details>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label for="stocks-current"><span class="mobile-only-label">Stocks (2016)</span>
-            <input type="number" class="form-control" id="stocks-current">
+            <input type="number"  onkeypress="" class="form-control" id="stocks-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label for="stocks-current"><span class="mobile-only-label">Stocks (2015)</span>
-            <input type="number" class="form-control" id="stocks-previous">
+            <input type="number"  onkeypress="" class="form-control" id="stocks-previous">
           </label>
         </div>
       </div>
@@ -193,22 +235,26 @@
           <details>
             <summary><span class="summary">Debtors</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Amount owed to the company - for example, debts, payments or income owed but not yet received.</p>
-            </div>
+              <p>Amounts owed to your business from trading activity. Examples include:</p>
+              <ul class="list list-bullet">
+                 <li>debts</li>
+                 <li>outstanding invoices</li>
+               </ul>
+           </div>
           </details>
       </div>
 
       <div class="column-quarter">
         <div class="form-group">
           <label for="debtors-current"><span class="mobile-only-label">Debtors (2016)</span>
-            <input type="number" class="form-control" id="debtors-current">
+            <input type="number"  onkeypress="" class="form-control" id="debtors-current" value="32175">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="debtors-previous"><span class="mobile-only-label">Debtors (2015)</span>
-            <input type="number" class="form-control" id="debtors-previous">
+            <input type="number"  onkeypress="" class="form-control" id="debtors-previous" value="16000">
           </label>
         </div>
       </div>
@@ -222,7 +268,7 @@
           <details>
             <summary><span class="summary">Cash at bank and in hand</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Total cash available on demand, either in the bank or in petty cash.</p>
+              <p>Total cash available either in the bank, or petty cash.</p>
             </div>
           </details>
       </div>
@@ -230,14 +276,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label for="cash-at-bank-and-in-hand-current"><span class="mobile-only-label">Cash at bank and in hand (2016)</span>
-            <input type="number" class="form-control" id="cash-at-bank-and-in-hand-current">
+            <input type="number"  onkeypress="" class="form-control" id="cash-at-bank-and-in-hand-current" value="35455">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="cash-at-bank-and-in-hand-previous"><span class="mobile-only-label">Cash at bank and in hand (2015)</span>
-            <input type="number" class="form-control" id="cash-at-bank-and-in-hand-previous">
+            <input type="number"  onkeypress="" class="form-control" id="cash-at-bank-and-in-hand-previous" value="7000">
           </label>
         </div>
       </div>
@@ -250,7 +296,7 @@
           <details>
             <summary><span class="summary">Investments</span> <span class="mobile-only-label">(current assets)</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Current asset investments are those held with the intention of selling them in the short term, for example shares in quoted companies intended to be traded.</p>
+              <p>A resource held by the company for investment rather than trading purposes, and is likely to be sold soon.</p>
             </div>
           </details>
       </div>
@@ -258,14 +304,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label for="investments-current-assets-current"><span class="mobile-only-label">Investments (current assets) (2016)</span>
-            <input type="number" class="form-control" id="investments-current-assets-current">
+            <input type="number"  onkeypress="" class="form-control" id="investments-current-assets-current" value="">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="investments-current-assets-previous"><span class="mobile-only-label">Investments (current assets) (2015)</span>
-            <input type="number" class="form-control" id="investments-current-assets-previous">
+            <input type="number"  onkeypress="" class="form-control" id="investments-current-assets-previous" value="">
           </label>
         </div>
       </div>
@@ -280,7 +326,7 @@
         <details>
           <summary><span class="summary">Total current assets</span></summary>
           <div class="panel panel-border-narrow">
-            <p><strong>Calculation:</strong> 'Stocks' plus 'debtors' plus 'cash at bank and in hand' plus 'Investments'. </p>
+            <p><strong>Calculation:</strong> 'Stocks' plus 'debtors' plus 'cash at bank and in hand' plus 'investments'. </p>
           </div>
         </details>
             </div>
@@ -288,14 +334,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="total-fixed-current-current"><span class="mobile-only-label">Total current assets (2016)</span>
-            <input type="number" class="form-control" id="total-current-assets-current">
+            <input type="number"  onkeypress="" class="form-control" id="total-current-assets-current" value="67630" readonly>
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="total-current-assets-previous"><span class="mobile-only-label">Total current assets (2015)</span>
-            <input type="number" class="form-control" id="total-current-assets-previous">
+            <input type="number"  onkeypress="" class="form-control" id="total-current-assets-previous" value="23000" readonly>
           </label>
         </div>
       </div>
@@ -318,14 +364,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label for="prepayments-and-and-accrued-income-current"><span class="mobile-only-label">Prepayments and accrued income (2016)</span>
-            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-current">
+            <input type="number"  onkeypress="" class="form-control" id="prepayments-and-and-accrued-income-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="prepayments-and-and-accrued-income-previous"><span class="mobile-only-label">Prepayments and accrued income (2015)</span>
-            <input type="number" class="form-control" id="prepayments-and-and-accrued-income-previous">
+            <input type="number"  onkeypress="" class="form-control" id="prepayments-and-and-accrued-income-previous">
           </label>
         </div>
       </div>
@@ -342,22 +388,28 @@
           <details>
             <summary><span class="summary">Creditors - amounts falling due within one year</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Debts you expect to settle within a year - for example, unpaid supplier invoices, bank loans or overdrafts.</p>
-            </div>
+              <p>Debts you expect to settle within a year. Examples include:</p>
+              <ul class="list list-bullet">
+                 <li>unpaid invoices</li>
+                 <li>bank loans</li>
+                 <li>overdrafts</li>
+              </ul>
+              <p class="heading-small">Enter this number as a positive value and we'll calculate your net current assets</p>
+             </div>
           </details>
       </div>
 
       <div class="column-quarter">
         <div class="form-group">
           <label for="creditors-amounts-falling-due-within-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-within-one-year-current">
+            <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-within-one-year-current" value="36500">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-within-one-year-previous">
+            <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-within-one-year-previous" value="16700">
           </label>
         </div>
       </div>
@@ -380,14 +432,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="net-current-assets-liabilities-current"><span class="mobile-only-label">Net current assets (liabilities) (2016)</span>
-            <input type="number" class="form-control" id="net-current-assets-liabilities-current">
+            <input type="number"  onkeypress="" class="form-control" id="net-current-assets-liabilities-current" value="31130" readonly>
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="net-current-assets-liabilities-previous"><span class="mobile-only-label">Net current assets (liabilities) (2015)</span>
-            <input type="number" class="form-control" id="net-current-assets-liabilities-previous">
+            <input type="number"  onkeypress="" class="form-control" id="net-current-assets-liabilities-previous" value="6300" readonly>
           </label>
         </div>
       </div>
@@ -409,14 +461,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="total-assets-less-current-liabilities-current"><span class="mobile-only-label">Total assets less current liabilities (2016)</span>
-            <input type="number" class="form-control" id="total-assets-less-current-liabilities-current">
+            <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-current" value="68570" readonly>
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="total-assets-less-current-liabilities-previous"><span class="mobile-only-label">Total assets less current liabilities (2015)</span>
-            <input type="number" class="form-control" id="total-assets-less-current-liabilities-previous">
+            <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-previous" value="37040" readonly>
           </label>
         </div>
       </div>
@@ -430,22 +482,24 @@
           <details>
             <summary><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
             <div class="panel panel-border-narrow">
-              <p>Debts you expect to settle after more than one year - for example, bank loans with instalments due after more than a year. </p>
-            </div>
+              <p>Debts you expect to settle after more than one year. For example, bank loans with instalments due after more than a year.</p>
+              <p class="heading-small">Enter this number as a positive value and we'll calculate your net current assets</p>
+
+          </div>
           </details>
       </div>
 
       <div class="column-quarter">
         <div class="form-group">
           <label for="creditors-amounts-falling-due-after-more-than-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current">
+            <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current" value="2100">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-            <input type="number" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous">
+            <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous" value="1000">
           </label>
         </div>
       </div>
@@ -458,22 +512,27 @@
           <details>
             <summary><span class="summary">Provision for liabilities</span></summary>
             <div class="panel panel-border-narrow">
-              <p>An amount set aside to cover future costs - for example, for tax, costs of restructuring or providing pensions.</p>
-            </div>
+              <p>Money set aside to cover future costs such as:</p>
+              <ul class="list list-bullet">
+                 <li>tax</li>
+                 <li>pensions</li>
+                 <li>restructuring costs</li>
+             </ul>
+           </div>
           </details>
       </div>
 
       <div class="column-quarter">
         <div class="form-group">
           <label for="provision-for-liabilities-current"><span class="mobile-only-label">Provision for liabilities (2016)</span>
-            <input type="number" class="form-control" id="provision-for-liabilities-current">
+            <input type="number"  onkeypress="" class="form-control" id="provision-for-liabilities-current" value="2400">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="provision-for-liabilities-previous"><span class="mobile-only-label">Provision for liabilities (2015)</span>
-            <input type="number" class="form-control" id="provision-for-liabilities-previous">
+            <input type="number"  onkeypress="" class="form-control" id="provision-for-liabilities-previous" value="700">
           </label>
         </div>
       </div>
@@ -495,14 +554,14 @@
       <div class="column-quarter">
         <div class="form-group">
           <label for="accruals-and-deferred-income-current"><span class="mobile-only-label">Accruals and deferred income (2016)</span>
-            <input type="number" class="form-control" id="accruals-and-deferred-income-current">
+            <input type="number"  onkeypress="" class="form-control" id="accruals-and-deferred-income-current">
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="accruals-and-deferred-income-previous"><span class="mobile-only-label">Accruals and deferred income (2015)</span>
-            <input type="number" class="form-control" id="accruals-and-deferred-income-previous">
+            <input type="number"  onkeypress="" class="form-control" id="accruals-and-deferred-income-previous">
           </label>
         </div>
       </div>
@@ -523,14 +582,14 @@
           <div class="column-quarter">
             <div class="form-group">
               <label class="form-label-bold" for="total-net-assets-liabilities-current"><span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
-                <input type="number" class="form-control" id="total-net-assets-liabilities-current">
+                <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-current" value="64070" readonly>
               </label>
             </div>
           </div>
           <div class="column-quarter">
             <div class="form-group">
               <label class="form-label-bold" for="total-net-assets-liabilities-previous"><span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
-                <input type="number" class="form-control" id="total-net-assets-liabilities-previous">
+                <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-previous" value="35340" readonly>
               </label>
             </div>
           </div>
@@ -549,8 +608,8 @@
                 <details>
                   <summary><span class="summary">Called up share capital</span></summary>
                   <div class="panel panel-border-narrow">
-                    <p>The total value of all company shares issued at this date. For example, if you issued 100 shares at £1 each at incorporation, and a further 50 shares at £1 each in this period, your called up share capital for the period would be £150.</p>
-                  </div>
+                    <p>The total value of company shares issued at this date. For example, if you issued 100 shares at £1 each at incorporation, and a further 50 shares at £1 each in this period, your called up share capital would be £150.</p>
+                   </div>
                 </details>
               </label>
             </div>
@@ -558,14 +617,14 @@
             <div class="column-quarter">
               <div class="form-group">
                 <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
-                  <input type="number" class="form-control" id="called-up-share-capital-current">
+                  <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-current" value="24400">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
-                  <input type="number" class="form-control" id="called-up-share-capital-previous">
+                  <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-previous" value="23840">
                 </label>
               </div>
             </div>
@@ -579,7 +638,7 @@
                 <details>
                   <summary><span class="summary">Share premium account</span></summary>
                   <div class="panel panel-border-narrow">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                    <p>Amount your shareholders paid for their shares that was more than their value.</p>
                   </div>
                 </details>
             </div>
@@ -587,14 +646,14 @@
             <div class="column-quarter">
               <div class="form-group">
                 <label for="share-premium-account-current"><span class="mobile-only-label">Share premium account (2016)</span>
-                  <input type="number" class="form-control" id="share-premium-account-current">
+                  <input type="number"  onkeypress="" class="form-control" id="share-premium-account-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label" for="share-premium-account-previous"><span class="mobile-only-label">Share premium account (2015)</span>
-                  <input type="number" class="form-control" id="share-premium-account-previous">
+                  <input type="number"  onkeypress="" class="form-control" id="share-premium-account-previous">
                 </label>
               </div>
             </div>
@@ -603,12 +662,12 @@
 
 
           <!--Start revaluation reserve-->
-          <div class="grid-row">
+          <!--<div class="grid-row">
             <div class="column-half">
                 <details>
                   <summary><span class="summary">Revaluation reserve</span></summary>
                   <div class="panel panel-border-narrow">
-                    <p>How much assets have changed in value due to being revalued, compared to their previous values on the balance sheet - for example, to reflect market value. </p>
+                    <p>The change in asset values after revaluation when compared to their previous balance sheet values.</p>
                   </div>
                 </details>
             </div>
@@ -616,18 +675,18 @@
             <div class="column-quarter">
               <div class="form-group">
                 <label for="revaluation-reserve-current"><span class="mobile-only-label">Revaluation reserve (2016)</span>
-                  <input type="number" class="form-control" id="revaluation-reserve-current">
+                  <input type="number"  onkeypress="" class="form-control" id="revaluation-reserve-current">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label" for="revaluation-reserve-previous"><span class="mobile-only-label">Revaluation reserve (2015)</span>
-                  <input type="number" class="form-control" id="revaluation-reserve-previous">
+                  <input type="number"  onkeypress="" class="form-control" id="revaluation-reserve-previous">
                 </label>
               </div>
             </div>
-          </div>
+          </div>-->
           <!--End revaluation reserve-->
 
 
@@ -637,7 +696,7 @@
                 <details>
                   <summary><span class="summary">Other reserves</span></summary>
                   <div class="panel panel-border-narrow">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                    <p>Any reserves not covered in revaluation or profit and loss account reserve figures.</p>
                   </div>
                 </details>
             </div>
@@ -645,14 +704,14 @@
             <div class="column-quarter">
               <div class="form-group">
                 <label for="other-reserves-current"><span class="mobile-only-label">Other reserves (2016)</span>
-                  <input type="number" class="form-control" id="other-reserves-current">
+                  <input type="number"  onkeypress="" class="form-control" id="other-reserves-current" value="500">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label" for="other-reserves-previous"><span class="mobile-only-label">Other reserves (2015)</span>
-                  <input type="number" class="form-control" id="other-reserves-previous">
+                  <input type="number"  onkeypress="" class="form-control" id="other-reserves-previous" value="100">
                 </label>
               </div>
             </div>
@@ -663,25 +722,25 @@
           <!--Start profit and loss account-->
           <div class="grid-row">
             <div class="column-half">
-                <details>
-                  <summary><span class="summary">Profit and loss account</span></summary>
-                  <div class="panel panel-border-narrow">
-                    <p>Earnings not paid out as dividends, but retained by your company. Also known as 'retained earnings'.</p>
-                  </div>
-                </details>
+              <details>
+                <summary><span class="summary">Profit and loss account</span></summary>
+                <div class="panel panel-border-narrow">
+                  <p>Earnings not paid out as dividends, but retained by your company. Also known as 'retained earnings'.</p>
+                </div>
+              </details>
             </div>
 
             <div class="column-quarter">
               <div class="form-group">
                 <label for="profit-and-loss-account-current"><span class="mobile-only-label">Profit and loss account (2016)</span>
-                  <input type="number" class="form-control" id="profit-and-loss-account-current">
+                  <input type="number"  onkeypress="" class="form-control" id="profit-and-loss-account-current" value="39170">
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label" for="profit-and-loss-account-previous"><span class="mobile-only-label">Profit and loss account (2015)</span>
-                  <input type="number" class="form-control" id="profit-and-loss-account-previous">
+                  <input type="number"  onkeypress="" class="form-control" id="profit-and-loss-account-previous" value="11400">
                 </label>
               </div>
             </div>
@@ -700,7 +759,7 @@
               <details>
                 <summary><span class="summary">Total shareholders' funds</span></summary>
                 <div class="panel panel-border-narrow">
-                  <p><strong>Calculation:</strong> 'Called up share capital' plus 'revaluation reserve' plus 'profit and loss account'. This must match 'total net assets or liabilities'.</p>
+                  <p><strong>Calculation:</strong> Called up share capital' plus 'share premium account' plus 'revaluation reserve' plus ‘other reserves' plus ‘profit and loss account'. This must match 'Total net assets (liabilities)'.</p>
                 </div>
               </details>
             </div>
@@ -708,14 +767,14 @@
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
-                  <input type="number" class="form-control" id="total-shareholders-funds-current">
+                  <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-current" value="64070" readonly>
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
-                  <input type="number" class="form-control" id="total-shareholders-funds-previous">
+                  <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-previous" value="35340" readonly>
                 </label>
               </div>
             </div>
@@ -723,7 +782,7 @@
           <!--End total shareholders' funds-->
 
       <div class="form-group">
-        <a class="button" href="accounts-balance-sheet-statements">Save and continue</a>
+        <a class="button" href="accounts-abridged-tangible-note-retained">Next</a>
       </div>
 
 </form>
