@@ -427,3 +427,30 @@ th .panel {
 .margin-top-0 {
   margin-top:0;
 }
+
+//Payment screen (CICS only) - To do: mobile styles
+.payment-summary-small {
+    background-color: $highlight-colour;
+    border: 10px solid $border-colour;
+    padding: 1em 1em 0;
+    margin-top: 2em;
+}
+.card-images {
+  position: relative;
+  img {
+    height: 35px;
+  }
+  .original-accepted {
+    margin-bottom: 0;
+    margin-top: 10px;
+    max-width: 340px;
+    position: relative;
+    z-index: 1;
+  }
+}
+img.card-image {
+  margin-left: 15px;
+  max-height: 38px;
+  padding-top: 2px;
+  vertical-align: middle;
+}

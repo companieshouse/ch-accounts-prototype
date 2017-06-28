@@ -1,0 +1,176 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Payment
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<script>
+  $(document).ready(function(){
+          $("a.PDF").addClass("hidden");
+          $("a.pop").removeClass("hidden");
+
+  });
+</script>
+<script>
+function openWin() {
+    window.open("/public/pdf/abridged-accounts-sample.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=500, left=200");
+}
+</script>
+
+
+
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+   <div class="grid-row">
+     <div class="column-two-thirds">
+       <h1 class="heading-xlarge"><span class="circle circle-step-large">6</span> Payment</h1>
+
+      <div class="left-indent">
+       <form class="form" method="POST" action="gov-pay-1" autocomplete="off">
+         <div class="form-group cards-group ">
+           <label class="form-label-bold" for="card-number">
+             Card number
+
+           </label>
+           <input class="form-control medium-width" id="card-number" name="cardNumber" type="number" pattern="[0-9]*" min="0" max="9999999999999999" value="">
+           <div class="card-images">
+             <img class="original-accepted" id="original-accepted" src="/public/images/accepted-cards-x2.png">
+           </div>
+           <p class="form-hint">Accepted credit and debit card types</p>
+         </div>
+         <div class="form-group ">
+           <fieldset>
+             <div class="form-date">
+               <legend class="form-label-bold">
+                 Expiry date
+                 <span class="form-hint">For example, 07/17</span>
+               </legend>
+
+               <div class="form-group form-group-month">
+                 <label for="exp-month">Month</label>
+                 <input class="form-control" id="exp-month" name="expMonth" type="number" pattern="[0-9]*" min="1" max="12" value="">
+               </div>
+               <div class="form-group form-group-month">
+                 <label for="exp-year">Year</label>
+                 <input class="form-control" id="exp-year" name="expYear" type="number" pattern="[0-9]*" min="16" max="25" value="">
+               </div>
+             </div>
+           </fieldset>
+         </div>
+         <div class="form-group ">
+           <label class="form-label-bold" for="full-name">
+             Name on card
+
+             <span class="form-hint">
+               Enter the name as it appears on the card
+             </span>
+           </label>
+           <input class="form-control" id="full-name" name="fullName" type="text" value="">
+         </div>
+         <div class="form-group ">
+           <label class="form-label-bold" for="card-security-number">
+             Card security code
+             <span class="form-hint">This is the 3 digit code at the back of your card</span>
+
+           </label>
+           <input class="form-control" id="security-number" name="securityCode" type="number" pattern="[0-9]*" min="0" max="999" value="">
+           <img class="card-image" src="/public/images/card-security-code-2.png">
+         </div>
+         <div class="form-group">
+           <h2 class="heading-medium">Billing address</h2>
+           <div class="payment-type-intro">
+             <p>This is the address where the card is registered</p>
+           </div>
+           <fieldset>
+             <div class="form-group ">
+               <label class="form-label-bold" for="building-and-street">
+                 Building name and/or number and street
+
+               </label>
+               <input class="form-control" id="building-street" name="buildingStreet" type="text" value=""><br/><br/>
+               <input class="form-control" id="building-and-street" name="buildingAndStreet" type="text">
+             </div>
+             <div class="form-group ">
+               <label class="form-label-bold" for="town-or-city">
+                 Town or city
+
+               </label>
+               <input class="form-control medium-width" id="town-or-city" name="townOrCity" type="text" value="">
+             </div>
+             <div class="form-group ">
+               <label class="form-label-bold" for="postcode">
+                 Postcode
+
+               </label>
+               <input class="form-control" id="postcode" name="postCode" type="text" value="">
+             </div>
+             <div class="form-group ">
+               <label class="form-label-bold" for="email-address">
+                 Email address
+                 <span class="form-hint">We'll send your payment confirmation here</span>
+
+               </label>
+               <input class="form-control" id="email-address" name="emailAddress" type="text" value="">
+             </div>
+           </fieldset>
+         </div>
+         <div class="grid-row">
+           <div class="column-two-thirds">
+             <div class="form-group">
+
+                 <input type="submit" class="button" role="button" value="Continue"/>
+
+             </div>
+             <div class="back">
+               <a href="#">Cancel payment</a>
+             </div>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div><!--left-indent-->
+
+     <div class="column-third">
+       <div class="payment-summary-small">
+         <h2 class="bold-medium">Payment summary</h2>
+         <p class="bold-small">Abridged accounts</p>
+         <h3>Amount to pay:</h3>
+         <p class="bold-large">£XX</p>
+       </div>
+
+     </div>
+
+
+  </div>
+
+</main>
+
+{% endblock %}
