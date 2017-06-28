@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 
 // Bind keyup event on the input
-$('#tangible-assets-current').focusout(function() {
+$('#tangible-assets-current').keyup(function() {
 
   // If value is not empty
   if ($(this).val().length == 0) {
@@ -23,7 +23,7 @@ $('#tangible-assets-current').focusout(function() {
     // Otherwise show it
     $('#remove-tangible-current-warning').hide();
   }
-}).focusout(); // Trigger the keyup event, thus running the handler on page load
+}).keyup(); // Trigger the keyup event, thus running the handler on page load
 });
 
 </script>
