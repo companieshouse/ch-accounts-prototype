@@ -1,58 +1,53 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-Tangible assets note
-{% endblock %}
-
-{% block content %}
-<main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
-
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
-
-
-
-
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
-
-<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
-  Balance sheet notes
-  <span class="circle-subheading">Tangible assets</span>
-</h1>
-
-<div class="left-indent">
-  <div class="panel panel-border-wide">
-    <p>Use this note to provide information about the tangible assets value from your balance sheet.</p>
-    <p>Complete all items that are included in your prepared accounts.</p>
-  </div>
-  <br>
-  <form action="/" method="post" class="form" id="">
-
-
-
-<div class="grid-row" id="accounts-header">
-        <div class="column-half">
-          <h2 class="heading-medium" style="text-align:left;">Cost</h2> <!-- To do - move this style into the SASS file-->
-        </div>
-        <div class="column-quarter">
-          <h2 class="heading-small">£</h2>
-        </div>
-        <div class="column-quarter">
-          <h2 class="heading-small"></h2>
-        </div>
-      </div>
-
-      <!--Start tangible assets-->
-    <!--  <div class="grid-row">
+{% extends "layout-chs.html" %} {% block page_title %} Tangible assets note {% endblock %} {% block content %}
+<main class="two-column-accounts" id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<nav class="content" role="navigation">
+		<ul class="mobile-hidden" id="navigation">
+			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+			</li>
+			<li>
+				<a href="javascript:void(0)">Your details</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="">Companies you follow</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="user-signout">Sign out</a>
+			</li>
+		</ul>
+	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
+	<h1 class="heading-xlarge">
+		<span class="circle circle-step-large">3</span> Balance sheet notes <span class="circle-subheading">Tangible assets</span>
+	</h1>
+	<div class="left-indent">
+		<div class="panel panel-border-wide">
+			<p>
+				Use this note to provide information about the tangible assets value from your balance sheet.
+			</p>
+			<p>
+				Complete all items that are included in your prepared accounts.
+			</p>
+		</div><br>
+		<form action="/" class="form" id="" method="post" name="">
+			<div class="grid-row" id="accounts-header">
+				<div class="column-half">
+					<h2 class="heading-medium" style="text-align:left;">
+						Cost
+					</h2><!-- To do - move this style into the SASS file-->
+				</div>
+				<div class="column-quarter">
+					<h2 class="heading-small">
+						£
+					</h2>
+				</div>
+				<div class="column-quarter">
+					<h2 class="heading-small"></h2>
+				</div>
+			</div><!--Start tangible assets-->
+			<!--  <div class="grid-row">
         <div class="column-half form-hint">Tangible assets</div>
         <div class="column-quarter">
           <div class="form-group">
@@ -69,321 +64,299 @@ Tangible assets note
           </div>
         </div>
       </div>-->
-      <!--End tangible assets-->
-
-
-
-
-
-
-
-
-
-  <!--Start Cost at start-->
-  <div class="grid-row accounts-row-spacer">
-    <div class="column-half">
-        <details>
-          <summary><span class="summary">Cost at 1 April 2016</span></summary>
-          <div class="panel panel-border-narrow">
-            <p>The cost of your tangible assets at the start of this accounting period.</p>
-          </div>
-        </details>
-    </div>
-
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-cost-at-start"><span class="visuallyhidden">Cost at 1 April 2016</span>
-          <input type="number" class="form-control" id="tangible-cost-at-start">
-        </label>
-      </div>
-    </div>
-
-  </div>
-  <!--End Cost at start-->
-
-  <!--Start Additions  -->
-  <div class="grid-row">
-    <div class="column-half">
-        <details>
-          <summary><span class="summary">Additions</span></summary>
-          <div class="panel panel-border-narrow">
-            <p>The cost of your tangible assets aquired during this accounting period.</p>
-          </div>
-        </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-cost-additions"><span class="visuallyhidden">Additions</span>
-          <input type="number" class="form-control" id="tangible-cost-additions">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Additions  -->
-
-  <!--Start Disposals-->
-  <div class="grid-row">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Disposals</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>The cost of tangible assets disposed of in this acccounting period.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-cost-disposals"><span class="visuallyhidden">Disposals</span>
-          <input type="number" class="form-control" id="tangible-cost-disposals">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Disposals--->
-
-  <!--Start Revaluations-->
-  <div class="grid-row">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Revaluations</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>Valuation of any assets revalued during this accounting period.</p>
-          <p>If the revaluation reduces the value of the asset, then enter a negative figure.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-cost-revaluations"><span class="visuallyhidden">Revaluations</span>
-          <input type="number" class="form-control" id="tangible-cost-revaluations">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Revaluations--->
-
-  <!--Start Transfers-->
-  <div class="grid-row">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Transfers</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>The cost or valuation of any tangible assets that you've transferred during this accounting period. If the asset is being transferred out, enter a negative figure.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangiblecosttransfers"><span class="visuallyhidden">Transfers</span>
-          <input type="number" class="form-control" id="tangiblecosttransfers">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Transfers-->
-
-  <!--Start Cost at end-->
-  <div class="grid-row accounts-total">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Cost at 31 March 2017</span></summary>
-        <div class="panel panel-border-narrow">
-          <p><strong>Calculation:</strong> 'Cost at 1 April 2016' plus 'additions', plus 'revaluations' plus 'transfers' minus 'disposals'.</p>
-      </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-cost-at-end"><span class="visuallyhidden">Cost at 31 March 2017</span>
-          <input type="number" class="form-control" id="tangible-cost-at-end" readonly>
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Cost at end--->
-
-
-
-
-  <h2 class="heading-medium">Depreciation
-    <span class="subheading text">Depreciation is the reduction in value of an asset over its useful lifetime.</span>
-  </h2>
-
-
-  <!--Start Depreciation at start-->
-  <div class="grid-row accounts-row-spacer">
-    <div class="column-half">
-        <details>
-          <summary><span class="summary">Depreciation at 1 April 2016</span></summary>
-          <div class="panel panel-border-narrow">
-            <p>The reduction in your tangible assets at the start of this accounting period.</p>
-          </div>
-        </details>
-    </div>
-
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-depreciation-at-start"><span class="visuallyhidden">Depreciation at 1 April 2016</span>
-          <input type="number" class="form-control" id="tangible-depreciation-at-start">
-        </label>
-      </div>
-    </div>
-
-  </div>
-  <!--End Depreciation at start-->
-
-
-  <!--Start Charge for year-->
-  <div class="grid-row">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Charge for year</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>The reduction in tangible asset values during this accounting period.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-depreciation-charge-for-year"><span class="visuallyhidden">Charge for year</span>
-          <input type="number" class="form-control" id="tangible-depreciation-charge-for-year">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Charge for year--->
-
-
-
-  <!--Start On disposals-->
-  <div class="grid-row">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">On disposals</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>Total depreciation for all tangible assets disposed of in this accounting period.</p>
-      </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-depreciation-on-disposals"><span class="visuallyhidden">On disposals</span>
-          <input type="number" class="form-control" id="tangible-depreciation-on-disposals">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End On disposals-->
-
-  <!--Start Other adjustments-->
-  <div class="grid-row">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Other adjustments</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>Any other depreciation adjustment on tangible assets.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-depreciation-other-adjustments"><span class="visuallyhidden">Other adjustments</span>
-          <input type="number" class="form-control" id="tangible-depreciation-other-adjustments">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End Other adjustments-->
-
-  <!--Start depreciation at end-->
-  <div class="grid-row accounts-total">
-    <div class="column-half">
-      <details>
-        <summary><span class="summary">Depreciation at 31 March 2017</span></summary>
-        <div class="panel panel-border-narrow">
-          <p><strong>Calculation:</strong> 'Depreciation at 1 April 2016' plus 'Charge for year' plus 'Other adjustments' minus 'On disposals'.</p>
-      </div>
-      </details>
-    </div>
-    <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-depreciation-at-end"><span class="visuallyhidden">Depreciation at 31 March 2017</span>
-          <input type="number" class="form-control" id="tangible-depreciation-at-end">
-        </label>
-      </div>
-    </div>
-  </div>
-  <!--End depreciation at end--->
-
-
-      <h2 class="heading-medium">Net book value
-        <span class="subheading text">Net book value is the original asset cost minus depreciation.</span>
-      </h2>
-
-
-    <!--Start depreciation at start-->
-    <div class="grid-row  accounts-total accounts-row-spacer">
-      <div class="column-half">
-          <details>
-            <summary><span class="summary">Net book value at 31 March 2017</span></summary>
-            <div class="panel panel-border-narrow">
-              <p><strong>Calculation:</strong> 'Cost at 31 March 2017' minus 'Depreciation at 31 March 2017'.</p>
-            </div>
-          </details>
-      </div>
-
-      <div class="column-quarter">
-        <div class="form-group">
-          <label for="tangible-net-book-value-end"><span class="visuallyhidden">Net book value at 31 March 2017</span>
-            <input type="number" class="form-control" id="tangible-net-book-value-end">
-          </label>
-        </div>
-      </div>
-
-    </div>
-    <!--End depreciation at start-->
-
-    <!--Start Additions  -->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
-          <details>
-            <summary><span class="summary">Net book value at 31 March 2016</span></summary>
-            <div class="panel panel-border-narrow">
-              <p><strong>Calculation:</strong> 'Cost at 1 April 2016' minus 'Depreciation at 1 April 2016'.</p>
-          </div>
-          </details>
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <label for="tangible-net-book-value-start"><span class="visuallyhidden">Net book value at 31 March 2016</span>
-            <input type="number" class="form-control" id="tangible-net-book-value-start">
-          </label>
-        </div>
-      </div>
-    </div>
-    <!--End Additions  -->
-
-
-
-
-
-    <details class="accounts-row-spacer text">
-      <summary><span class="summary">Add additional information? (optional) </span></summary>
-      <div class="panel panel-border-narrow">
-        <label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
-        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
-      </div>
-    </details>
-
-
-
-
-      <div class="form-group accounts-row-spacer">
-        <a class="button" href="/accounts/accounts-abridged-other-notes-yes-no">Next</a>
-      </div>
-
-</form>
-
-</div><!--left-indent-->
-</main>
-{% endblock %}
+			<!--End tangible assets-->
+			<!--Start Cost at start-->
+			<div class="grid-row accounts-row-spacer">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Cost at 1 April 2016</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost of your tangible assets at the start of this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-cost-at-start"><span class="visuallyhidden">Cost at 1 April 2016</span>
+            <input class="form-control" id="tangible-cost-at-start" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Cost at start-->
+			<!--Start Additions  -->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Additions</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost of your tangible assets aquired during this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-cost-additions"><span class="visuallyhidden">Additions</span>
+            <input class="form-control" id="tangible-cost-additions" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Additions  -->
+			<!--Start Disposals-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Disposals</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost of tangible assets disposed of in this acccounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-cost-disposals"><span class="visuallyhidden">Disposals</span>
+            <input class="form-control" id="tangible-cost-disposals" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Disposals=-->
+			<!--Start Revaluations-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Revaluations</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								Valuation of any assets revalued during this accounting period.
+							</p>
+							<p>
+								If the revaluation reduces the value of the asset, then enter a negative figure.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-cost-revaluations"><span class="visuallyhidden">Revaluations</span>
+            <input class="form-control" id="tangible-cost-revaluations" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Revaluations=-->
+			<!--Start Transfers-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Transfers</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost or valuation of any tangible assets that you've transferred during this accounting period. If the asset is being transferred out, enter a negative figure.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangiblecosttransfers"><span class="visuallyhidden">Transfers</span>
+            <input class="form-control" id="tangiblecosttransfers" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Transfers-->
+			<!--Start Cost at end-->
+			<div class="grid-row accounts-total">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Cost at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Cost at 1 April 2016' plus 'additions', plus 'revaluations' plus 'transfers' minus 'disposals'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-cost-at-end"><span class="visuallyhidden">Cost at 31 March 2017</span>
+            <input class="form-control" id="tangible-cost-at-end" readonly type="number"></label>
+					</div>
+				</div>
+			</div><!--End Cost at end=-->
+			<h2 class="heading-medium">
+				Depreciation <span class="subheading text">Depreciation is the reduction in value of an asset over its useful lifetime.</span>
+			</h2><!--Start Depreciation at start-->
+			<div class="grid-row accounts-row-spacer">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Depreciation at 1 April 2016</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The reduction in your tangible assets at the start of this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-depreciation-at-start"><span class="visuallyhidden">Depreciation at 1 April 2016</span>
+            <input class="form-control" id="tangible-depreciation-at-start" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Depreciation at start-->
+			<!--Start Charge for year-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Charge for year</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The reduction in tangible asset values during this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-depreciation-charge-for-year"><span class="visuallyhidden">Charge for year</span>
+            <input class="form-control" id="tangible-depreciation-charge-for-year" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Charge for year=-->
+			<!--Start On disposals-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">On disposals</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								Total depreciation for all tangible assets disposed of in this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-depreciation-on-disposals"><span class="visuallyhidden">On disposals</span>
+            <input class="form-control" id="tangible-depreciation-on-disposals" type="number"></label>
+					</div>
+				</div>
+			</div><!--End On disposals-->
+			<!--Start Other adjustments-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Other adjustments</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								Any other depreciation adjustment on tangible assets.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-depreciation-other-adjustments"><span class="visuallyhidden">Other adjustments</span>
+            <input class="form-control" id="tangible-depreciation-other-adjustments" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Other adjustments-->
+			<!--Start depreciation at end-->
+			<div class="grid-row accounts-total">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Depreciation at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Depreciation at 1 April 2016' plus 'Charge for year' plus 'Other adjustments' minus 'On disposals'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-depreciation-at-end"><span class="visuallyhidden">Depreciation at 31 March 2017</span>
+            <input class="form-control" id="tangible-depreciation-at-end" type="number"></label>
+					</div>
+				</div>
+			</div><!--End depreciation at end=-->
+			<h2 class="heading-medium">
+				Net book value <span class="subheading text">Net book value is the original asset cost minus depreciation.</span>
+			</h2><!--Start depreciation at start-->
+			<div class="grid-row accounts-total accounts-row-spacer">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Net book value at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Cost at 31 March 2017' minus 'Depreciation at 31 March 2017'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-net-book-value-end"><span class="visuallyhidden">Net book value at 31 March 2017</span>
+            <input class="form-control" id="tangible-net-book-value-end" type="number"></label>
+					</div>
+				</div>
+			</div><!--End depreciation at start-->
+			<!--Start Additions  -->
+			<div class="grid-row accounts-total">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Net book value at 31 March 2016</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Cost at 1 April 2016' minus 'Depreciation at 1 April 2016'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="tangible-net-book-value-start"><span class="visuallyhidden">Net book value at 31 March 2016</span>
+            <input class="form-control" id="tangible-net-book-value-start" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Additions  -->
+			<details class="accounts-row-spacer text">
+				<summary>
+					<span class="summary">Add additional information? (optional)</span>
+				</summary>
+				<div class="panel panel-border-narrow">
+					<label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+					<textarea class="form-control" id="textarea" rows="10"></textarea>
+				</div>
+			</details>
+			<div class="form-group accounts-row-spacer">
+				<a class="button" href="/accounts/accounts-abridged-other-notes-yes-no">Next</a>
+			</div>
+		</form>
+	</div><!--left-indent-->
+</main>{% endblock %}
