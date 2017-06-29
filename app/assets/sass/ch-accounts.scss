@@ -116,6 +116,7 @@ table.check-your-answers {
         &:hover  {
           background-color: transparent;
           box-shadow: none;
+          color: $link-hover-colour;
         }
       }
     }
