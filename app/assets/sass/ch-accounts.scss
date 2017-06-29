@@ -239,7 +239,7 @@ table.check-your-answers {
 
 
 a.button::before {
-  width:auto; // This stops the focus highlighting (yellow) from going off the left-edge of the screen
+  width:auto; // This stops the focus highlighting (yellow) off links with a class of "button" from going off the left-edge of the screen
 }
 
 .form-group .inline-multiple label {
