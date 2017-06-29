@@ -109,10 +109,14 @@ table.check-your-answers {
         }
       }
       .no-delete {
-        left: 1em;
-        position: relative;
-        top: 0.5em;
-        color:$error-colour;
+        color: $link-colour;
+        background-color: transparent;
+        box-shadow: none;
+        text-decoration: underline;
+        &:hover  {
+          background-color: transparent;
+          box-shadow: none;
+        }
       }
     }
   }
@@ -241,7 +245,6 @@ table.check-your-answers {
 a.button::before {
   width:auto; // This stops the focus highlighting (yellow) off links with a class of "button" from going off the left-edge of the screen
 }
-
 .form-group .inline-multiple label {
   margin-bottom:.5em;
 }
