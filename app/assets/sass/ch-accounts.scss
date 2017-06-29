@@ -237,6 +237,11 @@ table.check-your-answers {
 
 //END Your filings
 
+
+a.button::before {
+  width:auto; // This stops the focus highlighting (yellow) from going off the left-edge of the screen
+}
+
 .form-group .inline-multiple label {
   margin-bottom:.5em;
 }
