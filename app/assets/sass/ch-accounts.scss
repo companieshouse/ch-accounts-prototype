@@ -7,7 +7,7 @@ $error-button-hover: #8e0513;
 .two-column-accounts {
   form-control {text-align: right;}
   #accounts-header {
-    text-align: right;
+    text-align: center;
     margin-bottom:1em;
     @include media(mobile) {
       display: none; /*Hide from mobiles*/
