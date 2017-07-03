@@ -190,6 +190,29 @@ router.get('/accounts/accounts-start-page-r1', function (req, res) {
 
 
 
+// Abbreviated accounts - Does your accounting period end on or before 31 December 2015?
+
+router.get('/accounts/accounts-start-page-abbreviated', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var abbreviateddates = req.query.abbreviateddates;
+
+  if (abbreviateddates == "No"){
+
+    // redirect to the relevant page
+    res.redirect("/accounts/accounts-start-page-abbreviated-unable");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('accounts/accounts-start-page-abbreviated');
+
+  }
+
+});
+
+
+
 // Resume accounts (from CHS profile when logged back in)
 
 router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
