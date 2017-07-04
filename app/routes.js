@@ -190,6 +190,28 @@ router.get('/accounts/accounts-start-page-r1', function (req, res) {
 
 
 
+
+
+// CHS Release 1 question (on CHS accounts chooser)
+
+router.get('/chs/chs-alternative-abridged-filing-options', function (req, res) {
+
+  var chooserR1 = req.query.chooserR1;
+
+  if (chooserR1 == "Yes"){
+
+    res.redirect("/accounts/accounts-start-page-abridged");
+
+  } else {
+
+    res.render('chs/chs-alternative-abridged-filing-options');
+
+  }
+
+});
+
+
+
 // Abbreviated accounts - Does your accounting period end on or before 31 December 2015?
 
 router.get('/accounts/accounts-start-page-abbreviated', function (req, res) {
