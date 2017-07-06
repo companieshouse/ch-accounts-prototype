@@ -1,8 +1,20 @@
 {%- extends "layout-chs.html" %} {% block page_title %} Review your filing {%
 endblock %} {% block content %}
 <link href=
-"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel=
-"stylesheet">
+"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){  //Only show the button if javascript is on
+  $('.no-delete').on('click', function(){
+      $(this).parent().parent().remove();
+  });
+});
+</script>
+
+
+
 <main class="two-column-accounts" id="content" role="main">
 	{% include "includes/phase_banner_beta.html" %} <a class="link-back" href=
 	"javascript:history.back()" id="back">Back</a>
