@@ -1,4 +1,61 @@
 //Hide these elements
-.phase-banner-alpha, nav.content {
+nav.content,
+a.menu,
+a.link-back,
+.mobile-only-label,
+a.button
+{
   display:none;
+}
+
+//Hide number spinners
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  text-align: right;
+}
+input[type='number'] {
+  -moz-appearance:textfield;
+  text-align: right;
+}
+//Ensure balance sheet etc maintain columns
+.two-column-accounts .column-half, .two-column-accounts .column-one-half {
+  float: left;
+  width: 50%;
+  display:inline-block;
+}
+.two-column-accounts .column-quarter, .two-column-accounts .column-one-quarter {
+  float: left;
+  width: 25%;
+  display:inline-block;
+}
+.two-column-accounts .column-third, .two-column-accounts .column-one-third {
+  float: left;
+  width: 33.3333%;
+  display:inline-block;
+}
+.two-column-accounts .column-two-thirds {
+  float: left;
+  width: 66.6667%;
+  display:inline-block;
+}
+.two-column-accounts .grid-row {
+  display:block;
+}
+//Reduce font sizes where appropriate
+#accounts-header h2,
+p.warning,
+strong.no-help {
+  font-size: 12px;
+}
+#balance-sheet h2, #balance-sheet h3 {
+  font-size: 14px;
+}
+#balance-sheet .grid-row {
+  margin:0 0 20px;
+  display: block;
+  clear:both;
 }
