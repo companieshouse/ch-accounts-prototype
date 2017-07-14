@@ -211,6 +211,43 @@ router.get('/chs/chs-alternative-abridged-filing-options', function (req, res) {
 });
 
 
+// CHS Release 1 question (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)
+
+router.get('/accounts/accounts-start-page', function (req, res) {
+
+  var chsR1 = req.query.chsR1;
+
+  if (chsR1 == "No"){
+
+    res.redirect("/chs/chs-alternative-abridged-filing-options");
+
+  } else {
+
+    res.render('accounts/accounts-start-page');
+
+  }
+
+});
+
+// CHS confirm accounts type (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)
+
+router.get('/chs/chs-choose-accounts-after-chs-profile', function (req, res) {
+
+  var confirmtype = req.query.confirmtype;
+
+  if (confirmtype == "Yes"){
+
+    res.redirect("/accounts/accounts-start-page");
+
+  } else {
+
+    res.render('chs/chs-choose-accounts-after-chs-profile');
+
+  }
+
+});
+
+
 
 // Abbreviated accounts - Does your accounting period end on or before 31 December 2015?
 
