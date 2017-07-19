@@ -170,22 +170,10 @@ router.get('/accounts/accounts-start-page-abridged-direct', function (req, res) 
 // CHS Release 1 question (no company search - directly into accounts)
 
 router.get('/accounts/accounts-start-page-r1', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
   var chsr1 = req.query.chsr1;
-
-  if (chsr1 == "No"){
-
-    // redirect to the relevant page
-    res.redirect("/chs/chs-alternative-abridged-filing-options");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-r1');
-
-  }
-
+  if (chsr1 == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
+  else if (chsr1 == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
+  else {res.render('accounts/accounts-start-page-r1');}
 });
 
 
@@ -195,18 +183,10 @@ router.get('/accounts/accounts-start-page-r1', function (req, res) {
 // CHS Release 1 question (on CHS accounts chooser)
 
 router.get('/chs/chs-alternative-abridged-filing-options', function (req, res) {
-
   var chooserR1 = req.query.chooserR1;
-
-  if (chooserR1 == "Yes"){
-
-    res.redirect("/accounts/accounts-start-page-abridged");
-
-  } else {
-
-    res.render('chs/chs-alternative-abridged-filing-options');
-
-  }
+  if (chooserR1 == "Yes"){res.redirect("/accounts/accounts-start-page-abridged");}
+  else if (chooserR1 == "Other"){res.redirect("/chs/chs-choose-accounts");}
+  else {res.render('chs/chs-alternative-abridged-filing-options');}
 
 });
 
@@ -214,19 +194,10 @@ router.get('/chs/chs-alternative-abridged-filing-options', function (req, res) {
 // CHS Release 1 question (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)
 
 router.get('/accounts/accounts-start-page', function (req, res) {
-
   var chsR1 = req.query.chsR1;
-
-  if (chsR1 == "No"){
-
-    res.redirect("/chs/chs-alternative-abridged-filing-options");
-
-  } else {
-
-    res.render('accounts/accounts-start-page');
-
-  }
-
+  if (chsR1 == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
+  else if (chsR1 == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
+  else {res.render('accounts/accounts-start-page');}
 });
 
 // CHS confirm accounts type (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)

@@ -55,11 +55,6 @@
 
 
 
-      <p>If you want to file other types of accounts (micro-entity, abbreviated, full, or dormant), use  <a href="/webfiling/webfiling-login-page-chs-search">our WebFiling service</a>.</p>
-
-      <div class="panel panel-border-wide text">
-        <p>  If you’re not sure which types of accounts you want to file, you may want to ask an accountant.</p>
-      </div>
 
 
 
@@ -75,12 +70,7 @@
           <li>you just need to supply an 'accounting policies' note (and, if needed, a 'tangible assets' note and/or a 'creditors - amounts falling due within one year’ note)</li>
           <li>you don't need to change the date the accounts are made up to</li>
       </ul>
-            <p>Your company must also meet at least 2 of the following:</p>
-            <ul class="list list-bullet">
-              <li>turnover is not over £10.2 million</li>
-              <li>balance sheet total is not over £5.1 million</li>
-              <li>average number of employees is not over 50</li>
-            </ul>
+
 
 
 
@@ -88,7 +78,7 @@
 
           <form action="/accounts/accounts-start-page-no-gov-uk" method="get" class="form">
 
-              <fieldset class="inline" data-required="" data-error="Please confirm if your prepared abridged accounts meet the criteria">
+              <fieldset class="" data-required="" data-error="Please confirm if your prepared abridged accounts meet the criteria">
                 <div class="form-group">
 
                 <legend class="visually-hidden">Do your prepared abridged accounts meet the criteria?</legend>
@@ -99,12 +89,13 @@
                 </label>
                 <label class="block-label selection-button-radio" for="release1no">
                   <input id="release1no" type="radio" name="chsrelease1" value="No">
-                  No
+                  No - Show me other ways to file abridged accounts
                 </label>
-              </div><!--form-group-->
-
-            </fieldset>
-
+                <label class="block-label selection-button-radio" for="release1other">
+                  <input id="release1other" type="radio" name="chsrelease1" value="Other">
+                  No - I'll file other types of accounts
+                </label>
+                </div><!--form-group-->
 
 
 
