@@ -172,7 +172,7 @@ router.get('/accounts/accounts-start-page-abridged-direct', function (req, res) 
 router.get('/accounts/accounts-start-page-r1', function (req, res) {
   var chsr1 = req.query.chsr1;
   if (chsr1 == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
-  else if (chsr1 == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
+  else if (chsr1 == "Other"){res.redirect("/webfiling/webfiling-login-page-chs-search");}
   else {res.render('accounts/accounts-start-page-r1');}
 });
 
