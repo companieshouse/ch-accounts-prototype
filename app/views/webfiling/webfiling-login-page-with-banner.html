@@ -1,0 +1,168 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Sign in to Companies House
+{% endblock %}
+
+
+{% block content %}
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function toggleDiv(divId) {
+
+   $("#"+divId).toggle();
+
+}
+
+</script>
+
+
+<style type="text/css">
+#myContent{
+    display:none;
+}
+</style>
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+<div class="grid_3 alpha userMenu">
+        <p><a href="webfiling-register">Register</a></p>
+</div>
+
+        <div class="container-content login">
+
+        <div class="error message">
+          <p><a href="javascript:void(0)">Warning about bogus emails</a></p>
+        </div>
+        <div class="error message">
+          <p><a href="http://ow.ly/LJHpM">Warning - Latest scam re. Late Filing Penalty.</a></p>
+        </div>
+
+
+    <h1>Sign in to Companies House WebFiling</h1>
+
+
+
+
+
+         <div class="grid_6 alpha">
+
+
+
+
+        <form id="login" method="post" action="">
+            <label for="email">
+                <span>Email address</span>
+                <input class="" name="email" value="" maxlength="256" id="email" type="text">
+
+            </label>
+
+
+            <label for="seccode">
+                <span>Password</span>
+                <input class="" name="seccode" maxlength="32" id="seccode" type="password">
+
+            </label>
+
+            <a href="webfiling-company-auth" class="button positive regular"><strong>Sign in</strong></a>
+
+
+            <p class="margin-top-20"><a href="javascript:void(0)" class="">Forgotten your password?</a></p>
+
+
+
+
+
+
+
+
+        </form>
+
+                </div><!--End of div class="grid_8 alpha"-->
+
+                <div class="grid_5 omega">
+
+                <p><strong>Use Companies House WebFiling to:</strong></p>
+                <ul style="padding-left:0;">
+                <li>file your company's confirmation statement (annual return)</li>
+                <li>file your company's annual accounts</li>
+                <li>file your company's director or secretary changes and other information</li>
+
+                </ul>
+                   <p><a href="javascript:void(0)" class="">Who can use WebFiling?</a></p>
+
+
+                </div>    <!--End of div class="grid_5 omega"-->
+
+                <!--  <div class="clear"></div>
+                  <div class="message warning">
+                  <p><strong>Accounts</strong><br>
+                    The Companies Act 2006 no longer permits companies to file abbreviated accounts.</p>
+                    <p>Your company will need to file accounts of a different type (full accounts, micro-entity accounts,<br> or <a href="/chs/chs-start-page">abridged accounts on the new Companies House service<span class="hidden"> Link opens in new tab/window</span></a>).</p>
+                  </div>-->
+                  <div class="clear"></div>
+                  <div class="message warning">
+                  <h2 class="margin-left-5 margin-top-5">Private BETA announcement for Abridged Accounts filing service</h2>
+                  <p>As a user of our WebFiling service you may be aware of changes in legislation that means you can no longer file abbreviated accounts for accounts covering the 1st of January 2016, onwards.</p>
+                  <p class="margin-bottom-20">You may also be aware that there is a new type of accounts that are quite similar, abridged accounts, that are coming into legislation in the near future.</p>
+
+                  <p style="margin-bottom:10px !important;"><a href="javascript:toggleDiv('myContent');" class="button positive regular">More information</a></p>
+
+                  <div id="myContent" class="margin-left-5">
+
+                    <p style="margin-top:20px;">You can file abridged accounts via our online service if:</p>
+                    <ul>
+                      <li>your accounting period starts on or after 1 January 2016</li>
+                      <li>your balance sheet doesn’t include 'intangible assets', 'fixed asset investments' or 'revaluation reserve'</li>
+                      <li>you just need to supply an 'accounting policies' note (and, if needed, a 'tangible assets' note and/or a 'creditors - amounts falling due within one year’ note)</li>
+                      <li>you don't need to change the date the accounts are made up to</li>
+                    </ul>
+                    <h3 class="margin-left-5" style="margin-top:20px;">How to register, use and get help with the service</h3>
+                    <p>If you’d like to use the private BETA service, send an email to <a href="mailto:privatebeta@companieshouse.gov.uk">privatebeta@companieshouse.gov.uk</a> and we’ll get back in touch to advise you of the next steps. This is also the email you can make further correspondence to should you require help with our service.</p>
+
+                  </div>
+        </div><!--End of div class="grid_12 omega"-->
+    <div class="clear"></div>
+</div>
+
+<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+<a id="i18nLink" href="javascript:void(0)" class="language">Cymraeg</a>
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+
+
+
+</div>
+{% endblock %}
