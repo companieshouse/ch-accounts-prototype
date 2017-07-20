@@ -41,35 +41,36 @@
         <div id="view1" class="view active">
           <!-- Homepage -->
           <!-- <div class="grid-row">-->
-          <div class="column-full-width">
             <form id="search" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
+              <div class="text">
+
               <h1 class="heading-xlarge">
                 <label class="" for="site-search-text">
-                  Which company are you filing abridged accounts for?
+                  Which company are you filing for?
                 </label>
               </h1>
               <p>Enter company name or number</p>
+            </div>
               <h2 class="heading-small form-hint">
                 <label for="site-search-text" class="hidden">You can search on company name, company number, or officer name</label>
               </h2>
-              <div class="searchfield search-bar-active">
-                <input type="search" autocomplete="off" name="q" id="site-search-text" placeholder="" autofocus class="js-search-focus " />
+              <div class="searchfield search-bar-active" style="width:75%;">
+                <input type="search" autocomplete="off" name="q" id="site-search-text" placeholder="" autofocus class="js-search-focus" style="width:89%;" />
                 <a href="#" id="search-submit" class="search-submit enable-view2 button">Search</a>
                 <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
               </div>
             </form>
-          </div>
-          <!--</div>-->
+         <!--</div>-->
 
         </div>
 
 
         <div id="view2" class="view">
           <!-- Search Results -->
-          <div class="search-bar-active form-group">
+          <div class="search-bar-active form-group" style="width:75%;">
             <form id="search-active" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
               <div class="searchfield">
-                <input type="search" autocomplete="off" name="q" id="site-search-active-text" placeholder="" value="Test company" class="js-search-focus" />
+                <input type="search" autocomplete="off" name="q" id="site-search-active-text" placeholder="" value="Test company" class="js-search-focus"  style="width:89%;" />
                 <a href="#" id="search-active-submit" class="search-submit button">Search</a>
               </div>
             </form>
