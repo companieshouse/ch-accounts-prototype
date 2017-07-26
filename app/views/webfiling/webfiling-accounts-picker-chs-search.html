@@ -7,17 +7,25 @@
 
 {% block content %}
 
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function toggleDiv(divId) {
+
+   $("#"+divId).toggle();
+
+}
+
+</script>
+
+
 <style type="text/css">
-.bubble {
-  display:inline;
-  background-color:#006699;
-  color:white;
-  padding:0.2em .5em;
-  float:right;
-  border-radius: 15px;
-  position:relative;
-  top:20px;
-  margin-top:-30px;}
+#myContent{
+    display:none;
+}
 </style>
 
 
@@ -73,10 +81,36 @@
     <p class="answer">31 December 2017</p></section>
 
     <div class="message warning">
-    <h2 class="margin-left-5 margin-top-5">You can no longer file abbreviated accounts</h2>
-    <p>Changes in Company Law have withdrawn the option for filing abbreviated accounts for accounting periods starting on or after 1st January 2016.</p>
-    <p>Instead, choose the type of accounts that satisfies the business requirements for this company and the amount of information which will be publicly available.</p>
-    </div>
+      <h2 class="margin-left-5 margin-top-5 margin-bottom-0">You can no longer file abbreviated accounts</h2>
+      <p>Changes in Company Law have withdrawn the option for filing abbreviated accounts for accounting periods starting on or after 1st January 2016.</p>
+      <p>Instead, choose the type of accounts that satisfies the business requirements for this company and the amount of information which will be publicly available.</p>
+
+    <h2 class="margin-left-5 margin-top-20 margin-bottom-0">Try the new abridged accounts filing </h2>
+    <p class="margin-bottom-10">We’re launching a new private beta service which would allow you to file <a href="https://companieshouse.blog.gov.uk/2016/10/06/accounts-advice-for-small-companies/" target="_blank">abridged accounts</a>.</p>
+
+    <p style="margin-bottom:10px !important;"><a href="javascript:toggleDiv('myContent');" class="button positive regular">More information</a></p>
+
+      <div id="myContent" class="margin-left-5">
+
+      <p>You can try the new service if:</p>
+      <ul class="margin-bottom-1">
+        <li>your accounting period starts on or after 1 January 2016</li>
+        <li>your balance sheet doesn’t include 'intangible assets', 'fixed asset investments' or 'revaluation reserve'</li>
+        <li>you just need to supply an 'accounting policies' note (and, if needed, a 'tangible assets' note and/or a 'creditors - amounts falling due within one year’ note)</li>
+        <li>you don't need to change the date the accounts are made up to</li>
+      </ul>
+      <p>At least 2 of these must also apply to the company:</p>
+      <ul class="margin-bottom-1">
+        <li>turnover is no more than £10.2 million</li>
+        <li>balance sheet total is no more than £5.1 million</li>
+        <li>average number of employees is no more than 50</li>
+      </ul>
+        <h3 class="margin-left-5" style="margin-top:20px;">Register your interest</h3>
+        <p>If you meet the criteria and would like to try the new service, send an email to <a href="mailto:privatebeta@companieshouse.gov.uk">privatebeta@companieshouse.gov.uk</a> and we’ll get back to you.</p>
+
+      </div><!--myContent-->
+
+    </div><!--message warning-->
 
     <div class="accountsPicker">
 
@@ -91,7 +125,6 @@
       </ul>
       </a>
 
-    <span class="bubble">New</span>
       <a href="/webfiling/webfiling-before-chs-search" class="largeFont"><span id="abridgedccounts">Abridged accounts</span>
         Must meet at least 2 of the following:
         <ul style="margin-left:-2em;">
