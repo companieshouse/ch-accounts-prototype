@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-Balance sheet notes - Current assets investments
+Balance sheet notes - Current investments
 {% endblock %}
 
 {% block content %}
@@ -33,15 +33,15 @@ Balance sheet notes - Current assets investments
   <div class="text">
     <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
       Balance sheet notes
-      <span class="circle-subheading">Current assets investments</span>
+      <span class="circle-subheading">Current investments</span>
     </h1>
 
     <div class="left-indent">
-    <h2 class="heading-medium">Do your prepared accounts include a 'current assets investments' note?</h2>
+    <h2 class="heading-medium">Do your prepared accounts include a 'current investments' note?</h2>
 
     <form action="/accounts/accounts-review" method="get" class="form">
-          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'current assets investments' note">
-                  <legend class="visually-hidden">Do your prepared accounts include a "'current assets investments' note?</legend>
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'current investments' note">
+                  <legend class="visually-hidden">Do your prepared accounts include a 'current investments' note?</legend>
                   <div class="form-group">
 
                   <label class="block-label selection-button-radio" for="currentassetnoteyes" data-target="currentassetnoteyes-reveal">
@@ -59,7 +59,7 @@ Balance sheet notes - Current assets investments
 
 
             <div class="panel panel-border-narrow" id="currentassetnoteyes-reveal">
-              <label class="visuallyhidden" for="textarea">Fixed assets investments note</label>
+              <label class="visuallyhidden" for="textarea">Current investments note</label>
               <p class="form-hint">Use this note to record information about current asset investments, which are those held with the intention of being traded in the short term, for example shares in quoted companies intended to be traded.</p>
               <textarea type="text" id="textarea" class="form-control" rows="10">All investments (properties/shares purchased in 2016) are measured at fair market value.</textarea>
               </div>
