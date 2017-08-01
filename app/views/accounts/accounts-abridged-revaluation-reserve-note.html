@@ -1,0 +1,127 @@
+{% extends "layout-chs.html" %} {% block page_title %} Tangible assets note {% endblock %} {% block content %}
+<main class="two-column-accounts" id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<nav class="content" role="navigation">
+		<ul class="mobile-hidden" id="navigation">
+			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+			</li>
+			<li>
+				<a href="javascript:void(0)">Your details</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="">Companies you follow</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="user-signout">Sign out</a>
+			</li>
+		</ul>
+	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
+	<h1 class="heading-xlarge">
+		<span class="circle circle-step-large">3</span> Balance sheet notes <span class="circle-subheading">Revaluation reserve</span>
+	</h1>
+	<div class="left-indent">
+		<div class="panel panel-border-wide">
+			<p>
+				Use this note to provide information about the revaluation reserve value from your balance sheet.
+			</p>
+		</div><br>
+		<form action="/" class="form" id="" method="post" name="">
+			<div class="grid-row" id="accounts-header">
+				<div class="column-half">
+					<h2 class="heading-medium">
+						&nbsp;
+					</h2>
+				</div>
+				<div class="column-quarter">
+					<h2 class="heading-small">
+						£
+					</h2>
+				</div>
+				<div class="column-quarter">
+					<h2 class="heading-small"></h2>
+				</div>
+			</div>
+
+			<!--Start "At start of period"  -->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">At start of period</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac gravida ligula. Integer euismod at lectus nec faucibus. Aliquam mi mauris, lacinia at dui a, mollis malesuada purus.</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="revaluation-reserve-start"><span class="visuallyhidden">At start of period</span>
+            <input class="form-control" id="revaluation-reserve-start" type="number" value="100" readonly=""></label>
+					</div>
+			</div>
+		</div><!--grid-row-->
+		<!--End "At start of period"  -->
+
+
+			<!--Start "Surplus or deficit arising from revaluation-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Surplus or deficit arising from revaluation</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac gravida ligula. Integer euismod at lectus nec faucibus. Aliquam mi mauris, lacinia at dui a, mollis malesuada purus.</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="revaluation-reserve-surplus"><span class="visuallyhidden">Surplus or deficit arising from revaluation</span>
+            <input class="form-control" id="revaluation-reserve-surplus" type="number"></label>
+					</div>
+			</div>
+		</div><!--grid-row-->
+		<!--End "Surplus or deficit arising from revaluation"-->
+
+			<!--Start "At end of period"-->
+			<div class="grid-row">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">At end of period</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac gravida ligula. Integer euismod at lectus nec faucibus. Aliquam mi mauris, lacinia at dui a, mollis malesuada purus.</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="revaluation-reserve-end"><span class="visuallyhidden">At end of period</span>
+            <input class="form-control" id="revaluation-reserve-end" type="number"></label>
+					</div>
+				</div>
+			</div><!--grid-row-->
+			<!--End "At end of period"-->
+
+			<details class="accounts-row-spacer text">
+				<summary>
+					<span class="summary">Add additional information? (optional)</span>
+				</summary>
+				<div class="panel panel-border-narrow">
+					<label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+					<textarea class="form-control" id="textarea" rows="10"></textarea>
+				</div>
+			</details>
+
+			<div class="form-group accounts-row-spacer">
+				<a class="button" href="/accounts/accounts-abridged-other-notes-yes-no">Next</a>
+			</div>
+		</form>
+	</div><!--left-indent-->
+</main>{% endblock %}

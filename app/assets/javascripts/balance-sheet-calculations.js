@@ -4,8 +4,8 @@ $(document).ready(function() {
        var intangibleassetscurrent = $('#intangible-assets-current').val();
        var tangibleassetscurrent = $('#tangible-assets-current').val();
        var investmentsfixedassetscurrent = $('#investments-fixed-assets-current').val();
-      // var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent;
-       var total = tangibleassetscurrent; //For Release 1 only, when we only want tangible assets
+       var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent;
+      // var total = tangibleassetscurrent; //For Release 1 only, when we only want tangible assets
 
        $('#total-fixed-assets-current').val(total);
      }
@@ -18,8 +18,8 @@ $(document).ready(function() {
        var intangibleassetsprevious = $('#intangible-assets-previous').val();
        var tangibleassetsprevious = $('#tangible-assets-previous').val();
        var investmentsfixedassetsprevious = $('#investments-fixed-assets-previous').val();
-       //var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious;
-       var total = tangibleassetsprevious; //For Release 1 only, when we only want tangible assets
+       var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious;
+       //var total = tangibleassetsprevious; //For Release 1 only, when we only want tangible assets
 
        $('#total-fixed-assets-previous').val(total);
      }
@@ -78,16 +78,18 @@ $(document).ready(function() {
 // Total assets less current liabilities (current year))
 $(document).ready(function() {
   function compute() {
+    var intangibleassetscurrent = $('#intangible-assets-current').val();
     var tangibleassetscurrent = $('#tangible-assets-current').val();
+    var investmentsfixedassetscurrent = $('#investments-fixed-assets-current').val();
     var stockscurrent = $('#stocks-current').val();
     var debtorscurrent = $('#debtors-current').val();
     var cashatbankandinhandcurrent = $('#cash-at-bank-and-in-hand-current').val();
     var investmentscurrentassetscurrent = $('#investments-current-assets-current').val();
     var creditorsamountsfallingduewithinoneyearcurrent = $('#creditors-amounts-falling-due-within-one-year-current').val();
-    var total = +tangibleassetscurrent + +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent;
+    var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent + +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent;
    $('#total-assets-less-current-liabilities-current').val(total);
      }
-     $('#tangible-assets-current, #stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current, #investments-current-assets-current, #creditors-amounts-falling-due-within-one-year-current').change(compute);
+     $('#intangible-assets-current, #tangible-assets-current, #investments-current-assets-current, #stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current, #investments-current-assets-current, #creditors-amounts-falling-due-within-one-year-current').change(compute);
 });
 
 // Total assets less current liabilities (previous year))
@@ -104,7 +106,9 @@ $(document).ready(function() {
 //Total net assets (liabilities)  (current year)
 $(document).ready(function() {
   function compute() {
+        var intangibleassetscurrent = $('#intangible-assets-current').val();
         var tangibleassetscurrent = $('#tangible-assets-current').val();
+        var investmentsfixedassetscurrent = $('#investments-fixed-assets-current').val();
         var stockscurrent = $('#stocks-current').val();
         var debtorscurrent = $('#debtors-current').val();
         var cashatbankandinhandcurrent = $('#cash-at-bank-and-in-hand-current').val();
@@ -112,10 +116,10 @@ $(document).ready(function() {
         var creditorsamountsfallingduewithinoneyearcurrent = $('#creditors-amounts-falling-due-within-one-year-current').val();
         var creditorsamountsfallingdueaftermorethanoneyearcurrent = $('#creditors-amounts-falling-due-after-more-than-one-year-current').val();
         var provisionforliabilitiescurrent = $('#provision-for-liabilities-current').val();
-       var total = +tangibleassetscurrent + +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent - +creditorsamountsfallingdueaftermorethanoneyearcurrent - +provisionforliabilitiescurrent;
+       var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent + +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent - +creditorsamountsfallingdueaftermorethanoneyearcurrent - +provisionforliabilitiescurrent;
        $('#total-net-assets-liabilities-current').val(total);
      }
-     $('#tangible-assets-current, #stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current, #investments-current-assets-current, #creditors-amounts-falling-due-within-one-year-current, #creditors-amounts-falling-due-after-more-than-one-year-current, #provision-for-liabilities-current').change(compute);
+     $('#intangible-assets-current, #tangible-assets-current, #investments-current-assets-current, #stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current, #investments-current-assets-current, #creditors-amounts-falling-due-within-one-year-current, #creditors-amounts-falling-due-after-more-than-one-year-current, #provision-for-liabilities-current').change(compute);
 });
 
 //Total net assets (liabilities)  (previous year)
@@ -138,8 +142,8 @@ $(document).ready(function() {
        var revaluationreservecurrent = $('#revaluation-reserve-current').val();
        var otherreservescurrent = $('#other-reserves-current').val();
        var profitandlossaccountcurrent = $('#profit-and-loss-account-current').val();
-       //var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +revaluationreservecurrent + +otherreservescurrent + +profitandlossaccountcurrent;
-       var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +otherreservescurrent + +profitandlossaccountcurrent; // For Release 1 only, when we don't ask for revaluation reserve
+       var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +revaluationreservecurrent + +otherreservescurrent + +profitandlossaccountcurrent;
+       //var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +otherreservescurrent + +profitandlossaccountcurrent; // For Release 1 only, when we don't ask for revaluation reserve
        $('#total-shareholders-funds-current').val(total);
      }
      $('#called-up-share-capital-current, #share-premium-account-current, #revaluation-reserve-current, #other-reserves-current, #profit-and-loss-account-current').change(compute);
@@ -153,8 +157,8 @@ $(document).ready(function() {
        var revaluationreserveprevious = $('#revaluation-reserve-previous').val();
        var otherreservesprevious = $('#other-reserves-previous').val();
        var profitandlossaccountprevious = $('#profit-and-loss-account-previous').val();
-       //var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +revaluationreserveprevious + +otherreservesprevious + +profitandlossaccountprevious;
-       var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +otherreservesprevious + +profitandlossaccountprevious; // For Release 1 only, when we don't ask for revaluation reserve
+       var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +revaluationreserveprevious + +otherreservesprevious + +profitandlossaccountprevious;
+       //var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +otherreservesprevious + +profitandlossaccountprevious; // For Release 1 only, when we don't ask for revaluation reserve
 
        $('#total-shareholders-funds-previous').val(total);
      }

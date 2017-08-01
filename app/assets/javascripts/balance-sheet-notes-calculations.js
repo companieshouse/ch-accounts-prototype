@@ -51,6 +51,17 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // Intangible assets note: Cost AT END
 $(document).ready(function() {
   function compute() {
@@ -58,11 +69,11 @@ $(document).ready(function() {
        var intangiblecostadditions = $('#intangible-cost-additions').val();
        var intangiblecostdisposals = $('#intangible-cost-disposals').val();
        var intangiblecostrevaluations = $('#intangible-cost-revaluations').val();
-       var intangiblecosttransfers = $('#intangiblecosttransfers').val();
+       var intangiblecosttransfers = $('#intangible-cost-transfers').val();
        var total = +intangiblecostatstart + +intangiblecostadditions + +intangiblecostdisposals + +intangiblecostrevaluations + +intangiblecosttransfers;
        $('#intangible-cost-at-end').val(total);
      }
-     $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-revaluations, #intangiblecosttransfers').change(compute);
+     $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-revaluations, #intangible-cost-transfers').change(compute);
 });
 
 // Intangible assets note: Amortisation AT END
@@ -104,12 +115,12 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   function compute() {
-      var revaluationbalanceatstart = $('#revaluation-balance-at-start').val();
-      var surplusordeficitarisingfromrevaluation = $('#surplus-or-deficit-arising-from-revaluation').val();
+      var revaluationbalanceatstart = $('#revaluation-reserve-start').val();
+      var surplusordeficitarisingfromrevaluation = $('#revaluation-reserve-surplus').val();
        var total = +revaluationbalanceatstart + +surplusordeficitarisingfromrevaluation;
-       $('#revaluation-balance-at-end').val(total);
+       $('#revaluation-reserve-end').val(total);
      }
-     $('#revaluation-balance-at-start, #surplus-or-deficit-arising-from-revaluation').change(compute);
+     $('#revaluation-reserve-start, #revaluation-reserve-surplus').change(compute);
 });
 
 
