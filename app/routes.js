@@ -172,7 +172,7 @@ router.get('/accounts/accounts-start-page-abridged-direct', function (req, res) 
 router.get('/accounts/accounts-start-page-r1', function (req, res) {
   var chsr1 = req.query.chsr1;
   if (chsr1 == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
-  else if (chsr1 == "Other"){res.redirect("/webfiling/webfiling-login-page-chs-search");}
+  else if (chsr1 == "Other"){res.redirect("/accounts/accounts-start-page-general");}
   else {res.render('accounts/accounts-start-page-r1');}
 });
 
@@ -199,6 +199,35 @@ router.get('/accounts/accounts-start-page', function (req, res) {
   else if (chsR1 == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
   else {res.render('accounts/accounts-start-page');}
 });
+
+
+// CHS Release 1 question (user ineligible to file Abridged ON THE COMPANIES HOUSE SERVICE)
+
+
+router.get('/chs/chs-alternative-abridged-filing-options-not-eligible', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var r1dates = req.query.r1dates;
+
+  if (r1dates == "other"){
+
+    // redirect to the relevant page
+    res.redirect("/webfiling/webfiling-login-page-chs-search");
+
+  } else {
+
+    // if over18 is any other value (or is missing) render the page requested
+    res.render('chs/chs-alternative-abridged-filing-options-not-eligible');
+
+  }
+
+});
+
+
+
+
+
+
 
 // CHS confirm accounts type (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)
 
