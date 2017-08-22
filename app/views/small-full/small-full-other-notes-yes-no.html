@@ -1,0 +1,69 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - Employees
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+{% include 'includes/error.html' %}
+
+
+<h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
+  Balance sheet notes
+  <span class="circle-subheading">Any other notes</span>
+</h1>
+
+<div class="left-indent">
+<h2 class="heading-medium">
+  Do your prepared accounts include any other notes?
+  <span class="form-hint">For example, X', 'Y' or 'Z'</span>
+</h2>
+
+
+
+
+<form action="/accounts/accounts-abridged-employees-yes-no" method="get" class="form">
+    <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include any other notes">
+      <div class="form-group">
+
+      <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+      <label class="block-label selection-button-radio" for="othernotesyes">
+        <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="othernotesno">
+        <input id="othernotesno" type="radio" name="othernotes" value="No">
+        No
+      </label>
+    </div>
+    </fieldset>
+
+  <div>
+    <input type="submit" class="button" value="Next" id="">
+  </div>
+
+<a href="/accounts/accounts-abridged-other-notes" style="float:right; color:#BFC1C3; font-size:14px;">Alternative</a>
+</div><!--left-indent-->
+
+
+</form>
+</main>
+{% endblock %}

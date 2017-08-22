@@ -1,0 +1,95 @@
+{% extends "layout-chs.html" %}
+ {% block page_title %}
+ Revaluation reserve note
+ {% endblock %}
+  {% block content %}
+<main class="two-column-accounts" id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<nav class="content" role="navigation">
+		<ul class="mobile-hidden" id="navigation">
+			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+			</li>
+			<li>
+				<a href="javascript:void(0)">Your details</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="">Companies you follow</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="user-signout">Sign out</a>
+			</li>
+		</ul>
+	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
+	<h1 class="heading-xlarge">
+		<span class="circle circle-step-large">5</span> Balance sheet notes <span class="circle-subheading">Revaluation reserve</span>
+	</h1>
+	<div class="left-indent">
+		<div class="panel panel-border-wide">
+			<p>Use this note to record how much assets have changed in value due to being revalued.</p>
+			<p>Complete all items that are included in your prepared accounts.</p>
+		</div>
+		<br>
+		<form action="/" class="form" id="" method="post" name="">
+
+
+			<!--Start Surplus or deficit after revaluatio-->
+			<div class="grid-row accounts-row-spacer">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Surplus or deficit after revaluation</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>Help text goes here</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">&nbsp;</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="surplus-deficit-previous">
+						<input class="form-control" id="surplus-deficit-previous" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Surplus or deficit after revaluatio-->
+			<!--Start Bank loans and overdrafts  -->
+			<div class="grid-row accounts-total">
+				<div class="column-half">
+					<details>
+						<summary>
+							<span class="summary">Balance at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>Help text goes here</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-quarter">&nbsp;</div>
+				<div class="column-quarter">
+					<div class="form-group">
+						<label for="bank-loans-end">
+						<input class="form-control" id="bank-loans-end" type="number"></label>
+					</div>
+				</div>
+			</div><!--End Balance at 31 March 2017 -->
+
+
+
+			<details class="accounts-row-spacer text">
+				<summary>
+					<span class="summary">Add additional information? (optional)</span>
+				</summary>
+				<div class="panel panel-border-narrow">
+					<label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+					<textarea class="form-control" id="textarea" rows="10"></textarea>
+				</div>
+			</details>
+			<div class="form-group accounts-row-spacer">
+				<a class="button" href="/small-full/small-full-other-notes-yes-no">Next</a>
+			</div>
+		</form>
+	</div><!--left-indent-->
+</main>{% endblock %}

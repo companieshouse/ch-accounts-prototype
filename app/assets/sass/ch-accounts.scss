@@ -464,3 +464,21 @@ img.card-image {
   padding-top: 2px;
   vertical-align: middle;
 }
+
+
+
+
+// Small-Full accounys styling
+
+//Column sixth (for detailed Tangible asset notes)
+.column-sixth, .column-one-sixth {
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+.column-sixth, .column-one-sixth {
+    float: left;
+    width: 12%;
+    @include media(mobile) {
+      width: 100%;
+    }
+}

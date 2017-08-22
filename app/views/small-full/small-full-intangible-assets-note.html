@@ -1,0 +1,560 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Intangible assets note
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+<h1 class="heading-xlarge">
+  <span class="circle circle-step-large">5</span> Balance sheet notes <span class="circle-subheading">Intangible assets</span>
+</h1>
+<div class="left-indent">
+  <div class="panel panel-border-wide">
+    <p>
+      Use this note to provide information about the intangible assets value from your balance sheet.
+    </p>
+    <p>
+      Complete all items that are included in your prepared accounts.
+    </p>
+  </div><br>
+
+
+
+  <form action="/" method="post" class="form" id="">
+
+
+    <div class="grid-row" id="accounts-header">
+      <div class="column-quarter">
+        <h2 class="heading-medium" style="text-align:left;">
+          Cost
+        </h2><!-- To do - move this style into the SASS file-->
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">Goodwill<br />£</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">Other<br />£</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">Total<br />£</h2>
+      </div>
+    </div>
+
+  <!--Start Cost at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-quarter">
+        <details>
+          <summary><span class="summary">Cost at 1 April 2016</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total cost or valuation of all intangible assets at the start of the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="cost-start-goodwill"><span class="mobile-only-label">Cost at 1 April 2016 - Goodwill</span>
+          <input type="number" class="form-control" id="cost-start--goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="cost-start-other"><span class="mobile-only-label">Cost at 1 April 2016 - Other</span>
+          <input type="number" class="form-control" id="cost-start-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="cost-start-total"><span class="mobile-only-label">Cost at 1 April 2016 - Total</span>
+          <input type="number" class="form-control" id="cost-start-total" readonly>
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Cost at start-->
+
+  <!--Start Additions  -->
+  <div class="grid-row">
+    <div class="column-quarter">
+        <details>
+          <summary><span class="summary">Additions</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cost of all intangible assets acquired during the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="additions-goodwill"><span class="mobile-only-label">Additions - Goodwill</span>
+          <input type="number" class="form-control" id="additions-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="additions-other"><span class="mobile-only-label">Additions - Other</span>
+          <input type="number" class="form-control" id="additions-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="additions-total"><span class="mobile-only-label">Additions - Total</span>
+          <input type="number" class="form-control" id="additions-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Additions  -->
+
+  <!--Start Disposals-->
+  <div class="grid-row">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Disposals</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The cost or valuation (at the date of disposal) of all intangible assets that were disposed of (for example, sold) during the period you're filing for.</p>
+      </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="disposals-goodwill"><span class="mobile-only-label">Disposals - Goodwill</span>
+          <input type="number" class="form-control" id="disposals-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="disposals-other"><span class="mobile-only-label">Disposals - Other</span>
+          <input type="number" class="form-control" id="disposals-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="disposals-total"><span class="mobile-only-label">Disposals - Total</span>
+          <input type="number" class="form-control" id="disposals-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Disposals--->
+
+
+
+
+  <!--Start Revaluations-->
+  <div class="grid-row">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Revaluations</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The valuation figure of all assets revalued during the financial period.</p>
+          <p>If the revaluation results in a reduction in the value of the asset, then enter a negative figure using a minus sign.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="revaluations-goodwill"><span class="mobile-only-label">Revaluations - Goodwill</span>
+          <input type="number" class="form-control" id="revaluations-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="revaluations-other"><span class="mobile-only-label">Revaluations - Other</span>
+          <input type="number" class="form-control" id="revaluations-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="revaluations-total"><span class="mobile-only-label">Revaluations - Total</span>
+          <input type="number" class="form-control" id="revaluations-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Revaluations--->
+
+
+  <!--Start Transfers-->
+  <div class="grid-row">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Transfers</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The cost or valuation of all intangible assets that have been transferred during the period you're filing for. If the asset is being transferred out, enter a negative figure using a minus sign.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="transfers-goodwill"><span class="mobile-only-label">Transfers - Goodwill</span>
+          <input type="number" class="form-control" id="transfers-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="transfers-other"><span class="mobile-only-label">Transfers - Other</span>
+          <input type="number" class="form-control" id="transfers-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="transfers-total"><span class="mobile-only-label">Transfers - Total</span>
+          <input type="number" class="form-control" id="transfers-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Transfers-->
+
+  <!--Start Cost at end-->
+  <div class="grid-row accounts-total">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Cost at 31 March 2017</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total cost or valuation of all intangible assets at the end of the period you're filing for. This is calculated by adding additions, revaluations and transfers to the cost or valuation of the assets at the start of the period, then subtracting any disposals.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="cost-end-goodwill"><span class="mobile-only-label">Cost at 31 March 2017 - Goodwill</span>
+          <input type="number" class="form-control" id="cost-end-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="cost-end-other"><span class="mobile-only-label">Cost at 31 March 2017 - Other</span>
+          <input type="number" class="form-control" id="cost-end-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="cost-end-total"><span class="mobile-only-label">Cost at 31 March 2017 - Total</span>
+          <input type="number" class="form-control" id="cost-end-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Cost at end--->
+
+  <h2 class="heading-medium">Amortisation
+    <span class="subheading text">Amortisation is the reduction in value of an intangible (non-physical) asset over its useful lifetime. It's similar to the depreciation value of a tangible (physical) asset.</span>
+  </h2>
+
+      <div class="grid-row" id="accounts-header">
+        <div class="column-quarter">&nbsp;</div>
+        <div class="column-quarter">
+          <h2 class="heading-small">Goodwill<br />£</h2>
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">Other<br />£</h2>
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">Total<br />£</h2>
+        </div>
+      </div>
+
+  <!--Start Amortisation at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-quarter">
+        <details>
+          <summary><span class="summary">Amortisation at 1 April 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total amortisation value of all intangible assets at the start of the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="amortisation-start-goodwill"><span class="mobile-only-label">Amortisation at 1 April 2015 - Goodwill</span>
+          <input type="number" class="form-control" id="amortisation-start-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="amortisation-start-other"><span class="mobile-only-label">Amortisation at 1 April 2015 - Other</span>
+          <input type="number" class="form-control" id="amortisation-start-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="amortisation-start-total"><span class="mobile-only-label">Amortisation at 1 April 2015 - Total</span>
+          <input type="number" class="form-control" id="amortisation-start-total" readonly>
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Amortisation at start-->
+
+
+
+  <!--Start Charge for year-->
+  <div class="grid-row">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Charge for year</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total amortisation charged against your profit for the period.</p>
+      </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="charge-for-year-goodwill"><span class="mobile-only-label">Charge for year - Goodwill</span>
+          <input type="number" class="form-control" id="charge-for-year-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="charge-for-year-other"><span class="mobile-only-label">Charge for year - Other</span>
+          <input type="number" class="form-control" id="charge-for-year-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="charge-for-year-total"><span class="mobile-only-label">Charge for year - Total</span>
+          <input type="number" class="form-control" id="charge-for-year-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Charge for year--->
+  <!--Start On disposals-->
+  <div class="grid-row">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">On disposals</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total amortisation value of all intangible assets that were disposed of (for example, sold) during the period you're filing for. This is the amortisation from the date each asset was acquired to the date of its disposal.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="on-disposals-goodwill"><span class="mobile-only-label">On disposals - Goodwill</span>
+          <input type="number" class="form-control" id="on-disposals-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="on-disposals-other"><span class="mobile-only-label">On disposals - Other</span>
+          <input type="number" class="form-control" id="on-disposals-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="on-disposals-total"><span class="mobile-only-label">On disposals - Total</span>
+          <input type="number" class="form-control" id="on-disposals-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End On disposals-->
+
+  <!--Start Other adjustments-->
+  <div class="grid-row">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Other adjustments</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Any other amortisation adjustment on all intangible assets.</p>
+      </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="other-adjustments-goodwill"><span class="mobile-only-label">Other adjustments- Goodwill</span>
+          <input type="number" class="form-control" id="other-adjustments-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="other-adjustments-other"><span class="mobile-only-label">Other adjustments - Other</span>
+          <input type="number" class="form-control" id="other-adjustments-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="other-adjustments-total"><span class="mobile-only-label">Other adjustments - Total</span>
+          <input type="number" class="form-control" id="other-adjustments-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Other adjustments-->
+
+  <!--Start Amortisation at end-->
+  <div class="grid-row accounts-total">
+    <div class="column-quarter">
+      <details>
+        <summary><span class="summary">Amortisation at 31 March 2017</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total amortisation value of all intangible assets at the end of the period you're filing for. This is calculated by adding intangible assets provided during the period, other adjustments and the amortisation value at the start of the period, then subtracting any disposals.</p>
+      </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="amortisation-end-goodwill"><span class="mobile-only-label">Amortisation at 31 March 2017 - Goodwill</span>
+          <input type="number" class="form-control" id="amortisation-end-goodwill">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="amortisation-end-other"><span class="mobile-only-label">Amortisation at 31 March 2017 - Other</span>
+          <input type="number" class="form-control" id="amortisation-end-other">
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter accounts-total">
+      <div class="form-group">
+        <label for="amortisation-end-total"><span class="mobile-only-label">Amortisation at 31 March 2017 - Total</span>
+          <input type="number" class="form-control" id="amortisation-end-total" readonly>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Amortisation at end--->
+    <h2 class="heading-medium">Net book value
+      <span class="subheading text">Net book value is the original cost of an asset minus any amortisation</span>
+    </h2>
+    <div class="grid-row" id="accounts-header">
+      <div class="column-quarter">&nbsp;</div>
+      <div class="column-quarter">
+        <h2 class="heading-small">Goodwill<br />£</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">Other<br />£</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">Total<br />£</h2>
+      </div>
+    </div>
+
+    <!--Start Amortisation at start-->
+    <div class="grid-row  accounts-total accounts-row-spacer">
+      <div class="column-quarter">
+          <details>
+            <summary><span class="summary">Net book value at 31 March 2017</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>The net book value of all intangible assets at the end of the period you're filing for. This is the total cost or valuation of all intangible assets at the end of the period, minus the total amortisation value of all intangible assets at the end of the previous period.</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="net-book-value-end-goodwill"><span class="mobile-only-label">Net book value at 31 March 2017 - Goodwill</span>
+            <input type="number" class="form-control" id="net-book-value-end-goodwill">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="net-book-value-end-other"><span class="mobile-only-label">Net book value at 31 March 2017- Other</span>
+            <input type="number" class="form-control" id="net-book-value-end-other">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter accounts-total">
+        <div class="form-group">
+          <label for="net-book-value-end-total"><span class="mobile-only-label">Net book value at 31 March 2017 - Total</span>
+            <input type="number" class="form-control" id="net-book-value-end-total" readonly>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End Amortisation at start-->
+
+    <!--Start Additions  -->
+    <div class="grid-row accounts-total">
+      <div class="column-quarter">
+          <details>
+            <summary><span class="summary">Net book value at 31 March 2016</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>The net book value of all intangible assets at the start of the period you're filing for. This is the total cost or valuation of all intangible assets at the start of the period, minus the total amortisation value of all intangible assets at the end of the previous period.</p>
+            </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="net-book-value-start-goodwill"><span class="mobile-only-label">Net book value at 31 March 2016 - Goodwill</span>
+            <input type="number" class="form-control" id="net-book-value-start-goodwill">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="net-book-value-start-other"><span class="mobile-only-label">Net book value at 31 March 2016 - Other</span>
+            <input type="number" class="form-control" id="net-book-value-start-other">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter accounts-total">
+        <div class="form-group">
+          <label for="net-book-value-start-total"><span class="mobile-only-label">Net book value at 31 March 2016 - Total</span>
+            <input type="number" class="form-control" id="net-book-value-start-total" readonly>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End Additions  -->
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Add additional information? (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="/small-full/small-full-tangible-assets-note">Next</a>
+      </div>
+
+</form>
+</main>
+{% endblock %}
