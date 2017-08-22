@@ -1,0 +1,84 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Directors' report - additional information
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">1</span> Directors' report <span class="circle-subheading">Additional information</span></h1>
+
+
+        <div class="left-indent">
+        <h2 class="heading-medium">Do your prepared accounts include an 'additional information' directors' report note?</h2>
+
+
+
+        <form action="/small-full/profit-and-loss-account" method="get" class="form">
+          <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include an 'additional information' directors' report note?">
+                  <legend class="visually-hidden">Do your prepared accounts include an 'additional information' directors' report note?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="directorsreportadditionalyes" data-target="directorsreportadditional-reveal">
+                    <input id="directorsreportadditionalyes" name="directorsreportadditionalyn" value="Yes" aria-controls="directorsreportadditional-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="directorsreportadditionalno">
+                    <input id="directorsreportadditionalno" name="directorsreportadditionalyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="directorsreportadditional-reveal">
+              <p class="form-hint">Add any other information you'd like to include in the directors' report, for example:</p>
+              <ul class="list list-bullet form-hint">
+                <li>if you insure directors against legal claims from third parties ('qualifying third party indemnity provision')</li>
+                <li>if the company bought its own shares from shareholders</li>
+              </ul>
+              <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+
+
+
+            </div><!--posteventsnoteyes-reveal-->
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div><!--left-indent-->
+    </div><!--text-->
+
+</main>
+{% endblock %}

@@ -411,6 +411,62 @@ router.get('/accounts/accounts-abridged-tangible-note-errors', function (req, re
 
 
 
+// Small full - does user want to include a directors report and/or a profit and loss account?
+
+
+router.get('/accounts/accounts-start-page-small-full', function (req, res) {
+
+  var smallfulldirectorsreport = req.query.smallfulldirectorsreport;
+  var smallfullprofitloss = req.query.smallfullprofitloss;
+
+  if (smallfulldirectorsreport == "No" & smallfullprofitloss == "No" ){
+    res.redirect("/accounts/accounts-start-page-small-full-no-director-no-profit");
+  }
+  else if (smallfulldirectorsreport == "No" & smallfullprofitloss == "Yes" ){
+    res.redirect("/accounts/accounts-start-page-small-full-no-director");
+  }
+  else if (smallfulldirectorsreport == "Yes" & smallfullprofitloss == "No" ){
+    res.redirect("/accounts/accounts-start-page-small-full-no-profit");
+  }
+  else {
+    res.render('accounts/accounts-start-page-small-full');
+  }
+
+});
+
+
+
+
+
+// Small full accounts - Directors' report
+
+
+router.get('/small-full/profit-and-loss-account', function (req, res) {
+  var directorsreport1 = req.query.directorsreport1;
+  if (directorsreport1 == "Yesnotes"){res.redirect("/small-full/directors-report-notes-principal");}
+  else if (directorsreport1 == "No"){res.redirect("/small-full/directors-report-changes");}
+  else {res.render('small-full/profit-and-loss-account');}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

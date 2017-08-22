@@ -1,0 +1,134 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Directors' report
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">1</span> Directors' report</h1>
+
+  </div><!--text-->
+
+    <form action="/small-full/profit-and-loss-account" method="get" class="form">
+
+      <div class="left-indent">
+
+        <table class="check-your-answers">
+          <thead>
+            <tr>
+              <th colspan="3"><h2 class="heading-medium">Directors at the end of the period</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Smith</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>David Smith</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colspan="3"><h2 class="heading-medium">Directors appointed during the period</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>David Smith</td>
+              <td>appointed 3 April 2017</td>
+              <td></td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colspan="3"><h2 class="heading-medium">Directors resigned during the period</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lisa Smith</td>
+              <td>resigned 3 April 2017</td>
+              <td></td>
+            </tr>
+          </tbody>
+
+          <thead>
+          <tr>
+            <th colspan="3"><h2 class="heading-medium">Company secretary</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arthur Smith</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="heading-medium">Are these details correct?</h2>
+
+        <fieldset class="" data-required="" data-error="Please confirm if the directors' report details are correct">
+              <legend class="visually-hidden">Are the directors' report details correct?</legend>
+              <div class="form-group">
+
+              <label class="block-label selection-button-radio" for="directorsreport1yesnotes">
+                <input id="directorsreport1yesnotes" name="directorsreport1" value="Yesnotes" type="radio">
+                Yes - but I need to include directors' report notes
+              </label>
+              <label class="block-label selection-button-radio" for="directorsreport1yesnonotes">
+                <input id="directorsreport1yesnonotes" name="directorsreport1" value="Yesnonotes" type="radio">
+                Yes  - I don't need to include directors' report notes
+              </label>
+              <label class="block-label selection-button-radio" for="directorsreport1no">
+                <input id="directorsreport1no" name="directorsreport1" value="No" type="radio">
+                No - I need to make changes
+                </label>
+              </div><!--form-group-->
+
+            </fieldset>
+
+
+                <div class="form-group">
+                  <input type="submit" class="button" value="Next" id="">
+                </div>
+
+            </form>
+          </div><!--left-indent-->
+
+
+</main>
+{% endblock %}

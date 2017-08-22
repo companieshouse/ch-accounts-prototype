@@ -1,0 +1,81 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Directors' report - political and charitable donations
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">1</span> Directors' report <span class="circle-subheading">Political and charitable donations</span></h1>
+
+
+        <div class="left-indent">
+        <h2 class="heading-medium">Do your prepared accounts include a 'political and charitable donations' directors' report note?</h2>
+
+
+
+        <form action="/small-full/directors-report-notes-disabled" method="get" class="form">
+          <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include a 'political and charitable donations' report note?">
+                  <legend class="visually-hidden">Do your prepared accounts include a 'political and charitable donations' directors' report note?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="directorsreportpoliticalyes" data-target="directorsreportpolitical-reveal">
+                    <input id="directorsreportpoliticalyes" name="directorsreportpoliticalyn" value="Yes" aria-controls="directorsreportpolitical-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="directorsreportpoliticalno">
+                    <input id="directorsreportpoliticalno" name="directorsreportpoliticalyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="directorsreportpolitical-reveal">
+              <p class="form-hint">The total charitable and political donations (including to non-EU parties) the company made in the period you're filing for. If political donations were over £2,000, give the name of the candidate or party who received the donations.</p>
+              <p class="form-hint">For example: 'The company's charitable donations during the period amounted to £2,043. No political donations were made.'</p>
+              <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+
+
+
+            </div><!--posteventsnoteyes-reveal-->
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div><!--left-indent-->
+    </div><!--text-->
+
+</main>
+{% endblock %}

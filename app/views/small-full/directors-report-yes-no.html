@@ -1,0 +1,93 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Directors' report
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+
+    <h1 class="heading-xlarge">File small full accounts</h1>
+    <form action="/accounts/accounts-start-page-small-full" method="get" class="form">
+
+
+      <h2 class="heading-medium">
+      Do your prepared accounts include a directors' report?
+      </h2>
+
+        <form action="" method="get" class="form">
+
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a directors' report">
+          <legend class="visually-hidden">Do your prepared accounts include a directors' report?</legend>
+            <div class="form-group">
+
+              <label class="block-label selection-button-radio" for="smallfulldirectorsreportyes">
+                <input id="smallfulldirectorsreportyes" name="smallfulldirectorsreport" value="Yes" type="radio">
+                Yes
+              </label>
+              <label class="block-label selection-button-radio" for="smallfulldirectorsreportno">
+                <input id="smallfulldirectorsreportno" name="smallfulldirectorsreport" value="No" type="radio">
+                No
+              </label>
+            </div><!--form-group-->
+
+          </fieldset>
+
+          <h2 class="heading-medium">
+          Do your prepared accounts include a profit and loss account?
+          </h2>
+
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a proft and loss account">
+          <legend class="visually-hidden">Do your prepared accounts include a proft and loss account?</legend>
+            <div class="form-group">
+
+              <label class="block-label selection-button-radio" for="smallfullprofitlossyes">
+                <input id="smallfullprofitlossyes" name="smallfullprofitloss" value="Yes" type="radio">
+                Yes
+              </label>
+              <label class="block-label selection-button-radio" for="smallfullprofitlossno">
+                <input id="smallfullprofitlossno" name="smallfullprofitloss" value="No" type="radio">
+                No
+              </label>
+            </div><!--form-group-->
+
+          </fieldset>
+
+
+
+
+                <div class="form-group">
+                  <input type="submit" class="button" value="Next" id="">
+                </div>
+
+                      </form>
+
+  </div><!--text-->
+
+</main>
+{% endblock %}

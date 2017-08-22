@@ -1,0 +1,427 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Profit and loss account
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">2</span> Profit and loss account</h1>
+    <div class="left-indent">
+
+      <div class="panel panel-border-wide">
+        <p class="warning">Complete all items that are included in your prepared accounts.</p>
+      </div>
+
+    <div class="grid-row" id="accounts-header">
+      <div class="column-half">
+        &nbsp;
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">2017<br>£</h2>
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">2016<br>£</h2>
+      </div>
+    </div>
+
+
+
+    <form action="/" method="post" class="form" id="balance-sheet">
+
+
+    <!--Start Turnover-->
+    <div class="grid-row">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Turnover</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Also called sales, revenue or income. The total amount this period from selling goods or services, excluding VAT.</p>
+             </div>
+          </details>
+      </div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="pl-turnover-current"><span class="mobile-only-label">Turnover (2017)</span>
+            <input type="number"  onkeypress="" class="form-control" id="pl-turnover-current">
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="plturnover-previous"><span class="mobile-only-label">Turnover (2016)</span>
+            <input type="number"  onkeypress="" class="form-control" id="pl-turnover-previous">
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End Turnover-->
+
+
+
+    <!--Start Cost of sales-->
+    <div class="grid-row">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Cost of sales</span></summary>
+            <div class="panel panel-border-narrow">
+              <p> The costs directly involved in producing or delivering goods and services, for example, materials or shipping.</p>
+           </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="pl-cost-of-sales-current"><span class="mobile-only-label">Cost of sales (2017)</span>
+            <input type="text" onkeypress="" class="form-control" id="pl-cost-of-sales-current" style="text-align:right;"><!-- changed type to text to get error validation (character) to work-->
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="pl-cost-of-sales-previous"><span class="mobile-only-label">Cost of sales (2016)</span>
+            <input type="number"  onkeypress="" class="form-control" id="pl-cost-of-sales-previous">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End Cost of sales-->
+
+
+    <!--Start Gross profit (or loss)-->
+    <div class="grid-row accounts-total">
+      <div class="column-half">
+        <details>
+          <summary><span class="summary">Gross profit (or loss)</span></summary>
+          <div class="panel panel-border-narrow">
+            <p><strong>Calculation:</strong> Turnover minus cost of sales.</p>
+         </div>
+        </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label-bold" for="pl-gross-profit-current"><span class="mobile-only-label">Gross profit (2017)</span>
+            <input type="number"  onkeypress="" class="form-control" id="pl-gross-profit-current" readonly>
+          </label>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label-bold" for="pl-gross-profit-previous"><span class="mobile-only-label">Gross profit (2016)</span>
+            <input type="number"  onkeypress="" class="form-control" id="pl-gross-profit-previous" readonly>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End Gross profit (or loss)-->
+
+
+
+      <!--Start Distribution costs-->
+      <div class="grid-row accounts-row-spacer">
+        <div class="column-half">
+            <details>
+              <summary><span class="summary">Distribution costs</span></summary>
+              <div class="panel panel-border-narrow">
+                <p> Costs like packaging, transporting or storing the goods or services sold.</p>
+             </div>
+            </details>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-distribution-costs-current"><span class="mobile-only-label">Distribution costs (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-distribution-costs-current">
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-distribution-costs-current"><span class="mobile-only-label">Distribution costs (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-distribution-costs-previous">
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <!--End Distribution costs-->
+
+      <!--Start Administrative expenses-->
+      <div class="grid-row">
+        <div class="column-half">
+            <details>
+              <summary><span class="summary">Administrative expenses</span></summary>
+              <div class="panel panel-border-narrow">
+                <p> The costs of managing and running the business, for example rent, utilities, print, stationary, legal and accounting fees.</p>
+             </div>
+            </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-administrative-expenses-current"><span class="mobile-only-label">Administrative expenses (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-administrative-expenses-current">
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label" for="pl-administrative-expenses-previous"><span class="mobile-only-label">Administrative expenses (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-administrative-expenses-previous">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Administrative expenses-->
+
+
+      <!--Start Other operating income-->
+      <div class="grid-row">
+        <div class="column-half">
+            <details>
+              <summary><span class="summary">Other operating income</span></summary>
+              <div class="panel panel-border-narrow">
+                <p>  Income from other trading activities, for example, subletting a property, or selling goods as a sideline to your main business.</p>
+              </div>
+            </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-other-operating-income-current"><span class="mobile-only-label">Other operating income (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-other-operating-income-current">
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label" for="pl-other-operating-income-previous"><span class="mobile-only-label">Other operating income (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-other-operating-income-previous">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Other operating income-->
+
+
+
+      <!--Start Operating profit (or loss)-->
+      <div class="grid-row accounts-total">
+        <div class="column-half">
+          <details>
+            <summary><span class="summary">Operating profit (or loss)</span></summary>
+            <div class="panel panel-border-narrow">
+              <p><strong>Calculation:</strong>  Gross profit or (loss) minus distribution costs and administrative expenses, plus other operating income.</p>
+           </div>
+          </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label-bold" for="pl-operating-profit-current"><span class="mobile-only-label">Operating profit (or loss) (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-operating-profit-current" readonly>
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label-bold" for="pl-operating-profit-previous"><span class="mobile-only-label">Operating profit (or loss) (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-operating-profit-previous" readonly>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Operating profit (or loss)-->
+
+
+
+      <!--Start Interest receivable and similar income-->
+     <div class="grid-row accounts-row-spacer">
+        <div class="column-half">
+            <details>
+              <summary><span class="summary">Interest receivable and similar income</span></summary>
+              <div class="panel panel-border-narrow">
+                <p>Interest earned or owed to the company, for example bank interest or interest from loans.</p>
+              </div>
+            </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-interest-receivable-current"><span class="mobile-only-label">Interest receivable and similar income (2017)</span>
+              <input type="number" onkeypress="" class="form-control" id="pl-interest-receivable-current">
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label" for="pl-interest-receivable-previous"><span class="mobile-only-label">Interest receivable and similar income (2016)</span>
+              <input type="number" onkeypress="" class="form-control" id="pl-interest-receivable-previous">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Interest receivable and similar income-->
+
+
+
+
+
+      <!--Start Interest payable and similar charges-->
+      <div class="grid-row ">
+        <div class="column-half">
+            <details>
+              <summary><span class="summary">Interest payable and similar charges</span></summary>
+              <div class="panel panel-border-narrow">
+                <p> Interest paid by the company, for example on loans or overdrafts.</p>
+               </div>
+            </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-interest-payable-current"><span class="mobile-only-label">Interest payable and similar charges (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-interest-payable-current">
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label" for="pl-interest-payable-previous"><span class="mobile-only-label">Interest payable and similar charges (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-interest-payable-previous">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Interest payable and similar charges-->
+
+
+
+      <!--Start Profit (or loss) before tax-->
+      <div class="grid-row accounts-total">
+        <div class="column-half">
+          <details>
+            <summary><span class="summary">Profit (or loss) before tax</span></summary>
+            <div class="panel panel-border-narrow">
+              <p><strong>Calculation:</strong> Operating profit or (loss) plus interest receivable and similar income, minus interest payable and similar charges.</p>
+           </div>
+          </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label-bold" for="pl-profit-before-tax-current"><span class="mobile-only-label">Profit (or loss) before tax (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-profit-before-tax-current" readonly>
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label-bold" for="pl-profit-before-tax-previous"><span class="mobile-only-label">Profit (or loss) before tax (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-profit-before-tax-previous" readonly>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Profit (or loss) before tax-->
+
+
+
+
+
+      <!--Start Tax on profit-->
+      <div class="grid-row accounts-row-spacer">
+        <div class="column-half">
+            <details>
+              <summary><span class="summary">Tax on profit</span></summary>
+              <div class="panel panel-border-narrow">
+                <p>Your taxable income is profit or (loss) before tax minus any reliefs due.</p>
+                <p>Work out Corporation Tax due on taxable income using <a href="https://www.gov.uk/corporation-tax-rates" target="_blank">latest rates<span class="visuallyhidden"> link opens in a new tab/window</span></a>.</p>
+            </div>
+            </details>
+        </div>
+
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="pl-tax-on-profit-current"><span class="mobile-only-label">Tax on profit (2017)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-tax-on-profit-current">
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label" for="pl-tax-on-profit-previous"><span class="mobile-only-label">Tax on profit (2016)</span>
+              <input type="number"  onkeypress="" class="form-control" id="pl-tax-on-profit-previous">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End Tax on profit-->
+
+
+          <!--Start Profit (or loss) for the financial year-->
+          <div class="grid-row accounts-total">
+            <div class="column-half">
+              <details>
+                <summary><span class="summary">Profit (or loss) for the financial year</span></summary>
+                <div class="panel panel-border-narrow">
+                  <p><strong>Calculation:</strong> Profit or (loss) before tax minus tax on profit.</p>
+               </div>
+              </details>
+            </div>
+
+            <div class="column-quarter">
+              <div class="form-group">
+                <label class="form-label-bold" for="pl-profit-year-current"><span class="mobile-only-label">Profit (or loss) for the financial year (2017)</span>
+                  <input type="number"  onkeypress="" class="form-control" id="pl-profit-year-current" readonly>
+                </label>
+              </div>
+            </div>
+            <div class="column-quarter">
+              <div class="form-group">
+                <label class="form-label-bold" for="pl-profit-year-previous"><span class="mobile-only-label">Profit (or loss) for the financial year (2016)</span>
+                  <input type="number"  onkeypress="" class="form-control" id="pl-profit-year-previous" readonly>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End Profit (or loss) for the financial year-->
+
+
+
+        <div class="form-group">
+          <a class="button" href="/small-full/profit-and-loss-account-note">Next</a>
+        </div>
+
+    </form>
+
+
+</main>
+{% endblock %}

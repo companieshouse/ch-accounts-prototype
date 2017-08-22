@@ -1,0 +1,84 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Profit and loss account note
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">2</span>
+      Profit and loss account
+      <span class="circle-subheading">Note</span>
+    </h1>
+  </div><!--text-->
+
+
+    <div class="left-indent">
+      <div class="text">
+        <h2 class="heading-medium">Do your prepared accounts include a 'profit and loss account' note?</h2>
+      </div><!--text-->
+
+    <form action="/small-full/small-full-balance-sheet" method="get" class="form">
+          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'profit and loss account' note">
+                  <legend class="visually-hidden">Do your prepared accounts include a 'profit and loss account' note?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="profitandlossaccountnotenoteyes" data-target="profitandlossaccountnotenoteyes-reveal">
+                    <input id="profitandlossaccountnotenoteyes" name="profitandlossaccountnotenoteyn" value="Yes" aria-controls="profitandlossaccountnotenoteyes-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="profitandlossaccountnotenoteno">
+                    <input id="profitandlossaccountnotenoteno" name="profitandlossaccountnotenoteyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="profitandlossaccountnotenoteyes-reveal">
+              <label class="visuallyhidden" for="textarea">Profit and loss account note</label>
+
+              <p class="form-hint">Use this note to record any exceptional or unexpected activities that imapcted your profit and loss account, or any information to support your profit and loss activities.</p>
+              </p>
+              <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+
+            </div><!--profitandlossaccountnotenoteyes-reveal-->
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div><!--left-indent-->
+
+
+</main>
+{% endblock %}

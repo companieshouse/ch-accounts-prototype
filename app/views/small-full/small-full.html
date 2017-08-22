@@ -1,0 +1,41 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  File your accounts (prototype)
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">File small full company accounts (prototype)</h1>
+
+
+      <div class="section-tabs js-tabs">
+        <ul>
+          <li><a href="/index" id="">Abridged</a></li>
+          <li class="active"><h1><a href="javascript:void(0)" id="">Small full</a></h1></li>
+        </ul>
+      </div>
+
+
+			<h2 class="heading-medium">The latest version</h2>
+      <ul class="list list-bullet">
+        <li><a href="/small-full/shortcuts-small-full">V1</a>
+      </ul>
+
+    <!--  <h2 class="heading-medium">Previous versions</h2>
+      <ul class="list list-bullet">
+        <li><a href="">Beta V11: (July 2017)</a></li>
+      </ul>-->
+
+    </div>
+  </div><!--grid-row-->
+</main>
+
+{% endblock %}

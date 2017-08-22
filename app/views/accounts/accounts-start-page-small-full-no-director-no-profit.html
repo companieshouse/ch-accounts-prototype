@@ -1,0 +1,75 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   File small full accounts
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+<div class="text" id="accounts-start-page">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+      <h1 class="heading-xlarge">File small full accounts</h1>
+      <form action="/small-full/balance-sheet" method="get" class="form">
+
+        <p class="lede">Use this service to file prepared and approved small full accounts.</p>
+
+        <p>There are 5 steps to complete:</p>
+
+        <ol class="list example-icon-list">
+          <li><span class="circle circle-step-large">1</span> Balance sheet</li>
+          <li><span class="circle circle-step-large">2</span> Balance sheet statements</li>
+          <li><span class="circle circle-step-large">3</span> Balance sheet notes</li>
+          <li><span class="circle circle-step-large">4</span> Review</li>
+          <li><span class="circle circle-step-large">5</span> Approval and submission</li>
+        </ol>
+
+
+      <div class="panel panel-border-wide">
+        <p>Once we’ve received your accounts, you’ll get a confirmation email (with a reference number) at  <strong>jsmith@testcompany.co.uk</strong></p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Next" id="">
+      </div>
+
+            </form>
+
+
+
+
+
+
+        </div><!-- text-->
+
+      </main>
+
+      {% endblock %}

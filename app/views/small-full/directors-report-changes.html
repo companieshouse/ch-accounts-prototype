@@ -1,0 +1,171 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Directors' report
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="javascript:void(0)">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">1</span> Directors' report <span class="circle-subheading">Changes</span></h1>
+
+  </div><!--text-->
+
+    <form action="/small-full/profit-and-loss-account" method="get" class="form">
+
+      <div class="left-indent">
+
+
+        <div class="panel panel-border-wide">
+          <p>Changes made here will not update Companies House records<br />(well that's confusing - what does the user do to update those records then? And what is this if it's not Companies House records?)</p>
+        </div>
+
+        <table class="check-your-answers">
+          <thead>
+            <tr>
+              <th colspan="3"><h2 class="heading-medium">Directors at the end of the period</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Smith</td>
+              <td></td>
+              <td class="change-answer">
+                <a href="javascript:void(0)">
+                  Change <span class="visuallyhidden">John Smith (Directors at the end of the period)</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>David Smith</td>
+              <td></td>
+              <td class="change-answer">
+                <a href="javascript:void(0)">
+                  Change <span class="visuallyhidden">David Smith (Directors at the end of the period)</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="javascript:void(0)">Add another director</a>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colspan="3">
+                <h2 class="heading-medium">
+                  Directors appointed during the period
+                </h2>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>David Smith</td>
+              <td>appointed 3 April 2017</td>
+              <td class="change-answer"><a href="javascript:void(0)">Change <span class="visuallyhidden">David Smith (appointed 3 April 2017)</span></a></td>
+            </tr>
+            <tr>
+              <td>
+                <a href="javascript:void(0)">Add a director</a>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colspan="3"><h2 class="heading-medium">Directors resigned during the period</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lisa Smith</td>
+              <td>resigned 3 April 2017</td>
+              <td class="change-answer">
+                <a href="javascript:void(0)">
+                  Change <span class="visuallyhidden">Lisa Smith (Directors resigned during the period)</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="javascript:void(0)">Add another director</a>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colspan="2">
+                <h2 class="heading-medium">
+                Company secretary
+                </h2>
+              </th>
+              <th>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Arthur Smith
+              </td>
+              <td>&nbsp;</td>
+              <td class="change-answer">
+                <a href="javascript:void(0)">
+                  Change <span class="visuallyhidden">Arthur Smith (Company secretary)</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="javascript:void(0)">Add another company secretary</a>
+              </td>
+                <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="form-group accounts-row-spacer">
+          <input type="submit" class="button" value="Next" id="javascript:void(0)">
+        </div>
+
+  </div><!--left-indent-->
+
+
+</main>
+{% endblock %}
