@@ -204,7 +204,7 @@ router.get('/accounts/accounts-start-page', function (req, res) {
 // CHS Release 1 question (user ineligible to file Abridged ON THE COMPANIES HOUSE SERVICE)
 
 
-router.get('/chs/chs-alternative-abridged-filing-options-not-eligible', function (req, res) {
+router.get('/chs/chs-software-filing', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)
   var r1dates = req.query.r1dates;
@@ -217,7 +217,7 @@ router.get('/chs/chs-alternative-abridged-filing-options-not-eligible', function
   } else {
 
     // if over18 is any other value (or is missing) render the page requested
-    res.render('chs/chs-alternative-abridged-filing-options-not-eligible');
+    res.render('chs/chs-software-filing');
 
   }
 
