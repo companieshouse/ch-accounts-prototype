@@ -9,7 +9,7 @@ $(document).ready(function() {
   function compute() {
        var plturnovercurrent = $('#pl-turnover-current').val();
        var plcostofsalescurrent = $('#pl-cost-of-sales-current').val();
-       var total = +plturnovercurrent + +plcostofsalescurrent;
+       var total = +plturnovercurrent - +plcostofsalescurrent;
        $('#pl-gross-profit-current').val(total);
      }
      $('#pl-turnover-current, #pl-cost-of-sales-current').change(compute);
@@ -20,7 +20,7 @@ $(document).ready(function() {
   function compute() {
     var plturnoverprevious = $('#pl-turnover-previous').val();
     var plcostofsalesprevious = $('#pl-cost-of-sales-previous').val();
-    var total = +plturnoverprevious + +plcostofsalesprevious;
+    var total = +plturnoverprevious - +plcostofsalesprevious;
     $('#pl-gross-profit-previous').val(total);
   }
   $('#pl-turnover-previous, #pl-cost-of-sales-previous').change(compute);
