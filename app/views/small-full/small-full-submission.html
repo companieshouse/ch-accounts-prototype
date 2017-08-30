@@ -1,0 +1,110 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Approval
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+   window.onload = function () {
+       DisplayCurrentTime();
+   };
+   function DisplayCurrentTime() {
+       var date = new Date();
+       var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+       var am_pm = date.getHours() >= 12 ? "pm" : "am";
+       hours = hours < 10 ? "" + hours : hours;
+       var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+       time = hours + ":" + minutes + am_pm;
+       var lblTime = document.getElementById("lblTime");
+       lblTime.innerHTML = time;
+   };
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="/chs/chs-your-filings-small-full-accounts" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+<div class="text">
+
+
+
+  <div class="govuk-box-highlight">
+    <p><strong class="heading-small">A TEST COMPANY LIMITED</strong><br>
+      Company number 01234567</p>
+    <h1 class="bold-large">Small full accounts received</h1>
+    <br>
+    <p>on <span id="displayMoment" class="bold-medium"></span> at <strong class="heading-medium"><span id="lblTime"></span></strong></p>
+    <p>Reference number<br>
+    <strong class="heading-medium">776846-998567-228911</strong></p>
+  </div>
+
+
+
+
+  <p>We have sent you a confirmation email at <strong>jsmith@testcompany.co.uk</strong> with your reference number.</p>
+    <p>If you've not received the confirmation, check your spam or junk mail folder. You should <a href="">contact us</a> if you haven't had an email within 30 minutes.</p>
+    <p>We'll send a second email to confirm that your filing has been processed (normally within 2 working days).</p>
+    <p>You can go to '<a href="/chs/chs-your-filings-small-full-accounts">Your filings</a>' to check the status or get a copy of what you have filed.</p>
+
+
+
+  <!-- This PRINT relies on Javascript, so should be completely hidden when Javascript is not available -->
+  <p><i class="fa fa-print" style="margin-right:.4em;"></i> <a href="javascript:window.print()">Print this page for your records</a></p>
+  </ul>
+
+
+
+      <div class="form-group">
+        <a class="button" href="/chs/chs-profile-page-logged-in-submitted#overview-tabs" role="button">Return to company overview</a>
+      </div>
+
+<p>
+  This is a new service. Help us improve it by <a href="javascript:void(0)"><span class="visuallyhidden">This is a new service. Help us improve it by </span>completing our quick survey</a>.
+</p>
+
+
+<a href="/chs/chs-email-submission-confirmation-test" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">link to email</a>
+
+  </div><!-- text-->
+
+</main>
+
+<script type="text/javascript">
+( function()
+{
+// instantiate a Moment object
+var NowMoment = moment().format('D MMMM YYYY');
+// display value of NowMoment in #displayMoment div
+var eDisplayMoment = document.getElementById('displayMoment');
+eDisplayMoment.innerHTML = NowMoment;
+})();
+</script>
+
+{% endblock %}

@@ -65,24 +65,80 @@ $(document).ready(function(){  //Only show the button if javascript is on
 <h1 class="heading-xlarge">
   <span class="circle circle-step-large">6</span> Review your small full accounts
 </h1>
-  <form action="/accounts/accounts-approval" method="get" class="form">
+  <form action="/small-full/small-full-approval" method="get" class="form">
 
   <div class="">
 
   <a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a>
 
   <table class="check-your-answers">
-  <caption class="visuallyhidden">Review your abridged accounts</caption>
+  <caption class="visuallyhidden">Review your small full accounts</caption>
+
+  <thead>
+    <tr>
+      <th class="check-your-answers-section"><h2 class="heading-medium">Directors' report</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <details>
+          <summary><span class="summary">Officers during period</span></summary>
+          <div class="review-reveal">
+            <h2 class="bold-medium">Directors at the end of the period</h2>
+            <ul class="list list-bullet">
+              <li>John Smith</li>
+              <li>David Smith</li>
+            </ul><!--grid-row-->
+            <h2 class="bold-medium">Directors appointed during the period</h2>
+            <ul class="list list-bullet">
+              <li>David Smith appointed 3 April 2017</li>
+            </ul><!--grid-row-->
+            <h2 class="bold-medium">Directors resigned during the period</h2>
+            <ul class="list list-bullet">
+              <li>Lisa Smith resigned 3 April 2017</li>
+           </ul><!--grid-row-->
+
+
+        <p><a href="/small-full/directors-report-changes" class="button">Change<span class="visuallyhidden"> Directors' report</span></a></p>
+
+        </div><!--review-reveal-->
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <details>
+          <summary><span class="summary">Directors' report notes</span></summary>
+          <div class="review-reveal">
+
+            <h2 class="bold-medium">Principal activities of the company</h2>
+            <ul class="list list-bullet">
+              <li>Text here</li>
+            </ul><!--grid-row-->
+            <h2 class="bold-medium">Company policy on disabled employees</h2>
+            <ul class="list list-bullet">
+              <li>Text here</li>
+            </ul><!--grid-row-->
+
+        <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> Directors' report notes</span></a></p>
+
+        </div><!--review-reveal-->
+        </details>
+      </td>
+    </tr>
+
+
     <thead>
       <tr>
-        <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet</h2></th>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Profit and loss account</h2></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
           <details>
-            <summary><span class="summary">Balance sheet figures</span></summary>
+            <summary><span class="summary">Profit and loss figures</span></summary>
             <div class="review-reveal">
               <div class="grid-row">
                 <div class="column-one-half">&nbsp;
@@ -95,131 +151,365 @@ $(document).ready(function(){  //Only show the button if javascript is on
                 </div>
               </div><!--grid-row-->
 
-              <h3 class="heading-medium">Fixed assets</h3>
-
-
             <div class="grid-row">
               <div class="column-one-half">
-                <p>Tangible assets</p>
+                <p>Turnover</p>
               </div>
               <div class="column-one-quarter">
-                <p>37,440</p>
+                <p>1,350</p>
               </div>
               <div class="column-one-quarter">
-                <p>30,740</p>
+                <p>450</p>
               </div>
             </div><!--grid-row-->
             <div class="grid-row">
               <div class="column-one-half">
-                <p class=""><strong>Total fixed assets</strong></p>
+                <p>Cost of sales</p>
               </div>
               <div class="column-one-quarter">
-                <p><strong>37,440</strong></p>
+                <p>200</p>
               </div>
               <div class="column-one-quarter">
-                <p><strong>30,740</strong></p>
+                <p>175</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class=""><strong>Gross profit (or loss)</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>1,150</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>275</strong></p>
               </div>
             </div><!--grid-row-->
 
 
 
 
-          <h3 class="heading-medium" style="margin-top:0.5em;">Current assets</h3>
-        <div class="grid-row">
+        <div class="grid-row accounts-row-spacer">
           <div class="column-one-half">
-            <p>Debtors</p>
+            <p>Distribution costs</p>
           </div>
           <div class="column-one-quarter">
-            <p>32,175</p>
+            <p>140</p>
           </div>
           <div class="column-one-quarter">
-            <p>16,000</p>
+            <p>1400</p>
           </div>
         </div><!--grid-row-->
         <div class="grid-row">
           <div class="column-one-half">
-            <p>Cash at bank and in hand</p>
+            <p>Administrative expenses</p>
           </div>
           <div class="column-one-quarter">
-            <p>35,455</p>
+            <p>200</p>
           </div>
           <div class="column-one-quarter">
-            <p>7,000</p>
+            <p>225</p>
           </div>
         </div><!--grid-row-->
         <div class="grid-row">
           <div class="column-one-half">
-            <p class=""><strong>Total current assets</strong></p>
+            <p>Other operating income</p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>67,630</strong></p>
+            <p>10</p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>23,000</strong></p>
-          </div>
-        </div><!--grid-row-->
-      <br>
-        <div class="grid-row">
-          <div class="column-one-half">
-            <p>Creditors - amounts falling due within one year</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>36,500</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>16,700</p>
+            <p>45</p>
           </div>
         </div><!--grid-row-->
         <div class="grid-row">
           <div class="column-one-half">
-            <p><strong>Net current assets (liabilities)</strong></p>
+            <p class=""><strong>Operating profit (or loss)</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>31,130</strong></p>
+            <p><strong>820</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>6,300</strong></p>
+            <p><strong>-45</strong></p>
           </div>
         </div><!--grid-row-->
-              <br>
+      <div class="grid-row accounts-row-spacer">
+          <div class="column-one-half">
+            <p>Interest receivable or similar income</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>90</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>110</p>
+          </div>
+        </div><!--grid-row-->
         <div class="grid-row">
           <div class="column-one-half">
-            <p><strong>Total assets less current liabilities</strong></p>
+            <p>Interest payable or similar charges</p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>68,570</strong></p>
+            <p>25</p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>37,040</strong></p>
+            <p>10</p>
           </div>
         </div><!--grid-row-->
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p><strong>Profit (or loss) before tax</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>885</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>55</strong></p>
+          </div>
+        </div><!--grid-row-->
+
+
+        <div class="grid-row accounts-row-spacer">
+          <div class="column-one-half">
+            <p>Tax on profit</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>400</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>12</p>
+          </div>
+        </div><!--grid-row-->
+
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p><strong>Profit (or loss) for financial year</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>485</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>43</strong></p>
+          </div>
+        </div><!--grid-row-->
+
+
+
+
+
+    <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> Profit and loss figures</span></a></p>
+
+          </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Profit and loss note</span></summary>
+            <div class="review-reveal">
+            <ul class="list list-bullet">
+              <li>Text here</li>
+            </ul>
+            <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> Profit and loss note</span></a></p>
+
+          </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+      <thead>
+        <tr>
+          <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <details>
+              <summary><span class="summary">Balance sheet figures</span></summary>
+              <div class="review-reveal">
+                <div class="grid-row">
+                  <div class="column-one-half">&nbsp;
+                  </div>
+                  <div class="column-one-quarter">
+                    <p><strong>2017<br>£</strong></p>
+                  </div>
+                  <div class="column-one-quarter">
+                    <p><strong>2016<br>£</strong></p>
+                  </div>
+                </div><!--grid-row-->
+
+                <h3 class="heading-medium">Fixed assets</h3>
+
+
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Tangible assets</p>
+                </div>
+                <div class="column-one-quarter">
+                  <p>37,440</p>
+                </div>
+                <div class="column-one-quarter">
+                  <p>30,740</p>
+                </div>
+              </div><!--grid-row-->
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p class=""><strong>Total fixed assets</strong></p>
+                </div>
+                <div class="column-one-quarter">
+                  <p><strong>37,440</strong></p>
+                </div>
+                <div class="column-one-quarter">
+                  <p><strong>30,740</strong></p>
+                </div>
+              </div><!--grid-row-->
+
+
+
+
+            <h3 class="heading-medium" style="margin-top:0.5em;">Current assets</h3>
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Debtors</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>32,175</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>16,000</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Cash at bank and in hand</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>35,455</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>7,000</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p class=""><strong>Total current assets</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>67,630</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>23,000</strong></p>
+            </div>
+          </div><!--grid-row-->
         <br>
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Creditors - amounts falling due within one year</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>36,500</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>16,700</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p><strong>Net current assets (liabilities)</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>31,130</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>6,300</strong></p>
+            </div>
+          </div><!--grid-row-->
+                <br>
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p><strong>Total assets less current liabilities</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>68,570</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>37,040</strong></p>
+            </div>
+          </div><!--grid-row-->
+          <br>
+
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Creditors - amounts falling due after more than one year</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>2,100</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>1,000</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Provision for liabilities</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>2,400</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>700</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p><strong>Total net assets (liabilities)</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>64,070</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>35,340</strong></p>
+            </div>
+          </div><!--grid-row-->
+
+
+          <h3 class="heading-medium" style="margin-top:0.5em;">Capital and reserves</h3>
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Called up share capital</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>24,400</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>23,840</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Other reserves</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>500</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>100</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-half">
+              <p>Profit and loss account</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>39,170</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>11,400</p>
+            </div>
+          </div><!--grid-row-->
 
         <div class="grid-row">
           <div class="column-one-half">
-            <p>Creditors - amounts falling due after more than one year</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>2,100</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>1,000</p>
-          </div>
-        </div><!--grid-row-->
-        <div class="grid-row">
-          <div class="column-one-half">
-            <p>Provision for liabilities</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>2,400</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>700</p>
-          </div>
-        </div><!--grid-row-->
-        <div class="grid-row">
-          <div class="column-one-half">
-            <p><strong>Total net assets (liabilities)</strong></p>
+            <p class=""><strong>Total shareholders' funds</strong></p>
           </div>
           <div class="column-one-quarter">
             <p><strong>64,070</strong></p>
@@ -230,76 +520,28 @@ $(document).ready(function(){  //Only show the button if javascript is on
         </div><!--grid-row-->
 
 
-        <h3 class="heading-medium" style="margin-top:0.5em;">Capital and reserves</h3>
-        <div class="grid-row">
-          <div class="column-one-half">
-            <p>Called up share capital</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>24,400</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>23,840</p>
-          </div>
-        </div><!--grid-row-->
-        <div class="grid-row">
-          <div class="column-one-half">
-            <p>Other reserves</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>500</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>100</p>
-          </div>
-        </div><!--grid-row-->
-        <div class="grid-row">
-          <div class="column-one-half">
-            <p>Profit and loss account</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>39,170</p>
-          </div>
-          <div class="column-one-quarter">
-            <p>11,400</p>
-          </div>
-        </div><!--grid-row-->
+      <p><a href="/accounts/accounts-balance-sheet-completed" class="button">Change<span class="visuallyhidden"> balance sheet figures</span></a></p>
 
-      <div class="grid-row">
-        <div class="column-one-half">
-          <p class=""><strong>Total shareholders' funds</strong></p>
-        </div>
-        <div class="column-one-quarter">
-          <p><strong>64,070</strong></p>
-        </div>
-        <div class="column-one-quarter">
-          <p><strong>35,340</strong></p>
-        </div>
-      </div><!--grid-row-->
-
-
-    <p><a href="/accounts/accounts-balance-sheet-completed" class="button">Change<span class="visuallyhidden"> balance sheet figures</span></a></p>
-
-          </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Balance sheet statements</span></summary>
-            <div class="review-reveal">
-            <ul class="list list-bullet">
-              <li>For the year ending 31 March 2017 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
-              <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
-              <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
-              <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
-              <li>The members have agreed to the preparation of abridged accounts for this accounting period in accordance with Section 444(2A).</li>
-            </ul>
-          </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
+            </div><!--review-reveal-->
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <details>
+              <summary><span class="summary">Balance sheet statements</span></summary>
+              <div class="review-reveal">
+              <ul class="list list-bullet">
+                <li>For the year ending 31 March 2017 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+                <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+                <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+                <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+                <li>The members have agreed to the preparation of abridged accounts for this accounting period in accordance with Section 444(2A).</li>
+              </ul>
+            </div><!--review-reveal-->
+            </details>
+          </td>
+        </tr>
 
       <tr>
         <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet notes</h2></th>
@@ -342,266 +584,15 @@ $(document).ready(function(){  //Only show the button if javascript is on
 
 
 
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Intangible assets note</span></summary>
-            <div class="review-reveal">
-              <div class="grid-row">
-                  <div class="column-one-half">
-                    <h3 class="bold-medium">Cost</h3>
-                  </div>
-                  <div class="column-one-quarter">
-                    <p class="bold-small">£</p>
-                  </div>
-              </div><!--grid-row-->
-              <div class="grid-row">
-                <div class="column-one-half">
-                  <p>Cost at 1 April 2016</p>
-                </div>
-                <div class="column-one-quarter">
-                  <p>2,000</p>
-                </div>
-              </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p>Additions</p>
-              </div>
-              <div class="column-one-quarter">
-                <p>100</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">Disposals</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">100</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">Revaluations</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">200</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class=""><strong>Cost at 31 March 2017</strong></p>
-              </div>
-              <div class="column-one-quarter">
-                <p class=""><strong>2,400</strong></p>
-              </div>
-            </div><!--grid-row-->
-
-
-            <div class="grid-row">
-                <div class="column-one-half">
-                  <h3 class="bold-medium">Amortisation</h3>
-                </div>
-                <div class="column-one-quarter">
-                  <p class="bold-small">£</p>
-                </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-                <div class="column-one-half">
-                  <p>Amortisation at 1 April 2016</p>
-                </div>
-                <div class="column-one-quarter">
-                  <p>1,000</p>
-                </div>
-              </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p>Charge for year</p>
-              </div>
-              <div class="column-one-quarter">
-                <p>100</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">On disposals</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">100</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">Other adjustments</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">200</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class=""><strong>Amortisation at 31 March 2017</strong></p>
-              </div>
-              <div class="column-one-quarter">
-                <p class=""><strong>1,400</strong></p>
-              </div>
-            </div><!--grid-row-->
-
-
-            <div class="grid-row">
-                <div class="column-one-half">
-                  <h3 class="bold-medium">Net book value</h3>
-                </div>
-                <div class="column-one-quarter">
-                  <p class="bold-small">£</p>
-                </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-                <div class="column-one-half">
-                  <p><strong>Net book value at 31 March 2017</strong></p>
-                </div>
-                <div class="column-one-quarter">
-                  <p><strong>1,000</strong></p>
-                </div>
-              </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p><strong>Net book value at 31 March 2016</strong></p>
-              </div>
-              <div class="column-one-quarter">
-                <p><strong>1,000</strong></p>
-              </div>
-            </div><!--grid-row-->
-          <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> intangible assets note</span></a></p>
-          </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
-
-
-
 
       <tr>
         <td>
           <details>
             <summary><span class="summary">Tangible assets note</span></summary>
             <div class="review-reveal">
-              <div class="grid-row">
-                  <div class="column-one-half">
-                    <h3 class="bold-medium">Cost</h3>
-                  </div>
-                  <div class="column-one-quarter">
-                    <p class="bold-small">£</p>
-                  </div>
-              </div><!--grid-row-->
-              <div class="grid-row">
-                <div class="column-one-half">
-                  <p>Cost at 1 April 2016</p>
-                </div>
-                <div class="column-one-quarter">
-                  <p>41,260</p>
-                </div>
-              </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p>Additions</p>
-              </div>
-              <div class="column-one-quarter">
-                <p>11,180</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">Disposals</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">11,280</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">Transfers</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">8,600</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class=""><strong>Cost at 31 March 2017</strong></p>
-              </div>
-              <div class="column-one-quarter">
-                <p class=""><strong>49,760</strong></p>
-              </div>
-            </div><!--grid-row-->
-
-
-            <div class="grid-row">
-                <div class="column-one-half">
-                  <h3 class="bold-medium">Depreciation</h3>
-                </div>
-                <div class="column-one-quarter">
-                  <p class="bold-small">£</p>
-                </div>
-            </div><!--grid-row-->
-              <div class="grid-row">
-                <div class="column-one-half">
-                  <p>Depreciation at 1 April 2016</p>
-                </div>
-                <div class="column-one-quarter">
-                  <p>10,520</p>
-                </div>
-              </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p>Charge for year</p>
-              </div>
-              <div class="column-one-quarter">
-                <p>3,000</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class="">On disposals</p>
-              </div>
-              <div class="column-one-quarter">
-                <p class="">1,200</p>
-              </div>
-            </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p class=""><strong>Depreciation at 31 March 2017</strong></p>
-              </div>
-              <div class="column-one-quarter">
-                <p class=""><strong>12,320</strong></p>
-              </div>
-            </div><!--grid-row-->
-
-
-            <div class="grid-row">
-                <div class="column-one-half">
-                  <h3 class="bold-medium">Net book value</h3>
-                </div>
-                <div class="column-one-quarter">
-                  <p class="bold-small">£</p>
-                </div>
-            </div><!--grid-row-->
-              <div class="grid-row">
-                <div class="column-one-half">
-                  <p><strong>Net book value at 31 March 2017</strong></p>
-                </div>
-                <div class="column-one-quarter">
-                  <p><strong>37,440</strong></p>
-                </div>
-              </div><!--grid-row-->
-            <div class="grid-row">
-              <div class="column-one-half">
-                <p><strong>Net book value at 31 March 2016</strong></p>
-              </div>
-              <div class="column-one-quarter">
-                <p><strong>30,740</strong></p>
-              </div>
-            </div><!--grid-row-->
-          <p><a href="/accounts/accounts-abridged-tangible-note-retained" class="button">Change<span class="visuallyhidden"> tangible assets note</span></a></p>
+          TO DO
+          <p><a href="/accounts/accounts-abridged-tangible-note-retained" class="button">Change<span class="visuallyhidden"> tangible assets note</span></a>
+            <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> tangible assets note</span></a></span></p>
           </div><!--review-reveal-->
           </details>
         </td>
@@ -609,54 +600,269 @@ $(document).ready(function(){  //Only show the button if javascript is on
 
 
 
-
-
-
-
             <tr>
               <td>
                 <details>
-                  <summary><span class="summary">Revaluation reserve note</span></summary>
+                  <summary><span class="summary">Debtors note</span></summary>
                   <div class="review-reveal">
-                    <div class="grid-row">
-                        <div class="column-one-half">
-                        &nbsp;
+
+                      <div class="grid-row">
+                        <div class="column-one-half">&nbsp;
                         </div>
                         <div class="column-one-quarter">
-                          <p class="bold-small">£</p>
+                          <p><strong>2017<br />£</strong></p>
                         </div>
-                    </div><!--grid-row-->
-                    <div class="grid-row">
-                      <div class="column-one-half">
-                        <p>At 1 April 2016</p>
-                      </div>
-                      <div class="column-one-quarter">
-                        <p>100</p>
-                      </div>
-                    </div><!--grid-row-->
-                  <div class="grid-row">
-                    <div class="column-one-half">
-                      <p>Surplus or deficit arising from revluation</p>
-                    </div>
-                    <div class="column-one-quarter">
-                      <p>0</p>
-                    </div>
-                  </div><!--grid-row-->
+                        <div class="column-one-quarter">
+                          <p><strong>2016<br />£</strong></p>
+                        </div>
+                      </div><!--grid-row-->
+                      <div class="grid-row">
+                        <div class="column-one-half">
+                          <p>Trade debtors</p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p>13,655</p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p>6,900</p>
+                        </div>
+                      </div><!--grid-row-->
+                      <div class="grid-row">
+                        <div class="column-one-half">
+                          <p>Prepayments and accrued income</p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p>11,770</p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p>2,350</p>
+                        </div>
+                      </div><!--grid-row-->
+                      <div class="grid-row">
+                        <div class="column-one-half">
+                          <p>Other debtors</p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p>6,750</p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p>6,750</p>
+                        </div>
+                      </div><!--grid-row-->
+                      <div class="grid-row">
+                        <div class="column-one-half">
+                          <p class=""><strong>Total</strong></p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p><strong>32,175</strong></p>
+                        </div>
+                        <div class="column-one-quarter">
+                          <p><strong>16,000</strong></p>
+                        </div>
+                      </div><!--grid-row-->
 
-                  <div class="grid-row">
-                    <div class="column-one-half">
-                      <p class=""><strong>At 31 March 2017</strong></p>
-                    </div>
-                    <div class="column-one-quarter">
-                      <p class=""><strong>100</strong></p>
-                    </div>
-                  </div><!--grid-row-->
+                  <p>The current debtors figure includes trade debtors expected to be fully paid within the next financial period.</p>
+                  <p><a href="/accounts/accounts-abridged-debtors-yes-no-completed" class="button">Change <span class="visuallyhidden">Debtors note</span></a>
+                    <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> Debtors note</span></a></span></p>
 
-                <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> tangible assets note</span></a></p>
+                  <div id="content-delete-warning"  style="display: none;">
+                    <div class="error-summary" id="delete-summary">
+                      <p><strong>Are you sure you want to delete the debtors note?</strong></p>
+                      <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> note</span></a></p>
+                    </div><!--delete-summary-->
+                  </div><!--content-delete-warning-->
+
                 </div><!--review-reveal-->
                 </details>
               </td>
             </tr>
+            <tr>
+              <td>
+                <details>
+                  <summary><span class="summary">Creditors - amounts falling due within one year note</span></summary>
+                  <div class="review-reveal">
+
+
+                    <div class="grid-row">
+                      <div class="column-one-half">&nbsp;
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>2017<br />£</strong></p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>2016<br />£</strong></p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Bank loans and overdrafts</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>2,500</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>2,500</p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Amounts due under finance leases and hire purchase contracts</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>1,650</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>1,650</p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Trade creditors</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>26,500</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>12,550</p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Accruals and deferred income</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>4,000</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p></p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Other creditors</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>1,850</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p></p>
+                      </div>
+                    </div><!--grid-row-->
+
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p class=""><strong>Total</strong></p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>36,500</strong></p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>16,700</strong></p>
+                      </div>
+                    </div><!--grid-row-->
+                  <p>Purchases of various technology shares have recently been acquired as a short term investment and are expected to be sold within the next five months.</p>
+
+
+
+                  <p><a href="/accounts/accounts-abridged-creditors-within-yes-no-completed" class="button">Change <span class="visuallyhidden">creditors - amounts falling due within one year note</span></a>
+                    <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> creditors - amounts falling due within one year note</span></a></span></p>
+
+                  <div id="content-delete-warning"  style="display: none;">
+                    <div class="error-summary" id="delete-summary">
+                      <p><strong>Are you sure you want to delete the Creditors - amounts falling due within one year note?</strong></p>
+                      <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> note</span></a></p>
+                    </div><!--delete-summary-->
+                  </div><!--content-delete-warning-->
+
+                </div><!--review-reveal-->
+                </details>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <details>
+                  <summary><span class="summary">Creditors - amounts falling due after one year note</span></summary>
+                  <div class="review-reveal">
+
+
+                    <div class="grid-row">
+                      <div class="column-one-half">&nbsp;
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>2017<br />£</strong></p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>2016<br />£</strong></p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Bank loans and overdrafts</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>1,175</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>1,000</p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Amounts due under finance leases and hire purchase contracts</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>675</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p></p>
+                      </div>
+                    </div><!--grid-row-->
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p>Other creditors</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p>250</p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p></p>
+                      </div>
+                    </div><!--grid-row-->
+
+
+                    <div class="grid-row">
+                      <div class="column-one-half">
+                        <p class=""><strong>Total</strong></p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>2,100</strong></p>
+                      </div>
+                      <div class="column-one-quarter">
+                        <p><strong>1,000</strong></p>
+                      </div>
+                    </div><!--grid-row-->
+                  <p>Additional info text goes here</p>
+
+
+
+                  <p><a href="/accounts/accounts-abridged-creditors-within-yes-no-completed" class="button">Change <span class="visuallyhidden">creditors - amounts falling due after one year note</span></a>
+                    <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> creditors - amounts falling due after one year note</span></a></span></p>
+
+                  <div id="content-delete-warning"  style="display: none;">
+                    <div class="error-summary" id="delete-summary">
+                      <p><strong>Are you sure you want to delete the Creditors - amounts falling due after one year note?</strong></p>
+                      <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> note</span></a></p>
+                    </div><!--delete-summary-->
+                  </div><!--content-delete-warning-->
+
+                </div><!--review-reveal-->
+                </details>
+              </td>
+            </tr>
+
+
+
 
 
 
@@ -728,74 +934,8 @@ $(document).ready(function(){  //Only show the button if javascript is on
         </td>
       </tr>
 
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Debtors note</span></summary>
-            <div class="review-reveal">
-
-                <div class="grid-row">
-                  <div class="column-one-half">&nbsp;
-                  </div>
-                  <div class="column-one-quarter">
-                    <p><strong>2017<br />£</strong></p>
-                  </div>
-                  <div class="column-one-quarter">
-                    <p><strong>2016<br />£</strong></p>
-                  </div>
-                </div><!--grid-row-->
-                <div class="grid-row">
-                  <div class="column-one-half">
-                    <p>Debtors due after more than one year</p>
-                  </div>
-                  <div class="column-one-quarter">
-                    <p>32,175</p>
-                  </div>
-                  <div class="column-one-quarter">
-                    <p>16,000</p>
-                  </div>
-                </div><!--grid-row-->
-
-            <p>The current debtors figure includes trade debtors expected to be fully paid within the next financial period.</p>
-            <p><a href="/accounts/accounts-abridged-debtors-yes-no-completed" class="button">Change <span class="visuallyhidden">Debtors note</span></a>
-              <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> Debtors note</span></a></span></p>
-
-            <div id="content-delete-warning"  style="display: none;">
-              <div class="error-summary" id="delete-summary">
-                <p><strong>Are you sure you want to delete the debtors note?</strong></p>
-                <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> note</span></a></p>
-              </div><!--delete-summary-->
-            </div><!--content-delete-warning-->
-
-          </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
 
 
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Creditors - amounts falling due within one year note</span></summary>
-            <div class="review-reveal">
-            <p>Purchases of various technology shares have recently been acquired as a short term investment and are expected to be sold within the next five months.</p>
-
-
-
-            <p><a href="/accounts/accounts-abridged-creditors-within-yes-no-completed" class="button">Change <span class="visuallyhidden">creditors - amounts falling due within one year note</span></a>
-              <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> creditors - amounts falling due within one year note</span></a></span></p>
-
-            <div id="content-delete-warning"  style="display: none;">
-              <div class="error-summary" id="delete-summary">
-                <p><strong>Are you sure you want to delete the Creditors - amounts falling due within one year note?</strong></p>
-                <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> note</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> note</span></a></p>
-              </div><!--delete-summary-->
-            </div><!--content-delete-warning-->
-
-          </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
 
 
 
