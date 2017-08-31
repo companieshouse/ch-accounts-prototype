@@ -99,6 +99,7 @@ table.check-your-answers {
       padding:0.5em 0 0.2em 1em;
       .column-one-half p {text-align:left}
       .column-one-quarter p {text-align:right}
+      .column-sixth p {text-align:right}
     }
     #delete-summary {
       p {color:$error-colour;}
