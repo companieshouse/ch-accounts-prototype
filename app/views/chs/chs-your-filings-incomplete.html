@@ -1,0 +1,122 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Your filings
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+          $("a.PDF").addClass("hidden");
+          $("a.pop").removeClass("hidden");
+
+  });
+</script>
+<script>
+function openWin() {
+    window.open("/public/pdf/small-full-accounts-sample.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=500, left=200");
+}
+</script>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+    <main id="content" role="main" class="search">
+
+{% include "includes/phase_banner_beta.html" %}
+
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+        <li><a href="javascript:void(0)">Your details</a></li>
+        <li>Your filings</li>
+        <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+        <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+      </ul>
+    </nav>
+
+    <a class="link-back" href="javascript:history.back()">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Your filings</h1>
+    </header>
+
+
+    <p class="form-group">This is a list of company information filed by <strong>jsmith@testcompany.co.uk</strong></p>
+
+    <div class="your-filings">
+
+
+
+
+
+                <div class="one-filing">
+
+                    <h2 class="heading-medium"><a href="chs-profile-page-logged-in-submitted">A TEST COMPANY LIMITED</a><span>Company number <strong>01234567</strong></span></h2>
+                    <div class="grid-row">
+                      <div class="column-third">
+                        Description<strong>Annual accounts</strong>
+                      </div>
+                      <div class="column-third">
+                        Reference number<strong> 776846-998567-228911</strong>
+                      </div>
+                      <div class="column-third">
+                        Received on<strong><span id="displayMoment"></span> at X:XXpm</strong>
+                      </div>
+                    </div><!--grid-row-->
+
+
+                    <table id="rf_table">
+                    <caption class="visuallyhidden">This is a list of company information filed by jsmith@testcompany.co.uk</caption>
+                    <thead>
+                      <tr>
+                        <th class="description"></th>
+                        <th class="status">Status</th>
+                        <th class="actions">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Small full accounts</strong> made up to 31 March 2017</td>
+                        <td><strong class="status">Incomplete</strong></td>
+                        <td><a href="javascript:void(0)" id="">Resume<span class="visuallyhidden">A TEST COMPANY LIMITED Small full accounts made up to 31 March 2017</span></a> or <a href="javascript:void(0)" id="">Delete<span class="visuallyhidden">A TEST COMPANY LIMITED Small full accounts made up to 31 March 2017</span></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  </div><!--One Filing-->
+
+
+      </div><!--your filings-->
+
+
+
+
+
+</main>
+<script type="text/javascript">
+( function()
+{
+// instantiate a Moment object
+var NowMoment = moment().format('D MMMM YYYY');
+// display value of NowMoment in #displayMoment div
+var eDisplayMoment = document.getElementById('displayMoment');
+eDisplayMoment.innerHTML = NowMoment;
+})();
+</script>
+{% endblock %}
