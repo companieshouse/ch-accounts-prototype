@@ -450,7 +450,24 @@ router.get('/small-full/profit-and-loss-account', function (req, res) {
 
 
 
+// Smal full - do you have Other accounting policies?
 
+router.get('/small-full/small-full-intangible-assets-note', function (req, res) {
+
+  var smallfullotherpolicies = req.query.smallfullotherpolicies;
+
+  if (smallfullotherpolicies == "Yes"){
+
+    // redirect to the relevant page
+    res.redirect("/small-full/small-full-turnover-policy-yes-no");
+
+  } else {
+
+    res.render('small-full/small-full-intangible-assets-note');
+
+  }
+
+});
 
 
 

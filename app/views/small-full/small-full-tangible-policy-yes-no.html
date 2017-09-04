@@ -1,0 +1,88 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - Tangible fixed assets depreciation policy
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
+      Balance sheet notes
+      <span class="circle-subheading">Tangible fixed assets depreciation policy</span>
+    </h1>
+  </div>
+
+    <div class="left-indent">
+      <div class="text">
+        <h2 class="heading-medium">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</h2>
+
+
+    <form action="/small-full/small-full-intangible-policy-yes-no" method="get" class="form">
+          <fieldset class="inline" data-required="" data-error="Please confirm if you want to include a 'tangible fixed assets depreciation' policy">
+                  <legend class="visually-hidden">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
+                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
+                    Yes
+                  </label>
+                  <label class="block-label selection-button-radio" for="employeesnoteno">
+                    <input id="employeesnoteno" name="employeesnoteyn" value="No" type="radio">
+                    No
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
+
+                            <fieldset>
+
+                              <p class="form-hint">If you have tangible (physical) fixed assets, this policy describes how the depreciation (reduction in value) of each asset is calculated over its expected useful lifetime.</p>
+                              <p class="form-hint">For example, 'Annual depreciation of computer equipment is calculated at 25% of cost to write off the cost of the asset, less its residual value, over its estimated useful economic lifetime'.</p>
+                            <legend class="visuallyhidden">Turnover policy</legend>
+                              <label class="visuallyhidden" for="other-1"></label>
+                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+
+                          </fieldset>
+
+              </div>
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div>
+      </div><!--left-indent-->
+
+</main>
+{% endblock %}
