@@ -23,6 +23,30 @@
   position: relative;
   top:-7px;
 }
+#filing-alert {
+    background: #B10E1E;
+    color:#fff;
+    display: inline-block;
+    float:right;
+    position: relative;
+    top:.2em;
+    right:2.5em;
+    width: auto;
+    padding:.2em .4em;
+    text-align: center;
+}
+#filing-alert:before {
+    border-top: 15px solid #B10E1E;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    content: "";
+    height: 0;
+    left: 48%;
+    position: absolute;
+    bottom: -15px;
+    width: 0;
+}
+.clear {clear:both}
 </style>
 
 
@@ -31,17 +55,22 @@
 
 
     <main id="content" role="main" class="profile">
-
+      <div id="filing-alert">
+        You have filings in progress
+      </div>
 {% include "includes/phase_banner_beta.html" %}
 
     <nav class="content" role="navigation">
       <ul id="navigation" class="mobile-hidden">
         <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:</li>
         <li><a href="javascript:void(0)">Your details</a></li>
-        <li><a href="chs-your-filings" id="recent_filings">Your filings</a> <span class="visuallyhidden">You have</span> <span class="notification-counter font-xsmall">1</span> <span class="visuallyhidden">incomplete or rejected filing(s)</span></li>
+        <li><a href="chs-your-filings" id="recent_filings">Your filings</a> <span class="visuallyhidden">You have</span> <span class="notification-counter font-xsmall">2</span> <span class="visuallyhidden">incomplete or rejected filing(s)</span></li>
         <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
       </ul>
     </nav>
+
+
+
 
 
 
