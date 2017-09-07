@@ -27,14 +27,19 @@
 
 
     <main id="content" role="main" class="search">
-
+      <div id="filing-alert">
+        You have filings in progress
+      </div>
 {% include "includes/phase_banner_beta.html" %}
 
-    <nav class="content" role="navigation">
-      <ul id="navigation" class="mobile-hidden">
-        <li><a href="/chs/chs-login-page-from-search-resume" id="user-signin">Sign in / Register</a></li>
-      </ul>
-    </nav>
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:</li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="/chs/chs-your-filings-incomplete" id="recent_filings">Your filings</a> <span class="visuallyhidden">You have</span> <span class="notification-counter font-xsmall">2</span> <span class="visuallyhidden">incomplete or rejected filing(s)</span></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
 
         <!-- Views -->
         <div id="view1" class="view active">
@@ -131,7 +136,7 @@
                   <li class="type-company">
                     <h3>
                     <!-- $item._score -->
-                    <a title="View company" href="chs-profile-page-resume">
+                    <a title="View company" href="chs-profile-page-resume-logged-in">
                     A <strong>TEST</strong> <strong>COMPANY</strong> LIMITED
                     </a>
                     </h3>

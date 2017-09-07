@@ -421,10 +421,33 @@ th .panel {
     top: -6px;
     right:-1px;
     position:relative;
-    background-color: $error-colour;
+    background-color: $orange;
     color: $page-colour;
     padding: 2px 7px 0;
     border-radius:15px;
+}
+#filing-alert {
+    background: $orange;
+    color:$page-colour;
+    display: inline-block;
+    float:right;
+    position: relative;
+    top:.2em;
+    right:2.5em;
+    width: auto;
+    padding:.2em .4em;
+    text-align: center;
+}
+#filing-alert:before {
+    border-top: 15px solid $orange;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    content: "";
+    height: 0;
+    left: 48%;
+    position: absolute;
+    bottom: -15px;
+    width: 0;
 }
 
 //Embedded PDF
