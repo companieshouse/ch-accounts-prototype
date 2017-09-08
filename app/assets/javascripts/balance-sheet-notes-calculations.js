@@ -70,7 +70,7 @@ $(document).ready(function() {
        var intangiblecostdisposals = $('#intangible-cost-disposals').val();
        var intangiblecostrevaluations = $('#intangible-cost-revaluations').val();
        var intangiblecosttransfers = $('#intangible-cost-transfers').val();
-       var total = +intangiblecostatstart + +intangiblecostadditions + +intangiblecostdisposals + +intangiblecostrevaluations + +intangiblecosttransfers;
+       var total = +intangiblecostatstart + +intangiblecostadditions - +intangiblecostdisposals + +intangiblecostrevaluations + +intangiblecosttransfers;
        $('#intangible-cost-at-end').val(total);
      }
      $('#intangible-cost-at-start, #intangible-cost-additions, #intangible-cost-disposals, #intangible-cost-revaluations, #intangible-cost-transfers').change(compute);
@@ -83,7 +83,7 @@ $(document).ready(function() {
        var intangibleamortisationchargeforyear = $('#intangible-amortisation-charge-for-year').val();
        var intangibleamortisationondisposals = $('#intangible-amortisation-on-disposals').val();
        var intangibleamortisationotheradjustments = $('#intangible-amortisation-other-adjustments').val();
-       var total = +intangibleamortisationatstart + +intangibleamortisationchargeforyear + +intangibleamortisationondisposals + +intangibleamortisationotheradjustments;
+       var total = +intangibleamortisationatstart + +intangibleamortisationchargeforyear - +intangibleamortisationondisposals + +intangibleamortisationotheradjustments;
        $('#intangible-amortisation-at-end').val(total);
      }
      $('#intangible-amortisation-at-start, #intangible-amortisation-charge-for-year, #intangible-amortisation-on-disposals, #intangible-amortisation-other-adjustments').change(compute);

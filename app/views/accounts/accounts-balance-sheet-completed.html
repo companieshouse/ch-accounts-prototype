@@ -80,7 +80,7 @@ $('#tangible-assets-current').keyup(function() {
 <h2 class="heading-medium">Fixed assets</h2>
 
   <!--Start intangible assets-->
-  <!--<div class="grid-row">
+<div class="grid-row">
     <div class="column-half">
         <details>
           <summary><span class="summary">Intangible assets</span></summary>
@@ -99,19 +99,19 @@ $('#tangible-assets-current').keyup(function() {
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-          <input type="number"  onkeypress="" class="form-control" id="intangible-assets-current">
+          <input type="number"  onkeypress="" class="form-control" id="intangible-assets-current" value="100">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-          <input type="number"  onkeypress="" class="form-control" id="intangible-assets-previous">
+          <input type="number"  onkeypress="" class="form-control" id="intangible-assets-previous" value="100">
         </label>
       </div>
     </div>
 
-  </div>-->
+  </div>
   <!--End intangible assets-->
 
 
@@ -212,14 +212,14 @@ $('#tangible-assets-current').keyup(function() {
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-          <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-current" value="37440" readonly>
+          <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-current" value="37540" readonly>
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-          <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-previous" value="30740" readonly>
+          <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-previous" value="30840" readonly>
         </label>
       </div>
     </div>
@@ -494,14 +494,14 @@ $('#tangible-assets-current').keyup(function() {
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="total-assets-less-current-liabilities-current"><span class="mobile-only-label">Total assets less current liabilities (2016)</span>
-            <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-current" value="68570" readonly>
+            <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-current" value="68670" readonly>
           </label>
         </div>
       </div>
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label-bold" for="total-assets-less-current-liabilities-previous"><span class="mobile-only-label">Total assets less current liabilities (2015)</span>
-            <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-previous" value="37040" readonly>
+            <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-previous" value="37140" readonly>
           </label>
         </div>
       </div>
@@ -615,14 +615,14 @@ $('#tangible-assets-current').keyup(function() {
           <div class="column-quarter">
             <div class="form-group">
               <label class="form-label-bold" for="total-net-assets-liabilities-current"><span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
-                <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-current" value="64070" readonly>
+                <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-current" value="64170" readonly>
               </label>
             </div>
           </div>
           <div class="column-quarter">
             <div class="form-group">
               <label class="form-label-bold" for="total-net-assets-liabilities-previous"><span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
-                <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-previous" value="35340" readonly>
+                <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-previous" value="35440" readonly>
               </label>
             </div>
           </div>
@@ -665,6 +665,7 @@ $('#tangible-assets-current').keyup(function() {
           <!--End called up share capital-->
 
 
+
           <!--Start share premium account-->
           <div class="grid-row">
             <div class="column-half">
@@ -692,6 +693,37 @@ $('#tangible-assets-current').keyup(function() {
             </div>
           </div>
           <!--End share premium account-->
+
+
+                    <!--Start Revaluation reserve-->
+                    <div class="grid-row">
+                      <div class="column-half">
+                        <label class="form-label" for="stocks-previous">
+                          <details>
+                            <summary><span class="summary">Revaluation reserve</span></summary>
+                            <div class="panel panel-border-narrow">
+                              <p>The change in asset values after revaluation when compared to their previous balance sheet values.</p>
+                          </div>
+                          </details>
+                        </label>
+                      </div>
+
+                      <div class="column-quarter">
+                        <div class="form-group">
+                          <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
+                            <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-current" value="100">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="column-quarter">
+                        <div class="form-group">
+                          <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
+                            <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-previous" value="50">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <!--End Revaluation reserve-->
 
 
           <!--Start revaluation reserve-->
@@ -744,7 +776,7 @@ $('#tangible-assets-current').keyup(function() {
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label" for="other-reserves-previous"><span class="mobile-only-label">Other reserves (2015)</span>
-                  <input type="number"  onkeypress="" class="form-control" id="other-reserves-previous" value="100">
+                  <input type="number"  onkeypress="" class="form-control" id="other-reserves-previous" value="150">
                 </label>
               </div>
             </div>
@@ -800,14 +832,14 @@ $('#tangible-assets-current').keyup(function() {
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
-                  <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-current" value="64070" readonly>
+                  <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-current" value="64170" readonly>
                 </label>
               </div>
             </div>
             <div class="column-quarter">
               <div class="form-group">
                 <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
-                  <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-previous" value="35340" readonly>
+                  <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-previous" value="35440" readonly>
                 </label>
               </div>
             </div>
