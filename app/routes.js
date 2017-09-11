@@ -450,7 +450,7 @@ router.get('/small-full/profit-and-loss-account', function (req, res) {
 
 
 
-// Smal full - do you have Other accounting policies?
+// Small full - do you have Other accounting policies?
 
 router.get('/small-full/small-full-intangible-assets-note', function (req, res) {
 
@@ -470,7 +470,43 @@ router.get('/small-full/small-full-intangible-assets-note', function (req, res) 
 });
 
 
+// Abbreviated accounts (from the CHS accounts chooser) - on alternative CHS search journey
 
+router.get('/webfiling/webfiling-login-page-chs-search', function (req, res) {
+
+  var chsabbreviatedsearch = req.query.chsabbreviatedsearch;
+
+  if (chsabbreviatedsearch == "Other"){
+
+    // redirect to the relevant page
+    res.redirect("/chs/chs-choose-accounts-alternative-chs-search");
+
+  } else {
+
+    res.render('webfiling/webfiling-login-page-chs-search');
+
+  }
+
+});
+
+// Abbreviated accounts (from the CHS accounts chooser) - direct from CHS
+
+router.get('/webfiling/webfiling-login-page', function (req, res) {
+
+  var chsabbreviateddirect = req.query.chsabbreviateddirect;
+
+  if (chsabbreviateddirect == "Other"){
+
+    // redirect to the relevant page
+    res.redirect("/chs/chs-choose-accounts-after-chs-profile");
+
+  } else {
+
+    res.render('webfiling/webfiling-login-page');
+
+  }
+
+});
 
 
 
