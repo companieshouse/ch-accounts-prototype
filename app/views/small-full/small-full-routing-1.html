@@ -1,0 +1,65 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Small full accounts - choose journey
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+  <div class="text">
+    <h1 class="heading-xlarge">Choose journey</h1>
+
+
+
+
+
+    <form action="/gov-uk/gov-uk-start-page-small-full" method="get" class="form">
+          <fieldset>
+                  <legend class="visually-hidden"></legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="smallfullroute1mvp">
+                    <input id="smallfullroute1mvp" name="smallfullroute1" value="mvp" type="radio">
+                    <span style="text-decoration: line-through">Minimum viable product (MVP)</span>
+                    <span class="form-hint">Balance sheet, balance sheet statements, and 3 notes (accounting policies, tangible assets, creditors within one year)</span>
+                  </label>
+                  <label class="block-label selection-button-radio" for="smallfullroute1full">
+                    <input id="smallfullroute1full" name="smallfullroute1" value="full" type="radio">
+                    Full
+                    <span class="form-hint">Directors report, profit and loss account, balances sheet, balance sheet statements,and all notes</span>
+
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+
+
+
+          <div class="">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+
+
+
+</main>
+{% endblock %}
