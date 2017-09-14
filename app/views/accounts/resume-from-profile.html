@@ -13,34 +13,15 @@
   position: relative;
   top:-7px;
 }
-#filing-alert {
-    background: #B10E1E;
-    color:#fff;
-    display: inline-block;
-    float:right;
-    position: relative;
-    top:.2em;
-    right:2.5em;
-    width: auto;
-    padding:.2em .4em;
-    text-align: center;
-}
-#filing-alert:before {
-    border-top: 15px solid #B10E1E;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    content: "";
-    height: 0;
-    left: 48%;
-    position: absolute;
-    bottom: -15px;
-    width: 0;
-}
+
 </style>
 
 
 
 <main id="content" role="main" class="two-column-accounts">
+  <div id="filing-alert">
+    You have filings in progress
+  </div>
 {% include "includes/phase_banner_beta.html" %}
 
 <nav class="content" role="navigation">
