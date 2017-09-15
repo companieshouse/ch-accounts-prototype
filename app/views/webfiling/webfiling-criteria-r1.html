@@ -1,0 +1,117 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Filing abridged accounts using our new service
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br />Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br/>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="" href="javascript:void(0)">Change account details</a></li>
+      <li><a class="" href="webfiling-my-recent-filings">My recent filings</a></li>
+
+			    <li><a class="" href="javascript:void(0)">Company authentication</a></li>
+                <li><a class="" href="javascript:void(0)">File for a different company</a></li>
+			    <li><a class="" href="javascript:void(0)">Company overview</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+<div class="container-content">
+
+<h1 class="large-heading"><strong>Filing abridged accounts using our new service</strong></h1>
+
+
+
+        <h2 class="margin-top-5">Important information about the new service</h2>
+
+        <p>The new service is <a href="https://www.gov.uk/help/beta">in BETA<span class="visuallyhidden"> Link opens in new tab/window</span></a>. This means it is currently being tested and improved based on user feedback.</p>
+
+        <p>Use the new service if:</p>
+        <ul>
+          <li>your accounting period starts on or after 1 January 2016</li>
+          <li>your balance sheet doesn’t include 'intangible assets', 'fixed asset investments' or 'revaluation reserve'</li>
+          <li>you only need to supply an 'accounting policies' note (and, if needed, a 'tangible assets' note and/or a 'creditors - amounts falling due within one year’ note)</li>
+          <li>you don't need to change the date the accounts are made up to</li>
+        </ul>
+
+
+
+        <!--  <p>You'll need to register with the new service. To do this:</p>
+            <ul>
+              <li>you can use the same email you use for your Companies House online services</li>
+              <li>you'll need to set a password (as this service login uses different standards, you may not be able to use your existing Companies House password)</li>
+              <li>you’ll need your existing company authentication code from Companies House</li>
+            </ul>-->
+
+
+
+    <div class="clear"></div>
+    <form action="/chs/chs-from-webfiling" method="get" class="form">
+
+      <h2>Do your prepared abridged accounts meet the criteria?</h2>
+
+
+  <p class="margin-top-20"><a class="button positive regular" title=" Yes, take me to the new filing service" href="/chs/chs-start-page-r1">Yes</a></p>
+  <p class="margin-top-20"><a class="button positive regular" title="No, my abridged accounts don't meet the criteria" href="webfiling-hmrc-third-party">No - Show me other ways to file abridged accounts</a></p>
+  <p class="margin-top-20"><a class="button positive regular" title="No, my abridged accounts don't meet the criteria" href="webfiling-accounts-picker-chs-search">No - I'll file other types of accounts</a></p>
+
+  <p><a href="webfiling-accounts-picker" class="negative right">Back</a></p>
+
+
+	<div class="clear"></div>
+
+</div>
+		<!-- FILE_START::footer.tmpl -->
+
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+
+</div>   <!--End of div id="container"-->
+<div id="footer">
+
+      <div class="container_16">
+          <span class="email">
+          <a href="javascript:void(0)">Email Companies House</a></span>
+          <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+          <span class="help"><a href="javascript:void(0)">Help</a></span>
+          <!-- FILE_START::language.tmpl -->
+
+
+<!-- FILE_END::language.tmpl -->
+
+      </div>
+
+  </div><!--End of div id="footer"-->
+{% endblock %}

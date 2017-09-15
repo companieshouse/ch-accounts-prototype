@@ -39,11 +39,15 @@ Balance sheet notes - Financial commitments
 
     <div class="left-indent">
     <h2 class="heading-medium">Do your prepared accounts include a 'financial commitments' note?</h2>
-
+    <details class="form-group">
+      <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
+      <div class="panel panel-border-narrow form-hint">
+        <p>Use this note to record the total amount (or estimated amount) your company has committed to spend on future assets.</p>
+      </div>
+    </details>
     <form action="/accounts/accounts-abridged-loans-yes-no" method="get" class="form">
           <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'financial commitments' note">
                   <legend class="visually-hidden">Do your prepared accounts include a 'financial commitments' note?</legend>
-                  <div class="form-group">
 
                   <label class="block-label selection-button-radio" for="financialcommitmentsnoteyes" data-target="financialcommitmentsnoteyes-reveal">
                     <input id="financialcommitmentsnoteyes" name="financialcommitmentsnoteyn" value="Yes" aria-controls="financialcommitmentsnoteyes-reveal" type="radio">
@@ -53,14 +57,12 @@ Balance sheet notes - Financial commitments
                     <input id="financialcommitmentsnoteno" name="financialcommitmentsnoteyn" value="No" type="radio">
                     No
                     </label>
-                  </div><!--form-group-->
 
                 </fieldset>
 
 
 
             <div class="panel panel-border-narrow js-hidden" id="financialcommitmentsnoteyes-reveal">
-              <p class="form-hint">Use this note to record the total amount (or estimated amount) your company has committed to spend on future assets.</p>
           <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
           </div>
 

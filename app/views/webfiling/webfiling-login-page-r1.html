@@ -1,0 +1,130 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Sign in to Companies House
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+<div class="grid_3 alpha userMenu">
+        <p><a href="webfiling-register">Register</a></p>
+</div>
+
+        <div class="container-content login">
+
+        <div class="error message">
+          <p><a href="javascript:void(0)">Warning about bogus emails</a></p>
+        </div>
+        <div class="error message">
+          <p><a href="http://ow.ly/LJHpM">Warning - Latest scam re. Late Filing Penalty.</a></p>
+        </div>
+
+
+    <h1>Sign in to Companies House WebFiling</h1>
+
+
+
+
+
+         <div class="grid_6 alpha">
+
+
+
+
+        <form id="login" method="post" action="">
+            <label for="email">
+                <span>Email address</span>
+                <input class="" name="email" value="" maxlength="256" id="email" type="text">
+
+            </label>
+
+
+            <label for="seccode">
+                <span>Password</span>
+                <input class="" name="seccode" maxlength="32" id="seccode" type="password">
+
+            </label>
+
+            <a href="webfiling-company-auth-r1" class="button positive regular"><strong>Sign in</strong></a>
+
+
+            <p class="margin-top-20"><a href="javascript:void(0)" class="">Forgotten your password?</a></p>
+
+
+
+
+
+
+
+        </form>
+
+                </div><!--End of div class="grid_8 alpha"-->
+
+                <div class="grid_5 omega">
+
+                <p><strong>Use Companies House WebFiling to:</strong></p>
+                <ul style="padding-left:0;">
+                <li>file your company's confirmation statement (annual return)</li>
+                <li>file your company's annual accounts</li>
+                <li>file your company's director or secretary changes and other information</li>
+
+                </ul>
+                   <p><a href="javascript:void(0)" class="">Who can use WebFiling?</a></p>
+
+
+                </div>    <!--End of div class="grid_5 omega"-->
+
+                <!--  <div class="clear"></div>
+                  <div class="message warning">
+                  <p><strong>Accounts</strong><br>
+                    The Companies Act 2006 no longer permits companies to file abbreviated accounts.</p>
+                    <p>Your company will need to file accounts of a different type (full accounts, micro-entity accounts,<br> or <a href="/chs/chs-start-page">abridged accounts on the new Companies House service<span class="hidden"> Link opens in new tab/window</span></a>).</p>
+                  </div>-->
+
+        </div><!--End of div class="grid_12 omega"-->
+    <div class="clear"></div>
+</div>
+
+<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+<a id="i18nLink" href="javascript:void(0)" class="language">Cymraeg</a>
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+
+
+
+</div>
+{% endblock %}

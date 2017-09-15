@@ -4,6 +4,8 @@
 Balance sheet notes - Any other accounting policies
 {% endblock %}
 
+
+
 {% block content %}
 
 <style type="text/css">
@@ -39,16 +41,23 @@ Balance sheet notes - Any other accounting policies
 
     <div class="left-indent">
       <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include any other accounting policies?
-          <span class="form-hint">For example, 'deferred taxation'</span>
-</h2>
+        <h2 class="heading-medium">Do your prepared accounts include any other accounting policies?</h2>
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Other accounting policies</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>Use this policy to report other policies you may have that aren’t covered by the policies earlier, such as:</p>
+                <ul class="list list-bullet">
+                    <li>depreciation of assets obtained under hire purchases or leases</li>
+                    <li>deferred taxation</li>
+                    <li>pensions or retirement benefits</li>
+                </ul>
+          </div>
+        </details>
 
 
     <form action="/accounts/accounts-abridged-intangible-note" method="get" class="form">
-          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include any other accounting policies">
+          <fieldset class="inline form-group" data-required="" data-error=" Please confirm if you want to include any other accounting policies">
                   <legend class="visually-hidden">Do your prepared accounts include any other accounting policies?</legend>
-                  <div class="form-group">
-
                   <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
                     <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
                     Yes
@@ -57,32 +66,22 @@ Balance sheet notes - Any other accounting policies
                     <input id="employeesnoteno" name="employeesnoteyn" value="No" type="radio">
                     No
                     </label>
-                  </div><!--form-group-->
 
                 </fieldset>
 
 
 
-            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
 
-                            <fieldset>
+                            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
 
-                            <div class="form-hint">
-                            <p>Use this policy to report other policies you may have that aren’t covered by the policies earlier, such as:</p>
-                                <ul class="list list-bullet">
-                                    <li>depreciation of assets obtained under hire purchases or leases</li>
-                                    <li>deferred taxation</li>
-                                    <li>pensions or retirement benefits</li>
-                                </ul>
+                                            <fieldset>
+                                            <legend class="visuallyhidden">Other policies</legend>
+                                              <label class="visuallyhidden" for="other-1"></label>
+                                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+
+                                          </fieldset>
+
                               </div>
-                              <br />
-                            <legend class="visuallyhidden">Turnover policy</legend>
-                              <label class="visuallyhidden" for="other-1"></label>
-                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-
-                          </fieldset>
-
-              </div>
 
 
 

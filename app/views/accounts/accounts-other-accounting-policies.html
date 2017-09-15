@@ -4,13 +4,7 @@
   Accounting policies
 {% endblock %}
 
-{% block proposition_header %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
 
-{% block header_class %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
 
 {% block content %}
 
@@ -59,32 +53,36 @@
 
 
 
-  <h2 class="heading-medium">Do your prepared accounts include any additional accounting policies?
-    <!--<span class="form-hint">For example, 'turnover policy' or 'tangible fixed assets depreciation policy'</span>-->
-  </h2>
+  <h2 class="heading-medium">Do your prepared accounts include any additional accounting policies?</h2>
+  <details class="form-group">
+    <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Additional accounting policies</span>
+    <div class="panel panel-border-narrow form-hint">
+      <p>For example 'turnover policy', 'tangible fixed assets depreciation policy', or 'intangible fixed assets amortisation policy'</p>
+    </div>
+  </details>
+  <form action="/accounts/accounts-turnover-policy-yes-no" method="get" class="form">
 
-<form action="/accounts/accounts-turnover-policy-yes-no" method="get" class="form">
 
 
 
-      <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include any additional accounting policies">
+  <fieldset class="inline form-group" data-required="" data-error=" Please confirm if you want to include any additional accounting policies">
 
-                <div class="form-group">
-                  <legend class="visuallyhidden">Do your prepared accounts include any additional accounting policies?</legend>
-                  <label class="block-label selection-button-radio" for="policies-yes">
-                    <input id="policies-yes" name="otherpolicies" value="Yes" type="radio">
-                    Yes
-                  </label>
+    <legend class="visuallyhidden">Do your prepared accounts include any additional accounting policies?</legend>
+    <div class="form-group">
+      <label class="block-label selection-button-radio" for="policies-yes">
+      <input id="policies-yes" name="otherpolicies" value="Yes" type="radio">
+      Yes
+      </label>
 
-                  <label class="block-label selection-button-radio" for="policies-no">
-                    <input id="policies-no" name="otherpolicies" value="No" type="radio">
-                    No
-                  </label>
+      <label class="block-label selection-button-radio" for="policies-no">
+      <input id="policies-no" name="otherpolicies" value="No" type="radio">
+      No
+      </label>
+    </div>
 
-                </div><!--form-group-->
 
-              </fieldset>
 
+  </fieldset>
 
 
 

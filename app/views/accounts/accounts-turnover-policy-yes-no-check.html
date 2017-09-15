@@ -40,7 +40,13 @@ Balance sheet notes - Turnover policy
     <div class="left-indent">
       <div class="text">
         <h2 class="heading-medium">Do your prepared accounts include a 'turnover' policy?</h2>
-
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Turnover policy</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>This policy describes how the turnover figure in your profit and loss account was calculated.</p>
+            <p>For example, 'The turnover represents amounts receivable for goods and services net of VAT and trade discounts'.</p>
+          </div>
+        </details>
 
     <form action="/accounts/accounts-review" method="get" class="form">
           <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'turnover' policy">
@@ -64,10 +70,7 @@ Balance sheet notes - Turnover policy
             <div class="panel panel-border-narrow" id="employeesnoteyes-reveal">
 
                             <fieldset>
-
-                              <p class="form-hint">This policy describes how the turnover figure in your profit and loss account was calculated.</p>
-                              <p class="form-hint">For example, 'The turnover represents amounts receivable for goods and services net of VAT and trade discounts'.</p>
-                            <legend class="visuallyhidden">Turnover policy</legend>
+                        <legend class="visuallyhidden">Turnover policy</legend>
                               <label class="visuallyhidden" for="other-1"></label>
                             <textarea type="text" id="other-1" class="form-control" rows="5">Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</textarea>
 
