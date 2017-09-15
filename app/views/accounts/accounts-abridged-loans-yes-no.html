@@ -40,12 +40,14 @@ Balance sheet notes - Loans to directors
 
     <div class="left-indent">
         <div class="text">
-            <h2 class="heading-medium">Do your prepared accounts include a 'loans to directors' note?</h2>
+            <h2 class="heading-medium">Do your prepared accounts include a 'loans to directors' note?<span class="form-hint"></span></h2>
+
             <details class="form-group">
               <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
               <div class="panel panel-border-narrow form-hint">
                 <p>The disclosure of any transactions with your company's directors, such as advances and credits, or loans guaranteed by a director.</p>
                 <p>Details of any other elements that support the understanding of the financial statements should be provided as additional information. For example, the rate of interest on advances and details of any guarantees given by the company on behalf of a director.</p>
+                <p><strong>You can report up to 20 loans.</strong></p>
             </div>
             </details>
         </div><!--text-->
@@ -72,7 +74,7 @@ Balance sheet notes - Loans to directors
             <div class="panel panel-border-narrow js-hidden" id="loansnoteyes-reveal">
 
 
-              
+
 
                       <h2 class="heading-medium">Name of director receiving advance or credit</h2>
 
@@ -203,13 +205,7 @@ Balance sheet notes - Loans to directors
                       <!--End balance at end--->
 
 
-                      <details class="text">
-                        <summary><span class="summary">Add additional information?</span></summary>
-                        <div class="panel panel-border-narrow">
-                          <label class="visuallyhidden" for="textarea">Add additional information?</label>
-                          <textarea type="text" id="" class="form-control" rows="10"></textarea>
-                        </div>
-                      </details>
+
 
 
                     <h2 class="heading-medium">Do you have any other loans to directors to report?</h2>
@@ -223,14 +219,19 @@ Balance sheet notes - Loans to directors
                         <input type="radio" value="Yes" name="moreloansdirectors" id="more-director-transactions-yes">
                         Yes
                       </label>
-                      <label class="block-label selection-button-radio" for="more-director-transactions-no">
+                      <label class="block-label selection-button-radio" for="more-director-transactions-no" data-target="loansmoreno-reveal">
                         <input type="radio" value="no" name="moreloansdirectors" id="more-director-transactions-no">
                         No
                       </label>
                       </fieldset>
                     </div><!--form-group-->
 
+                    <div class="js-hidden" id="loansmoreno-reveal">
 
+                          <label class="heading-medium" for="textarea">Add any additional information about your loans to directors note here</label>
+                          <textarea type="text" id="" class="form-control" rows="10"></textarea>
+
+                    </div>
 
 
                     <div class="js-hidden" id="loansmoreyes-reveal">
@@ -363,13 +364,7 @@ Balance sheet notes - Loans to directors
                             <!--End balance at end--->
 
 
-                            <details class="text">
-                              <summary><span class="summary">Add additional information?</span></summary>
-                              <div class="panel panel-border-narrow">
-                                <label class="visuallyhidden" for="textarea">Add additional information?</label>
-                                <textarea type="text" id="textarea2" class="form-control text" rows="10"></textarea>
-                              </div>
-                            </details>
+
 
 
                           <h2 class="heading-medium">Do you have any other loans to directors to report?</h2>
@@ -382,7 +377,7 @@ Balance sheet notes - Loans to directors
                               <input type="radio" value="Yes" name="moreloansdirectors2" id="more-director-transactions2-yes">
                               Yes
                             </label>
-                            <label class="block-label selection-button-radio" for="more-director-transactions2-no">
+                            <label class="block-label selection-button-radio" for="more-director-transactions2-no" data-target="loansmoreno2-reveal">
                               <input type="radio" value="no" name="moreloansdirectors2" id="more-director-transactions2-no">
                               No
                             </label>
@@ -391,9 +386,16 @@ Balance sheet notes - Loans to directors
                     </div><!--loansmoreyes-reveal-->
 
 
+
+
             </div><!--loansnoteyes-reveal-->
 
+            <div class="js-hidden" id="loansmoreno2-reveal">
 
+                  <label class="heading-medium" for="textarea">Add any additional information about your loans to directors note here</label>
+                  <textarea type="text" id="" class="form-control" rows="10"></textarea>
+
+            </div>
 
           <div class="accounts-row-spacer">
             <input type="submit" class="button" value="Next" id="">
