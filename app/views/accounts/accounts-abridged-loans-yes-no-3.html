@@ -1,0 +1,342 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Balance sheet notes - Loans to directors
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+  <div class="text">
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+      Balance sheet notes
+      <span class="circle-subheading">Loans to directors</span>
+    </h1>
+  </div><!--text-->
+
+
+    <div class="left-indent">
+
+
+
+
+
+        <form action="/accounts/accounts-abridged-changes-in-presentation-yes-no" method="get" class="form">
+
+          <div class="grid-row">
+            <div class="column-one-third">
+              <p><strong>Name of director receiving advance or credit</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>John Smith</strong></p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-third">
+              <p>Description of the transaction</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>Short term loan</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+              <div class="column-one-third">
+              &nbsp;
+              </div>
+              <div class="column-one-quarter">
+                <p class="bold-small">£</p>
+              </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-third">
+              <p>Balance at 1 April 2016</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>60,000</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-third">
+              <p>Advances or credits made</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>10,000</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-third">
+              <p>Advances or credits repaid</p>
+            </div>
+            <div class="column-one-quarter">
+              <p>5,000</p>
+            </div>
+          </div><!--grid-row-->
+          <div class="grid-row">
+            <div class="column-one-third">
+              <p><strong>Balance at 31 March 2017</strong></p>
+            </div>
+            <div class="column-one-quarter">
+              <p><strong>65,000</strong></p>
+            </div>
+          </div><!--grid-row-->
+
+            <p><a href="/accounts/accounts-abridged-loans-yes-no-completed" class="button">Change <span class="visuallyhidden">John Smith loan</span></a></p>
+
+            <div class="grid-row accounts-row-spacer">
+              <div class="column-one-third">
+                <p><strong>Name of director receiving advance or credit</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>David Smith</strong></p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-third">
+                <p>Description of the transaction</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>Car loan</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+                <div class="column-one-third">
+                &nbsp;
+                </div>
+                <div class="column-one-quarter">
+                  <p class="bold-small">£</p>
+                </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-third">
+                <p>Balance at 1 April 2016</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>12,500</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-third">
+                <p>Advances or credits repaid</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>5,000</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-third">
+                <p><strong>Balance at 31 March 2017</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>12,000</strong></p>
+              </div>
+            </div><!--grid-row-->
+
+            <p><a href="/accounts/accounts-abridged-loans-yes-no-completed-2" class="button">Change <span class="visuallyhidden">David Smith loan</span></a></p>
+
+
+                    <h2 class="heading-medium">Do you have any other loans to directors to report?</h2>
+
+                    <div class="form-group">
+                      <fieldset class="inline">
+                      <legend class="visuallyhidden">
+                      Do you have any other loans to directors to report?
+                      </legend>
+                      <label class="block-label selection-button-radio" for="more-director-transactions-yes" data-target="loansmoreyes-reveal">
+                        <input type="radio" value="Yes" name="moreloansdirectors" id="more-director-transactions-yes">
+                        Yes
+                      </label>
+                      <label class="block-label selection-button-radio" for="more-director-transactions-no" data-target="loansmoreno-reveal">
+                        <input type="radio" value="no" name="moreloansdirectors" id="more-director-transactions-no">
+                        No
+                      </label>
+                      </fieldset>
+                    </div><!--form-group-->
+
+                    <div class="js-hidden" id="loansmoreno-reveal">
+
+                          <label class="heading-medium" for="textarea">Add any additional information about your loans to directors note here</label>
+                          <textarea type="text" id="" class="form-control text" rows="5"></textarea>
+
+                    </div>
+
+
+
+
+
+
+
+                                <div class="js-hidden" id="loansmoreyes-reveal">
+
+
+
+                                          <h2 class="heading-medium">Name of director receiving advance or credit</h2>
+
+
+                                          <div class="form-group">
+                                            <fieldset>
+                                              <legend class="visuallyhidden">Name of director receiving advance or credit</legend>
+
+                                              <label class="block-label selection-button-radio" for="john-smith">
+                                                <input type="radio" id="john-smith" value="john-smith" name="name-of-director">
+                                                John Smith
+                                              </label>
+
+
+                                              <label class="block-label selection-button-radio" for="david-smith">
+                                                <input type="radio" id="david-smith" value="david-smith" name="name-of-director">
+                                                David Smith
+                                              </label>
+
+                                            </fieldset>
+                                          </div>
+
+                                          <br />
+                                          <h2 class="heading-medium">Description of the transaction</h2>
+
+                                          <details class="form-group text">
+                                            <summary><span class="summary">What's this?</span></summary> <span class="visuallyhidden">Description of the transaction</span>
+                                              <p>A brief description of the transaction, for example, an advance or loan for a car.</p>
+                                              <p>Only provide the details for each individual transaction to the director. You can report more transactions for the same director or other directors separately if you need to.</p>
+                                          </details>
+                                          <textarea rows="5" class="form-control text" id="textarea" type="text"></textarea>
+
+
+
+
+                                        <h2 class="heading-medium">Breakdown of the transaction</h2>
+
+                                          <!--Start balance at start-->
+
+                                          <div class="grid-row" id="accounts-header">
+                                            <div class="column-half">
+                                              &nbsp;
+                                            </div>
+                                            <div class="column-quarter">
+                                              <h2 class="heading-small">£</h2>
+                                            </div>
+                                          </div>
+
+                                          <div class="grid-row">
+                                            <div class="column-half">
+                                                <details>
+                                                  <summary><span class="summary">Balance at 1 April 2016</span></summary>
+                                                  <div class="panel panel-border-narrow">
+                                                    <p>The amount due to or from the director for this transaction at the start of the accounting period.</p>
+                                                  </div>
+                                                </details>
+                                            </div>
+
+                                            <div class="column-quarter">
+                                              <div class="form-group">
+                                                <label for="loans-to-directors-balance-at-start"><span class="visuallyhidden">Balance at 1 April 2016</span>
+                                                  <input type="number" class="form-control" id="loans-to-directors-balance-at-start">
+                                                </label>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <!--End balance at start-->
+
+                                          <!--Start Advances or credits made  -->
+                                          <div class="grid-row">
+                                            <div class="column-half">
+                                                <details>
+                                                  <summary><span class="summary">Advances or credits made</span></summary>
+                                                  <div class="panel panel-border-narrow">
+                                                    <p>The amount of the advance or credit made to the director for this particular transaction.</p>
+                                                  </div>
+                                                </details>
+                                            </div>
+                                            <div class="column-quarter">
+                                              <div class="form-group">
+                                                <label for="loans-to-directors-advances-or-credits-made"><span class="visuallyhidden">Advances or credits made</span>
+                                                  <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-made">
+                                                </label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!--End Advances or credits made  -->
+
+                                          <!--Start Advances or credits repaid-->
+                                          <div class="grid-row">
+                                            <div class="column-half">
+                                              <details>
+                                                <summary><span class="summary">Advances or credits repaid</span></summary>
+                                                <div class="panel panel-border-narrow">
+                                                  <p>The amount of the advance or credit repaid by the director for this particular transaction.</p>
+                                                </div>
+                                              </details>
+                                            </div>
+                                            <div class="column-quarter">
+                                              <div class="form-group">
+                                                <label for="loans-to-directors-advances-or-credits-repaid"><span class="visuallyhidden">Advances or credits repaid</span>
+                                                  <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-repaid">
+                                                </label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!--End Advances or credits repaid-->
+
+                                          <!--Start balance at end-->
+                                          <div class="grid-row accounts-total">
+                                            <div class="column-half">
+                                              <details>
+                                                <summary><span class="summary">Balance at 31 March 2017</span></summary>
+                                                <div class="panel panel-border-narrow">
+                                                  <p>The amount of the advance or credit repaid by the director for this particular transaction.</p>
+                                                </div>
+                                              </details>
+                                            </div>
+                                            <div class="column-quarter">
+                                              <div class="form-group">
+                                                <label for="loans-to-directors-balance-at-end"><span class="visuallyhidden"> Balance at 31 March 2017</span>
+                                                  <input type="number" class="form-control" id="loans-to-directors-balance-at-end" readonly>
+                                                </label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!--End balance at end--->
+
+
+
+
+
+
+
+
+                                        </div><!--loansmoreyes-reveal-->
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+      </div><!--left-indent-->
+
+
+</main>
+{% endblock %}

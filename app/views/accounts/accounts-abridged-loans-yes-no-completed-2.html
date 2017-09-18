@@ -39,46 +39,13 @@ Balance sheet notes - Loans to directors
 
 
     <div class="left-indent">
-        <div class="text">
-            <h2 class="heading-medium">Do your prepared accounts include a 'loans to directors' note?<span class="form-hint"></span></h2>
 
-            <details class="form-group">
-              <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-              <div class="panel panel-border-narrow form-hint">
-                <p>The disclosure of any transactions with your company's directors, such as advances and credits, or loans guaranteed by a director.</p>
-                <p>Details of any other elements that support the understanding of the financial statements should be provided as additional information. For example, the rate of interest on advances and details of any guarantees given by the company on behalf of a director.</p>
-                <p><strong>You can report up to 20 loans.</strong></p>
-            </div>
-            </details>
-        </div><!--text-->
+
+        <form action="/accounts/accounts-abridged-loans-yes-no-3" method="get" class="form">
 
 
 
-        <form action="/accounts/accounts-abridged-loans-yes-no-2" method="get" class="form">
-          <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'loans to directors' note">
-                  <legend class="visually-hidden">Do your prepared accounts include a 'loans to directors' note?</legend>
-                  <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="loansnoteyes" data-target="loansnoteyes-reveal">
-                    <input id="loansnoteyes" name="loansnoteyn" value="Yes" aria-controls="loansnoteyes-reveal" type="radio">
-                    Yes
-                  </label>
-                  <label class="block-label selection-button-radio" for="loansnoteno">
-                    <input id="loansnoteno" name="loansnoteyn" value="No" type="radio">
-                    No
-                    </label>
-                  </div><!--form-group-->
-
-                </fieldset>
-
-
-
-            <div class="js-hidden" id="loansnoteyes-reveal">
-
-
-              <div class="panel panel-border-wide">
-                <p>Some text (if needed) explaining that the user can add more loans later.</p>
-              </div>
 
                       <h2 class="heading-medium">Name of director receiving advance or credit</h2>
 
@@ -94,7 +61,7 @@ Balance sheet notes - Loans to directors
 
 
                           <label class="block-label selection-button-radio" for="david-smith">
-                            <input type="radio" id="david-smith" value="david-smith" name="name-of-director">
+                            <input type="radio" id="david-smith" value="david-smith" name="name-of-director" checked="checked">
                             David Smith
                           </label>
 
@@ -109,7 +76,7 @@ Balance sheet notes - Loans to directors
                           <p>A brief description of the transaction, for example, an advance or loan for a car.</p>
                           <p>Only provide the details for each individual transaction to the director. You can report more transactions for the same director or other directors separately if you need to.</p>
                       </details>
-                      <textarea rows="5" class="form-control text" id="textarea" type="text"></textarea>
+                      <textarea rows="5" class="form-control text" id="textarea" type="text">Car loan</textarea>
 
 
 
@@ -140,7 +107,7 @@ Balance sheet notes - Loans to directors
                         <div class="column-quarter">
                           <div class="form-group">
                             <label for="loans-to-directors-balance-at-start"><span class="visuallyhidden">Balance at 1 April 2016</span>
-                              <input type="number" class="form-control" id="loans-to-directors-balance-at-start">
+                              <input type="number" class="form-control" id="loans-to-directors-balance-at-start" value="12500">
                             </label>
                           </div>
                         </div>
@@ -161,7 +128,7 @@ Balance sheet notes - Loans to directors
                         <div class="column-quarter">
                           <div class="form-group">
                             <label for="loans-to-directors-advances-or-credits-made"><span class="visuallyhidden">Advances or credits made</span>
-                              <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-made">
+                              <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-made" value="">
                             </label>
                           </div>
                         </div>
@@ -181,7 +148,7 @@ Balance sheet notes - Loans to directors
                         <div class="column-quarter">
                           <div class="form-group">
                             <label for="loans-to-directors-advances-or-credits-repaid"><span class="visuallyhidden">Advances or credits repaid</span>
-                              <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-repaid">
+                              <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-repaid" value="500">
                             </label>
                           </div>
                         </div>
@@ -201,21 +168,13 @@ Balance sheet notes - Loans to directors
                         <div class="column-quarter">
                           <div class="form-group">
                             <label for="loans-to-directors-balance-at-end"><span class="visuallyhidden"> Balance at 31 March 2017</span>
-                              <input type="number" class="form-control" id="loans-to-directors-balance-at-end" readonly>
+                              <input type="number" class="form-control" id="loans-to-directors-balance-at-end" value="12000" readonly>
                             </label>
                           </div>
                         </div>
                       </div>
                       <!--End balance at end--->
 
-
-
-
-
-
-
-
-                    </div><!--loansmoreyes-reveal-->
 
 
 
