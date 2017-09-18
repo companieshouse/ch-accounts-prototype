@@ -101,29 +101,28 @@ table.check-your-answers {
       .column-one-quarter p {text-align:right}
       .column-sixth p {text-align:right}
     }
-    #delete-summary {
-      p {color:$error-colour;}
-      .button {
-        background-color:$error-colour;
-        &:hover  {
-          background-color:$error-button-hover;
-        }
-      }
-      .no-delete {
-        color: $link-colour;
-        background-color: transparent;
-        box-shadow: none;
-        text-decoration: underline;
-        &:hover  {
-          background-color: transparent;
-          box-shadow: none;
-          color: $link-hover-colour;
-        }
-      }
+  }
+}
+#delete-summary {
+  p {color:$error-colour;}
+  .button {
+    background-color:$error-colour;
+    &:hover  {
+      background-color:$error-button-hover;
+    }
+  }
+  .no-delete {
+    color: $link-colour;
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    &:hover  {
+      background-color: transparent;
+      box-shadow: none;
+      color: $link-hover-colour;
     }
   }
 }
-
 //Your filings//
 
 .your-filings {
