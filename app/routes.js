@@ -282,7 +282,7 @@ router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
   if (resumefromprofile == "no"){
 
     // redirect to the relevant page
-    res.redirect("/chs/chs-accounts-before-you-start");
+    res.redirect("/accounts/accounts-start-page");
 
   } else {
 
