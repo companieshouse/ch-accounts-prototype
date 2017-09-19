@@ -200,6 +200,15 @@ router.get('/accounts/accounts-start-page', function (req, res) {
   else {res.render('accounts/accounts-start-page');}
 });
 
+// CHS Release 1 question (when user resumes)
+
+router.get('/accounts/resume-from-profile', function (req, res) {
+  var chsresume = req.query.chsresume;
+  if (chsresume == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
+  else if (chsresume == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
+  else {res.render('accounts/resume-from-profile');}
+});
+
 
 // CHS Release 1 question (user ineligible to file Abridged ON THE COMPANIES HOUSE SERVICE)
 
