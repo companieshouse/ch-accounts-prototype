@@ -393,7 +393,29 @@ router.get('/accounts/accounts-abridged-fixed-assets-yes-no', function (req, res
 
 });
 
+// Do you have loans to directors notes?
 
+router.get('/accounts/accounts-abridged-loans-yes-no-2', function (req, res) {
+  var loansnoteyn = req.query.loansnoteyn;
+  if (loansnoteyn == "No"){
+    // redirect to the relevant page
+    res.redirect("/accounts/accounts-abridged-changes-in-presentation-yes-no");
+  } else {
+    res.render('accounts/accounts-abridged-loans-yes-no-2');
+  }
+});
+
+// Do you have loans to Related party transactions notes?
+
+router.get('/accounts/accounts-abridged-related-transactions-yes-no-2', function (req, res) {
+  var relatedtransactionsnoteyn = req.query.relatedtransactionsnoteyn;
+  if (relatedtransactionsnoteyn == "No"){
+    // redirect to the relevant page
+    res.redirect("/accounts/accounts-abridged-post-events-yes-no");
+  } else {
+    res.render('accounts/accounts-abridged-related-transactions-yes-no-2');
+  }
+});
 
 
 
