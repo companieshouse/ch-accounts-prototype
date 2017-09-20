@@ -46,77 +46,38 @@ Balance sheet notes - Loans to directors
 
         <form action="/accounts/accounts-abridged-loans-yes-no-3" method="get" class="form">
 
-          <div class="grid-row">
-            <div class="column-one-third">
-              <p><strong>Name of director receiving advance or credit</strong></p>
-            </div>
-            <div class="column-one-quarter">
-              <p><strong>John Smith</strong></p>
-            </div>
-          </div><!--grid-row-->
-          <div class="grid-row">
-            <div class="column-one-third">
-              <p>Description of the transaction</p>
-            </div>
-            <div class="column-one-quarter">
-              <p>Short term loan</p>
-            </div>
-          </div><!--grid-row-->
-          <div class="grid-row">
-              <div class="column-one-third">
-              &nbsp;
-              </div>
-              <div class="column-one-quarter">
-                <p class="bold-small">£</p>
-              </div>
-          </div><!--grid-row-->
-          <div class="grid-row">
-            <div class="column-one-third">
-              <p>Balance at 1 April 2016</p>
-            </div>
-            <div class="column-one-quarter">
-              <p>60,000</p>
-            </div>
-          </div><!--grid-row-->
-          <div class="grid-row">
-            <div class="column-one-third">
-              <p>Advances or credits made</p>
-            </div>
-            <div class="column-one-quarter">
-              <p>10,000</p>
-            </div>
-          </div><!--grid-row-->
-          <div class="grid-row">
-            <div class="column-one-third">
-              <p>Advances or credits repaid</p>
-            </div>
-            <div class="column-one-quarter">
-              <p>5,000</p>
-            </div>
-          </div><!--grid-row-->
-          <div class="grid-row">
-            <div class="column-one-third">
-              <p><strong>Balance at 31 March 2017</strong></p>
-            </div>
-            <div class="column-one-quarter">
-              <p><strong>65,000</strong></p>
-            </div>
-          </div><!--grid-row-->
 
-            <p><a href="/accounts/accounts-abridged-loans-yes-no-completed" class="button">Change <span class="visuallyhidden">John Smith loan</span></a>
-            <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> John Smith loan</span></a></span>
-          </p>
+          <table class="check-your-answers check-your-answers-notes">
+              <thead>
+                <tr>
+                  <th colspan="2">
+                    <h2 class="heading-medium">Loans to directors added</h2>
+                  </th>
+                  <th>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Smith</td>
+                  <td>Short term loan</td>
+                  <td class="change-answer">
+                    <a href="/accounts/accounts-abridged-loans-yes-no-completed" class="button">Change <span class="visuallyhidden">John Smith loan</span></a>
+                    <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> John Smith loan</span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
 
 
 
-                    <h2 class="heading-medium">Do you have any other loans to directors to report?</h2>
+
+                    <h2 class="heading-medium text">Do your prepared accounts include any other 'loans to directors'?</h2>
 
                     <div class="form-group">
                       <fieldset class="inline">
-                      <legend class="visuallyhidden">
-                      Do you have any other loans to directors to report?
-                      </legend>
+                      <legend class="visuallyhidden">Do your prepared accounts include any other 'loans to directors'?</legend>
                       <label class="block-label selection-button-radio" for="more-director-transactions-yes" data-target="loansmoreyes-reveal">
                         <input type="radio" value="Yes" name="moreloansdirectors" id="more-director-transactions-yes">
                         Yes
@@ -130,8 +91,34 @@ Balance sheet notes - Loans to directors
 
                     <div class="js-hidden" id="loansmoreno-reveal">
 
-                          <label class="heading-medium" for="textarea">Add any additional information about your loans to directors note here</label>
-                          <textarea type="text" id="" class="form-control text" rows="5"></textarea>
+                      <h2 class="heading-medium text">Do your prepared accounts include any additional 'loans to directors' information?</h2>
+
+                      <div class="form-group">
+                        <fieldset class="inline">
+                        <legend class="visuallyhidden">
+                        Do your prepared accounts include any additional 'loans to directors' information?
+                        </legend>
+                        <label class="block-label selection-button-radio" for="more-loans-yes" data-target="loansinfoyes-reveal">
+                          <input type="radio" value="Yes" name="moreloansinfo" id="more-loans-yes">
+                          Yes
+                        </label>
+                        <label class="block-label selection-button-radio" for="more-loans-no">
+                          <input type="radio" value="no" name="moreloansinfo" id="more-loans-no" />
+                          No
+                        </label>
+                        </fieldset>
+                      </div><!--form-group-->
+
+
+                                <div class="js-hidden text" id="loansinfoyes-reveal">
+
+
+
+                                    <label class="heading-medium" for="textarea">Add any additional information about your loans to directors note here</label>
+                                    <textarea type="text" id="" class="form-control text" rows="5"></textarea>
+
+                              </div>
+
 
                     </div>
 
@@ -168,8 +155,7 @@ Balance sheet notes - Loans to directors
 
                                           <br />
                                           <h2 class="heading-medium">Description of the transaction</h2>
-                                          <p class="text">A brief description of the transaction, for example, an advance or loan for a car.</p>
-                                          <p class="text">Only provide the details for each individual transaction to the director. You can report more transactions for the same director or other directors separately if you need to.</p>
+                                          <p class="text form-hint">A brief description of the transaction, for example, an advance or loan for a car.</p>
 
                                           <textarea rows="5" class="form-control text" id="textarea" type="text"></textarea>
 

@@ -103,6 +103,11 @@ table.check-your-answers {
     }
   }
 }
+table.check-your-answers-notes {
+  td.change-answer {
+    font-weight: normal;
+  }
+}
 #delete-summary {
   p {color:$error-colour;}
   .button {
