@@ -358,7 +358,8 @@ router.get('/accounts/accounts-turnover-policy-yes-no', function (req, res) {
   if (otherpolicies == "No"){
 
     // redirect to the relevant page
-    res.redirect("/accounts/accounts-abridged-intangible-note");
+    //res.redirect("/accounts/accounts-abridged-intangible-note");
+    res.redirect("/accounts/accounts-abridged-tangible-note");
 
   } else {
 
