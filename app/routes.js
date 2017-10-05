@@ -233,6 +233,17 @@ router.get('/chs/chs-software-filing', function (req, res) {
 });
 
 
+// Resume journey (from GOV.UK start page)
+
+
+router.get('/chs/chs-choose-accounts', function (req, res) {
+  var neworresumetype = req.query.neworresumetype;
+  if (neworresumetype == "micro"){res.redirect("/webfiling/webfiling-login-page-chs-search");}
+  else if (neworresumetype == "abridged"){res.redirect("/chs/chs-login-page-resume-from-govuk");}
+  else if (neworresumetype == "full"){res.redirect("https://www.tax.service.gov.uk/gg/sign-in?continue=https://www.tax.service.gov.uk/cato");}
+  else if (neworresumetype == "dormant"){res.redirect("/webfiling/webfiling-login-page-chs-search");}
+  else {res.render('chs/chs-choose-accounts');}
+});
 
 
 

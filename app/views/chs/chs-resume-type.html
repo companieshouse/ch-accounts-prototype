@@ -1,0 +1,130 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Which type of accounts were you filing?
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.bubble {
+  display:inline;
+  background-color: #f47738;
+  color:white;
+  padding:0.2em .5em;
+  border-radius: 15px;
+  font-weight:normal;
+  font-size:0.7em;
+  position:relative;
+  left:.5em;
+  top:-0.1em;
+
+}
+</style>
+
+
+
+
+
+    <main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
+    <div class="text">
+
+
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">Do you want to start a new filing or resume an existing filing?</h1>
+    </header>
+
+
+
+          <form action="/chs/chs-choose-accounts" method="get" class="form">
+
+
+            <fieldset class="" data-required="" data-error="Please confirm which type of accounts you were filing">
+              <div class="form-group">
+
+              <legend class="visually-hidden">Which type of accounts were you filing?</legend>
+
+              <label class="block-label selection-button-radio" for="neworresumenew">
+                <input id="neworresumenew" type="radio" name="neworresume" value="new">
+                Start new filing
+              </label>
+              <label class="block-label selection-button-radio" for="neworresumeresume" data-target="which-type">
+                <input id="neworresumeresume" type="radio" name="neworresume" value="resume">
+                Resume an existing filing
+              </label>
+
+              </div><!--form-group-->
+            </fieldset>
+
+
+
+
+      <div class="panel panel-border-narrow js-hidden" id="which-type">
+              <fieldset>
+                <div class="form-group">
+
+                <legend class="heading-medium">Which type of accounts were you filing?</legend>
+
+                <label class="block-label selection-button-radio" for="resumetypemicro">
+                  <input id="resumetypemicro" type="radio" name="neworresumetype" value="micro">
+                  Micro-entity accounts
+                </label>
+                <label class="block-label selection-button-radio" for="resumetypeabridged">
+                  <input id="resumetypeabridged" type="radio" name="neworresumetype" value="abridged">
+                  Abridged accounts
+                </label>
+                <label class="block-label selection-button-radio" for="resumetypefull">
+                  <input id="resumetypefull" type="radio" name="neworresumetype" value="full">
+                  Full accounts with (Companies House and HMRC)
+                </label>
+                <label class="block-label selection-button-radio" for="resumetypedormant">
+                  <input id="resumetypedormant" type="radio" name="neworresumetype" value="dormant">
+                  Dormant company accounts
+                </label>
+                </div><!--form-group-->
+              </fieldset>
+      </div><!--which-type-->
+
+
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Next">
+          </div>
+
+
+
+          </div><!--text-->
+
+          </form>
+
+
+
+          </main>
+
+{% endblock %}
