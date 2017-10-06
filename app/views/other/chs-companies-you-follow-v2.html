@@ -1,0 +1,112 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Companies you follow
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+<style type="text/css"> /* Not production ready CSS*/
+#companies-you-follow-table label {
+	position: relative;
+  top:-.7em;
+}
+</style>
+
+
+
+
+
+    <main id="content" role="main" class="profile">
+
+{% include "includes/phase_banner_beta.html" %}
+
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:</li>
+        <li><a href="javascript:void(0)">Your details</a></li>
+        <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+        <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+        <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+      </ul>
+    </nav>
+
+
+
+
+    <div role="article" class=" follow-confirmation">
+          <h1 class="heading-xlarge" id="follow-company-title">Companies you follow</h1>
+
+          <table class="full-width-table" id="companies-you-follow-table">
+                    <caption class="visuallyhidden">Companies you follow</caption>
+                    <tbody>
+                        <tr>
+                            <th class="nowrap">Date <span class="visuallyhidden">(you began following the company)</span></th>
+                            <th class="nowrap">Company <span class="visuallyhidden">name</span></th>
+                            <th class="nowrap">Accounts due</th>
+                            <th class="nowrap">Confirmation<br /> statement due</th>
+                            <th class="nowrap">All filings</th>
+                        </tr>
+                        <tr>
+                            <td class="nowrap">2 Oct 2017</td>
+                            <td class=""><a href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a></td>
+                            <td class="nowrap">
+                              <label class="block-label selection-button-checkbox" for="notificationtypeaccounts">
+                                <input id="notificationtypeaccounts" value="agree" name="notificationtype" type="checkbox" checked=checked>
+                                <span class="visuallyhidden">When A TEST COMPANY LIMITED (01234567) accounts are due</span>
+                              </label>
+                          </td>
+                          <td class="nowrap">
+                            <label class="block-label selection-button-checkbox" for="notificationtypeconfirmation">
+                              <input id="notificationtypeconfirmation" value="agree" name="notificationtype" type="checkbox" checked=checked>
+                              <span class="visuallyhidden">When A TEST COMPANY LIMITED (01234567) confirmation statement is due</span>
+                            </label>
+                        </td>
+                        <td class="nowrap">
+                          <label class="block-label selection-button-checkbox" for="notificationtypeall">
+                            <input id="notificationtypeall" value="agree" name="notificationtype" type="checkbox" checked=checked>
+                            <span class="visuallyhidden">Whenever A TEST COMPANY LIMITED (01234567) files something</span>
+                          </label>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="nowrap">6 Oct 2017</td>
+                            <td class=""><a href="javascript:void(0)">ACME WIDGETS LTD (98734512)</a></td>
+                            <td class="nowrap">
+                              <label class="block-label selection-button-checkbox" for="notificationtypeaccounts2">
+                                <input id="notificationtypeaccounts2" value="agree" name="notificationtype2" type="checkbox">
+                                <span class="visuallyhidden">When ACME WIDGETS LTD (98734512) accounts are due</span>
+                              </label>
+                          </td>
+                          <td class="nowrap">
+                            <label class="block-label selection-button-checkbox" for="notificationtypeconfirmation2">
+                              <input id="notificationtypeconfirmation2" value="agree" name="notificationtype2" type="checkbox">
+                              <span class="visuallyhidden">When ACME WIDGETS LTD (98734512) confirmation statement is due</span>
+                            </label>
+                        </td>
+                        <td class="nowrap">
+                          <label class="block-label selection-button-checkbox" for="notificationtypeall2">
+                            <input id="notificationtypeall2" value="agree" name="notificationtype2" type="checkbox" checked=checked>
+                            <span class="visuallyhidden">Whenever ACME WIDGETS LTD (98734512) files something</span>
+                          </label>
+                        </td>
+                        </tr>
+                    </tbody>
+                  </table>
+
+
+      </div>
+    </main>
+
+
+{% endblock %}

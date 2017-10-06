@@ -1,0 +1,85 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Follow a company
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+    <main id="content" role="main" class="profile">
+
+{% include "includes/phase_banner_beta.html" %}
+
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:</li>
+        <li><a href="javascript:void(0)">Your details</a></li>
+        <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+        <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+        <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+      </ul>
+    </nav>
+
+
+
+
+    <div role="article" class="text follow-confirmation">
+          <h1 class="heading-xlarge" id="follow-company-title">Follow a company</h1>
+          <div class="text" id="follow-company-confirmation-prompt">
+              <h2 class="heading-large">A TEST COMPANY LIMITED (01234567)</h2>
+                  <p>
+                      The email address we'll use to send notifications of the companies activity is
+                      <span class="follow-email bold-small">jsmith@testcompany.co.uk</span>
+                  </p>
+
+
+                  <fieldset>
+                    <legend>
+                      <h3 class="heading-medium">Which types of notifications do you want?</h3>
+                    </legend>
+                    <div class="form-group">
+                    <label class="block-label selection-button-checkbox" for="notificationtypeaccounts">
+                      <input id="notificationtypeaccounts" value="agree" name="notificationtype" type="checkbox">
+                      When the company's accounts are due
+                    </label>
+                    <label class="block-label selection-button-checkbox" for="notificationtypeconfirmation">
+                      <input id="notificationtypeconfirmation" value="agree" name="notificationtype" type="checkbox">
+                      When the company's confirmation statement is due
+                    </label>
+                    <label class="block-label selection-button-checkbox" for="notificationtypeall">
+                      <input id="notificationtypeall" value="agree" name="notificationtype" type="checkbox">
+                      Whenever this company files something
+                    </label>
+                  </div>
+                </fieldset>
+
+
+
+
+                  <p class="form-hint">You can unfollow this company at any time.</p>
+                  <div class="form-group">
+                      <p><a href="/company/06768813/follow?return_to=https://beta.companieshouse.gov.uk/company/06768813" class="button" id="follow-company-confirmed" onclick="javascript:_paq.push(['trackEvent', 'FollowCompanyConfirmed']);">Follow</a></p>
+                      <p class="action-link"><a href="https://beta.companieshouse.gov.uk/company/06768813" id="follow-company-cancelled" onclick="javascript:_paq.push(['trackEvent', 'FollowCompanyCancelled']);">Cancel</a></p>
+                  </div>
+          </div>
+      </div>
+    </main>
+
+
+{% endblock %}
