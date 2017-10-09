@@ -69,16 +69,29 @@ $(document).ready(function(){  //Only show the button if javascript is on
 
   <div class="">
 
-  <a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a>
+  <p><a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a></p>
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Check before you submit</caption>
+  <thead></thead>
+      <tbody>
+        <tr>
+          <td>
+            <details>
+              <summary><span class="summary">Company account dates</span></summary>
+              <div class="review-reveal">
+                <p> 1 April 2015 to 31 March 2017</p>
+                <p><a href="/accounts/accounts-accounts-dates-check" class="button">Change<span class="visuallyhidden"> company account dates</span></a></p>
+              </div><!--review-reveal-->
+            </details>
+          </td>
+        </tr>
     <thead>
       <tr>
         <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet</h2></th>
       </tr>
     </thead>
-    <tbody>
+
       <tr>
         <td>
           <details>
