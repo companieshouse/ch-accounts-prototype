@@ -47,13 +47,11 @@ $(document).ready(function () {
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
         Sign in failed
       </h1>
+      <p>WebFiling and WebCheck users will need to <a class="button-link" id="register" href="chs-register-page">register</a> for this service</p>
+
       <ul class="error-summary-list">
         <li><a href="#password">Invalid email address or password, 4 attempts remain.</a></li>
       </ul>
-
-      <h2 class="heading-small">WebFiling users</h2>
-      <p>We have updated the security of our <strong>WebFiling</strong> user accounts, and so we need to ask all WebFiling users to reset their passwords. You can do this by clicking <a class="" id="register" href="chs-register-page-from-wf">register</a>.</p>
-
 
 </div>
 
@@ -61,10 +59,9 @@ $(document).ready(function () {
     	<h1 id="page-header" class="heading-xlarge">Sign in to Companies House</h1>
     </header>
 
-
 <!--<p class="warning-note warning-note-large text">Your existing WebFiling or WebCheck password will not work with this service, you will need to <a href="chs-register-page">register</a>.</p>-->
 
-    <form method="" action="" class="form " name="">
+    <form method="POST" action="/oauth2/user/signin" class="form " name="signin">
       <fieldset>
         <legend class="visuallyhidden">Sign in details</legend>
 
@@ -80,13 +77,13 @@ $(document).ready(function () {
         </div>
 
         <div class="form-group">
-          <a href="javascript:void(0)" class="button" id="submit">Sign in</a>
+          <a href="/chs/chs-authenticate-page-from-wf" class="button" id="submit">Sign in</a>
         </div>
 
         <div class="form-group">
-          <p class="action-link"><a class="button-link" id="register" href="chs-register-page-from-wf">Register</a></p>
+          <p class="action-link"><a class="button-link" id="register" href="chs-register-page">Register</a></p>
           <input type="hidden" value="" id="request" name="request">
-          <p><a id="forgotten_password" href="chs-forgot-password">Forgotten your password?</a></p>
+          <p><a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a></p>
         </div>
 
       </fieldset>
