@@ -1,0 +1,96 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Who can use WebFiling
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+<div class="grid_3 alpha userMenu">
+  <strong>Not signed in</strong>
+        <p><a href="javascript:void(0)">Sign in</a></p>
+</div>
+
+        <div class="container-content login">
+          <h1>Who can use WebFiling?</h1>
+          			<p>WebFiling can be used by all companies with company numbers that contain all digits e.g. 1020304 or have the prefixes:</p>
+          			<ul>
+          				<li>NI, R0 and SC for Limited Companies</li>
+          				<li>OC, SO and NC for Limited Liability Partnerships. Please see guidance on<!-- DE:W0013271 --> <a href="javascript:void(0)">NILLP prefix</a></li>
+          			</ul>
+
+          			<h1>What company information can I send electronically?</h1>
+          			<ul>
+          				<li>Changes to the company address, directors and secretaries can be submitted free of charge.</li>
+          				<li>Abbreviated, micro entity and dormant company accounts (not available for Community Interest Companies or Limited Liability Partnerships)</li>
+          				<li>Annual Return £13</li>
+          				<li>Change of name £8 (standard service) and £30 (same day service)</li>
+          				<li>Register a Charge (£15) and satisfy a Charge</li>
+                      </ul>
+
+                      <p><a href="javascript:void(0)">View the full list of forms available</a></p>
+
+          			<h1>Who can’t use WebFiling?</h1>
+          			<p>WebFiling <strong>can not</strong> be used by companies or limited liability partnerships that are dissolved, converted or closed.</p>
+
+          			<p>Also a WebFiling annual return can not be used by companies:</p>
+          			<ul>
+          				<li>with 1,000 or more individual or joint shareholders</li>
+          				<li>that are required to submit lists of subsidiary and associated undertakings</li>
+          				<li>with multiple paid of unpaid capital details within the same class of share</li>
+          				<li>with paid or unpaid capital details of a different currency from the class of share</li>
+          				<li>with more than an aggregate nominal share value of up to 12 whole numbers and 3 decimal places</li>
+          				<li>with more than a paid or unpaid share value of up to 9 whole numbers and 6 decimal places</li>
+          				<li>who need to transfer more than 30 individual share transfers per class within a single WebFiling session</li>
+          				<li>with more than 6 classes of share currency (also applies to SH01)</li>
+          				<li>with more than 10 joint shareholders per shareholding</li>
+          				<li>who need to input more than 255 changes within a single WebFiling session</li>
+                      </ul>
+
+        </div><!--End of div class="grid_12 omega"-->
+    <div class="clear"></div>
+</div>
+
+<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+<a id="i18nLink" href="javascript:void(0)" class="language">Cymraeg</a>
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+
+
+
+</div>
+{% endblock %}

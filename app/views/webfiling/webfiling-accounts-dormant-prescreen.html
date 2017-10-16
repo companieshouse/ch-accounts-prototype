@@ -1,0 +1,119 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Dormant accounts
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function toggleDiv(divId) {
+
+   $("#"+divId).toggle();
+
+}
+
+</script>
+
+
+<style type="text/css">
+#myContent{
+    display:none;
+}
+</style>
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br />Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br/>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="" href="javascript:void(0)">Change account details</a></li>
+      <li><a class="" href="webfiling-my-recent-filings">My recent filings</a></li>
+
+			    <li><a class="" href="javascript:void(0)">Company authentication</a></li>
+                <li><a class="" href="javascript:void(0)">File for a different company</a></li>
+			    <li><a class="" href="javascript:void(0)">Company overview</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+
+<div class="container-content">
+  <p class="details-bar">Filing for: A TEST COMPANY LIMITED (01234567)</p>
+
+    <form action="" method="post">
+
+<h1>Dormant Company Accounts</h1>
+
+        <p>This accounts format is only suitable for companies that:</p>
+        <ul class="margin-bottom-1">
+            <li>have never traded</li>
+            <li>are not a subsidiary</li>
+            <li>the only transaction entered in the accounting records of the company is the issue of subscriber shares</li>
+        </ul>
+
+        <p><strong>DO NOT use this form if</strong> (at the balance sheet date):
+        </p>
+        <ul class="margin-bottom-1">
+            <li>the company was a charity</li>
+            <li>preparing accounts in accordance with International Accounting Standards (IAS)</li>
+            <li>the company was a community interest company</li>
+        </ul>
+   <p>Companies House will send you an email within 3 hours to confirm receipt of your data. When you have received an email confirming receipt, the data will be processed within 2 working days, you will then be sent a second email to inform you if your data has been accepted or rejected. If your data is rejected the reasons will be included in the email. If you have not received an email confirming receipt within 3 hours please contact the helpdesk.</p>
+
+   <a href="javascript:void(0)" class="button positive regular  left">File Dormant Accounts</a>
+    <a class="negative"  href="javascript:history.back()" title="">Back</a>
+    <input type="hidden" name="__VIEWSTATE" value="" data-postback="0"/>
+</form>
+	<div class="clear"></div>
+
+</div>
+		<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+</div>   <!--End of div id="container"-->
+{% endblock %}

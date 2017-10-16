@@ -1468,7 +1468,7 @@
  }
  .print {
      padding-right: 30px;
-     background:url(/images/com/print-icon-16.png) 93% center no-repeat;
+     background:url(/public/images/print-icon-16.png) 93% center no-repeat;
  }
  /* @ selection-group switch styles */
  fieldset.js-switch ul {
@@ -1579,7 +1579,7 @@
      text-decoration:underline;
  }
  .youtube {
-     background-image:url(/images/com/youtube.png);
+     background-image:url(/public/images/youtube.png);
      background-repeat:no-repeat;
      background-position: 94% center;
      padding: 8px 40px 8px 8px;
@@ -1971,12 +1971,12 @@
  }
 
  input[type="text"].warning, input[type="password"].warning, input[type="date"].warning, select.warning, textarea.warning {
-     /*background: #FFFFCC url(/images/com/form-element-background-warning.jpg) no-repeat left top;*/
+     /*background: #FFFFCC url(/public/images/form-element-background-warning.jpg) no-repeat left top;*/
      background-color: #FFFFCC;
      color: #000;
  }
  input[type="text"].error, input[type="password"].error, input[type="date"].error, select.error, textarea.error {
-     /*background: #FFE5DF url(/images/com/form-element-background-error.jpg) no-repeat left top;*/
+     /*background: #FFE5DF url(/public/images/form-element-background-error.jpg) no-repeat left top;*/
      background-color: #FFE5DF !important;
      color: #000;
  }
@@ -2271,10 +2271,10 @@
      background-position: left center;
  }
  .expand-all, .link-toggleable-expand {
-     background-image: url(/images/com/expand-right-arrow.png);
+     background-image: url(/public/images/expand-right-arrow.png);
  }
  .collapse-all, .link-toggleable-collapse {
-     background-image: url(/images/com/collapse-down-arrow.png);
+     background-image: url(/public/images/collapse-down-arrow.png);
  }
  /* @ Confirmation Screen Styling */
  .summary, .scroller {
@@ -2289,7 +2289,7 @@
      padding-bottom: 0;
  }
  .complete-tick {
-     background: #F6F6F6 url(/images/com/confirmation-green-tick.png) no-repeat 97% 20px;
+     background: #F6F6F6 url(/public/images/confirmation-green-tick.png) no-repeat 97% 20px;
  }
  .summary .more-block {margin-bottom: 10px;}
  .summary dt {
@@ -2316,34 +2316,34 @@
      background-position: left 40% !important;
  }
  ul.to-do-list li.duration {
-     background: url(/images/com/time-icon.png);
+     background: url(/public/images/time-icon.png);
  }
  ul.to-do-list li.address {
-     background: url(/images/com/address-icon.png);
+     background: url(/public/images/address-icon.png);
  }
  ul.to-do-list li.dob {
-     background: url(/images/com/calendar-icon.png);
+     background: url(/public/images/calendar-icon.png);
  }
  ul.to-do-list li.signature {
-     background: url(/images/com/pen-icon.png);
+     background: url(/public/images/pen-icon.png);
  }
  ul.to-do-list li.money {
-     background: url(/images/com/calculator-icon.png);
+     background: url(/public/images/calculator-icon.png);
  }
  ul.to-do-list li.company {
-     background: url(/images/com/company-icon.png);
+     background: url(/public/images/company-icon.png);
  }
  ul.to-do-list li.payment {
-     background-image: url(/images/com/payment-icon.png);
+     background-image: url(/public/images/payment-icon.png);
  }
  ul.to-do-list li.pdf {
-     background-image: url(/images/com/pdf-icon.png);
+     background-image: url(/public/images/pdf-icon.png);
  }
  ul.to-do-list li.details {
-     background-image: url(/images/com/details-icon.png);
+     background-image: url(/public/images/details-icon.png);
  }
  ul.to-do-list li.people {
-     background: url(/images/com/people-icon.png);
+     background: url(/public/images/people-icon.png);
  }
  ul.to-do-list li.one {
      background: url(1.png) no-repeat 3% 41%;
@@ -2713,7 +2713,7 @@
  div.dateselector + p.checkbox {margin-top: 15px;}
 
  a.close:link, a.close:visited  {
-     background:url(/images/com/closeX.png) no-repeat;
+     background:url(/public/images/closeX.png) no-repeat;
      padding:5px 15px ;
      margin: -20px -60px 5px 5px;
      text-indent:-9999px; /*Hiding the "close" text off screen*/
@@ -2734,7 +2734,7 @@
      width:100%;
      height:100%;
      margin-left:70px;
-     background: url("/images/com/questionMidBlueCircle20pxROTATED90.png") no-repeat  5% center #ccc;
+     background: url("/public/images/questionMidBlueCircle20pxROTATED90.png") no-repeat  5% center #ccc;
      -moz-transform:rotate(270deg);
      -webkit-transform:rotate(270deg);
      -o-transform:rotate(270deg);
@@ -2747,7 +2747,7 @@
      border-top-left-radius:10px;
  }
  #fixedHelp a:hover, #fixedHelp a:focus {
-     background: url("/images/com/questionMidBlueCircle20pxROTATED90.png") no-repeat  5% center #999;
+     background: url("/public/images/questionMidBlueCircle20pxROTATED90.png") no-repeat  5% center #999;
  }
  /* end Fixed Help tab styling */
  .accountsPicker {
@@ -2785,23 +2785,23 @@
 
  /* start collapsible note styling */
  .note-collapsible-section a:link, .note-collapsible-section a:active,.note-collapsible-section a:visited {
-     background:url(/images/com/minusIconGDSblue20px.png) no-repeat left center;
+     background:url(/public/images/minusIconGDSblue20px.png) no-repeat left center;
      padding:5px 5px 5px 35px;
      color:#006699;
      font-weight:normal;
      margin-left:-35px;
  }
  .note-collapsible-section a:hover, .note-collapsible-section a:focus {
-     background:url(/images/com/minusIconGDS_lightblue20px.png) no-repeat left center;
+     background:url(/public/images/minusIconGDS_lightblue20px.png) no-repeat left center;
      color: #3a81ba;
  }
  .note-collapsible-section a.closed:link, .note-collapsible-section a.closed:active, .note-collapsible-section a.closed:visited {
-     background:url(/images/com/plusIconGDSblue20px.png) no-repeat left center;
+     background:url(/public/images/plusIconGDSblue20px.png) no-repeat left center;
      padding:5px 5px 5px 35px;
      color:#006699;
  }
  .note-collapsible-section a.closed:hover, .note-collapsible-section a.closed:focus {
-     background:url(/images/com/plusIconGDS_lightblue20px.png) no-repeat left center;
+     background:url(/public/images/plusIconGDS_lightblue20px.png) no-repeat left center;
      color: #3a81ba;
  }
  /* end collapsible note styling */
@@ -2861,7 +2861,7 @@
      display: block;
      width: 240px;
      border: 1px solid #006498;
-     background-image: url(/images/com/demoVideoBanner.jpg);
+     background-image: url(/public/images/demoVideoBanner.jpg);
      background-repeat:no-repeat;
      background-position: right bottom;
      -moz-border-radius: 5px;

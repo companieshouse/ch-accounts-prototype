@@ -1,0 +1,173 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Companies House
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function toggleDiv(divId) {
+
+   $("#"+divId).toggle();
+
+}
+
+</script>
+
+
+<style type="text/css">
+#myContent{
+    display:none;
+}
+</style>
+
+
+<div id="container">
+    <!-- FILE_START::header.tmpl -->
+<div class="headerLogo">
+	<div class="container_16">
+		<a href="/index" class="chLogo">
+      <img src="/public/images/ch_gds_logo_white.png" alt="">
+    </a>
+	</div><!--End of class="headerLogo"-->
+</div><!--End of div id="header"-->
+<!-- FILE_END::header.tmpl -->
+
+
+<div class="container_16" id="mainContent">
+
+
+<!-- FILE_START::userHeaderBar.tmpl -->
+
+<div class="grid_3 alpha userMenu">
+
+		<p>Signed in to <br />Companies House
+			<!-- jfrancis@companieshouse.gov.uk --><br/>
+			<a href="javascript:void(0)">Sign out</a>
+		</p>
+
+		<ul style="padding-left:0;">
+			<li><a class="" href="javascript:void(0)">Change account details</a></li>
+      <li><a class="" href="webfiling-my-recent-filings">My recent filings</a></li>
+
+			    <li><a class="" href="javascript:void(0)">Company authentication</a></li>
+                <li><a class="" href="javascript:void(0)">File for a different company</a></li>
+			    <li><a class="" href="javascript:void(0)">Company overview</a></li>
+
+		</ul>
+</div>
+<!-- FILE_END::userHeaderBar.tmpl -->
+
+
+<div class="container-content">
+
+
+
+	<h1 class="large-heading"><strong>Choose your accounts</strong></h1>
+
+	<section class="complete">
+    <h2>Next annual accounts should be made up to:</h2>
+    <p class="answer">31 March 2017<a href="javascript:void(0)" class="changelink">Change</a> </p>
+    <p class="help">DO NOT file your accounts until you have received confirmation that the change has been accepted.</p>
+
+    <h2 class="complete">Must be delivered to Companies House no later than:</h2>
+    <p class="answer">31 December 2017</p></section>
+
+    <div class="message warning">
+      <h2 class="margin-left-5 margin-top-5 margin-bottom-0">You can no longer file abbreviated accounts</h2>
+      <p>Changes in Company Law have withdrawn the option for filing abbreviated accounts for accounting periods starting on or after 1st January 2016.</p>
+      <p>Instead, choose the type of accounts that satisfies the business requirements for this company and the amount of information which will be publicly available.</p>
+
+    <!--<h2 class="margin-left-5 margin-top-20 margin-bottom-0">Try the new abridged accounts filing </h2>
+    <p class="margin-bottom-10">We’re launching a new private beta service which would allow you to file <a href="https://companieshouse.blog.gov.uk/2016/10/06/accounts-advice-for-small-companies/" target="_blank">abridged accounts</a>.</p>
+
+    <p style="margin-bottom:10px !important;"><a href="javascript:toggleDiv('myContent');" class="button positive regular">More information</a></p>
+
+      <div id="myContent" class="margin-left-5">
+
+      <p>You can try the new service if:</p>
+      <ul class="margin-bottom-1">
+        <li>your accounting period starts on or after 1 January 2016</li>
+        <li>your balance sheet doesn’t include 'intangible assets', 'fixed asset investments' or 'revaluation reserve'</li>
+        <li>you just need to supply an 'accounting policies' note (and, if needed, a 'tangible assets' note and/or a 'creditors - amounts falling due within one year’ note)</li>
+        <li>you don't need to change the date the accounts are made up to</li>
+      </ul>
+      <p>At least 2 of these must also apply to the company:</p>
+      <ul class="margin-bottom-1">
+        <li>turnover is no more than £10.2 million</li>
+        <li>balance sheet total is no more than £5.1 million</li>
+        <li>average number of employees is no more than 50</li>
+      </ul>
+        <h3 class="margin-left-5" style="margin-top:20px;">Register your interest</h3>
+        <p>If you meet the criteria and would like to try the new service, send an email to <a href="mailto:privatebeta@companieshouse.gov.uk">privatebeta@companieshouse.gov.uk</a> and we’ll get back to you.</p>
+
+      </div>--><!--myContent-->
+
+    </div><!--message warning-->
+
+    <div class="accountsPicker">
+
+      <p><strong>You should select the type of accounts you have prepared.</strong> If you’re not sure, you may want to ask an accountant.</p>
+
+      <a href="/webfiling/webfiling-accounts-micro-prescreen" class="largeFont"><span id="microEntities">Micro-entity accounts</span>
+      Must meet at least 2 of the following:
+      <ul style="margin-left:-2em;">
+        <li>Turnover is no more than £632,000</li>
+        <li>Balance sheet total is no more than £316,000</li>
+        <li>Average number of employees is no more than 10</li>
+      </ul>
+      </a>
+
+      <a href="/webfiling/webfiling-before-chs-search" class="largeFont"><span id="abridgedccounts">Abridged accounts</span>
+        Must meet at least 2 of the following:
+        <ul style="margin-left:-2em;">
+          <li>Turnover is no more than £10.2 million</li>
+          <li>Balance sheet total is no more than £5.1 million</li>
+          <li>Average number of employees is no more than 50</li>
+        </ul>
+      </a>
+
+      <a href="javascript:void(0)" class="largeFont"><span>Full accounts with Companies House and HMRC</span>
+      These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC. You can also file your corporation tax with HMRC at the same time.</a>
+
+      <a href="/webfiling/webfiling-accounts-dormant-prescreen" class="largeFont"><span id="dormantAccounts">Dormant company accounts</span>
+      These accounts are suitable for companies limited by shares or by guarantee that have never traded.</a>
+
+      </div> <!--End of div class="accountsPicker"-->
+
+
+    <p><a href="javascript:history.back()" class="negative right">Back</a></p>
+
+	</div>
+
+	<div class="clear"></div>
+
+</div>
+		<!-- FILE_START::footer.tmpl -->
+	<div id="footer">
+
+        <div class="container_16">
+            <span class="email">
+            <a href="javascript:void(0)">Email Companies House</a></span>
+            <span class="telephone">Telephone +44 (0)303 1234 500 <em>8:30am to 6pm (UK time) Monday to Friday</em></span>
+            <span class="help"><a href="javascript:void(0)">Help</a></span>
+            <!-- FILE_START::language.tmpl -->
+
+
+<!-- FILE_END::language.tmpl -->
+
+        </div>
+
+    </div><!--End of div id="footer"-->
+    <!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+
+</div>   <!--End of div id="container"-->
+{% endblock %}

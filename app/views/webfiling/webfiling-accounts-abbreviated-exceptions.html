@@ -1,0 +1,76 @@
+{% extends "layout-webfiling.html" %}
+
+{% block page_title %}
+  Micro-entity exceptions
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function toggleDiv(divId) {
+
+   $("#"+divId).toggle();
+
+}
+
+</script>
+
+
+<style type="text/css">
+@charset "utf-8";body{margin:0;padding:0;background:url(/public/images/containerShadow.jpg) repeat-y center center #fff}.container_16{padding:0 10px}a:link,a:visited{color:#069}h1{font-size:1.7em;color:#333;padding-top:10px;font-weight:400}h1 span{color:#000;font-weight:700}#top img{float:left;margin-right:10px;margin-top:-4px}.fixedSearch{display:block;width:262px;margin:10px 0 0 637px;height:43px;padding:10px;position:fixed}.fixedSearch input.searchBox{border:1px solid #a9a9a9;padding:2px;width:180px}.js-only{display:none}#accordion{display:block;margin-left:655px;position:fixed}h2 a:link,h2 a:visited{text-decoration:none;color:#000}h2 a.active,h2 a:hover{text-decoration:none;color:#fff}.topContentBoxes h2{font-size:1.1em;font-weight:400;margin-left:-5px;margin-bottom:15px}.topContentBoxes h2 a:link,.topContentBoxes h2 a:visited{color:#fff;display:block;background:url(/images/com/arrowDownGDSblue.png) no-repeat 98% 50% #069;padding:5px 10px;-webkit-border-radius:25px;-moz-border-radius:25px;border-radius:25px}.topContentBoxes h2 a.active,.topContentBoxes h2 a:hover{color:#fff;background:url(/images/com/arrowDownBlack.png) no-repeat 98% 50% #000}.topContentBoxes ul{margin:10px 0 20px 0;padding:0;list-style:none}.topContentBoxes ul li{padding:0;margin:0}.topContentBoxes ul a:link,.topContentBoxes ul a:visited{font-weight:400;padding:5px;text-decoration:underline;margin:0;display:block}.topContentBoxes ul a.externalLink:link,.topContentBoxes ul a.externalLink:visited{background:url(/images/com/popup_icon.gif) no-repeat 98% 50%;padding-right:25px}.otherLinks a.backTopLink:link,.otherLinks abackTopLink:visited{background:url(/images/com/arrowUpGDSblue.png) no-repeat 98% 50%;padding:5px 25px 5px 0}.otherLinks a:focus,.otherLinks a:hover{color:#999}.generalTable{border-collapse:separate;border-spacing:1px;width:100%}.generalTable caption{text-align:center;color:#fff;background:url(/images/com/GDSblueShinyGradient30pxHigh.gif) repeat-x #069;padding:5px;font-size:1.2em;-moz-border-radius-topright:15px 15px;border-top-right-radius:15px 15px;-moz-border-radius-topleft:15px 15px;border-top-left-radius:15px 15px;border-left:1px solid #fff;border-right:1px solid #fff}.generalTable th{background-color:#d2d2d2;padding:5px 20px 5px 5px;vertical-align:top;color:#000}.generalTable img{padding-left:25px}.generalTable td{background-color:#efefef;padding:5px;vertical-align:top}.generalTable .odd td{background-color:#e5e4e4}.generalTable td,.generalTable th{margin:2px}.generalTable tr:hover td{background-color:#ccc}.generalTable a:link,.generalTable a:visited{text-decoration:underline}.generalTable a:focus,.generalTable a:hover{text-decoration:underline}.generalTable th.small{width:10%}.generalTable ul{padding:0 20px;margin:5px 0}table.generalTable thead tr .header{background-image:url(/images/com/bg.png);background-repeat:no-repeat;background-position:95% 50%;cursor:pointer}table.generalTable thead tr .headerSortUp{background-image:url(/images/com/asc.png)}table.generalTable thead tr .headerSortDown{background-image:url(/images/com/desc.png)}#mainContent{font-size:1em;margin:0 15px}#mainContent h2{margin:40px 0 20px 0;font-weight:700;font-size:26px;border-bottom:3px solid #ccc}#mainContent h3{color:#000;font-weight:400;line-height:30px}#mainContent a:link,#mainContent a:visited{text-decoration:underline}#mainContent a:focus,#mainContent a:hover{text-decoration:none;color:#666}a.external:link{background:url(icon.gif) no-repeat 100% 0;padding:0 20px 0 0}dt{font-size:21px;margin-bottom:10px}dd{margin:auto 0 30px 0}ul#index{list-style-type:none;color:#999;padding:0}ul#index li{display:inline;margin:0 10px 0 0}dl#glossary{border:1px solid #069;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#000;margin:20px 0 20px 0;padding:15px}img.statusIcons{padding:0 5px 5px 0}img.screengrab{-moz-box-shadow:5px 5px 5px #999;-webkit-box-shadow:5px 5px 5px #999;box-shadow:5px 5px 5px #999}span.searchHighlight{background-color:#ff0}dl#glossary dt{margin-bottom:10px}dl#glossary dd{margin-bottom:0}dl#glossary a:link,dl#glossary a:visited{text-decoration:underline;color:#000}dl#glossary dd ul{list-style-type:square;padding:0 0 0 10px}dl#glossary dd ul li{margin:0 0 10px 0}.lower-alpha{list-style-type:lower-alpha}dd dl{margin:0 0 0 15px}dd dl dt{font-size:18px;font-style:italic}#top-link:link,#top-link:visited{display:none;position:fixed;right:10px;bottom:10px;color:#000;font-weight:700;font-size:12px;text-decoration:none;border:1px solid #000;background:url(/images/com/arrowUpBlack.png) 95% 50% no-repeat #fff;padding:5px 28px 5px 5px}#top-link:focus,#top-link:hover{color:fff;border:1px solid #000;background:url(/images/com/arrowUpBlack.png) 95% 50% no-repeat #ccc}.warning{background:url(/images/com/alertIconBlack.png) no-repeat scroll 1% 50% #f8f8f8;padding:5px 10px 5px 40px;border:1px solid #000;font-weight:700}.secure-warning{background:#ffffa3;border-radius:3px;color:#333;display:block;margin:25px 0;padding:5px 15px;border:3px solid #000}
+</style>
+
+
+<div class="container_16">
+
+  	<div class="grid_16">
+
+    <h1 id="top"><img src="/images/com/en/CompaniesHouseNewLogo.png" alt=""></h1>
+
+
+
+<!-- Main Content-->
+<div id="mainContent">
+
+	<h2>Micro-Entity Accounts Exceptions - on or after 30 September 2013</h2>
+
+    <p>Community Interest Companies (CIC) and Limited Liability Partnerships (LLP) cannot file Annual Accounts types using the WebFiling service.</p>
+
+	<p>Audit Exempt Micro-Entity Accounts must not be filed if the company falls into any of the following categories:</p>
+
+    <ul>
+		<li>A parent company or subsidiary undertaking (unless dormant for the  period during which it was a subsidiary) except where:
+
+                <ul>
+                <li>group qualifies as a small group or would qualify if all the bodies corporate in the group were companies; and </li>
+                <li>turnover for the whole group is not more  than £6.5 million net (or £7.8 million gross); and </li>
+                <li>group's combined balance sheet total is not  more than &pound;3.26 million net (or &pound;3.9 million gross)</li>
+                </ul>
+     	</li>
+		<li style="margin-bottom:15px;">A  public limited company unless the company is dormant.</li>
+		<li style="margin-bottom:15px;">A  company where an audit is required by a member or members holding at least 10%  of the nominal value of issued share capital or holding 10% of any class of  shares; or - in the case of a company limited by guarantee - 10% of its members  in number. </li>
+		 <li>A company that is:
+                <ul>
+                <li>an authorised insurance company, a banking company, an e-money issuer, a MiFID  (ie Markets in Financial  Instruments Directive) investment firm or a UCITS management company or which  carries on insurance market  activity, or</li>
+                <li>special register body as defined in section 117(1) of the Trade Union and  Labour Relations  (Consolidation)  Act 1992 (c. 52) or an employers' association as defined in section 122 of that  Act or Article 4 of the Industrial  Relations (Northern Ireland)</li>
+                </ul>
+       	</li>
+	</ul>
+
+                    <p>Some flat management companies may have to prepare audited accounts to comply with the terms of their lease. If in doubt, you should seek professional advice.</p>
+
+                    </div><!-- End of div id="mainContent"-->
+
+	</div><!--End of div class="container_16"-->
+
+</div><!-- end .container_16 -->
+
+<script type="text/javascript" src="/scripts/com/jquery/jquery-1.4.2.min.js"></script>
+</body>
+{% endblock %}
