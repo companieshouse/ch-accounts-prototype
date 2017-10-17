@@ -184,7 +184,7 @@ router.get('/accounts/accounts-start-page-r1', function (req, res) {
 
 router.get('/chs/chs-alternative-abridged-filing-options', function (req, res) {
   var chooserR1 = req.query.chooserR1;
-  if (chooserR1 == "Yes"){res.redirect("/chs/chs-start-page-alternative-chs-search-2");}
+  if (chooserR1 == "Yes"){res.redirect("/accounts/accounts-start-page-abridged");}
   else if (chooserR1 == "Other"){res.redirect("/chs/chs-choose-accounts");}
   else {res.render('chs/chs-alternative-abridged-filing-options');}
 
