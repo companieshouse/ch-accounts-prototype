@@ -67,10 +67,10 @@ $(function() {
 });
 
 
-function attachOnChangeListener(arr, total, substract){
+function attachOnChangeListener(arr, total, subtract){
 	for(var i=0;i<arr.length;i++){
 		arr[i].on('change', function() {
-			if( substract ){
+			if( subtract ){
 				findDifference(arr, total)
 			} else {
 				findTotal(arr, total)
