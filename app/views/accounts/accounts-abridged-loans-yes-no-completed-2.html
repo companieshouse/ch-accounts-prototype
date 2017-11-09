@@ -43,7 +43,89 @@ Balance sheet notes - Loans to directors
 
         <form action="/accounts/accounts-abridged-loans-yes-no-3" method="get" class="form">
 
+          <table class="check-your-answers check-your-answers-notes">
+                    <caption class="visuallyhidden">Loans to directors added</caption>
+                         <thead>
+                           <tr>
+                             <th colspan="2">
+                               <h2 class="heading-medium">Loans to directors added</h2>
+                             </th>
+                             <th>
+                             </th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td>John Smith</td>
+                             <td>Short term loan</td>
+                             <td class="change-answer">
+                               <a href="/accounts/accounts-abridged-loans-yes-no-completed" class="button">Change <span class="visuallyhidden">John Smith loan</span></a>
+                               <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> John Smith loan</span></a>
+                             </span></td>
+                           </tr>
+                         </tbody>
+                       </table>
 
+
+
+
+
+                            <p class="heading-medium text">Do your prepared accounts include any additional 'loans to directors' notes?</p>
+
+                            <div class="form-group">
+                              <fieldset class="inline">
+                              <legend class="visuallyhidden">Do your prepared accounts include any additional 'loans to directors' notes?</legend>
+                              <label class="block-label selection-button-radio selected" for="more-director-loans-yes" data-target="loansmoreyes-reveal">
+                                <input value="Yes" name="moreloansdirectors" id="more-director-loans-yes" aria-controls="loansmoreyes-reveal" aria-expanded="true" type="radio">
+                                Yes
+                              </label>
+                              <label class="block-label selection-button-radio" for="more-director-loans-no" data-target="loansmoreno-reveal">
+                                <input value="no" name="moreloansdirectors" id="more-director-loans-no" aria-controls="loansmoreno-reveal" aria-expanded="false" type="radio">
+                                No
+                              </label>
+                              </fieldset>
+                            </div><!--form-group-->
+
+                            <div class="js-hidden" id="loansmoreno-reveal" aria-hidden="true">
+
+                              <h2 class="heading-medium text">Do your prepared accounts include any additional 'loans to directors' information?</h2>
+
+                              <div class="form-group">
+                                <fieldset class="inline">
+                                <legend class="visuallyhidden">
+                                Do your prepared accounts include any additional 'loans to directors' information?
+                                </legend>
+                                <label class="block-label selection-button-radio" for="more-loans-yes" data-target="loansinfoyes-reveal">
+                                  <input value="Yes" name="moreloansinfo" id="more-loans-yes" aria-controls="loansinfoyes-reveal" type="radio">
+                                  Yes
+                                </label>
+                                <label class="block-label selection-button-radio" for="more-loans-no">
+                                  <input value="no" name="moreloansinfo" id="more-loans-no" type="radio">
+                                  No
+                                </label>
+                                </fieldset>
+                              </div><!--form-group-->
+
+
+                                        <div class="js-hidden text" id="loansinfoyes-reveal">
+
+
+
+                                            <label class="heading-medium" for="textarea">Add any additional information about your 'loans to directors' notes here</label>
+                                            <textarea type="text" id="" class="form-control text" rows="5"></textarea>
+
+                                      </div>
+
+
+                            </div>
+
+
+
+
+
+
+
+                                        <div class="" id="loansmoreyes-reveal" aria-hidden="false">
 
           <h2 class="heading-large">Second loan</h2>
 

@@ -42,7 +42,46 @@ Balance sheet notes - Loans to directors
 
 
         <form action="/accounts/accounts-abridged-loans-yes-no-2" method="get" class="form">
+          <div class="text">
+                 <p class="heading-medium">Do your prepared accounts include any 'loans to directors' notes?<span class="form-hint"></span></p>
 
+                 <details class="form-group" role="group">
+                   <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
+                   <div class="panel panel-border-narrow form-hint" id="details-content-0" aria-hidden="true">
+                     <p>The disclosure of any loans with your company's directors, such as advances and credits, or loans guaranteed by a director.</p>
+                     <p>Details of any other elements that support the understanding of the financial statements should be provided as additional information. For example, the rate of interest on advances and details of any guarantees given by the company on behalf of a director.</p>
+                 </div>
+                 </details>
+             </div><!--text-->
+
+
+
+             <form action="/accounts/accounts-abridged-loans-yes-no-2" method="get" class="form">
+               <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'loans to directors' note">
+                       <legend class="visually-hidden">Do your prepared accounts include a 'loans to directors' note?</legend>
+                       <div class="form-group">
+
+                       <label class="block-label selection-button-radio selected" for="loansnoteyes" data-target="loansnoteyes-reveal">
+                         <input id="loansnoteyes" name="loansnoteyn" value="Yes" aria-controls="loansnoteyes-reveal" aria-expanded="true" type="radio">
+                         Yes
+                       </label>
+                       <label class="block-label selection-button-radio" for="loansnoteno">
+                         <input id="loansnoteno" name="loansnoteyn" value="No" aria-expanded="false" type="radio">
+                         No
+                         </label>
+                       </div><!--form-group-->
+
+                     </fieldset>
+
+
+
+                 <div class="" id="loansnoteyes-reveal" aria-hidden="false">
+
+
+                   <div class="panel panel-border-wide text">
+                     <p>Only provide the details for each individual loan to the director. You can report more loans for the same director or other directors later if you need to.</p>
+                     <p><strong>You can report up to 20 loans.</strong></p>
+                 </div>
 
 
           <h2 class="heading-large">First loan</h2>
