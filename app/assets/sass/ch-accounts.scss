@@ -425,14 +425,14 @@ th .panel {
     top: -6px;
     right:-1px;
     position:relative;
-    background-color: $fuschia;
-    color: $page-colour;
+    background-color: $yellow;
+    color: $black;
     padding: 2px 7px 0;
     border-radius:15px;
 }
 #filing-alert {
-    background: $fuschia;
-    color:$page-colour;
+    background: $yellow;
+    color:$black;
     display: inline-block;
     float:right;
     position: relative;
@@ -443,7 +443,7 @@ th .panel {
     text-align: center;
 }
 #filing-alert:before {
-    border-top: 15px solid $fuschia;
+    border-top: 15px solid $yellow;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     content: "";
