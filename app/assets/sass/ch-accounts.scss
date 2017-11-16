@@ -2,6 +2,7 @@
 @import 'colours';
 @import 'typography';
 
+a:visited {color: $link-colour !important;} /*overriding this, so test users don't see visited links (if we forget to open an incognito tab)*/
 $error-button-hover: #8e0513;
 
 .two-column-accounts {
