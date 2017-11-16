@@ -106,6 +106,16 @@ table.check-your-answers {
 table.check-your-answers-notes {
   td.change-answer {
     font-weight: normal;
+    width:35%;
+      @include media(mobile) {
+        a {
+          margin-bottom:.5em;
+          float:right;
+        }
+      }
+  }
+  td.name {
+    width:20%;
   }
 }
 #delete-summary {
