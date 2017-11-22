@@ -30,6 +30,9 @@ Balance sheet notes - Valuation information policy
 {% include 'includes/error.html' %}
 
 
+
+
+
   <div class="text">
     <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
       Balance sheet notes
@@ -40,15 +43,21 @@ Balance sheet notes - Valuation information policy
     <div class="left-indent">
       <div class="text">
         <h2 class="heading-medium">Do your prepared accounts include a 'valuation information' policy?</h2>
-
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Valuation information policy</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p >If you have stocks or work in progress, this policy describes how they are valued. Stocks should be valued at the lower of either cost or ‘net realisable value’ (the realistic resale value minus the cost of selling it).</p>
+            <p>For example, 'Stocks and work in progress are valued at the lower of cost and net realisable value, after making allowances for obsolete and slow-moving items. Cost includes all direct expenditure and overheads'.</p>
+          </div>
+        </details>
 
     <form action="/small-full/small-full-other-accounting-policy-yes-no" method="get" class="form">
           <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'valuation information' policy">
                   <legend class="visually-hidden">Do your prepared accounts include a 'valuation information' policy?</legend>
                   <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
-                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
+                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="valuationnoteyes-reveal">
+                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="valuationnoteyes-reveal" type="radio">
                     Yes
                   </label>
                   <label class="block-label selection-button-radio" for="employeesnoteno">
@@ -61,20 +70,13 @@ Balance sheet notes - Valuation information policy
 
 
 
-            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
-
-                            <fieldset>
-
-                              <p class="form-hint">If you have stocks or work in progress, this policy describes how they are valued. Stocks should be valued at the lower of either cost or ‘net realisable value’ (the realistic resale value minus the cost of selling it).</p>
-                              <p class="form-hint">For example, 'Stocks and work in progress are valued at the lower of cost and net realisable value, after making allowances for obsolete and slow-moving items. Cost includes all direct expenditure and overheads'.</p>
-
-                            <legend class="visuallyhidden">Turnover policy</legend>
-                              <label class="visuallyhidden" for="other-1"></label>
-                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-
-                          </fieldset>
-
-              </div>
+                <div class="panel panel-border-narrow js-hidden" id="valuationnoteyes-reveal">
+                  <fieldset>
+                    <legend class="visuallyhidden">Valuation information policy</legend>
+                    <label for="other-1" class="heading-medium">Enter your 'valuation information' policy</label>
+                    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+                  </fieldset>
+                </div>
 
 
 

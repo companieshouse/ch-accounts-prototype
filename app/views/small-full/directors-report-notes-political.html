@@ -37,7 +37,13 @@ Directors' report - political and charitable donations
 
         <div class="left-indent">
         <h2 class="heading-medium">Do your prepared accounts include a 'political and charitable donations' directors' report note?</h2>
-
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>The total charitable and political donations (including to non-EU parties) the company made in the period you're filing for. If political donations were over £2,000, give the name of the candidate or party who received the donations.</p>
+            <p>For example: 'The company's charitable donations during the period amounted to £2,043. No political donations were made.'</p>
+            </div>
+        </details>
 
 
         <form action="/small-full/directors-report-notes-disabled" method="get" class="form">
@@ -60,18 +66,14 @@ Directors' report - political and charitable donations
 
 
             <div class="panel panel-border-narrow js-hidden" id="directorsreportpolitical-reveal">
-              <p class="form-hint">The total charitable and political donations (including to non-EU parties) the company made in the period you're filing for. If political donations were over £2,000, give the name of the candidate or party who received the donations.</p>
-              <p class="form-hint">For example: 'The company's charitable donations during the period amounted to £2,043. No political donations were made.'</p>
+              <label for="textarea" class="heading-medium">Enter your 'political and charitable donations' note</label>
               <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
-
-
-
             </div><!--posteventsnoteyes-reveal-->
 
 
 
           <div class="accounts-row-spacer">
-            <input type="submit" class="button" value="Next" id="">
+            <input type="submit" class="button" value="Save and continue" id="">
           </div>
         </form>
       </div><!--left-indent-->

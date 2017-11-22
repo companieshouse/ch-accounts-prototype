@@ -37,7 +37,16 @@ Directors' report - additional information
 
         <div class="left-indent">
         <h2 class="heading-medium">Do your prepared accounts include an 'additional information' directors' report note?</h2>
-
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>Add any other information you'd like to include in the directors' report, for example:</p>
+            <ul class="list list-bullet">
+              <li>if you insure directors against legal claims from third parties ('qualifying third party indemnity provision')</li>
+              <li>if the company bought its own shares from shareholders</li>
+            </ul>
+          </div>
+        </details>
 
 
         <form action="/small-full/profit-and-loss-account" method="get" class="form">
@@ -60,21 +69,14 @@ Directors' report - additional information
 
 
             <div class="panel panel-border-narrow js-hidden" id="directorsreportadditional-reveal">
-              <p class="form-hint">Add any other information you'd like to include in the directors' report, for example:</p>
-              <ul class="list list-bullet form-hint">
-                <li>if you insure directors against legal claims from third parties ('qualifying third party indemnity provision')</li>
-                <li>if the company bought its own shares from shareholders</li>
-              </ul>
+              <label for="textarea" class="heading-medium">Enter your 'additional information' note</label>
               <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
-
-
-
             </div><!--posteventsnoteyes-reveal-->
 
 
 
           <div class="accounts-row-spacer">
-            <input type="submit" class="button" value="Next" id="">
+            <input type="submit" class="button" value="Save and continue" id="">
           </div>
         </form>
       </div><!--left-indent-->

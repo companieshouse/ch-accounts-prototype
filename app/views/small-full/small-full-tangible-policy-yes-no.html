@@ -40,15 +40,21 @@ Balance sheet notes - Tangible fixed assets depreciation policy
     <div class="left-indent">
       <div class="text">
         <h2 class="heading-medium">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</h2>
-
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Tangible fixed assets depreciation policy</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>If you have tangible (physical) fixed assets, this policy describes how the depreciation (reduction in value) of each asset is calculated over its expected useful lifetime.</p>
+            <p>For example, 'Annual depreciation of computer equipment is calculated at 25% of cost to write off the cost of the asset, less its residual value, over its estimated useful economic lifetime'.</p>
+        </div>
+        </details>
 
     <form action="/small-full/small-full-intangible-policy-yes-no" method="get" class="form">
           <fieldset class="inline" data-required="" data-error="Please confirm if you want to include a 'tangible fixed assets depreciation' policy">
                   <legend class="visually-hidden">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</legend>
                   <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
-                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
+                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="tangiblenoteyes-reveal">
+                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="tangiblenoteyes-reveal" type="radio">
                     Yes
                   </label>
                   <label class="block-label selection-button-radio" for="employeesnoteno">
@@ -61,24 +67,19 @@ Balance sheet notes - Tangible fixed assets depreciation policy
 
 
 
-            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
+                <div class="panel panel-border-narrow js-hidden" id="tangiblenoteyes-reveal">
+                  <fieldset>
+                    <legend class="visuallyhidden">Tangible fixed assets depreciation policy</legend>
+                    <label for="other-1" class="heading-medium">Enter your 'tangible fixed assets depreciation' policy</label>
+                    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+                  </fieldset>
+                </div>
 
-                            <fieldset>
-
-                              <p class="form-hint">If you have tangible (physical) fixed assets, this policy describes how the depreciation (reduction in value) of each asset is calculated over its expected useful lifetime.</p>
-                              <p class="form-hint">For example, 'Annual depreciation of computer equipment is calculated at 25% of cost to write off the cost of the asset, less its residual value, over its estimated useful economic lifetime'.</p>
-                            <legend class="visuallyhidden">Turnover policy</legend>
-                              <label class="visuallyhidden" for="other-1"></label>
-                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-
-                          </fieldset>
-
-              </div>
 
 
 
           <div class="accounts-row-spacer">
-            <input type="submit" class="button" value="Next" id="">
+            <input type="submit" class="button" value="Save and continue" id="">
           </div>
         </form>
       </div>

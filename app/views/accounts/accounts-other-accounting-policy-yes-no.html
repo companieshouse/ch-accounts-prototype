@@ -58,8 +58,8 @@ Balance sheet notes - Any other accounting policies
     <form action="/accounts/accounts-abridged-tangible-note" method="get" class="form">
           <fieldset class="inline form-group" data-required="" data-error=" Please confirm if you want to include any other accounting policies">
                   <legend class="visually-hidden">Do your prepared accounts include any other accounting policies?</legend>
-                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
-                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
+                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="otherpoliciesyes-reveal">
+                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="otherpoliciesyes-reveal" type="radio">
                     Yes
                   </label>
                   <label class="block-label selection-button-radio" for="employeesnoteno">
@@ -70,18 +70,13 @@ Balance sheet notes - Any other accounting policies
                 </fieldset>
 
 
-
-
-                            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
-
-                                            <fieldset>
-                                              <legend class="visuallyhidden">Other policies</legend>
-                                              <label for="other-1" class="heading-medium">Enter your other policies</label>
-                                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-
-                                          </fieldset>
-
-                              </div>
+                <div class="panel panel-border-narrow js-hidden" id="otherpoliciesyes-reveal">
+                  <fieldset>
+                    <legend class="visuallyhidden">Other policies</legend>
+                    <label for="other-1" class="heading-medium">Enter your other policies</label>
+                    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+                  </fieldset>
+                </div>
 
 
 

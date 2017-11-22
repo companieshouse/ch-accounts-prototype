@@ -40,15 +40,21 @@ Balance sheet notes - Intangible fixed assets amortisation policy
     <div class="left-indent">
       <div class="text">
         <h2 class="heading-medium">Do your prepared accounts include an 'intangible fixed assets amortisation' policy?</h2>
-
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Intangible fixed assets amortisation policy</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>If you have intangible (non-physical) fixed assets, this policy describes how the amortisation (reduction in value) of each asset is calculated over its expected useful lifetime. Amortisation is similar to the depreciation value of a tangible (physical) asset.</p>
+            <p>For example, 'Annual amortisation of goodwill is calculated at 25% to write off the cost of the asset, minus its residual value, over its estimated useful lifetime'.</p>
+        </div>
+        </details>
 
     <form action="/small-full/small-full-valuation-policy-yes-no" method="get" class="form">
           <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include an 'intangible fixed assets amortisation' policy">
                   <legend class="visually-hidden">Do your prepared accounts include an an 'intangible fixed assets amortisation' policy?</legend>
                   <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
-                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
+                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="intangiblenoteyes-reveal">
+                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="intangiblenoteyes-reveal" type="radio">
                     Yes
                   </label>
                   <label class="block-label selection-button-radio" for="employeesnoteno">
@@ -61,20 +67,13 @@ Balance sheet notes - Intangible fixed assets amortisation policy
 
 
 
-            <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
-
-                            <fieldset>
-
-                              <p class="form-hint">If you have intangible (non-physical) fixed assets, this policy describes how the amortisation (reduction in value) of each asset is calculated over its expected useful lifetime. Amortisation is similar to the depreciation value of a tangible (physical) asset.</p>
-                              <p class="form-hint">For example, 'Annual amortisation of goodwill is calculated at 25% to write off the cost of the asset, minus its residual value, over its estimated useful lifetime'.</p>
-
-                            <legend class="visuallyhidden">Turnover policy</legend>
-                              <label class="visuallyhidden" for="other-1"></label>
-                            <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-
-                          </fieldset>
-
-              </div>
+                <div class="panel panel-border-narrow js-hidden" id="intangiblenoteyes-reveal">
+                  <fieldset>
+                    <legend class="visuallyhidden">Intangible fixed assets amortisation policy</legend>
+                    <label for="other-1" class="heading-medium">Enter your 'intangible fixed assets amortisation' policy</label>
+                    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+                  </fieldset>
+                </div>
 
 
 
