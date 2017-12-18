@@ -62,6 +62,7 @@ $error-button-hover: #8e0513;
 //Check your answers
 #expand {} // Expand all link/button
 table.check-your-answers {
+  text-align: left;
     thead th {padding: 2em 0 1em;
 
       h2.heading-medium,
@@ -122,6 +123,7 @@ table.check-your-answers-notes {
   p {color:$error-colour;}
   .button {
     background-color:$error-colour;
+    margin-bottom: 1em;
     &:hover  {
       background-color:$error-button-hover;
     }
@@ -135,6 +137,14 @@ table.check-your-answers-notes {
       background-color: transparent;
       box-shadow: none;
       color: $link-hover-colour;
+    }
+  }
+}
+@include media(mobile) {
+  #delete-summary {
+    .button {
+      margin-top: .5em;
+      margin-left: 0 !important;
     }
   }
 }
@@ -376,6 +386,11 @@ h1 span.circle {
   textarea.form-control {
       width:100%;
     }
+}
+@include media(mobile) {
+  .left-indent {
+    margin-left:0 !important;
+  }
 }
 
 
