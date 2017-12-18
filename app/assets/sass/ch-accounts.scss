@@ -62,7 +62,6 @@ $error-button-hover: #8e0513;
 //Check your answers
 #expand {} // Expand all link/button
 table.check-your-answers {
-  text-align: left;
     thead th {padding: 2em 0 1em;
 
       h2.heading-medium,
@@ -102,6 +101,13 @@ table.check-your-answers {
       .column-one-quarter p {text-align:right}
       .column-sixth p {text-align:right}
     }
+  }
+}
+@include media(mobile) {
+  .review-reveal {
+    .column-one-half  {width:45%; display:inline-block;}
+    .column-one-third  {width:31%; display:inline-block;}
+    .column-one-quarter  {width:22%; display:inline-block;}
   }
 }
 table.check-your-answers-notes {
