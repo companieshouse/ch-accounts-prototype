@@ -314,6 +314,13 @@ header {
   margin-left: 1.5em;
 
 }
+@include media(mobile) { /*Adjust layout of heading styles on mobiles*/
+  .text .heading-xlarge {
+    line-height:0.7em;
+    .circle-subheading {
+      margin:.5em 0 0;
+  }
+}
 
 
 .warning-with-triangle {
