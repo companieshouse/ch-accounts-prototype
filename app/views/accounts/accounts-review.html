@@ -23,7 +23,7 @@ function openAll() {
          x[i].setAttribute("open", "true");
     }
     document.getElementById("expand").setAttribute( "onClick", "javascript: closeAll();" );
-    document.getElementById("expand").innerHTML = "Hide all";
+    document.getElementById("expand").innerHTML = "Close all";
 }
 function closeAll() {
     var x = document.getElementsByTagName("details");
@@ -32,7 +32,7 @@ function closeAll() {
          x[i].removeAttribute("open", "true");
     }
     document.getElementById("expand").setAttribute( "onClick", "javascript: openAll();" );
-    document.getElementById("expand").innerHTML = "Show all";
+    document.getElementById("expand").innerHTML = "Open all";
 }
 </script>
 <script type="text/javascript">
@@ -69,7 +69,7 @@ $(document).ready(function(){  //Only show the button if javascript is on
 
   <div class="">
 
-  <p><a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a></p>
+  <p><a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Open all</a></p>
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Check before you submit</caption>
