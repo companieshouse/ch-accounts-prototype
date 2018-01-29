@@ -293,7 +293,7 @@ p.company-details {
 
 h1 .circle,
 h2 .circle,
-h3 .circle {font-size: 21px; margin-right: 5px; position: relative; top: -2px;}
+h3 .circle {font-size: 21px; margin-right: 5px; position: relative; top: -.5em;}
 
 header {
   span {
@@ -320,6 +320,7 @@ header {
     .circle-subheading {
       margin:.5em 0 0;
   }
+}
 }
 
 
@@ -534,7 +535,7 @@ img.card-image {
 
 
 
-// Small-Full accounys styling
+// Small-Full accounts styling
 
 //Column sixth (for detailed Tangible asset notes)
 .column-sixth, .column-one-sixth {
@@ -547,5 +548,4 @@ img.card-image {
     @include media(mobile) {
       width: 100%;
     }
-}
 }
