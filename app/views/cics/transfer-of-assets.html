@@ -1,0 +1,84 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Community Interest Company report - Transfers of assets other than for full consideration
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">4</span>
+      Community Interest Company report
+      <span class="circle-subheading text">Transfers of assets other than for full consideration</span>
+    </h1>
+
+
+        <div class="left-indent text">
+        <h2 class="heading-medium">Were any assets transferred other than for full consideration?</h2>
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Assets transferred other than for full consideration</span>
+          <div class="panel panel-border-narrow form-hint">
+            <p>For example, donations.</p>
+          </div>
+        </details>
+        <form action="" method="get" class="form">
+              <fieldset class="inline" data-required="" data-error="Please confirm if any assets were transferred other than for full consideration">
+                      <legend class="visually-hidden">Were any assets transferred other than for full consideration</legend>
+                      <div class="form-group">
+
+                      <label class="block-label selection-button-radio" for="transferofassetsyes" data-target="transferofassetsyes-reveal">
+                        <input id="transferofassetsyes" name="transferofassetsyn" value="Yes" aria-controls="transferofassetsyes-reveal" type="radio">
+                        Yes
+                      </label>
+                      <label class="block-label selection-button-radio" for="transferofassetsno">
+                        <input id="transferofassetsno" name="transferofassetsyn" value="No" type="radio">
+                        No
+                        </label>
+                      </div><!--form-group-->
+
+                    </fieldset>
+
+
+
+                <div class="panel panel-border-narrow js-hidden" id="transferofassetsyes-reveal">
+                  <label for="other-1" class="heading-medium">Enter your assets transferred other than for full consideration information here<span class="form-hint">Some help text, if needed.</span></label>
+
+                  <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+              </div>
+
+
+
+              <div class="accounts-row-spacer">
+                <input type="submit" class="button" value="Save and continue" id="">
+              </div>
+            </form>
+          </div><!--left-indent-->
+        </div><!--text-->
+
+
+    </main>
+    {% endblock %}

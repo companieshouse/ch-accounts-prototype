@@ -1,0 +1,61 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Community Interest Company report - General description of the company's activities and impact{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+{% include 'includes/error.html' %}
+
+
+
+    <h1 class="heading-xlarge"><span class="circle circle-step-large">1</span>
+      Community Interest Company report
+      <span class="circle-subheading text">General description of the company's activities and impact</span>
+    </h1>
+
+  <div class="text">
+    <div class="left-indent">
+
+    <form action="/cics/consultation-with-stakeholders" method="get" class="form">
+
+
+
+
+              <label for="general-account"><p>Insert a general account of the company's activities in the financial year to which the report relates, including a description of how they have benefited the community.</p></label>
+
+              <textarea type="text" id="general-account" class="form-control" rows="10"></textarea>
+
+
+
+          <div class="accounts-row-spacer">
+            <input type="submit" class="button" value="Save and continue" id="">
+          </div>
+        </form>
+      </div><!--left-indent-->
+    </div><!--text-->
+
+
+</main>
+{% endblock %}
