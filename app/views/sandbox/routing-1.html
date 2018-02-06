@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Page 1
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <h1 class="heading-xlarge">Page 1</h1>
+
+  <div class="form-group">
+
+    <form action="/sandbox/routing-2a" method="get" class="form">
+
+          <fieldset data-required data-error=" You need to provide the name of a director">
+            <legend class="visuallyhidden">Routes</legend>
+
+
+             <label class="block-label selection-button-radio" for="routea">
+                  <input type="radio" id="routea" value="routea" name="route">
+                  Route A
+                </label>
+                <label class="block-label selection-button-radio" for="routeb">
+                  <input type="radio" id="routeb" value="routeb" name="route">
+                  Route B
+                </label>
+
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" value="Next">
+        </div><!--form-group-->
+</main>
+
+{% endblock %}
