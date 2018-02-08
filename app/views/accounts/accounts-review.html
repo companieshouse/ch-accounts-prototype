@@ -834,23 +834,16 @@ $(document).ready(function(){  //Only show the button if javascript is on
           <details>
             <summary><span class="summary">Loans to directors note</span></summary>
             <div class="review-reveal">
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Name of director receiving advance or credit<br />
+                  <strong>John Smith</strong></p>
 
-              <div class="grid-row">
-                <div class="column-one-third">
-                  <p><strong>Name of director receiving advance or credit</strong></p>
-                </div>
-                <div class="column-one-quarter">
-                  <p><strong>John Smith</strong></p>
+                  <p>Description of the loan<br />
+                  <strong>Short term loan</strong></p>
                 </div>
               </div><!--grid-row-->
-              <div class="grid-row">
-                <div class="column-one-third">
-                  <p>Description of the loan</p>
-                </div>
-                <div class="column-one-quarter">
-                  <p>Short term loan</p>
-                </div>
-              </div><!--grid-row-->
+
               <div class="grid-row">
                 <div class="column-one-third">
                   <p>Balance at 1 April 2016</p>
@@ -894,21 +887,14 @@ $(document).ready(function(){  //Only show the button if javascript is on
               </div><!--content-delete-warning-->
 
               <div class="grid-row accounts-row-spacer">
-                <div class="column-one-third">
-                  <p><strong>Name of director receiving advance or credit</strong></p>
-                </div>
-                <div class="column-one-quarter">
-                  <p><strong>David Smith</strong></p>
-                </div>
-              </div><!--grid-row-->
-              <div class="grid-row">
-                <div class="column-one-third">
-                  <p>Description of the loan</p>
-                </div>
-                <div class="column-one-quarter">
-                  <p>Car loan</p>
-                </div>
-              </div><!--grid-row-->
+                  <div class="column-one-half">
+                    <p>Name of director receiving advance or credit<br />
+                    <strong>David Smith</strong></p>
+
+                    <p>Description of the loan<br />
+                    <strong>Car loan</strong></p>
+                  </div>
+                </div><!--grid-row-->
               <div class="grid-row">
                 <div class="column-one-third">
                   <p>Balance at 1 April 2016</p>
@@ -957,6 +943,61 @@ $(document).ready(function(){  //Only show the button if javascript is on
           </details>
         </td>
       </tr>
+
+
+
+
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Related party transactions</span></summary>
+            <div class="review-reveal">
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Transaction<br />
+                  <strong>Money given to the company by a related party</strong></p>
+                  <p>Name of related party<br />
+                  <strong>John Smith</strong></strong></p>
+                  <p>Relationship to the company<br />
+                  <strong>Consultant</strong></strong></p>
+                  <p>Description of the transaction<br />
+                  <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper auctor velit, id tristique nunc porta vel. Vestibulum pharetra pretium nisl in pretium. Proin finibus dignissim massa, id placerat diam lobortis id. Nulla ullamcorper, velit a lobortis efficitur, odio nisl ornare elit, in bibendum risus diam et justo.</strong></p>
+                </div>
+              </div><!--grid-row-->              <div class="grid-row">
+                <div class="column-one-third">
+                  <p>Balance at 1 April 2016</p>
+                </div>
+                <div class="column-one-quarter">
+                  <p>£60,000</p>
+                </div>
+              </div><!--grid-row-->
+              <div class="grid-row">
+                <div class="column-one-third">
+                  <p><strong>Balance at 31 March 2017</strong></p>
+                </div>
+                <div class="column-one-quarter">
+                  <p><strong>£65,000</strong></p>
+                </div>
+              </div><!--grid-row-->
+              <p><a href="" class="button">Change<span class="visuallyhidden"> John Smith - Short term loan - related party transactions</span></a>
+                <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> John Smith - Short term loan - Loans to directors note</span></a></span></p>
+
+              <div id="content-delete-warning"  style="display: none;">
+                <div class="error-summary" id="delete-summary">
+                  <p><strong>Are you sure you want to delete the related party transactions?</strong></p>
+                  <p><a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> John Smith - Short term loan - related party transactions</span></a> <a class="no-delete " href="javascript:void(0)">No, keep<span class="visuallyhidden"> David Smith - car loan - Loans to directors note</span></a></p>
+                </div><!--delete-summary-->
+              </div><!--content-delete-warning-->
+
+
+
+            <p class="accounts-row-spacer"><a href="">Need to add another related party transaction?</a></p>
+          </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+
+
 
       <tr>
         <td>
