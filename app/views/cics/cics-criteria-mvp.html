@@ -1,0 +1,145 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  File CIC company report and small full accounts
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
+    <div class="text">
+
+
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">File CIC company report and small full accounts</h1>
+    </header>
+
+
+
+
+
+
+  <h2 class="heading-large">Criteria</h2>
+
+  <div class="panel panel-border-wide">
+    <p>Check your CIC company report and your prepared accounts to see if you meet the criteria.</p>
+  </div>
+  <h3 class="heading-medium">CIC company report</h3>
+  <p>You <strong>cannot</strong> file a simplified CIC company report here if:</p>
+
+  <ul class="list list-bullet text">
+    <li>text here</li>
+    <li>text here</li>
+    <li>text here</li>
+  </ul>
+  <p>You <strong>can</strong> file a simplified CIC company report here if:</p>
+
+        <ul class="list list-bullet text">
+          <li>text here</li>
+          <li>text here</li>
+          <li>text here</li>
+        </ul>
+      <h3 class="heading-medium">Small full accounts</h3>
+
+      <p>You <strong>cannot</strong> file small full accounts here if:</p>
+
+      <ul class="list list-bullet text">
+        <li>text here</li>
+        <li>text here</li>
+        <li>text here</li>
+      </ul>
+
+  <p>You <strong>can</strong> file small full accounts here if:</p>
+
+        <ul class="list list-bullet text">
+          <!--<li>your accounting period starts on or after 1 January 2016</li>-->
+          <li>you don't need to change the date the accounts are made up to</li>
+          <li>your balance sheet doesn’t have 'intangible assets', 'fixed asset investments', 'debtors', 'creditors - amounts falling after one year', or 'revaluation reserve' </li>
+          <li>you only need to include balance sheet notes for 'tangible assets' and 'creditors - amounts falling due within one year'</li>
+      </ul>
+
+      <p>Your CIC must also meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
+              <li>turnover is not over £10.2 million</li>
+              <li>balance sheet total is not over £5.1 million</li>
+              <li>average number of employees is not over 50</li>
+</ul>
+
+
+          <h2 class="heading-medium">Do your prepared CIC report and small full accounts meet the criteria?</h2>
+
+          <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
+
+          <form action="javascript:void(0)" method="get" class="form">
+              <fieldset class="" data-required="" data-error="Please confirm if your prepared abridged accounts meet the criteria">
+                <legend class="visually-hidden">Do your prepared abridged accounts meet the criteria?</legend>
+                    <div class="form-group">
+
+
+                <label class="block-label selection-button-radio" for="release1yes">
+                  <input id="release1yes" type="radio" name="chsr1" value="Yes">
+                  Yes
+                </label>
+                <label class="block-label selection-button-radio" for="release1no">
+                  <input id="release1no" type="radio" name="chsr1" value="No">
+                  No <!--- show me other ways to file abridged accounts-->
+                </label>
+                <!--<label class="block-label selection-button-radio" for="release1other">
+                  <input id="release1other" type="radio" name="chsr1" value="Other">
+                  No - I'll file other types of accounts
+                </label>
+              </div>--><!--form-group-->
+              </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Next">
+          </div>
+
+          </div><!--left-indent-->
+
+          <a href="/chs/chs-choose-abridged-or-other-r1-not-eligible" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alternative</a>
+
+          </div><!--text-->
+
+          </form>
+
+
+
+          </main>
+
+{% endblock %}
