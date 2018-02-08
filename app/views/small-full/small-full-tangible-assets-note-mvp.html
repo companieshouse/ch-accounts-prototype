@@ -1,0 +1,876 @@
+{% extends "layout-chs.html" %} {% block page_title %} Tangible assets note {% endblock %} {% block content %}
+<main class="two-column-accounts" id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<nav class="content" role="navigation">
+		<ul class="mobile-hidden" id="navigation">
+			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+			</li>
+			<li>
+				<a href="javascript:void(0)">Your details</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="">Companies you follow</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="user-signout">Sign out</a>
+			</li>
+		</ul>
+	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
+	<h1 class="heading-xlarge">
+		<span class="circle circle-step-large">3</span> Balance sheet notes <span class="circle-subheading">Tangible assets</span>
+	</h1>
+		<div class="panel panel-border-wide">
+			<p>
+				Use this note to provide information about the tangible assets value from your balance sheet.
+			</p>
+			<p>
+				Complete all items that are included in your prepared accounts.
+			</p>
+		</div>
+
+		<form action="/" class="form" id="" method="post" name="">
+
+
+					<div class="grid-row" id="accounts-header">
+						<div class="column-quarter heading-medium" style="text-align:left;">Cost</div><!-- To do - move this style into the SASS file-->
+						<div class="column-sixth">
+							<h2 class="heading-small">Land &amp; buildings<br />£</h2>
+						</div>
+						<div class="column-sixth">
+							<h2 class="heading-small">Plant &amp; machinery<br />£</h2>
+						</div>
+						<div class="column-sixth">
+							<h2 class="heading-small">Fixtures &amp; fittings<br />£</h2>
+						</div>
+						<div class="column-sixth">
+							<h2 class="heading-small">Office equipment<br />£</h2>
+						</div>
+						<div class="column-sixth">
+							<h2 class="heading-small">Motor vehicles<br />£</h2>
+						</div>
+						<div class="column-sixth">
+							<h2 class="heading-small">Total<br />£</h2>
+						</div>
+					</div>
+
+
+
+			<!--Start Cost at start-->
+			<div class="grid-row accounts-row-spacer">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Cost at 1 April 2016</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost of your tangible assets at the start of this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+	        <div class="form-group">
+	          <label for="cost-start-land-buildings"><span class="mobile-only-label">Cost at 1 April 2016 - Land &amp; buildings</span>
+	            <input type="number" class="form-control" id="cost-start-land-buildings">
+	          </label>
+	        </div>
+	      </div>
+	      <div class="column-sixth">
+	        <div class="form-group">
+	          <label for="cost-start-plant-machinery"><span class="mobile-only-label">Cost at 1 April 2016 - Plant &amp; machinery</span>
+	            <input type="number" class="form-control" id="cost-start-plant-machinery">
+	          </label>
+	        </div>
+	      </div>
+	      <div class="column-sixth">
+	        <div class="form-group">
+	          <label for="cost-start-fixtures-fittings"><span class="mobile-only-label">Cost at 1 April 2016 - Fixtures &amp; fittings</span>
+	            <input type="number" class="form-control" id="cost-start-fixtures-fittings">
+	          </label>
+	        </div>
+	      </div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-start-office-equipment"><span class="mobile-only-label">Cost at 1 April 2016 - Office equipment</span>
+							<input type="number" class="form-control" id="cost-start-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-start-motor-vehicles"><span class="mobile-only-label">Cost at 1 April 2016 - Motor vehicles</span>
+							<input type="number" class="form-control" id="cost-start-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="cost-start-total"><span class="mobile-only-label">Cost at 1 April 2016 - Total</span>
+							<input type="number" class="form-control" id="cost-start-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Cost at start-->
+			<!--Start Additions  -->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Additions</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost of your tangible assets aquired during this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="additions-land-buildings"><span class="mobile-only-label">Additions - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="additions-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="additions-plant-machinery"><span class="mobile-only-label">Additions - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="additions-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="additions-fixtures-fittings"><span class="mobile-only-label">Additions - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="additions-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="additions-office-equipment"><span class="mobile-only-label">Additions - Office equipment</span>
+							<input type="number" class="form-control" id="additions-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="additions-motor-vehicles"><span class="mobile-only-label">Additions - Motor vehicles</span>
+							<input type="number" class="form-control" id="additions-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="additions-total"><span class="mobile-only-label">Additions - Total</span>
+							<input type="number" class="form-control" id="additions-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Additions-->
+			<!--Start Disposals-->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Disposals</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost of tangible assets disposed of in this acccounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="disposals-land-buildings"><span class="mobile-only-label">Disposals - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="disposals-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="disposals-plant-machinery"><span class="mobile-only-label">Disposals - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="disposals-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="disposals-fixtures-fittings"><span class="mobile-only-label">Disposals - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="disposals-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="disposals-office-equipment"><span class="mobile-only-label">Disposals - Office equipment</span>
+							<input type="number" class="form-control" id="disposals-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="disposals-motor-vehicles"><span class="mobile-only-label">Disposals - Motor vehicles</span>
+							<input type="number" class="form-control" id="disposals-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="disposals-total"><span class="mobile-only-label">Disposals - Total</span>
+							<input type="number" class="form-control" id="disposals-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Disposals=-->
+			<!--Start Revaluations-->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Revaluations</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								Valuation of any assets revalued during this accounting period.
+							</p>
+							<p>
+								If the revaluation reduces the value of the asset, then enter a negative figure.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="revaluations-land-buildings"><span class="mobile-only-label">Revaluations - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="revaluations-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="revaluations-plant-machinery"><span class="mobile-only-label">Revaluations - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="revaluations-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="revaluations-fixtures-fittings"><span class="mobile-only-label">Revaluations - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="revaluations-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="revaluations-office-equipment"><span class="mobile-only-label">Revaluations - Office equipment</span>
+							<input type="number" class="form-control" id="revaluations-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="revaluations-motor-vehicles"><span class="mobile-only-label">Revaluations - Motor vehicles</span>
+							<input type="number" class="form-control" id="revaluations-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="revaluations-total"><span class="mobile-only-label">Revaluations - Total</span>
+							<input type="number" class="form-control" id="revaluations-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Revaluations=-->
+			<!--Start Transfers-->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Transfers</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The cost or valuation of any tangible assets that you've transferred during this accounting period. If the asset is being transferred out, enter a negative figure.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="transfers-land-buildings"><span class="mobile-only-label">Transfers - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="transfers-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="transfers-plant-machinery"><span class="mobile-only-label">Transfers - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="transfers-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="transfers-fixtures-fittings"><span class="mobile-only-label">Transfers - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="transfers-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="transfers-office-equipment"><span class="mobile-only-label">Transfers - Office equipment</span>
+							<input type="number" class="form-control" id="transfers-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="transfers-motor-vehicles"><span class="mobile-only-label">Transfers - Motor vehicles</span>
+							<input type="number" class="form-control" id="transfers-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="transfers-total"><span class="mobile-only-label">Transfers - Total</span>
+							<input type="number" class="form-control" id="transfers-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Transfers-->
+			<!--Start Cost at end-->
+			<div class="grid-row accounts-total">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Cost at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Cost at 1 April 2016' plus 'additions', plus 'revaluations' plus 'transfers' minus 'disposals'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-end-land-buildings"><span class="mobile-only-label">Cost at 31 March 2017 - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="cost-end-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-end-plant-machinery"><span class="mobile-only-label">Cost at 31 March 2017 - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="cost-end-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-end-fixtures-fittings"><span class="mobile-only-label">Cost at 31 March 2017 - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="cost-end-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-end-office-equipment"><span class="mobile-only-label">Cost at 31 March 2017 - Office equipment</span>
+							<input type="number" class="form-control" id="cost-end-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="cost-end-motor-vehicles"><span class="mobile-only-label">Cost at 31 March 2017 - Motor vehicles</span>
+							<input type="number" class="form-control" id="cost-end-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="cost-end-total"><span class="mobile-only-label">Cost at 31 March 2017 - Total</span>
+							<input type="number" class="form-control" id="cost-end-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Cost at end=-->
+
+
+
+
+
+
+
+
+
+
+			<div class="grid-row accounts-row-spacer" id="accounts-header">
+				<div class="column-quarter heading-medium" style="text-align:left;">Depreciation<span class="subheading text">Depreciation is the reduction in value of an asset over its useful lifetime.</span></div><!-- To do - move this style into the SASS file-->
+				<div class="column-sixth">
+					<h2 class="heading-small">Land &amp; buildings<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Plant &amp; machinery<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Fixtures &amp; fittings<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Office equipment<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Motor vehicles<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Total<br />£</h2>
+				</div>
+			</div>
+
+			<div class="grid-row accounts-row-spacer">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Depreciation at 1 April 2016</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The reduction in your tangible assets at the start of this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-start-land-buildings"><span class="mobile-only-label">Depreciation at 1 April 2016 - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="depreciation-start-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-start-plant-machinery"><span class="mobile-only-label">Depreciation at 1 April 2016 - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="depreciation-start-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-start-fixtures-fittings"><span class="mobile-only-label">Depreciation at 1 April 2016 - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="depreciation-start-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-start-office-equipment"><span class="mobile-only-label">Depreciation at 1 April 2016 - Office equipment</span>
+							<input type="number" class="form-control" id="depreciation-start-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-start-motor-vehicles"><span class="mobile-only-label">Depreciation at 1 April 2016 - Motor vehicles</span>
+							<input type="number" class="form-control" id="depreciation-start-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="depreciation-start-total"><span class="mobile-only-label">Depreciation at 1 April 2016 - Total</span>
+							<input type="number" class="form-control" id="depreciation-start-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Depreciation at start-->
+			<!--Start Charge for year-->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Charge for year</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								The reduction in tangible asset values during this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="charge-year-land-buildings"><span class="mobile-only-label">Charge for year - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="charge-year-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="charge-year-plant-machinery"><span class="mobile-only-label">Charge for year - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="charge-year-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="charge-year-fixtures-fittings"><span class="mobile-only-label">Charge for year - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="charge-year-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="charge-year-office-equipment"><span class="mobile-only-label">Charge for year - Office equipment</span>
+							<input type="number" class="form-control" id="charge-year-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="charge-year-motor-vehicles"><span class="mobile-only-label">Charge for year - Motor vehicles</span>
+							<input type="number" class="form-control" id="charge-year-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="charge-year-total"><span class="mobile-only-label">Charge for year - Total</span>
+							<input type="number" class="form-control" id="charge-year-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Charge for year=-->
+			<!--Start On disposals-->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">On disposals</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								Total depreciation for all tangible assets disposed of in this accounting period.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="on-disposals-land-buildings"><span class="mobile-only-label">On disposals - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="on-disposals-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="on-disposals-plant-machinery"><span class="mobile-only-label">On disposals - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="on-disposals-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="on-disposals-fixtures-fittings"><span class="mobile-only-label">On disposals - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="on-disposals-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="on-disposals-office-equipment"><span class="mobile-only-label">On disposals - Office equipment</span>
+							<input type="number" class="form-control" id="on-disposals-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="on-disposals-motor-vehicles"><span class="mobile-only-label">On disposals - Motor vehicles</span>
+							<input type="number" class="form-control" id="on-disposals-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="on-disposals-total"><span class="mobile-only-label">On disposals - Total</span>
+							<input type="number" class="form-control" id="on-disposals-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End On disposals-->
+			<!--Start Other adjustments-->
+			<div class="grid-row">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Other adjustments</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								Any other depreciation adjustment on tangible assets.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="other-adjustments-land-buildings"><span class="mobile-only-label">Other adjustments - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="other-adjustments-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="other-adjustments-plant-machinery"><span class="mobile-only-label">Other adjustments - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="other-adjustments-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="other-adjustments-fixtures-fittings"><span class="mobile-only-label">Other adjustments - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="other-adjustments-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="other-adjustments-office-equipment"><span class="mobile-only-label">Other adjustments - Office equipment</span>
+							<input type="number" class="form-control" id="other-adjustments-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="other-adjustments-motor-vehicles"><span class="mobile-only-label">Other adjustments - Motor vehicles</span>
+							<input type="number" class="form-control" id="other-adjustments-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="other-adjustments-total"><span class="mobile-only-label">Other adjustments - Total</span>
+							<input type="number" class="form-control" id="other-adjustments-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Other adjustments-->
+			<!--Start depreciation at end-->
+			<div class="grid-row accounts-total">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Depreciation at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Depreciation at 1 April 2016' plus 'Charge for year' plus 'Other adjustments' minus 'On disposals'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-end-land-buildings"><span class="mobile-only-label">Depreciation at 31 March 2017 - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="depreciation-end-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-end-plant-machinery"><span class="mobile-only-label">Depreciation at 31 March 2017 - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="depreciation-end-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-end-fixtures-fittings"><span class="mobile-only-label">Depreciation at 31 March 2017 - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="depreciation-end-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-end-office-equipment"><span class="mobile-only-label">Depreciation at 31 March 2017 - Office equipment</span>
+							<input type="number" class="form-control" id="depreciation-end-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="depreciation-end-motor-vehicles"><span class="mobile-only-label">Depreciation at 31 March 2017 - Motor vehicles</span>
+							<input type="number" class="form-control" id="depreciation-end-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="depreciation-end-total"><span class="mobile-only-label">Depreciation at 31 March 2017 - Total</span>
+							<input type="number" class="form-control" id="depreciation-end-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End depreciation at end=-->
+
+
+
+
+
+
+			<div class="grid-row accounts-row-spacer" id="accounts-header">
+				<div class="column-quarter heading-medium" style="text-align:left;">Net book value<span class="subheading text">Net book value is the original asset cost minus depreciation.</span></div><!-- To do - move this style into the SASS file-->
+				<div class="column-sixth">
+					<h2 class="heading-small">Land &amp; buildings<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Plant &amp; machinery<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Fixtures &amp; fittings<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Office equipment<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Motor vehicles<br />£</h2>
+				</div>
+				<div class="column-sixth">
+					<h2 class="heading-small">Total<br />£</h2>
+				</div>
+			</div>
+
+			<div class="grid-row accounts-total accounts-row-spacer">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Net book value at 31 March 2017</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Cost at 31 March 2017' minus 'Depreciation at 31 March 2017'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-end-land-buildings"><span class="mobile-only-label">Net book value at 31 March 2017 - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="net-book-value-end-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-end-plant-machinery"><span class="mobile-only-label">Net book value at 31 March 2017 - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="net-book-value-end-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-end-fixtures-fittings"><span class="mobile-only-label">Net book value at 31 March 2017 - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="net-book-value-end-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-end-office-equipment"><span class="mobile-only-label">Net book value at 31 March 2017 - Office equipment</span>
+							<input type="number" class="form-control" id="net-book-value-end-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-end-motor-vehicles"><span class="mobile-only-label">Net book value at 31 March 2017 - Motor vehicles</span>
+							<input type="number" class="form-control" id="net-book-value-end-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="net-book-value-end-total"><span class="mobile-only-label">Net book value at 31 March 2017 - Total</span>
+							<input type="number" class="form-control" id="net-book-value-end-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End depreciation at start-->
+			<!--Start Additions  -->
+			<div class="grid-row accounts-total">
+				<div class="column-quarter">
+					<details>
+						<summary>
+							<span class="summary">Net book value at 31 March 2016</span>
+						</summary>
+						<div class="panel panel-border-narrow">
+							<p>
+								<strong>Calculation:</strong> 'Cost at 1 April 2016' minus 'Depreciation at 1 April 2016'.
+							</p>
+						</div>
+					</details>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-start-land-buildings"><span class="mobile-only-label">Net book value at 31 March 2016 - Land &amp; buildings</span>
+							<input type="number" class="form-control" id="net-book-value-start-land-buildings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-start-plant-machinery"><span class="mobile-only-label">Net book value at 31 March 2016 - Plant &amp; machinery</span>
+							<input type="number" class="form-control" id="net-book-value-start-plant-machinery">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-start-fixtures-fittings"><span class="mobile-only-label">Net book value at 31 March 2016 - Fixtures &amp; fittings</span>
+							<input type="number" class="form-control" id="net-book-value-start-fixtures-fittings">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-start-office-equipment"><span class="mobile-only-label">Net book value at 31 March 2016 - Office equipment</span>
+							<input type="number" class="form-control" id="net-book-value-start-office-equipment">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth">
+					<div class="form-group">
+						<label for="net-book-value-start-motor-vehicles"><span class="mobile-only-label">Net book value at 31 March 2016 - Motor vehicles</span>
+							<input type="number" class="form-control" id="net-book-value-start-motor-vehicles">
+						</label>
+					</div>
+				</div>
+				<div class="column-sixth accounts-total">
+					<div class="form-group">
+						<label for="net-book-value-start-total"><span class="mobile-only-label">Net book value at 31 March 2016 - Total</span>
+							<input type="number" class="form-control" id="net-book-value-start-total" readonly>
+						</label>
+					</div>
+				</div>
+			</div><!--End Additions  -->
+			<details class="accounts-row-spacer text">
+				<summary>
+					<span class="summary">Add additional information? (optional)</span>
+				</summary>
+				<div class="panel panel-border-narrow">
+					<label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+					<textarea class="form-control" id="textarea" rows="10"></textarea>
+				</div>
+			</details>
+			<div class="form-group accounts-row-spacer">
+				<a class="button" href="/small-full/small-full-creditors-within-note-mvp">Save and continue</a>
+			</div>
+		</form>
+</main>{% endblock %}

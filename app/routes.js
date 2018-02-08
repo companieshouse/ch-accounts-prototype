@@ -748,3 +748,24 @@ router.get('/accounts/accounts-start-page-cato-full', function (req, res) {
 });
 
 module.exports = router;
+
+
+
+
+// Small full accounts - MVP or Full journey
+
+router.get('/gov-uk/gov-uk-start-page-small-full', function (req, res) {
+
+  var smallfullroute1 = req.query.smallfullroute1;
+
+  if (smallfullroute1 == "mvp"){
+
+    res.redirect("/accounts/accounts-start-page-small-full-mvp");
+
+  } else {
+
+    res.render('gov-uk/gov-uk-start-page-small-full');
+
+  }
+
+});
