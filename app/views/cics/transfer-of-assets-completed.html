@@ -45,13 +45,13 @@ Community Interest Company report - Transfers of assets other than for full cons
             <p>Insert full details of any transfers of assets other than for full consideration - for example, donations to outside bodies.</p>
           </div>
         </details>
-        <form action="/cics/cics-approval" method="get" class="form">
+        <form action="/cics/cics-check-before-you-submit" method="get" class="form">
               <fieldset class="inline" data-required="" data-error="Please confirm if any assets were transferred other than for full consideration">
                       <legend class="visually-hidden">Were any assets transferred other than for full consideration</legend>
                       <div class="form-group">
 
                       <label class="block-label selection-button-radio" for="transferofassetsyes" data-target="transferofassetsyes-reveal">
-                        <input id="transferofassetsyes" name="transferofassetsyn" value="Yes" aria-controls="transferofassetsyes-reveal" type="radio">
+                        <input id="transferofassetsyes" name="transferofassetsyn" value="Yes" aria-controls="transferofassetsyes-reveal" type="radio" checked="checked">
                         Yes
                       </label>
                       <label class="block-label selection-button-radio" for="transferofassetsno">
@@ -64,7 +64,7 @@ Community Interest Company report - Transfers of assets other than for full cons
 
 
 
-                <div class="panel panel-border-narrow js-hidden" id="transferofassetsyes-reveal">
+                <div class="panel panel-border-narrow" id="transferofassetsyes-reveal">
                   <label for="transfertextarea" class="heading-medium form-group">Enter your assets transferred other than for full consideration information here</span></label>
                   <details class="form-group">
                     <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">consultation with stakeholders</span>
@@ -72,7 +72,7 @@ Community Interest Company report - Transfers of assets other than for full cons
                       <p>No transfer of assets other than for full consideration has been made.</p>
                     </div>
                   </details>
-                  <textarea type="text" id="transfertextarea" class="form-control" rows="10"></textarea>
+                  <textarea type="text" id="transfertextarea" class="form-control" rows="10">No transfer of assets other than for full consideration has been made.</textarea>
               </div>
 
 

@@ -1,0 +1,146 @@
+{%- extends "layout-chs.html" %}
+
+{% block page_title %}
+  Check before you submit
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Javascript that opens/closes details tags - NOT PRODUCTION READY -->
+<script>
+  $(document).ready(function(){  //Only show the button if javascript is on
+          $("a#expand").removeClass("hidden");
+  });
+</script>
+<script type="text/javascript">
+var elems = document.getElementsByTagName("details");
+function openAll() {
+    var x = document.getElementsByTagName("details");
+    var i;
+    for (i = 0; i < x.length; i++) {
+         x[i].setAttribute("open", "true");
+    }
+    document.getElementById("expand").setAttribute( "onClick", "javascript: closeAll();" );
+    document.getElementById("expand").innerHTML = "Hide all";
+}
+function closeAll() {
+    var x = document.getElementsByTagName("details");
+    var i;
+    for (i = 0; i < x.length; i++) {
+         x[i].removeAttribute("open", "true");
+    }
+    document.getElementById("expand").setAttribute( "onClick", "javascript: openAll();" );
+    document.getElementById("expand").innerHTML = "Show all";
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){  //Only show the button if javascript is on
+  $('.turnover').on('click', function(){
+      $(this).parent().parent().remove();
+  });
+});
+</script>
+<!-- END Javascript that opens/closes details tags - NOT PRODUCTION READY -->
+
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+<h1 class="heading-xlarge">
+  <span class="circle circle-step-large">5</span> Check before you submit
+</h1>
+  <form action="/cics/cics-approval" method="get" class="form">
+
+  <div class="">
+
+  <!--<a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a>-->
+
+  <table class="check-your-answers">
+  <caption class="visuallyhidden">Check before you submit</caption>
+
+
+      <thead>
+        <tr>
+          <th class="check-your-answers-section visuallyhidden">CIC company report</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">General description of the company's activities and impact</span></summary>
+            <div class="review-reveal">
+              <p>The company runs The Village Shop, a general store in The Village with a particular emphasis on selling locally produced food. The shop opened for business in August 2005. Nunc id volutpat felis. Cras eget tincidunt libero. Quisque sed mi non neque posuere tempor. Aenean posuere ante at quam hendrerit, vitae viverra dui fringilla. Phasellus condimentum, dolor fermentum tincidunt lacinia, enim tortor egestas risus, id tincidunt augue lectus euismod velit. Quisque quis tincidunt lacus, eu efficitur risus. Nulla auctor odio pharetra ante aliquam vehicula. Sed facilisis dignissim aliquam. Donec lobortis bibendum nisl, at commodo justo facilisis a. Aliquam erat volutpat. Nulla id nibh eu arcu blandit vestibulum. Fusce lectus turpis, dictum ac gravida eu, fermentum a est. Phasellus sem turpis, pellentesque vel odio nec, elementum elementum odio. Suspendisse in porttitor lorem. </p>
+              <p><a href="/cics/general-description-completed" class="button">Change<span class="visuallyhidden"> General description of the company's activities and impac</span></a></p>
+            </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Consultation with stakeholders</span></summary>
+            <div class="review-reveal">
+              <p>There has been no consultation with stakeholders.</p>
+              <p><a href="/cics/consultation-with-stakeholders-completed" class="button">Change<span class="visuallyhidden"> Consultation with stakeholder</span></a></p>
+            </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Directors' renumeration</span></summary>
+            <div class="review-reveal">
+              <p>Accounts will include directors' renumeration information.</p>
+              <p><a href="/cics/directors-renumeration-completed" class="button">Change<span class="visuallyhidden"> Directors' renumeration</span></a></p>
+            </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Transfers of assets other than for full consideration</span></summary>
+            <div class="review-reveal">
+              <p>No transfer of assets other than for full consideration has been made.</p>
+              <p><a href="/cics/transfer-of-assets" class="button">Change<span class="visuallyhidden"> Transfers of assets other than for full consideration</span></a></p>
+            </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+<!--<p class="accounts-row-spacer">
+  <a href="/accounts/accounts-abridged-fixed-assets-yes-no">Add additional balance sheet notes?</a>
+</p>-->
+
+    <div class="accounts-row-spacer">
+      <input type="submit" class="button" value="Next" id="">
+    </div>
+</form>
+</div><!--left-indent-->
+
+</main>
+
+{% endblock %}
