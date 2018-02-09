@@ -39,31 +39,20 @@ Community Interest Company report - Consultation with stakeholders{% endblock %}
         <div class="left-indent text">
           <form action="/cics/directors-renumeration" method="get" class="form">
 
-        <p>If there has been a consultation with stakeholders:</p>
-        <ul class="list list-bullet">
-          <li>indicate who the company's stakeholders are</li>
-          <li>how the stakeholders have been consulted</li>
-          <li>what action, if any, has the company taken in response to feedback from its consultations</li>
-        </ul>
-        <details class="">
-          <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">consultation with stakeholders</span>
+        <h2 class="heading-medium">Has there been a consultation with stakeholders?</h2>
+        <details class="form-group">
+          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Consultation with stakeholders?</span>
           <div class="panel panel-border-narrow form-hint">
-                                      <p>The company’s stakeholders are residents of and visitors to The Village, and local producers
-                of food and drink products in the surrounding area. The directors of the company have lived in
-                The Village for a number of years and developed the business model for the shop based on
-                their experience of talking to other residents.</p>
-                                      <p>We ask everyone using the shop for the first time to fill in a short questionnaire about their
-                shopping habits. This has helped us to build up a profile of local consumers’ needs and what
-                we can do to meet them more effectively. Our research has enabled us to identify that there
-                are about 120 households in the village without access to cars or where residents have
-                impaired mobility, and a further 200 or so households who now use the shop for at least 40
-                per cent of their grocery shopping. We encourage those working in the shop to pick up ideas
-                for the business when talking to customers and we keep a “suggestions box” for customers to
-                provide details of products which they would like to see stocked in the shop.</p>
+            <p>If there has been a consultation with stakeholders you should indicate:</p>
+            <ul class="list list-bullet">
+             <li>who the company's stakeholders are</li>
+             <li>how the stakeholders have been consulted</li>
+             <li>what action, if any, has the company taken in response to feedback from its consultations</li>
+           </ul>
           </div>
         </details>
               <fieldset class="inline" data-required="" data-error="Please confirm if there has been a consultation with stakeholders">
-                      <legend class="heading-medium">Has there been a consultation with stakeholders?</legend>
+                      <legend class="visually-hidden">Has there been a consultation with stakeholders?</legend>
                       <div class="form-group">
 
                       <label class="block-label selection-button-radio" for="consultationwithstakeholdersyes" data-target="consultationwithstakeholdersyes-reveal">
@@ -82,8 +71,24 @@ Community Interest Company report - Consultation with stakeholders{% endblock %}
 
                 <div class="panel panel-border-narrow js-hidden" id="consultationwithstakeholdersyes-reveal">
 
-                  <label for="consultation" class="heading-medium">Enter your 'consultation with stakeholders' information here</label>
-
+                  <label for="consultation" class="heading-medium form-group">Enter your 'consultation with stakeholders' information here</label>
+                  <details class="form-group">
+                    <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">consultation with stakeholders</span>
+                    <div class="panel panel-border-narrow form-hint">
+                                                <p>The company’s stakeholders are residents of and visitors to The Village, and local producers
+                          of food and drink products in the surrounding area. The directors of the company have lived in
+                          The Village for a number of years and developed the business model for the shop based on
+                          their experience of talking to other residents.</p>
+                                                <p>We ask everyone using the shop for the first time to fill in a short questionnaire about their
+                          shopping habits. This has helped us to build up a profile of local consumers’ needs and what
+                          we can do to meet them more effectively. Our research has enabled us to identify that there
+                          are about 120 households in the village without access to cars or where residents have
+                          impaired mobility, and a further 200 or so households who now use the shop for at least 40
+                          per cent of their grocery shopping. We encourage those working in the shop to pick up ideas
+                          for the business when talking to customers and we keep a “suggestions box” for customers to
+                          provide details of products which they would like to see stocked in the shop.</p>
+                    </div>
+                  </details>
                   <textarea type="text" id="consultation" class="form-control" rows="20"></textarea>
               </div>
 
@@ -98,4 +103,4 @@ Community Interest Company report - Consultation with stakeholders{% endblock %}
 
 
     </main>
-    {% endblock %}
+{% endblock %}
