@@ -63,12 +63,11 @@ $(document).ready(function () {
  </ul>
 </nav>
 
-
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
 
- <h1 class="heading-xlarge"><span class="circle circle-step-large">1</span> Balance sheet </h1>
+ <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span> Balance sheet </h1>
  <div class="left-indent">
 
    <div class="panel panel-border-wide">
@@ -134,7 +133,7 @@ $(document).ready(function () {
 <h2 class="heading-medium">Fixed assets</h2>
 
  <!--Start intangible assets-->
-<!--<div class="grid-row">
+<div class="grid-row" style="display:none;"> <!-- hiding for MVP -->
    <div class="column-half">
        <details>
          <summary><span class="summary">Intangible assets</span></summary>
@@ -165,7 +164,7 @@ $(document).ready(function () {
      </div>
    </div>
 
- </div>-->
+ </div>
  <!--End intangible assets-->
 
  <div class="grid-row" id="tangible-comma-error" style="display:none; margin-bottom:-2em;">
@@ -209,7 +208,7 @@ $(document).ready(function () {
  <!--End tangible assets-->
 
  <!--Start investments (fixed assets) -->
- <!--<div class="grid-row">
+ <div class="grid-row" style="display:none;"> <!-- hiding for MVP -->
    <div class="column-half">
        <details>
          <summary><span class="summary">Investments</span> <span class="mobile-only-label">(fixed assets)</span></summary>
@@ -236,7 +235,7 @@ $(document).ready(function () {
        </label>
      </div>
    </div>
- </div>-->
+ </div>
  <!--End investments (fixed assets)-->
 
  <!--Start total fixed assets-->
@@ -304,7 +303,7 @@ $(document).ready(function () {
    <!--End stocks-->
 
    <!--Start debtors-->
-   <!--<div class="grid-row">
+   <div class="grid-row" style="display:none;"> <!-- hiding for MVP -->
      <div class="column-half">
          <details>
            <summary><span class="summary">Debtors</span></summary>
@@ -332,7 +331,7 @@ $(document).ready(function () {
          </label>
        </div>
      </div>
-   </div>-->
+   </div>
    <!--End debtors-->
 
 
@@ -556,7 +555,7 @@ $(document).ready(function () {
 
 
    <!--Start creditors - amounts falling due after more than one year-->
-  <!-- <div class="grid-row accounts-row-spacer">
+   <div class="grid-row accounts-row-spacer" style="display:none;"> <!-- hiding for MVP -->
      <div class="column-half">
          <details>
            <summary><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
@@ -581,7 +580,7 @@ $(document).ready(function () {
          </label>
        </div>
      </div>
-   </div>-->
+   </div>
    <!--End creditors - amounts falling due after more than one year-->
 
    <!--Start provision for liabilities-->
@@ -740,7 +739,7 @@ $(document).ready(function () {
 
 
          <!--Start revaluation reserve-->
-      <!--  <div class="grid-row">
+        <div class="grid-row" style="display:none;"> <!-- hiding for MVP -->
            <div class="column-half">
                <details>
                  <summary><span class="summary">Revaluation reserve</span></summary>
@@ -764,7 +763,7 @@ $(document).ready(function () {
                </label>
              </div>
            </div>
-         </div>-->
+         </div>
          <!--End revaluation reserve-->
 
 
@@ -858,6 +857,7 @@ $(document).ready(function () {
            </div>
          </div>
          <!--End total shareholders' funds-->
+
 
      <div class="form-group">
        <a class="button" href="/small-full/small-full-balance-sheet-statements-mvp">Save and continue</a>
