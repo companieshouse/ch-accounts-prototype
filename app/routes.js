@@ -769,3 +769,15 @@ router.get('/gov-uk/gov-uk-start-page-small-full', function (req, res) {
   }
 
 });
+
+
+
+
+/////// CICS //////
+// CICS MVP criteria
+
+router.get('/cics/cics-stages-of-service', function (req, res) {
+  var cicsr1 = req.query.cicsr1;
+  if (cicsr1 == "No"){res.redirect("/cics/cics-criteria-not-met");}
+  else {res.render('cics/cics-stages-of-service');}
+});

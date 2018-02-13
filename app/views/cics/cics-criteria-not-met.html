@@ -1,0 +1,62 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+   File CIC company report and accounts
+{% endblock %}
+
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+<nav class="content" role="navigation">
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+    <li><a href="javascript:void(0)">Your details</a></li>
+    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+  </ul>
+</nav>
+
+
+<div class="text" id="accounts-start-page">
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+      <h1 class="heading-xlarge">Something</h1>
+    <!--  <form action="/cics/cics-steps-to-complete" method="get" class="form">
+
+        <p class="lede">Use this service to file a simplified CIC company report and small full company accounts</p>
+
+        <div class="panel panel-border-wide" id="save-and-resume-message">
+        <p>If you can't finish your filing in one session, you can come back later to continue. You'll need to go to <a id="recent_filings" href="javascript:void(0)">your filings</a>.</p>
+        </div>
+        <p>There are 4 stages to this service:</p>
+
+        <ol class="list example-icon-list">
+          <li><span class="circle circle-step-large">1</span>CIC company report</li>
+          <li><span class="circle circle-step-large">2</span>Small full accounts</li>
+          <li><span class="circle circle-step-large">3</span>Payment</li>
+          <li><span class="circle circle-step-large">5</span>Submission</li>
+        </ol>
+
+
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue to CIC company report" id="">
+      </div>
+
+    </form>-->
+
+
+        </div><!-- text-->
+
+      </main>
+
+      {% endblock %}
