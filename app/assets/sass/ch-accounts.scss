@@ -50,7 +50,16 @@ $error-button-hover: #8e0513;
     details {
         font-weight: 700;
     }
-    .no-help {margin-left:1em;}
+    .no-help {
+      margin-left:1em;
+      @include media(mobile) { /*Visible on mobiles*/
+        margin-left:0;
+        display: block;
+        @include core-24;
+        font-weight: 700;
+        margin-bottom: .5em;
+      }
+    }
   }
 
   .accounts-row-spacer { margin-top: 2em;}
