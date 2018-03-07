@@ -723,6 +723,38 @@
                      $('#trade-debtors-previous, #prepayments-and-accrued-income-previous, #other-debtors-previous').change(compute);
                 });
 
+
+
+
+                // Stocks (for small full accounts)
+
+                      // Stocks - Current year
+                          $(document).ready(function() {
+                            function compute() {
+                                 var stocksstockscurrent = $('#stocks-stocks-current').val();
+                                 var paymentonaccountcurrent = $('#payment-on-account-current').val();
+                                 var total = +stocksstockscurrent + +paymentonaccountcurrent;
+                                 $('#total-stocks-current').val(total);
+                               }
+                               $('#stocks-stocks-current, #payment-on-account-current').change(compute);
+                          });
+                          // Stocks - Previous year
+                                $(document).ready(function() {
+                                  function compute() {
+                                       var stocksstocksprevious = $('#stocks-stocks-previous').val();
+                                       var paymentonaccountprevious = $('#payment-on-account-previous').val();
+                                       var total = +stocksstocksprevious + +paymentonaccountprevious;
+                                       $('#total-stocks-previous').val(total);
+                                     }
+                                     $('#stocks-stocks-previous, #payment-on-account-previous').change(compute);
+                                });
+
+
+
+
+
+
+
   // Creditors - amounts falling due within one year  (for small full accounts)
 
         // Creditors - amounts falling due within one year  - Current year

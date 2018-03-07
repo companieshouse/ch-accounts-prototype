@@ -781,3 +781,20 @@ router.get('/cics/cics-stages-of-service', function (req, res) {
   if (cicsr1 == "No"){res.redirect("/cics/cics-criteria-not-met");}
   else {res.render('cics/cics-stages-of-service');}
 });
+
+
+//Choose CICS or Small Full journey
+router.get('/accounts/accounts-start-page-small-full-mvp', function (req, res) {
+  var cicssmallfullroute1 = req.query.cicssmallfullroute1;
+  if (cicssmallfullroute1 == "cic"){res.redirect("/gov-uk/gov-uk-start-page-cics");}
+  else {res.render('accounts/accounts-start-page-small-full-mvp');}
+});
+
+//router.post('/' + version + '/accounts/accounts-start-page-small-full-mvp', function (req, res) {
+  //      if (req.body.cicssmallfullroute1 == "sf") {
+    //        req.session.cicssmallfullroute1 = "sf";
+    //    } else {
+    //        req.session.cicssmallfullroute1 = "cic";
+    //    }
+    //    res.redirect(301, '/' + version + '/gov-uk/gov-uk-start-page-cics');
+  //  });

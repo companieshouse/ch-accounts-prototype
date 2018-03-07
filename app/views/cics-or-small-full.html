@@ -1,0 +1,62 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+Choose journey
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+.left-indent {margin-left:3em}
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+
+
+
+<a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+  <div class="text">
+    <h1 class="heading-xlarge">Choose journey</h1>
+
+
+
+
+
+    <form action="/accounts/accounts-start-page-small-full-mvp" method="get" class="form">
+          <fieldset>
+                  <legend class="visually-hidden"></legend>
+                  <div class="form-group">
+
+                  <label class="block-label selection-button-radio" for="cicssmallfullroute1cic">
+                    <input id="cicssmallfullroute1cic" name="cicssmallfullroute1" value="cic" type="radio">
+                    CIC report, small full accounts, payment
+                  </label>
+                  <label class="block-label selection-button-radio" for="cicssmallfullroute1sf">
+                    <input id="cicssmallfullroute1sf" name="cicssmallfullroute1" value="sf" type="radio">
+                    Small full accounts only (MVP)
+                    </label>
+                  </div><!--form-group-->
+
+                </fieldset>
+
+
+
+
+
+
+          <div class="">
+            <input type="submit" class="button" value="Next" id="">
+          </div>
+        </form>
+
+
+
+</main>
+{% endblock %}
