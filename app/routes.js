@@ -772,7 +772,6 @@ router.get('/gov-uk/gov-uk-start-page-small-full', function (req, res) {
 
 
 
-
 /////// CICS //////
 // CICS MVP criteria
 
@@ -800,36 +799,8 @@ router.post('/accounts/accounts-start-page-small-full-mvp', function (req, res) 
        res.redirect(301, '/gov-uk/gov-uk-start-page-cics');
    });
 
-// *  router.get('/small-full/small-full-review-mvp', function (req, res) {
-/*     res.render('/small-full/small-full-review-mvp');
-   });
-
-   router.post('/small-full/small-full-review-mvp', function (req, res) {
-
-            res.redirect(301, '/small-full/small-full-approval-mvp');
-
-      });
-*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      // Enter details
-//router.get('/enter-details', function (req, res) {
- //res.render('enter-details')
-//})
-
-// Enter details
 router.post('/cics-or-small-full', function (req, res) {
  var cicorsf = req.body.cicssmallfullroute1
 
@@ -838,7 +809,7 @@ router.post('/cics-or-small-full', function (req, res) {
  } else {
    req.session.cicorsf = cicorsf
    if (cicorsf == "sf") {
-     res.redirect('/accounts/accounts-start-page-small-full-mvp');
+     res.redirect('/chs/chs-start-page-small-full');
    } else {
      res.redirect('/gov-uk/gov-uk-start-page-cics');
    }
