@@ -502,6 +502,15 @@ th .panel {
     width: 0;
 }
 
+
+//Correct spacing on date selection radio buttons on change ARD screen
+
+  #acc-ref-date-form-group {
+    label {margin-bottom:.5em;}
+  }
+
+
+
 //Embedded PDF
 .embedded-PDF {
   height:160vh;
