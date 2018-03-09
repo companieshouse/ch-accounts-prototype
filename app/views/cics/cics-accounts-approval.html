@@ -53,10 +53,9 @@ function openWin() {
   <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
-  {% include 'includes/error.html' %}
 
 
-  <form action="/small-full/small-full-submission" method="get" class="form">
+  <form action="/cics/cics-stages-of-service-cic-and-accounts-done" method="get" class="form">
 
 
       <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span> Approve your accounts</h1>
@@ -72,16 +71,16 @@ function openWin() {
       <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
 
       <div class="form-group">
-              <fieldset data-required data-error=" You need to provide the name of a director">
+              <fieldset data-error=" You need to provide the name of a director">
                 <legend class="visuallyhidden">Who approved the accounts?</legend>
 
                     <label class="form-label visuallyhidden" for="name">Who approved the accounts?</label>
-                    <input class="form-control" id="name" type="text" style="width:100%;">
-                  <!--  <label class="block-label selection-button-radio" for="john-smith">
+                    <input class="form-control" id="name" name="directorName" type="text" style="width:100%;">
+                <!-- <label class="block-label selection-button-radio" for="john-smith">
                       <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
                       John Smith
                     </label>
-                    <label class="block-label" for="david-smith">
+                    <label class="block-label selection-button-radio" for="david-smith">
                       <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
                       David Smith
                     </label>-->
@@ -140,10 +139,10 @@ function openWin() {
 
 
 
-      <h2 class="heading-medium">Submit your small full accounts</h2>
+    <!--  <h2 class="heading-medium">Submit your small full accounts</h2>
       <p class="text">By submitting these accounts, you’re confirming that to the best of your knowledge, the details provided are correct.</p>
-      <div class="form-group">
-        <input type="submit" class="button" value="Submit your small full accounts">
+    -->  <div class="form-group">
+        <input type="submit" class="button" value="Save and continue">
       </div><!--form-group-->
 
     </div><!--left-indent-->

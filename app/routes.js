@@ -790,11 +790,76 @@ router.get('/accounts/accounts-start-page-small-full-mvp', function (req, res) {
   else {res.render('accounts/accounts-start-page-small-full-mvp');}
 });
 
-//router.post('/' + version + '/accounts/accounts-start-page-small-full-mvp', function (req, res) {
-  //      if (req.body.cicssmallfullroute1 == "sf") {
-    //        req.session.cicssmallfullroute1 = "sf";
-    //    } else {
-    //        req.session.cicssmallfullroute1 = "cic";
-    //    }
-    //    res.redirect(301, '/' + version + '/gov-uk/gov-uk-start-page-cics');
-  //  });
+router.post('/accounts/accounts-start-page-small-full-mvp', function (req, res) {
+      req.session.cicssmallfullroute1 = null;
+       if (req.body.cicssmallfullroute1 == "sf") {
+           req.session.cicssmallfullroute1 = "sf";
+       } else {
+           req.session.cicssmallfullroute1 = "cic";
+       }
+       res.redirect(301, '/gov-uk/gov-uk-start-page-cics');
+   });
+
+// *  router.get('/small-full/small-full-review-mvp', function (req, res) {
+/*     res.render('/small-full/small-full-review-mvp');
+   });
+
+   router.post('/small-full/small-full-review-mvp', function (req, res) {
+
+            res.redirect(301, '/small-full/small-full-approval-mvp');
+
+      });
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Enter details
+//router.get('/enter-details', function (req, res) {
+ //res.render('enter-details')
+//})
+
+// Enter details
+router.post('/cics-or-small-full', function (req, res) {
+ var cicorsf = req.body.cicssmallfullroute1
+
+ if (cicorsf !== 'sf' && cicorsf !== 'cic') {
+   res.render('cics-or-small-full')
+ } else {
+   req.session.cicorsf = cicorsf
+   if (cicorsf == "sf") {
+     res.redirect('/accounts/accounts-start-page-small-full-mvp');
+   } else {
+     res.redirect('/gov-uk/gov-uk-start-page-cics');
+   }
+ }
+})
+
+
+router.post('/small-full/small-full-review-mvp', function (req, res) {
+ var errorFlag = false
+ console.log(req.body.directorName)
+ if (req.body.directorName === "") {
+   errorFlag = true
+ }
+
+ if (errorFlag === true) {
+   res.render('/small-full/small-full-review-mvp')
+ } else {
+   if (req.session.cicorsf == "sf") {
+     res.redirect('/small-full/small-full-approval-mvp');
+   } else {
+     res.redirect('/cics/cics-accounts-approval');
+   }
+ }
+})
