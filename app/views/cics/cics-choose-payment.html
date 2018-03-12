@@ -1,0 +1,104 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Choose payment type
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
+    <div class="text">
+
+
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">Choose payment type</h1>
+    </header>
+
+
+  <div class="panel panel-border-wide form-group">
+    <p>The fee for your community interest company report is <strong>£15</strong></p>
+  </div>
+
+
+
+          <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
+
+          <form action="https://products.payments.service.gov.uk/pay/aba672d8280848a8b1344dbf6d5dad39" method="get" class="form">
+              <fieldset class="" data-required="" data-error="Please choose a payment type">
+                <legend class="visually-hidden">Choose payment type</legend>
+                    <div class="form-group">
+
+
+                      <label class="block-label selection-button-radio" for="choosepaymentcard">
+                        <input id="choosepaymentcard" type="radio" name="choosepayment" value="card">
+                        Credit or debit card<span class="form-hint">Payment is taken on submission</span>
+                      </label>
+                      <label class="block-label selection-button-radio" for="choosepaymentaccount" data-target="choosepaymentaccount-reveal" >
+                        <input id="choosepaymentaccount" type="radio" name="choosepayment" value="onlineaccounts">
+                      Companies House online filing account<span class="form-hint">Payment is debited when you recieved email confirmation of accepeted submission</span>
+                      </label>
+
+
+                  </div><!--form-group-->
+              </fieldset>
+
+
+
+              <div class="panel panel-border-narrow js-hidden" id="choosepaymentaccount-reveal">
+                <div class="form-group">
+                  <label class="form-label" for="presenter-id">Presenter ID</label>
+                  <input class="form-control" name="presenter-id" type="text" id="presenter-id">
+                </div><!--form-group-->
+                <div class="form-group">
+                  <label class="form-label" for="presenter-code">Presenter authentication code</label>
+                  <input class="form-control" name="presenter-code" type="number" id="presenter-code">
+                </div><!--form-group-->
+              </div><!--choosepaymentaccount-reveal-->
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Next">
+          </div>
+
+          </div><!--left-indent-->
+
+
+          </div><!--text-->
+
+          </form>
+
+
+
+          </main>
+
+{% endblock %}
