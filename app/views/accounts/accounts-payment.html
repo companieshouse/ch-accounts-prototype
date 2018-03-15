@@ -21,7 +21,7 @@
 
 
 <main id="content" role="main">
-
+<!--
 {% include "includes/phase_banner_beta.html" %}
 
 <nav class="content" role="navigation">
@@ -35,14 +35,13 @@
 </nav>
 
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
+-->
 
    <div class="grid-row">
      <div class="column-two-thirds">
-       <h1 class="heading-xlarge"><span class="circle circle-step-large">6</span> Payment</h1>
+       <h1 class="heading-large">Enter card details</h1>
 
-      <div class="left-indent">
-       <form class="form" method="get" action="" autocomplete="off">
+       <form class="form" method="get" action="/cics/cics-submission" autocomplete="off">
          <div class="form-group cards-group ">
            <label class="form-label-bold" for="card-number">
              Card number
@@ -76,10 +75,6 @@
          <div class="form-group ">
            <label class="form-label-bold" for="full-name">
              Name on card
-
-             <span class="form-hint">
-               Enter the name as it appears on the card
-             </span>
            </label>
            <input class="form-control" id="full-name" name="fullName" type="text" value="">
          </div>
@@ -95,7 +90,7 @@
          <div class="form-group">
            <h2 class="heading-medium">Billing address</h2>
            <div class="payment-type-intro">
-             <p>This is the address where the card is registered</p>
+             <p class="form-hint">This is the address associated with the card</p>
            </div>
            <fieldset>
              <div class="form-group ">
@@ -120,21 +115,17 @@
                </label>
                <input class="form-control" id="postcode" name="postCode" type="text" value="">
              </div>
-             <div class="form-group ">
-               <label class="form-label-bold" for="email-address">
-                 Email address
-                 <span class="form-hint">We'll send your payment confirmation here</span>
-
-               </label>
-               <input class="form-control" id="email-address" name="emailAddress" type="text" value="">
-             </div>
+             <p>
+              We'll send confirmation of your payment to<br />
+              <strong>jsmith@testcompany.co.uk</strong>
+            </p>
            </fieldset>
          </div>
          <div class="grid-row">
            <div class="column-two-thirds">
              <div class="form-group">
 
-                 <input type="submit" class="button" role="button" value="Continue"/>
+                 <input type="submit" class="button" role="button" value="Pay and submit"/>
 
              </div>
              <div class="back">
@@ -144,14 +135,13 @@
          </div>
        </form>
      </div>
-   </div><!--left-indent-->
 
      <div class="column-third">
        <div class="payment-summary-small">
          <h2 class="bold-small">Payment summary</h2>
-         <p class="bold-medium">Abridged accounts</p>
+         <p class="bold-medium">Community Interest Company annual report</p>
          <h3>Amount to pay:</h3>
-         <p class="bold-large">£XX</p>
+         <p class="bold-large">£15</p>
        </div>
 
      </div>
