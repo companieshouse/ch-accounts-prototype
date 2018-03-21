@@ -75,7 +75,7 @@ $(document).ready(function() {
 });
 
 
-// Total assets less current liabilities (current year))
+// Total assets less current liabilities (current year)
 $(document).ready(function() {
   function compute() {
     var intangibleassetscurrent = $('#intangible-assets-current').val();
@@ -92,15 +92,21 @@ $(document).ready(function() {
      $('#intangible-assets-current, #tangible-assets-current, #investments-current-assets-current, #stocks-current, #debtors-current, #cash-at-bank-and-in-hand-current, #investments-current-assets-current, #creditors-amounts-falling-due-within-one-year-current').change(compute);
 });
 
-// Total assets less current liabilities (previous year))
+// Total assets less current liabilities (previous year)
 $(document).ready(function() {
   function compute() {
-       var totalfixedassetsprevious = $('#total-fixed-assets-previous').val();
-       var netcurrentassetsliabilitiesprevious = $('#net-current-assets-liabilities-previous').val();
-       var total = +totalfixedassetsprevious + +netcurrentassetsliabilitiesprevious;
-       $('#total-assets-less-current-liabilities-previous').val(total);
+    var intangibleassetsprevious = $('#intangible-assets-previous').val();
+    var tangibleassetsprevious = $('#tangible-assets-previous').val();
+    var investmentsfixedassetsprevious = $('#investments-fixed-assets-previous').val();
+    var stocksprevious = $('#stocks-previous').val();
+    var debtorsprevious = $('#debtors-previous').val();
+    var cashatbankandinhandprevious = $('#cash-at-bank-and-in-hand-previous').val();
+    var investmentscurrentassetsprevious = $('#investments-current-assets-previous').val();
+    var creditorsamountsfallingduewithinoneyearprevious = $('#creditors-amounts-falling-due-within-one-year-previous').val();
+    var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious + +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious + +investmentscurrentassetsprevious - +creditorsamountsfallingduewithinoneyearprevious;
+   $('#total-assets-less-current-liabilities-previous').val(total);
      }
-     $('#total-fixed-assets-previous, #net-current-assets-liabilities-previous, #creditors-amounts-falling-due-within-one-year-previous').change(compute);
+     $('#intangible-assets-previous, #tangible-assets-previous, #investments-current-assets-previous, #stocks-previous, #debtors-previous, #cash-at-bank-and-in-hand-previous, #investments-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous').change(compute);
 });
 
 //Total net assets (liabilities)  (current year)
@@ -125,13 +131,20 @@ $(document).ready(function() {
 //Total net assets (liabilities)  (previous year)
 $(document).ready(function() {
   function compute() {
-       var totalassetslesscurrentliabilitiesprevious = $('#total-assets-less-current-liabilities-previous').val();
-       var creditorsamountsfallingdueaftermorethanoneyearprevious = $('#creditors-amounts-falling-due-after-more-than-one-year-previous').val();
-       var provisionforliabilitiesprevious = $('#provision-for-liabilities-previous').val();
-       var total = +totalassetslesscurrentliabilitiesprevious - +creditorsamountsfallingdueaftermorethanoneyearprevious - +provisionforliabilitiesprevious;
+        var intangibleassetsprevious = $('#intangible-assets-previous').val();
+        var tangibleassetsprevious = $('#tangible-assets-previous').val();
+        var investmentsfixedassetsprevious = $('#investments-fixed-assets-previous').val();
+        var stocksprevious = $('#stocks-previous').val();
+        var debtorsprevious = $('#debtors-previous').val();
+        var cashatbankandinhandprevious = $('#cash-at-bank-and-in-hand-previous').val();
+        var investmentscurrentassetsprevious = $('#investments-current-assets-previous').val();
+        var creditorsamountsfallingduewithinoneyearprevious = $('#creditors-amounts-falling-due-within-one-year-previous').val();
+        var creditorsamountsfallingdueaftermorethanoneyearprevious = $('#creditors-amounts-falling-due-after-more-than-one-year-previous').val();
+        var provisionforliabilitiesprevious = $('#provision-for-liabilities-previous').val();
+       var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious + +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious + +investmentscurrentassetsprevious - +creditorsamountsfallingduewithinoneyearprevious - +creditorsamountsfallingdueaftermorethanoneyearprevious - +provisionforliabilitiesprevious;
        $('#total-net-assets-liabilities-previous').val(total);
      }
-     $('#total-assets-less-current-liabilities-previous, #creditors-amounts-falling-due-after-more-than-one-year-previous, #provision-for-liabilities-previous').change(compute);
+     $('#intangible-assets-previous, #tangible-assets-previous, #investments-previous-assets-previous, #stocks-previous, #debtors-previous, #cash-at-bank-and-in-hand-previous, #investments-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous, #creditors-amounts-falling-due-after-more-than-one-year-previous, #provision-for-liabilities-previous').change(compute);
 });
 
 // Total shareholders' funds (current year)
