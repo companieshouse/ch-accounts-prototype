@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-Community Interest Company annual report - Directors' renumeration
+Community Interest Company annual report - Directors' remuneration
 {% endblock %}
 
 {% block content %}
@@ -33,7 +33,7 @@ Community Interest Company annual report - Directors' renumeration
 
     <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
       CIC annual report
-      <span class="circle-subheading text">Directors' renumeration</span>
+      <span class="circle-subheading text">Directors' remuneration</span>
     </h1>
 
 
@@ -41,18 +41,23 @@ Community Interest Company annual report - Directors' renumeration
 
         <form action="/cics/transfer-of-assets-completed" method="get" class="form">
 
-          <h2 class="heading-medium">Was directors' renumeration recieved?</h2>
-
-          <fieldset class="inline" data-required="" data-error="Please confirm directors' renumeration was recieved">
-                  <legend class="visuallyhidden">Was directors' renumeration recieved?</legend>
+          <h2 class="heading-medium">Was directors' remuneration received?</h2>
+          <details class="form-group">
+            <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">directors' remuneration</span>
+            <div class="panel panel-border-narrow form-hint">
+              <p>Some help text.</p>
+            </div>
+          </details>
+          <fieldset class="inline" data-required="" data-error="Please confirm directors' remuneration was recieved">
+                  <legend class="visuallyhidden">Was directors' remuneration received?</legend>
                   <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="directorsrenumerationyes" data-target="directorsrenumerationyes-reveal">
-                    <input id="directorsrenumerationyes" name="directorsrenumerationyn" value="Yes"type="radio" checked="checked">
+                  <label class="block-label selection-button-radio" for="directorsremunerationyes" data-target="directorsremunerationyes-reveal">
+                    <input id="directorsremunerationyes" name="directorsremunerationyn" value="Yes"type="radio" checked="checked">
                     Yes
                   </label>
-                  <label class="block-label selection-button-radio" for="directorsrenumerationno"  data-target="directorsrenumerationno-reveal">
-                    <input id="directorsrenumerationno" name="directorsrenumerationyn" value="No"  aria-controls="directorsrenumerationno-reveal"  type="radio" checked="checked">
+                  <label class="block-label selection-button-radio" for="directorsremunerationno"  data-target="directorsremunerationno-reveal">
+                    <input id="directorsremunerationno" name="directorsremunerationyn" value="No"  aria-controls="directorsremunerationno-reveal"  type="radio" checked="checked">
                     No
                     </label>
                   </div><!--form-group-->
@@ -61,11 +66,11 @@ Community Interest Company annual report - Directors' renumeration
 
 
 
-            <div class="panel panel-border-narrow js-hidden" id="directorsrenumerationno-reveal">
+            <div class="panel panel-border-narrow js-hidden" id="directorsremunerationno-reveal">
 
-              <label for="consultation" class="heading-medium form-group">Enter your directors' renumeration information here</label>
+              <label for="consultation" class="heading-medium form-group">Enter your directors' remuneration information here</label>
               <details class="form-group">
-                <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">directors' renumeration</span>
+                <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">directors' remuneration</span>
                 <div class="panel panel-border-narrow form-hint">
                   <p>The aggregate amount of emoluments paid to or receivable by directors in respect of qualifying services was £10,000.</p>
                 </div>
