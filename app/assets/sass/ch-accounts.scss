@@ -109,6 +109,7 @@ table.check-your-answers {
       .column-one-half p {text-align:left}
       .column-one-quarter p {text-align:right}
       .column-sixth p {text-align:right}
+      .column-fifth p {text-align:right}
     }
   }
 }
@@ -563,6 +564,18 @@ img.card-image {
 .column-sixth, .column-one-sixth {
     float: left;
     width: 12%;
+    @include media(mobile) {
+      width: 100%;
+    }
+}
+//Column fifth (for detailed Tangible asset notes)
+.column-fifth, .column-one-fifth {
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+.column-fifth, .column-one-fifth {
+    float: left;
+    width: 18%;
     @include media(mobile) {
       width: 100%;
     }
