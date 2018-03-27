@@ -1,0 +1,90 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Which type of accounts have you prepared?
+{% endblock %}
+
+
+{% block content %}
+
+
+
+    <main id="content" role="main" class="search">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Which type of accounts have you prepared?</h1>
+    </header>
+    <p class="lede">If you’re not sure, you may want to ask an accountant.</p>
+
+
+
+
+    <form action="/accounts/accounts-start-page-small-full-mvp" method="get" class="form">
+        <fieldset class="text" data-required="" data-error="Please confirm if your prepared small full accounts meet the criteria">
+          <legend class="visually-hidden">Do your prepared small full accounts meet the criteria?</legend>
+              <div class="form-group">
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiomicro">
+            <input id="chooseaccountsradiomicro" type="radio" name="chooseaccountsradio" value="Micro">
+            <span class="heading-small">Micro-entity accounts</span><br />
+            <span class="form-hint">Must meet at least 2 of the following:</span>
+            <ul class="list list-bullet form-hint">
+              <li>Turnover is no more than £632,000</li>
+              <li>Balance sheet total is no more than £316,000</li>
+              <li>Average number of employees is no more than 10</li>
+            </ul>
+          </label>
+          <label class="block-label selection-button-radio" for="chooseaccountsradiosmall">
+            <input id="chooseaccountsradiosmall" type="radio" name="chooseaccountsradio" value="Small">
+            <span class="heading-small">Small full accounts</span><br />
+            <span class="form-hint">Must meet at least 2 of the following:</span>
+            <ul class="list list-bullet form-hint">
+              <li>Turnover is no more than £10.2 million</li>
+              <li>Balance sheet total is no more than £5.1 million</li>
+              <li>Average number of employees is no more than 50</li>
+            </ul>
+          </label>
+          <label class="block-label selection-button-radio" for="chooseaccountsradioabridged">
+            <input id="chooseaccountsradioabridged" type="radio" name="chooseaccountsradio" value="Abridged">
+            <span class="heading-small">Abridged accounts</span><br />
+            <span class="form-hint">Must meet at least 2 of the following:</span>
+            <ul class="list list-bullet form-hint">
+              <li>Turnover is no more than £10.2 million</li>
+              <li>Balance sheet total is no more than £5.1 million</li>
+              <li>Average number of employees is no more than 50</li>
+            </ul>
+          </label>
+          <label class="block-label selection-button-radio" for="chooseaccountsradiofull">
+            <input id="chooseaccountsradiofull" type="radio" name="chooseaccountsradio" value="Full">
+            <span class="heading-small">Full accounts (with Companies House and HMRC)</span><br />
+            <p class="form-hint">These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</p>
+          </label>
+          <label class="block-label selection-button-radio" for="chooseaccountsradiodormant">
+            <input id="chooseaccountsradiodormant" type="radio" name="chooseaccountsradio" value="Dormant">
+            <span class="heading-small">Dormant company accounts</span><br />
+            <p class="form-hint">These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</p>
+          </label>
+          </div><!--form-group-->
+        </fieldset>
+
+
+
+
+        <p>Looking to file <a href="/webfiling/webfiling-login-page-chs-search">abbreviated accounts</a>?</p>
+
+        <a href="/chs/chs-choose-accounts-small-full" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alternative</a>
+
+
+
+
+</main>
+
+{% endblock %}
