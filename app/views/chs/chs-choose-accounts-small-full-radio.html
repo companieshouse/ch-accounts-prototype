@@ -6,7 +6,12 @@
 
 
 {% block content %}
-
+<style type="text/css">
+.accounts-chooser-radio .panel {
+  margin:0 0 2em 2.5em;
+  padding-top: 0;
+}
+</style>
 
 
     <main id="content" role="main" class="search">
@@ -27,51 +32,77 @@
 
 
     <form action="/chs/chs-choose-small-full-or-other" method="get" class="form">
-        <fieldset class="text" data-required="" data-error="Please confirm if your prepared small full accounts meet the criteria">
+        <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm if your prepared small full accounts meet the criteria">
           <legend class="visually-hidden">Do your prepared small full accounts meet the criteria?</legend>
               <div class="form-group">
 
 
-          <label class="block-label selection-button-radio" for="chooseaccountsradiomicro">
+          <label class="block-label selection-button-radio" for="chooseaccountsradiomicro" data-target="chooseaccountsradiomicro-reveal">
             <input id="chooseaccountsradiomicro" type="radio" name="chooseaccountsradio" value="Micro">
-            <span class="heading-small">Micro-entity accounts</span><br />
-            <span class="form-hint">Must meet at least 2 of the following:</span>
-            <ul class="list list-bullet form-hint">
+            Micro-entity accounts
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiomicro-reveal">
+            <p>Must meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
               <li>Turnover is no more than £632,000</li>
               <li>Balance sheet total is no more than £316,000</li>
               <li>Average number of employees is no more than 10</li>
             </ul>
-          </label>
-          <label class="block-label selection-button-radio" for="chooseaccountsradiosmall">
+          </div>
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiosmall" data-target="chooseaccountsradiosmall-reveal">
             <input id="chooseaccountsradiosmall" type="radio" name="chooseaccountsradio" value="Small">
-            <span class="heading-small">Small full accounts</span><br />
-            <span class="form-hint">Must meet at least 2 of the following:</span>
-            <ul class="list list-bullet form-hint">
+            Small full accounts
+          </label>
+
+
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiosmall-reveal">
+            <p>Must meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
               <li>Turnover is no more than £10.2 million</li>
               <li>Balance sheet total is no more than £5.1 million</li>
               <li>Average number of employees is no more than 50</li>
             </ul>
-          </label>
-          <label class="block-label selection-button-radio" for="chooseaccountsradioabridged">
+          </div>
+
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradioabridged" data-target="chooseaccountsradioabridged-reveal">
             <input id="chooseaccountsradioabridged" type="radio" name="chooseaccountsradio" value="Abridged">
-            <span class="heading-small">Abridged accounts</span><br />
-            <span class="form-hint">Must meet at least 2 of the following:</span>
-            <ul class="list list-bullet form-hint">
+            Abridged accounts
+          </label>
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradioabridged-reveal">
+            <p>Must meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
               <li>Turnover is no more than £10.2 million</li>
               <li>Balance sheet total is no more than £5.1 million</li>
               <li>Average number of employees is no more than 50</li>
             </ul>
-          </label>
-          <label class="block-label selection-button-radio" for="chooseaccountsradiofull">
+          </div>
+
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiofull" data-target="chooseaccountsradiofull-reveal">
             <input id="chooseaccountsradiofull" type="radio" name="chooseaccountsradio" value="Full">
-            <span class="heading-small">Full accounts (with Companies House and HMRC)</span><br />
-            <p class="form-hint">These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</p>
+            Full accounts (with Companies House and HMRC)
           </label>
-          <label class="block-label selection-button-radio" for="chooseaccountsradiodormant">
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiofull-reveal">
+            <p>These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</p>
+          </div>
+
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiodormant" data-target="chooseaccountsradiodormant-reveal">
             <input id="chooseaccountsradiodormant" type="radio" name="chooseaccountsradio" value="Dormant">
-            <span class="heading-small">Dormant company accounts</span><br />
-            <p class="form-hint">These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
+          Dormant company accounts
           </label>
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiodormant-reveal">
+            <p>These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
+          </div>
+
+
+
           </div><!--form-group-->
         </fieldset>
 
