@@ -24,33 +24,38 @@
 
 
     <header class="text">
-    	<h1 id="page-header" class="heading-xlarge">Which type of CIC annual report have you prepared?</h1>
+    	<h1 id="page-header" class="heading-xlarge">Which type of CIC annual report do you want to file?</h1>
     </header>
 
 
 
 
     <form action="/cics/cics-criteria-mvp" method="get" class="form">
-        <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm what type of CIC annual report you have prepared">
-          <legend class="visually-hidden">Which type of CIC annual report have you prepared?</legend>
+        <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm what type of CIC annual report you want to file">
+          <legend class="visually-hidden">Which type of CIC annual report do you want to file?</legend>
               <div class="form-group">
 
 
-          <label class="block-label selection-button-radio" for="choosecicreporttypesimple">
+          <label class="block-label selection-button-radio" for="choosecicreporttypesimple" data-target="simplifiedreveal">
             <input id="choosecicreporttypesimple" type="radio" name="choosecicreporttype" value="Simplified">
             Simplified
-            <span class="form-hint">The majority of CICs complete the simplified report</span>
           </label>
 
+          <div class="panel panel-border-narrow js-hidden" id="simplifiedreveal">
+           The majority of CICs complete the simplified report
+           </div>
 
 
 
-          <label class="block-label selection-button-radio" for="choosecicreporttypedetailed">
+
+          <label class="block-label selection-button-radio" for="choosecicreporttypedetailed" data-target="detailreveal">
             <input id="choosecicreporttypedetailed" type="radio" name="choosecicreporttype" value="Detailed">
             Detailed
-            <span class="form-hint">Reserved for those CICs that have more complex financial arrangements for which professional advice in relation to the financial information sections may be required</span>
-
           </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="detailreveal">
+           This is for CICs that have more complex financial arrangements
+           </div>
 
 
           </div><!--form-group-->
