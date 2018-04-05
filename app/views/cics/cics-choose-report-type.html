@@ -1,0 +1,69 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Which type of CIC annual report have you prepared?
+{% endblock %}
+
+
+{% block content %}
+<style type="text/css">
+.accounts-chooser-radio .panel {
+  margin:0 0 2em 2.5em;
+  padding-top: 0;
+}
+</style>
+
+
+    <main id="content" role="main" class="search">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Which type of CIC annual report have you prepared?</h1>
+    </header>
+
+
+
+
+    <form action="/cics/cics-criteria-mvp" method="get" class="form">
+        <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm what type of CIC annual report you have prepared">
+          <legend class="visually-hidden">Which type of CIC annual report have you prepared?</legend>
+              <div class="form-group">
+
+
+          <label class="block-label selection-button-radio" for="choosecicreporttypesimple">
+            <input id="choosecicreporttypesimple" type="radio" name="choosecicreporttype" value="Simplified">
+            Simplified
+          </label>
+
+
+
+
+          <label class="block-label selection-button-radio" for="choosecicreporttypedetailed">
+            <input id="choosecicreporttypedetailed" type="radio" name="choosecicreporttype" value="Detailed">
+            Detailed
+          </label>
+
+
+          </div><!--form-group-->
+        </fieldset>
+
+        <div class="form-group">
+        <input type="submit" class="button" value="Next">
+        </div>
+
+          </form>
+
+
+
+
+
+
+</main>
+
+{% endblock %}

@@ -834,3 +834,23 @@ router.post('/small-full/small-full-review-mvp', function (req, res) {
    }
  }
 })
+
+
+
+// CICS - detailed or simplified accounts
+
+router.get('/cics/cics-criteria-mvp', function (req, res) {
+
+  var choosecicreporttype = req.query.choosecicreporttype;
+
+  if (choosecicreporttype == "Detailed"){
+
+    res.redirect("/cics/cics-criteria-not-met");
+
+  } else {
+
+    res.render('cics/cics-criteria-mvp');
+
+  }
+
+});
