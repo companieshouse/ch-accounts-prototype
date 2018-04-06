@@ -580,3 +580,10 @@ img.card-image {
       width: 100%;
     }
 }
+.important-message {
+  background-color:  $govuk-blue;
+  color: $page-colour;
+  padding: .9em .9em 0.1em;
+  a {color:$page-colour;}
+  a:hover, a:focus {color:$link-hover-colour;}
+}
