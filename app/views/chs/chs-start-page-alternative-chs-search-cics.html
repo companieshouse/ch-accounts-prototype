@@ -373,8 +373,11 @@
 
         $("#site-search-text")
           .keyup(function() {
-            $("#view1").removeClass("active").next().addClass("active");
-            return false;
+              if($(this).val().length > 7)
+              {
+                $("#view1").removeClass("active").next().addClass("active");
+                return false;
+              }
           });
 
         $(".enable-view3")

@@ -1,0 +1,151 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Which type of CIC annual report and accounts are you filing?
+{% endblock %}
+
+
+{% block content %}
+<style type="text/css">
+.accounts-chooser-radio .panel {
+  margin:0 0 2em 2.5em;
+  padding-top: 0;
+}
+</style>
+
+
+    <main id="content" role="main" class="search">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+    <header class="text">
+    	<h1 id="page-header" class="heading-xlarge">Which type of CIC annual report and accounts are you filing?</h1>
+    </header>
+
+
+    <h2 class="heading-medium">Which type of CIC report do you want to file?</h2>
+
+
+
+
+    <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm which type of accounts have you prepared">
+      <legend class="visually-hidden">Which type of accounts have you prepared?</legend>
+          <div class="form-group">
+
+
+      <label class="block-label selection-button-radio" for="chooseaccountsradiomicro" data-target="chooseaccountsradiomicro-reveal">
+        <input id="chooseaccountsradiomicro" type="radio" name="chooseaccountsradio" value="Micro">
+        Simplified
+      </label>
+
+      <label class="block-label selection-button-radio" for="chooseaccountsradiomicro" data-target="chooseaccountsradiomicro-reveal">
+        <input id="chooseaccountsradiomicro" type="radio" name="chooseaccountsradio" value="Micro">
+        Detailed
+      </label>
+
+</div></fieldset>
+
+
+    <h2 class="heading-medium">Which type of accounts have you prepared?</h2>
+    <p>If you’re not sure, you may want to ask an accountant.</p>
+
+
+
+
+    <form action="/cics/cics-criteria-mvp" method="get" class="form">
+        <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm which type of accounts have you prepared">
+          <legend class="visually-hidden">Which type of accounts have you prepared?</legend>
+              <div class="form-group">
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiomicro" data-target="chooseaccountsradiomicro-reveal">
+            <input id="chooseaccountsradiomicro" type="radio" name="chooseaccountsradio" value="Micro">
+            Micro-entity accounts
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiomicro-reveal">
+            <p>Must meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £632,000</li>
+              <li>Balance sheet total is no more than £316,000</li>
+              <li>Average number of employees is no more than 10</li>
+            </ul>
+          </div>
+
+
+
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradioabridged" data-target="chooseaccountsradioabridged-reveal">
+            <input id="chooseaccountsradioabridged" type="radio" name="chooseaccountsradio" value="Abridged">
+            Abridged accounts
+          </label>
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradioabridged-reveal">
+            <p>Must meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £10.2 million</li>
+              <li>Balance sheet total is no more than £5.1 million</li>
+              <li>Average number of employees is no more than 50</li>
+            </ul>
+          </div>
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiosmall" data-target="chooseaccountsradiosmall-reveal">
+            <input id="chooseaccountsradiosmall" type="radio" name="chooseaccountsradio" value="Small">
+            Full accounts (with Companies House only)
+          </label>
+
+
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiosmall-reveal">
+            <p>Must meet at least 2 of the following:</p>
+            <ul class="list list-bullet">
+              <li>Turnover is no more than £10.2 million</li>
+              <li>Balance sheet total is no more than £5.1 million</li>
+              <li>Average number of employees is no more than 50</li>
+            </ul>
+          </div>
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiofull" data-target="chooseaccountsradiofull-reveal">
+            <input id="chooseaccountsradiofull" type="radio" name="chooseaccountsradio" value="Full">
+            Full accounts (with Companies House and HMRC)
+          </label>
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiofull-reveal">
+            <p>These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</p>
+          </div>
+
+
+
+          <label class="block-label selection-button-radio" for="chooseaccountsradiodormant" data-target="chooseaccountsradiodormant-reveal">
+            <input id="chooseaccountsradiodormant" type="radio" name="chooseaccountsradio" value="Dormant">
+          Dormant company accounts
+          </label>
+          <div class="panel panel-border-narrow js-hidden" id="chooseaccountsradiodormant-reveal">
+            <p>These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
+          </div>
+
+
+
+          </div><!--form-group-->
+        </fieldset>
+
+        <div class="form-group">
+        <input type="submit" class="button" value="Next">
+        </div>
+
+          </form>
+
+        <p>Looking to file <a href="/webfiling/webfiling-login-page-chs-search">abbreviated accounts</a>?</p>
+
+        <a href="/chs/chs-choose-accounts-small-full" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alternative</a>
+
+
+
+
+</main>
+
+{% endblock %}
