@@ -65,7 +65,7 @@ $(document).ready(function(){  //Only show the button if javascript is on
 <h1 class="heading-xlarge">
   <!--<span class="circle circle-step-large">4</span>--> Check before you submit
 </h1>
-<form action="/small-full/small-full-approval-mvp" method="get" class="form">
+<form action="/cics/cics-accounts-approval" method="get" class="form">
 
   <div class="">
 
@@ -73,7 +73,19 @@ $(document).ready(function(){  //Only show the button if javascript is on
 
   <table class="check-your-answers">
   <caption class="visuallyhidden">Check before you submit </caption>
-
+  <thead></thead>
+      <tbody>
+        <tr>
+          <td>
+            <details>
+              <summary><span class="summary">Company account dates</span></summary>
+              <div class="review-reveal">
+                <p>1 April 2017 to 31 March 2018</p>
+                <p><a href="javascript:void(0)" class="button">Change<span class="visuallyhidden"> company account dates</span></a></p>
+              </div><!--review-reveal-->
+            </details>
+          </td>
+        </tr>
     <thead>
         <tr>
           <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet</h2></th>
@@ -742,12 +754,12 @@ $(document).ready(function(){  //Only show the button if javascript is on
             <tr>
               <td>
                 <details>
-                  <summary><span class="summary">Creditors - amounts falling due after one year</span></summary>
+                  <summary><span class="summary">Post balance sheet events</span></summary>
                   <div class="review-reveal">
-                  <p>Foo</p>
+                  <p>On 5 April 2018, the company acquired the goodwill and net assets of CoHo Marketing Associates for 40,000 financed by a secured bank loan, repayable over 5 years.</p>
 
-                  <p><a href="javascript:void(0)" class="button">Change <span class="visuallyhidden">Creditors - amounts falling due after one year note</span></a>
-                    <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> Creditors - amounts falling due after one year note</span></a></span></p>
+                  <p><a href="javascript:void(0)" class="button">Change <span class="visuallyhidden">Post balance sheet events note</span></a>
+                    <span id="delete-summary"><a href="javascript:void(0)" class="button" id="content-delete" style="margin-left:.5em;">Delete <span class="visuallyhidden"> Post balance sheet events note</span></a></span></p>
 
                   <div id="content-delete-warning"  style="display: none;">
                     <div class="error-summary" id="delete-summary">

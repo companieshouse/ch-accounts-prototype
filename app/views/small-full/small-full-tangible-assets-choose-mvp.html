@@ -1,0 +1,90 @@
+{% extends "layout-chs.html" %}
+{% block page_title %} Tangible assets note {% endblock %}
+{% block content %}
+
+<main class="two-column-accounts" id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<nav class="content" role="navigation">
+		<ul class="mobile-hidden" id="navigation">
+			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+			</li>
+			<li>
+				<a href="javascript:void(0)">Your details</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="">Companies you follow</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="user-signout">Sign out</a>
+			</li>
+		</ul>
+	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
+
+	{% include 'includes/error.html' %}
+
+
+	<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+     Balance sheet notes
+    <span class="circle-subheading" style="margin-left:1.5em;">Tangible assets</span>
+</h1>
+
+	<div class="left-indent">
+
+
+
+
+
+			<h2 class="heading-medium">Which tangible assets are included in your prepared accounts?</h2>
+
+			<p>Select all that apply</p>
+
+			<form action="/small-full/small-full-tangible-assets-note-mvp" method="get" class="form">
+
+				<fieldset data-required data-error=" You must choose at least one option">
+
+					<legend class="visuallyhidden">Which tangible assets are included in your prepared accounts?</legend>
+					<div class="form-group">
+
+									<label for="tangible-asset-category-land" class="block-label selection-button-checkbox">
+										<input type="checkbox" name="tangible-asset-category" value="Land" id="tangible-asset-category-land">
+										Land and buildings
+									</label>
+
+									<label for="tangible-asset-category-plant" class="block-label selection-button-checkbox">
+										<input type="checkbox" name="tangible-asset-category" value="Plant" id="tangible-asset-category-plant">
+										Plant and machinery
+									</label>
+
+									<label for="tangible-asset-category-fixtures" class="block-label selection-button-checkbox">
+										<input type="checkbox" name="tangible-asset-category" value="Fixtures" id="tangible-asset-category-fixtures">
+										Fixtures and fittings
+									</label>
+
+									<label for="tangible-asset-category-office" class="block-label selection-button-checkbox">
+										<input type="checkbox" name="tangible-asset-category" value="Office" id="tangible-asset-category-office">
+										Office equipment
+									</label>
+
+									<label for="tangible-asset-category-motor" class="block-label selection-button-checkbox">
+										<input type="checkbox" name="tangible-asset-category" value="Motor" id="tangible-asset-category-motor">
+										Motor vehicles
+									</label>
+					</div>
+
+
+				</fieldset>
+
+
+
+			      <div class="form-group">
+			        <input type="submit" class="button" value="Save and continue">
+			      </div><!--form-group-->
+			    </form>
+			  </div><!-- text-->
+
+			</main>
+
+			{% endblock %}
