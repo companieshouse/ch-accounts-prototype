@@ -1,0 +1,101 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Directors’ report
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
+    <div class="text">
+
+
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">Directors’ report</h1>
+    </header>
+
+
+
+
+
+
+  <h2 class="heading-large">Criteria</h2>
+
+
+
+      <p>Currently, you can’t use this service if your accounts include a directors’ report.</p>
+
+
+          <h2 class="heading-medium">Do your prepared full accounts include a directors’ report?</h2>
+
+
+          <form action="/cics/cics-criteria-profit" method="get" class="form">
+              <fieldset class="inline" data-required="" data-error="Please confirm if your prepared full accounts include a directors’ report?">
+                <legend class="visually-hidden">Do your prepared full accounts include a directors’ report?</legend>
+                    <div class="form-group">
+
+
+                <label class="block-label selection-button-radio" for="criteriareportyes">
+                  <input id="criteriareportyes" type="radio" name="criteriareport" value="Yes">
+                  Yes
+                </label>
+                <label class="block-label selection-button-radio" for="criteriareportno">
+                  <input id="criteriareportno" type="radio" name="criteriareport" value="No">
+                  No
+                </label>
+
+              </div>
+              </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Next">
+          </div>
+
+          </div><!--left-indent-->
+
+          <a href="/chs/chs-choose-abridged-or-other-r1-not-eligible" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alternative</a>
+
+          </div><!--text-->
+
+          </form>
+
+
+
+          </main>
+
+{% endblock %}

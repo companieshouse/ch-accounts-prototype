@@ -1,0 +1,101 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Profit and loss account
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
+    <div class="text">
+
+
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">Profit and loss account </h1>
+    </header>
+
+
+
+
+
+
+  <h2 class="heading-large">Criteria</h2>
+
+
+
+      <p>Currently, you can’t use this service if your accounts include a profit and loss account.</p>
+
+
+          <h2 class="heading-medium">Do your prepared full accounts include a profit and loss account?</h2>
+
+
+          <form action="/cics/cics-stages-of-service" method="get" class="form">
+              <fieldset class="inline" data-required="" data-error="Please confirm if your prepared full accounts include a profit and loss account?">
+                <legend class="visually-hidden">Do your prepared full accounts include a profit and loss account?</legend>
+                    <div class="form-group">
+
+
+                <label class="block-label selection-button-radio" for="criteriaprofityes">
+                  <input id="criteriaprofityes" type="radio" name="criteriaprofit" value="Yes">
+                  Yes
+                </label>
+                <label class="block-label selection-button-radio" for="criteriaprofitno">
+                  <input id="criteriaprofitno" type="radio" name="criteriaprofit" value="No">
+                  No
+                </label>
+
+              </div>
+              </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Next">
+          </div>
+
+          </div><!--left-indent-->
+
+          <a href="/chs/chs-choose-abridged-or-other-r1-not-eligible" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alternative</a>
+
+          </div><!--text-->
+
+          </form>
+
+
+
+          </main>
+
+{% endblock %}

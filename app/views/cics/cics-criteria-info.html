@@ -1,0 +1,70 @@
+{% extends "layout-chs.html" %}
+
+{% block page_title %}
+  Check before you start
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+    {% include 'includes/error.html' %}
+
+    <div class="text">
+
+      <form action="/cics/cics-criteria-mvp" method="get" class="form">
+
+
+    <header>
+    	<h1 id="page-header" class="heading-xlarge">Check before you start</h1>
+    </header>
+
+
+      <p>We're going to ask some questions. Your answers will show whether you can use this service to file your CIC report and full accounts</p>
+
+
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+          <input type="submit" class="button" value="Continue to questions">
+          </div>
+
+          </div><!--left-indent-->
+
+
+          </div><!--text-->
+
+          </form>
+
+
+
+          </main>
+
+{% endblock %}

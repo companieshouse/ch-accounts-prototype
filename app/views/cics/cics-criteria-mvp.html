@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-  File CIC report and full accounts
+  Full accounts
 {% endblock %}
 
 {% block proposition_header %}
@@ -35,7 +35,7 @@
 
 
     <header>
-    	<h1 id="page-header" class="heading-xlarge">File CIC report and full accounts</h1>
+    	<h1 id="page-header" class="heading-xlarge">Full accounts</h1>
     </header>
 
 
@@ -69,8 +69,8 @@
 
           <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
 
-          <form action="/cics/cics-stages-of-service" method="get" class="form">
-              <fieldset class="" data-required="" data-error="Please confirm if your prepared full accounts meet the criteria">
+          <form action="/cics/cics-criteria-report" method="get" class="form">
+              <fieldset class="inline" data-required="" data-error="Please confirm if your prepared full accounts meet the criteria">
                 <legend class="visually-hidden">Do your prepared full accounts meet the criteria?</legend>
                     <div class="form-group">
 
@@ -81,7 +81,7 @@
                 </label>
                 <label class="block-label selection-button-radio" for="release1no">
                   <input id="release1no" type="radio" name="cicsr1" value="No">
-                  No - I'll file other types of accounts
+                  No
                 </label>
 
               </div>
