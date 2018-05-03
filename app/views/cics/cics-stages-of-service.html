@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-   File CIC annual report and accounts
+   File CIC report and accounts
 {% endblock %}
 
 
@@ -29,12 +29,12 @@
 
 
 
-      <h1 class="heading-xlarge">File CIC annual report and accounts</h1>
+      <h1 class="heading-xlarge">File CIC report and accounts</h1>
       <form action="/cics/general-description" method="get" class="form">
 
-        <p class="lede">Use this service to file a simplified CIC annual report and full company accounts</p>
+      <!--   <p class="lede">Use this service to file a simplified CIC report and full company accounts</p>
 
-      <!--  <p class="warning-note warning-note-large"  id="save-and-resume-message">
+       <p class="warning-note warning-note-large"  id="save-and-resume-message">
           If you can't finish your filing in one session, you can come back later to continue. You'll need to go to <a id="recent_filings" href="javascript:void(0)">your filings</a>.
         </p>-->
         <p>There are 3 stages to this service:</p>
@@ -43,50 +43,28 @@
       </div><!-- text-->
 
       <div class="grid-row">
-          <div class="column-two-thirds">
-
-            <ol class="task-list">
-              <li>
-                <h2 class="task-list-section">
-                  <span class="task-list-section-number">1. </span> CIC annual report
-                </h2>
-                <ul class="task-list-items">
-                  <li class="task-list-item">The company’s activities and impact</li>
-                  <li class="task-list-item">Consultation with stakeholders</li>
-                  <li class="task-list-item">Directors' remuneration</li>
-                  <li class="task-list-item">Transfers of assets other than for full consideration</li>
-                  <li class="task-list-item">Check your answers</li>
-                  <li class="task-list-item">Approve your CIC annual report</li>
-                </ul>
+          <div class="column-half">
+            <ol class="task-list cics-task-list">
+              <li class="task-list-item">
+                <h2 class="task-list-section task-name"><span class="task-list-section-number">1.</span> CIC report</h2>
               </li>
-              <li>
-                <h2 class="task-list-section">
-                  <span class="task-list-section-number">2. </span> Full accounts
-                </h2>
-                <ul class="task-list-items">
-                  <li class="task-list-item">Confirm your company account dates</li>
-                  <li class="task-list-item">Balance sheet</li>
-                  <li class="task-list-item">Balance sheet statements</li>
-                  <li class="task-list-item">Balance sheet notes</li>
-                  <li class="task-list-item">Check your answers</li>
-                  <li class="task-list-item">Approve your full accounts</li>
-                </ul>
+              <li class="task-list-item">
+                <h2 class="task-list-section task-name"><span class="task-list-section-number">2.</span> Full accounts</h2>
               </li>
-              <li>
-                <h2 class="task-list-section">
-                  <span class="task-list-section-number">3. </span>Payment
-                </h2>
-                <ul class="task-list-items">
-                  <!--<li class="task-list-item">Choose payment type</li>-->
-                  <li class="task-list-item">Pay £15 and submit</li>
+              <li class="task-list-item">
+                <h2 class="task-list-section task-name"><span class="task-list-section-number">3.</span> Payment (£15)</h2>
               </li>
             </ol>
 
-
+            </div><!-- column-half-->
           </div><!-- grid-row-->
-      </div><!-- column-two-thirds-->
+      <br />
+
+
+
+
       <div class="form-group">
-        <input type="submit" class="button" value="Continue to CIC annual report" id="">
+        <input type="submit" class="button" value="Continue to CIC report" id="">
       </div>
 
             </form>

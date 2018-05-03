@@ -321,7 +321,7 @@ header {
   @include core-36;
   color: $secondary-text-colour;
   display: block;
-  margin-left: 1.5em;
+  //margin-left: 1.5em;
 
 }
 @include media(mobile) { /*Adjust layout of heading styles on mobiles*/
@@ -586,4 +586,13 @@ img.card-image {
   padding: .9em .9em 0.1em;
   a {color:$page-colour;}
   a:hover, a:focus {color:$link-hover-colour;}
+}
+
+
+
+//CICs//
+.cics-task-list {
+  li.task-list-item:first-of-type {border-top:none;}
+  span.task-list-section-number {width:35px;}
+  strong.task-completed {float:right;}
 }

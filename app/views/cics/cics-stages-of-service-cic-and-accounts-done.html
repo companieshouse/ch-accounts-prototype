@@ -1,7 +1,7 @@
 {% extends "layout-chs.html" %}
 
 {% block page_title %}
-   File CIC annual report and accounts
+   File CIC report and accounts
 {% endblock %}
 
 
@@ -29,63 +29,40 @@
 
 
 
-      <h1 class="heading-xlarge">File CIC annual report and accounts</h1>
+      <h1 class="heading-xlarge">File CIC report and accounts</h1>
       <form action="/accounts/accounts-payment" method="get" class="form">
 
-        <p class="lede">Use this service to file a simplified CIC annual report and full company accounts</p>
 
         <!--  <p class="warning-note warning-note-large"  id="save-and-resume-message">
             If you can't finish your filing in one session, you can come back later to continue. You'll need to go to <a id="recent_filings" href="javascript:void(0)">your filings</a>.
-          </p>-->
-          <p>There are 3 stages to this service:</p>
+          </p>
+          <p>There are 3 stages to this service:</p>-->
 
 
       </div><!-- text-->
 
       <div class="grid-row">
-          <div class="column-two-thirds">
+          <div class="column-half">
 
-            <ol class="task-list">
-              <li>
-                <h2 class="task-list-section">
-                  <span class="task-list-section-number">1. </span> CIC annual report
-                </h2>
-                <ul class="task-list-items">
-                  <li class="task-list-item">The company’s activities and impact <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Consultation with stakeholders <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Directors' remuneration <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Transfers of assets other than for full consideration <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Check your answers <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Approve your CIC annual report <strong class="task-completed">Completed</strong></li>
-                </ul>
+            <ol class="task-list cics-task-list">
+              <li class="task-list-item">
+                <h2 class="task-list-section task-name"><span class="task-list-section-number">1.</span> CIC report</h2>
+                  <strong class="task-completed">Completed</strong>
               </li>
-              <li>
-                <h2 class="task-list-section">
-                  <span class="task-list-section-number">2. </span> Full accounts
-                </h2>
-                <ul class="task-list-items">
-                  <li class="task-list-item">Confirm your company account dates <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Balance sheet <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Balance sheet statements <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Balance sheet notes <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Check your answers <strong class="task-completed">Completed</strong></li>
-                  <li class="task-list-item">Approve your full accounts <strong class="task-completed">Completed</strong></li>
-                </ul>
+              <li class="task-list-item">
+                <h2 class="task-list-section task-name"><span class="task-list-section-number">2.</span> Full accounts</h2>
+                <strong class="task-completed">Completed</strong>
               </li>
-              <li>
-                <h2 class="task-list-section">
-                  <span class="task-list-section-number">3. </span>Payment
-                </h2>
-                <ul class="task-list-items">
-                  <!--<li class="task-list-item">Choose payment type</li>-->
-                  <li class="task-list-item">Pay £15 and submit</li>
+              <li class="task-list-item">
+                <h2 class="task-list-section task-name"><span class="task-list-section-number">3.</span> Payment (£15)</h2>
               </li>
             </ol>
 
-
+            </div><!-- column-half-->
           </div><!-- grid-row-->
-      </div><!-- column-two-thirds-->
+      <br />
       <div class="form-group">
+        <p><a href="javascript:void(0)">Sign out and finish later</a></p>
         <input type="submit" class="button" value="Continue to pay and submit" id="">
       </div>
 
