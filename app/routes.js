@@ -1,180 +1,186 @@
-var express = require('express');
+var express = require( 'express' );
 var router = express.Router();
 
-router.get('/', function (req, res) {
+router.get( '/', function ( req, res ) {
 
-  res.render('index');
+	res.render( 'index' );
 
-});
+} );
 
 
 // Example routes - feel free to delete these
 
 // Passing data into a page
 
-router.get('/examples/template-data', function (req, res) {
+router.get( '/examples/template-data', function ( req, res ) {
 
-  res.render('examples/template-data', { 'name' : 'Foo' });
+	res.render( 'examples/template-data', {
+		'name': 'Foo'
+	} );
 
-});
+} );
 
 // Branching
 
-router.get('/examples/over-18', function (req, res) {
+router.get( '/examples/over-18', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var over18 = req.query.over18;
+	// get the answer from the query string (eg. ?over18=false)
+	var over18 = req.query.over18;
 
-  if (over18 == "false"){
+	if ( over18 == "false" ) {
 
-    // redirect to the relevant page
-    res.redirect("/examples/under-18");
+		// redirect to the relevant page
+		res.redirect( "/examples/under-18" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('examples/over-18');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'examples/over-18' );
 
-  }
+	}
 
-});
+} );
 
 
 
 // More Loans to Directors
 
-router.get('/accounts/accounts-loans-to-directors', function (req, res) {
+router.get( '/accounts/accounts-loans-to-directors', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var moreloansdirectors = req.query.moreloansdirectors;
+	// get the answer from the query string (eg. ?over18=false)
+	var moreloansdirectors = req.query.moreloansdirectors;
 
-  if (moreloansdirectors == "no"){
+	if ( moreloansdirectors == "no" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-balance-sheet-notes-completed-6");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-balance-sheet-notes-completed-6" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-loans-to-directors');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-loans-to-directors' );
 
-  }
+	}
 
-});
+} );
 
 // WebFiling to CHS
 
-router.get('/chs/chs-from-webfiling', function (req, res) {
+router.get( '/chs/chs-from-webfiling', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var gotochs = req.query.gotochs;
+	// get the answer from the query string (eg. ?over18=false)
+	var gotochs = req.query.gotochs;
 
-  if (gotochs == "No"){
+	if ( gotochs == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/webfiling/webfiling-hmrc-third-party");
+		// redirect to the relevant page
+		res.redirect( "/webfiling/webfiling-hmrc-third-party" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('chs/chs-from-webfiling');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'chs/chs-from-webfiling' );
 
-  }
+	}
 
-});
+} );
 
 // CHS from WebFiling (Register, CHS)
 
-router.get('/chs/chs-choose-password', function (req, res) {
+router.get( '/chs/chs-choose-password', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var chsfromwebfiling = req.query.chsfromwebfiling;
+	// get the answer from the query string (eg. ?over18=false)
+	var chsfromwebfiling = req.query.chsfromwebfiling;
 
-  if (chsfromwebfiling == "no"){
+	if ( chsfromwebfiling == "no" ) {
 
-    // redirect to the relevant page
-    res.redirect("/chs/chs-register-page");
+		// redirect to the relevant page
+		res.redirect( "/chs/chs-register-page" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('chs/chs-choose-password');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'chs/chs-choose-password' );
 
-  }
+	}
 
-});
+} );
 
 // CHS Release 1 question
 
-router.get('/accounts/accounts-start-page-abridged', function (req, res) {
+router.get( '/accounts/accounts-start-page-abridged', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var chsrelease1 = req.query.chsrelease1;
+	// get the answer from the query string (eg. ?over18=false)
+	var chsrelease1 = req.query.chsrelease1;
 
-  if (chsrelease1 == "No"){
+	if ( chsrelease1 == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/chs/chs-alternative-abridged-filing-options");
+		// redirect to the relevant page
+		res.redirect( "/chs/chs-alternative-abridged-filing-options" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-abridged');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-start-page-abridged' );
 
-  }
+	}
 
-});
+} );
 
 // CHS Release 1 question (when user comes in stright to CHS, bypassing gov-uk)
 
-router.get('/accounts/accounts-start-page-no-gov-uk', function (req, res) {
+router.get( '/accounts/accounts-start-page-no-gov-uk', function ( req, res ) {
 
-  var chsrelease1 = req.query.chsrelease1;
+	var chsrelease1 = req.query.chsrelease1;
 
-  if (chsrelease1 == "No"){
+	if ( chsrelease1 == "No" ) {
 
-    res.redirect("/chs/chs-alternative-abridged-filing-options");
+		res.redirect( "/chs/chs-alternative-abridged-filing-options" );
 
-  } else {
+	} else {
 
-    res.render('accounts/accounts-start-page-no-gov-uk');
+		res.render( 'accounts/accounts-start-page-no-gov-uk' );
 
-  }
+	}
 
-});
+} );
 
-
-
-// CHS Release 1 question (no company search - directly into accounts)
-
-router.get('/accounts/accounts-start-page-abridged-direct', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var chsrelease1 = req.query.chsrelease1;
-
-  if (chsrelease1 == "No"){
-
-    // redirect to the relevant page
-    res.redirect("/chs/chs-choose-accounts-direct");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-abridged-direct');
-
-  }
-
-});
 
 
 // CHS Release 1 question (no company search - directly into accounts)
 
-router.get('/accounts/accounts-start-page-r1', function (req, res) {
-  var chsr1 = req.query.chsr1;
-  if (chsr1 == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
-  else if (chsr1 == "Other"){res.redirect("/accounts/accounts-start-page-general");}
-  else {res.render('accounts/accounts-start-page-r1');}
-});
+router.get( '/accounts/accounts-start-page-abridged-direct', function ( req, res ) {
+
+	// get the answer from the query string (eg. ?over18=false)
+	var chsrelease1 = req.query.chsrelease1;
+
+	if ( chsrelease1 == "No" ) {
+
+		// redirect to the relevant page
+		res.redirect( "/chs/chs-choose-accounts-direct" );
+
+	} else {
+
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-start-page-abridged-direct' );
+
+	}
+
+} );
+
+
+// CHS Release 1 question (no company search - directly into accounts)
+
+router.get( '/accounts/accounts-start-page-r1', function ( req, res ) {
+	var chsr1 = req.query.chsr1;
+	if ( chsr1 == "No" ) {
+		res.redirect( "/chs/chs-alternative-abridged-filing-options" );
+	} else if ( chsr1 == "Other" ) {
+		res.redirect( "/accounts/accounts-start-page-general" );
+	} else {
+		res.render( 'accounts/accounts-start-page-r1' );
+	}
+} );
 
 
 
@@ -182,68 +188,86 @@ router.get('/accounts/accounts-start-page-r1', function (req, res) {
 
 // CHS Release 1 question (on CHS accounts chooser)
 
-router.get('/chs/chs-alternative-abridged-filing-options', function (req, res) {
-  var chooserR1 = req.query.chooserR1;
-  if (chooserR1 == "Yes"){res.redirect("/accounts/accounts-start-page-abridged");}
-  else if (chooserR1 == "Other"){res.redirect("/chs/chs-choose-accounts");}
-  else {res.render('chs/chs-alternative-abridged-filing-options');}
+router.get( '/chs/chs-alternative-abridged-filing-options', function ( req, res ) {
+	var chooserR1 = req.query.chooserR1;
+	if ( chooserR1 == "Yes" ) {
+		res.redirect( "/accounts/accounts-start-page-abridged" );
+	} else if ( chooserR1 == "Other" ) {
+		res.redirect( "/chs/chs-choose-accounts" );
+	} else {
+		res.render( 'chs/chs-alternative-abridged-filing-options' );
+	}
 
-});
+} );
 
 
 // CHS Release 1 question (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)
 
-router.get('/accounts/accounts-start-page', function (req, res) {
-  var chsR1 = req.query.chsR1;
-  if (chsR1 == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
-  else if (chsR1 == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
-  else {res.render('accounts/accounts-start-page');}
-});
+router.get( '/accounts/accounts-start-page', function ( req, res ) {
+	var chsR1 = req.query.chsR1;
+	if ( chsR1 == "No" ) {
+		res.redirect( "/chs/chs-alternative-abridged-filing-options" );
+	} else if ( chsR1 == "Other" ) {
+		res.redirect( "/chs/chs-choose-accounts-after-chs-profile" );
+	} else {
+		res.render( 'accounts/accounts-start-page' );
+	}
+} );
 
 // CHS Release 1 question (when user resumes)
 
-router.get('/accounts/resume-from-profile', function (req, res) {
-  var chsresume = req.query.chsresume;
-  if (chsresume == "No"){res.redirect("/chs/chs-alternative-abridged-filing-options");}
-  else if (chsresume == "Other"){res.redirect("/chs/chs-choose-accounts-after-chs-profile");}
-  else {res.render('accounts/resume-from-profile');}
-});
+router.get( '/accounts/resume-from-profile', function ( req, res ) {
+	var chsresume = req.query.chsresume;
+	if ( chsresume == "No" ) {
+		res.redirect( "/chs/chs-alternative-abridged-filing-options" );
+	} else if ( chsresume == "Other" ) {
+		res.redirect( "/chs/chs-choose-accounts-after-chs-profile" );
+	} else {
+		res.render( 'accounts/resume-from-profile' );
+	}
+} );
 
 
 // CHS Release 1 question (user ineligible to file Abridged ON THE COMPANIES HOUSE SERVICE)
 
 
-router.get('/chs/chs-software-filing', function (req, res) {
+router.get( '/chs/chs-software-filing', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var r1dates = req.query.r1dates;
+	// get the answer from the query string (eg. ?over18=false)
+	var r1dates = req.query.r1dates;
 
-  if (r1dates == "other"){
+	if ( r1dates == "other" ) {
 
-    // redirect to the relevant page
-    res.redirect("/webfiling/webfiling-login-page-chs-search");
+		// redirect to the relevant page
+		res.redirect( "/webfiling/webfiling-login-page-chs-search" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('chs/chs-software-filing');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'chs/chs-software-filing' );
 
-  }
+	}
 
-});
+} );
 
 
 // Resume journey (from GOV.UK start page)
 
 
-router.get('/chs/chs-choose-accounts', function (req, res) {
-  var neworresumetype = req.query.neworresumetype;
-  if (neworresumetype == "micro"){res.redirect("/webfiling/webfiling-login-page-chs-search");}
-  else if (neworresumetype == "abridged"){res.redirect("/chs/chs-login-page-resume-from-govuk");}
-  else if (neworresumetype == "full"){res.redirect("https://www.tax.service.gov.uk/gg/sign-in?continue=https://www.tax.service.gov.uk/cato");}
-  else if (neworresumetype == "dormant"){res.redirect("/webfiling/webfiling-login-page-chs-search");}
-  else {res.render('chs/chs-choose-accounts');}
-});
+router.get( '/chs/chs-choose-accounts', function ( req, res ) {
+	var neworresumetype = req.query.neworresumetype;
+	if ( neworresumetype == "micro" ) {
+		res.redirect( "/webfiling/webfiling-login-page-chs-search" );
+	} else if ( neworresumetype == "abridged" ) {
+		res.redirect( "/chs/chs-login-page-resume-from-govuk" );
+	} else if ( neworresumetype == "full" ) {
+		res.redirect( "https://www.tax.service.gov.uk/gg/sign-in?continue=https://www.tax.service.gov.uk/cato" );
+	} else if ( neworresumetype == "dormant" ) {
+		res.redirect( "/webfiling/webfiling-login-page-chs-search" );
+	} else {
+		res.render( 'chs/chs-choose-accounts' );
+	}
+} );
 
 
 
@@ -251,84 +275,84 @@ router.get('/chs/chs-choose-accounts', function (req, res) {
 
 // CHS confirm accounts type (when user had chosen Abridged from the accounts chooser they see after clicking File accounts on CHS profile)
 
-router.get('/chs/chs-choose-accounts-after-chs-profile', function (req, res) {
+router.get( '/chs/chs-choose-accounts-after-chs-profile', function ( req, res ) {
 
-  var confirmtype = req.query.confirmtype;
+	var confirmtype = req.query.confirmtype;
 
-  if (confirmtype == "Yes"){
+	if ( confirmtype == "Yes" ) {
 
-    res.redirect("/accounts/accounts-start-page");
+		res.redirect( "/accounts/accounts-start-page" );
 
-  } else {
+	} else {
 
-    res.render('chs/chs-choose-accounts-after-chs-profile');
+		res.render( 'chs/chs-choose-accounts-after-chs-profile' );
 
-  }
+	}
 
-});
+} );
 
 
 
 // Abbreviated accounts - Does your accounting period end on or before 31 December 2015?
 
-router.get('/accounts/accounts-start-page-abbreviated', function (req, res) {
+router.get( '/accounts/accounts-start-page-abbreviated', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var abbreviateddates = req.query.abbreviateddates;
+	// get the answer from the query string (eg. ?over18=false)
+	var abbreviateddates = req.query.abbreviateddates;
 
-  if (abbreviateddates == "No"){
+	if ( abbreviateddates == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-start-page-abbreviated-unable");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-start-page-abbreviated-unable" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-abbreviated');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-start-page-abbreviated' );
 
-  }
+	}
 
-});
+} );
 
 
 
 // Resume accounts (from CHS profile when logged back in)
 
-router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
+router.get( '/accounts/accounts-balance-sheet-resume', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var resumefromprofile = req.query.resumefromprofile;
+	// get the answer from the query string (eg. ?over18=false)
+	var resumefromprofile = req.query.resumefromprofile;
 
-  if (resumefromprofile == "no"){
+	if ( resumefromprofile == "no" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-start-page");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-start-page" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-balance-sheet-resume');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-balance-sheet-resume' );
 
-  }
+	}
 
-});
+} );
 
 // Do you have a creditors note?
 
 //router.get('/accounts/accounts-review', function (req, res) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  //var creditorsnoteyn = req.query.creditorsnoteyn;
+// get the answer from the query string (eg. ?over18=false)
+//var creditorsnoteyn = req.query.creditorsnoteyn;
 
 //  if (creditorsnoteyn == "Yes"){
 
-    // redirect to the relevant page
+// redirect to the relevant page
 //    res.redirect("/accounts/accounts-creditors-amounts-falling-due-within-one-year");
 
 //  } else {
 
-    // if over18 is any other value (or is missing) render the page requested
-  //  res.render('accounts/accounts-review');
+// if over18 is any other value (or is missing) render the page requested
+//  res.render('accounts/accounts-review');
 
 //  }
 
@@ -337,118 +361,118 @@ router.get('/accounts/accounts-balance-sheet-resume', function (req, res) {
 
 // Do you have Other notes - send them to Review or to the Employees note?
 
-router.get('/accounts/accounts-abridged-employees-yes-no', function (req, res) {
+router.get( '/accounts/accounts-abridged-employees-yes-no', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var othernotes = req.query.othernotes;
+	// get the answer from the query string (eg. ?over18=false)
+	var othernotes = req.query.othernotes;
 
-  if (othernotes == "No"){
+	if ( othernotes == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-review-no-other-notes");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-review-no-other-notes" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-abridged-employees-yes-no');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-abridged-employees-yes-no' );
 
-  }
+	}
 
-});
+} );
 
 
 
 
 // Do you have Other accounting policies - send them to Review or to the Employees note?
 
-router.get('/accounts/accounts-turnover-policy-yes-no', function (req, res) {
+router.get( '/accounts/accounts-turnover-policy-yes-no', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var otherpolicies = req.query.otherpolicies;
+	// get the answer from the query string (eg. ?over18=false)
+	var otherpolicies = req.query.otherpolicies;
 
-  if (otherpolicies == "No"){
+	if ( otherpolicies == "No" ) {
 
-    // redirect to the relevant page
-    //res.redirect("/accounts/accounts-abridged-intangible-note");
-    res.redirect("/accounts/accounts-abridged-tangible-note");
+		// redirect to the relevant page
+		//res.redirect("/accounts/accounts-abridged-intangible-note");
+		res.redirect( "/accounts/accounts-abridged-tangible-note" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-turnover-policy-yes-no');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-turnover-policy-yes-no' );
 
-  }
+	}
 
-});
+} );
 
 
 
 
 // Do you have Other notes, second chance (ie did you miss any on the Review screen)
 
-router.get('/accounts/accounts-abridged-fixed-assets-yes-no', function (req, res) {
+router.get( '/accounts/accounts-abridged-fixed-assets-yes-no', function ( req, res ) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var othernotes = req.query.othernotes;
+	// get the answer from the query string (eg. ?over18=false)
+	var othernotes = req.query.othernotes;
 
-  if (othernotes == "Yes"){
+	if ( othernotes == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-approval");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-approval" );
 
-  } else {
+	} else {
 
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-abridged-fixed-assets-yes-no');
+		// if over18 is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-abridged-fixed-assets-yes-no' );
 
-  }
+	}
 
-});
+} );
 
 // Do you have loans to directors notes?
 
-router.get('/accounts/accounts-abridged-loans-yes-no-2', function (req, res) {
-  var loansnoteyn = req.query.loansnoteyn;
-  if (loansnoteyn == "No"){
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-abridged-changes-in-presentation-yes-no");
-  } else {
-    res.render('accounts/accounts-abridged-loans-yes-no-2');
-  }
-});
+router.get( '/accounts/accounts-abridged-loans-yes-no-2', function ( req, res ) {
+	var loansnoteyn = req.query.loansnoteyn;
+	if ( loansnoteyn == "No" ) {
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-abridged-changes-in-presentation-yes-no" );
+	} else {
+		res.render( 'accounts/accounts-abridged-loans-yes-no-2' );
+	}
+} );
 
 // Do you have loans to Related party transactions notes?
 
-router.get('/accounts/accounts-abridged-related-transactions-yes-no-2', function (req, res) {
-  var relatedtransactionsnoteyn = req.query.relatedtransactionsnoteyn;
-  if (relatedtransactionsnoteyn == "No"){
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-abridged-post-events-yes-no");
-  } else {
-    res.render('accounts/accounts-abridged-related-transactions-yes-no-2');
-  }
-});
+router.get( '/accounts/accounts-abridged-related-transactions-yes-no-2', function ( req, res ) {
+	var relatedtransactionsnoteyn = req.query.relatedtransactionsnoteyn;
+	if ( relatedtransactionsnoteyn == "No" ) {
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-abridged-post-events-yes-no" );
+	} else {
+		res.render( 'accounts/accounts-abridged-related-transactions-yes-no-2' );
+	}
+} );
 
 
 
 // tangible asset note - testing when user changes a figure on the balance sheet (so renders note invalid
 
 
-router.get('/accounts/accounts-abridged-tangible-note-errors', function (req, res) {
+router.get( '/accounts/accounts-abridged-tangible-note-errors', function ( req, res ) {
 
-  var tangiblecosttransfers = req.query.tangiblecosttransfers;
+	var tangiblecosttransfers = req.query.tangiblecosttransfers;
 
-  if (tangiblecosttransfers == "18600"){
+	if ( tangiblecosttransfers == "18600" ) {
 
-    res.redirect("/accounts/accounts-review-amended-tangible-figure");
+		res.redirect( "/accounts/accounts-review-amended-tangible-figure" );
 
-  } else {
+	} else {
 
-    res.render('accounts/accounts-abridged-tangible-note-errors');
+		res.render( 'accounts/accounts-abridged-tangible-note-errors' );
 
-  }
+	}
 
-});
+} );
 
 
 
@@ -457,25 +481,22 @@ router.get('/accounts/accounts-abridged-tangible-note-errors', function (req, re
 // Small full - does user want to include a directors report and/or a profit and loss account?
 
 
-router.get('/accounts/accounts-start-page-small-full', function (req, res) {
+router.get( '/accounts/accounts-start-page-small-full', function ( req, res ) {
 
-  var smallfulldirectorsreport = req.query.smallfulldirectorsreport;
-  var smallfullprofitloss = req.query.smallfullprofitloss;
+	var smallfulldirectorsreport = req.query.smallfulldirectorsreport;
+	var smallfullprofitloss = req.query.smallfullprofitloss;
 
-  if (smallfulldirectorsreport == "No" & smallfullprofitloss == "No" ){
-    res.redirect("/accounts/accounts-start-page-small-full-no-director-no-profit");
-  }
-  else if (smallfulldirectorsreport == "No" & smallfullprofitloss == "Yes" ){
-    res.redirect("/accounts/accounts-start-page-small-full-no-director");
-  }
-  else if (smallfulldirectorsreport == "Yes" & smallfullprofitloss == "No" ){
-    res.redirect("/accounts/accounts-start-page-small-full-no-profit");
-  }
-  else {
-    res.render('accounts/accounts-start-page-small-full');
-  }
+	if ( smallfulldirectorsreport == "No" & smallfullprofitloss == "No" ) {
+		res.redirect( "/accounts/accounts-start-page-small-full-no-director-no-profit" );
+	} else if ( smallfulldirectorsreport == "No" & smallfullprofitloss == "Yes" ) {
+		res.redirect( "/accounts/accounts-start-page-small-full-no-director" );
+	} else if ( smallfulldirectorsreport == "Yes" & smallfullprofitloss == "No" ) {
+		res.redirect( "/accounts/accounts-start-page-small-full-no-profit" );
+	} else {
+		res.render( 'accounts/accounts-start-page-small-full' );
+	}
 
-});
+} );
 
 
 
@@ -484,80 +505,76 @@ router.get('/accounts/accounts-start-page-small-full', function (req, res) {
 // Small full accounts - Directors' report
 
 
-router.get('/small-full/profit-and-loss-account', function (req, res) {
-  var directorsreport1 = req.query.directorsreport1;
-  if (directorsreport1 == "Yesnotes"){res.redirect("/small-full/directors-report-notes-principal");}
-  else if (directorsreport1 == "No"){res.redirect("/small-full/directors-report-changes");}
-  else {res.render('small-full/profit-and-loss-account');}
-});
+router.get( '/small-full/profit-and-loss-account', function ( req, res ) {
+	var directorsreport1 = req.query.directorsreport1;
+	if ( directorsreport1 == "Yesnotes" ) {
+		res.redirect( "/small-full/directors-report-notes-principal" );
+	} else if ( directorsreport1 == "No" ) {
+		res.redirect( "/small-full/directors-report-changes" );
+	} else {
+		res.render( 'small-full/profit-and-loss-account' );
+	}
+} );
 
 
 
 // Small full - do you have Other accounting policies?
 
-router.get('/small-full/small-full-intangible-assets-note', function (req, res) {
+router.get( '/small-full/small-full-intangible-assets-note', function ( req, res ) {
 
-  var smallfullotherpolicies = req.query.smallfullotherpolicies;
+	var smallfullotherpolicies = req.query.smallfullotherpolicies;
 
-  if (smallfullotherpolicies == "Yes"){
+	if ( smallfullotherpolicies == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/small-full/small-full-turnover-policy-yes-no");
+		// redirect to the relevant page
+		res.redirect( "/small-full/small-full-turnover-policy-yes-no" );
 
-  } else {
+	} else {
 
-    res.render('small-full/small-full-intangible-assets-note');
+		res.render( 'small-full/small-full-intangible-assets-note' );
 
-  }
+	}
 
-});
+} );
 
 
 // Abbreviated accounts (from the CHS accounts chooser) - on alternative CHS search journey
 
-router.get('/webfiling/webfiling-login-page-chs-search', function (req, res) {
+router.get( '/webfiling/webfiling-login-page-chs-search', function ( req, res ) {
 
-  var chsabbreviatedsearch = req.query.chsabbreviatedsearch;
+	var chsabbreviatedsearch = req.query.chsabbreviatedsearch;
 
-  if (chsabbreviatedsearch == "Other"){
+	if ( chsabbreviatedsearch == "Other" ) {
 
-    // redirect to the relevant page
-    res.redirect("/chs/chs-choose-accounts-alternative-chs-search");
+		// redirect to the relevant page
+		res.redirect( "/chs/chs-choose-accounts-alternative-chs-search" );
 
-  } else {
+	} else {
 
-    res.render('webfiling/webfiling-login-page-chs-search');
+		res.render( 'webfiling/webfiling-login-page-chs-search' );
 
-  }
+	}
 
-});
+} );
 
 // Abbreviated accounts (from the CHS accounts chooser) - direct from CHS
 
-router.get('/webfiling/webfiling-login-page', function (req, res) {
+router.get( '/webfiling/webfiling-login-page', function ( req, res ) {
 
-  var chsabbreviateddirect = req.query.chsabbreviateddirect;
+	var chsabbreviateddirect = req.query.chsabbreviateddirect;
 
-  if (chsabbreviateddirect == "Other"){
+	if ( chsabbreviateddirect == "Other" ) {
 
-    // redirect to the relevant page
-    res.redirect("/chs/chs-choose-accounts-after-chs-profile");
+		// redirect to the relevant page
+		res.redirect( "/chs/chs-choose-accounts-after-chs-profile" );
 
-  } else {
+	} else {
 
-    res.render('webfiling/webfiling-login-page');
+		res.render( 'webfiling/webfiling-login-page' );
 
-  }
+	}
 
-});
-
-
-
-
-
-
-
-
+} );
 
 
 
@@ -569,183 +586,183 @@ router.get('/webfiling/webfiling-login-page', function (req, res) {
 
 // WIZARD - is the company trading
 
-router.get('/accounts/wizard/wizard-ever-traded', function (req, res) {
+router.get( '/accounts/wizard/wizard-ever-traded', function ( req, res ) {
 
-  // get the answer from the query string
-  var trading = req.query.trading;
-  if (trading == "Yes"){
+	// get the answer from the query string
+	var trading = req.query.trading;
+	if ( trading == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/wizard/wizard-turnover");
+		// redirect to the relevant page
+		res.redirect( "/accounts/wizard/wizard-turnover" );
 
-  } else {
-    // if trading is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-ever-traded');
-  }
+	} else {
+		// if trading is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-ever-traded' );
+	}
 
-});
+} );
 
 // WIZARD - has the company ever traded
 
-router.get('/accounts/accounts-start-page-dormant', function (req, res) {
+router.get( '/accounts/accounts-start-page-dormant', function ( req, res ) {
 
-  // get the answer from the query string
-  var evertraded = req.query.evertraded;
-  if (evertraded == "Yes"){
+	// get the answer from the query string
+	var evertraded = req.query.evertraded;
+	if ( evertraded == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-start-page-cato");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-start-page-cato" );
 
-  } else {
-    // if evertraded is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-dormant');
-  }
+	} else {
+		// if evertraded is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-start-page-dormant' );
+	}
 
-});
+} );
 
 // WIZARD - Was the company's turnover more than £632,000?
 
-router.get('/accounts/wizard/wizard-balance-sheet-less', function (req, res) {
+router.get( '/accounts/wizard/wizard-balance-sheet-less', function ( req, res ) {
 
-  // get the answer from the query string
-  var turnover632 = req.query.turnover632;
-  if (turnover632 == "Yes"){
+	// get the answer from the query string
+	var turnover632 = req.query.turnover632;
+	if ( turnover632 == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/wizard/wizard-balance-sheet-more");
+		// redirect to the relevant page
+		res.redirect( "/accounts/wizard/wizard-balance-sheet-more" );
 
-  } else {
-    // if turnover632 is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-balance-sheet-less');
-  }
+	} else {
+		// if turnover632 is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-balance-sheet-less' );
+	}
 
-});
+} );
 
 // WIZARD - Was the company's balance sheet total less than £316,000?
 
-router.get('/accounts/wizard/wizard-employees-more', function (req, res) {
+router.get( '/accounts/wizard/wizard-employees-more', function ( req, res ) {
 
-  // get the answer from the query string
-  var balanceless = req.query.balanceless;
-  if (balanceless == "Yes"){
+	// get the answer from the query string
+	var balanceless = req.query.balanceless;
+	if ( balanceless == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/wizard/wizard-employees-less");
+		// redirect to the relevant page
+		res.redirect( "/accounts/wizard/wizard-employees-less" );
 
-  } else {
-    // if balanceless is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-employees-more');
-  }
+	} else {
+		// if balanceless is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-employees-more' );
+	}
 
-});
+} );
 
 // WIZARD - Was the company's balance sheet total more than £316,000?
 
-router.get('/accounts/wizard/wizard-breakdown', function (req, res) {
+router.get( '/accounts/wizard/wizard-breakdown', function ( req, res ) {
 
-  // get the answer from the query string
-  var balancemore = req.query.balancemore;
-  if (balancemore == "No"){
+	// get the answer from the query string
+	var balancemore = req.query.balancemore;
+	if ( balancemore == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/wizard/wizard-employees-less");
+		// redirect to the relevant page
+		res.redirect( "/accounts/wizard/wizard-employees-less" );
 
-  } else {
-    // if balancemore is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-breakdown');
-  }
+	} else {
+		// if balancemore is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-breakdown' );
+	}
 
-});
+} );
 
 // WIZARD - Did the company employ an average of more than 10 employees during the year?
 
-router.get('/accounts/wizard/wizard-micros-abridged', function (req, res) {
+router.get( '/accounts/wizard/wizard-micros-abridged', function ( req, res ) {
 
-  // get the answer from the query string
-  var employeemore = req.query.employeemore;
-  if (employeemore == "Yes"){
+	// get the answer from the query string
+	var employeemore = req.query.employeemore;
+	if ( employeemore == "Yes" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/wizard/wizard-breakdown");
+		// redirect to the relevant page
+		res.redirect( "/accounts/wizard/wizard-breakdown" );
 
-  } else {
-    // if employeeless is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-micros-abridged');
-  }
+	} else {
+		// if employeeless is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-micros-abridged' );
+	}
 
-});
+} );
 
 // WIZARD - Did the company employ an average less than 10 employees during the year?
 
-router.get('/accounts/wizard/wizard-micros-abridged', function (req, res) {
+router.get( '/accounts/wizard/wizard-micros-abridged', function ( req, res ) {
 
-  // get the answer from the query string
-  var employeeless = req.query.employeeless;
-  if (employeeless == "No"){
+	// get the answer from the query string
+	var employeeless = req.query.employeeless;
+	if ( employeeless == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/wizard/wizard-breakdown");
+		// redirect to the relevant page
+		res.redirect( "/accounts/wizard/wizard-breakdown" );
 
-  } else {
-    // if employeeless is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-micros-abridged');
-  }
+	} else {
+		// if employeeless is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-micros-abridged' );
+	}
 
-});
+} );
 
 // WIZARD - You are eligible to file micro-entity accounts or abridged accounts
 
-router.get('/accounts/accounts-start-page-micros', function (req, res) {
+router.get( '/accounts/accounts-start-page-micros', function ( req, res ) {
 
-  // get the answer from the query string
-  var microabridged = req.query.microabridged;
-  if (microabridged == "abridged"){
+	// get the answer from the query string
+	var microabridged = req.query.microabridged;
+	if ( microabridged == "abridged" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-start-page-abridged");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-start-page-abridged" );
 
-  } else {
-    // if microabridged is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-micros');
-  }
+	} else {
+		// if microabridged is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-start-page-micros' );
+	}
 
-});
+} );
 
 // WIZARD - Do you want to give a breakdown?
 
-router.get('/accounts/wizard/wizard-joint', function (req, res) {
+router.get( '/accounts/wizard/wizard-joint', function ( req, res ) {
 
-  // get the answer from the query string
-  var breakdown = req.query.breakdown;
-  if (breakdown == "No"){
+	// get the answer from the query string
+	var breakdown = req.query.breakdown;
+	if ( breakdown == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-start-page-abridged");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-start-page-abridged" );
 
-  } else {
-    // if breakdown is any other value (or is missing) render the page requested
-    res.render('accounts/wizard/wizard-joint');
-  }
+	} else {
+		// if breakdown is any other value (or is missing) render the page requested
+		res.render( 'accounts/wizard/wizard-joint' );
+	}
 
-});
+} );
 
 // WIZARD - Do you want to give a file to both Companies House and HMRC?
 
-router.get('/accounts/accounts-start-page-cato-full', function (req, res) {
+router.get( '/accounts/accounts-start-page-cato-full', function ( req, res ) {
 
-  // get the answer from the query string
-  var joint = req.query.joint;
-  if (joint == "No"){
+	// get the answer from the query string
+	var joint = req.query.joint;
+	if ( joint == "No" ) {
 
-    // redirect to the relevant page
-    res.redirect("/accounts/accounts-start-page-full-software");
+		// redirect to the relevant page
+		res.redirect( "/accounts/accounts-start-page-full-software" );
 
-  } else {
-    // if joint is any other value (or is missing) render the page requested
-    res.render('accounts/accounts-start-page-cato-full');
-  }
+	} else {
+		// if joint is any other value (or is missing) render the page requested
+		res.render( 'accounts/accounts-start-page-cato-full' );
+	}
 
-});
+} );
 
 module.exports = router;
 
@@ -754,115 +771,148 @@ module.exports = router;
 
 // Small full accounts - MVP or Full journey
 
-router.get('/gov-uk/gov-uk-start-page-small-full', function (req, res) {
+router.get( '/gov-uk/gov-uk-start-page-small-full', function ( req, res ) {
 
-  var smallfullroute1 = req.query.smallfullroute1;
+	var smallfullroute1 = req.query.smallfullroute1;
 
-  if (smallfullroute1 == "mvp"){
+	if ( smallfullroute1 == "mvp" ) {
 
-    res.redirect("/accounts/accounts-start-page-small-full-mvp");
+		res.redirect( "/accounts/accounts-start-page-small-full-mvp" );
 
-  } else {
+	} else {
 
-    res.render('gov-uk/gov-uk-start-page-small-full');
+		res.render( 'gov-uk/gov-uk-start-page-small-full' );
 
-  }
+	}
 
-});
+} );
+
+
+
+/// Small Full - radio button accounts chooserR1
+// Small full accounts - Directors' report
+
+
+router.get( '/chs/chs-choose-small-full-or-other', function ( req, res ) {
+	var chooseaccountsradio = req.query.chooseaccountsradio;
+	if ( chooseaccountsradio == "Micro" ) {
+		res.redirect( "/accounts/accounts-start-page-micros" );
+	} else if ( chooseaccountsradio == "Abridged" ) {
+		res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
+	} else if ( chooseaccountsradio == "Full" ) {
+		res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
+	} else if ( chooseaccountsradio == "Dormant" ) {
+		res.redirect( "/accounts/accounts-start-page-dormant" );
+	} else {
+		res.render( 'chs/chs-choose-small-full-or-other' );
+	}
+} );
 
 
 
 /////// CICS //////
 // CICS MVP criteria
 
-router.get('/cics/cics-criteria-report', function (req, res) {
-  var cicsr1 = req.query.cicsr1;
-  if (cicsr1 == "No"){res.redirect("/cics/cics-criteria-not-met");}
-  else {res.render('cics/cics-criteria-report');}
-});
+router.get( '/cics/cics-criteria-report', function ( req, res ) {
+	var cicsr1 = req.query.cicsr1;
+	if ( cicsr1 == "No" ) {
+		res.redirect( "/cics/cics-criteria-not-met" );
+	} else {
+		res.render( 'cics/cics-criteria-report' );
+	}
+} );
 
-router.get('/cics/cics-criteria-profit', function (req, res) {
-  var criteriareport = req.query.criteriareport;
-  if (criteriareport == "Yes"){res.redirect("/cics/cics-criteria-not-met");}
-  else {res.render('cics/cics-criteria-profit');}
-});
+router.get( '/cics/cics-criteria-profit', function ( req, res ) {
+	var criteriareport = req.query.criteriareport;
+	if ( criteriareport == "Yes" ) {
+		res.redirect( "/cics/cics-criteria-not-met" );
+	} else {
+		res.render( 'cics/cics-criteria-profit' );
+	}
+} );
 
-router.get('/cics/cics-stages-of-service', function (req, res) {
-  var criteriaprofit = req.query.criteriaprofit;
-  if (criteriaprofit == "Yes"){res.redirect("/cics/cics-criteria-not-met");}
-  else {res.render('cics/cics-stages-of-service');}
-});
+router.get( '/cics/cics-stages-of-service', function ( req, res ) {
+	var criteriaprofit = req.query.criteriaprofit;
+	if ( criteriaprofit == "Yes" ) {
+		res.redirect( "/cics/cics-criteria-not-met" );
+	} else {
+		res.render( 'cics/cics-stages-of-service' );
+	}
+} );
 
 
 //Choose CICS or Small Full journey
-router.get('/accounts/accounts-start-page-small-full-mvp', function (req, res) {
-  var cicssmallfullroute1 = req.query.cicssmallfullroute1;
-  if (cicssmallfullroute1 == "cic"){res.redirect("/gov-uk/gov-uk-start-page-cics");}
-  else {res.render('accounts/accounts-start-page-small-full-mvp');}
-});
+router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
+	var cicssmallfullroute1 = req.query.cicssmallfullroute1;
+	if ( cicssmallfullroute1 == "cic" ) {
+		res.redirect( "/gov-uk/gov-uk-start-page-cics" );
+	} else {
+		res.render( 'accounts/accounts-start-page-small-full-mvp' );
+	}
+} );
 
-router.post('/accounts/accounts-start-page-small-full-mvp', function (req, res) {
-      req.session.cicssmallfullroute1 = null;
-       if (req.body.cicssmallfullroute1 == "sf") {
-           req.session.cicssmallfullroute1 = "sf";
-       } else {
-           req.session.cicssmallfullroute1 = "cic";
-       }
-       res.redirect(301, '/gov-uk/gov-uk-start-page-cics');
-   });
-
-
-
-router.post('/cics-or-small-full', function (req, res) {
- var cicorsf = req.body.cicssmallfullroute1
-
- if (cicorsf !== 'sf' && cicorsf !== 'cic') {
-   res.render('cics-or-small-full')
- } else {
-   req.session.cicorsf = cicorsf
-   if (cicorsf == "sf") {
-     res.redirect('/chs/chs-start-page-small-full');
-   } else {
-     res.redirect('/gov-uk/gov-uk-start-page-cics');
-   }
- }
-})
+router.post( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
+	req.session.cicssmallfullroute1 = null;
+	if ( req.body.cicssmallfullroute1 == "sf" ) {
+		req.session.cicssmallfullroute1 = "sf";
+	} else {
+		req.session.cicssmallfullroute1 = "cic";
+	}
+	res.redirect( 301, '/gov-uk/gov-uk-start-page-cics' );
+} );
 
 
-router.post('/small-full/small-full-review-mvp', function (req, res) {
- var errorFlag = false
- console.log(req.body.directorName)
- if (req.body.directorName === "") {
-   errorFlag = true
- }
 
- if (errorFlag === true) {
-   res.render('/small-full/small-full-review-mvp')
- } else {
-   if (req.session.cicorsf == "sf") {
-     res.redirect('/small-full/small-full-approval-mvp');
-   } else {
-     res.redirect('/cics/cics-accounts-approval');
-   }
- }
-})
+router.post( '/cics-or-small-full', function ( req, res ) {
+	var cicorsf = req.body.cicssmallfullroute1
+
+	if ( cicorsf !== 'sf' && cicorsf !== 'cic' ) {
+		res.render( 'cics-or-small-full' )
+	} else {
+		req.session.cicorsf = cicorsf
+		if ( cicorsf == "sf" ) {
+			res.redirect( '/chs/chs-start-page-small-full' );
+		} else {
+			res.redirect( '/gov-uk/gov-uk-start-page-cics' );
+		}
+	}
+} )
+
+
+router.post( '/small-full/small-full-review-mvp', function ( req, res ) {
+	var errorFlag = false
+	console.log( req.body.directorName )
+	if ( req.body.directorName === "" ) {
+		errorFlag = true
+	}
+
+	if ( errorFlag === true ) {
+		res.render( '/small-full/small-full-review-mvp' )
+	} else {
+		if ( req.session.cicorsf == "sf" ) {
+			res.redirect( '/small-full/small-full-approval-mvp' );
+		} else {
+			res.redirect( '/cics/cics-accounts-approval' );
+		}
+	}
+} )
 
 
 
 // CICS - detailed or simplified accounts
 
-router.get('/cics/cics-criteria-mvp', function (req, res) {
+router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
 
-  var choosecicreporttype = req.query.choosecicreporttype;
+	var choosecicreporttype = req.query.choosecicreporttype;
 
-  if (choosecicreporttype == "Detailed"){
+	if ( choosecicreporttype == "Detailed" ) {
 
-    res.redirect("/cics/cics-criteria-not-met");
+		res.redirect( "/cics/cics-criteria-not-met" );
 
-  } else {
+	} else {
 
-    res.render('cics/cics-criteria-mvp');
+		res.render( 'cics/cics-criteria-mvp' );
 
-  }
+	}
 
-});
+} );
