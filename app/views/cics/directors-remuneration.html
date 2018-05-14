@@ -1,36 +1,31 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-Community Interest Company annual report - Directors' remuneration
-{% endblock %}
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Community Interest Company annual report - Directors' remuneration {% endblock %} {% block content %}
 
 <style type="text/css">
-.left-indent {margin-left:3em}
+  .left-indent {
+    margin-left: 3em
+  }
 </style>
 
 <main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
-
-
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
 
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-{% include 'includes/error.html' %}
 
 
-<div class="text">
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+
+
+  <div class="text">
 
     <h1 class="heading-xlarge"><!--<span class="circle circle-step-large">3</span>-->
       CIC report
@@ -39,66 +34,68 @@ Community Interest Company annual report - Directors' remuneration
 
 
 
-        <form action="/cics/transfer-of-assets" method="get" class="form">
+    <form action="/cics/transfer-of-assets" method="get" class="form">
 
-          <h2 class="heading-medium">Was directors' remuneration received?</h2>
-          <details class="form-group">
-            <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">directors' remuneration</span>
-            <div class="panel panel-border-narrow form-hint">
-              <p>Some help text.</p>
-            </div>
-          </details>
-          <fieldset class="inline" data-required="" data-error="Please confirm directors' remuneration was recieved">
-                  <legend class="visuallyhidden">Was directors' remuneration received?</legend>
-                  <div class="form-group">
+      <h2 class="heading-medium">Was directors' remuneration received?</h2>
+      <details class="form-group">
+        <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">directors' remuneration</span>
+        <div class="panel panel-border-narrow form-hint">
+          <p>Directors remuneration is the money paid to a person acting in their capacity as a director of the CIC. It should not include any salary that the director receives for the job they are doing within the company.</p>
+        </div>
+      </details>
+      <fieldset class="inline" data-required="" data-error="Please confirm directors' remuneration was recieved">
+        <legend class="visuallyhidden">Was directors' remuneration received?</legend>
+        <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="directorsremunerationyes" data-target="directorsremunerationyes-reveal">
+          <label class="block-label selection-button-radio" for="directorsremunerationyes" data-target="directorsremunerationyes-reveal">
                     <input id="directorsremunerationyes" name="directorsremunerationyn" value="Yes" type="radio" aria-controls="directorsremunerationyes-reveal">
                     Yes
                   </label>
-                  <label class="block-label selection-button-radio" for="directorsremunerationno">
+          <label class="block-label selection-button-radio" for="directorsremunerationno">
                     <input id="directorsremunerationno" name="directorsremunerationyn" value="No" type="radio">
                     No
                     </label>
-                  </div><!--form-group-->
+        </div>
+        <!--form-group-->
 
-                </fieldset>
+      </fieldset>
 
 
 
-            <div class="panel panel-border-narrow js-hidden" id="directorsremunerationyes-reveal">
+      <div class="panel panel-border-narrow js-hidden" id="directorsremunerationyes-reveal">
 
-              <h2 class="heading-medium">Is directors' remuneration information included in your accounts?</h2>
+        <h2 class="heading-medium">Is directors' remuneration information included in your accounts?</h2>
 
-              <fieldset class="inline form-group">
-                      <legend class="visuallyhidden">Is directors' remuneration information included in your accounts?</legend>
-                      <div class="form-group">
+        <fieldset class="inline form-group">
+          <legend class="visuallyhidden">Is directors' remuneration information included in your accounts?</legend>
+          <div class="form-group">
 
-                      <label class="block-label selection-button-radio" for="directorsremunerationaccountsyes">
+            <label class="block-label selection-button-radio" for="directorsremunerationaccountsyes">
                         <input id="directorsremunerationaccountsyes" name="directorsremunerationaccounts" value="Yes"type="radio">
                         Yes
                       </label>
-                      <label class="block-label selection-button-radio" for="directorsremunerationaccountsno" data-target="directorsremunerationaccountsno-reveal">
+            <label class="block-label selection-button-radio" for="directorsremunerationaccountsno" data-target="directorsremunerationaccountsno-reveal">
                         <input id="directorsremunerationaccountsno" name="directorsremunerationaccounts" value="No" type="radio" aria-controls="directorsremunerationaccountsno-reveal">
                         No
                         </label>
-                      </div><!--form-group-->
+          </div>
+          <!--form-group-->
 
-                    </fieldset>
+        </fieldset>
 
 
 
-                              <div class="panel panel-border-narrow js-hidden" id="directorsremunerationaccountsno-reveal">
+        <div class="panel panel-border-narrow js-hidden" id="directorsremunerationaccountsno-reveal">
 
-                                <label for="consultation" class="heading-medium form-group">Enter your directors' remuneration information here</label>
-                                <details class="form-group">
-                                  <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">directors' remuneration</span>
-                                  <div class="panel panel-border-narrow form-hint">
-                                    <p>The aggregate amount of emoluments paid to or receivable by directors in respect of qualifying services was £10,000.</p>
-                                  </div>
-                                </details>
-                                <textarea type="text" id="consultation" class="form-control" rows="20"></textarea>
-                              <!--  <br />
+          <label for="consultation" class="heading-medium form-group">Enter your directors' remuneration information here</label>
+          <details class="form-group">
+            <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">directors' remuneration</span>
+            <div class="panel panel-border-narrow form-hint">
+              <p>The aggregate amount of emoluments paid to or receivable by directors in respect of qualifying services was £10,000.</p>
+            </div>
+          </details>
+          <textarea type="text" id="consultation" class="form-control" rows="20"></textarea>
+          <!--  <br />
                                 <legend class="visuallyhidden">Confirmation</legend>
                                 <div class="form-group">
                                   <label class="block-label selection-button-checkbox" for="confirmation">
@@ -106,13 +103,11 @@ Community Interest Company annual report - Directors' remuneration
                                     There were no other transactions or arrangements in connection with the remuneration of directors, or compensation for director’s loss of office, which require to be disclosed
                                   </label>
                                 </div>-->
-                              </div><!--directorsremunerationaccountsno-reveal-->
+        </div>
+        <!--directorsremunerationaccountsno-reveal-->
 
-              </div><!--directorsremunerationyes-reveal-->
-
-
-
-
+      </div>
+      <!--directorsremunerationyes-reveal-->
 
 
 
@@ -123,17 +118,15 @@ Community Interest Company annual report - Directors' remuneration
 
 
 
+      <div class="accounts-row-spacer">
+        <input type="submit" class="button" value="Save and continue" id="">
+      </div>
+    </form>
+  </div>
+  <!--left-indent-->
+  </div>
+  <!--text-->
 
 
-
-
-              <div class="accounts-row-spacer">
-                <input type="submit" class="button" value="Save and continue" id="">
-              </div>
-            </form>
-          </div><!--left-indent-->
-        </div><!--text-->
-
-
-    </main>
-    {% endblock %}
+</main>
+{% endblock %}
