@@ -1,16 +1,10 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-  File your accounts  (prototype)
-{% endblock %}
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} File your accounts (prototype) {% endblock %} {% block content %}
 
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
 
-<div class="grid-row">
+  <div class="grid-row">
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge">File company accounts (prototype)</h1>
@@ -19,13 +13,13 @@
       <div class="section-tabs js-tabs">
         <ul>
           <li class="active"><a href="javascript:void(0)" id="">Abridged</a></li>
-          <li><a href="/small-full/small-full" id="">full</a></li>
+          <li><a href="/small-full/small-full" id="">Full</a></li>
           <li><a href="/cics/cics" id="">CICs</a></li>
         </ul>
       </div>
 
 
-			<h2 class="heading-medium">The latest version</h2>
+      <h2 class="heading-medium">The latest version</h2>
       <ul class="list list-bullet">
         <li><a href="/shortcuts">Beta V17 (January 2018)</a>
       </ul>
@@ -46,7 +40,7 @@
         <li><a href="https://ch-accounts-v5.herokuapp.com/shortcuts">Alpha V5: (January 2017)</a></li>
         <li><a href="https://ch-accounts-v4a.herokuapp.com/shortcuts">Alpha V4a (February 2017)</a></li>
         <li><a href="https://ch-accounts-v4.herokuapp.com/shortcuts">Alpha V4 (December 2016)</a>
-        <span class="form-hint">V4 was sent to GDS for assessment</span></li>
+          <span class="form-hint">V4 was sent to GDS for assessment</span></li>
         <li><a href="https://ch-accounts-v3.herokuapp.com/shortcuts">Alpha V3 (Late November 2016)</a></li>
         <li><a href="https://ch-accounts-v2.herokuapp.com/shortcuts">Alpha V2 (Early November 2016)</a></li>
         <li><a href="https://ch-accounts-v1a.herokuapp.com/shortcuts">Alpha V1 (October 2016)</a></li>
@@ -54,7 +48,8 @@
       </ul>
 
     </div>
-  </div><!--grid-row-->
+  </div>
+  <!--grid-row-->
 </main>
 
 {% endblock %}

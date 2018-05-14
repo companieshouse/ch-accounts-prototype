@@ -1,16 +1,10 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-  Community Interest Companies (prototype)
-{% endblock %}
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Community Interest Companies (prototype) {% endblock %} {% block content %}
 
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
 
-<div class="grid-row">
+  <div class="grid-row">
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge">Community Interest Companies (prototype)</h1>
@@ -19,24 +13,25 @@
       <div class="section-tabs js-tabs">
         <ul>
           <li><a href="/index" id="">Abridged</a></li>
-          <li><a href="/small-full/small-full" id="">full</a></li>
+          <li><a href="/small-full/small-full" id="">Full</a></li>
           <li class="active"><a href="javascript:void(0)" id="">CICs</a></li>
         </ul>
       </div>
 
 
-			<h2 class="heading-medium">The latest version</h2>
+      <h2 class="heading-medium">The latest version</h2>
       <ul class="list list-bullet">
         <li><a href="/cics/shortcuts-cics">Alpha V2 (May 2018)</a>
       </ul>
 
       <h2 class="heading-medium">Previous versions</h2>
-        <ul class="list list-bullet">
-          <li><a href="https://ch-accounts-v18.herokuapp.com/cics/shortcuts-cics">Alpha V1 (April 2018)</a></li>
-        </ul>
+      <ul class="list list-bullet">
+        <li><a href="https://ch-accounts-v18.herokuapp.com/cics/shortcuts-cics">Alpha V1 (April 2018)</a></li>
+      </ul>
 
     </div>
-  </div><!--grid-row-->
+  </div>
+  <!--grid-row-->
 </main>
 
 {% endblock %}
