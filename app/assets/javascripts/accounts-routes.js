@@ -1,4 +1,4 @@
-// Small full accounts - MVP or Full journey
+// full accounts - MVP or Full journey
 
 router.get('/gov-uk/gov-uk-start-page-small-full', function (req, res) {
 

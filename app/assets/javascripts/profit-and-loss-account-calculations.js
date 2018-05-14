@@ -1,8 +1,8 @@
-// Profit and loss account calculations (for small full accounts)
-// Profit and loss account calculations (for small full accounts)
-// Profit and loss account calculations (for small full accounts)
-// Profit and loss account calculations (for small full accounts)
-// Profit and loss account calculations (for small full accounts)
+// Profit and loss account calculations (for full accounts)
+// Profit and loss account calculations (for full accounts)
+// Profit and loss account calculations (for full accounts)
+// Profit and loss account calculations (for full accounts)
+// Profit and loss account calculations (for full accounts)
 
 // Gross profit (or loss) (current year))
 $(document).ready(function() {

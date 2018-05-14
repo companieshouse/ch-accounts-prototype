@@ -478,7 +478,7 @@ router.get( '/accounts/accounts-abridged-tangible-note-errors', function ( req, 
 
 
 
-// Small full - does user want to include a directors report and/or a profit and loss account?
+// full - does user want to include a directors report and/or a profit and loss account?
 
 
 router.get( '/accounts/accounts-start-page-small-full', function ( req, res ) {
@@ -502,7 +502,7 @@ router.get( '/accounts/accounts-start-page-small-full', function ( req, res ) {
 
 
 
-// Small full accounts - Directors' report
+// full accounts - Directors' report
 
 
 router.get( '/small-full/profit-and-loss-account', function ( req, res ) {
@@ -518,7 +518,7 @@ router.get( '/small-full/profit-and-loss-account', function ( req, res ) {
 
 
 
-// Small full - do you have Other accounting policies?
+// full - do you have Other accounting policies?
 
 router.get( '/small-full/small-full-intangible-assets-note', function ( req, res ) {
 
@@ -769,7 +769,7 @@ module.exports = router;
 
 
 
-// Small full accounts - MVP or Full journey
+// full accounts - MVP or Full journey
 
 router.get( '/gov-uk/gov-uk-start-page-small-full', function ( req, res ) {
 
@@ -789,8 +789,8 @@ router.get( '/gov-uk/gov-uk-start-page-small-full', function ( req, res ) {
 
 
 
-/// Small Full - radio button accounts chooserR1
-// Small full accounts - Directors' report
+/// full - radio button accounts chooserR1
+// full accounts - Directors' report
 
 
 router.get( '/chs/chs-choose-small-full-or-other', function ( req, res ) {
@@ -841,7 +841,7 @@ router.get( '/cics/cics-stages-of-service', function ( req, res ) {
 } );
 
 
-//Choose CICS or Small Full journey
+//Choose CICS or full journey
 router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
 	var cicssmallfullroute1 = req.query.cicssmallfullroute1;
 	if ( cicssmallfullroute1 == "cic" ) {

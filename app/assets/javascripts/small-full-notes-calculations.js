@@ -1,4 +1,4 @@
-// Intangible assets (for small full accounts)
+// Intangible assets (for full accounts)
 
       // COST
           // Cost at start
@@ -259,7 +259,7 @@
                        $('#cost-start-goodwill, #additions-goodwill, #disposals-goodwill, #revaluations-goodwill, #transfers-goodwill, #amortisation-start-goodwill, #charge-year-goodwill, #on-disposals-goodwill, #other-adjustments-goodwill, #cost-start-other, #additions-other, #disposals-other, #revaluations-other, #transfers-other, #amortisation-start-other, #charge-year-other, #on-disposals-other, #other-adjustments-other').change(compute);
                   });
 
-// Intangible assets (for small full accounts)
+// Intangible assets (for full accounts)
 
       // COST
           // Cost at start
@@ -698,7 +698,7 @@
                          $('#cost-start-motor-vehicles, #additions-motor-vehicles, #disposals-motor-vehicles, #revaluations-motor-vehicles, #transfers-motor-vehicles, #depreciation-start-motor-vehicles, #charge-year-motor-vehicles, #on-disposals-motor-vehicles, #other-adjustments-motor-vehicles, cost-start-office-equipment, #additions-office-equipment, #disposals-office-equipment, #revaluations-office-equipment, #transfers-office-equipment, #depreciation-start-office-equipment, #charge-year-office-equipment, #on-disposals-office-equipment, #other-adjustments-office-equipment, #cost-start-fixtures-fittings, #additions-fixtures-fittings, #disposals-fixtures-fittings, #revaluations-fixtures-fittings, #transfers-fixtures-fittings, #depreciation-start-fixtures-fittings, #charge-year-fixtures-fittings, #on-disposals-fixtures-fittings, #other-adjustments-fixtures-fittings, #cost-start-plant-machinery, #additions-plant-machinery, #disposals-plant-machinery, #revaluations-plant-machinery, #transfers-plant-machinery, #depreciation-start-plant-machinery, #charge-year-plant-machinery, #on-disposals-plant-machinery, #other-adjustments-plant-machinery, #cost-start-land-buildings, #additions-land-buildings, #disposals-land-buildings, #revaluations-land-buildings, #transfers-land-buildings, #depreciation-start-land-buildings, #charge-year-land-buildings, #on-disposals-land-buildings, #other-adjustments-land-buildings').change(compute);
                     });
 
-  // Debtors (for small full accounts)
+  // Debtors (for full accounts)
 
         // Debtors - Current year
             $(document).ready(function() {
@@ -726,7 +726,7 @@
 
 
 
-                // Stocks (for small full accounts)
+                // Stocks (for full accounts)
 
                       // Stocks - Current year
                           $(document).ready(function() {
@@ -755,7 +755,7 @@
 
 
 
-  // Creditors - amounts falling due within one year  (for small full accounts)
+  // Creditors - amounts falling due within one year  (for full accounts)
 
         // Creditors - amounts falling due within one year  - Current year
             $(document).ready(function() {
@@ -785,7 +785,7 @@
                      }
                      $('#bank-loans-previous, #finance-leases-previous, #trade-creditors-previous, #social-security-previous, #accruals-previous, #other-creditors-previous').change(compute);
                 });
-// Creditors - amounts falling due after one year  (for small full accounts)
+// Creditors - amounts falling due after one year  (for full accounts)
 
       // Creditors - amounts falling after one year  - Current year
           $(document).ready(function() {
