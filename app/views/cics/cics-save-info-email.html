@@ -1,0 +1,60 @@
+{% extends "layout-chs.html" %} {% block page_title %} Check your email {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+
+
+
+
+
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_beta.html" %}
+
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
+
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %} {% include 'includes/error.html' %}
+
+  <div class="text">
+
+    <form action="/cics/cics-stages-of-service" method="get" class="form">
+
+
+      <header>
+        <h1 id="page-header" class="heading-xlarge">Check your email</h1>
+      </header>
+
+
+      <p>We have sent a link to <span class="bold-small">jsmith@testcompany.co.uk</span> that allows you to return to your filing at any time.</p>
+
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div>
+
+  </div>
+  <!--left-indent-->
+
+
+  </div>
+  <!--text-->
+
+  </form>
+
+
+
+</main>
+
+{% endblock %}

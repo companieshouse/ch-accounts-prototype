@@ -1,0 +1,87 @@
+{% extends "layout-chs.html" %} {% block page_title %} Do you want to save your information? {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+
+
+
+
+
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_beta.html" %}
+
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
+
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %} {% include 'includes/error.html' %}
+
+  <div class="text">
+
+    <form action="/cics/cics-save-info-email" method="get" class="form">
+
+
+      <header>
+        <h1 id="page-header" class="heading-xlarge">Do you want to save your information to return to it later?</h1>
+      </header>
+
+
+      <p>We can send you an email that allows you to save your progress and return to your filing at any time.</p>
+
+      <p>We'll send the email to <span class="bold-small">jsmith@testcompany.co.uk</span></p>
+
+
+      <form action="/cics/cics-criteria-report" method="get" class="form">
+        <fieldset class="inline" data-required="" data-error="Please confirm if you want to save your information to return to it later">
+          <legend class="visually-hidden">Do you want to save your information to return to it later?</legend>
+          <div class="form-group">
+
+
+            <label class="block-label selection-button-radio" for="cicssaveinfoyes">
+              <input id="cicssaveinfoyes" type="radio" name="cicssaveinfo" value="Yes">
+              Yes
+            </label>
+            <label class="block-label selection-button-radio" for="cicssaveinfono">
+              <input id="cicssaveinfono" type="radio" name="cicssaveinfo" value="No">
+              No
+            </label>
+
+          </div>
+        </fieldset>
+
+
+
+
+
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Next">
+        </div>
+
+  </div>
+  <!--left-indent-->
+
+
+  </div>
+  <!--text-->
+
+  </form>
+
+
+
+</main>
+
+{% endblock %}
