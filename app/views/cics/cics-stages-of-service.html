@@ -1,76 +1,71 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-   You can file your CIC report and accounts here
-{% endblock %}
-
-
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} You can file your CIC report and accounts here {% endblock %} {% block content %}
 
 <main id="content" role="main">
 
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
-
-
-<div class="text" id="accounts-start-page">
-
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
 
 
+  <div class="text" id="accounts-start-page">
 
-      <h1 class="heading-xlarge">You can file your CIC report and accounts here</h1>
-      <form action="/cics/general-description" method="get" class="form">
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+    <h1 class="heading-xlarge">You can file your CIC report and accounts here</h1>
+    <form action="/cics/cics-save-info" method="get" class="form">
 
       <!--   <p class="lede">Use this service to file a simplified CIC report and full company accounts</p>
 
        <p class="warning-note warning-note-large"  id="save-and-resume-message">
           If you can't finish your filing in one session, you can come back later to continue. You'll need to go to <a id="recent_filings" href="javascript:void(0)">your filings</a>.
         </p>-->
-        <p>There are 3 stages to this service:</p>
+      <p>There are 3 stages to this service:</p>
 
 
-      </div><!-- text-->
+  </div>
+  <!-- text-->
 
-      <div class="grid-row">
-          <div class="column-half">
-            <ol class="task-list cics-task-list">
-              <li class="task-list-item">
-                <h2 class="task-list-section task-name"><span class="task-list-section-number">1.</span> CIC report</h2>
-              </li>
-              <li class="task-list-item">
-                <h2 class="task-list-section task-name"><span class="task-list-section-number">2.</span> Full accounts</h2>
-              </li>
-              <li class="task-list-item">
-                <h2 class="task-list-section task-name"><span class="task-list-section-number">3.</span> Payment (£15)</h2>
-              </li>
-            </ol>
+  <div class="grid-row">
+    <div class="column-half">
+      <ol class="task-list cics-task-list">
+        <li class="task-list-item">
+          <h2 class="task-list-section task-name"><span class="task-list-section-number">1.</span> CIC report</h2>
+        </li>
+        <li class="task-list-item">
+          <h2 class="task-list-section task-name"><span class="task-list-section-number">2.</span> Full accounts</h2>
+        </li>
+        <li class="task-list-item">
+          <h2 class="task-list-section task-name"><span class="task-list-section-number">3.</span> Payment (£15)</h2>
+        </li>
+      </ol>
 
-            </div><!-- column-half-->
-          </div><!-- grid-row-->
-      <br />
-
-
-
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Continue to CIC report" id="">
-      </div>
-
-            </form>
+    </div>
+    <!-- column-half-->
+  </div>
+  <!-- grid-row-->
+  <br />
 
 
 
-      </main>
 
-      {% endblock %}
+  <div class="form-group">
+    <input type="submit" class="button" value="Next" id="">
+  </div>
+
+  </form>
+
+
+
+</main>
+
+{% endblock %}
