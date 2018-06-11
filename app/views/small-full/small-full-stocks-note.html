@@ -1,136 +1,138 @@
-{% extends "layout-chs.html" %}
- {% block page_title %}
- Stocks note
- {% endblock %}
-  {% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Stocks note {% endblock %} {% block content %}
 <main class="two-column-accounts" id="content" role="main">
-	{% include "includes/phase_banner_beta.html" %}
-	<nav class="content" role="navigation">
-		<ul class="mobile-hidden" id="navigation">
-			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
-			</li>
-			<li>
-				<a href="javascript:void(0)">Your details</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="">Companies you follow</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="user-signout">Sign out</a>
-			</li>
-		</ul>
-	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
-	<h1 class="heading-xlarge">
-		<!--<span class="circle circle-step-large">3</span>-->Balance sheet notes <span class="circle-subheading">Stocks</span>
-	</h1>
-	<div class="">
-		<div class="panel panel-border-wide">
-			<p>Complete all items that are included in your prepared accounts.</p>
-		</div><br>
-		<form action="/" class="form" id="" method="post" name="">
-			<div class="grid-row" id="accounts-header">
-				<div class="column-half">
-					<h2 class="heading-medium" style="text-align:left;">
+  {% include "includes/phase_banner_beta.html" %}
+  <nav class="content" role="navigation">
+    <ul class="mobile-hidden" id="navigation">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+      </li>
+      <li>
+        <a href="javascript:void(0)">Your details</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" id="recent_filings">Your filings</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" id="">Companies you follow</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" id="user-signout">Sign out</a>
+      </li>
+    </ul>
+  </nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
+  <h1 class="heading-xlarge">
+<span class="circle-subheading text">Balance sheet notes</span>
+Stocks
+</h1>
+  <div class="">
+    <div class="panel panel-border-wide">
+      <p>Complete all items that are included in your prepared accounts.</p>
+    </div><br>
+    <form action="/" class="form" id="" method="post" name="">
+      <div class="grid-row" id="accounts-header">
+        <div class="column-half">
+          <h2 class="heading-medium" style="text-align:left;">
 						Stocks
-					</h2><!-- To do - move this style into the SASS file-->
-				</div>
-				<div class="column-quarter">
-					<h2 class="heading-small">2018<br />£</h2>
-				</div>
-				<div class="column-quarter">
-					<h2 class="heading-small">2017<br />£</h2>
-				</div>
-			</div>
+					</h2>
+          <!-- To do - move this style into the SASS file-->
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">2018<br />£</h2>
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">2017<br />£</h2>
+        </div>
+      </div>
 
-			<!--Start stocks-->
-			<div class="grid-row accounts-row-spacer">
-				<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">Stocks</span>
-						</summary>
-						<div class="panel panel-border-narrow">
-							<p>Some help text here.</p>
-						</div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="stocks-stocks-current"><span class="mobile-only-label">Stocks - 2017</span>
+      <!--Start stocks-->
+      <div class="grid-row accounts-row-spacer">
+        <div class="column-half">
+          <details>
+            <summary>
+              <span class="summary">Stocks</span>
+            </summary>
+            <div class="panel panel-border-narrow">
+              <p>Some help text here.</p>
+            </div>
+          </details>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="stocks-stocks-current"><span class="mobile-only-label">Stocks - 2017</span>
             <input class="form-control" id="stocks-stocks-current" type="number"></label>
-					</div>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="stocks-stocks-previous"><span class="mobile-only-label">Stocks - 2016</span>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="stocks-stocks-previous"><span class="mobile-only-label">Stocks - 2016</span>
 						<input class="form-control" id="stocks-stocks-previous" type="number"></label>
-					</div>
-				</div>
-			</div><!--End stocks-->
-			<!--Start payment on account  -->
-			<div class="grid-row">
-				<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">Payment on account</span>
-						</summary>
-						<div class="panel panel-border-narrow">
-							<p>The total value of all amounts received or receivable (for example, invoiced customers who are yet to pay) at the end of the accounting period for any contracts in progress.</p>
-						</div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="payment-on-account-current"><span class="mobile-only-label">Payment on account - 2017</span>
+          </div>
+        </div>
+      </div>
+      <!--End stocks-->
+      <!--Start payment on account  -->
+      <div class="grid-row">
+        <div class="column-half">
+          <details>
+            <summary>
+              <span class="summary">Payment on account</span>
+            </summary>
+            <div class="panel panel-border-narrow">
+              <p>The total value of all amounts received or receivable (for example, invoiced customers who are yet to pay) at the end of the accounting period for any contracts in progress.</p>
+            </div>
+          </details>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="payment-on-account-current"><span class="mobile-only-label">Payment on account - 2017</span>
             <input class="form-control" id="payment-on-account-current" type="number"></label>
-					</div>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="payment-on-account-previous"><span class="mobile-only-label">Payment on account - 2016</span>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="payment-on-account-previous"><span class="mobile-only-label">Payment on account - 2016</span>
 						<input class="form-control" id="payment-on-account-previous" type="number"></label>
-					</div>
-				</div>
-			</div><!--End payment on account  -->
+          </div>
+        </div>
+      </div>
+      <!--End payment on account  -->
 
-			<!--Start Total stocks -->
-			<div class="grid-row accounts-total">
-				<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">Total</span>
-						</summary>
-						<div class="panel panel-border-narrow">
+      <!--Start Total stocks -->
+      <div class="grid-row accounts-total">
+        <div class="column-half">
+          <details>
+            <summary>
+              <span class="summary">Total</span>
+            </summary>
+            <div class="panel panel-border-narrow">
               <p>The total of all stocks for the accounting period. This is calculated by adding together:</p>
               <ul class="list list-bullet font-small">
                 <li>stocks</li>
                 <li>payment on account</li>
               </ul>
             </div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="total-stocks-current"><span class="mobile-only-label">Total stocks - 2017</span>
+          </details>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="total-stocks-current"><span class="mobile-only-label">Total stocks - 2017</span>
             <input class="form-control" id="total-stocks-current" type="number"></label>
-					</div>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="total-stocks-previous"><span class="mobile-only-label">Total stocks - 2016</span>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="total-stocks-previous"><span class="mobile-only-label">Total stocks - 2016</span>
 						<input class="form-control" id="total-stocks-previous" type="number"></label>
-					</div>
-				</div>
-			</div><!--End Total stocks =-->
+          </div>
+        </div>
+      </div>
+      <!--End Total stocks =-->
 
 
 
-			<div class="form-group accounts-row-spacer">
-				<a class="button" href="/small-full/small-full-debtors-note">Save and continue</a>
-			</div>
-		</form>
-	</div><!--left-indent-->
+      <div class="form-group accounts-row-spacer">
+        <a class="button" href="/small-full/small-full-debtors-note">Save and continue</a>
+      </div>
+    </form>
+  </div>
+  <!--left-indent-->
 </main>{% endblock %}

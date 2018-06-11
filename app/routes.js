@@ -916,3 +916,21 @@ router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
 	}
 
 } );
+
+// CICS - Was directors' remuneration received?
+
+router.get( '/cics/directors-remuneration-yes', function ( req, res ) {
+
+	var directorsremunerationyn = req.query.directorsremunerationyn;
+
+	if ( directorsremunerationyn == "No" ) {
+
+		res.redirect( "/cics/transfer-of-assets" );
+
+	} else {
+
+		res.render( 'cics/directors-remuneration-yes' );
+
+	}
+
+} );

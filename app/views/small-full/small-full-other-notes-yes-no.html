@@ -1,72 +1,65 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-Balance sheet notes - Employees
-{% endblock %}
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Balance sheet notes - Employees {% endblock %} {% block content %}
 <main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
-
-
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
 
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
-{% include 'includes/error.html' %}
 
 
-<h1 class="heading-xlarge"><!--<span class="circle circle-step-large">5</span>-->
-  Balance sheet notes
-  <span class="circle-subheading">Any other notes</span>
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+
+
+  <h1 class="heading-xlarge">
+<span class="circle-subheading text">Balance sheet notes</span>
+Any other notes
 </h1>
 
-<div class="">
-<h2 class="heading-medium">
+  <div class="">
+    <h2 class="heading-medium">
   Do your prepared accounts include any other notes?
 </h2>
 
-<details class="form-group">
-  <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Any other notes?</span>
-  <div class="panel panel-border-narrow form-hint">
-    <p>For example, 'employees', 'fixed asset investments' or 'debtors'</p>
-</div>
-</details>
+    <details class="form-group">
+      <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Any other notes?</span>
+      <div class="panel panel-border-narrow form-hint">
+        <p>For example, 'employees', 'fixed asset investments' or 'debtors'</p>
+      </div>
+    </details>
 
 
-<form action="/small-full/small-full-employees-yes-no" method="get" class="form">
-    <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include any other notes">
-      <div class="form-group">
+    <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
+      <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include any other notes">
+        <div class="form-group">
 
-      <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
-      <label class="block-label selection-button-radio" for="othernotesyes">
+          <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
+          <label class="block-label selection-button-radio" for="othernotesyes">
         <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
         Yes
       </label>
-      <label class="block-label selection-button-radio" for="othernotesno">
+          <label class="block-label selection-button-radio" for="othernotesno">
         <input id="othernotesno" type="radio" name="othernotes" value="No" disabled>
         No
       </label>
-    </div>
-    </fieldset>
+        </div>
+      </fieldset>
 
-  <div>
-    <input type="submit" class="button" value="Save and continue" id="">
+      <div>
+        <input type="submit" class="button" value="Save and continue" id="">
+      </div>
+
   </div>
+  <!--left-indent-->
 
-</div><!--left-indent-->
 
-
-</form>
+  </form>
 </main>
 {% endblock %}

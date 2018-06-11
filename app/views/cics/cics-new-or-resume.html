@@ -1,56 +1,50 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-   Are you starting a new filing?
-{% endblock %}
-
-
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Are you starting a new filing? {% endblock %} {% block content %}
 
 <main id="content" role="main">
 
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
 
 
 
-<div class="text" id="accounts-start-page">
+  <div class="text" id="accounts-start-page">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
-
-
-      <h1 class="heading-xlarge">Are you starting a new filing?</h1>
-      <form action="/chs/chs-start-page-alternative-chs-search-cics" method="get" class="form">
-            <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm what type of CIC report you want to file">
-              <legend class="visually-hidden">Which type of CIC report do you want to file?</legend>
-                  <div class="form-group">
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
-                    <label class="block-label selection-button-radio" for="cicsneworresumeyes">
+
+    <h1 class="heading-xlarge">Are you starting a new filing?</h1>
+    <form action="/chs/chs-start-page-alternative-chs-search-cics" method="get" class="form">
+      <fieldset class="text accounts-chooser-radio" data-required="" data-error="Please confirm what type of CIC report you want to file">
+        <legend class="visually-hidden">Which type of CIC report do you want to file?</legend>
+        <div class="form-group">
+
+
+          <label class="block-label selection-button-radio" for="cicsneworresumeyes">
                       <input id="cicsneworresumeyes" type="radio" name="cicsneworresume" value="Simplified">
                       Yes
                     </label>
 
-                    <label class="block-label selection-button-radio" for="cicsneworresumeno" data-target="detailreveal">
+          <label class="block-label selection-button-radio" for="cicsneworresumeno" data-target="detailreveal">
                       <input id="cicsneworresumeno" type="radio" name="cicsneworresume" value="no" disabled>
                       No - I'm continuing with an existing filing
                     </label>
 
 
-                    </div><!--form-group-->
-            </fieldset>
+        </div>
+        <!--form-group-->
+      </fieldset>
 
-            <div class="form-group">
-            <input type="submit" class="button" value="Next">
-            </div>
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div>
 
-              </form>
+    </form>
 
 
-        </div><!-- text-->
+  </div>
+  <!-- text-->
 
-      </main>
+</main>
 
-      {% endblock %}
+{% endblock %}
