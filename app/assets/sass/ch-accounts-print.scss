@@ -1,13 +1,12 @@
 //Hide these elements
-nav.content,
-a.menu,
-a.link-back,
-.mobile-only-label,
-a.button
-{
-  display:none;
-}
 
+.mobile-only-label,
+a.button,
+a.link-back,
+a.menu,
+nav.content {
+  display: none;
+}
 //Hide number spinners
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -17,45 +16,841 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
   text-align: right;
 }
+
 input[type='number'] {
-  -moz-appearance:textfield;
+  -moz-appearance: textfield;
   text-align: right;
 }
 //Ensure balance sheet etc maintain columns
-.two-column-accounts .column-half, .two-column-accounts .column-one-half {
+
+.two-column-accounts .column-half,
+.two-column-accounts .column-one-half {
   float: left;
   width: 50%;
-  display:inline-block;
+  display: inline-block;
 }
-.two-column-accounts .column-quarter, .two-column-accounts .column-one-quarter {
+
+.two-column-accounts .column-one-quarter,
+.two-column-accounts .column-quarter {
   float: left;
   width: 25%;
-  display:inline-block;
+  display: inline-block;
 }
-.two-column-accounts .column-third, .two-column-accounts .column-one-third {
+
+.two-column-accounts .column-one-third,
+.two-column-accounts .column-third {
   float: left;
   width: 33.3333%;
-  display:inline-block;
+  display: inline-block;
 }
+
 .two-column-accounts .column-two-thirds {
   float: left;
   width: 66.6667%;
-  display:inline-block;
+  display: inline-block;
 }
+
 .two-column-accounts .grid-row {
-  display:block;
+  display: block;
 }
 //Reduce font sizes where appropriate
+
 #accounts-header h2,
 p.warning,
 strong.no-help {
   font-size: 12px;
 }
-#balance-sheet h2, #balance-sheet h3 {
+
+#balance-sheet h2,
+#balance-sheet h3 {
   font-size: 14px;
 }
+
 #balance-sheet .grid-row {
-  margin:0 0 20px;
+  margin: 0 0 20px;
   display: block;
-  clear:both;
+  clear: both;
+}
+/////// ch-accounts
+// Additional styles for CH accounts
+@import 'colours';
+@import 'typography';
+$error-button-hover: #8e0513;
+
+.two-column-accounts {
+  form-control {
+    text-align: right;
+  }
+
+  #accounts-header {
+    text-align: center;
+    margin-bottom: 1em;
+    @include media(mobile) {
+      display: none;
+      /*Hide from mobiles*/
+    }
+
+    .heading-medium {
+      margin: 0;
+    }
+  }
+
+  .error {
+    border: none; ///errors on Balance sheet
+    padding-left: 0;
+
+    input {
+      border: 4px solid $error-colour;
+    }
+  }
+
+  .read-only {
+    border-color: $border-colour;
+  }
+
+  .mobile-only-label {
+    position: absolute;
+    /*Hidden on desktop, but can be read by screenreaders*/
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    @include media(mobile) {
+      /*Visible on mobiles*/
+      position: relative;
+      overflow: visible;
+    }
+  }
+
+  .accounts-total {
+    .form-control {
+      border-left: 0;
+      border-right: 0;
+      font-weight: 700;
+    }
+
+    details {
+      font-weight: 700;
+    }
+
+    .no-help {
+      margin-left: 1em;
+      @include media(mobile) {
+        /*Visible on mobiles*/
+        margin-left: 0;
+        display: block;
+        @include core-24;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  .accounts-row-spacer {
+    margin-top: 2em;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .heading-small {
+    margin: 0;
+  }
+
+  input[type="number"] {
+    text-align: right;
+  }
+  //Check your answers
+  #expand {}
+  // Expand all link/button
+  table.check-your-answers {
+    thead th {
+      padding: 2em 0 1em;
+
+      h2.heading-medium,
+      h2.heading-small {
+        margin: 0;
+      }
+    }
+
+    th.check-your-answers-section {
+      width: 75%;
+    }
+
+    td.note-completed {
+      width: 5%;
+      padding-top: 0.2em;
+      padding-bottom: 0;
+    }
+
+    tr.total td {
+      font-weight: 700;
+    }
+
+    td.numeric {
+      font-family: inherit;
+      font-size: inherit;
+      padding-right: 0;
+    }
+
+    td.notes,
+    th.notes {
+      width: 15%;
+    }
+
+    th.current-year-note-value,
+    th.previous-year-note-value {
+      //  text-align: right;
+    }
+
+    td.complete,
+    th.complete {
+      width: 4%;
+    }
+
+    tr.to-be-completed td,
+    tr.to-be-completed th {
+      color: $secondary-text-colour;
+    }
+
+    .accounts-success {
+      color: $button-colour;
+      display: block;
+      margin: 0 auto;
+      font-size: 1em;
+    }
+
+    .accounts-update {
+      color: $focus-colour;
+      display: block;
+      margin: 0 auto;
+      font-size: 1.8em;
+    }
+
+    .review-reveal {
+      padding: 0.5em 0 0.2em 1em;
+
+      .column-one-half p {
+        text-align: left;
+      }
+
+      .column-one-quarter p {
+        text-align: right;
+      }
+
+      .column-sixth p {
+        text-align: right;
+      }
+
+      .column-fifth p {
+        text-align: right;
+      }
+    }
+  }
+}
+@include media(mobile) {
+  .review-reveal {
+    .column-one-half {
+      width: 45%;
+      display: inline-block;
+    }
+
+    .column-one-third {
+      width: 31%;
+      display: inline-block;
+    }
+
+    .column-one-quarter {
+      width: 22%;
+      display: inline-block;
+    }
+  }
+}
+
+table.check-your-answers-notes {
+  td.change-answer {
+    font-weight: normal;
+    width: 35%;
+    @include media(mobile) {
+      a {
+        margin-bottom: 0.5em;
+        float: right;
+      }
+    }
+  }
+
+  td.name {
+    width: 20%;
+  }
+}
+
+#delete-summary {
+  p {
+    color: $error-colour;
+  }
+
+  .button {
+    background-color: $error-colour;
+    margin-bottom: 1em;
+
+    &:hover {
+      background-color: $error-button-hover;
+    }
+  }
+
+  .no-delete {
+    color: $link-colour;
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+
+    &:hover {
+      background-color: transparent;
+      box-shadow: none;
+      color: $link-hover-colour;
+    }
+  }
+}
+@include media(mobile) {
+  #delete-summary {
+    .button {
+      margin-top: 0.5em;
+      margin-left: 0 !important;
+    }
+  }
+}
+//Your filings//
+
+.your-filings {
+  table#rf_table {
+    margin-top: 1em;
+
+    ,
+    tr td {
+      @include core-16;
+
+      strong.status {
+        font-weight: 700;
+        font-size: 1.2em;
+      }
+
+      a {
+        display: inline-block;
+        font-size: 1.1em;
+      }
+    }
+
+    ,
+    tr th {
+      font-weight: normal;
+    }
+
+    tr {
+      th.description {
+        width: 69%;
+      }
+
+      th.status {
+        width: 18%;
+      }
+
+      th.actions {
+        width: 15%;
+      }
+
+      td.rejected-type {
+        padding-right: 4em;
+        //Ensures rejected status (which has icon) has text in line with other statuses
+      }
+
+      .notice {
+        margin-left: -3em;
+        //Ensures rejected status (which has icon) has text in line with other statuses
+      }
+
+      .rejected {
+        color: $error-colour;
+        margin-left: -3.1em;
+
+        .icon-important {
+          background-image: url("/public/images/icon-important-red.png");
+        }
+      }
+    }
+  }
+
+  .one-filing {
+    margin-bottom: 2em;
+    background-color: $highlight-colour;
+    padding: 1em;
+    clear: both;
+
+    .heading-medium {
+      margin-top: 0;
+
+      span {
+        @include core-19;
+        display: block;
+      }
+    }
+
+    &.rejected {
+      .notice {
+        color: $error-colour;
+
+        .icon-important {
+          background-image: url("/public/images/icon-important-red.png");
+        }
+      }
+    }
+  }
+
+  .grid-row {
+    strong {
+      display: block;
+
+      a:first-of-type {
+        padding-right: 1em;
+      }
+    }
+
+    .bold-medium {
+      font-weight: normal;
+      margin-bottom: 1em;
+      @include core-19;
+
+      span {
+        display: block;
+        @include core-24;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .no-table {
+    .column-description {
+      width: 33%;
+    }
+
+    .column-reference {
+      width: 33%;
+    }
+
+    .column-status {
+      width: 17%;
+    }
+
+    .column-actions {
+      width: 17%;
+
+      strong {
+        font-weight: normal;
+        font-size: 0.9em;
+
+        a:first-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  a.admin-link {
+    font-size: 16px !important;
+    color: $white;
+    background-color: $link-colour;
+    text-decoration: none;
+    padding: 2px 8px;
+    display: inline-block;
+    margin: 0.5em 0.5em 0 0;
+
+    &:focus,
+    &:hover {
+      background-color: $link-hover-colour;
+    }
+  }
+}
+//END Your filings
+
+a.button::before {
+  width: auto; // This stops the focus highlighting (yellow) off links with a class of "button" from going off the left-edge of the screen
+}
+
+.form-group .inline-multiple label {
+  margin-bottom: 0.5em;
+}
+
+p.company-details {
+  font-size: 0.9em;
+}
+
+.group-textarea {
+  details {
+    margin: -.5em 0 0.5em;
+
+    summary {
+      font-weight: normal;
+    }
+  }
+}
+
+h1 .circle,
+h2 .circle,
+h3 .circle {
+  font-size: 21px;
+  margin-right: 5px;
+  position: relative;
+  top: -.5em;
+}
+
+header {
+  span {
+    @include core-24;
+    color: $secondary-text-colour;
+    display: block;
+  }
+}
+
+.subheading {
+  @include core-19;
+  color: $secondary-text-colour;
+  display: block;
+}
+
+.circle-subheading {
+  @include core-36;
+  color: $secondary-text-colour;
+  display: block;
+  //margin-left: 1.5em;
+}
+@include media(mobile) {
+  /*Adjust layout of heading styles on mobiles*/
+  .text .heading-xlarge {
+    //  line-height:0.9em;
+    .circle-subheading {
+      margin: 0.5em 0 0;
+    }
+  }
+}
+
+.warning-with-triangle {
+  top: 25px;
+  position: relative;
+  background-color: lighten($focus-colour, 30%);
+  border: 3px solid $focus-colour;
+  width: auto;
+  height: auto;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.warning-with-triangle:after,
+.warning-with-triangle:before {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.warning-with-triangle:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: lighten($focus-colour, 30%);
+  border-width: 19px;
+  left: 80%;
+  margin-left: -19px;
+}
+
+.warning-with-triangle:before {
+  border-color: rgba(113, 158, 206, 0);
+  border-bottom-color: $focus-colour;
+  border-width: 23px;
+  left: 80%;
+  margin-left: -23px;
+}
+
+.warning-note {
+  background-color: lighten($focus-colour, 30%);
+  border: 3px solid $focus-colour;
+  padding: 0 0.3em;
+  margin-left: 0.5em;
+
+  &.warning-note-large {
+    padding: 0.5em;
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+}
+
+h1 span.circle {
+  position: relative;
+  top: -.5em;
+}
+
+.example-icon-list span.circle {
+  position: relative;
+  top: -.2em;
+}
+
+.icon-important {
+  background-image: url("/public/images/icon-important.png"); // Having to add this here, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
+}
+
+.icon-file-download {
+  background-image: url("/public/images/icon-file-download.png"); // Having to add this here, for some reason prototype kit styling for this element not working. Hopefully not needed on production site.
+}
+
+#accounts-start-page {
+  .form-hint {
+    margin: 0 0 1em 2em;
+  }
+
+  li span {
+    margin-right: 0.9em;
+    margin-bottom: 1em;
+  }
+}
+//Indent -
+
+.left-indent {
+  margin-left: 2.8em;
+
+  textarea.form-control {
+    width: 100%;
+  }
+}
+@include media(mobile) {
+  .left-indent {
+    margin-left: 0 !important;
+  }
+}
+//Autosave alert
+
+#autosave-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: $secondary-text-colour;
+  color: $page-colour;
+  width: 100%;
+  padding: 0.5em 0 0.8em;
+  height: 1em;
+
+  div {
+    text-align: center;
+  }
+}
+//Panel styles within other elements
+
+h1 .panel {
+  font-size: 0.5em;
+  margin: 1em 0;
+}
+
+th .panel {
+  font-size: 0.6em;
+  margin: 1em 0;
+}
+
+.panel *:last-child,
+.panel *:only-child {
+  //Needed for Loans to Directors note (adds missing bottom margin on form-group elements within a panel)
+  //  margin-bottom: 15px;
+}
+
+.panel .grid-row {
+  //Needed for Loans to Directors note (adds missing bottom margin on form-group elements within a panel)
+  margin-bottom: 15px;
+}
+@media (max-width: 640px) {
+  h1 .panel {
+    font-size: 0.5em;
+  }
+
+  th .panel {
+    font-size: 0.7em;
+  }
+}
+//Save modal
+
+#save-modal {
+  border: 2px solid $border-colour;
+  background-color: $panel-colour;
+  padding: 1em;
+  display: block;
+  margin: 0 auto 2em;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .button {
+    margin: 0 1em 0 0;
+  }
+}
+@media (max-width: 640px) {
+  #save-modal {
+    .button:first-of-type {
+      margin-bottom: 1em;
+    }
+  }
+}
+//Notification counter
+
+.notification-counter {
+  top: -6px;
+  right: -1px;
+  position: relative;
+  background-color: $yellow;
+  color: $black;
+  padding: 2px 7px 0;
+  border-radius: 15px;
+}
+
+#filing-alert {
+  background: $yellow;
+  color: $black;
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 0.2em;
+  right: 14em;
+  width: auto;
+  padding: 0.2em 0.4em;
+  text-align: center;
+}
+
+#filing-alert:before {
+  border-top: 15px solid $yellow;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  content: "";
+  height: 0;
+  left: 48%;
+  position: absolute;
+  bottom: -15px;
+  width: 0;
+}
+//Correct spacing on date selection radio buttons on change ARD screen
+
+#acc-ref-date-form-group {
+  label {
+    margin-bottom: 0.5em;
+  }
+}
+//Embedded PDF
+
+.embedded-PDF {
+  height: 160vh;
+  border-bottom: 1em solid #3C3C3C;
+  margin: 1em 0;
+}
+// Margins
+
+.margin-top-0 {
+  margin-top: 0;
+}
+//Payment screen (CICS only) - To do: mobile styles
+
+.payment-summary-small {
+  background-color: $highlight-colour;
+  border: 10px solid $border-colour;
+  padding: 1em 1em 0;
+  margin-top: 2em;
+}
+
+.card-images {
+  position: relative;
+
+  img {
+    height: 35px;
+  }
+
+  .original-accepted {
+    margin-bottom: 0;
+    margin-top: 10px;
+    max-width: 340px;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+img.card-image {
+  margin-left: 8px;
+  margin-top: -5px;
+  max-height: 38px;
+  padding-top: 2px;
+  vertical-align: middle;
+}
+// Small-Full accounts styling
+//Column sixth (for detailed Tangible asset notes)
+
+.column-one-sixth,
+.column-sixth {
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.column-one-sixth,
+.column-sixth {
+  float: left;
+  width: 12%;
+  @include media(mobile) {
+    width: 100%;
+  }
+}
+//Column fifth (for detailed Tangible asset notes)
+
+.column-fifth,
+.column-one-fifth {
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.column-fifth,
+.column-one-fifth {
+  float: left;
+  width: 18%;
+  @include media(mobile) {
+    width: 100%;
+  }
+}
+
+.important-message {
+  background-color: $govuk-blue;
+  color: $page-colour;
+  padding: 0.9em 0.9em 0.1em;
+
+  a {
+    color: $page-colour;
+  }
+
+  a:focus,
+  a:hover {
+    color: $link-hover-colour;
+  }
+}
+//CICs//
+
+.cics-task-list {
+  li.task-list-item:first-of-type {
+    border-top: none;
+  }
+
+  span.task-list-section-number {
+    width: 35px;
+  }
+
+  strong.task-completed {
+    float: right;
+  }
 }
