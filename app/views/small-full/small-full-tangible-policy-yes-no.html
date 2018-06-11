@@ -1,89 +1,75 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-Balance sheet notes - Tangible fixed assets depreciation policy
-{% endblock %}
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Balance sheet notes - Tangible fixed assets depreciation policy {% endblock %} {% block content %}
 
 <style type="text/css">
-.left-indent {margin-left:3em}
+  .left-indent {
+    margin-left: 3em
+  }
 </style>
 
 <main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
-
-
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
 
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-{% include 'includes/error.html' %}
 
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
-      Balance sheet notes
-      <span class="circle-subheading">Tangible fixed assets depreciation policy</span>
-    </h1>
-  </div>
 
-    <div class="left-indent">
-      <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</h2>
-        <details class="form-group">
-          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Tangible fixed assets depreciation policy</span>
-          <div class="panel panel-border-narrow form-hint">
-            <p>If you have tangible (physical) fixed assets, this policy describes how the depreciation (reduction in value) of each asset is calculated over its expected useful lifetime.</p>
-            <p>For example, 'Annual depreciation of computer equipment is calculated at 25% of cost to write off the cost of the asset, less its residual value, over its estimated useful economic lifetime'.</p>
-        </div>
-        </details>
+
+    <h1 class="heading-xlarge">
+<span class="circle-subheading text">Balance sheet notes</span>
+Do your prepared accounts include a 'tangible fixed assets depreciation' policy?
+</h1>
+
+    <p>If you have tangible (physical) fixed assets, this policy describes how the depreciation (reduction in value) of each asset is calculated over its expected useful lifetime.</p>
+    <p>For example, 'Annual depreciation of computer equipment is calculated at 25% of cost to write off the cost of the asset, less its residual value, over its estimated useful economic lifetime'.</p>
+
 
     <form action="/small-full/small-full-intangible-policy-yes-no" method="get" class="form">
-          <fieldset class="inline" data-required="" data-error="Please confirm if you want to include a 'tangible fixed assets depreciation' policy">
-                  <legend class="visually-hidden">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</legend>
-                  <div class="form-group">
+      <fieldset class="inline" data-required="" data-error="Please confirm if you want to include a 'tangible fixed assets depreciation' policy">
+        <legend class="visually-hidden">Do your prepared accounts include a 'tangible fixed assets depreciation' policy?</legend>
+        <div class="form-group">
 
-                  <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="tangiblenoteyes-reveal">
+          <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="tangiblenoteyes-reveal">
                     <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="tangiblenoteyes-reveal" type="radio">
                     Yes
                   </label>
-                  <label class="block-label selection-button-radio" for="employeesnoteno">
+          <label class="block-label selection-button-radio" for="employeesnoteno">
                     <input id="employeesnoteno" name="employeesnoteyn" value="No" type="radio">
                     No
                     </label>
-                  </div><!--form-group-->
+        </div>
+        <!--form-group-->
 
-                </fieldset>
-
-
-
-                <div class="panel panel-border-narrow js-hidden" id="tangiblenoteyes-reveal">
-                  <fieldset>
-                    <legend class="visuallyhidden">Tangible fixed assets depreciation policy</legend>
-                    <label for="other-1" class="heading-medium">Enter your 'tangible fixed assets depreciation' policy</label>
-                    <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-                  </fieldset>
-                </div>
+      </fieldset>
 
 
 
-
-          <div class="accounts-row-spacer">
-            <input type="submit" class="button" value="Save and continue" id="">
-          </div>
-        </form>
+      <div class="panel panel-border-narrow js-hidden" id="tangiblenoteyes-reveal">
+        <fieldset>
+          <legend class="visuallyhidden">Tangible fixed assets depreciation policy</legend>
+          <label for="other-1" class="heading-medium">Enter your 'tangible fixed assets depreciation' policy</label>
+          <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+        </fieldset>
       </div>
-      </div><!--left-indent-->
+
+
+
+
+      <input type="submit" class="button" value="Save and continue" id="">
+    </form>
+  </div>
 
 </main>
 {% endblock %}
