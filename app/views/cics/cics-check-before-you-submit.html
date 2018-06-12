@@ -1,150 +1,154 @@
-{%- extends "layout-chs.html" %}
-
-{% block page_title %}
-  Check before you submit
-{% endblock %}
-
-{% block content %}
+{%- extends "layout-chs.html" %} {% block page_title %} Check before you submit {% endblock %} {% block content %}
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Javascript that opens/closes details tags - NOT PRODUCTION READY -->
 <script>
-  $(document).ready(function(){  //Only show the button if javascript is on
-          $("a#expand").removeClass("hidden");
+  $(document).ready(function() { //Only show the button if javascript is on
+    $("a#expand").removeClass("hidden");
   });
 </script>
 <script type="text/javascript">
-var elems = document.getElementsByTagName("details");
-function openAll() {
+  var elems = document.getElementsByTagName("details");
+
+  function openAll() {
     var x = document.getElementsByTagName("details");
     var i;
     for (i = 0; i < x.length; i++) {
-         x[i].setAttribute("open", "true");
+      x[i].setAttribute("open", "true");
     }
-    document.getElementById("expand").setAttribute( "onClick", "javascript: closeAll();" );
+    document.getElementById("expand").setAttribute("onClick", "javascript: closeAll();");
     document.getElementById("expand").innerHTML = "Hide all";
-}
-function closeAll() {
+  }
+
+  function closeAll() {
     var x = document.getElementsByTagName("details");
     var i;
     for (i = 0; i < x.length; i++) {
-         x[i].removeAttribute("open", "true");
+      x[i].removeAttribute("open", "true");
     }
-    document.getElementById("expand").setAttribute( "onClick", "javascript: openAll();" );
+    document.getElementById("expand").setAttribute("onClick", "javascript: openAll();");
     document.getElementById("expand").innerHTML = "Show all";
-}
+  }
 </script>
 <script type="text/javascript">
-$(document).ready(function(){  //Only show the button if javascript is on
-  $('.turnover').on('click', function(){
+  $(document).ready(function() { //Only show the button if javascript is on
+    $('.turnover').on('click', function() {
       $(this).parent().parent().remove();
+    });
   });
-});
 </script>
 <!-- END Javascript that opens/closes details tags - NOT PRODUCTION READY -->
 
 
 <main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
 
 
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-<h1 class="heading-xlarge">
-  <!--<span class="circle circle-step-large">5</span>--> Check before you submit
-</h1>
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  <h1 class="heading-large">
+  <span class="circle-subheading">CIC report</span>
+    Check before you submit
+  </h1>
+
   <form action="/cics/cics-approval" method="get" class="form">
 
-  <div class="">
+    <div class="">
 
-  <!--<a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a>-->
+      <!--<a href="javascript:void(0)" class="heading-small hidden" onclick="openAll()" id="expand">Show all</a>-->
 
-  <table class="check-your-answers">
-  <caption class="visuallyhidden">Check before you submit</caption>
-
-
-      <thead>
-        <tr>
-          <th class="check-your-answers-section visuallyhidden">CIC report</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">The company’s activities and impact</span></summary>
-            <div class="review-reveal">
-              <p>The company runs The Village Shop, a general store in The Village with a particular emphasis on selling locally produced food. The shop opened for business in August 2005. During the financial year 2017-2018, the shop’s activities have benefited the community in the following ways:</p>
-              <p>- local residents (particularly those without access to cars and those with impaired mobility) have been able to buy their groceries more conveniently, either by visiting the shop or by using its telephone order home delivery service;</p>
-              <p>- the number of “food miles” generated by producers and consumers of food in The Village has been reduced by about 15 per cent;</p>
-              <p>- the shop has provided full-time or part-time employment for 5 local residents;</p>
-              <p>- 8 small-scale local producers of various food and drink products, who were either dissatisfied with or unable to supply larger wholesalers or retailers have been able to sell their products through the shop; and</p>
-              <p>- 40 households have been supplied with regular or occasional domestic services through the shop’s job-matching service.</p>
-              <p><a href="/cics/general-description-completed" class="button">Change<span class="visuallyhidden"> General description of the company's activities and impac</span></a></p>
-            </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Consultation with stakeholders</span></summary>
-            <div class="review-reveal">
-              <p>The CICs stakeholders are its members, who are regularly updated via monthly meetings and a quarterly newsletter. No specific action has been taken this year.</p>
-<p><a href="/cics/consultation-with-stakeholders-completed" class="button">Change<span class="visuallyhidden"> Consultation with stakeholder</span></a></p>
-            </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Directors' remuneration</span></summary>
-            <div class="review-reveal">
-              <p>No remuneration was received.</p>
-              <p><a href="/cics/directors-remuneration-completed" class="button">Change<span class="visuallyhidden"> Directors' remuneration</span></a></p>
-            </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Transfers of assets other than for full consideration</span></summary>
-            <div class="review-reveal">
-              <p>There was a transfer to The Acme Charity of £100 to purchase a laptop.</p>
-              <p><a href="/cics/transfer-of-assets-completed" class="button">Change<span class="visuallyhidden"> Transfers of assets other than for full consideration</span></a></p>
-            </div><!--review-reveal-->
-          </details>
-        </td>
-      </tr>
+      <table class="check-your-answers">
+        <caption class="visuallyhidden">Check before you submit</caption>
 
 
-    </tbody>
-  </table>
+        <thead>
+          <tr>
+            <th class="check-your-answers-section visuallyhidden">CIC report</th>
+          </tr>
+        </thead>
+        <tbody>
 
-<!--<p class="accounts-row-spacer">
+          <tr>
+            <td>
+              <details>
+                <summary><span class="summary">The company’s activities and impact</span></summary>
+                <div class="review-reveal">
+                  <p>The company runs The Village Shop, a general store in The Village with a particular emphasis on selling locally produced food. The shop opened for business in August 2005. During the financial year 2017-2018, the shop’s activities have
+                    benefited the community in the following ways:</p>
+                  <p>- local residents (particularly those without access to cars and those with impaired mobility) have been able to buy their groceries more conveniently, either by visiting the shop or by using its telephone order home delivery service;</p>
+                  <p>- the number of “food miles” generated by producers and consumers of food in The Village has been reduced by about 15 per cent;</p>
+                  <p>- the shop has provided full-time or part-time employment for 5 local residents;</p>
+                  <p>- 8 small-scale local producers of various food and drink products, who were either dissatisfied with or unable to supply larger wholesalers or retailers have been able to sell their products through the shop; and</p>
+                  <p>- 40 households have been supplied with regular or occasional domestic services through the shop’s job-matching service.</p>
+                  <p><a href="/cics/general-description-completed" class="button">Change<span class="visuallyhidden"> General description of the company's activities and impac</span></a></p>
+                </div>
+                <!--review-reveal-->
+              </details>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <details>
+                <summary><span class="summary">Consultation with stakeholders</span></summary>
+                <div class="review-reveal">
+                  <p>The CICs stakeholders are its members, who are regularly updated via monthly meetings and a quarterly newsletter. No specific action has been taken this year.</p>
+                  <p><a href="/cics/consultation-with-stakeholders-completed" class="button">Change<span class="visuallyhidden"> Consultation with stakeholder</span></a></p>
+                </div>
+                <!--review-reveal-->
+              </details>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <details>
+                <summary><span class="summary">Directors' remuneration</span></summary>
+                <div class="review-reveal">
+                  <p>No remuneration was received.</p>
+                  <p><a href="/cics/directors-remuneration-completed" class="button">Change<span class="visuallyhidden"> Directors' remuneration</span></a></p>
+                </div>
+                <!--review-reveal-->
+              </details>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <details>
+                <summary><span class="summary">Transfers of assets other than for full consideration</span></summary>
+                <div class="review-reveal">
+                  <p>There was a transfer to The Acme Charity of £100 to purchase a laptop.</p>
+                  <p><a href="/cics/transfer-of-assets-completed" class="button">Change<span class="visuallyhidden"> Transfers of assets other than for full consideration</span></a></p>
+                </div>
+                <!--review-reveal-->
+              </details>
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+      <!--<p class="accounts-row-spacer">
   <a href="/accounts/accounts-abridged-fixed-assets-yes-no">Add additional balance sheet notes?</a>
 </p>-->
 
-    <div class="accounts-row-spacer">
-      <input type="submit" class="button" value="Continue" id="">
-    </div>
-</form>
-</div><!--left-indent-->
+      <div class="accounts-row-spacer">
+        <input type="submit" class="button" value="Continue" id="">
+      </div>
+  </form>
+  </div>
+  <!--left-indent-->
 
 </main>
 

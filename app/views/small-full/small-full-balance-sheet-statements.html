@@ -1,63 +1,51 @@
-{% extends "layout-chs.html" %}
-
-{% block page_title %}
-  Balance Sheet Statements
-{% endblock %}
-
-{% block proposition_header %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
-{% block header_class %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
-{% block content %}
+{% extends "layout-chs.html" %} {% block page_title %} Balance Sheet Statements {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
 
 <main id="content" role="main">
 
-{% include "includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
-
-
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
 
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
-  {% include 'includes/error.html' %}
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
 
 
   <form action="/small-full/small-full-accounting-policies" method="get" class="form">
 
-      <h1 class="heading-xlarge"><!--<span class="circle circle-step-large">2</span>--> Balance sheet statements</h1>
+    <h1 class="heading-large"><!--<span class="circle circle-step-large">2</span>--> Balance sheet statements</h1>
 
-<div class="text">
+    <div class="text">
 
 
       <div class="notice">
-      <p>
-        <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
-        <strong class="bold-small">You’re legally required to include statements describing your accounts with your balance sheet.</strong>
-      </p>
+        <p>
+          <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
+          <strong class="bold-small">You’re legally required to include statements describing your accounts with your balance sheet.</strong>
+        </p>
       </div>
 
 
-        <ul class="list list-bullet">
-          <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
-          <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
-          <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
-          <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
-          <li>The directors have chosen not to file a copy of the company’s profit and loss account.</li>
-  </ul>
+      <ul class="list list-bullet">
+        <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+        <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+        <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+        <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+        <li>The directors have chosen not to file a copy of the company’s profit and loss account.</li>
+      </ul>
 
 
 
@@ -67,31 +55,32 @@
 
       <fieldset data-required="" data-error="You must agree to the legal statements">
 
-              <legend class="visuallyhidden">Confirmation</legend>
-              <div class="form-group">
-                <label class="block-label selection-button-checkbox" for="confirmation">
+        <legend class="visuallyhidden">Confirmation</legend>
+        <div class="form-group">
+          <label class="block-label selection-button-checkbox" for="confirmation">
                   <input id="confirmation" value="agree" name="confirmation" type="checkbox">
                   I agree to the legal statements - include them with my balance sheet.
                 </label>
-              </div>
+        </div>
 
-            </fieldset>
-
-
-
-
-
-        <input type="submit" class="button" value="Save and continue" id="statements-button">
-
-    </form>
+      </fieldset>
 
 
 
 
 
+      <input type="submit" class="button" value="Save and continue" id="statements-button">
+
+  </form>
 
 
-  </div><!-- text-->
+
+
+
+
+
+  </div>
+  <!-- text-->
 
 </main>
 

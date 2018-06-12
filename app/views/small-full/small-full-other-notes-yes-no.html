@@ -17,23 +17,19 @@
 
   <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
 
+  <div class="text">
 
-  <h1 class="heading-xlarge">
+
+    <h1 class="heading-large">
 <span class="circle-subheading text">Balance sheet notes</span>
-Any other notes
+Do your prepared accounts include any other notes?
 </h1>
 
-  <div class="">
-    <h2 class="heading-medium">
-  Do your prepared accounts include any other notes?
-</h2>
 
-    <details class="form-group">
-      <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Any other notes?</span>
-      <div class="panel panel-border-narrow form-hint">
-        <p>For example, 'employees', 'fixed asset investments' or 'debtors'</p>
-      </div>
-    </details>
+
+
+    <p>For example, 'employees', 'fixed asset investments' or 'debtors'</p>
+
 
 
     <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
@@ -56,10 +52,11 @@ Any other notes
         <input type="submit" class="button" value="Save and continue" id="">
       </div>
 
+
+
+
+    </form>
   </div>
-  <!--left-indent-->
-
-
-  </form>
+  <!-- text-->
 </main>
 {% endblock %}

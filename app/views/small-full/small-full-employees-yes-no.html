@@ -24,106 +24,104 @@
 
   <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
 
+  <div class="text">
 
-  <h1 class="heading-xlarge">
+
+    <h1 class="heading-large">
 <span class="circle-subheading text">Balance sheet notes</span>
-Employees
+Do your prepared accounts include an 'employees' note?
 </h1>
 
-  <div class="">
-    <div class="text">
-      <h2 class="heading-medium">Do your prepared accounts include an 'employees' note?</h2>
-    </div>
+  </div>
+  <!--text-->
 
-    <form action="/small-full/small-full-fixed-assets-yes-no" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include an 'employees' note">
-        <legend class="visually-hidden">Do your prepared accounts include an 'employees' note?</legend>
-        <div class="form-group">
 
-          <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
+  <form action="/small-full/small-full-fixed-assets-yes-no" method="get" class="form">
+    <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include an 'employees' note">
+      <legend class="visually-hidden">Do your prepared accounts include an 'employees' note?</legend>
+      <div class="form-group">
+
+        <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="employeesnoteyes-reveal">
                     <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="employeesnoteyes-reveal" type="radio">
                     Yes
                   </label>
-          <label class="block-label selection-button-radio" for="employeesnoteno">
+        <label class="block-label selection-button-radio" for="employeesnoteno">
                     <input id="employeesnoteno" name="employeesnoteyn" value="No" type="radio">
                     No
                     </label>
+      </div>
+      <!--form-group-->
+
+    </fieldset>
+
+
+
+    <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
+      <!--<p class="form-hint text">Provides a more detailed breakdown of the employees figure you entered on your balance sheet.</p>-->
+
+
+      <div class="grid-row" id="accounts-header">
+        <div class="column-half">
+          &nbsp;
         </div>
-        <!--form-group-->
+        <div class="column-quarter">
+          <h2 class="heading-small">2018</h2>
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">2017</h2>
+        </div>
+      </div>
 
-      </fieldset>
 
 
 
-      <div class="panel panel-border-narrow js-hidden" id="employeesnoteyes-reveal">
-        <!--<p class="form-hint text">Provides a more detailed breakdown of the employees figure you entered on your balance sheet.</p>-->
 
-
-        <div class="grid-row" id="accounts-header">
-          <div class="column-half">
-            &nbsp;
-          </div>
-          <div class="column-quarter">
-            <h2 class="heading-small">2018</h2>
-          </div>
-          <div class="column-quarter">
-            <h2 class="heading-small">2017</h2>
-          </div>
+      <!--Start average number of employees -->
+      <div class="grid-row accounts-row-spacer">
+        <div class="column-half">
+          <details>
+            <summary><span class="summary">Average number of employees</span></summary>
+            <p>Enter the average number of people employed by the company in the period you're filing for.</p>
+          </details>
         </div>
 
-
-
-
-
-        <!--Start average number of employees -->
-        <div class="grid-row accounts-row-spacer">
-          <div class="column-half">
-            <details>
-              <summary><span class="summary">Average number of employees</span></summary>
-              <p>Enter the average number of people employed by the company in the period you're filing for.</p>
-            </details>
-          </div>
-
-          <div class="column-quarter">
-            <div class="form-group">
-              <label for="average-number-of-employees-current"><span class="visuallyhidden">Average number of employees  (current year)</span>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="average-number-of-employees-current"><span class="visuallyhidden">Average number of employees  (current year)</span>
                       <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="average-number-of-employees-current">
                     </label>
-            </div>
           </div>
-          <div class="column-quarter">
-            <div class="form-group">
-              <label for="average-number-of-employees-previous"><span class="visuallyhidden">Average number of employees  (previous year)</span>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="average-number-of-employees-previous"><span class="visuallyhidden">Average number of employees  (previous year)</span>
                       <input type="number"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="average-number-of-employees-previous">
                     </label>
-            </div>
           </div>
-
         </div>
-        <!--End average number of employees -->
-
-
-
-        <details class="accounts-row-spacer text">
-          <summary><span class="summary">Add additional information about your 'employees' note? </span></summary>
-          <label class="visuallyhidden" for="textarea">Add additional information about your 'employees' note?</label>
-          <span class="form-hint">Enter details of any other employees information not already covered</span>
-          <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
-        </details>
-
-
 
       </div>
+      <!--End average number of employees -->
 
 
 
-      <div class="accounts-row-spacer">
-        <input type="submit" class="button" value="Save and continue" id="">
-      </div>
-    </form>
+      <details class="accounts-row-spacer text">
+        <summary><span class="summary">Add additional information about your 'employees' note? </span></summary>
+        <label class="visuallyhidden" for="textarea">Add additional information about your 'employees' note?</label>
+        <span class="form-hint">Enter details of any other employees information not already covered</span>
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </details>
 
-  </div>
-  <!--left-indent-->
+
+
+    </div>
+
+
+
+    <input type="submit" class="button" value="Save and continue" id="">
+  </form>
+
+
 
 </main>
 {% endblock %}

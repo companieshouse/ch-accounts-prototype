@@ -25,164 +25,158 @@
   <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
 
 
-  <h1 class="heading-xlarge">
+  <div class="text">
+    <h1 class="heading-large">
 <span class="circle-subheading text">Balance sheet notes</span>
-Related party transactions
+Do your prepared accounts include any 'related party transactions' notes?
 </h1>
 
 
-  <form action="/small-full/small-full-post-events-yes-no" method="get" class="form">
+    <form action="/small-full/small-full-post-events-yes-no" method="get" class="form">
 
-    <div class="">
-      <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include any 'related party transactions' notes?</h2>
-        <details class="form-group">
-          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-          <div class="panel panel-border-narrow form-hint">
-            <p>Use this note to record transactions between related parties, for example, selling a company asset for more or less than market value or paying them rent or consultancy fees.</p>
-            <p>Parties are 'related' when one has control or significant influence over the other, for example directors and investors (or close family members of either). </p>
-          </div>
-        </details>
-      </div>
-      <!--text-->
 
-      <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'related party transactions' note">
-        <legend class="visually-hidden">Do your prepared accounts include a 'related party transactions' note?</legend>
-        <div class="form-group">
+      <p>Use this note to record transactions between related parties, for example, selling a company asset for more or less than market value or paying them rent or consultancy fees.</p>
+      <p>Parties are 'related' when one has control or significant influence over the other, for example directors and investors (or close family members of either). </p>
 
-          <label class="block-label selection-button-radio" for="relatedtransactionsnoteyes" data-target="relatedtransactionsnoteyes-reveal">
+  </div>
+  <!--text-->
+
+  <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'related party transactions' note">
+    <legend class="visually-hidden">Do your prepared accounts include a 'related party transactions' note?</legend>
+    <div class="form-group">
+
+      <label class="block-label selection-button-radio" for="relatedtransactionsnoteyes" data-target="relatedtransactionsnoteyes-reveal">
                     <input id="relatedtransactionsnoteyes" name="relatedtransactionsnoteyn" value="Yes" aria-controls="relatedtransactionsnoteyes-reveal" type="radio">
                     Yes
                   </label>
-          <label class="block-label selection-button-radio" for="relatedtransactionsnoteno">
+      <label class="block-label selection-button-radio" for="relatedtransactionsnoteno">
                     <input id="relatedtransactionsnoteno" name="relatedtransactionsnoteyn" value="No" type="radio">
                     No
                     </label>
-        </div>
-        <!--form-group-->
+    </div>
+    <!--form-group-->
 
-      </fieldset>
+  </fieldset>
 
 
 
-      <div class="js-hidden" id="relatedtransactionsnoteyes-reveal">
-        <div class="panel panel-border-wide text">
-          <p><strong>You can report up to 20 related party transactions.</strong></p>
-        </div>
+  <div class="js-hidden" id="relatedtransactionsnoteyes-reveal">
+    <div class="panel panel-border-wide text">
+      <p><strong>You can report up to 20 related party transactions.</strong></p>
+    </div>
 
-        <h2 class="heading-large">First transaction</h2>
+    <h2 class="heading-medium">First transaction</h2>
 
-        <h3 class="heading-medium text">What sort of transaction was this?</h3>
+    <h3 class="heading-medium text">What sort of transaction was this?</h3>
 
-        <div class="form-group">
-          <fieldset>
+    <div class="form-group">
+      <fieldset>
 
-            <legend class="visuallyhidden">What sort of transaction was this?</legend>
-            <label class="block-label text selection-button-radio" for="1">
+        <legend class="visuallyhidden">What sort of transaction was this?</legend>
+        <label class="block-label text selection-button-radio" for="1">
                   <input type="radio" id="1" value="" name="sort-of-transaction">
                     Money given to the company by a related party
                   </label>
-            <label class="block-label selection-button-radio" for="2">
+        <label class="block-label selection-button-radio" for="2">
                     <input type="radio" id="2" value="" name="sort-of-transaction">
                     Money given to a related party by the company
                   </label>
 
 
-          </fieldset>
-        </div>
+      </fieldset>
+    </div>
 
 
 
-        <div class="form-group text">
-          <label class="heading-medium" for="name-of-related-party">Name of related party</label>
-          <span class="form-hint">Enter the name of the person the transaction was with.</span>
-          <input class="form-control" id="name-of-related-party" type="text">
-        </div>
+    <div class="form-group text">
+      <label class="heading-medium" for="name-of-related-party">Name of related party</label>
+      <span class="form-hint">Enter the name of the person the transaction was with.</span>
+      <input class="form-control" id="name-of-related-party" type="text">
+    </div>
 
 
-        <div class="form-group text">
-          <label class="heading-medium" for="description-of-transaction">Description of the transaction</label>
-          <span class="form-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
-          <textarea type="text" id="description-of-transaction" class="form-control" rows="5"></textarea>
-        </div>
+    <div class="form-group text">
+      <label class="heading-medium" for="description-of-transaction">Description of the transaction</label>
+      <span class="form-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
+      <textarea type="text" id="description-of-transaction" class="form-control" rows="5"></textarea>
+    </div>
 
 
 
 
 
-        <!--Start balance at start-->
+    <!--Start balance at start-->
 
-        <div class="grid-row" id="accounts-header">
-          <div class="column-half">
-            &nbsp;
+    <div class="grid-row" id="accounts-header">
+      <div class="column-half">
+        &nbsp;
+      </div>
+      <div class="column-quarter">
+        <h2 class="heading-small">£</h2>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <details>
+          <summary><span class="summary">Balance at 1 April 2017</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Enter the amount paid or owed to or by this related party at the start of the period your'e filing for.</p>
           </div>
-          <div class="column-quarter">
-            <h2 class="heading-small">£</h2>
-          </div>
-        </div>
+        </details>
+      </div>
 
-        <div class="grid-row">
-          <div class="column-half">
-            <details>
-              <summary><span class="summary">Balance at 1 April 2017</span></summary>
-              <div class="panel panel-border-narrow">
-                <p>Enter the amount paid or owed to or by this related party at the start of the period your'e filing for.</p>
-              </div>
-            </details>
-          </div>
-
-          <div class="column-quarter">
-            <div class="form-group">
-              <label for="balance-at-start"><span class="visuallyhidden">Balance at 1 April 2017</span>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="balance-at-start"><span class="visuallyhidden">Balance at 1 April 2017</span>
                           <input type="number" class="form-control" id="balance-at-start">
                         </label>
-            </div>
-          </div>
-
         </div>
-        <!--End balance at start-->
+      </div>
+
+    </div>
+    <!--End balance at start-->
 
 
-        <!--Start balance at end-->
-        <div class="grid-row">
-          <div class="column-half">
-            <details>
-              <summary><span class="summary">Balance at 31 March 2018</span></summary>
-              <div class="panel panel-border-narrow">
-                <p>Enter the amount paid or owed to or by this related party at the end of the period you're filing for.</p>
-              </div>
-            </details>
+    <!--Start balance at end-->
+    <div class="grid-row">
+      <div class="column-half">
+        <details>
+          <summary><span class="summary">Balance at 31 March 2018</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Enter the amount paid or owed to or by this related party at the end of the period you're filing for.</p>
           </div>
-          <div class="column-quarter">
-            <div class="form-group">
-              <label for="balance-at-end"><span class="visuallyhidden">Balance at 31 March 2018 (optional)</span>
+        </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="balance-at-end"><span class="visuallyhidden">Balance at 31 March 2018 (optional)</span>
                           <input type="number" class="form-control" id="balance-at-end">
                         </label>
-            </div>
-          </div>
         </div>
-        <!--End balance at end--->
-
-
-
-
-
-
-
-
-
-
       </div>
-      <!--relatedtransactionsnoteyes-reveal-->
+    </div>
+    <!--End balance at end--->
 
 
 
-      <div class="accounts-row-spacer">
-        <input type="submit" class="button" value="Save and continue" id="">
-      </div>
-  </form>
+
+
+
+
+
+
+
   </div>
-  <!--left-indent-->
+  <!--relatedtransactionsnoteyes-reveal-->
+
+
+
+
+  <input type="submit" class="button" value="Save and continue" id="">
+
+  </form>
+
 
 
 </main>
