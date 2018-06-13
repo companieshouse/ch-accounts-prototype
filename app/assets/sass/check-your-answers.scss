@@ -186,7 +186,7 @@ $desktop-breakpoint: 769px !default;
       @include media(desktop) {
         display: table-cell;
         border-bottom: 1px solid $border-colour;
-        padding: 0.5em 0;
+        padding: 0.5em;
         margin: 0;
       }
     }
