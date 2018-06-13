@@ -1,0 +1,182 @@
+{%- extends "layout-chs.html" %} {% block page_title %} Check before you submit {% endblock %} {% block content %}
+
+<style type="text/css">
+  .check-your-answers-accounts h3 {
+    margin: 1em 0 .5em !important;
+    display: block;
+    font-size: 22px;
+  }
+
+  .check-your-answers-accounts h3:first-of-type {
+    margin-top: 0 !important;
+  }
+</style>
+
+<main id="content" role="main" class="two-column-accounts">
+  {% include "includes/phase_banner_beta.html" %}
+
+
+  <nav class="content" role="navigation">
+    <ul id="navigation" class="mobile-hidden">
+      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
+      <li><a href="javascript:void(0)">Your details</a></li>
+      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
+      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
+      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
+    </ul>
+  </nav>
+
+
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+
+  <h1 class="heading-large">Check your answers</h1>
+  <br />
+
+  <form action="/cics/cics-approval" method="get" class="form">
+    <h2 class="heading-medium">Company account dates</h2>
+
+    <dl class="govuk-check-your-answers cya-questions-short">
+      <div>
+        <dt class="cya-question">Company account dates</dt>
+        <dd class="cya-answer">1 April 2017 to 31 March 2018</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden"> company account dates</span></a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="heading-medium">Balance sheet</h2>
+
+    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+      <h3 class="heading-medium">Fixed assets</h3>
+
+      <div>
+        <dt class="cya-question">Tangible assets </dt>
+        <dd class="cya-answer">£37,440</dd>
+        <dd class="cya-answer">£30,740</dd>
+        <dd class="cya-change">
+          <a href=""> Change<span class="visually-hidden"> tangible assets</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Total fixed assets</dt>
+        <dd class="cya-answer">£37,440</dd>
+        <dd class="cya-answer">£30,740</dd>
+        <dd class="cya-change">
+          <a href=""> Change<span class="visually-hidden"> tangible assets</span></a>
+        </dd>
+      </div>
+      <h3 class="heading-medium">Current assets</h3>
+      <div>
+        <dt class="cya-question">Stocks</dt>
+        <dd class="cya-answer">£35,455</dd>
+        <dd class="cya-answer">£7,000</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden"> stocks</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Debtors</dt>
+        <dd class="cya-answer">£1,500</dd>
+        <dd class="cya-answer">&nbsp;</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden"> debtors</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Total current assets</dt>
+        <dd class="cya-answer">£35,955</dd>
+        <dd class="cya-answer">£7,000</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden"> debtors</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Creditors - amounts falling due within one year</dt>
+        <dd class="cya-answer">£5,500</dd>
+        <dd class="cya-answer">£4,500</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Creditors - amounts falling due within one year</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Net current assets (liabilities)</dt>
+        <dd class="cya-answer">£30,455</dd>
+        <dd class="cya-answer">£2,500</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Net current assets (liabilities)</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Total assets less current liabilities</dt>
+        <dd class="cya-answer">£67,895</dd>
+        <dd class="cya-answer">£33,240</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Total assets less current liabilities</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Provision for liabilities</dt>
+        <dd class="cya-answer">£15,600</dd>
+        <dd class="cya-answer">£12,050</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Total assets less current liabilities</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Total net assets (liabilities)</dt>
+        <dd class="cya-answer">£52,295</dd>
+        <dd class="cya-answer">£21,190</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Total net assets (liabilities)</span></a>
+        </dd>
+      </div>
+      <h3 class="heading-medium">Capital and reserves</h3>
+      <div>
+        <dt class="cya-question">Called up share capital</dt>
+        <dd class="cya-answer">£24,400</dd>
+        <dd class="cya-answer">£18,900</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Called up share capital</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Share premium account</dt>
+        <dd class="cya-answer">£18,000</dd>
+        <dd class="cya-answer">£1,750</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Share premium account</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Profit and loss account</dt>
+        <dd class="cya-answer">£9,895</dd>
+        <dd class="cya-answer">£540</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">profit and loss account</span></a>
+        </dd>
+      </div>
+      <div>
+        <dt class="cya-question">Total shareholders' funds</dt>
+        <dd class="cya-answer">£52,295</dd>
+        <dd class="cya-answer">£21,190</dd>
+        <dd class="cya-change">
+          <a href="">Change<span class="visually-hidden">Total shareholders' funds</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <div class="accounts-row-spacer">
+      <input type="submit" class="button" value="Continue" id="">
+    </div>
+  </form>
+
+
+</main>
+
+{% endblock %}
