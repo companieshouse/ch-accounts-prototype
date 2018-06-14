@@ -778,3 +778,41 @@ img.card-image {
     float: right;
   }
 }
+// GDS style "Check your answers - for accounts"
+.check-your-answers-accounts h3 {
+  margin: 1em 0 0.5em !important;
+  display: block;
+  font-size: 22px;
+
+  &:first-of-type {
+    margin-top: 0 !important;
+  }
+}
+
+.cya-delete {
+  padding-left: 0.4em;
+  padding-right: 0.8em;
+}
+
+.govuk-check-your-answers.cya-questions-short {
+  .cya-answer div {
+    display: inline-block;
+    width: 100px;
+    margin-right: 2em;
+    text-align: right;
+  }
+
+  &.cya-accounts-long {
+    .cya-question {
+      width: 20%;
+      padding-right: 1em;
+    }
+
+    .cya-answer div {
+      display: inline-block;
+      width: 13%;
+      margin-right: 1em;
+      text-align: right;
+    }
+  }
+}
