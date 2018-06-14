@@ -779,6 +779,7 @@ img.card-image {
   }
 }
 // GDS style "Check your answers - for accounts"
+
 .check-your-answers-accounts h3 {
   margin: 1em 0 0.5em !important;
   display: block;
@@ -814,5 +815,50 @@ img.card-image {
       margin-right: 1em;
       text-align: right;
     }
+  }
+}
+/// Flash card ///
+
+.flash-card {
+  color: $white;
+  padding: 1em 3em;
+  background: $link-colour url("/public/images/file-accounts-transparent.png") no-repeat 90% 60%;
+
+  h2 {
+    display: inline;
+  }
+
+  ul {
+    width: 75%;
+    padding: 2em 0 0;
+
+    li {
+      padding-bottom: 2em;
+    }
+  }
+
+  a:link,
+  a:visited {
+    color: $white !important;
+  }
+
+  .button {
+    background-color: $white;
+    color: $link-colour;
+    font-weight: 700;
+
+    &:focus,
+    &:hover {
+      background-color: $grey-3;
+      color: $link-colour;
+    }
+  }
+
+  .circle-white {
+    background-color: $white;
+    color: $black;
+    margin-right: 0.5em;
+    position: relative;
+    top: -.3em;
   }
 }
