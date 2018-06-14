@@ -1,0 +1,47 @@
+{% extends "layout-chs.html" %} {% block page_title %} Are you starting a new filing? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_beta.html" %}
+
+
+
+
+
+  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+
+
+
+  <h1 class="heading-large">How to use this service</h1>
+
+  <div class="grid-row">
+
+    <div class="column-third">
+      <img src="/public/images/prepare-accounts.png" height="266" width="300" />
+      <span class="circle circle-step-large">1</span>
+      <p>Get your accounts prepared</p>
+    </div>
+
+    <div class="column-third">
+      <img src="/public/images/approve-accounts.png" height="266" width="300" />
+      <span class="circle circle-step-large">2</span>
+      <p>Get your accounts approved by your board of directors</p>
+    </div>
+
+    <div class="column-third">
+      <img src="/public/images/file-accounts.png" height="266" width="300" />
+      <span class="circle circle-step-large">3</span>
+      <p>Use this service to file your accounts with Companies House</p>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="button" value="Continue">
+  </div>
+
+
+
+</main>
+
+{% endblock %}
