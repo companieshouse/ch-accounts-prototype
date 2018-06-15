@@ -822,7 +822,10 @@ img.card-image {
 .flash-card {
   color: $white;
   padding: 1em 3em;
-  background: $link-colour url("/public/images/file-accounts-transparent.png") no-repeat 90% 60%;
+  background: $link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;
+  @include media(mobile) {
+    background-image: none;
+  }
 
   h2 {
     display: inline;
