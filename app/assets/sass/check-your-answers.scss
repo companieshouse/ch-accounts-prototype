@@ -246,6 +246,9 @@ $desktop-breakpoint: 769px !default;
   td {
     @include core-19;
     vertical-align: top;
+    @include media(mobile) {
+      @include core-16;
+    }
   }
 
   .change-answer {
