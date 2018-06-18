@@ -809,6 +809,10 @@ img.card-image {
     }
   }
 
+  .cya-delete {
+    padding-right: 0;
+  }
+
   &.cya-accounts-long {
     .cya-question {
       width: 20%;
@@ -824,6 +828,56 @@ img.card-image {
 
 .cya-change {
   margin-left: 20px;
+}
+@include media(mobile) {
+  .govuk-check-your-answers.cya-questions-short {
+    .cya-answer {
+      width: 80%;
+
+      &.heading-small {
+        display: none !important;
+      }
+
+      div {
+        display: block;
+        margin-right: 2em;
+        text-align: left;
+        width: auto;
+
+        .mobile-only-label {
+          margin-right: 0.5em;
+        }
+      }
+
+      .cya-answer-empty {
+        display: none;
+      }
+    }
+
+    .cya-delete {
+      display: block;
+      clear: both;
+      padding: 0;
+      text-align: right;
+      margin-top: 0.3em;
+    }
+
+    .cya-question {
+      width: 75%;
+      margin-top: 0.5em;
+    }
+
+    &.cya-accounts-long {
+      .cya-answer div {
+        width: auto;
+      }
+
+      .cya-question {
+        width: 90%;
+        margin-top: 0.5em;
+      }
+    }
+  }
 }
 /// Flash card ///
 
