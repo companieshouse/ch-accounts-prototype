@@ -94,6 +94,46 @@ $error-button-hover: #8e0513;
   input[type="number"] {
     text-align: right;
   }
+
+  .currency-included-within-inputs input[type="number"] {
+    position: relative;
+    top: -32px;
+  }
+
+  .currency-type {
+    position: relative;
+    left: 10px;
+    font-weight: bold;
+  }
+  @include media(mobile) {
+    .currency-included-within-inputs input[type="number"] {
+      display: block;
+      width: 100%;
+      clear: both;
+      margin-bottom: 10px;
+      position: static;
+    }
+
+    .currency-included-within-inputs .mobile-only-label {
+      display: inline-block;
+      width: 100%;
+      clear: both;
+      margin-bottom: 10px;
+      position: static;
+    }
+
+    .currency-included-within-inputs .currency-type {
+      display: inline;
+      width: 100%;
+      clear: both;
+      margin-bottom: 10px;
+      position: static;
+    }
+
+    .currency-included-within-inputs .column-half {
+      display: none;
+    }
+  }
   //Check your answers
   #expand {}
   // Expand all link/button
