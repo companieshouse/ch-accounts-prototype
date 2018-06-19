@@ -38,7 +38,7 @@ Do your prepared accounts include any 'loans to directors' notes?
 
 
 
-  <form action="/small-full/small-full-changes-in-presentation-yes-no" method="get" class="form">
+  <form action="/small-full/small-full-changes-in-presentation-yes-no" method="get" class="form currency-included-within-inputs">
     <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'loans to directors' note">
       <legend class="visually-hidden">Do your prepared accounts include a 'loans to directors' note?</legend>
       <div class="form-group">
@@ -102,30 +102,25 @@ Do your prepared accounts include any 'loans to directors' notes?
 
       <!--Start balance at start-->
 
-      <div class="grid-row" id="accounts-header">
-        <div class="column-half">
-          &nbsp;
-        </div>
-        <div class="column-quarter">
-          <h2 class="heading-small">£</h2>
-        </div>
-      </div>
+
 
       <div class="grid-row">
         <div class="column-half">
-          <details>
-            <summary><span class="summary">Balance at 1 April 2017</span></summary>
+          <!--details>
+            <summary><span class="summary">-->Balance at 1 April 2017
+          <!--</span></summary>
             <div class="panel panel-border-narrow">
               <p>The amount due to or from the director for this loan at the start of the accounting period.</p>
             </div>
-          </details>
+            </details>-->
         </div>
 
         <div class="column-quarter">
           <div class="form-group">
+            <span class="currency-type">£</span>
             <label for="loans-to-directors-balance-at-start"><span class="visuallyhidden">Balance at 1 April 2017</span>
-                              <input type="number" class="form-control" id="loans-to-directors-balance-at-start">
-                            </label>
+            <input type="number" class="form-control" id="loans-to-directors-balance-at-start">
+          </label>
           </div>
         </div>
 
@@ -135,18 +130,20 @@ Do your prepared accounts include any 'loans to directors' notes?
       <!--Start Advances or credits made  -->
       <div class="grid-row">
         <div class="column-half">
-          <details>
-            <summary><span class="summary">Advances or credits made</span></summary>
+          <!--  <details>
+            <summary><span class="summary">-->Advances or credits made
+          <!--</span></summary>
             <div class="panel panel-border-narrow">
               <p>The amount of the advance or credit made to the director for this particular loan.</p>
             </div>
-          </details>
+          </details>-->
         </div>
         <div class="column-quarter">
           <div class="form-group">
+            <span class="currency-type">£</span>
             <label for="loans-to-directors-advances-or-credits-made"><span class="visuallyhidden">Advances or credits made</span>
-                              <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-made">
-                            </label>
+              <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-made">
+            </label>
           </div>
         </div>
       </div>
@@ -155,15 +152,17 @@ Do your prepared accounts include any 'loans to directors' notes?
       <!--Start Advances or credits repaid-->
       <div class="grid-row">
         <div class="column-half">
-          <details>
-            <summary><span class="summary">Advances or credits repaid</span></summary>
+          <!--<details>
+            <summary><span class="summary">-->Advances or credits repaid
+          <!--</span></summary>
             <div class="panel panel-border-narrow">
               <p>The amount of the advance or credit repaid by the director for this particular loan.</p>
             </div>
-          </details>
+          </details>-->
         </div>
         <div class="column-quarter">
           <div class="form-group">
+            <span class="currency-type">£</span>
             <label for="loans-to-directors-advances-or-credits-repaid"><span class="visuallyhidden">Advances or credits repaid</span>
                               <input type="number" class="form-control" id="loans-to-directors-advances-or-credits-repaid">
                             </label>
@@ -175,15 +174,17 @@ Do your prepared accounts include any 'loans to directors' notes?
       <!--Start balance at end-->
       <div class="grid-row accounts-total">
         <div class="column-half">
-          <details>
-            <summary><span class="summary">Balance at 31 March 2018</span></summary>
+          <!--  <details>
+            <summary><span class="summary">-->Balance at 31 March 2018
+          <!--</span></summary>
             <div class="panel panel-border-narrow">
               <p>help text here</p>
             </div>
-          </details>
+          </details>-->
         </div>
         <div class="column-quarter">
           <div class="form-group">
+            <span class="currency-type">£</span>
             <label for="loans-to-directors-balance-at-end"><span class="visuallyhidden"> Balance at 31 March 2018</span>
                               <input type="number" class="form-control" id="loans-to-directors-balance-at-end" readonly>
                             </label>
