@@ -258,7 +258,15 @@ table.check-your-answers-notes {
   }
 }
 
+#content-delete-warning {
+  margin-top: 0;
+}
+
 #delete-summary {
+  padding-bottom: 0;
+  margin-top: 0.5em;
+  display: block;
+
   p {
     color: $error-colour;
   }
@@ -765,13 +773,13 @@ img.card-image {
 .column-one-sixth,
 .column-sixth {
   box-sizing: border-box;
-  padding: 0 15px;
+  padding: 0 8px;
 }
 
 .column-one-sixth,
 .column-sixth {
   float: left;
-  width: 12%;
+  width: 12.5%;
   @include media(mobile) {
     width: 100%;
   }

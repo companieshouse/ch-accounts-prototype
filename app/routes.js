@@ -825,18 +825,18 @@ router.get( '/cics/cics-criteria-report', function ( req, res ) {
 router.get( '/cics/cics-criteria-profit', function ( req, res ) {
 	var criteriareport = req.query.criteriareport;
 	if ( criteriareport == "Yes" ) {
-		res.redirect( "/cics/cics-criteria-not-met" );
+		res.redirect( "/cics/cics-criteria-no-DR-PL" );
 	} else {
 		res.render( 'cics/cics-criteria-profit' );
 	}
 } );
 
-router.get( '/cics/cics-stages-of-service', function ( req, res ) {
+router.get( '/cics/cics-save-info', function ( req, res ) {
 	var criteriaprofit = req.query.criteriaprofit;
 	if ( criteriaprofit == "Yes" ) {
-		res.redirect( "/cics/cics-criteria-not-met" );
+		res.redirect( "/cics/cics-criteria-no-DR-PL" );
 	} else {
-		res.render( 'cics/cics-stages-of-service' );
+		res.render( 'cics/cics-save-info' );
 	}
 } );
 

@@ -1,6 +1,13 @@
 {%- extends "layout-chs.html" %} {% block page_title %} Check before you submit {% endblock %} {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-
+<script type="text/javascript">
+  $(document).ready(function() { //Only show the button if javascript is on
+    $('.turnover').on('click', function() {
+      $(this).parent().parent().remove();
+    });
+  });
+</script>
 
 <main id="content" role="main" class="two-column-accounts">
   {% include "includes/phase_banner_beta.html" %}
@@ -243,12 +250,23 @@
         <dd class="cya-answer">Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</dd>
         <dd class="cya-change">
           <a href="">Change<div class="visually-hidden"> turnover policy</div></a>
-          <a href="" class="cya-delete">Delete<div class="visually-hidden"> turnover policy</div></a>
+          <span id="delete-summary">
+            <a href="javascript:void(0)" class="" id="content-delete">Delete <span class="visuallyhidden"> turnover policy</span></a>
+          </span>
         </dd>
-
       </div>
     </dl>
-
+    <div id="content-delete-warning" style="display:none;">
+      <div class="error-summary" id="delete-summary">
+        <p><strong>Are you sure you want to delete the turnover policy?</strong></p>
+        <p>
+          <a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> turnover policy</span></a>
+          <a class="button no-delete turnover" href="javascript:void(0)">No, keep<span class="visuallyhidden"> turnover policy</span></a>
+        </p>
+      </div>
+      <!--delete-summary-->
+    </div>
+    <!--content-delete-warning-->
 
 
     <h2 class="heading-medium">Tangible assets</h2>
@@ -624,7 +642,9 @@
         </dd>
         <dd class="cya-change">
           <a href="">Change<div class="visually-hidden"> Post balance sheet events</div></a>
-          <a href="" class="cya-delete">Delete<div class="visually-hidden"> Post balance sheet events</div></a>
+          <span id="delete-summary">
+            <a href="javascript:void(0)" class="" id="content-delete">Delete <span class="visuallyhidden"> Post balance sheet events</span></a>
+          </span>
         </dd>
       </div>
     </dl>
