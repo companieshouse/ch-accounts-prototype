@@ -934,8 +934,12 @@ img.card-image {
   color: $white;
   padding: 1em 3em;
   background: $link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;
+
+  &.flash-card-paper {
+    background: $link-colour url("/public/images/file-paper.png") no-repeat 90% 100%;
+  }
   @include media(mobile) {
-    background-image: none;
+    background-image: none !important;
   }
 
   h2 {
@@ -945,9 +949,25 @@ img.card-image {
   ul {
     width: 75%;
     padding: 2em 0 0;
+    @include media(mobile) {
+      width: 100%;
+      margin-top: 0.5em;
+    }
 
     li {
-      padding-bottom: 2em;
+      h2 {
+        padding-bottom: 2em;
+        display: inline-block;
+        width: 85%;
+        margin: 0 0 0 0.2em;
+        @include media(mobile) {
+          width: 80%;
+        }
+      }
+
+      span {
+        vertical-align: top;
+      }
     }
   }
 

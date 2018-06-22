@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} How to file your CIC report and accounts with Companies House {% endblock %} {% block content %}
+{% extends "layout-chs.html" %} {% block page_title %}How to file your CIC report and accounts on paper{% endblock %} {% block content %}
 
 
 
@@ -13,41 +13,41 @@
   <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
-  <div class="flash-card">
+  <div class="flash-card flash-card-paper">
     <header>
-      <h1 class="heading-large">How to file your CIC report and accounts with Companies House</h1>
+      <h1 class="heading-large">How to file your CIC report and accounts on paper</h1>
     </header>
     <div class="grid-row">
       <div class="column-two-thirds">
         <ul>
           <li><span class="circle circle-step-large circle-white">1</span>
-            <h2 class="heading-medium">Prepare your accounts</h2>
+            <h2 class="heading-medium"><a href="https://www.gov.uk/annual-accounts">Prepare your accounts</a></h2>
           </li>
 
           <li><span class="circle circle-step-large circle-white">2</span>
-            <h2 class="heading-medium">Get your accounts approved by the company director(s)</h2>
+            <h2 class="heading-medium">Complete a <a href="https://www.gov.uk/government/publications/form-cic34-community-interest-company-report">paper CIC report</a> made up to the same date as the accounts</h2>
           </li>
 
           <li><span class="circle circle-step-large circle-white">3</span>
-            <h2 class="heading-medium">File your CIC report and accounts</h2>
+            <h2 class="heading-medium">Post both items to <a href="">the Registrar of Companies</a>, with a cheque for £15 made payable to Companies House</h2>
           </li>
         </ul>
       </div>
     </div>
 
-    <form action="/cics/cics-new-or-resume" method="GET">
+    <!--  <form action="/cics/cics-new-or-resume" method="GET">
       <div class="form-group">
         <input id="submit-button" value="Continue" class="button" type="submit">
       </div>
     </form>
     <p><a href="https://www.gov.uk/annual-accounts">I need help preparing my accounts</a></p>
-  </div>
+  </div>--
   <!--flash card-->
 
 
 
 
-  <!--
+    <!--
   <h1 class="heading-large">How to use this service</h1>
 
   <div class="grid-row">
@@ -77,9 +77,7 @@
   </div>
 
 -->
-  <p>
-    <a href="/cics/cics-about-service-alt" style="float:right; color: #DEE0E2; font-size:14px;">Alternative</a>
-  </p>
+
 </main>
 
 {% endblock %}
