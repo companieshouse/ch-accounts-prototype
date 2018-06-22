@@ -824,7 +824,7 @@ router.get( '/cics/cics-criteria-report', function ( req, res ) {
 
 router.get( '/cics/cics-criteria-profit', function ( req, res ) {
 	var criteriareport = req.query.criteriareport;
-	if ( criteriareport == "Yes" ) {
+	if ( criteriareport == "yes" ) {
 		res.redirect( "/cics/cics-criteria-no-DR-PL" );
 	} else {
 		res.render( 'cics/cics-criteria-profit' );
@@ -839,7 +839,6 @@ router.get( '/cics/cics-save-info', function ( req, res ) {
 		res.render( 'cics/cics-save-info' );
 	}
 } );
-
 
 //Choose CICS or full journey
 router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {

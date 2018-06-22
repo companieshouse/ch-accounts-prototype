@@ -4,12 +4,6 @@
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
 
-
-
-
-
-
-
 <main id="content" role="main">
 
   {% include "includes/phase_banner_beta.html" %}
@@ -28,17 +22,9 @@
 
   <div class="text">
 
-
-
     <header>
       <h1 id="page-header" class="heading-large">Do your prepared full accounts meet the criteria?</h1>
     </header>
-
-
-
-
-
-
 
     <p>Your full accounts must meet at least 2 of the following:</p>
     <ul class="list list-bullet">
@@ -47,51 +33,31 @@
       <li>average number of employees is not over 50</li>
     </ul>
 
-
-
-    <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
-
     <form action="/cics/cics-criteria-report" method="get" class="form">
       <fieldset class="inline" data-required="" data-error="Please confirm if your prepared full accounts meet the criteria">
         <legend class="visually-hidden">Do your prepared full accounts meet the criteria?</legend>
         <div class="form-group">
 
-
           <label class="block-label selection-button-radio" for="release1yes">
                   <input id="release1yes" type="radio" name="cicsr1" value="Yes">
                   Yes
-                </label>
+          </label>
           <label class="block-label selection-button-radio" for="release1no">
                   <input id="release1no" type="radio" name="cicsr1" value="No">
                   No
-                </label>
+          </label>
 
         </div>
       </fieldset>
-
-
-
-
-
-
-
-
-
 
       <div class="form-group">
         <input type="submit" class="button" value="Continue">
       </div>
 
   </div>
-  <!--left-indent-->
-
-
-  </div>
   <!--text-->
 
   </form>
-
-
 
 </main>
 

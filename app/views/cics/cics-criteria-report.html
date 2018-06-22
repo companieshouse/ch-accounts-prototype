@@ -4,12 +4,6 @@
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
 
-
-
-
-
-
-
 <main id="content" role="main">
 
   {% include "includes/phase_banner_beta.html" %}
@@ -28,62 +22,34 @@
 
   <div class="text">
 
-
-
     <header>
       <h1 id="page-header" class="heading-large">Do you want to file a directors’ report?</h1>
     </header>
-
-
-
-
-
-
-
-
-
 
     <form action="/cics/cics-criteria-profit" method="get" class="form">
       <fieldset class="inline" data-required="" data-error="Please confirm if you want to file a directors’ report?">
         <legend class="visually-hidden">Do you want to file a directors’ report?</legend>
         <div class="form-group">
 
-
           <label class="block-label selection-button-radio" for="criteriareportyes">
-                  <input id="criteriareportyes" type="radio" name="criteriareport" value="Yes">
-                  Yes
-                </label>
+          <input id="criteriareportyes" type="radio" name="criteriareport" value="yes">
+          Yes
+          </label>
           <label class="block-label selection-button-radio" for="criteriareportno">
-                  <input id="criteriareportno" type="radio" name="criteriareport" value="No">
-                  No
-                </label>
+          <input id="criteriareportno" type="radio" name="criteriareport" value="no">
+          No
+          </label>
 
         </div>
       </fieldset>
 
-
-
-
-
-
-
-
-
-
       <div class="form-group">
         <input type="submit" class="button" value="Continue">
       </div>
-
-  </div>
-  <!--left-indent-->
-
+    </form>
 
   </div>
   <!--text-->
-
-  </form>
-
-
 
 </main>
 

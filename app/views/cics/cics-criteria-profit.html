@@ -4,12 +4,6 @@
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
 
-
-
-
-
-
-
 <main id="content" role="main">
 
   {% include "includes/phase_banner_beta.html" %}
@@ -28,62 +22,35 @@
 
   <div class="text">
 
-
-
     <header>
       <h1 id="page-header" class="heading-large">Do you want to file a profit and loss account?</h1>
     </header>
-
-
-
-
-
-
-
-
-
 
     <form action="/cics/cics-save-info" method="get" class="form">
       <fieldset class="inline" data-required="" data-error="Please confirm if your want to file a profit and loss account?">
         <legend class="visually-hidden">Do your want to file a profit and loss account?</legend>
         <div class="form-group">
 
-
           <label class="block-label selection-button-radio" for="criteriaprofityes">
-                  <input id="criteriaprofityes" type="radio" name="criteriaprofit" value="Yes">
-                  Yes
-                </label>
+          <input id="criteriaprofityes" type="radio" name="criteriaprofit" value="Yes">
+          Yes
+          </label>
           <label class="block-label selection-button-radio" for="criteriaprofitno">
-                  <input id="criteriaprofitno" type="radio" name="criteriaprofit" value="No">
-                  No
-                </label>
+          <input id="criteriaprofitno" type="radio" name="criteriaprofit" value="No">
+          No
+          </label>
 
         </div>
       </fieldset>
-
-
-
-
-
-
-
-
-
 
       <div class="form-group">
         <input type="submit" class="button" value="Continue">
       </div>
 
-  </div>
-  <!--left-indent-->
-
+    </form>
 
   </div>
   <!--text-->
-
-  </form>
-
-
 
 </main>
 
