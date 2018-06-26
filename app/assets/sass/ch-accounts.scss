@@ -555,13 +555,13 @@ header {
 }
 
 .warning-note {
-  background-color: lighten($focus-colour, 30%);
-  border: 3px solid $focus-colour;
+  background-color: $link-colour;
   padding: 0 0.3em;
   margin-left: 0.5em;
+  color: $white;
 
   &.warning-note-large {
-    padding: 0.5em;
+    padding: 0.7em;
     margin-left: 0;
     margin-bottom: 1em;
   }
