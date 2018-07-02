@@ -1,5 +1,5 @@
-{% extends "layout-chs.html" %}
- {% block page_title %}
+{% extends "layout.html" %}
+ {% block pageTitle %}
  Creditors - amounts falling due within one year note
  {% endblock %}
   {% block content %}
@@ -27,7 +27,7 @@
 
 
 
-    <h1 class="heading-xlarge">
+    <h1 class="govuk-heading-xl">
       <span class="circle circle-step-large">3</span> Balance sheet notes <span class="circle-subheading" style="margin-left:1.5em;">Creditors - amounts falling due within one year</span>
     </h1>
     <div class="left-indent">
@@ -40,10 +40,10 @@
 			<div class="grid-row" id="accounts-header">
 				<div class="column-half">&nbsp;</div>
 				<div class="column-quarter">
-					<h2 class="heading-small">2018<br />£</h2>
+					<h2 class="govuk-heading-s">2018<br />£</h2>
 				</div>
 				<div class="column-quarter">
-					<h2 class="heading-small">2017<br />£</h2>
+					<h2 class="govuk-heading-s">2017<br />£</h2>
 				</div>
 			</div>
 
@@ -158,7 +158,7 @@
 						<div class="panel panel-border-narrow">
 							<p>The total of all tax and social security your company is due to pay within one year from the end of the period.</p>
 							<p>This is normally the amounts due for:</p>
-              <ul class="list list-bullet">
+              <ul class="govuk-list">
                 <li>corporation tax</li>
                 <li>PAYE</li>
                 <li>National Insurance</li>
@@ -189,8 +189,8 @@
 						</summary>
 						<div class="panel panel-border-narrow">
 							<p>The total accruals and deferred income your company expects to pay within one year from the end of the period.</p>
-							<p><span class="heading-small">Accruals:</span> Expenses that are not yet paid for, for example, electricity already used but to be paid in the future.</p>
-							<p><span class="heading-small">Deferred income:</span> The amount you were paid for goods and services that you hadn't provided at the end of the period, for example, a client deposit paid before work starts.</p>
+							<p><span class="govuk-heading-s">Accruals:</span> Expenses that are not yet paid for, for example, electricity already used but to be paid in the future.</p>
+							<p><span class="govuk-heading-s">Deferred income:</span> The amount you were paid for goods and services that you hadn't provided at the end of the period, for example, a client deposit paid before work starts.</p>
 						</div>
 					</details>
 				</div>
@@ -274,7 +274,7 @@
 				</summary>
 				<div class="panel panel-border-narrow">
 					<label class="visuallyhidden" for="textarea">Add additional information about your 'creditors - amounts falling due within one year'note?</label>
-          <span class="form-hint">Enter information about amounts owed to creditors, and due to be paid within one year from the end of the period, for which the company has given security. For example, bank overdrafts repayable on demand or short-term instalments of bank loans.</span>
+          <span class="govuk-hint">Enter information about amounts owed to creditors, and due to be paid within one year from the end of the period, for which the company has given security. For example, bank overdrafts repayable on demand or short-term instalments of bank loans.</span>
 					<textarea class="form-control" id="textarea" rows="10"></textarea>
 				</div>
 			</details>

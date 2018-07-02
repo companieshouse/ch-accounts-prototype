@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Register with Companies House
 {% endblock %}
 
@@ -27,7 +27,7 @@ Register with Companies House
 
 
     <header class="text">
-    	<h1 id="page-header" class="heading-xlarge">
+    	<h1 id="page-header" class="govuk-heading-xl">
       Register with Companies House
       </h1>
     </header>
@@ -38,17 +38,17 @@ Register with Companies House
         </div>
 
       <p>To do this you'll need:</p>
-      <ul class="list list-bullet">
+      <ul class="govuk-list">
         <li>to set a password (this service uses different password rules, you may not be able to use your WebFiling password)</li>
         <li>your company authentication code from Companies House</li>
       </ul>
 
       <p>The email address you registered for WebFiling was<br>
-      <span class="heading-medium">jsmith@testcompany.co.uk</span></p>
+      <span class="govuk-heading-m">jsmith@testcompany.co.uk</span></p>
 
       <form action="chs-choose-password" method="get" class="form">
 
-        <h2 class="heading-medium">
+        <h2 class="govuk-heading-m">
           Do you want to use the same email address for the Companies House service?
         </h2>
 

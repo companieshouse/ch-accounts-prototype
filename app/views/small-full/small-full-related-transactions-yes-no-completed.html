@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Related party transactions
 {% endblock %}
 
@@ -31,7 +31,7 @@ Balance sheet notes - Related party transactions
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">5</span>
       Balance sheet notes
       <span class="circle-subheading">Related party transactions</span>
     </h1>
@@ -40,10 +40,10 @@ Balance sheet notes - Related party transactions
 
     <div class="left-indent">
       <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include a 'related party transactions' note?</h2>
+        <h2 class="govuk-heading-m">Do your prepared accounts include a 'related party transactions' note?</h2>
         <details class="form-group">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-          <div class="panel panel-border-narrow form-hint">
+          <div class="panel panel-border-narrow govuk-hint">
             <p>Use this note to record transactions between related parties, for example, selling a company asset for more or less than market value or paying them rent or consultancy fees. Parties are 'related' when one has control or significant influence over the other, for example directors and investors (or close family members of either).  </p>
           </div>
         </details>
@@ -74,7 +74,7 @@ Balance sheet notes - Related party transactions
                       <div class="form-group">
                       <fieldset>
 
-                        <h3 class="heading-medium text">What sort of transaction was this?</h3>
+                        <h3 class="govuk-heading-m text">What sort of transaction was this?</h3>
                         <legend class="visuallyhidden">What sort of transaction was this?</legend>
                         <label class="block-label text selection-button-radio selected" for="1">
                         <input id="1" value="" name="sort-of-transaction" aria-expanded="false" type="radio">
@@ -92,15 +92,15 @@ Balance sheet notes - Related party transactions
 
 
                     <div class="form-group">
-                      <label class="heading-medium" for="name-of-related-party">Name of related party</label>
-                      <span class="form-hint">Enter the name of the person the transaction was with.</span>
+                      <label class="govuk-heading-m" for="name-of-related-party">Name of related party</label>
+                      <span class="govuk-hint">Enter the name of the person the transaction was with.</span>
                       <input class="form-control" id="name-of-related-party" type="text" value="John Smith">
                     </div>
 
 
                     <div class="form-group">
-                      <label class="heading-medium" for="description-of-transaction">Description of the transaction</label>
-                      <span class="form-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
+                      <label class="govuk-heading-m" for="description-of-transaction">Description of the transaction</label>
+                      <span class="govuk-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
                       <textarea type="text" id="description-of-transaction" class="form-control" rows="5">The transaction was the loan of an asset</textarea>
                     </div>
 
@@ -115,7 +115,7 @@ Balance sheet notes - Related party transactions
                             &nbsp;
                           </div>
                           <div class="column-quarter">
-                            <h2 class="heading-small">£</h2>
+                            <h2 class="govuk-heading-s">£</h2>
                           </div>
                         </div>
 
@@ -162,7 +162,7 @@ Balance sheet notes - Related party transactions
                         <details>
                           <summary><span class="summary">Add additional information?</span></summary>
                             <label class="visuallyhidden" for="textarea">Add additional information?</label>
-                            <p class="form-hint">Enter any other information about related party transactions made in this period. For example, details of provisions made for doubtful debts or debts written off during the period, either due to be paid to or from related parties.</p>
+                            <p class="govuk-hint">Enter any other information about related party transactions made in this period. For example, details of provisions made for doubtful debts or debts written off during the period, either due to be paid to or from related parties.</p>
                             <textarea type="text" id="" class="form-control" rows="10"></textarea>
                         </details>
                       </div>

@@ -1,5 +1,5 @@
-{% extends "layout-chs.html" %}
- {% block page_title %}
+{% extends "layout.html" %}
+ {% block pageTitle %}
  Revaluation reserve note
  {% endblock %}
   {% block content %}
@@ -23,7 +23,7 @@
 			</li>
 		</ul>
 	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
-	<h1 class="heading-xlarge">
+	<h1 class="govuk-heading-xl">
 		<span class="circle circle-step-large">5</span> Balance sheet notes <span class="circle-subheading">Revaluation reserve</span>
 	</h1>
 	<div class="left-indent">
@@ -34,17 +34,17 @@
       <div class="grid-row accounts-row-spacer" id="accounts-header">
 
       <div class="column-half">
-        <h2 class="heading-medium">
+        <h2 class="govuk-heading-m">
           &nbsp;
         </h2>
       </div>
       <div class="column-quarter">
-        <h2 class="heading-small">
+        <h2 class="govuk-heading-s">
           £
         </h2>
       </div>
       <div class="column-quarter">
-        <h2 class="heading-small"></h2>
+        <h2 class="govuk-heading-s"></h2>
       </div>
     </div>
       <!--Start "At start of period"  -->
@@ -99,7 +99,7 @@
 						</summary>
 						<div class="panel panel-border-narrow">
 							<p>The total revaluation reserve at the end of the period. This is calculated by adding together the revaluation reserve at the start of the period and any surplus arising from revaluations (or subtracting any deficit arising from revaluations).</p>
-              <p class="heading-small">This should match the revaluation reserve figure you entered in the balance sheet for the period you're filing for. </p>
+              <p class="govuk-heading-s">This should match the revaluation reserve figure you entered in the balance sheet for the period you're filing for. </p>
 						</div>
 					</details>
 				</div>
@@ -119,7 +119,7 @@
 				</summary>
 				<div class="panel panel-border-narrow">
 					<label class="visuallyhidden" for="textarea">Add additional information?</label>
-          <span class="form-hint">Enter details of any other revaluation reserve information not already covered.</span>
+          <span class="govuk-hint">Enter details of any other revaluation reserve information not already covered.</span>
 					<textarea class="form-control" id="textarea" rows="10"></textarea>
 				</div>
 			</details>

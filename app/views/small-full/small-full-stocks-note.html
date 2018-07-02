@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} Stocks note {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} Stocks note {% endblock %} {% block content %}
 <main class="two-column-accounts" id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
   <nav class="content" role="navigation">
@@ -29,16 +29,16 @@ Stocks
     <form action="/" class="form currency-included-within-inputs" id="" method="post" name="">
       <div class="grid-row" id="accounts-header">
         <div class="column-half">
-          <h2 class="heading-medium">
+          <h2 class="govuk-heading-m">
 					<span style="display:none">Stocks</span>&nbsp; <!-- needs work, trying to hide content from screen but make it 'readable' by screen-readers-->
 					</h2>
           <!-- To do - move this style into the SASS file-->
         </div>
         <div class="column-quarter">
-          <h2 class="heading-small">2018<!--<br />£<--></h2>
+          <h2 class="govuk-heading-s">2018<!--<br />£<--></h2>
         </div>
         <div class="column-quarter">
-          <h2 class="heading-small">2017<!--<br />£--></h2>
+          <h2 class="govuk-heading-s">2017<!--<br />£--></h2>
         </div>
       </div>
 

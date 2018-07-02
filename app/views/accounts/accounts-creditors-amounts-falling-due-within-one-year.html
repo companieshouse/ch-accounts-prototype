@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Creditors - amounts falling due within one year note
 {% endblock %}
 
@@ -23,14 +23,14 @@
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">3</span>
       Balance sheet notes
       <span class="circle-subheading">Creditors - amounts falling due within one year</span>
     </h1>
       <form action="/" method="post" class="form">
     <label class="visuallyhidden" for="textarea">Creditors - amounts falling due within one year</label>
     <div class="left-indent">
-      <p class="form-hint">Provide information about who your business owes money to and you expect to pay within one year from the filing date.</p>
+      <p class="govuk-hint">Provide information about who your business owes money to and you expect to pay within one year from the filing date.</p>
       <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
 
     <div class="form-group accounts-row-spacer">

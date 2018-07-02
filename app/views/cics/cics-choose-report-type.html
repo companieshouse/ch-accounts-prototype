@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} Which type of CIC report have you prepared? {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} Which type of CIC report have you prepared? {% endblock %} {% block content %}
 <style type="text/css">
   .accounts-chooser-radio .panel {
     margin: 0 0 2em 2.5em;
@@ -31,12 +31,12 @@
 
         <label class="block-label selection-button-radio" for="choosecicreporttypesimple">
                   <input id="choosecicreporttypesimple" type="radio" name="choosecicreporttype" value="Simplified">
-                  Simplified <span class="form-hint">The majority of CICs complete the simplified report</span>
+                  Simplified <span class="govuk-hint">The majority of CICs complete the simplified report</span>
                 </label>
 
         <label class="block-label selection-button-radio" for="choosecicreporttypedetailed" data-target="detailreveal">
                   <input id="choosecicreporttypedetailed" type="radio" name="choosecicreporttype" value="Detailed">
-                  Detailed <span class="form-hint">This is for CICs that have more complex financial arrangements</span>
+                  Detailed <span class="govuk-hint">This is for CICs that have more complex financial arrangements</span>
                 </label>
 
 

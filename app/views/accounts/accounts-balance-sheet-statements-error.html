@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Balance Sheet Statements
 {% endblock %}
 
@@ -29,7 +29,7 @@
 
   <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
-   <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+   <h1 class="govuk-heading-m error-summary-heading" id="error-summary-heading-example-1">
      There is a problem with this form
    </h1>
 
@@ -41,7 +41,7 @@
 
  </div>
 
-      <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span> Balance sheet statements</h1>
+      <h1 class="govuk-heading-xl"><span class="circle circle-step-large">3</span> Balance sheet statements</h1>
       <form action="/accounts/accounts-balance-sheet-notes" method="get" class="form">
 
       <div class="notice">
@@ -52,7 +52,7 @@
       </div>
 
 
-        <ul class="list list-bullet">
+        <ul class="govuk-list">
           <li>For the year ending 31 March 2017 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
           <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
           <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
@@ -63,7 +63,7 @@
 
 
 
-      <h2 class="heading-medium">Confirmation</h2>
+      <h2 class="govuk-heading-m">Confirmation</h2>
 
       <div class="form-group error">
       <fieldset>

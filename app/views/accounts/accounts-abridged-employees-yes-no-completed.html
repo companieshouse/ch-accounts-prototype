@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Employees
 {% endblock %}
 
@@ -31,7 +31,7 @@ Balance sheet notes - Employees
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">4</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">4</span>
       Balance sheet notes
       <span class="circle-subheading">Employees</span>
     </h1>
@@ -39,7 +39,7 @@ Balance sheet notes - Employees
 
     <div class="left-indent">
       <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include an 'employees' note?</h2>
+        <h2 class="govuk-heading-m">Do your prepared accounts include an 'employees' note?</h2>
       </div>
 
     <form action="/accounts/accounts-review" method="get" class="form">
@@ -62,7 +62,7 @@ Balance sheet notes - Employees
 
 
             <div class="panel panel-border-narrow" id="employeesnoteyes-reveal">
-              <!--<p class="form-hint text">Provides a more detailed breakdown of the employees figure you entered on your balance sheet.</p>-->
+              <!--<p class="govuk-hint text">Provides a more detailed breakdown of the employees figure you entered on your balance sheet.</p>-->
 
 
               <div class="grid-row" id="accounts-header">
@@ -70,10 +70,10 @@ Balance sheet notes - Employees
                   &nbsp;
                 </div>
                 <div class="column-quarter">
-                  <h2 class="heading-small">2017</h2>
+                  <h2 class="govuk-heading-s">2017</h2>
                 </div>
                 <div class="column-quarter">
-                  <h2 class="heading-small">2016</h2>
+                  <h2 class="govuk-heading-s">2016</h2>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ Balance sheet notes - Employees
                 <details class="accounts-row-spacer text" open="open">
                   <summary><span class="summary">Add additional information? </span></summary>
                     <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
-                    <!--<p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>-->
+                    <!--<p class="govuk-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p>-->
                     <textarea type="text" id="textarea" class="form-control" rows="10">The average number of persons employed by the company is expected to more than double within the next financial year.</textarea>
                 </details>
 

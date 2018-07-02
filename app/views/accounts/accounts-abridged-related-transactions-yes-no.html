@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Related party transactions
 {% endblock %}
 
@@ -31,7 +31,7 @@ Balance sheet notes - Related party transactions
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">4</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">4</span>
       Balance sheet notes
       <span class="circle-subheading">Related party transactions</span>
     </h1>
@@ -41,10 +41,10 @@ Balance sheet notes - Related party transactions
 
     <div class="left-indent">
       <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include any 'related party transactions' notes?</h2>
+        <h2 class="govuk-heading-m">Do your prepared accounts include any 'related party transactions' notes?</h2>
         <details class="form-group">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-          <div class="panel panel-border-narrow form-hint">
+          <div class="panel panel-border-narrow govuk-hint">
             <p>Use this note to record transactions between related parties, for example, selling a company asset for more or less than market value or paying them rent or consultancy fees.</p>
             <p>Parties are 'related' when one has control or significant influence over the other, for example directors and investors (or close family members of either).  </p>
           </div>
@@ -76,7 +76,7 @@ Balance sheet notes - Related party transactions
 
             <h2 class="heading-large">First transaction</h2>
 
-              <h3 class="heading-medium text">What sort of transaction was this?</h3>
+              <h3 class="govuk-heading-m text">What sort of transaction was this?</h3>
 
                 <div class="form-group">
                 <fieldset>
@@ -98,22 +98,22 @@ Balance sheet notes - Related party transactions
 
 
               <div class="form-group text">
-                <label class="heading-medium" for="name-of-related-party">Name of related party</label>
-                <span class="form-hint">Enter the name of the person the transaction was with.</span>
+                <label class="govuk-heading-m" for="name-of-related-party">Name of related party</label>
+                <span class="govuk-hint">Enter the name of the person the transaction was with.</span>
                 <input class="form-control" id="name-of-related-party" type="text">
               </div>
 
               <div class="form-group text">
-                <label class="heading-medium" for="relationship">Relationship to the company</label>
-                <span class="form-hint">For example, "Consultant".</span>
+                <label class="govuk-heading-m" for="relationship">Relationship to the company</label>
+                <span class="govuk-hint">For example, "Consultant".</span>
                 <input class="form-control" id="relationship" type="text">
               </div>
 
 
 
               <div class="form-group text">
-                <label class="heading-medium" for="description-of-transaction">Description of the transaction</label>
-                <span class="form-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
+                <label class="govuk-heading-m" for="description-of-transaction">Description of the transaction</label>
+                <span class="govuk-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
                 <textarea type="text" id="description-of-transaction" class="form-control" rows="5"></textarea>
               </div>
 
@@ -128,7 +128,7 @@ Balance sheet notes - Related party transactions
                       &nbsp;
                     </div>
                     <div class="column-quarter">
-                      <h2 class="heading-small">£</h2>
+                      <h2 class="govuk-heading-s">£</h2>
                     </div>
                   </div>
 

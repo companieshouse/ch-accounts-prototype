@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} What is the company number? {% endblock %} {% block proposition_header %}
+{% extends "layout.html" %} {% block pageTitle %} What is the company number? {% endblock %} {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block header_class %}
 <!-- blank to remove the proposition header -->
@@ -19,11 +19,11 @@
 
 
     <header>
-      <h1 id="page-header" class="heading-xlarge">What is the company number?</h1>
+      <h1 id="page-header" class="govuk-heading-xl">What is the company number?</h1>
     </header>
 
 
-    <!--  <h2 class="heading-medium">Where was the company registered?</h2>-->
+    <!--  <h2 class="govuk-heading-m">Where was the company registered?</h2>-->
 
     <form>
       <!--  <div class="form-group">
@@ -53,7 +53,7 @@ England/Wales</label>
 
       <div class="form-group">
         <label class=" visuallyhidden" for="co-num">What's the company number?</label>
-        <p class="form-hint">This is the 8-character reference issued by Companies House when the company was set up.</p>
+        <p class="govuk-hint">This is the 8-character reference issued by Companies House when the company was set up.</p>
 
         <input type="numeric" class="form-control" maxlength="8" value="" id="co-num" name="co-num" autocomplete="off">
 

@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Accounts - Start
 {% endblock %}
 
@@ -42,13 +42,13 @@
           <!-- <div class="grid-row">-->
           <div class="column-full-width">
             <form id="search" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
-              <h1 class="main-title center heading-xlarge">
+              <h1 class="main-title center govuk-heading-xl">
                 <label class="" for="site-search-text">
                   Search the register
                 </label>
               </h1>
               <p>Enter company name, number or officer name</p>
-              <h2 class="heading-small form-hint">
+              <h2 class="govuk-heading-s govuk-hint">
                 <label for="site-search-text" class="hidden">You can search on company name, company number, or officer name</label>
               </h2>
               <div class="searchfield search-bar-active">
@@ -61,8 +61,8 @@
           <!--</div>-->
           <div class="grid-row">
             <div class="column-third">
-                <h2 class="heading-medium">Current features include</h2>
-                <ul class="list list-bullet">
+                <h2 class="govuk-heading-m">Current features include</h2>
+                <ul class="govuk-list">
                   <li><a href="/chs/chs-file-abridged-accounts">File abridged accounts</a> <sup class="label phase-tag">New</sup></li>
                   <li>Change a registered office address <sup class="label phase-tag">New</sup></li>
                   <li>View company data and document images</li>
@@ -71,15 +71,15 @@
                 </ul>
             </div>
             <div class="column-third">
-                <h2 class="heading-medium">Planned features</h2>
-                <ul class="list list-bullet">
+                <h2 class="govuk-heading-m">Planned features</h2>
+                <ul class="govuk-list">
                   <!--<li><a href="javascript:void(0)">Other accounts filings</a></li>-->
                   <li><a href="/chs/chs-other-document-filings">Other document filings</a></li>
                 </ul>
             </div>
             <div class="column-third">
-                <h2 class="heading-medium">Other useful tools</h2>
-                <ul class="list list-bullet">
+                <h2 class="govuk-heading-m">Other useful tools</h2>
+                <ul class="govuk-list">
                   <li><a href="javascript:void(0)" target="_blank">Company name availability checker<span class="visuallyhidden">Link opens in new window</span></a></li>
                 </ul>
             </div>
@@ -389,7 +389,7 @@
 
   <div class="panel panel-border-narrow">
 
-    <h2 class="heading-medium">Help us improve the Companies House service</h2>
+    <h2 class="govuk-heading-m">Help us improve the Companies House service</h2>
       <p><a href="https://www.gov.uk/stop-companies-house-from-publishing-your-address">Stop Companies House from publishing your address</a></p>
             <div id="feedback-failed" style="display: none;">
                 <p>Your submission has not been successful, please try again</p>
@@ -398,7 +398,7 @@
                 <legend class="visuallyhidden">Is there anything wrong with this page?</legend>
                 <div class="form-group">
                     <label for="" class="form-label"><strong>What is wrong with this page?</strong>
-                    <span class="form-hint">For example, information is missing or incorrect.</span></label>
+                    <span class="govuk-hint">For example, information is missing or incorrect.</span></label>
                     <textarea rows="5" maxlength="300" id="feedback-textarea" name="customer_feedback" cols="30" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">

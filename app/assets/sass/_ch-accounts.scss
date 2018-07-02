@@ -18,7 +18,7 @@ $error-button-hover: #8e0513;
       /*Hide from mobiles*/
     }
 
-    .heading-medium {
+    .govuk-heading-m {
       margin: 0;
     }
   }
@@ -85,7 +85,7 @@ $error-button-hover: #8e0513;
     width: 100%;
   }
 
-  .heading-small {
+  .govuk-heading-s {
     margin: 0;
   }
 
@@ -139,8 +139,8 @@ $error-button-hover: #8e0513;
     thead th {
       padding: 2em 0 1em;
 
-      h2.heading-medium,
-      h2.heading-small {
+      h2.govuk-heading-m,
+      h2.govuk-heading-s {
         margin: 0;
       }
     }
@@ -363,7 +363,7 @@ table.check-your-answers-notes {
     padding: 1em;
     clear: both;
 
-    .heading-medium {
+    .govuk-heading-m {
       margin-top: 0;
 
       span {
@@ -480,14 +480,6 @@ h3 .circle {
   top: -.5em;
 }
 
-header {
-  span {
-    @include govuk-font($size: 24);
-    color: $govuk-secondary-text-colour;
-    display: block;
-  }
-}
-
 .subheading {
   @include govuk-font($size: 16);
   color: $govuk-secondary-text-colour;
@@ -502,7 +494,7 @@ header {
 }
 @include govuk-media-query(mobile) {
   /*Adjust layout of heading styles on mobiles*/
-  .text .heading-xlarge {
+  .text .govuk-heading-xl {
     //  line-height:0.9em;
     .circle-subheading {
       margin: 0.5em 0 0;
@@ -584,7 +576,7 @@ h1 span.circle {
 }
 
 #accounts-start-page {
-  .form-hint {
+  .govuk-hint {
     margin: 0 0 1em 2em;
   }
 
@@ -881,7 +873,7 @@ img.card-image {
     .cya-answer {
       width: 80%;
 
-      &.heading-small {
+      &.govuk-heading-s {
         display: none !important;
       }
 

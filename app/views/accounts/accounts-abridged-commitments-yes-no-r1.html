@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Financial commitments
 {% endblock %}
 
@@ -31,14 +31,14 @@ Balance sheet notes - Financial commitments
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">3</span>
       Balance sheet notes
       <span class="circle-subheading">Financial commitments</span>
     </h1>
 
 
     <div class="left-indent">
-    <h2 class="heading-medium">Do your prepared accounts include a 'financial commitments' note?</h2>
+    <h2 class="govuk-heading-m">Do your prepared accounts include a 'financial commitments' note?</h2>
 
     <form action="/accounts/accounts-abridged-changes-in-presentation-yes-no-r1" method="get" class="form">
           <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'financial commitments' note">
@@ -60,7 +60,7 @@ Balance sheet notes - Financial commitments
 
 
             <div class="panel panel-border-narrow js-hidden" id="financialcommitmentsnoteyes-reveal">
-              <p class="form-hint">Use this note to record the total amount (or estimated amount) your company has committed to spend on future assets.</p>
+              <p class="govuk-hint">Use this note to record the total amount (or estimated amount) your company has committed to spend on future assets.</p>
           <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
           </div>
 

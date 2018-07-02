@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Current assets investments note
 {% endblock %}
 
@@ -22,7 +22,7 @@
 
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
-<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+<h1 class="govuk-heading-xl"><span class="circle circle-step-large">3</span>
   Balance sheet notes
   <span class="circle-subheading">Current assets investments</span>
 </h1>
@@ -33,7 +33,7 @@
 
   <form action="/" method="post" class="form">
     <label class="visuallyhidden" for="textarea">Current assets investments note</label>
-    <p class="form-hint">Use this note to record information about current asset investments, which are those held with the intention of being traded in the short term, for example shares in quoted companies intended to be traded.</p>
+    <p class="govuk-hint">Use this note to record information about current asset investments, which are those held with the intention of being traded in the short term, for example shares in quoted companies intended to be traded.</p>
     <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
     <div class="form-group accounts-row-spacer">
       <a class="button" href="accounts-balance-sheet-notes-current-assets-completed">Next</a>

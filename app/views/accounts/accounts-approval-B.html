@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Approval
 {% endblock %}
 
@@ -52,7 +52,7 @@ function openWin() {
   <form action="/accounts/accounts-submission" method="get" class="form">
 
 
-      <h1 class="heading-xlarge"><span class="circle circle-step-large">6</span>  Approve and submit</h1>
+      <h1 class="govuk-heading-xl"><span class="circle circle-step-large">6</span>  Approve and submit</h1>
 
 
 
@@ -60,9 +60,9 @@ function openWin() {
 
 
 
-      <h2 class="heading-medium">Who approved the accounts?</h2>
-      <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
-      <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
+      <h2 class="govuk-heading-m">Who approved the accounts?</h2>
+      <!--<p class="govuk-hint">If the company has only one director, enter their name here.</p>-->
+      <p class="govuk-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
       <div class="form-group">
         <fieldset data-required data-error="You must choose a director">
           <legend class="visuallyhidden">Who approved the accounts?</legend>
@@ -83,14 +83,14 @@ function openWin() {
 
 
 
-      <h2 class="heading-medium">When were the accounts approved?</h2>
+      <h2 class="govuk-heading-m">When were the accounts approved?</h2>
 
       <div class="form-group">
           <legend class="visuallyhidden">When were the accounts approved?</legend>
 
           <fieldset>
             <div class="form-date">
-              <p class="form-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2017</p>
+              <p class="govuk-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2017</p>
 
               <div class="form-group form-group-day">
                 <label for="dob-day">Day</label>
@@ -112,18 +112,18 @@ function openWin() {
   <p>&nbsp;</p>
 
 
-  <h2 class="heading-medium">View your accounts before submitting</h2>
+  <h2 class="govuk-heading-m">View your accounts before submitting</h2>
     <ul class="fa-ul">
       <li><i class="fa-li fa fa-file"></i>
       <a href="/public/pdf/abridged-accounts-sample.pdf" download="/public/pdf/abridged-accounts-sample.pdf">View or save a copy of your accounts</a>
-      <span class="form-hint">(You'll be asked to open or save a PDF)</span></li>
+      <span class="govuk-hint">(You'll be asked to open or save a PDF)</span></li>
     </ul>
 
 
 
 
 
-      <h2 class="heading-medium">Submit your abridged accounts</h2>
+      <h2 class="govuk-heading-m">Submit your abridged accounts</h2>
       <p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
       <div class="form-group">
         <input type="submit" class="button" value="Submit your abridged accounts">

@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} What is the company number? {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} What is the company number? {% endblock %} {% block content %}
 
 
 
@@ -19,7 +19,7 @@
     </header>
 
 
-    <!--  <h2 class="heading-medium">Where was the company registered?</h2>-->
+    <!--  <h2 class="govuk-heading-m">Where was the company registered?</h2>-->
 
     <form action="/cics/cics-company-number-confirm" method="get" class="form">
       <!--  <div class="form-group">
@@ -49,7 +49,7 @@ England/Wales</label>
 
       <div class="form-group">
         <label class=" visuallyhidden" for="co-num">What's the company number?</label>
-        <p class="form-hint">This is the 8-character reference issued by Companies House when the company was set up.</p>
+        <p class="govuk-hint">This is the 8-character reference issued by Companies House when the company was set up.</p>
 
         <input type="numeric" class="form-control" maxlength="8" value="" id="co-num" name="co-num" autocomplete="off">
 

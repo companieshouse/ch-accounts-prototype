@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Any other accounting policies
 {% endblock %}
 
@@ -33,7 +33,7 @@ Balance sheet notes - Any other accounting policies
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">4</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">4</span>
       Balance sheet notes
       <span class="circle-subheading">Any other accounting policies</span>
     </h1>
@@ -41,12 +41,12 @@ Balance sheet notes - Any other accounting policies
 
     <div class="left-indent">
       <div class="text">
-        <h2 class="heading-medium">Do your prepared accounts include any other accounting policies?</h2>
+        <h2 class="govuk-heading-m">Do your prepared accounts include any other accounting policies?</h2>
         <details class="form-group">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Other accounting policies</span>
-          <div class="panel panel-border-narrow form-hint">
+          <div class="panel panel-border-narrow govuk-hint">
             <p>Use this policy to report other policies you may have that aren’t covered by the policies earlier, such as:</p>
-                <ul class="list list-bullet">
+                <ul class="govuk-list">
                     <li>depreciation of assets obtained under hire purchases or leases</li>
                     <li>deferred taxation</li>
                     <li>pensions or retirement benefits</li>
@@ -73,7 +73,7 @@ Balance sheet notes - Any other accounting policies
                 <div class="panel panel-border-narrow js-hidden" id="otherpoliciesyes-reveal">
                   <fieldset>
                     <legend class="visuallyhidden">Other policies</legend>
-                    <label for="other-1" class="heading-medium">Enter your other policies</label>
+                    <label for="other-1" class="govuk-heading-m">Enter your other policies</label>
                     <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
                   </fieldset>
                 </div>

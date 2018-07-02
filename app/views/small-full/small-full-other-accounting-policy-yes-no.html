@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} Balance sheet notes - Any other accounting policies {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} Balance sheet notes - Any other accounting policies {% endblock %} {% block content %}
 
 <style type="text/css">
   .left-indent {
@@ -31,7 +31,7 @@ Do your prepared accounts include any other accounting policies?</h1>
 
 
     <p>These are other policies not already covered in this report, such as:</p>
-    <ul class="list list-bullet">
+    <ul class="govuk-list">
       <li>depreciation of assets obtained under hire purchases or leases</li>
       <li>deferred taxation</li>
       <li>pensions or retirement benefits</li>
@@ -62,7 +62,7 @@ Do your prepared accounts include any other accounting policies?</h1>
       <div class="panel panel-border-narrow js-hidden" id="otherpoliciesyes-reveal">
         <fieldset>
           <legend class="visuallyhidden">Other policies</legend>
-          <label for="other-1" class="heading-medium">Enter your other policies</label>
+          <label for="other-1" class="govuk-heading-m">Enter your other policies</label>
           <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
         </fieldset>
       </div>

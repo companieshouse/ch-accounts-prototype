@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} File your CIC report and full annual accounts with Companies House {% endblock %} {% block proposition_header %}
+{% extends "layout.html" %} {% block pageTitle %} File your CIC report and full annual accounts with Companies House {% endblock %} {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block header_class %}
 <!-- blank to remove the proposition header -->
@@ -24,7 +24,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-xlarge">File your CIC report and full annual accounts with Companies House</h1>
+      <h1 class="govuk-heading-xl">File your CIC report and full annual accounts with Companies House</h1>
 
 
       <p>Use this service to file your CIC report and full annual accounts with Companies House</p>
@@ -44,7 +44,9 @@
         <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;"> on the Companies House service</span>
       </p>
 
-      <h2 class="heading-medium">Before you start</h2>
+      {{ govukButton({ text: "Start now", href: "/cics/cics-about-service#", classes: "govuk-button--start" }) }}
+
+      <h2 class="govuk-heading-m">Before you start</h2>
 
       <p>You must get your accounts approved by your company directors before you file them.</p>
       <p>It costs £15 to file. You can pay by MasterCard, Visa, Electron, Maestro or Delta debit or credit card.</p>
@@ -67,7 +69,7 @@
     <div class="column-third">
 
       <!--  <aside class="govuk-related-items" role="complementary">
-        <h2 class="heading-medium" id="subsection-title">Running a limited company</h2>
+        <h2 class="govuk-heading-m" id="subsection-title">Running a limited company</h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="font-xsmall">
             <li><a href="#">Accounts and tax returns for private limited companies</a></li>

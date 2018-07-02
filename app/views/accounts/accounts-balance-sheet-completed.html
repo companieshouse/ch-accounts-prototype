@@ -1,6 +1,6 @@
- {% extends "layout-chs.html" %}
+ {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Balance sheet
 {% endblock %}
 
@@ -51,7 +51,7 @@ $('#tangible-assets-current').keyup(function() {
 <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
-<h1 class="heading-xlarge"><span class="circle circle-step-large">2</span> Balance sheet
+<h1 class="govuk-heading-xl"><span class="circle circle-step-large">2</span> Balance sheet
   <div class="panel panel-border-wide">
     <p class="warning">Complete all items that are included in your prepared accounts.</p>
   </div>
@@ -62,10 +62,10 @@ $('#tangible-assets-current').keyup(function() {
       &nbsp;
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">31 March 2016 to<br>31 March 2017<br>£</h2>
+      <h2 class="govuk-heading-s">31 March 2016 to<br>31 March 2017<br>£</h2>
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">31 March 2015 to<br>31 March 2016<br>£</h2>
+      <h2 class="govuk-heading-s">31 March 2015 to<br>31 March 2016<br>£</h2>
     </div>
   </div>
 
@@ -77,7 +77,7 @@ $('#tangible-assets-current').keyup(function() {
 
 
 
-<h2 class="heading-medium">Fixed assets</h2>
+<h2 class="govuk-heading-m">Fixed assets</h2>
 
   <!--Start intangible assets-->
 <div class="grid-row">
@@ -86,7 +86,7 @@ $('#tangible-assets-current').keyup(function() {
           <summary><span class="summary">Intangible assets</span></summary>
           <div class="panel panel-border-narrow">
             <p>The value after depreciation of your company's assets that are not physical. Examples include:</p>
-            <ul class="list list-bullet">
+            <ul class="govuk-list">
                <li>patents</li>
                <li>trademarks</li>
                <li>copyrights</li>
@@ -135,7 +135,7 @@ $('#tangible-assets-current').keyup(function() {
           <summary><span class="summary">Tangible assets</span></summary>
           <div class="panel panel-border-narrow">
             <p>The value of physical assets your business owns, after depreciation. Examples include:</p>
-            <ul class="list list-bullet">
+            <ul class="govuk-list">
                <li>machinery</li>
                <li>fixtures and fittings</li>
                <li>office equipment</li>
@@ -173,7 +173,7 @@ $('#tangible-assets-current').keyup(function() {
           <summary><span class="summary">Investments</span> <span class="mobile-only-label">(fixed assets)</span></summary>
           <div class="panel panel-border-narrow">
             <p>Fixed asset investment refers to any investment made this reporting period in assets used to generate income that will be held for more than one year.Examples include:</p>
-            <ul class="list list-bullet">
+            <ul class="govuk-list">
                <li>new vehicles</li>
                <li>buildings and refurbishment</li>
                <li>equipment</li>
@@ -228,7 +228,7 @@ $('#tangible-assets-current').keyup(function() {
   <!--End total fixed assets-->
 
 
-  <h2 class="heading-medium">Current assets</h2>
+  <h2 class="govuk-heading-m">Current assets</h2>
 
     <!--Start stocks-->
     <div class="grid-row">
@@ -237,7 +237,7 @@ $('#tangible-assets-current').keyup(function() {
             <summary><span class="summary">Stocks</span></summary>
             <div class="panel panel-border-narrow">
               <p>Goods and services for resale, but unsold as on the date of the balance sheet. Examples include:</p>
-              <ul class="list list-bullet">
+              <ul class="govuk-list">
                  <li>raw materials</li>
                  <li>the balance of long term contracts</li>
              </ul>
@@ -269,7 +269,7 @@ $('#tangible-assets-current').keyup(function() {
             <summary><span class="summary">Debtors</span></summary>
             <div class="panel panel-border-narrow">
               <p>Amounts owed to your business from trading activity. Examples include:</p>
-              <ul class="list list-bullet">
+              <ul class="govuk-list">
                  <li>debts</li>
                  <li>outstanding invoices</li>
                </ul>
@@ -422,12 +422,12 @@ $('#tangible-assets-current').keyup(function() {
             <summary><span class="summary">Creditors - amounts falling due within one year</span></summary>
             <div class="panel panel-border-narrow">
               <p>Debts you expect to settle within a year. Examples include:</p>
-              <ul class="list list-bullet">
+              <ul class="govuk-list">
                  <li>unpaid invoices</li>
                  <li>bank loans</li>
                  <li>overdrafts</li>
               </ul>
-              <p class="heading-small">Enter this number as a positive value and we'll calculate your net current assets</p>
+              <p class="govuk-heading-s">Enter this number as a positive value and we'll calculate your net current assets</p>
              </div>
           </details>
       </div>
@@ -516,7 +516,7 @@ $('#tangible-assets-current').keyup(function() {
             <summary><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
             <div class="panel panel-border-narrow">
               <p>Debts you expect to settle after more than one year. For example, bank loans with instalments due after more than a year.</p>
-              <p class="heading-small">Enter this number as a positive value and we'll calculate your net current assets</p>
+              <p class="govuk-heading-s">Enter this number as a positive value and we'll calculate your net current assets</p>
 
           </div>
           </details>
@@ -546,7 +546,7 @@ $('#tangible-assets-current').keyup(function() {
             <summary><span class="summary">Provision for liabilities</span></summary>
             <div class="panel panel-border-narrow">
               <p>Money set aside to cover future costs such as:</p>
-              <ul class="list list-bullet">
+              <ul class="govuk-list">
                  <li>tax</li>
                  <li>pensions</li>
                  <li>restructuring costs</li>
@@ -632,7 +632,7 @@ $('#tangible-assets-current').keyup(function() {
 
 
 
-        <h2 class="heading-medium">Capital and reserves</h2>
+        <h2 class="govuk-heading-m">Capital and reserves</h2>
 
           <!--Start called up share capital-->
           <div class="grid-row">

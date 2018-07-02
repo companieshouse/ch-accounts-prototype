@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} Balance sheet notes - Related party transactions {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} Balance sheet notes - Related party transactions {% endblock %} {% block content %}
 
 <style type="text/css">
   .left-indent {
@@ -62,9 +62,9 @@ Do your prepared accounts include any 'related party transactions' notes?
         <p><strong>You can report up to 20 related party transactions.</strong></p>
       </div>
 
-      <h2 class="heading-medium">First transaction</h2>
+      <h2 class="govuk-heading-m">First transaction</h2>
 
-      <h3 class="heading-medium text">What sort of transaction was this?</h3>
+      <h3 class="govuk-heading-m text">What sort of transaction was this?</h3>
 
       <div class="form-group">
         <fieldset>
@@ -86,15 +86,15 @@ Do your prepared accounts include any 'related party transactions' notes?
 
 
       <div class="form-group text">
-        <label class="heading-medium" for="name-of-related-party">Name of related party</label>
-        <span class="form-hint">Enter the name of the person the transaction was with.</span>
+        <label class="govuk-heading-m" for="name-of-related-party">Name of related party</label>
+        <span class="govuk-hint">Enter the name of the person the transaction was with.</span>
         <input class="form-control" id="name-of-related-party" type="text">
       </div>
 
 
       <div class="form-group text">
-        <label class="heading-medium" for="description-of-transaction">Description of the transaction</label>
-        <span class="form-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
+        <label class="govuk-heading-m" for="description-of-transaction">Description of the transaction</label>
+        <span class="govuk-hint">Enter a brief description of the transaction. For example, "The transaction was the loan of an asset".</span>
         <textarea type="text" id="description-of-transaction" class="form-control" rows="5"></textarea>
       </div>
 

@@ -1,4 +1,4 @@
-{% extends "layout-chs.html" %} {% block page_title %} Creditors - amounts falling due after one year note {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} Creditors - amounts falling due after one year note {% endblock %} {% block content %}
 <main class="two-column-accounts" id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
   <nav class="content" role="navigation">
@@ -31,10 +31,10 @@
     <div class="grid-row" id="accounts-header">
       <div class="column-half">&nbsp;</div>
       <div class="column-quarter">
-        <h2 class="heading-small">2018<!--<br />£--></h2>
+        <h2 class="govuk-heading-s">2018<!--<br />£--></h2>
       </div>
       <div class="column-quarter">
-        <h2 class="heading-small">2017<!--<br />£--></h2>
+        <h2 class="govuk-heading-s">2017<!--<br />£--></h2>
       </div>
     </div>
 
@@ -195,9 +195,9 @@
       </summary>
       <div class="panel panel-border-narrow">
         <label class="visuallyhidden" for="textarea">Add additional information about your 'creditors - amounts falling due after one year' note?</label>
-        <span class="form-hint">
+        <span class="govuk-hint">
           <p>Enter details of:</p>
-          <ul class="list list-bullet">
+          <ul class="govuk-list">
             <li>security given for money owed to secured creditors, for example mortgages on property</li>
             <li>instalment debts (where you repay in instalments) and non-instalment debts (where you repay a lump sum) due more than 5 years after the end of the period</li>
           </ul>

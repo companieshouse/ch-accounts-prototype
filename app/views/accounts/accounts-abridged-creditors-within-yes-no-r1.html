@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Creditors - amounts falling due within one year
 {% endblock %}
 
@@ -22,14 +22,14 @@ Balance sheet notes - Creditors - amounts falling due within one year
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>
+    <h1 class="govuk-heading-xl"><span class="circle circle-step-large">3</span>
       Balance sheet notes
       <span class="circle-subheading">Creditors - amounts falling due within one year</span>
     </h1>
 
 
     <div class="left-indent">
-    <h2 class="heading-medium">Do your prepared accounts include a 'creditors - amounts falling due within one year' note?</h2>
+    <h2 class="govuk-heading-m">Do your prepared accounts include a 'creditors - amounts falling due within one year' note?</h2>
 
     <form action="/accounts/accounts-abridged-commitments-yes-no-r1" method="get" class="form">
           <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'creditors - amounts falling due within one year'' note">
@@ -51,7 +51,7 @@ Balance sheet notes - Creditors - amounts falling due within one year
 
 
             <div class="panel panel-border-narrow js-hidden" id="creditorswithinnoteyes-reveal">
-              <p class="form-hint">Provide information about who your business owes money to and you expect to pay within one year from the filing date.</p>
+              <p class="govuk-hint">Provide information about who your business owes money to and you expect to pay within one year from the filing date.</p>
               <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
           </div>
 

@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Follow a company
 {% endblock %}
 
@@ -40,7 +40,7 @@
 
 
     <div role="article" class="text follow-confirmation">
-          <h1 class="heading-xlarge" id="follow-company-title">Follow a company</h1>
+          <h1 class="govuk-heading-xl" id="follow-company-title">Follow a company</h1>
           <div class="text" id="follow-company-confirmation-prompt">
               <h2 class="heading-large">A TEST COMPANY LIMITED (01234567)</h2>
                   <p>
@@ -51,7 +51,7 @@
 
                   <fieldset>
                     <legend>
-                      <h3 class="heading-medium">Which types of notifications do you want?</h3>
+                      <h3 class="govuk-heading-m">Which types of notifications do you want?</h3>
                     </legend>
                     <div class="form-group">
                     <label class="block-label selection-button-checkbox" for="notificationtypeaccounts">
@@ -72,7 +72,7 @@
 
 
 
-                  <p class="form-hint">You can unfollow this company at any time.</p>
+                  <p class="govuk-hint">You can unfollow this company at any time.</p>
                   <div class="form-group">
                       <p><a href="javascript:void(0)" class="button" id="follow-company-confirmed" onclick="javascript:_paq.push(['trackEvent', 'FollowCompanyConfirmed']);">Follow</a></p>
                       <p class="action-link"><a href="javascript:void(0)" id="follow-company-cancelled" onclick="javascript:_paq.push(['trackEvent', 'FollowCompanyCancelled']);">Cancel</a></p>
