@@ -1,6 +1,4 @@
 // Additional styles for CH accounts
-@import 'colours';
-@import 'typography';
 $error-button-hover: #8e0513;
 
 .two-column-accounts {
@@ -15,7 +13,7 @@ $error-button-hover: #8e0513;
     .left {
       text-align: left;
     }
-    @include media(mobile) {
+    @include govuk-media-query($from: mobile) {
       display: none;
       /*Hide from mobiles*/
     }
@@ -30,12 +28,12 @@ $error-button-hover: #8e0513;
     padding-left: 0;
 
     input {
-      border: 4px solid $error-colour;
+      border: 4px solid $govuk-error-colour;
     }
   }
 
   .read-only {
-    border-color: $border-colour;
+    border-color: $govuk-border-colour;
   }
 
   .mobile-only-label {
@@ -48,7 +46,7 @@ $error-button-hover: #8e0513;
     margin: -1px;
     padding: 0;
     border: 0;
-    @include media(mobile) {
+    @include govuk-media-query(mobile) {
       /*Visible on mobiles*/
       position: relative;
       overflow: visible;
@@ -68,11 +66,11 @@ $error-button-hover: #8e0513;
 
     .no-help {
       margin-left: 1em;
-      @include media(mobile) {
+      @include govuk-media-query(mobile) {
         /*Visible on mobiles*/
         margin-left: 0;
         display: block;
-        @include core-24;
+        @include govuk-font($size: 19);
         font-weight: 700;
         margin-bottom: 0.5em;
       }
@@ -105,7 +103,7 @@ $error-button-hover: #8e0513;
     left: 10px;
     font-weight: bold;
   }
-  @include media(mobile) {
+  @include govuk-media-query(mobile) {
     .currency-included-within-inputs input[type="number"] {
       display: block;
       width: 100%;
@@ -184,18 +182,18 @@ $error-button-hover: #8e0513;
 
     tr.to-be-completed td,
     tr.to-be-completed th {
-      color: $secondary-text-colour;
+      color: $govuk-secondary-text-colour;
     }
 
     .accounts-success {
-      color: $button-colour;
+      color: #00823b; // can't get mixin wot work - fix later
       display: block;
       margin: 0 auto;
       font-size: 1em;
     }
 
     .accounts-update {
-      color: $focus-colour;
+      color: $govuk-focus-colour;
       display: block;
       margin: 0 auto;
       font-size: 1.8em;
@@ -222,7 +220,7 @@ $error-button-hover: #8e0513;
     }
   }
 }
-@include media(mobile) {
+@include govuk-media-query(mobile) {
   .review-reveal {
     .column-one-half {
       width: 45%;
@@ -245,7 +243,7 @@ table.check-your-answers-notes {
   td.change-answer {
     font-weight: normal;
     width: 35%;
-    @include media(mobile) {
+    @include govuk-media-query(mobile) {
       a {
         margin-bottom: 0.5em;
         float: right;
@@ -268,11 +266,11 @@ table.check-your-answers-notes {
   display: block;
 
   p {
-    color: $error-colour;
+    color: $govuk-error-colour;
   }
 
   .button {
-    background-color: $error-colour;
+    background-color: $govuk-error-colour;
     margin-bottom: 1em;
 
     &:hover {
@@ -281,7 +279,7 @@ table.check-your-answers-notes {
   }
 
   .no-delete {
-    color: $link-colour;
+    color: $govuk-link-colour;
     background-color: transparent;
     box-shadow: none;
     text-decoration: underline;
@@ -289,11 +287,11 @@ table.check-your-answers-notes {
     &:hover {
       background-color: transparent;
       box-shadow: none;
-      color: $link-hover-colour;
+      color: $govuk-link-hover-colour;
     }
   }
 }
-@include media(mobile) {
+@include govuk-media-query(mobile) {
   #delete-summary {
     .button {
       margin-top: 0.5em;
@@ -308,7 +306,7 @@ table.check-your-answers-notes {
     margin-top: 1em;
 
     tr td {
-      @include core-16;
+      @include govuk-font($size: 16);
 
       strong.status {
         font-weight: 700;
@@ -349,7 +347,7 @@ table.check-your-answers-notes {
       }
 
       .rejected {
-        color: $error-colour;
+        color: $govuk-error-colour;
         margin-left: -3.1em;
 
         .icon-important {
@@ -361,7 +359,7 @@ table.check-your-answers-notes {
 
   .one-filing {
     margin-bottom: 2em;
-    background-color: $highlight-colour;
+    background-color: govuk-colour("grey-4");
     padding: 1em;
     clear: both;
 
@@ -369,14 +367,14 @@ table.check-your-answers-notes {
       margin-top: 0;
 
       span {
-        @include core-19;
+        @include govuk-font($size: 19);
         display: block;
       }
     }
 
     &.rejected {
       .notice {
-        color: $error-colour;
+        color: $govuk-error-colour;
 
         .icon-important {
           background-image: url("/public/images/icon-important-red.png");
@@ -397,11 +395,11 @@ table.check-your-answers-notes {
     .bold-medium {
       font-weight: normal;
       margin-bottom: 1em;
-      @include core-19;
+      @include govuk-font($size: 19);
 
       span {
         display: block;
-        @include core-24;
+        @include govuk-font($size: 24);
         font-weight: 700;
       }
     }
@@ -436,8 +434,8 @@ table.check-your-answers-notes {
 
   a.admin-link {
     font-size: 16px !important;
-    color: $white;
-    background-color: $link-colour;
+    color: govuk-colour("white");
+    background-color: $govuk-link-colour;
     text-decoration: none;
     padding: 2px 8px;
     display: inline-block;
@@ -445,7 +443,7 @@ table.check-your-answers-notes {
 
     &:focus,
     &:hover {
-      background-color: $link-hover-colour;
+      background-color: $govuk-link-hover-colour;
     }
   }
 }
@@ -484,25 +482,25 @@ h3 .circle {
 
 header {
   span {
-    @include core-24;
-    color: $secondary-text-colour;
+    @include govuk-font($size: 24);
+    color: $govuk-secondary-text-colour;
     display: block;
   }
 }
 
 .subheading {
-  @include core-16;
-  color: $secondary-text-colour;
+  @include govuk-font($size: 16);
+  color: $govuk-secondary-text-colour;
   display: block;
 }
 
 .circle-subheading {
-  @include core-27;
-  color: $secondary-text-colour;
+  @include govuk-font($size: 27);
+  color: $govuk-secondary-text-colour;
   display: block;
   //margin-left: 1.5em;
 }
-@include media(mobile) {
+@include govuk-media-query(mobile) {
   /*Adjust layout of heading styles on mobiles*/
   .text .heading-xlarge {
     //  line-height:0.9em;
@@ -515,8 +513,8 @@ header {
 .warning-with-triangle {
   top: 25px;
   position: relative;
-  background-color: lighten($focus-colour, 30%);
-  border: 3px solid $focus-colour;
+  background-color: lighten($govuk-focus-colour, 30%);
+  border: 3px solid $govuk-focus-colour;
   width: auto;
   height: auto;
   padding: 0.5em;
@@ -540,7 +538,7 @@ header {
 
 .warning-with-triangle:after {
   border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: lighten($focus-colour, 30%);
+  border-bottom-color: lighten($govuk-focus-colour, 30%);
   border-width: 19px;
   left: 80%;
   margin-left: -19px;
@@ -548,17 +546,17 @@ header {
 
 .warning-with-triangle:before {
   border-color: rgba(113, 158, 206, 0);
-  border-bottom-color: $focus-colour;
+  border-bottom-color: $govuk-focus-colour;
   border-width: 23px;
   left: 80%;
   margin-left: -23px;
 }
 
 .warning-note {
-  background-color: $link-colour;
+  background-color: $govuk-link-colour;
   padding: 0 0.3em;
   margin-left: 0.5em;
-  color: $white;
+  color: govuk-colour("white");
 
   &.warning-note-large {
     padding: 0.7em;
@@ -604,7 +602,7 @@ h1 span.circle {
     width: 100%;
   }
 }
-@include media(mobile) {
+@include govuk-media-query(mobile) {
   .left-indent {
     margin-left: 0 !important;
   }
@@ -615,8 +613,8 @@ h1 span.circle {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: $secondary-text-colour;
-  color: $page-colour;
+  background-color: $govuk-secondary-text-colour;
+  color: govuk-page-colour;
   width: 100%;
   padding: 0.5em 0 0.8em;
   height: 1em;
@@ -659,8 +657,8 @@ th .panel {
 //Save modal
 
 #save-modal {
-  border: 2px solid $border-colour;
-  background-color: $panel-colour;
+  border: 2px solid $govuk-border-colour;
+  background-color: $govuk-canvas-background-colour;
   padding: 1em;
   display: block;
   margin: 0 auto 2em;
@@ -686,15 +684,15 @@ th .panel {
   top: -6px;
   right: -1px;
   position: relative;
-  background-color: $yellow;
-  color: $black;
+  background-color: govuk-colour("yellow");
+  color: govuk-colour("black");
   padding: 2px 7px 0;
   border-radius: 15px;
 }
 
 #filing-alert {
-  background: $yellow;
-  color: $black;
+  background: govuk-colour("yellow");
+  color: govuk-colour("black");
   display: inline-block;
   float: right;
   position: relative;
@@ -706,7 +704,7 @@ th .panel {
 }
 
 #filing-alert:before {
-  border-top: 15px solid $yellow;
+  border-top: 15px solid govuk-colour("yellow");
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   content: "";
@@ -738,8 +736,8 @@ th .panel {
 //Payment screen (CICS only) - To do: mobile styles
 
 .payment-summary-small {
-  background-color: $highlight-colour;
-  border: 10px solid $border-colour;
+  background-color: govuk-colour("grey-4");
+  border: 10px solid $govuk-border-colour;
   padding: 1em 1em 0;
   margin-top: 2em;
 }
@@ -780,7 +778,7 @@ img.card-image {
 .column-sixth {
   float: left;
   width: 12.5%;
-  @include media(mobile) {
+  @include govuk-media-query(mobile) {
     width: 100%;
   }
 }
@@ -796,23 +794,23 @@ img.card-image {
 .column-one-fifth {
   float: left;
   width: 18%;
-  @include media(mobile) {
+  @include govuk-media-query(mobile) {
     width: 100%;
   }
 }
 
 .important-message {
-  background-color: $govuk-blue;
-  color: $page-colour;
+  background-color: govuk-colour("blue");
+  color: govuk-colour("white");
   padding: 0.9em 0.9em 0.1em;
 
   a {
-    color: $page-colour;
+    color: govuk-colour("white");
   }
 
   a:focus,
   a:hover {
-    color: $link-hover-colour;
+    color: $govuk-link-hover-colour;
   }
 }
 //CICs//
@@ -878,7 +876,7 @@ img.card-image {
 .cya-change {
   margin-left: 20px;
 }
-@include media(mobile) {
+@include govuk-media-query(mobile) {
   .govuk-check-your-answers.cya-questions-short {
     .cya-answer {
       width: 80%;
@@ -931,14 +929,14 @@ img.card-image {
 /// Flash card ///
 
 .flash-card {
-  color: $white;
+  color: govuk-colour("white");
   padding: 1em 3em;
-  background: $link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;
+  background: $govuk-link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;
 
   &.flash-card-paper {
-    background: $link-colour url("/public/images/file-paper.png") no-repeat 90% 100%;
+    background: $govuk-link-colour url("/public/images/file-paper.png") no-repeat 90% 100%;
   }
-  @include media(mobile) {
+  @include govuk-media-query(mobile) {
     background-image: none !important;
   }
 
@@ -949,7 +947,7 @@ img.card-image {
   ul {
     width: 75%;
     padding: 2em 0 0;
-    @include media(mobile) {
+    @include govuk-media-query(mobile) {
       width: 100%;
       margin-top: 0.5em;
     }
@@ -960,7 +958,7 @@ img.card-image {
         display: inline-block;
         width: 85%;
         margin: 0 0 0 0.2em;
-        @include media(mobile) {
+        @include govuk-media-query(mobile) {
           width: 80%;
         }
       }
@@ -973,24 +971,24 @@ img.card-image {
 
   a:link,
   a:visited {
-    color: $white !important;
+    color: govuk-colour("white") !important;
   }
 
   .button {
-    background-color: $white;
-    color: $link-colour;
+    background-color: govuk-colour("white");
+    color: $govuk-link-colour;
     font-weight: 700;
 
     &:focus,
     &:hover {
-      background-color: $grey-3;
-      color: $link-colour;
+      background-color: govuk-colour("grey-3");
+      color: $govuk-link-colour;
     }
   }
 
   .circle-white {
-    background-color: $white;
-    color: $black;
+    background-color: govuk-colour("white");
+    color: govuk-colour("black");
     margin-right: 0.5em;
     position: relative;
     top: -.3em;

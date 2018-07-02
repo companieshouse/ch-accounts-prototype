@@ -1,6 +1,4 @@
 //CHS styles - NOT FOR PRODUCTION!
-@import 'colours';
-@import 'typography';
 
 #global-header {
   a#logo {
@@ -23,7 +21,7 @@
 }
 
 ul#navigation {
-  border-bottom: 1px solid $border-colour;
+  border-bottom: 1px solid $govuk-border-colour;
   font-size: 0.9em;
   margin-bottom: 1em;
   padding: 0.8em 0;
@@ -40,7 +38,7 @@ ul#navigation {
 }
 
 .search-bar-active {
-  background: $panel-colour none repeat scroll 0 0;
+  background: $govuk-canvas-background-colour none repeat scroll 0 0;
   padding: 0.5em;
 }
 
@@ -56,12 +54,12 @@ ul#navigation {
 }
 
 .searchfield .button {
-  background-color: $link-colour;
+  background-color: $govuk-link-colour;
   background-image: url("/public/images/search-button.png");
   background-position: -12.5% 50%;
   background-repeat: no-repeat;
   border-radius: 0;
-  color: $white;
+  color: govuk-colour("white");
   height: 52px;
   overflow: hidden;
   text-indent: -5000px;
@@ -70,14 +68,14 @@ ul#navigation {
 }
 
 sup.label {
-  color: $fuschia;
+  color: govuk-colour("bright-purple");
   display: inline-block;
   font-size: 0.8em;
   font-weight: 700;
 }
 
 ul.search-tabs {
-  border-bottom: 1px solid $border-colour;
+  border-bottom: 1px solid $govuk-border-colour;
   font-size: 0.8em;
   margin-bottom: 30px;
   overflow: auto;
@@ -90,7 +88,7 @@ ul.search-tabs {
     padding: 0 8px 10px;
 
     &.active {
-      border-bottom: 2px solid $link-colour;
+      border-bottom: 2px solid $govuk-link-colour;
     }
 
     a {
@@ -99,7 +97,7 @@ ul.search-tabs {
       &:focus,
       &:hover,
       &:visited {
-        color: $link-colour;
+        color: $govuk-link-colour;
       }
     }
   }
@@ -114,7 +112,7 @@ main.search .results-list {
     text-transform: none;
 
     &.meta {
-      color: $secondary-text-colour;
+      color: $govuk-secondary-text-colour;
       font-size: 16px;
       padding: 0 0 3px;
       word-wrap: break-word;
@@ -126,7 +124,7 @@ main.search .results-list {
   }
 
   h3 a {
-    color: $link-colour;
+    color: $govuk-link-colour;
     font-size: 20px;
     font-weight: normal;
     text-decoration: none;
@@ -134,7 +132,7 @@ main.search .results-list {
     &:focus,
     &:hover,
     &:visited {
-      color: $link-hover-colour;
+      color: $govuk-link-hover-colour;
       text-decoration: underline;
     }
   }
@@ -176,7 +174,7 @@ strong {
 }
 
 .section-tabs {
-  border-bottom: 1px solid $border-colour;
+  border-bottom: 1px solid $govuk-border-colour;
   margin: 1.5em 0;
 }
 @media (max-width: 640px) {
@@ -212,8 +210,8 @@ strong {
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
-  background: $panel-colour none repeat scroll 0 0;
-  border-color: $panel-colour $panel-colour -moz-use-text-color;
+  background: $govuk-canvas-background-colour none repeat scroll 0 0;
+  border-color: $govuk-canvas-background-colour $govuk-canvas-background-colour -moz-use-text-color;
   border-image: none;
   border-style: solid solid none;
   border-width: 1px 1px medium;
@@ -228,11 +226,11 @@ strong {
   text-transform: none;
 
   &:visited {
-    color: $link-colour;
+    color: $govuk-link-colour;
   }
 
   &:hover {
-    color: $link-hover-colour;
+    color: $govuk-link-hover-colour;
   }
 }
 @media (max-width: 640px) {
@@ -248,7 +246,7 @@ strong {
 }
 @media (max-width: 640px) {
   .section-tabs ul a {
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid $govuk-border-colour;
     font-size: 16px;
     font-weight: normal;
     line-height: 1.25;
@@ -272,14 +270,14 @@ strong {
 }
 
 .section-tabs ul li.active a {
-  background: $page-colour none repeat scroll 0 0;
-  border-color: $border-colour;
+  background: govuk-colour("white") none repeat scroll 0 0;
+  border-color: $govuk-border-colour;
   margin: 0 5px 0 0;
   padding: 10px 9px;
 }
 @media (max-width: 640px) {
   .section-tabs ul li.active a {
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid $govuk-border-colour;
     font-weight: bold;
     margin: 5px 0 0;
     padding: 5px 0 5px 5px;
@@ -312,7 +310,7 @@ strong {
 }
 
 .section-tabs.plain-tabs .tab-navigation ul li a {
-  background-color: $page-colour;
+  background-color: govuk-colour("white");
   border: medium none;
   font-weight: normal;
   text-decoration: underline;
@@ -323,7 +321,7 @@ strong {
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
-  border-color: $panel-colour $panel-colour -moz-use-text-color;
+  border-color: $govuk-canvas-background-colour $govuk-canvas-background-colour -moz-use-text-color;
   border-image: none;
   border-style: solid solid none;
   border-width: 1px 1px medium;
@@ -359,7 +357,7 @@ ol.example-icon-list {
 
 .chs-email {
   ul {
-    @include core-16;
+    @include govuk-font($size: 16);
     padding-top: 1em;
 
     li {
@@ -368,11 +366,11 @@ ol.example-icon-list {
   }
 
   table {
-    background-color: $grey-4;
+    background-color: govuk-colour("grey-4");
     margin: 2em 0;
 
     th {
-      background-color: $grey-3;
+      background-color: govuk-colour("grey-3");
       padding: 7em 1em;
     }
 

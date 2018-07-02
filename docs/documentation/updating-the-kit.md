@@ -1,18 +1,30 @@
 # Updating the kit
 
-## Updating
-
 **Important note**
 
 If you have made any changes outside the `app` folder, this process will destroy those changes. We will try and improve the update process to avoid this, but in the meantime you will need to make a note of your changes outside `app`, and add them back after updating.
 
-### Steps
+## Version 7
 
-Download the latest prototype kit zip file from GitHub
+Version 7 of the GOV.UK Prototype Kit is a large change from previous versions. Updating an old prototype will mean re-writing most of the code.
 
-In your project, delete everything apart from the `app` and `.git` folder
+We are working on ways to make updating easier, so if you have a large prototype it may be worth waiting for that.
 
-Copy everything from the latest kit to your project, apart from the `app` folder
+There is a [guide to updating your code](https://design-system.service.gov.uk/get-started/updating-your-code/) on the GOV.UK Design System.
+
+## Steps
+
+Download the latest Prototype Kit.
+
+In your project, delete everything apart from the `app` and `.git` folder.
+
+Copy everything from the latest kit to your project, apart from the `app` folder.
+
+Copy the config.js file from the `app` folder in the latest kit to the `app` folder of your prototype. If you've made any changes to the config.js file in your prototype then you'll need to re-enter them in the new version of the file e.g. the service name.
+
+Check `\app\assets\sass\patterns` in the latest kit for any new patterns. Copy the files over to your prototype.
+
+Check `\app\assets\sass\application.scss` in the latest kit to see if any changes have been made in the top section, above where it says `// Add extra styles here`. Copy anything new from that file to the version in your prototype, making sure you don't overwrite any extra styles you have added yourself.
 
 ---
 
@@ -118,54 +130,4 @@ In terminal:
 npm start
 ```
 
-If you still have an error, you can [raise an issue within github](https://github.com/alphagov/govuk_prototype_kit/issues) or ask in the [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/) by providing as much information as you can about the error and the computer you are attempting to run the prototyping kit on.
-
----
-
-## Converting old prototypes
-
-Earlier versions of the prototype kit used a different templating language called Mustache.
-
-Converting Mustache templates to Nunjucks ones is relatively simple. Here are the main things you'll need to do:
-
-### Template inheritance
-
-    {{<layout}}
-
-    {{/layout}}
-
-Becomes…
-
-    {% extends "layout.html" %}
-
-### Template blocks
-
-    {{$pageTitle}}
-        GOV.UK prototype kit
-    {{/pageTitle}}
-
-Becomes…
-
-    {% block page_title %}
-        GOV.UK prototype kit
-    {% endblock %}
-
-and
-
-    {{$content}}
-    .......
-    {{/content}}
-
-Becomes...
-
-    {% block content %}
-    ........
-    {% endblock %}
-
-### Includes
-
-    {{>includes/breadcrumbs}}
-
-Becomes…
-
-    {% include "includes/breadcrumbs.html" %}
+If you still have an error, you can [raise an issue within github](https://github.com/alphagov/govuk_prototype_kit/issues) or ask in the [Slack channel for users of the Prototype Kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/) by providing as much information as you can about the error and the computer you are attempting to run the prototyping kit on.
