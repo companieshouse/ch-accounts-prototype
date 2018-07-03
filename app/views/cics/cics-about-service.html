@@ -1,34 +1,37 @@
-{% extends "layout.html" %} {% block pageTitle %} How to file your CIC report and accounts with Companies House {% endblock %} {% block content %}
+{% extends "layout.html" %}
+ {% block pageTitle %} How to file your CIC report and accounts with Companies House {% endblock %}
+ {% block main %}
 
 
 
-<main id="content" role="main">
+ <div class="govuk-width-container">
+   {% include "includes/phase_banner_beta.html" %}
+   {{ govukBackLink({
+     text: "Back",
+     href: "#"
+   }) }}
 
-  {% include "includes/phase_banner_beta.html" %}
+   <main class="govuk-main-wrapper">
 
 
-
-
-
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
 
 
   <div class="flash-card">
     <header>
-      <h1 class="heading-large">How to file your CIC report and accounts with Companies House</h1>
+      <h1 class="govuk-heading-xl">How to file your CIC report and accounts with Companies House</h1>
     </header>
-    <div class="grid-row">
-      <div class="column-two-thirds">
-        <ul>
-          <li><span class="circle circle-step-large circle-white">1</span>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <ul class="govuk-list">
+          <li><span class="circle-step-white">1</span>
             <h2 class="govuk-heading-m">Prepare your accounts</h2>
           </li>
 
-          <li><span class="circle circle-step-large circle-white">2</span>
+          <li><span class="circle-step-white">2</span>
             <h2 class="govuk-heading-m">Get your accounts approved by the company director(s)</h2>
           </li>
 
-          <li><span class="circle circle-step-large circle-white">3</span>
+          <li><span class="circle-step-white">3</span>
             <h2 class="govuk-heading-m">File your CIC report and accounts</h2>
           </li>
         </ul>
@@ -36,9 +39,9 @@
     </div>
 
     <form action="/cics/cics-new-or-resume" method="GET">
-      <div class="form-group">
-        <input id="submit-button" value="Continue" class="button" type="submit">
-      </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
     </form>
     <p><a href="https://www.gov.uk/annual-accounts">I need help preparing my accounts</a></p>
   </div>
@@ -48,7 +51,7 @@
 
 
   <!--
-  <h1 class="heading-large">How to use this service</h1>
+  <h1 class="govuk-heading-xl">How to use this service</h1>
 
   <div class="grid-row">
 
@@ -80,6 +83,10 @@
   <p>
     <a href="/cics/cics-about-service-alt" style="float:right; color: #DEE0E2; font-size:14px;">Alternative</a>
   </p>
+
+
 </main>
+</div><!---govuk-width-container-->
+
 
 {% endblock %}

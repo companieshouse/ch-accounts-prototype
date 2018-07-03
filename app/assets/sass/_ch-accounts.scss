@@ -920,20 +920,46 @@ img.card-image {
 }
 /// Flash card ///
 
+.circle-step-white {
+  height: 1.4em;
+  width: 1.4em;
+  background-color: govuk-colour("white");
+  color: govuk-colour("black");
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  margin: -0.4em 0.5em 0 0;
+}
+
 .flash-card {
-  color: govuk-colour("white");
-  padding: 1em 3em;
+  padding: 2em 3em;
   background: $govuk-link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;
 
   &.flash-card-paper {
     background: $govuk-link-colour url("/public/images/file-paper.png") no-repeat 90% 100%;
   }
-  @include govuk-media-query(mobile) {
+  @include govuk-media-query($until: tablet) {
     background-image: none !important;
+  }
+
+  .govuk-button {
+    background-color: govuk-colour("white");
+    color: govuk-colour("black");
+
+    &:hover {
+      background-color: govuk-colour("grey-3");
+    }
+  }
+
+  h1 {
+    color: govuk-colour("white");
   }
 
   h2 {
     display: inline;
+    color: govuk-colour("white");
   }
 
   ul {
