@@ -815,7 +815,7 @@ router.get( '/chs/chs-choose-small-full-or-other', function ( req, res ) {
 
 router.get( '/cics/cics-criteria-report', function ( req, res ) {
 	var cicsr1 = req.query.cicsr1;
-	if ( cicsr1 == "No" ) {
+	if ( cicsr1 == "no" ) {
 		res.redirect( "/cics/cics-criteria-not-met" );
 	} else {
 		res.render( 'cics/cics-criteria-report' );
@@ -831,12 +831,21 @@ router.get( '/cics/cics-criteria-profit', function ( req, res ) {
 	}
 } );
 
-router.get( '/cics/cics-save-info', function ( req, res ) {
+router.get( '/cics/general-description', function ( req, res ) {
 	var criteriaprofit = req.query.criteriaprofit;
-	if ( criteriaprofit == "Yes" ) {
+	if ( criteriaprofit == "yes" ) {
 		res.redirect( "/cics/cics-criteria-no-DR-PL" );
 	} else {
-		res.render( 'cics/cics-save-info' );
+		res.render( 'cics/general-description' );
+	}
+} );
+
+router.get( '/cics/consultation-with-stakeholders-yes', function ( req, res ) {
+	var consultationwithstakeholders = req.query.consultationwithstakeholders;
+	if ( consultationwithstakeholders == "no" ) {
+		res.redirect( "/cics/directors-remuneration" );
+	} else {
+		res.render( 'cics/consultation-with-stakeholders-yes' );
 	}
 } );
 
@@ -897,23 +906,15 @@ router.post( '/small-full/small-full-review-mvp', function ( req, res ) {
 } )
 
 
-
 // CICS - detailed or simplified accounts
 
 router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
-
 	var choosecicreporttype = req.query.choosecicreporttype;
-
 	if ( choosecicreporttype == "Detailed" ) {
-
 		res.redirect( "/cics/cics-criteria-not-met" );
-
 	} else {
-
 		res.render( 'cics/cics-criteria-mvp' );
-
 	}
-
 } );
 
 // CICS - Was directors' remuneration received?
@@ -921,15 +922,31 @@ router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
 router.get( '/cics/directors-remuneration-yes', function ( req, res ) {
 
 	var directorsremunerationyn = req.query.directorsremunerationyn;
-
-	if ( directorsremunerationyn == "No" ) {
-
+	if ( directorsremunerationyn == "no" ) {
 		res.redirect( "/cics/transfer-of-assets" );
-
 	} else {
-
 		res.render( 'cics/directors-remuneration-yes' );
-
 	}
+} );
 
+// CICS - Is directors' remuneration included in accounts?
+
+router.get( '/cics/transfer-of-assets', function ( req, res ) {
+	var directorsremunerationaccounts = req.query.directorsremunerationaccounts;
+	if ( directorsremunerationaccounts == "no" ) {
+		res.redirect( "/cics/directors-remuneration-accounts" );
+	} else {
+		res.render( 'cics/transfer-of-assets' );
+	}
+} );
+
+// CICS - Were any assets transferred other than for full consideration?
+
+router.get( '/cics/cics-check-before-you-submit', function ( req, res ) {
+	var assetstransferred = req.query.assetstransferred;
+	if ( assetstransferred == "yes" ) {
+		res.redirect( "/cics/transfers-of-assets-yes" );
+	} else {
+		res.render( 'cics/cics-check-before-you-submit' );
+	}
 } );

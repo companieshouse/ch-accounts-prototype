@@ -1,80 +1,67 @@
-{% extends "layout.html" %} {% block pageTitle %} Community Interest Company annual report - Transfers of assets other than for full consideration {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %} Were any assets transferred other than for full consideration? {% endblock %}
+{% block main %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
-  }
-</style>
-
-<main id="content" role="main" class="two-column-accounts">
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+  <main class="govuk-main-wrapper">
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-  <div class="text">
+    <h1 class="govuk-heading-xl">Were any assets transferred other than for full consideration?</h1>
 
-    <h1 class="govuk-heading-xl">
-      <!--<span class="circle-subheading text">CIC report</span>-->
-      Were any assets transferred other than for full consideration?
-    </h1>
-
-
-    <p>Insert full details of any transfers of assets other than for full consideration - for example, donations to outside bodies.</p>
-
-    <form action="/cics/cics-check-before-you-submit" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error="Please confirm if any assets were transferred other than for full consideration">
-        <legend class="visually-hidden">Were any assets transferred other than for full consideration</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="transferofassetsyes" data-target="transferofassetsyes-reveal">
-                        <input id="transferofassetsyes" name="transferofassetsyn" value="Yes" aria-controls="transferofassetsyes-reveal" type="radio" checked="checked">
-                        Yes
-                      </label>
-          <label class="block-label selection-button-radio" for="transferofassetsno">
-                        <input id="transferofassetsno" name="transferofassetsyn" value="No" type="radio">
-                        No
-                        </label>
-        </div>
-        <!--form-group-->
-
-      </fieldset>
+    <p>
+      Insert full details of any transfers of assets other than for full consideration - for example, donations to outside bodies.
+    </p>
 
 
 
-      <div class="panel panel-border-narrow" id="transferofassetsyes-reveal">
-        <label for="transfertextarea" class="govuk-heading-m form-group">Give details about assets transferred other than for full consideration</span></label>
-        <details class="form-group">
-          <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">consultation with stakeholders</span>
-          <p>There was a transfer to a local community group of £100 to purchase a laptop.</p>
-        </details>
-        <textarea type="text" id="transfertextarea" class="form-control" rows="10">There was a transfer to The Acme Charity of £100 to purchase a laptop.</textarea>
-      </div>
+    <form action="/cics/transfers-of-assets-yes-completed" method="get" class="form">
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "assetstransferred",
+        name: "assetstransferred",
+        fieldset: {
+          legend: {
+            text: "Were any assets transferred other than for full consideration?",
+            classes: "govuk-visually-hidden"
+          }
+        },
+
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: "true"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
 
-
-      <div class="accounts-row-spacer">
-        <input type="submit" class="button" value="Save and continue" id="">
-      </div>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
     </form>
-  </div>
-  <!--left-indent-->
-  </div>
-  <!--text-->
 
+</div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
 
 </main>
+</div><!---govuk-width-container-->
+
+
 {% endblock %}

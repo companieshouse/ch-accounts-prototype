@@ -1,39 +1,34 @@
-{%- extends "layout-chs.html" %} {% block pageTitle %} Check before you submit {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %} Check your answers {% endblock %}
+{% block main %}
 
-
-
-<main id="content" role="main" class="two-column-accounts">
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <div class="grid-row">
-<div class="column-two-thirds">
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
       <br />
 
       <form action="/cics/cics-approval" method="get" class="form">
 
-        <dl class="govuk-check-your-answers cya-questions-short">
-          <div>
-            <dt class="cya-question">
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
                Company’s activities and impact
              </dt>
-            <dd class="cya-answer">
+            <dd class="app-check-your-answers__answer">
               <p>The company runs The Village Shop, a general store in The Village with a particular emphasis on selling locally produced food. The shop opened for business in August 2005. During the financial year 2017-2018, the shop’s activities have benefited
                 the community in the following ways:</p>
               <p>- local residents (particularly those without access to cars and those with impaired mobility) have been able to buy their groceries more conveniently, either by visiting the shop or by using its telephone order home delivery service;</p>
@@ -43,66 +38,67 @@
               <p>- 40 households have been supplied with regular or occasional domestic services through the shop’s job-matching service.</p>
 
             </dd>
-            <dd class="cya-change">
+            <dd class="app-check-your-answers__change">
               <a href="/cics/general-description-completed">
-                 Change<span class="visually-hidden"> company’s activities and impact</span>
+                 Change<span class="govuk-visually-hidden"> company’s activities and impact</span>
                </a>
             </dd>
           </div>
 
-          <div>
-            <dt class="cya-question">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
                Consultation with stakeholders
              </dt>
-            <dd class="cya-answer">
+            <dd class="app-check-your-answers__answer">
               The CICs stakeholders are its members, who are regularly updated via monthly meetings and a quarterly newsletter. No specific action has been taken this year.
             </dd>
-            <dd class="cya-change">
+            <dd class="app-check-your-answers__change">
               <a href="/cics/consultation-with-stakeholders-completed">
-                 Change<span class="visually-hidden"> consultation with stakeholders</span>
+                 Change<span class="govuk-visually-hidden"> consultation with stakeholders</span>
                </a>
             </dd>
           </div>
 
-          <div>
-            <dt class="cya-question">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
                Directors' remuneration
              </dt>
-            <dd class="cya-answer">
+            <dd class="app-check-your-answers__answer">
               No remuneration was received.
             </dd>
-            <dd class="cya-change">
+            <dd class="app-check-your-answers__change">
               <a href="/cics/directors-remuneration-completed">
-                 Change<span class="visually-hidden"> directors' remuneration</span>
+                 Change<span class="govuk-visually-hidden"> directors' remuneration</span>
                </a>
             </dd>
           </div>
 
-          <div>
-            <dt class="cya-question">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
                Assets transferred
              </dt>
-            <dd class="cya-answer">
+            <dd class="app-check-your-answers__answer">
               There was a transfer to The Acme Charity of £100 to purchase a laptop.
             </dd>
-            <dd class="cya-change">
+            <dd class="app-check-your-answers__change">
               <a href="/cics/transfer-of-assets-completed">
-                 Change<span class="visually-hidden"> assets transferred</span>
+                 Change<span class="govuk-visually-hidden"> assets transferred</span>
                </a>
             </dd>
           </div>
         </dl>
 
 
-        <div class="accounts-row-spacer">
-          <input type="submit" class="button" value="Continue" id="">
-        </div>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
       </form>
-    </div>
-    <!--column-two-thirds-->
-  </div>
-  <!--grid-row-->
 
-</main>
+  </div><!--govuk-grid-row-->
+  </div><!--govuk-grid-column-two-thirds-->
 
-{% endblock %}
+  </main>
+  </div><!---govuk-width-container-->
+
+
+  {% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Enter your directors' remuneration information here {% endblock %}
+{% block main %}
+
+<div class="govuk-width-container">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/chs-user-menu-logged-in.html" %}
+
+
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">Enter your directors' remuneration information here</h1>
+
+    <form action="/cics/transfer-of-assets" method="get" class="form">
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          See an example
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>The total amount paid to or receivable by directors in respect of qualifying services was £10,000.</p>
+      </div>
+    </details>
+
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      rows: "20",
+      label: {
+        text: "Enter your directors' remuneration information here",
+        classes: "govuk-visually-hidden"
+      }
+    }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+</div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
+
+</main>
+</div><!---govuk-width-container-->
+
+
+{% endblock %}

@@ -23,13 +23,15 @@
 ul#navigation {
   border-bottom: 1px solid $govuk-border-colour;
   font-size: 0.9em;
-  margin-bottom: 1em;
+  margin: 0 0 1em;
   padding: 0.8em 0;
   text-align: right;
 
   li {
     display: inline;
     padding: 0 0 0 1.5em;
+    font-family: "nta", Arial;
+    font-size: 16px;
   }
 }
 

@@ -1,39 +1,29 @@
-{% extends "layout.html" %} {% block pageTitle %} Community Interest Company annual report - The company’s activities and impact{% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %} The company’s activities and impact {% endblock %}
+{% block main %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
-  }
-</style>
-
-<main id="content" role="main" class="two-column-accounts">
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
-  <!--
-  <div class="important-message" id="save-and-resume-message">
-    <p class="bold-medium">You've started your filing</p>
-    <p>If you leave the service you can <a href="/cics/cics-new-or-resume">come back later to continue</a>.</p>
-  </div>-->
-  <div class="text">
+  <main class="govuk-main-wrapper">
 
-    <h1 class="govuk-heading-xl">
-    <!--<span class="circle-subheading text">CIC report</span>-->
-      The company’s activities and impact
-    </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+
+      <header>
+        <h1 id="page-header" class="govuk-heading-xl">The company’s activities and impact</h1>
+      </header>
 
 
 
@@ -42,9 +32,14 @@
     <form action="/cics/consultation-with-stakeholders" method="get" class="form">
 
       <h2 class="govuk-heading-m">Give a summary of the company's activities in this financial year, including how they’ve benefited the community</h2>
-      <details class="form-group">
-        <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">general description of the company's activities and impact</span>
-        <div class="panel panel-border-narrow">
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            See an example
+          </span>
+        </summary>
+        <div class="govuk-details__text">
           <p>The company runs The Village Shop, a general store in The Village with a particular emphasis on selling locally produced food. The shop opened for business in August 2005. During the financial year 2006-2007, the shop’s activities have benefited
             the community in the following ways:</p>
           <p>- local residents (particularly those without access to cars and those with impaired mobility) have been able to buy their groceries more conveniently, either by visiting the shop or by using its telephone order home delivery service</p>
@@ -54,26 +49,34 @@
           <p>- 40 households have been supplied with regular or occasional domestic services through the shop’s job-matching service.</p>
         </div>
       </details>
-      <label for="general-account" class="visuallyhidden">Insert a general account of the company's activities in the financial year to which the report relates, including a description of how they have benefited the community.</label>
-      <textarea type="text" id="general-account" class="form-control" rows="20"></textarea>
+
+
+
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        rows: "20",
+        label: {
+          text: "Give a summary of the company's activities in this financial year, including how they’ve benefited the community",
+          classes: "govuk-visually-hidden"
+        }
+      }) }}
 
 
 
 
 
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
 
-
-
-
-      <div class="accounts-row-spacer">
-        <input type="submit" class="button" value="Save and continue" id="">
-      </div>
-    </form>
-  </div>
-  <!--left-indent-->
-  </div>
-  <!--text-->
-
+  </div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
 
 </main>
+</div><!---govuk-width-container-->
+
+
 {% endblock %}

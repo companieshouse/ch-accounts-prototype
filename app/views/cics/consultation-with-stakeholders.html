@@ -1,31 +1,23 @@
-{% extends "layout.html" %} {% block pageTitle %} Community Interest Company annual report - Consultation with stakeholders{% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %} Consultation with stakeholders {% endblock %}
+{% block main %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
-  }
-</style>
-
-<main id="content" role="main" class="two-column-accounts">
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+  <main class="govuk-main-wrapper">
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-  <div class="text">
 
     <h1 class="govuk-heading-xl">
       <!--<span class="circle-subheading text">CIC report</span>-->
@@ -34,58 +26,52 @@
 
 
 
-    <form action="/cics/directors-remuneration" method="get" class="form">
+    <form action="/cics/consultation-with-stakeholders-yes" method="get" class="form">
 
       <p>A stakeholder is a party that has an interest in the CIC and can either affect or be affected by its business and activities.</p>
       <p>If there's been any consultation with stakeholders, you should mention:</p>
-      <ul class="govuk-list">
+      <ul class="govuk-list govuk-list--bullet">
         <li>who the company's stakeholders are</li>
         <li>how the stakeholders have been consulted</li>
         <li>any action the company has taken in response to feedback from its consultations</li>
       </ul>
 
-      <fieldset class="inline" data-required="" data-error="Please confirm if there has been a consultation with stakeholders">
-        <legend class="visually-hidden">Has there been a consultation with stakeholders?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="consultationwithstakeholdersyes" data-target="consultationwithstakeholdersyes-reveal">
-                        <input id="consultationwithstakeholdersyes" name="consultationwithstakeholdersyn" value="Yes" aria-controls="consultationwithstakeholdersyes-reveal" type="radio">
-                        Yes
-                      </label>
-          <label class="block-label selection-button-radio" for="consultationwithstakeholdersno">
-                        <input id="consultationwithstakeholdersno" name="consultationwithstakeholdersyn" value="No" type="radio">
-                        No
-                        </label>
-        </div>
-        <!--form-group-->
-
-      </fieldset>
-
-
-
-      <div class="panel panel-border-narrow js-hidden" id="consultationwithstakeholdersyes-reveal">
-
-        <label for="consultation" class="govuk-heading-m form-group">Give details of any consultation with stakeholders</label>
-        <details class="form-group">
-          <summary><span class="summary">See an example</span></summary><span class="visuallyhidden">consultation with stakeholders</span>
-          <p>The company’s stakeholders are residents of and visitors to The Village, and local producers of food and drink products in the surrounding area. The directors of the company have lived in The Village for a number of years and developed the business
-            model for the shop based on their experience of talking to other residents.</p>
-          <p>We ask everyone using the shop for the first time to fill in a short questionnaire about their shopping habits. This has helped us to build up a profile of local consumers’ needs and what we can do to meet them more effectively. Our research
-            has enabled us to identify that there are about 120 households in the village without access to cars or where residents have impaired mobility, and a further 200 or so households who now use the shop for at least 40 per cent of their grocery
-            shopping. We encourage those working in the shop to pick up ideas for the business when talking to customers and we keep a “suggestions box” for customers to provide details of products which they would like to see stocked in the shop.</p>
-        </details>
-        <textarea type="text" id="consultation" class="form-control" rows="20"></textarea>
-      </div>
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "consultationwithstakeholders",
+        name: "consultationwithstakeholders",
+        fieldset: {
+          legend: {
+            text: "Has there been a consultation with stakeholders? ",
+            isPageHeading: true,
+            classes: "govuk-visually-hidden"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
 
 
-      <input type="submit" class="button" value="Save and continue" id="">
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
     </form>
-  </div>
-  <!--left-indent-->
-  </div>
-  <!--text-->
 
+</div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
 
 </main>
+</div><!---govuk-width-container-->
+
+
 {% endblock %}
