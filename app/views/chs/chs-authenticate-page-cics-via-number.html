@@ -17,7 +17,13 @@
 
 
   <p>To file company information you will need an authentication code.</p>
-  <p>Authenticating for<br><span id="company_details" class="govuk-heading-m">A TEST CIC (01234567)</span></p>
+  <p>Authenticating for<br><span id="company_details" class="govuk-heading-m">A TEST CIC ({{ data['company-number'] }})</span></p>
+
+
+
+
+
+
 
   {{ govukInput({
     label: {

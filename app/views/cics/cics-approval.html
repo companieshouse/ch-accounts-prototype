@@ -30,7 +30,9 @@
 
 
 
-
+    {% set myHTML %}
+                <p>this is some html</p>
+              {% endset -%}
 
 
 
@@ -64,7 +66,7 @@
       }
     },
     hint: {
-      text: "This is the date the CIC report was approved by the director. For example, 31 3 2017"
+      html: myHTML
     },
     items: [
       {

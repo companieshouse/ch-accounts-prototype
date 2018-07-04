@@ -9,6 +9,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <form action="/chs/chs-authenticate-page-cics-via-number" method="GET">
 
 
         {% call govukFieldset({
@@ -42,7 +43,6 @@
 
 {% endcall %}
 
-<form action="/chs/chs-authenticate-page-cics-via-number" method="GET">
   {{ govukButton({
     text: "Sign in"
   }) }}
