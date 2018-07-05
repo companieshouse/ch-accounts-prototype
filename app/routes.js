@@ -1035,3 +1035,47 @@ router.get( '/small-full/small-full-any-other-accounting-policies', function ( r
 		res.render( 'small-full/small-full-any-other-accounting-policies' );
 	}
 } );
+
+// (CICs) Accounts - Do your prepared accounts include any other notes?
+
+router.get( '/small-full/small-full-employees-yes-no', function ( req, res ) {
+	var smallfullothernotes = req.query.smallfullothernotes;
+	if ( smallfullothernotes == "no" ) {
+		res.redirect( "/small-full/small-full-check-before-you-submit" );
+	} else {
+		res.render( 'small-full/small-full-employees-yes-no' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include an 'employees' note?
+
+router.get( '/small-full/small-full-employees-note', function ( req, res ) {
+	var employeesnoteyesno = req.query.employeesnoteyesno;
+	if ( employeesnoteyesno == "no" ) {
+		res.redirect( "/small-full/small-full-fixed-assets-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-employees-note' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'fixed assets investments' note?
+
+router.get( '/small-full/small-full-fixed-assets-investments-note', function ( req, res ) {
+	var fixedassetsinvestmentsyesno = req.query.fixedassetsinvestmentsyesno;
+	if ( fixedassetsinvestmentsyesno == "no" ) {
+		res.redirect( "/small-full/small-full-current-assets-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-fixed-assets-investments-note' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'fixed assets investments' note?
+
+router.get( '/small-full/small-full-current-assets-investments-note', function ( req, res ) {
+	var currentassetsinvestmentsyesno = req.query.currentassetsinvestmentsyesno;
+	if ( currentassetsinvestmentsyesno == "no" ) {
+		res.redirect( "/small-full/small-full-commitments-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-current-assets-investments-note' );
+	}
+} );

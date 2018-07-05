@@ -778,10 +778,10 @@ img.card-image {
 
 .column-one-sixth,
 .column-sixth {
-  float: left;
-  width: 12.5%;
-  @include govuk-media-query(mobile) {
-    width: 100%;
+  width: 100%;
+  @include govuk-media-query(desktop) {
+    width: 12.5%;
+    float: left;
   }
 }
 //Column fifth (for detailed Tangible asset notes)
@@ -794,10 +794,10 @@ img.card-image {
 
 .column-fifth,
 .column-one-fifth {
-  float: left;
-  width: 18%;
-  @include govuk-media-query(mobile) {
-    width: 100%;
+  width: 100%;
+  @include govuk-media-query(desktop) {
+    width: 18%;
+    float: left;
   }
 }
 

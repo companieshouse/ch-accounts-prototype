@@ -1,61 +1,63 @@
-{% extends "layout.html" %} {% block pageTitle %} Balance sheet notes - Employees {% endblock %} {% block main %}
-<main id="content" role="main" class="two-column-accounts">
-  {% include "includes/phase_banner_beta.html" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Do your prepared accounts include any other notes?
+{% endblock %}
+{% block main %}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+          <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
 
-  <div class="text">
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "smallfullothernotes",
+        name: "smallfullothernotes",
+        fieldset: {
+          legend: {
+            text: "Do your prepared accounts include any other notes? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 'employees', 'fixed asset investments' or 'debtors'"
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
 
-    <h1 class="govuk-heading-l">
-Do your prepared accounts include any other notes?
-</h1>
-
-
-
-
-    <p>For example, 'employees', 'fixed asset investments' or 'debtors'</p>
-
-
-
-    <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error=" Please confirm if your prepared accounts include any other notes">
-        <div class="form-group">
-
-          <legend class="visually-hidden">Do your prepared accounts include a "Creditors - amounts falling due within one year" note?</legend>
-          <label class="block-label selection-button-radio" for="othernotesyes">
-        <input id="othernotesyes" type="radio" name="othernotes" value="Yes">
-        Yes
-      </label>
-          <label class="block-label selection-button-radio" for="othernotesno">
-        <input id="othernotesno" type="radio" name="othernotes" value="No" disabled>
-        No
-      </label>
         </div>
-      </fieldset>
-
-      <div>
-        <input type="submit" class="button" value="Save and continue" id="">
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-
-
-    </form>
+    </main>
   </div>
-  <!-- text-->
-</main>
+  <!---govuk-width-container-->
+
 {% endblock %}

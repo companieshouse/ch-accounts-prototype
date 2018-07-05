@@ -1,214 +1,191 @@
-{% extends "layout.html" %} {% block pageTitle %} Debtors note {% endblock %} {% block main %}
-<main class="two-column-accounts" id="content" role="main">
-  {% include "includes/phase_banner_beta.html" %}
-  <nav class="content" role="navigation">
-    <ul class="mobile-hidden" id="navigation">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
-      </li>
-      <li>
-        <a href="javascript:void(0)">Your details</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" id="recent_filings">Your filings</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" id="">Companies you follow</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" id="user-signout">Sign out</a>
-      </li>
-    </ul>
-  </nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
-  <h1 class="govuk-heading-l">
-Debtors
-</h1>
-  <div class="">
-    <p class="warning-note warning-note-large">Complete all items that are included in your prepared accounts.</p>
-    <br>
-    <form action="/" class="form currency-included-within-inputs" id="" method="post" name="">
-      <div class="grid-row" id="accounts-header">
-        <div class="column-half">
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Debtors
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper two-column-accounts">
+
+      <h1 class="govuk-heading-l">Debtors</h1>
+
+      <p class="warning-note warning-note-large">Complete all items that are included in your prepared accounts.</p>
+
+      <div class="govuk-grid-row" id="accounts-header">
+        <div class="govuk-grid-column-one-half">
           <h2 class="govuk-heading-m">
-					<span style="display:none">Debtors</span>&nbsp; <!-- needs work, trying to hide content from screen but make it 'readable' by screen-readers-->
-					</h2>
+            <span style="display:none">Debtors</span>&nbsp;
+            <!-- needs work, trying to hide content from screen but make it 'readable' by screen-readers-->
+          </h2>
           <!-- To do - move this style into the SASS file-->
         </div>
-        <div class="column-quarter">
+        <div class="govuk-grid-column-one-quarter">
           <h2 class="govuk-heading-s">2018<!--<br />£--></h2>
         </div>
-        <div class="column-quarter">
+        <div class="govuk-grid-column-one-quarter">
           <h2 class="govuk-heading-s">2017<!--<br />£--></h2>
         </div>
       </div>
 
-      <!--Start Trade debtors-->
-      <div class="grid-row accounts-row-spacer">
-        <div class="column-half">
-          <!--  <details>
-            <summary>
-              <span class="summary">-->Trade debtors
-          <!--</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-              <p>The amount you're owed by customers for goods or services your company has provided as part of its normal trading activities. Don't include any bad debts you're aware of or have made provision for. Record details of trade debtors who are
-                due to settle after more than one year as additional information.</p>
-            </div>
-          </details>-->
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="trade-debtors-current"><span class="mobile-only-label">Trade debtors - 2017</span>
-            <input class="form-control" id="trade-debtors-current" type="number"></label>
-          </div>
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="trade-debtors-previous"><span class="mobile-only-label">Trade debtors - 2016</span>
-						<input class="form-control" id="trade-debtors-previous" type="number"></label>
-          </div>
-        </div>
-      </div>
-      <!--End Trade debtors-->
-      <!--Start Prepayments and accrued income  -->
-      <div class="grid-row">
-        <div class="column-half">
-          <!--<details>
-            <summary>
-              <span class="summary">-->Prepayments and accrued income
-          <!--</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-              <p><span class="govuk-heading-s">Prepayments:</span> The amount you paid for goods and services that you hadn't received at the end of the period, for example, advance rent payments.</p>
-              <p><span class="govuk-heading-s">Accrued income:</span> The amount you've earned (excluding from debtors) but haven't received, for example, interest earned on a bond to be paid in the future.</p>
-            </div>
-          </details>-->
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="prepayments-and-accrued-income-current"><span class="mobile-only-label">Prepayments and accrued income - 2017</span>
-            <input class="form-control" id="prepayments-and-accrued-income-current" type="number"></label>
-          </div>
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="prepayments-and-accrued-income-previous"><span class="mobile-only-label">Prepayments and accrued income - 2016</span>
-						<input class="form-control" id="prepayments-and-accrued-income-previous" type="number"></label>
-          </div>
-        </div>
-      </div>
-      <!--End Prepayments and accrued income  -->
-      <!--Start Other debtors-->
-      <div class="grid-row">
-        <div class="column-half">
-          <!--  <details>
-            <summary>
-              <span class="summary">-->Other debtors
-          <!--</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-              <p>The amount you're owed by debtors who aren't trade debtors. This could include utility companies, loans to employees, tax refunds, and outstanding insurance claims.</p>
-            </div>
-          </details>-->
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="other-debtors-current"><span class="mobile-only-label">Other debtors - 2017</span>
-            <input class="form-control" id="other-debtors-current" type="number"></label>
-          </div>
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="other-debtors-previous"><span class="mobile-only-label">Other debtors - 2016</span>
-						<input class="form-control" id="other-debtors-previous" type="number"></label>
-          </div>
-        </div>
-      </div>
-      <!--End Other debtors=-->
-      <!--Start Total debtors -->
-      <div class="grid-row accounts-total">
-        <div class="column-half">
-          <!--<details>
-            <summary>
-              <span class="summary">--><strong>Total</strong>
-          <!--</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-              <p>The total of all debtors for the accounting period. This is calculated by adding together:</p>
-              <ul class="list list-bullet font-small">
-                <li>trade debtors</li>
-                <li>prepayments and accrued income</li>
-                <li>other debtors</li>
-              </ul>
-            </div>
-          </details>-->
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="total-debtors-current"><span class="mobile-only-label">Total debtors - 2017</span>
-            <input class="form-control" id="total-debtors-current" type="number"></label>
-          </div>
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="total-debtors-previous"><span class="mobile-only-label">Total debtors - 2016</span>
-						<input class="form-control" id="total-debtors-previous" type="number"></label>
-          </div>
-        </div>
-      </div>
-      <!--End Total debtors =-->
-      <!--Start Debtors after more than one year-->
-      <div class="grid-row">
-        <div class="column-half">
-          <!--<details>
-            <summary>
-              <span class="summary">-->Debtors after more than one year
-          <!--</span>
-          </summary>
-          <div class="panel panel-border-narrow">
-            <p>Of the total debtors figure for the period, enter the amount owed by debtors who are due to pay their debt in full after more than one year from the end of the period.</p>
-          </div>
-        </details>-->
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="debtors-after-current"><span class="mobile-only-label">Debtors after more than one year - 2017</span>
-            <input class="form-control" id="debtors-after-current" type="number"></label>
-          </div>
-        </div>
-        <div class="column-quarter">
-          <div class="form-group">
-            <span class="currency-type">£</span>
-            <label for="debtors-after-previous"><span class="mobile-only-label">Debtors after more than one year - 2016</span>
-						<input class="form-control" id="debtors-after-previous" type="number"></label>
-          </div>
-        </div>
-      </div>
-      <!--End Debtors after more than one year-->
+      <form action="/small-full/small-full-creditors-within-note" class="form currency-included-within-inputs govuk-body" id="" method="get" name="">
 
-
-      <details class="accounts-row-spacer text">
-        <summary>
-          <span class="summary">Add additional information about your 'debtors' note?</span>
-        </summary>
-        <div class="panel panel-border-narrow">
-          <label class="visuallyhidden" for="textarea">Add additional information about your 'debtors' note?</label>
-          <span class="govuk-hint">Enter details of any other debtors information not already covered</span>
-          <textarea class="form-control" id="textarea" rows="10"></textarea>
+        <!--Start Trade debtors-->
+        <div class="govuk-grid-row accounts-row-spacer">
+          <div class="govuk-grid-column-one-half">
+            <!-- <details> <summary> <span class="summary">-->Trade debtors
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>The amount you're owed by customers for goods or services your company has provided as part of its normal trading activities. Don't include any bad debts you're aware of or have made
+            provision for. Record details of trade debtors who are due to settle after more than one year as additional information.</p> </div> </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="trade-debtors-current">
+                <span class="mobile-only-label">Trade debtors - 2017</span>
+                <input class="govuk-input" id="trade-debtors-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="trade-debtors-previous">
+                <span class="mobile-only-label">Trade debtors - 2016</span>
+                <input class="govuk-input" id="trade-debtors-previous" type="number"></label>
+            </div>
+          </div>
         </div>
-      </details>
-      <div class="form-group accounts-row-spacer">
-        <a class="button" href="/small-full/small-full-creditors-within-note">Save and continue</a>
-      </div>
-    </form>
+        <!--End Trade debtors-->
+        <!--Start Prepayments and accrued income -->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <!--<details> <summary> <span class="summary">-->Prepayments and accrued income
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p><span class="govuk-heading-s">Prepayments:</span> The amount you paid for goods and services that you hadn't received at the end of the period, for example, advance rent payments.</p>
+            <p><span class="govuk-heading-s">Accrued income:</span> The amount you've earned (excluding from debtors) but haven't received, for example, interest earned on a bond to be paid in the future.</p> </div> </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="prepayments-and-accrued-income-current">
+                <span class="mobile-only-label">Prepayments and accrued income - 2017</span>
+                <input class="govuk-input" id="prepayments-and-accrued-income-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="prepayments-and-accrued-income-previous">
+                <span class="mobile-only-label">Prepayments and accrued income - 2016</span>
+                <input class="govuk-input" id="prepayments-and-accrued-income-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Prepayments and accrued income -->
+        <!--Start Other debtors-->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <!-- <details> <summary> <span class="summary">-->Other debtors
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>The amount you're owed by debtors who aren't trade debtors. This could include utility companies, loans to employees, tax refunds, and outstanding insurance claims.</p> </div>
+            </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="other-debtors-current">
+                <span class="mobile-only-label">Other debtors - 2017</span>
+                <input class="govuk-input" id="other-debtors-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="other-debtors-previous">
+                <span class="mobile-only-label">Other debtors - 2016</span>
+                <input class="govuk-input" id="other-debtors-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Other debtors=-->
+        <!--Start Total debtors -->
+        <div class="govuk-grid-row accounts-total">
+          <div class="govuk-grid-column-one-half">
+            <!--<details> <summary> <span class="summary">-->
+            <strong>Total</strong>
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>The total of all debtors for the accounting period. This is calculated by adding together:</p> <ul class="list list-bullet font-small"> <li>trade debtors</li> <li>prepayments and
+            accrued income</li> <li>other debtors</li> </ul> </div> </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="total-debtors-current">
+                <span class="mobile-only-label">Total debtors - 2017</span>
+                <input class="govuk-input" id="total-debtors-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="total-debtors-previous">
+                <span class="mobile-only-label">Total debtors - 2016</span>
+                <input class="govuk-input" id="total-debtors-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Total debtors =-->
+        <!--Start Debtors after more than one year-->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <!--<details> <summary> <span class="summary">-->Debtors after more than one year
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>Of the total debtors figure for the period, enter the amount owed by debtors who are due to pay their debt in full after more than one year from the end of the period.</p> </div>
+            </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="debtors-after-current">
+                <span class="mobile-only-label">Debtors after more than one year - 2017</span>
+                <input class="govuk-input" id="debtors-after-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="debtors-after-previous">
+                <span class="mobile-only-label">Debtors after more than one year - 2016</span>
+                <input class="govuk-input" id="debtors-after-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Debtors after more than one year-->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Add additional information about your 'debtors' note?</span>
+              </summary>
+              <div class="govuk-govuk-form-group">
+                <label class="govuk-visually-hidden" for="more-detail">Add additional information about your 'debtors' note?</label>
+                <span id="more-detail-hint" class="govuk-hint">Enter details of any other 'debtors' information not already covered</span>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        {{ govukButton({
+            text: "Save and continue"
+          }) }}
+      </form>
+
+    </main>
   </div>
-  <!--left-indent-->
-</main>{% endblock %}
+  <!---govuk-width-container-->
+
+{% endblock %}

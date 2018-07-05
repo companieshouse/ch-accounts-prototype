@@ -1,70 +1,62 @@
-{% extends "layout.html" %} {% block pageTitle %} Balance sheet notes - Fixed assets investments note {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
-  }
-</style>
+  Do your prepared accounts include a 'fixed assets investments' note?
 
-<main id="content" role="main" class="two-column-accounts">
-  {% include "includes/phase_banner_beta.html" %}
+{% endblock %}
+{% block main %}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+          <form action="/small-full/small-full-fixed-assets-investments-note" method="get" class="form">
 
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "fixedassetsinvestmentsyesno",
+        name: "fixedassetsinvestmentsyesno",
+        fieldset: {
+          legend: {
+            text: "Do your prepared accounts include a 'fixed assets investments' note?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
-  <div class="text">
-    <h1 class="govuk-heading-l">
-Do your prepared accounts include a 'fixed assets investments' note?
-  </h1>
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
 
-
-    <form action="/small-full/small-full-current-assets-yes-no" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'fixed assets investments' note">
-        <legend class="visually-hidden">Do your prepared accounts include a 'fixed assets investments' note?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="fixedassetnoteyes" data-target="fixedassetnoteyes-reveal">
-                    <input id="fixedassetnoteyes" name="fixedassetnoteyn" value="Yes" aria-controls="fixedassetnoteyes-reveal" type="radio">
-                    Yes
-                  </label>
-          <label class="block-label selection-button-radio" for="fixedassetnoteno">
-                    <input id="fixedassetnoteno" name="fixedassetnoteyn" value="No" type="radio">
-                    No
-                    </label>
         </div>
-        <!--form-group-->
-
-      </fieldset>
-
-
-
-      <div class="panel panel-border-narrow js-hidden" id="fixedassetnoteyes-reveal">
-        <label for="textarea" class="govuk-heading-m">Enter your 'fixed assets investments' note</label>
-        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-
-      <input type="submit" class="button" value="Save and continue" id="">
-    </form>
+    </main>
   </div>
-  <!--left-indent-->
+  <!---govuk-width-container-->
 
-  </div>
-  <!--text-->
-
-</main>
 {% endblock %}
