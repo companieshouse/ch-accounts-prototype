@@ -31,7 +31,7 @@
 
 
     {% set myHTML %}
-                <p>this is some html</p>
+                <p class="govuk-hint">This is the date the CIC report was approved by the director.<br /> For example, 31 3 2017</p>
               {% endset -%}
 
 
@@ -40,7 +40,7 @@
       {% call govukFieldset({
   legend: {
     text: "Approve your CIC report",
-    classes: "govuk-fieldset__legend--xl"
+    classes: "govuk-fieldset__legend--l"
     }
     }) %}
 
@@ -66,7 +66,7 @@
       }
     },
     hint: {
-      html: myHTML
+        html: myHTML
     },
     items: [
       {

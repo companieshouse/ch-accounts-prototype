@@ -1,93 +1,94 @@
-{% extends "layout.html" %} {% block pageTitle %} Accounting policies {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %} How did you prepare your accounts? {% endblock %}
+{% block main %}
 
-<main id="content" role="main" class="two-column-accounts">
-
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="get" action="/small-full//small-full-other-accounting-policies">
 
 
-  <a class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+              {% set myHTML %}
+              <details class="govuk-details">
+               <summary class="govuk-details__summary">
+                 <span class="govuk-details__summary-text">
+                   What's this?
+                 </span>
+               </summary>
+               <div class="govuk-details__text">
+                 This policy is about the accounting standards you've prepared your accounts to. As a small company you're likely to have prepared your full accounts for shareholders or members using the simpler provisions of Section 1A (Small Entities) of Financial Reporting Standard 102. Your accounts should include a statement about the basis of measurement and preparation.
+               </div>
+             </details>
+             {% endset -%}
 
-  <h1 class="govuk-heading-xl">
-Basis of accounts preparation
-</h1>
+             {% set anotherHtml %}
+           {{ govukTextarea({
+             id: "another",
+             name: "another",
+             classes: "",
+             label: {
+               text: "Enter your other standard",
+               classes: "govuk-visually-hidden"
+             }
+           }) }}
+           {% endset -%}
 
-
-
-
-
-  <div class="text">
-    <!--<p class="lede">This page describes the methods and measurements you've used to prepare your company accounts.</p>-->
-
-
-    <form class="form" method="get" action="/small-full//small-full-other-accounting-policies">
-      <!--<form class="form" method="get" action="/small-full/small-full-tangible-assets-choose">-->
-
-      <h2 class="bold-medium text">Choose the statement that reflects the way your accounts were prepared:</h2>
-
-      <p>
-        <details class="text">
-          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Choose the statement that reflects the way your accounts were prepared</span>
-          <div class="panel panel-border-narrow">
-            <p>This policy is about the accounting standards you've prepared your accounts to. As a small company you're likely to have prepared your full accounts for shareholders or members using the simpler provisions of Section 1A (Small Entities) of
-              Financial Reporting Standard 102. Your accounts should include a statement about the basis of measurement and preparation.</p>
-          </div>
-        </details>
-      </p>
-
-
-
-      <fieldset data-required="" data-error=" You must choose the statement that reflects the way your accounts were prepared">
-
-        <legend class="visuallyhidden">Basis of preparation</legend>
-        <div class="form-group">
-
-          <label class="block-label text selection-button-radio" for="1">
-              <input id="1" value="" name="basis-of-preparation" type="radio">
-              These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102
-            </label>
-
-          <label data-target="2-reveal" class="block-label text selection-button-radio" for="2">
-              <input id="2" value="" name="basis-of-preparation" aria-controls="2-reveal" aria-expanded="false" type="radio">
-              These accounts have been prepared in accordance with another standard
-            </label>
-        </div>
-        <!--form-group-->
-
-      </fieldset>
-
-      <div id="2-reveal" class="panel panel-border-narrow js-hidden" aria-hidden="true">
-        <label class="visuallyhidden" for="2-textarea"></label> Enter the basis of measurement and preparation for your accounts:
-        <textarea type="text" id="2-textarea" class="form-control" rows="10"></textarea>
-      </div>
-
+  {{ govukRadios({
+    idPrefix: "basis-of-preparation",
+    name: "basis-of-preparation",
+    fieldset: {
+      legend: {
+        text: "How did you prepare your accounts?",
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      html: myHTML
+    },
+    items: [
+      {
+        value: "1A",
+        text: "These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102 "
+      },
+      {
+        value: "another",
+        text: "These accounts have been prepared in accordance with another standard",
+        conditional: {
+          html: anotherHtml
+        }
+      }
+    ]
+  }) }}
 
 
 
 
-      <div class="form-group">
-        <input type="submit" class="button" value="Save and continue">
-      </div>
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
     </form>
 
-  </div>
-  <!--text-->
 
-
-
+  </div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
 
 </main>
+</div><!---govuk-width-container-->
+
 
 {% endblock %}

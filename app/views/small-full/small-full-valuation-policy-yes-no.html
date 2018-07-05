@@ -1,72 +1,60 @@
-{% extends "layout.html" %} {% block pageTitle %} Balance sheet notes - Valuation information policy {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Do your prepared accounts include a 'valuation information' policy?
+{% endblock %}
+{% block main %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-valuation-policy" method="get" class="form">
+            {{ govukRadios({
+classes: "govuk-radios--inline",
+idPrefix: "valuationinformationpolicy",
+name: "valuationinformationpolicy",
+fieldset: {
+  legend: {
+    text: "Do your prepared accounts include a 'valuation information' policy?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
   }
-</style>
+},
 
-<main id="content" role="main" class="two-column-accounts">
-  {% include "includes/phase_banner_beta.html" %}
+items: [
+  {
+    value: "yes",
+    text: "Yes"
+  },
+  {
+    value: "no",
+    text: "No"
+  }
+]
+}) }}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+            {{ govukButton({
+            text: "Save and continue"
+          }) }}
+          </form>
 
-
-
-
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
-
-
-
-
-  <div class="text">
-    <h1 class="govuk-heading-xl">
-Do your prepared accounts include a 'valuation information' policy?</h1>
-
-
-    <form action="/small-full/small-full-other-accounting-policy-yes-no" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'valuation information' policy">
-        <legend class="visually-hidden">Do your prepared accounts include a 'valuation information' policy?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="employeesnoteyes" data-target="valuationnoteyes-reveal">
-                    <input id="employeesnoteyes" name="employeesnoteyn" value="Yes" aria-controls="valuationnoteyes-reveal" type="radio">
-                    Yes
-                  </label>
-          <label class="block-label selection-button-radio" for="employeesnoteno">
-                    <input id="employeesnoteno" name="employeesnoteyn" value="No" type="radio">
-                    No
-                    </label>
         </div>
-        <!--form-group-->
-
-      </fieldset>
-
-
-
-      <div class="panel panel-border-narrow js-hidden" id="valuationnoteyes-reveal">
-        <fieldset>
-          <legend class="visuallyhidden">Valuation information policy</legend>
-          <label for="other-1" class="govuk-heading-m">Enter your 'valuation information' policy</label>
-          <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
-        </fieldset>
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-
-      <input type="submit" class="button" value="Save and continue" id="">
-    </form>
+    </main>
   </div>
-  </div>
-  <!--left-indent-->
+  <!---govuk-width-container-->
 
-</main>
 {% endblock %}

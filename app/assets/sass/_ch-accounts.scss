@@ -6,16 +6,20 @@ $error-button-hover: #8e0513;
     text-align: right;
   }
 
-  #accounts-header {
-    text-align: center;
-    margin-bottom: 1em;
+  .govuk-form-group {
+    margin-bottom: -20px;
+  }
 
+  #accounts-header {
+    display: none;
+    /*Hide from mobiles*/
     .left {
       text-align: left;
     }
-    @include govuk-media-query($from: mobile) {
-      display: none;
-      /*Hide from mobiles*/
+    @include govuk-media-query(desktop) {
+      display: block;
+      text-align: center;
+      margin: 2em 0;
     }
 
     .govuk-heading-m {
@@ -37,24 +41,24 @@ $error-button-hover: #8e0513;
   }
 
   .mobile-only-label {
-    position: absolute;
-    /*Hidden on desktop, but can be read by screenreaders*/
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    @include govuk-media-query(mobile) {
-      /*Visible on mobiles*/
-      position: relative;
-      overflow: visible;
+    position: relative;
+    overflow: visible;
+    /*Visible on mobiles*/
+    @include govuk-media-query(desktop) {
+      position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      /*Hidden on desktop, but can be read by screenreaders*/
     }
   }
 
   .accounts-total {
-    .form-control {
+    .govuk-input {
       border-left: 0;
       border-right: 0;
       font-weight: 700;
@@ -89,27 +93,37 @@ $error-button-hover: #8e0513;
     margin: 0;
   }
 
-  input[type="number"] {
-    text-align: right;
-  }
-
   .currency-included-within-inputs input[type="number"] {
-    position: relative;
-    top: -32px;
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-bottom: 30px;
+    position: static;
   }
 
-  .currency-type {
-    position: relative;
-    left: 10px;
-    font-weight: bold;
+  .currency-included-within-inputs .govuk-grid-column-one-half {
+    display: none; //hide from mobiles
   }
-  @include govuk-media-query(mobile) {
+  @include govuk-media-query(desktop) {
+    .currency-included-within-inputs .govuk-grid-column-one-half {
+      display: inherit; //show on desktop
+    }
+
+    input[type="number"] {
+      text-align: right;
+    }
+
+    .currency-type {
+      position: relative;
+      left: 10px;
+      font-weight: bold;
+    }
+
     .currency-included-within-inputs input[type="number"] {
-      display: block;
-      width: 100%;
-      clear: both;
-      margin-bottom: 10px;
-      position: static;
+      position: relative !important;
+      top: -60px;
+      left: -10px;
+      background: none;
     }
 
     .currency-included-within-inputs .mobile-only-label {
@@ -126,10 +140,6 @@ $error-button-hover: #8e0513;
       clear: both;
       margin-bottom: 10px;
       position: static;
-    }
-
-    .currency-included-within-inputs .column-half {
-      display: none;
     }
   }
   //Check your answers

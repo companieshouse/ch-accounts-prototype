@@ -38,7 +38,7 @@ $( document )
 			$( '#total-fixed-assets-previous' )
 				.val( total );
 		}
-		$( '#calledupsharecapitalnotpaidprevious, #intangible-assets-previous, #tangible-assets-previous, #investments-fixed-assets-previous' )
+		$( '#called-up-share-capital-not-paid-previous, #intangible-assets-previous, #tangible-assets-previous, #investments-fixed-assets-previous' )
 			.change( compute );
 	} );
 

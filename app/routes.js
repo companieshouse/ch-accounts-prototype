@@ -810,6 +810,12 @@ router.get( '/chs/chs-choose-small-full-or-other', function ( req, res ) {
 
 
 
+
+
+
+
+
+
 /////// CICS //////
 // CICS MVP criteria
 
@@ -917,6 +923,8 @@ router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
 	}
 } );
 
+
+
 // CICS - Was directors' remuneration received?
 
 router.get( '/cics/directors-remuneration-yes', function ( req, res ) {
@@ -948,5 +956,82 @@ router.get( '/cics/cics-check-before-you-submit', function ( req, res ) {
 		res.redirect( "/cics/transfers-of-assets-yes" );
 	} else {
 		res.render( 'cics/cics-check-before-you-submit' );
+	}
+} );
+
+// (CICs) Accounts - Change accounting reference dates
+
+router.get( '/small-full/small-full-balance-sheet', function ( req, res ) {
+	var changecompanydates = req.query.changecompanydates;
+	if ( changecompanydates == "yes" ) {
+		res.redirect( "/small-full/small-full-accounts-dates-change" );
+	} else {
+		res.render( 'small-full/small-full-balance-sheet' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include any additional accounting policies?
+
+router.get( '/small-full/small-full-turnover-policy-yes-no', function ( req, res ) {
+	var smallfullotherpolicies = req.query.smallfullotherpolicies;
+	if ( smallfullotherpolicies == "no" ) {
+		res.redirect( "/small-full/small-full-tangible-assets-choose" );
+	} else {
+		res.render( 'small-full/small-full-turnover-policy-yes-no' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'turnover' policy?
+
+router.get( '/small-full/small-full-turnover-policy', function ( req, res ) {
+	var turnoverpolicy = req.query.turnoverpolicy;
+	if ( turnoverpolicy == "no" ) {
+		res.redirect( "/small-full/small-full-tangible-policy-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-turnover-policy' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'tangible fixed assets depreciation' policy?
+
+router.get( '/small-full/small-full-tangible-policy', function ( req, res ) {
+	var tangiblefixedassetsdepreciationpolicy = req.query.tangiblefixedassetsdepreciationpolicy;
+	if ( tangiblefixedassetsdepreciationpolicy == "no" ) {
+		res.redirect( "/small-full/small-full-intangible-policy-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-tangible-policy' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include an 'intangible fixed assets amortisation' policy?
+
+router.get( '/small-full/small-full-intangible-policy', function ( req, res ) {
+	var intangiblefixedassetsamortisationpolicy = req.query.intangiblefixedassetsamortisationpolicy;
+	if ( intangiblefixedassetsamortisationpolicy == "no" ) {
+		res.redirect( "/small-full/small-full-valuation-policy-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-intangible-policy' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'valuation information' policy?
+
+router.get( '/small-full/small-full-valuation-policy', function ( req, res ) {
+	var valuationinformationpolicy = req.query.valuationinformationpolicy;
+	if ( valuationinformationpolicy == "no" ) {
+		res.redirect( "/small-full/small-full-any-other-accounting-policies-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-valuation-policy' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include any other accounting policies?
+
+router.get( '/small-full/small-full-any-other-accounting-policies', function ( req, res ) {
+	var anyotheraccountingpolicies = req.query.anyotheraccountingpolicies;
+	if ( anyotheraccountingpolicies == "no" ) {
+		res.redirect( "/small-full/small-full-tangible-assets-choose" );
+	} else {
+		res.render( 'small-full/small-full-any-other-accounting-policies' );
 	}
 } );

@@ -1,99 +1,50 @@
-{% extends "layout.html" %} {% block pageTitle %} Balance sheet {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %} Balance sheet {% endblock %}
+{% block main %}
 
-<!-- For testing only, NOT FOR PRODUCTION-->
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $("#creditors-amounts-falling-due-within-one-year-current").keyup(function() {
-      if ($('#creditors-amounts-falling-due-within-one-year-current').val().indexOf('(') >= 0 || $('#creditors-amounts-falling-due-within-one-year-current').val().indexOf(',') >= 0 || $(
-          '#creditors-amounts-falling-due-within-one-year-current').val().indexOf('-') >= 0) {
-        $('#creditors-bracket-error').css("display", "block"),
-          $('#creditors-amounts-falling-due-within-one-year-current').css("border-color", "#B10E1E");
-        $('#creditors-amounts-falling-due-within-one-year-current').css("border-width", "3px");
-      } else {
-        $('#creditors-bracket-error').css("display", "none");
-        $('#creditors-amounts-falling-due-within-one-year-current').css("border-color", "#000000");
-        $('#creditors-amounts-falling-due-within-one-year-current').css("border-width", "2px");
-      }
-    });
-  });
-</script>
-<script>
-  $(document).ready(function() {
-    $("#tangible-assets-current").keyup(function() {
-      if ($('#tangible-assets-current').val().indexOf('(') >= 0 || $('#tangible-assets-current').val().indexOf(',') >= 0 || $('#tangible-assets-current').val().indexOf('-') >= 0) {
-        $('#tangible-comma-error').css("display", "block"),
-          $('#tangible-assets-current').css("border-color", "#B10E1E");
-        $('#tangible-assets-current').css("border-width", "3px");
-      } else {
-        $('#tangible-comma-error').css("display", "none");
-        $('#tangible-assets-current').css("border-color", "#000000");
-        $('#tangible-assets-current').css("border-width", "2px");
-      }
-    });
-  });
-</script>
-
-
-<!--End for testing only, NOT FOR PRODUCTION-->
-
-
-
-
-<main id="content" role="main" class="two-column-accounts">
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="/chs/chs-start-page-signed-out" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
-
-
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
-  <h1 class="govuk-heading-xl"><!--<span class="circle circle-step-large">3</span>--> Balance sheet </h1>
-  <div class="">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <main class="govuk-main-wrapper two-column-accounts">
+
+  <h1 class="govuk-heading-l"><!--<span class="circle circle-step-large">3</span>--> Balance sheet </h1>
+
 
     <p class="warning-note warning-note-large">Complete all items that are included in your prepared accounts.</p>
 
-    <div class="grid-row" id="accounts-header">
 
 
-      <div class="column-half">
+
+
+    <div class="govuk-grid-row" id="accounts-header">
+
+
+      <div class="govuk-grid-column-one-half">
         &nbsp;
       </div>
-      <div class="column-quarter">
-        <h2 class="govuk-heading-s">2018<!--<br>£--></h2>
+      <div class="govuk-grid-column-one-quarter">
+        <h2 class="govuk-heading-s">2018</h2>
       </div>
-      <div class="column-quarter">
-        <h2 class="govuk-heading-s">2017<!--br>£--></h2>
+      <div class="govuk-grid-column-one-quarter">
+        <h2 class="govuk-heading-s">2017</h2>
       </div>
     </div>
-    <!--<div class="grid-row">
-   <div class="column-half">
-     &nbsp;
-   </div>
-   <div class="column-half">
-     <p class="govuk-hint">Add your balance sheet numbers without commas or other symbols. </p>
-   </div>
- </div>-->
-  </div>
 
-  <form action="/" method="post" class="form currency-included-within-inputs" id="balance-sheet">
+
+  <form action="/small-full/small-full-balance-sheet-statements" method="post" class="form currency-included-within-inputs govuk-body" id="balance-sheet">
 
 
     <!--Start called-up share capital not paid-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Called up share capital not paid
         <!--</span></summary>
@@ -103,18 +54,18 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span> <label for="called-up-share-capital-not-paid-current"><span class="mobile-only-label">Called up share capital not paid (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-not-paid-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="called-up-share-capital-not-paid-current">
         </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="called-up-share-capital-not-paid-previous"><span class="mobile-only-label">Called up share capital not paid (2015)</span>
-          <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-not-paid-previous">
+          <input type="number"  onkeypress="" class="govuk-input" id="called-up-share-capital-not-paid-previous">
         </label>
         </div>
       </div>
@@ -127,8 +78,8 @@
     <h2 class="govuk-heading-m">Fixed assets</h2>
 
     <!--Start intangible assets-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Intangible assets
         <!--</span>
@@ -145,19 +96,19 @@
         </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-         <input type="number"  onkeypress="" class="form-control" id="intangible-assets-current">
+         <input type="number"  onkeypress="" class="govuk-input" id="intangible-assets-current">
        </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-         <input type="number"  onkeypress="" class="form-control" id="intangible-assets-previous">
+         <input type="number"  onkeypress="" class="govuk-input" id="intangible-assets-previous">
        </label>
         </div>
       </div>
@@ -165,18 +116,18 @@
     </div>
     <!--End intangible assets-->
 
-    <div class="grid-row" id="tangible-comma-error" style="display:none; margin-bottom:-2em;">
-      <div class="column-half">&nbsp;</div>
-      <div class="column-quarter"><span class="error-message" id="">Please enter a value between 0 and 99999999 without commas, brackets or other symbols.</span></div>
-      <div class="column-quarter">&nbsp;</div>
+    <div class="govuk-grid-row" id="tangible-comma-error" style="display:none; margin-bottom:-2em;">
+      <div class="govuk-grid-column-one-half">&nbsp;</div>
+      <div class="govuk-grid-column-one-quarter"><span class="error-message" id="">Please enter a value between 0 and 99999999 without commas, brackets or other symbols.</span></div>
+      <div class="govuk-grid-column-one-quarter">&nbsp;</div>
     </div>
 
 
 
 
     <!--Start tangible assets-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
       <summary><span class="summary">-->Tangible assets
         <!--</span></summary>
@@ -192,19 +143,19 @@
       </div>
       </details>-->
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-          <input type="number" onkeypress="" class="form-control" id="tangible-assets-current" style="text-align:right;"><!-- changed type to text to get error validation (character) to work-->
+          <input type="number" onkeypress="" class="govuk-input" id="tangible-assets-current" style="text-align:right;"><!-- changed type to text to get error validation (character) to work-->
           </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-          <input type="number"  onkeypress="" class="form-control" id="tangible-assets-previous">
+          <input type="number"  onkeypress="" class="govuk-input" id="tangible-assets-previous">
           </label>
         </div>
       </div>
@@ -212,8 +163,8 @@
     <!--End tangible assets-->
 
     <!--Start investments (fixed assets) -->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Investments
         <!--</summary>
@@ -226,19 +177,19 @@
             </div>
           </details>-->
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="investments-fixed-assets-current"><span class="mobile-only-label">Investments (2016)</span>
-         <input type="number"  onkeypress="" class="form-control" id="investments-fixed-assets-current">
+         <input type="number"  onkeypress="" class="govuk-input" id="investments-fixed-assets-current">
        </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="investments-fixed-assets-previous"><span class="mobile-only-label">Investments (2015)</span>
-         <input type="number"  onkeypress="" class="form-control" id="investments-fixed-assets-previous">
+         <input type="number"  onkeypress="" class="govuk-input" id="investments-fixed-assets-previous">
        </label>
         </div>
       </div>
@@ -246,8 +197,8 @@
     <!--End investments (fixed assets)-->
 
     <!--Start total fixed assets-->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-total">
+      <div class="govuk-grid-column-one-half">
         <strong>Total fixed assets</strong>
         <!--<details>
        <summary><span class="summary">Total fixed assets</span></summary>
@@ -256,19 +207,19 @@
        </div>
      </details>-->
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-         <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-current" readonly>
+         <input type="number"  onkeypress="" class="govuk-input" id="total-fixed-assets-current" readonly>
        </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-         <input type="number"  onkeypress="" class="form-control" id="total-fixed-assets-previous" readonly>
+         <input type="number"  onkeypress="" class="govuk-input" id="total-fixed-assets-previous" readonly>
        </label>
         </div>
       </div>
@@ -280,8 +231,8 @@
     <h2 class="govuk-heading-m">Current assets</h2>
 
     <!--Start stocks-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Stocks
         <!--</span></summary>
@@ -294,19 +245,19 @@
             </div>
           </details>-->
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="stocks-current"><span class="mobile-only-label">Stocks (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="stocks-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="stocks-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="stocks-current"><span class="mobile-only-label">Stocks (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="stocks-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="stocks-previous">
          </label>
         </div>
       </div>
@@ -315,8 +266,8 @@
     <!--End stocks-->
 
     <!--Start debtors-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Debtors
         <!--</span></summary>
@@ -330,19 +281,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="debtors-current"><span class="mobile-only-label">Debtors (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="debtors-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="debtors-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="debtors-previous"><span class="mobile-only-label">Debtors (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="debtors-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="debtors-previous">
          </label>
         </div>
       </div>
@@ -351,8 +302,8 @@
 
 
     <!--Start cash at bank and in hand-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Cash at bank and in hand
         <!--</span></summary>
@@ -362,19 +313,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span
             <label for="cash-at-bank-and-in-hand-current"><span class="mobile-only-label">Cash at bank and in hand (2016)</span>
-          <input type="number" onkeypress="" class="form-control" id="cash-at-bank-and-in-hand-current">
+          <input type="number" onkeypress="" class="govuk-input" id="cash-at-bank-and-in-hand-current">
           </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="cash-at-bank-and-in-hand-previous"><span class="mobile-only-label">Cash at bank and in hand (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="cash-at-bank-and-in-hand-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="cash-at-bank-and-in-hand-previous">
          </label>
         </div>
       </div>
@@ -382,8 +333,8 @@
     <!--End cash at bank and in hand-->
 
     <!--Start investments (current assets)-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Investments
         <!--</summary>
@@ -393,19 +344,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="investments-current-assets-current"><span class="mobile-only-label">Investments (current assets) (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="investments-current-assets-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="investments-current-assets-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="investments-current-assets-previous"><span class="mobile-only-label">Investments (current assets) (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="investments-current-assets-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="investments-current-assets-previous">
          </label>
         </div>
       </div>
@@ -415,8 +366,8 @@
 
 
     <!--Start total current assets-->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-total">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">--><strong>Total current assets</strong>
         <!--</span></summary>
@@ -426,19 +377,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-fixed-current-current"><span class="mobile-only-label">Total current assets (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="total-current-assets-current" readonly>
+           <input type="number"  onkeypress="" class="govuk-input" id="total-current-assets-current" readonly>
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-current-assets-previous"><span class="mobile-only-label">Total current assets (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="total-current-assets-previous" readonly>
+           <input type="number"  onkeypress="" class="govuk-input" id="total-current-assets-previous" readonly>
          </label>
         </div>
       </div>
@@ -448,8 +399,8 @@
 
 
     <!--Start prepayments and accrued income-->
-    <div class="grid-row accounts-row-spacer">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-row-spacer">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Prepayments and accrued income
         <!--</span></summary>
@@ -459,19 +410,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="prepayments-and-and-accrued-income-current"><span class="mobile-only-label">Prepayments and accrued income (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="prepayments-and-and-accrued-income-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="prepayments-and-and-accrued-income-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="prepayments-and-and-accrued-income-previous"><span class="mobile-only-label">Prepayments and accrued income (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="prepayments-and-and-accrued-income-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="prepayments-and-and-accrued-income-previous">
          </label>
         </div>
       </div>
@@ -480,15 +431,15 @@
 
 
 
-    <div class="grid-row" id="creditors-bracket-error" style="display:none; margin-bottom:-2em;">
-      <div class="column-half">&nbsp;</div>
-      <div class="column-quarter"><span class="error-message" id="">Please enter a value between 0 and 99999999 without commas, brackets or other symbols. Do not enter a minus sign.</span></div>
-      <div class="column-quarter">&nbsp;</div>
+    <div class="govuk-grid-row" id="creditors-bracket-error" style="display:none; margin-bottom:-2em;">
+      <div class="govuk-grid-column-one-half">&nbsp;</div>
+      <div class="govuk-grid-column-one-quarter"><span class="error-message" id="">Please enter a value between 0 and 99999999 without commas, brackets or other symbols. Do not enter a minus sign.</span></div>
+      <div class="govuk-grid-column-one-quarter">&nbsp;</div>
     </div>
 
     <!--Start creditors - amounts falling due within one year-->
-    <div class="grid-row accounts-row-spacer">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-row-spacer">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Creditors - amounts falling due within one year
         <!--</span></summary>
@@ -505,19 +456,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="creditors-amounts-falling-due-within-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-within-one-year-current" style="text-align:right;"> <!-- changed type to text to get error validation (character) to work-->
+           <input type="number"  onkeypress="" class="govuk-input" id="creditors-amounts-falling-due-within-one-year-current" style="text-align:right;"> <!-- changed type to text to get error validation (character) to work-->
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-within-one-year-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="creditors-amounts-falling-due-within-one-year-previous">
          </label>
         </div>
       </div>
@@ -527,8 +478,8 @@
 
 
     <!--Start net current assets (liabilities)-->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-total">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">--><strong>Net current assets (liabilities)</strong>
         <!--</span></summary>
@@ -538,19 +489,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="net-current-assets-liabilities-current"><span class="mobile-only-label">Net current assets (liabilities) (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="net-current-assets-liabilities-current" readonly>
+           <input type="number"  onkeypress="" class="govuk-input" id="net-current-assets-liabilities-current" readonly>
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="net-current-assets-liabilities-previous"><span class="mobile-only-label">Net current assets (liabilities) (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="net-current-assets-liabilities-previous" readonly>
+           <input type="number"  onkeypress="" class="govuk-input" id="net-current-assets-liabilities-previous" readonly>
          </label>
         </div>
       </div>
@@ -559,8 +510,8 @@
 
 
     <!--Start total assets less current liabilities-->
-    <div class="grid-row accounts-total accounts-row-spacer">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-total accounts-row-spacer">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">--><strong>Total assets less current liabilities</strong>
         <!--</span></summary>
@@ -570,19 +521,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-assets-less-current-liabilities-current"><span class="mobile-only-label">Total assets less current liabilities (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-current" readonly>
+           <input type="number"  onkeypress="" class="govuk-input" id="total-assets-less-current-liabilities-current" readonly>
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-assets-less-current-liabilities-previous"><span class="mobile-only-label">Total assets less current liabilities (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="total-assets-less-current-liabilities-previous" readonly>
+           <input type="number"  onkeypress="" class="govuk-input" id="total-assets-less-current-liabilities-previous" readonly>
          </label>
         </div>
       </div>
@@ -591,8 +542,8 @@
 
 
     <!--Start creditors - amounts falling due after more than one year-->
-    <div class="grid-row accounts-row-spacer">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-row-spacer">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Creditors - amounts falling due after more than one year
         <!--</span>
@@ -604,19 +555,19 @@
         </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="creditors-amounts-falling-due-after-more-than-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="creditors-amounts-falling-due-after-more-than-one-year-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="creditors-amounts-falling-due-after-more-than-one-year-previous">
          </label>
         </div>
       </div>
@@ -624,8 +575,8 @@
     <!--End creditors - amounts falling due after more than one year-->
 
     <!--Start provision for liabilities-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Provision for liabilities
         <!--</span></summary>
@@ -640,19 +591,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="provision-for-liabilities-current"><span class="mobile-only-label">Provision for liabilities (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="provision-for-liabilities-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="provision-for-liabilities-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="provision-for-liabilities-previous"><span class="mobile-only-label">Provision for liabilities (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="provision-for-liabilities-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="provision-for-liabilities-previous">
          </label>
         </div>
       </div>
@@ -661,8 +612,8 @@
 
 
     <!--Start accruals and deferred income-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Accruals and deferred income
         <!--</span>
@@ -673,19 +624,19 @@
         </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="accruals-and-deferred-income-current"><span class="mobile-only-label">Accruals and deferred income (2016)</span>
-           <input type="number"  onkeypress="" class="form-control" id="accruals-and-deferred-income-current">
+           <input type="number"  onkeypress="" class="govuk-input" id="accruals-and-deferred-income-current">
          </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="accruals-and-deferred-income-previous"><span class="mobile-only-label">Accruals and deferred income (2015)</span>
-           <input type="number"  onkeypress="" class="form-control" id="accruals-and-deferred-income-previous">
+           <input type="number"  onkeypress="" class="govuk-input" id="accruals-and-deferred-income-previous">
          </label>
         </div>
       </div>
@@ -693,8 +644,8 @@
     <!--End accruals and deferred income-->
 
     <!--Start total net assets (liabilities)-->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-total">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">--><strong>Total net assets (liabilities)</strong>
         <!--</span></summary>
@@ -704,19 +655,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-net-assets-liabilities-current"><span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
-               <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-current" readonly>
+               <input type="number"  onkeypress="" class="govuk-input" id="total-net-assets-liabilities-current" readonly>
              </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-net-assets-liabilities-previous"><span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
-               <input type="number"  onkeypress="" class="form-control" id="total-net-assets-liabilities-previous" readonly>
+               <input type="number"  onkeypress="" class="govuk-input" id="total-net-assets-liabilities-previous" readonly>
              </label>
         </div>
       </div>
@@ -729,8 +680,8 @@
     <h2 class="govuk-heading-m">Capital and reserves</h2>
 
     <!--Start called up share capital-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <label class="form-label" for="stocks-previous">
               <!-- <details>
                  <summary><span class="summary">-->Called up share capital<!--</span></summary>
@@ -741,19 +692,19 @@
              </label>
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-current">
+                 <input type="number"  onkeypress="" class="govuk-input" id="called-up-share-capital-current">
                </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="called-up-share-capital-previous">
+                 <input type="number"  onkeypress="" class="govuk-input" id="called-up-share-capital-previous">
                </label>
         </div>
       </div>
@@ -762,8 +713,8 @@
 
 
     <!--Start share premium account-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Share premium account
         <!--</span></summary>
@@ -773,19 +724,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="share-premium-account-current"><span class="mobile-only-label">Share premium account (2016)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="share-premium-account-current">
+                 <input type="number"  onkeypress="" class="govuk-input" id="share-premium-account-current">
                </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="share-premium-account-previous"><span class="mobile-only-label">Share premium account (2015)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="share-premium-account-previous">
+                 <input type="number"  onkeypress="" class="govuk-input" id="share-premium-account-previous">
                </label>
         </div>
       </div>
@@ -794,8 +745,8 @@
 
 
     <!--Start revaluation reserve-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Revaluation reserve
         <!--</span></summary>
@@ -805,19 +756,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="revaluation-reserve-current"><span class="mobile-only-label">Revaluation reserve (2016)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="revaluation-reserve-current">
+                 <input type="number"  onkeypress="" class="govuk-input" id="revaluation-reserve-current">
                </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="revaluation-reserve-previous"><span class="mobile-only-label">Revaluation reserve (2015)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="revaluation-reserve-previous">
+                 <input type="number"  onkeypress="" class="govuk-input" id="revaluation-reserve-previous">
                </label>
         </div>
       </div>
@@ -826,8 +777,8 @@
 
 
     <!--Start other reserves-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--<details>
             <summary><span class="summary">-->Other reserves
         <!--</span></summary>
@@ -837,19 +788,19 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="other-reserves-current"><span class="mobile-only-label">Other reserves (2016)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="other-reserves-current">
+                 <input type="number"  onkeypress="" class="govuk-input" id="other-reserves-current">
                </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="other-reserves-previous"><span class="mobile-only-label">Other reserves (2015)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="other-reserves-previous">
+                 <input type="number"  onkeypress="" class="govuk-input" id="other-reserves-previous">
                </label>
         </div>
       </div>
@@ -858,8 +809,8 @@
 
 
     <!--Start profit and loss account-->
-    <div class="grid-row">
-      <div class="column-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">-->Profit and loss account
         <!--</span></summary>
@@ -872,19 +823,19 @@
         <span class="govuk-hint">Also known as 'retained earnings'</span>
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="profit-and-loss-account-current"><span class="mobile-only-label">Profit and loss account (2016)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="profit-and-loss-account-current">
+                 <input type="number"  onkeypress="" class="govuk-input" id="profit-and-loss-account-current">
                </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label" for="profit-and-loss-account-previous"><span class="mobile-only-label">Profit and loss account (2015)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="profit-and-loss-account-previous">
+                 <input type="number"  onkeypress="" class="govuk-input" id="profit-and-loss-account-previous">
                </label>
         </div>
       </div>
@@ -898,8 +849,8 @@
 
 
     <!--Start total shareholders' funds-->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
+    <div class="govuk-grid-row accounts-total">
+      <div class="govuk-grid-column-one-half">
         <!--  <details>
             <summary><span class="summary">--><strong>Total shareholders' funds</strong>
         <!--</span></summary>
@@ -909,46 +860,33 @@
           </details>-->
       </div>
 
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-current" readonly>
+                 <input type="number"  onkeypress="" class="govuk-input" id="total-shareholders-funds-current" readonly>
                </label>
         </div>
       </div>
-      <div class="column-quarter">
-        <div class="form-group">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
-                 <input type="number"  onkeypress="" class="form-control" id="total-shareholders-funds-previous" readonly>
+                 <input type="number"  onkeypress="" class="govuk-input" id="total-shareholders-funds-previous" readonly>
                </label>
         </div>
       </div>
     </div>
     <!--End total shareholders' funds-->
 
-    <div class="form-group">
-      <a class="button" href="/small-full/small-full-balance-sheet-statements">Save and continue</a>
-    </div>
 
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
   </form>
-  <br /><br />
 
-  <!--<p class="warning-note warning-note-large text">
-   If you can't finish your filing in one session, you can come back later to continue. You'll need to go to <a id="recent_filings" href="javascript:void(0)">your filings</a>
- </p>-->
+  </main>
+  </div><!---govuk-width-container-->
 
-  <!--
-<div id="autosave-container">
-  <div id="div1" class="display">Autosaving... <i class="fa fa-spinner fa-pulse fa-fw"></i></div>
-  <div id="div2" class="display">Your abridged accounts were last saved 5 seconds ago</div>
-  <div id="div3" class="display"></div>
-</div>-->
 
-  </div>
-  <!--left-indent-->
-
-</main>
-
-{% endblock %}
+  {% endblock %}
