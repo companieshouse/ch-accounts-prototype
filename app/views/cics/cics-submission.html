@@ -51,7 +51,8 @@
               <div class="govuk-panel__body govuk-!-margin-bottom-6">
                 <strong>
                   A TEST CIC
-                  <br/>Company number 01234567</strong>
+                  <br/>Company number
+                  {{ data['company-number'] }}</strong>
               </div>
 
               <h2 class="govuk-panel__title">CIC report and full accounts received</h2>
@@ -69,7 +70,7 @@
             </div>
 
             <p class="govuk-body">We have sent you a confirmation email at
-              <strong>jsmith@testcompany.co.uk</strong>
+              <strong>{{ data['chs-email'] }}</strong>
               with your reference number.</p>
 
             <p class="govuk-body">If you've not received the confirmation, check your spam or junk mail folder. You should

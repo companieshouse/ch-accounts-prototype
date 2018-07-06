@@ -48,7 +48,7 @@
       </header>
 
       <p class="form-group">This is a list of company information filed by
-        <strong>jsmith@testcompany.co.uk</strong>
+        <strong>{{ data['chs-email'] }}</strong>
       </p>
 
       <div class="your-filings govuk-body">
@@ -58,7 +58,7 @@
           <h2 class="govuk-heading-m">
             <a href="/chs/chs-profile-page-logged-in-cics">A TEST CIC</a>
             <span>Company number
-              <strong>01234567</strong></span></h2>
+              <strong>{{ data['company-number'] }}</strong></span></h2>
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-third">
               Description<strong>Annual accounts</strong>
@@ -91,7 +91,7 @@
             <tbody>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell ">
-                  <strong>full accounts</strong>
+                  <strong>Full accounts</strong>
                   made up to 31 March 2017</td>
                 <td class="govuk-table__cell ">
                   <strong class="status">Processing</strong>
@@ -110,7 +110,7 @@
             <h2 class="govuk-heading-m">
               <a href="/chs/chs-profile-page-logged-in-cics">A TEST CIC</a>
               <span>Company number
-                <strong>01234567</strong></span></h2>
+                <strong>{{ data['company-number'] }}</strong></span></h2>
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-third">
                 Description<strong>Confirmation statement</strong>
@@ -156,7 +156,7 @@
             <h2 class="govuk-heading-m">
               <a href="/chs/chs-profile-page-logged-in-cics">A TEST CIC</a>
               <span>Company number
-                <strong>01234567</strong></span></h2>
+                <strong>{{ data['company-number'] }}</strong></span></h2>
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-third">
                 Description<strong>Appointments</strong>
