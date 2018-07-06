@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+{% block pageTitle %}First related party transaction
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper two-column-accounts">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-transactions-yes-no-2" method="get" class="form currency-included-within-inputs govuk-body">
+
+            <h1 class="govuk-heading-l">First related party transaction</h1>
+
+            <div class="govuk-inset-text">
+              <p>
+                <strong>You can report up to 20 related party transactions.</strong>
+              </p>
+            </div>
+
+            {{ govukRadios({
+              idPrefix: "sort-transaction",
+              name: "sort-transaction",
+              fieldset: {
+                legend: {
+                  text: "What sort of transaction was this?",
+                  classes: "govuk-label--s"
+                },
+                classes: "govuk-!-margin-bottom-8"
+              },
+              items: [
+                {
+                  value: "given-by",
+                  text: "Money given to the company by a related party"
+                },
+                {
+                  value: "given-to",
+                  text: "Money given to a related party by the company "
+                }
+              ]
+            }) }}
+
+            {{ govukInput({
+            label: {
+              text: " Name of related party ",
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: "Enter the name of the person the transaction was with."
+            },
+            id: "transaction-1-director",
+            name: "transaction-1-director",
+            classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+            {{ govukTextarea({
+              name: "more-detail",
+              id: "more-detail",
+              label: {
+                text: "Description of the transaction",
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: "Enter a brief description of the transaction. For example, 'The transaction was the loan of an asset'."
+              },
+              classes: "govuk-!-margin-bottom-9"
+
+          }) }}
+
+            <!--Start balance at start-->
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                Balance at 1 April 2017
+              </div>
+              <!--govuk-grid-column-one-half-->
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="transactions-note-balance-at-start">
+                    <span class="mobile-only-label">Balance at 1 April 2017</span>
+                    <input type="number" class="govuk-input" id="transactions-note-balance-at-start">
+                  </label>
+                </div>
+                <!--govuk-form-group-->
+              </div>
+              <!--govuk-grid-column-one-third-->
+            </div>
+            <!--govuk-grid-row-->
+            <!--End balance at start-->
+
+            <!--Start balance at end-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                Balance at 31 March 2018
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="transactions-note-balance-at-end">
+                    <span class="mobile-only-label">
+                      Balance at 31 March 2018</span>
+                    <input type="number" class="govuk-input" id="transactions-note-balance-at-end" readonly="readonly">
+                  </label>
+                </div>
+                <!--govuk-form-group-->
+              </div>
+              <!--govuk-grid-column-one-third-->
+            </div>
+            <!--govuk-grid-row-->
+            <!--End balance at end--->
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

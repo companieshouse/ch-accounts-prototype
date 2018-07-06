@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block pageTitle %}Loans to directors added{% endblock %}
+{% block pageTitle %}Related party transactions added{% endblock %}
 {% block main %}
 
   <div class="govuk-width-container">
@@ -16,9 +16,9 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-loans-yes-no-additional-1" method="get" class="form">
+          <form action="/small-full/small-full-post-events-yes-no" method="get" class="form">
 
-            <h1 class="govuk-heading-l">Loans to directors added</h1>
+            <h1 class="govuk-heading-l">Related party transactions added</h1>
 
             <dl class="app-check-your-answers app-check-your-answers--short">
               <div class="app-check-your-answers__contents">
@@ -26,13 +26,13 @@
                   John Smith
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  Short term loan
+                  Description goes here
                 </dd>
                 <dd class="app-check-your-answers__change">
                   <p class="govuk-!-margin-bottom-2">
-                    <a href="small-full/small-full-loans-yes-1-completed">
+                    <a href="small-full/small-full-related-transactions-yes-1-completed">
                       Change<span class="govuk-visually-hidden">
-                        John Smith - Short term loan
+                        John Smith - Description goes here
                       </span>
                     </a>
                   </p>

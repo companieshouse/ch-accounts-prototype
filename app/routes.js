@@ -1079,3 +1079,80 @@ router.get( '/small-full/small-full-current-assets-investments-note', function (
 		res.render( 'small-full/small-full-current-assets-investments-note' );
 	}
 } );
+
+// (CICs) Accounts - Do your prepared accounts include a 'financial commitments' note?
+
+router.get( '/small-full/small-full-financial-commitments-note', function ( req, res ) {
+	var financialcommitments = req.query.financialcommitments;
+	if ( financialcommitments == "no" ) {
+		res.redirect( "/small-full/small-full-loans-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-financial-commitments-note' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include any 'loans to directors' notes?
+
+router.get( '/small-full/small-full-loans-yes-1', function ( req, res ) {
+	var loanstodirectors = req.query.loanstodirectors;
+	if ( loanstodirectors == "no" ) {
+		res.redirect( "/small-full/small-full-changes-in-presentation-yes-no" );
+	} else {
+		res.render( 'small-full/small-full-loans-yes-1' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include any other 'loans to directors' notes?
+
+router.get( '/small-full/small-full-loans-additional-info-yes-no', function ( req, res ) {
+	var anyotherloanstodirectors1 = req.query.anyotherloanstodirectors1;
+	if ( anyotherloanstodirectors1 == "yes" ) {
+		res.redirect( "/small-full/small-full-loans-yes-no-3" ); // Temporary URL until real page created
+	} else {
+		res.render( 'small-full/small-full-loans-additional-info-yes-no' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include any additional 'loans to directors' information?
+
+router.get( '/small-full/small-full-loans-additional-info', function ( req, res ) {
+	var loanstodirectorsadditionalinfoyesno = req.query.loanstodirectorsadditionalinfoyesno;
+	if ( loanstodirectorsadditionalinfoyesno == "no" ) {
+		res.redirect( "/small-full/small-full-changes-in-presentation-yes-no" ); // Temporary URL until real page created
+	} else {
+		res.render( 'small-full/small-full-loans-additional-info' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'changes in presentation and prior period adjustments' note?
+
+router.get( '/small-full/small-full-changes-in-presentation-note', function ( req, res ) {
+	var changesinpresentation = req.query.changesinpresentation;
+	if ( changesinpresentation == "no" ) {
+		res.redirect( "/small-full/small-full-related-transactions-yes-no" ); // Temporary URL until real page created
+	} else {
+		res.render( 'small-full/small-full-changes-in-presentation-note' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include any 'related party transactions' notes?
+
+router.get( '/small-full/small-full-related-transactions-yes-1', function ( req, res ) {
+	var relatedtransactions = req.query.relatedtransactions;
+	if ( relatedtransactions == "no" ) {
+		res.redirect( "/small-full/small-full-post-events-yes-no" ); // Temporary URL until real page created
+	} else {
+		res.render( 'small-full/small-full-related-transactions-yes-1' );
+	}
+} );
+
+// (CICs) Accounts - Do your prepared accounts include a 'post balance sheet events' note?
+
+router.get( '/small-full/small-full-post-balance-sheet-events-note', function ( req, res ) {
+	var postbalancesheetevents = req.query.postbalancesheetevents;
+	if ( postbalancesheetevents == "no" ) {
+		res.redirect( "/small-full/small-full-check-before-you-submit" ); // Temporary URL until real page created
+	} else {
+		res.render( 'small-full/small-full-post-balance-sheet-events-note' );
+	}
+} );

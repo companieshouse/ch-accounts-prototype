@@ -1,89 +1,95 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Check your answers {% endblock %}
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check your answers</h1>
+          <h1 class="govuk-heading-l">Check your answers</h1>
 
+          <form action="/cics/cics-approval" method="get" class="form">
 
-      <form action="/cics/cics-approval" method="get" class="form">
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Company’s activities and impact
+                </dt>
+                <dd class="app-check-your-answers__answer">{{ data['cics-activities'] | nl2br | safe}}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="/cics/general-description-completed">
+                    Change<span class="govuk-visually-hidden">
+                      company’s activities and impact</span>
+                  </a>
+                </dd>
+              </div>
 
-        <dl class="app-check-your-answers app-check-your-answers--short">
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
-               Company’s activities and impact
-             </dt>
-            <dd class="app-check-your-answers__answer">{{ data['cics-activities'] | nl2br | safe}} </dd>
-            <dd class="app-check-your-answers__change">
-              <a href="/cics/general-description-completed">
-                 Change<span class="govuk-visually-hidden"> company’s activities and impact</span>
-               </a>
-            </dd>
-          </div>
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Consultation with stakeholders
+                </dt>
+                <dd class="app-check-your-answers__answer">{{ data['cics-consultation-stakeholders'] }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="/cics/consultation-with-stakeholders-completed">
+                    Change<span class="govuk-visually-hidden">
+                      consultation with stakeholders</span>
+                  </a>
+                </dd>
+              </div>
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
-               Consultation with stakeholders
-             </dt>
-            <dd class="app-check-your-answers__answer">{{ data['cics-consultation-stakeholders'] }}</dd>
-            <dd class="app-check-your-answers__change">
-              <a href="/cics/consultation-with-stakeholders-completed">
-                 Change<span class="govuk-visually-hidden"> consultation with stakeholders</span>
-               </a>
-            </dd>
-          </div>
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Directors' remuneration
+                </dt>
+                <dd class="app-check-your-answers__answer">{{ data['cics-directors-remuneration'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="/cics/directors-remuneration-completed">
+                    Change<span class="govuk-visually-hidden">
+                      directors' remuneration</span>
+                  </a>
+                </dd>
+              </div>
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
-               Directors' remuneration
-             </dt>
-            <dd class="app-check-your-answers__answer">{{ data['cics-directors-remuneration'] }}  </dd>
-            <dd class="app-check-your-answers__change">
-              <a href="/cics/directors-remuneration-completed">
-                 Change<span class="govuk-visually-hidden"> directors' remuneration</span>
-               </a>
-            </dd>
-          </div>
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Assets transferred
+                </dt>
+                <dd class="app-check-your-answers__answer">{{ data['cics-transfer-assets'] }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="/cics/transfer-of-assets-completed">
+                    Change<span class="govuk-visually-hidden">
+                      assets transferred</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
-               Assets transferred
-             </dt>
-            <dd class="app-check-your-answers__answer">{{ data['cics-transfer-assets'] }}</dd>
-            <dd class="app-check-your-answers__change">
-              <a href="/cics/transfer-of-assets-completed">
-                 Change<span class="govuk-visually-hidden"> assets transferred</span>
-               </a>
-            </dd>
-          </div>
-        </dl>
-
-
-        {{ govukButton({
+            {{ govukButton({
           text: "Continue"
         }) }}
-      </form>
+          </form>
 
-  </div><!--govuk-grid-row-->
-  </div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-  </main>
-  </div><!---govuk-width-container-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
-
-  {% endblock %}
+{% endblock %}
