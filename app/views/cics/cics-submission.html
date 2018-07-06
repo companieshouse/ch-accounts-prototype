@@ -1,101 +1,151 @@
-{% extends "layout.html" %} {% block pageTitle %} Approval {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Approve your accounts
+{% endblock %}
+{% block main %}
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-</script>
-<script type="text/javascript">
-  window.onload = function() {
-    DisplayCurrentTime();
-  };
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-  function DisplayCurrentTime() {
-    var date = new Date();
-    var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-    var am_pm = date.getHours() >= 12 ? "pm" : "am";
-    hours = hours < 10 ? "" + hours : hours;
-    var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-    time = hours + ":" + minutes + am_pm;
-    var lblTime = document.getElementById("lblTime");
-    lblTime.innerHTML = time;
-  };
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- START script to display current date and time-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        DisplayCurrentTime();
+      };
 
+      function DisplayCurrentTime() {
+        var date = new Date();
+        var hours = date.getHours() > 12
+          ? date.getHours() - 12
+          : date.getHours();
+        var am_pm = date.getHours() >= 12
+          ? "pm"
+          : "am";
+        hours = hours < 10
+          ? "" + hours
+          : hours;
+        var minutes = date.getMinutes() < 10
+          ? "0" + date.getMinutes()
+          : date.getMinutes();
+        time = hours + ":" + minutes + am_pm;
+        var lblTime = document.getElementById("lblTime");
+        lblTime.innerHTML = time;
+      };
+    </script>
+    <!-- END script to display current date and time-->
 
-<main id="content" role="main">
+    <main class="govuk-main-wrapper">
 
-  {% include "includes/phase_banner_beta.html" %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/chs/chs-your-filings-cics" method="get" class="form">
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="/chs/chs-your-filings-small-full-accounts" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body govuk-!-margin-bottom-6">
+                <strong>
+                  A TEST CIC
+                  <br/>Company number 01234567</strong>
+              </div>
 
+              <h2 class="govuk-panel__title">CIC report and full accounts received</h2>
+              <div class="govuk-panel__body govuk-!-margin-bottom-6">on
+                <span id="day" class="govuk-!-font-weight-bold"></span>
+                <span id="month" class="govuk-!-font-weight-bold"></span>
+                <span id="year" class="govuk-!-font-weight-bold"></span>
+                at
+                <span id="lblTime" class="govuk-!-font-weight-bold"></span></div>
+              <div class="govuk-panel__body">
+                Your reference number<br>
+                <strong>
+                  776846-998567-228911</strong>
+              </div>
+            </div>
 
-  <div class="text">
+            <p class="govuk-body">We have sent you a confirmation email at
+              <strong>jsmith@testcompany.co.uk</strong>
+              with your reference number.</p>
 
+            <p class="govuk-body">If you've not received the confirmation, check your spam or junk mail folder. You should
+              <a href="">contact us</a>
+              if you haven't had an email within 30 minutes.</p>
 
-    <div class="govuk-box-highlight">
-      <p class="font-large">A TEST CIC<br> Company number 01234567</p>
-      <h1 class="font-large">CIC report and full accounts received</h1>
-      <br>
-      <p class="font-large">on <span id="displayMoment" class="bold-large"></span> at <span id="lblTime" class="bold-large"></span></p>
-      <p class="font-large">Reference number<br>
-        <strong>776846-998567-228911</strong></p>
+            <p class="govuk-body">We'll send a second email to confirm that your filing has been processed (normally within 2 working days).</p>
+
+            <!-- This PRINT relies on Javascript, so should be completely hidden when Javascript is not available -->
+            <p class="govuk-body">
+              <a href="javascript:window.print()">Print this page for your records</a>
+            </p>
+        </ul>
+
+        <p class="govuk-body">
+          <a href="/chs/chs-profile-page-logged-in-submitted#overview-tabs">Return to company overview</a>
+        </p>
+
+        {{ govukButton({
+        text: "See your filings"
+      }) }}
+
+        <p class="govuk-body">
+          This is a new service. Help us improve it by
+          <a href="javascript:void(0)">
+            <span class="govuk-visually-hidden">This is a new service. Help us improve it by
+            </span>completing our quick survey</a>.
+        </p>
+
+        <a href="/chs/chs-email-submission-confirmation-test" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">link to email</a>
+      </form>
     </div>
-
-
-
-
-    <p>We have sent you a confirmation email at <strong>jsmith@testcompany.co.uk</strong> with your reference number.</p>
-    <p>If you've not received the confirmation, check your spam or junk mail folder. You should <a href="">contact us</a> if you haven't had an email within 30 minutes.</p>
-    <p>We'll send a second email to confirm that your filing has been processed (normally within 2 working days).</p>
-    <!--<p>You can go to '<a href="/chs/chs-your-filings-small-full-accounts">Your filings</a>' to check the status or get a copy of what you have filed.</p>-->
-
-
-
-    <!-- This PRINT relies on Javascript, so should be completely hidden when Javascript is not available -->
-    <p><a href="javascript:window.print()">Print this page for your records</a></p>
-    </ul>
-
-
-    <p><a href="/chs/chs-profile-page-logged-in-submitted#overview-tabs">Return to company overview</a></p>
-
-    <div class="form-group">
-      <a class="button" href="/chs/chs-your-filings-cics" role="button">See your filings</a>
-      <!--  <a class="button" href="/chs/chs-profile-page-logged-in-submitted#overview-tabs" role="button">Return to company overview</a>-->
-    </div>
-
-    <p>
-      This is a new service. Help us improve it by <a href="javascript:void(0)"><span class="visuallyhidden">This is a new service. Help us improve it by </span>completing our quick survey</a>.
-    </p>
-
-
-    <a href="/chs/chs-email-submission-confirmation-test" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">link to email</a>
-
+    <!--govuk-grid-row-->
   </div>
-  <!-- text-->
+  <!--govuk-grid-column-two-thirds-->
 
 </main>
-
-<script type="text/javascript">
-  (function() {
-    // instantiate a Moment object
-    var NowMoment = moment().format('D MMMM YYYY');
-    // display value of NowMoment in #displayMoment div
-    var eDisplayMoment = document.getElementById('displayMoment');
-    eDisplayMoment.innerHTML = NowMoment;
-  })();
+<!-- START script to show date-->
+<script>
+  var d = new Date();
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  document.getElementById("month").innerHTML = months[d.getMonth()];
+  document.getElementById("day").innerHTML = d.getDate();
+  document.getElementById("year").innerHTML = d.getFullYear();
+  document.getElementById("hours").innerHTML = d.getHours();
+  document.getElementById("minutes").innerHTML = d.getMinutes();
 </script>
+<!-- END script to show date-->
+
+</div>
+<!---govuk-width-container-->
 
 {% endblock %}
+
+<!-- START script to display current date and time-->
+
+<script type="text/javascript">
+(function () {
+// instantiate a Moment object
+var NowMoment = moment().format('D MMMM YYYY');
+// display value of NowMoment in #displayMoment div
+var eDisplayMoment = document.getElementById('displayMoment');
+eDisplayMoment.innerHTML = NowMoment;
+})();
+</script>
+<!-- END script to display current date and time-->

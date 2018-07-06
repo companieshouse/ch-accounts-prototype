@@ -340,10 +340,12 @@ table.check-your-answers-notes {
 
       th.status {
         width: 18%;
+        text-align: left;
       }
 
       th.actions {
         width: 15%;
+        text-align: left;
       }
 
       td.rejected-type {
@@ -393,7 +395,7 @@ table.check-your-answers-notes {
     }
   }
 
-  .grid-row {
+  .govuk-grid-row {
     strong {
       display: block;
 
@@ -831,6 +833,7 @@ img.card-image {
   }
 }
 /// Flash card ///
+
 .circle-step-white {
   height: 1.4em;
   width: 1.4em;
