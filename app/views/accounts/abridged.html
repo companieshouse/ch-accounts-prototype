@@ -1,63 +1,110 @@
 {% extends "layout.html" %}
-{% block pageTitle %} File your accounts (prototype) {% endblock %}
+{% block pageTitle %}
+  File your accounts (prototype)
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-              <h1 class="govuk-heading-l">File abridged company accounts (prototype)</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">File abridged company accounts (prototype)</h1>
 
+          <div class="section-tabs js-tabs">
+            <ul>
+              <li>
+                <a href="/small-full/small-full" id="">Full</a>
+              </li>
+              <li>
+                <a href="/cics/cics" id="">CICs</a>
+              </li>
+              <li class="active">
+                <a href="javascript:void(0)" id="">Abridged</a>
+              </li>
 
-              <div class="section-tabs js-tabs">
-                <ul>
-                  <li><a href="/small-full/small-full" id="">Full</a></li>
-                  <li><a href="/cics/cics" id="">CICs</a></li>
-                  <li class="active"><a href="javascript:void(0)" id="">Abridged</a></li>
-
-                </ul>
-              </div>
-
-              <p class="govuk-hint">
-                The 'File abridged company accounts' prototype is no longer being worked on. Archived version are available below.
-              </p>
-
-              <h2 class="govuk-heading-m">The latest version</h2>
-              <ul class="govuk-list">
-                <li><a href="https://ch-accounts-v17.herokuapp.com/shortcuts">Beta V17 (January 2018)</a>
-              </ul>
-
-              <h2 class="govuk-heading-m">Previous versions</h2>
-              <ul class="govuk-list">
-                <li><a href="https://ch-accounts-v16.herokuapp.com/shortcuts">Beta V16 (November 2017)</a></li>
-                <li><a href="https://ch-accounts-v15.herokuapp.com/shortcuts">Beta V15 (October 2017)</a></li>
-                <li><a href="https://ch-accounts-v14.herokuapp.com/shortcuts">Beta V14: (late September 2017)</a></li>
-                <li><a href="https://ch-accounts-v13.herokuapp.com/shortcuts">Beta V13: (early September 2017)</a></li>
-                <li><a href="https://ch-accounts-v12.herokuapp.com/shortcuts">Beta V12: (August 2017)</a></li>
-                <li><a href="https://ch-accounts-v11.herokuapp.com/shortcuts">Beta V11: (July 2017)</a></li>
-                <li><a href="https://ch-accounts-v10.herokuapp.com/shortcuts">Beta V10: (June 2017)</a></li>
-                <li><a href="https://ch-accounts-v9.herokuapp.com/shortcuts">Beta V9: (May 2017)</a></li>
-                <li><a href="https://ch-accounts-v8.herokuapp.com/shortcuts">Beta V8: (April 2017)</a></li>
-                <li><a href="https://ch-accounts-v7.herokuapp.com/shortcuts">Beta V7: (March 2017)</a></li>
-                <li><a href="https://ch-accounts-v6.herokuapp.com/shortcuts">Alpha V6: (February 2017)</a></li>
-                <li><a href="https://ch-accounts-v5.herokuapp.com/shortcuts">Alpha V5: (January 2017)</a></li>
-                <li><a href="https://ch-accounts-v4a.herokuapp.com/shortcuts">Alpha V4a (February 2017)</a></li>
-                <li><a href="https://ch-accounts-v4.herokuapp.com/shortcuts">Alpha V4 (December 2016)</a>
-                  <span class="govuk-hint">V4 was sent to GDS for assessment</span></li>
-                <li><a href="https://ch-accounts-v3.herokuapp.com/shortcuts">Alpha V3 (Late November 2016)</a></li>
-                <li><a href="https://ch-accounts-v2.herokuapp.com/shortcuts">Alpha V2 (Early November 2016)</a></li>
-                <li><a href="https://ch-accounts-v1a.herokuapp.com/shortcuts">Alpha V1 (October 2016)</a></li>
-                <li><a href="https://ch-accounts-discovery.herokuapp.com/shortcuts">Discovery</a></li>
-              </ul>
-
-            </div>
+            </ul>
           </div>
 
-  </main>
-</div><!---govuk-width-container-->
+          <p class="govuk-hint">
+            The 'File abridged company accounts' prototype is no longer being worked on. Archived version are available below.</p>
 
+          <h2 class="govuk-heading-m">The latest version</h2>
+          <ul class="govuk-list">
+            <li>
+              <a href="https://ch-accounts-v17.herokuapp.com/shortcuts">Beta V17 (January 2018)</a>
+          </ul>
+
+          <h2 class="govuk-heading-m">Previous versions
+            <span class="govuk-hint">
+              Previous versions might be 'switched off' - contact James Francis for access.
+            </span>
+          </h2>
+
+          <ul class="govuk-list">
+            <li>
+              <a href="https://ch-accounts-v16.herokuapp.com/shortcuts">Beta V16 (November 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v15.herokuapp.com/shortcuts">Beta V15 (October 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v14.herokuapp.com/shortcuts">Beta V14: (late September 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v13.herokuapp.com/shortcuts">Beta V13: (early September 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v12.herokuapp.com/shortcuts">Beta V12: (August 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v11.herokuapp.com/shortcuts">Beta V11: (July 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v10.herokuapp.com/shortcuts">Beta V10: (June 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v9.herokuapp.com/shortcuts">Beta V9: (May 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v8.herokuapp.com/shortcuts">Beta V8: (April 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v7.herokuapp.com/shortcuts">Beta V7: (March 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v6.herokuapp.com/shortcuts">Alpha V6: (February 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v5.herokuapp.com/shortcuts">Alpha V5: (January 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v4a.herokuapp.com/shortcuts">Alpha V4a (February 2017)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v4.herokuapp.com/shortcuts">Alpha V4 (December 2016)</a>
+              <span class="govuk-hint">V4 was sent to GDS for assessment</span></li>
+            <li>
+              <a href="https://ch-accounts-v3.herokuapp.com/shortcuts">Alpha V3 (Late November 2016)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v2.herokuapp.com/shortcuts">Alpha V2 (Early November 2016)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v1a.herokuapp.com/shortcuts">Alpha V1 (October 2016)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-discovery.herokuapp.com/shortcuts">Discovery</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

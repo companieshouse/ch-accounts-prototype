@@ -1,43 +1,60 @@
 {% extends "layout.html" %}
-{% block pageTitle %} File your full accounts (prototype) {% endblock %}
+{% block pageTitle %}
+  File your full accounts (prototype)
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">File full company accounts (prototype)</h1>
+          <h1 class="govuk-heading-l">File full company accounts (prototype)</h1>
 
+          <div class="section-tabs js-tabs">
+            <ul>
+              <li class="active">
+                <a href="javascript:void(0)" id="">Full</a>
+              </li>
+              <li>
+                <a href="/cics/cics" id="">CICs</a>
+              </li>
+              <li>
+                <a href="/accounts/abridged" id="">Abridged</a>
+              </li>
 
-      <div class="section-tabs js-tabs">
-        <ul>
-          <li class="active"><a href="javascript:void(0)" id="">Full</a></li>
-          <li><a href="/cics/cics" id="">CICs</a></li>
-          <li><a href="/accounts/abridged" id="">Abridged</a></li>
+            </ul>
+          </div>
 
-        </ul>
+          <h2 class="govuk-heading-m">The latest version</h2>
+          <ul class="govuk-list">
+            <li>
+              <a href="/small-full/shortcuts-small-full">Alpha V3 (May 2018)</a>
+          </ul>
+
+          <h2 class="govuk-heading-m">Previous versions
+            <span class="govuk-hint">
+              Previous versions might be 'switched off' - contact James Francis for access.
+            </span>
+          </h2>
+
+          <ul class="govuk-list">
+            <li>
+              <a href="https://ch-accounts-v18.herokuapp.com/small-full/shortcuts-small-full">Alpha V2 (April 2018)</a>
+            </li>
+            <li>
+              <a href="https://ch-accounts-v17.herokuapp.com/small-full/shortcuts-small-full">Alpha V1 (March 2018)</a>
+            </li>
+          </ul>
+
+        </div>
       </div>
 
-
-      <h2 class="govuk-heading-m">The latest version</h2>
-      <ul class="govuk-list">
-        <li><a href="/small-full/shortcuts-small-full">Alpha V3 (May 2018)</a>
-      </ul>
-
-      <h2 class="govuk-heading-m">Previous versions</h2>
-      <ul class="govuk-list">
-        <li><a href="https://ch-accounts-v18.herokuapp.com/small-full/shortcuts-small-full">Alpha V2 (April 2018)</a></li>
-        <li><a href="https://ch-accounts-v17.herokuapp.com/small-full/shortcuts-small-full">Alpha V1 (March 2018)</a></li>
-      </ul>
-
-    </div>
+    </main>
   </div>
-
-</main>
-</div><!---govuk-width-container-->
+  <!---govuk-width-container-->
 
 {% endblock %}
