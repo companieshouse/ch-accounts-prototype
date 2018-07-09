@@ -1,92 +1,56 @@
 {% extends "layout.html" %}
- {% block pageTitle %} How to file your CIC report and accounts with Companies House {% endblock %}
- {% block main %}
+{% block pageTitle %}
+  How to file your CIC report and accounts with Companies House
+{% endblock %}
+{% block main %}
 
-
-
- <div class="govuk-width-container">
-   {% include "includes/phase_banner_beta.html" %}
-   {{ govukBackLink({
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
      text: "Back",
      href: "javascript:history.back()"
    }) }}
 
-   <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
+      <div class="flash-card">
+        <header>
+          <h1 class="govuk-heading-l">How to file your CIC report and accounts with Companies House</h1>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <ul class="govuk-list">
+              <li>
+                <span class="circle-step-white">1</span>
+                <h2 class="govuk-heading-m">Prepare your accounts</h2>
+              </li>
 
+              <li>
+                <span class="circle-step-white">2</span>
+                <h2 class="govuk-heading-m">Get your accounts approved by the company director(s)</h2>
+              </li>
 
+              <li>
+                <span class="circle-step-white">3</span>
+                <h2 class="govuk-heading-m">File your CIC report and accounts</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="flash-card">
-    <header>
-      <h1 class="govuk-heading-l">How to file your CIC report and accounts with Companies House</h1>
-    </header>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <ul class="govuk-list">
-          <li><span class="circle-step-white">1</span>
-            <h2 class="govuk-heading-m">Prepare your accounts</h2>
-          </li>
-
-          <li><span class="circle-step-white">2</span>
-            <h2 class="govuk-heading-m">Get your accounts approved by the company director(s)</h2>
-          </li>
-
-          <li><span class="circle-step-white">3</span>
-            <h2 class="govuk-heading-m">File your CIC report and accounts</h2>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <form action="/cics/cics-new-or-resume" method="GET">
-      {{ govukButton({
+        <form action="/chs/chs-start-page-alternative-chs-search-cics" method="GET">
+          {{ govukButton({
         text: "Continue"
       }) }}
-    </form>
-    <p><a href="https://www.gov.uk/annual-accounts">I need help preparing my accounts</a></p>
+        </form>
+        <p>
+          <a href="https://www.gov.uk/annual-accounts">I need help preparing my accounts</a>
+        </p>
+      </div>
+      <!--flash card-->
+
+    </main>
   </div>
-  <!--flash card-->
-
-
-
-
-  <!--
-  <h1 class="govuk-heading-l">How to use this service</h1>
-
-  <div class="grid-row">
-
-    <div class="column-third">
-      <img src="/public/images/prepare-accounts.png" height="266" width="300" />
-      <span class="circle circle-step-large">1</span>
-      <p>Get your company's <a href="https://www.gov.uk/annual-accounts">annual accounts prepared</a>.</p>
-    </div>
-
-    <div class="column-third">
-      <img src="/public/images/approve-accounts.png" height="266" width="300" />
-      <span class="circle circle-step-large">2</span>
-      <p>You must get your accounts approved by your company directors <strong>before</strong> you file them.</p>
-    </div>
-
-    <div class="column-third">
-      <img src="/public/images/file-accounts.png" height="266" width="300" />
-      <span class="circle circle-step-large">3</span>
-      <p>File your prepared and approved accounts and CIC report using this service.</p>
-    </div>
-
-  </div>
-
-  <div class="form-group">
-    <input type="submit" class="button" value="Continue">
-  </div>
-
--->
-  <p>
-    <a href="/cics/cics-about-service-alt" style="float:right; color: #DEE0E2; font-size:14px;">Alternative</a>
-  </p>
-
-
-</main>
-</div><!---govuk-width-container-->
-
+  <!---govuk-width-container-->
 
 {% endblock %}

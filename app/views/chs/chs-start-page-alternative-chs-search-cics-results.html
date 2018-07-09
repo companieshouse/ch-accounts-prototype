@@ -1,368 +1,437 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  Accounts - Start
+  Search results
 {% endblock %}
-
-{% block proposition_header %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
-{% block header_class %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
 {% block main %}
 
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper search">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
-
-
-
-
-    <main id="content" role="main" class="search">
-
-{% include "includes/phase_banner_beta.html" %}
-
-  <!--  <nav class="content" role="navigation">
-      <ul id="navigation" class="mobile-hidden">
-        <li><a href="javascript:void(0)" id="user-signin">Sign in / Register</a></li>
-      </ul>
-    </nav>-->
-    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
-
-
-
-        <div id="view2" class="">
-          <!-- Search Results -->
-          <div class="search-bar-active form-group" style="width:75%;">
+          <div id="view2" class="">
+            <!-- Search Results -->
             <form id="search-active" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
               <div class="searchfield">
-                <input type="search" autocomplete="off" name="q" id="site-search-active-text" placeholder="" value="A Test CIC" class="js-search-focus"  style="width:89%;" />
-                <a href="#" id="search-active-submit" class="search-submit button">Search</a>
+                <input type="search" autocomplete="off" name="q" id="site-search-active-text" placeholder="" value="A Test CIC" class="js-search-focus govuk-input" style="width:86%;"/>
+                <a href="#" id="search-active-submit" class="search-submit govuk-button">Search</a>
               </div>
             </form>
-          </div>
-        <!--  <div class="filter-bar">
-            <ul class="search-tabs">
-              <li class="active">
-                <a href="javascript:void(0)">Companies </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Officers</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Disqualifications</a>
-              </li>
-            </ul>
-          </div>-->
-          <div class="grid-row">
-            <div class="column-two-thirds">
-              <article id="services-information-results">
-                <h2 class="visuallyhidden">All results</h2>
-                <ul class="results-list" id="results">
+            <!-- <div class="filter-bar"> <ul class="search-tabs"> <li class="active"> <a href="javascript:void(0)">Companies </a> </li> <li> <a href="javascript:void(0)">Officers</a> </li> <li> <a href="javascript:void(0)">Disqualifications</a> </li> </ul>
+            </div>-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <article id="services-information-results">
+                  <h2 class="govuk-visually-hidden">All results</h2>
+                  <ul class="results-list govuk-list" id="results">
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="chs-profile-page-cics">
-                    A <strong>TEST</strong> <strong>CIC</strong>
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>01234567</strong> - Incorporated on 7 July 2016 </p>
-                    <p>1 Any Street, Cardiff, Wales, CF12 3AB</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="/cics/cics-company-number-confirm">
+                          A
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>01234567</strong>
+                        - Incorporated on 7 July 2016
+                      </p>
+                      <p>1 Any Street, Cardiff, Wales, CF12 3AB</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    DELTA <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>10000009</strong> - Incorporated on  3 March 2016 </p>
-                    <p>1  Cardiff Street, Treorchy, Mid Glamorgan, CF42 6BG</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          DELTA
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>10000009</strong>
+                        - Incorporated on 3 March 2016
+                      </p>
+                      <p>1 Cardiff Street, Treorchy, Mid Glamorgan, CF42 6BG</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    ELECTRICAL AUDIT REPAIR <strong>TEST</strong> &amp; HIRE <strong>CIC</strong> <strong>LTD.</strong>
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>03550352</strong> - Incorporated on 22 April 1998 </p>
-                    <p>Unit 16 &amp;  17 Ashley Park, Common Road, Witchford, Ely, Cambridgeshire, CB6 2HZ</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          ELECTRICAL AUDIT REPAIR
+                          <strong>TEST</strong>
+                          &amp; HIRE
+                          <strong>CIC</strong>
+                          <strong>LTD.</strong>
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>03550352</strong>
+                        - Incorporated on 22 April 1998
+                      </p>
+                      <p>Unit 16 &amp; 17 Ashley Park, Common Road, Witchford, Ely, Cambridgeshire, CB6 2HZ</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    FREE <strong>TEST</strong> <strong>CIC</strong> UK LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>08635478</strong> - Incorporated on  2 August 2013 </p>
-                    <p>Kenilworth Hambledon Road, Denmead, Waterlooville, Hampshire, P07 6NU</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          FREE
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          UK LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>08635478</strong>
+                        - Incorporated on 2 August 2013
+                      </p>
+                      <p>Kenilworth Hambledon Road, Denmead, Waterlooville, Hampshire, P07 6NU</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    HOME EYE <strong>TEST</strong> <strong>CIC</strong> LTD
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>SC464466</strong> - Incorporated on 25 November 2013 </p>
-                    <p>25  Station Road, Caldercruix, Airdrie, Lanarkshire, ML6 7QN</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          HOME EYE
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LTD
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>SC464466</strong>
+                        - Incorporated on 25 November 2013
+                      </p>
+                      <p>25 Station Road, Caldercruix, Airdrie, Lanarkshire, ML6 7QN</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    IP PREPROD <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>IP12345A</strong> - Incorporated on  </p>
-                    <p></p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          IP PREPROD
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>IP12345A</strong>
+                        - Incorporated on
+                      </p>
+                      <p></p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    LEGIONELLA <strong>TEST</strong> <strong>CIC</strong> (LTC) LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>09319839</strong> - Incorporated on 20 November 2014 </p>
-                    <p>Building 114  Porton Down Science Park, Salisbury, SP4 0JQ</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          LEGIONELLA
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          (LTC) LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>09319839</strong>
+                        - Incorporated on 20 November 2014
+                      </p>
+                      <p>Building 114 Porton Down Science Park, Salisbury, SP4 0JQ</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    THE MOT <strong>TEST</strong> <strong>CIC</strong> LTD
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>09920312</strong> - Incorporated on 17 December 2015 </p>
-                    <p>71-75  Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          THE MOT
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LTD
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>09920312</strong>
+                        - Incorporated on 17 December 2015
+                      </p>
+                      <p>71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    NEW <strong>CIC</strong> <strong>TEST</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>10000036</strong> - Incorporated on 19 May 2016 </p>
-                    <p>1  Cardiff Street, Treorchy, Mid Glamorgan, CF42 6BG</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          NEW
+                          <strong>CIC</strong>
+                          <strong>TEST</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>10000036</strong>
+                        - Incorporated on 19 May 2016
+                      </p>
+                      <p>1 Cardiff Street, Treorchy, Mid Glamorgan, CF42 6BG</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    NORTHERN IRELAND IP <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>NP12345C</strong> - Incorporated on  </p>
-                    <p></p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          NORTHERN IRELAND IP
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>NP12345C</strong>
+                        - Incorporated on
+                      </p>
+                      <p></p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    PERFORMANCE <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>03284352</strong> - Incorporated on 27 November 1996 </p>
-                    <p>12  Holton Road, Holton Heath, Poole, Dorset, BH16 6LT</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          PERFORMANCE
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>03284352</strong>
+                        - Incorporated on 27 November 1996
+                      </p>
+                      <p>12 Holton Road, Holton Heath, Poole, Dorset, BH16 6LT</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    REGISTERED SOCIETY <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>RS12345D</strong> </p>
-                    <p></p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          REGISTERED SOCIETY
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>RS12345D</strong>
+                      </p>
+                      <p></p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    REGISTERED SOCIETY <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>RS44444S</strong> </p>
-                    <p></p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          REGISTERED SOCIETY
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>RS44444S</strong>
+                      </p>
+                      <p></p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    SCOTTISH IP <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>SP12345B</strong> - Incorporated on  </p>
-                    <p></p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          SCOTTISH IP
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>SP12345B</strong>
+                        - Incorporated on
+                      </p>
+                      <p></p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    <strong>TEST</strong> LANE MANAGEMENT <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>01809977</strong> - Incorporated on 18 April 1984 </p>
-                    <p>Rmg House, Essex Road, Hoddesdon, Hertfordshire, England, EN11 0DR</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          <strong>TEST</strong>
+                          LANE MANAGEMENT
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>01809977</strong>
+                        - Incorporated on 18 April 1984
+                      </p>
+                      <p>Rmg House, Essex Road, Hoddesdon, Hertfordshire, England, EN11 0DR</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    THE <strong>TEST</strong> TRADING <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>08577591</strong> - Incorporated on 20 June 2013 </p>
-                    <p>Suite 22  30, The Downs, Altrincham, Cheshire, WA142PX</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          THE
+                          <strong>TEST</strong>
+                          TRADING
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>08577591</strong>
+                        - Incorporated on 20 June 2013
+                      </p>
+                      <p>Suite 22 30, The Downs, Altrincham, Cheshire, WA142PX</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    <strong>TEST</strong> VALLEY GLASS AND WINDOW <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>03078190</strong> - Incorporated on 11 July 1995 </p>
-                    <p>17/18  Glenmore Business Park, Colebrook Way, Andover, Hampshire, SP10 3GZ</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          <strong>TEST</strong>
+                          VALLEY GLASS AND WINDOW
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>03078190</strong>
+                        - Incorporated on 11 July 1995
+                      </p>
+                      <p>17/18 Glenmore Business Park, Colebrook Way, Andover, Hampshire, SP10 3GZ</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    <strong>TEST</strong> <strong>TEST</strong> <strong>TEST</strong> 1234 <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>09548848</strong> - Dissolved on 29 December 2015 </p>
-                    <p>200-203  Strand, London, United Kingdom, WC2R 1DJ</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          <strong>TEST</strong>
+                          <strong>TEST</strong>
+                          <strong>TEST</strong>
+                          1234
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>09548848</strong>
+                        - Dissolved on 29 December 2015
+                      </p>
+                      <p>200-203 Strand, London, United Kingdom, WC2R 1DJ</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    FREE <strong>TEST</strong> <strong>CIC</strong> LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>07033653</strong> - Dissolved on  6 January 2015 </p>
-                    <p>Kenilworth Hambledon Road, Denmead, Waterlooville, Hampshire, United Kingdom, PO7 6NU</p>
-                  </li>
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          FREE
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>07033653</strong>
+                        - Dissolved on 6 January 2015
+                      </p>
+                      <p>Kenilworth Hambledon Road, Denmead, Waterlooville, Hampshire, United Kingdom, PO7 6NU</p>
+                    </li>
 
-                  <li class="type-company">
-                    <h3>
-                    <!-- $item._score -->
-                    <a title="View company" href="javascript:void(0)">
-                    TMF <strong>TEST</strong> <strong>CIC</strong> (CC) LIMITED
-                    </a>
-                    </h3>
-                    <p class="meta crumbtrail"> <strong>08350040</strong> - Dissolved on 19 August 2014 </p>
-                    <p>5th  Floor, 6 St. Andrew Street, London, United Kingdom, EC4A 3AE</p>
-                  </li>
-
+                    <li class="type-company">
+                      <h3>
+                        <!-- $item._score -->
+                        <a title="View company" href="javascript:void(0)">
+                          TMF
+                          <strong>TEST</strong>
+                          <strong>CIC</strong>
+                          (CC) LIMITED
+                        </a>
+                      </h3>
+                      <p class="meta crumbtrail">
+                        <strong>08350040</strong>
+                        - Dissolved on 19 August 2014
+                      </p>
+                      <p>5th Floor, 6 St. Andrew Street, London, United Kingdom, EC4A 3AE</p>
+                    </li>
 
                   </ul>
 
+                </article>
+              </div>
 
-                    </article>
-                  </div>
+            </div>
 
-                </div>
+            <div id="search-meta" class="search-meta govuk-list">
+              <ul id="pager" class="pager">
+                <li>
+                  <span class="page" id="page-1">1</span></li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-2">2</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-3">3</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-4">4</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-5">5</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-6">6</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-7">7</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-8">8</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-9">9</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" class="page" id="page-10">10</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0" id="next-page" class="page">Next</a>
+                </li>
+              </ul>
+              <br>
+              <p>5,558,048 matches found</p>
+            </div>
 
-                <div id="search-meta" class="search-meta">
-                  <ul id="pager" class="pager">
-                    <li><span class="page" id="page-1">1</span></li>
-                    <li><a href="javascript:void(0" class="page" id="page-2">2</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-3">3</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-4">4</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-5">5</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-6">6</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-7">7</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-8">8</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-9">9</a></li>
-                    <li><a href="javascript:void(0" class="page" id="page-10">10</a></li>
-                    <li><a href="javascript:void(0" id="next-page" class="page">Next</a></li>
-                  </ul>
-                  <br>
-                <p>5,558,048 matches found</p>
+          </div>
+          <div id="view4" class="view">
+            <!-- -->
+            View 4
           </div>
 
         </div>
-        <div id="view4" class="view">
-          <!--  -->
-          View 4
-        </div>
-        <div class="push"></div>
-      </main>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-  <!--  <script>
-      $(document).ready(function() {
-
-        $(".filter-button")
-          .click(function() {
-            if ($(".search-tools")
-              .hasClass("active")) {
-              $(".search-tools")
-                .removeClass("active");
-              $(".result-count")
-                .addClass("active");
-              return false;
-            } else {
-              $(".result-count")
-                .removeClass("active");
-              $(".search-tools")
-                .addClass("active");
-              return false;
-            }
-          });
-
-        $("#site-search-text")
-          .keyup(function() {
-              if($(this).val().length > 7)
-              {
-                $("#view1").removeClass("active").next().addClass("active");
-                return false;
-              }
-          });
-
-        $(".enable-view3")
-          .click(function() {
-            $("#view2").removeClass("active").next().addClass("active");
-            return false;
-          });
-
-      });
-    </script>-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}
