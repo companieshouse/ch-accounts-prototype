@@ -1,213 +1,167 @@
-{% extends "layout.html" %} {% block pageTitle %} Creditors - amounts falling due after one year note {% endblock %} {% block main %}
-<main class="two-column-accounts" id="content" role="main">
-  {% include "includes/phase_banner_beta.html" %}
-  <nav class="content" role="navigation">
-    <ul class="mobile-hidden" id="navigation">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
-      </li>
-      <li>
-        <a href="javascript:void(0)">Your details</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" id="recent_filings">Your filings</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" id="">Companies you follow</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" id="user-signout">Sign out</a>
-      </li>
-    </ul>
-  </nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
-  <h1 class="govuk-heading-l">Creditors - amounts falling due after one year</h1>
-  <!--<div class="panel panel-border-wide">
-      <p>Use this note to provide information about who your business owes money to and you expect to pay after one year from the filing date.</p>
-      <p>Complete all items that are included in your prepared accounts.</p>
-    </div>
-    <br>-->
-  <p class="warning-note warning-note-large">Complete all items that are included in your prepared accounts.</p><br />
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Creditors - amounts falling due after one year
+{% endblock %}
+{% block main %}
 
-  <form action="/" class="form currency-included-within-inputs" id="" method="post" name="">
-    <div class="grid-row" id="accounts-header">
-      <div class="column-half">&nbsp;</div>
-      <div class="column-quarter">
-        <h2 class="govuk-heading-s">2018<!--<br />£--></h2>
-      </div>
-      <div class="column-quarter">
-        <h2 class="govuk-heading-s">2017<!--<br />£--></h2>
-      </div>
-    </div>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-    <!--Start Creditors - amounts falling due after one year-->
-    <div class="grid-row accounts-row-spacer">
-      <!--<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">Creditors - amounts falling due after one year</span>
-						</summary>
-						<div class="panel panel-border-narrow">
-							<p>This is the figure you entered on the balance sheet. This note shows the breakdown of total creditors falling due after more than one year.</p>
-						</div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="creditors-after-current"><span class="mobile-only-label">Creditors - amounts falling due after one year - 2018</span>
-            <input class="form-control" id="creditors-after-current" type="number"></label>
-					</div>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="creditors-after-previous"><span class="mobile-only-label">Creditors - amounts falling due after one year - 2017</span>
-						<input class="form-control" id="creditors-after-previous" type="number"></label>
-					</div>
-				</div>-->
-    </div>
-    <!--End Creditors - amounts falling due after one year-->
-    <!--Start Bank loans and overdrafts  -->
-    <div class="grid-row">
-      <div class="column-half">
-        <!--<details>
-          <summary>
-            <span class="summary"-->Bank loans and overdrafts
-        <!-- </span>
-          </summary>
-          <div class="panel panel-border-narrow">
-            <p>The total value of bank loans and overdrafts your company owes and expects to pay more than one year from the end of the period.</p>
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper two-column-accounts">
+
+      <h1 class="govuk-heading-l">Creditors - amounts falling due after one year</h1>
+
+      <p class="warning-note warning-note-large">Complete all items that are included in your prepared accounts.</p><br/>
+
+      <form action="/small-full/small-full-other-notes-yes-no" class="form currency-included-within-inputs govuk-body" id="creditors-after-" method="post" name="creditors-after-">
+        <div class="govuk-grid-row" id="creditors-after-accounts-header">
+          <div class="govuk-grid-column-one-half">&nbsp;</div>
+          <div class="govuk-grid-column-one-quarter">
+            <h2 class="govuk-heading-s">2018<!--<br />£--></h2>
           </div>
-        </details>-->
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="bank-loans-current"><span class="mobile-only-label">Bank loans and overdrafts - 2018</span>
-            <input class="form-control" id="bank-loans-current" type="number"></label>
-        </div>
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="bank-loans-previous"><span class="mobile-only-label">Bank loans and overdrafts - 2017</span>
-						<input class="form-control" id="bank-loans-previous" type="number"></label>
-        </div>
-      </div>
-    </div>
-    <!--End Bank loans and overdrafts  -->
-    <!--Start Amounts due under finance leases and hire purchase contracts-->
-    <div class="grid-row">
-      <div class="column-half">
-        <!--  <details>
-          <summary>
-            <span class="summary">-->Amounts due under finance leases and hire purchase contracts
-        <!--</span>
-          </summary>
-          <div class="panel panel-border-narrow">
-            <p>The total of capital amounts (original values) your company owes for finance leases and hire purchase contracts and expects to pay more than one year from the end of the period.</p>
+          <div class="govuk-grid-column-one-quarter">
+            <h2 class="govuk-heading-s">2017<!--<br />£--></h2>
           </div>
-        </details>-->
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="finance-leases-current"><span class="mobile-only-label">Amounts due under finance leases and hire purchase contracts - 2018</span>
-            <input class="form-control" id="finance-leases-current" type="number"></label>
         </div>
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="finance-leases-previous"><span class="mobile-only-label">Amounts due under finance leases and hire purchase contracts - 2017</span>
-						<input class="form-control" id="finance-leases-previous" type="number"></label>
-        </div>
-      </div>
-    </div>
-    <!--End Amounts due under finance leases and hire purchase contracts-->
 
-    <!--Start Other creditors-->
-    <div class="grid-row">
-      <div class="column-half">
-        <!--  <details>
-          <summary>
-            <span class="summary">-->Other creditors
-        <!--</span>
-          </summary>
-          <div class="panel panel-border-narrow">
-            <p>Any other amounts that your company owes and expects to pay after more then one year from the end of the period. Exclude anything already included in this note.</p>
+        <!--Start Creditors - amounts falling due after one year-->
+        <div class="govuk-grid-row accounts-row-spacer">
+          <!--<div class="govuk-grid-column-one-half"> <details> <summary> <span class="summary">Creditors - amounts falling due after one year</span> </summary> <div class="panel panel-border-narrow"> <p>This is the figure you entered on the balance sheet.
+          This note shows the breakdown of total creditors falling due after more than one year.</p> </div> </details> </div> <div class="govuk-grid-column-one-quarter"> <div class="govuk-form-group"> <label for="creditors-after-current"><span
+          class="mobile-only-label">Creditors - amounts falling due after one year - 2018</span> <input class="govuk-input" id="creditors-after-creditors-after-current" type="number"></label> </div> </div> <div class="govuk-grid-column-one-quarter"> <div
+          class="govuk-form-group"> <label for="creditors-after-previous"><span class="mobile-only-label">Creditors - amounts falling due after one year - 2017</span> <input class="govuk-input" id="creditors-after-creditors-after-previous"
+          type="number"></label> </div> </div>-->
+        </div>
+        <!--End Creditors - amounts falling due after one year-->
+        <!--Start Bank loans and overdrafts -->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <!--<details> <summary> <span class="summary"-->Bank loans and overdrafts
+            <!-- </span> </summary> <div class="panel panel-border-narrow"> <p>The total value of bank loans and overdrafts your company owes and expects to pay more than one year from the end of the period.</p> </div> </details>-->
           </div>
-        </details>-->
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="other-creditors-current"><span class="mobile-only-label">Other creditors - 2018</span>
-						<input class="form-control" id="other-creditors-current" type="number"></label>
-        </div>
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="other-creditors-previous"><span class="mobile-only-label">Other creditors - 2017</span>
-						<input class="form-control" id="other-creditors-previous" type="number"></label>
-        </div>
-      </div>
-    </div>
-    <!--End Other creditors-->
-    <!--Start Total-->
-    <div class="grid-row accounts-total">
-      <div class="column-half">
-        <!--<details>
-          <summary>
-            <span class="summary">--><strong>Total</strong>
-        <!--</span>
-          </summary>
-          <div class="panel panel-border-narrow">
-            <p>The total value of all creditors amounts falling due after more than one year from the end of the period.</p>
-            <p>This is calculated by adding together:</p>
-            <ul class="list list-bullet font-small">
-              <li>bank loans and overdrafts</li>
-              <li>amounts due under finance leases and hire purchase contracts</li>
-              <li>other creditors</li>
-            </ul>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="bank-loans-current">
+                <span class="mobile-only-label">Bank loans and overdrafts - 2018</span>
+                <input class="govuk-input" id="creditors-after-bank-loans-current" name="creditors-after-bank-loans-current" type="number"></label>
+            </div>
           </div>
-        </details>-->
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="total-current"><span class="mobile-only-label">Total - 2018</span>
-						<input class="form-control" id="after-one-year-total-current" type="number"></label>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="bank-loans-previous">
+                <span class="mobile-only-label">Bank loans and overdrafts - 2017</span>
+                <input class="govuk-input" id="creditors-after-bank-loans-previous" name="creditors-after-bank-loans-previous" type="number"></label>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="column-quarter">
-        <div class="form-group">
-          <span class="currency-type">£</span>
-          <label for="total-previous"><span class="mobile-only-label">Total - 2017</span>
-						<input class="form-control" id="after-one-year-total-previous" type="number"></label>
+        <!--End Bank loans and overdrafts -->
+        <!--Start Amounts due under finance leases and hire purchase contracts-->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <!-- <details> <summary> <span class="summary">-->Amounts due under finance leases and hire purchase contracts
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>The total of capital amounts (original values) your company owes for finance leases and hire purchase contracts and expects to pay more than one year from the end of the period.</p>
+            </div> </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="finance-leases-current">
+                <span class="mobile-only-label">Amounts due under finance leases and hire purchase contracts - 2018</span>
+                <input class="govuk-input" id="creditors-after-finance-leases-current" name="creditors-after-finance-leases-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="finance-leases-previous">
+                <span class="mobile-only-label">Amounts due under finance leases and hire purchase contracts - 2017</span>
+                <input class="govuk-input" id="creditors-after-finance-leases-previous" name="creditors-after-finance-leases-previous" type="number"></label>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <!--End Total-->
+        <!--End Amounts due under finance leases and hire purchase contracts-->
 
+        <!--Start Other creditors-->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <!-- <details> <summary> <span class="summary">-->Other creditors
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>Any other amounts that your company owes and expects to pay after more then one year from the end of the period. Exclude anything already included in this note.</p> </div>
+            </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="other-creditors-current">
+                <span class="mobile-only-label">Other creditors - 2018</span>
+                <input class="govuk-input" id="creditors-after-other-creditors-current" name="creditors-after-other-creditors-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="other-creditors-previous">
+                <span class="mobile-only-label">Other creditors - 2017</span>
+                <input class="govuk-input" id="creditors-after-other-creditors-previous" name="creditors-after-other-creditors-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Other creditors-->
+        <!--Start Total-->
+        <div class="govuk-grid-row accounts-total">
+          <div class="govuk-grid-column-one-half">
+            <!--<details> <summary> <span class="summary">-->
+            <strong>Total</strong>
+            <!--</span> </summary> <div class="panel panel-border-narrow"> <p>The total value of all creditors amounts falling due after more than one year from the end of the period.</p> <p>This is calculated by adding together:</p> <ul class="list list-bullet
+            font-small"> <li>bank loans and overdrafts</li> <li>amounts due under finance leases and hire purchase contracts</li> <li>other creditors</li> </ul> </div> </details>-->
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="total-current">
+                <span class="mobile-only-label">Total - 2018</span>
+                <input class="govuk-input" id="creditors-after-one-year-total-current" name="creditors-after-one-year-total-current" type="number"></label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="total-previous">
+                <span class="mobile-only-label">Total - 2017</span>
+                <input class="govuk-input" id="creditors-after-one-year-total-previous" name="creditors-after-one-year-total-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Total-->
 
-    <details class="accounts-row-spacer text">
-      <summary>
-        <span class="summary">Add additional information about your 'creditors - amounts falling due after one year' note?</span>
-      </summary>
-      <div class="panel panel-border-narrow">
-        <label class="visuallyhidden" for="textarea">Add additional information about your 'creditors - amounts falling due after one year' note?</label>
-        <span class="govuk-hint">
-          <p>Enter details of:</p>
-          <ul class="govuk-list">
-            <li>security given for money owed to secured creditors, for example mortgages on property</li>
-            <li>instalment debts (where you repay in instalments) and non-instalment debts (where you repay a lump sum) due more than 5 years after the end of the period</li>
-          </ul>
-          </span>
-        <textarea class="form-control" id="textarea" rows="10"></textarea>
-      </div>
-    </details>
-    <div class="form-group accounts-row-spacer">
-      <a class="button" href="/small-full/small-full-review-mvp">Save and continue</a>
-    </div>
-  </form>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Add additional information about your 'creditors - amounts falling due after one year' note?</span>
+              </summary>
+              <div class="govuk-govuk-form-group">
+                <label class="govuk-visually-hidden" for="after-one-year-additional-info">Add additional information about your 'creditors - amounts falling due after one year' note?</label>
+                <span id="creditors-after-more-detail-hint" class="govuk-hint">Enter details of any other 'creditors - amounts falling due after one year' information not already covered</span>
+                <textarea class="govuk-textarea" id="creditors-after-after-one-year-additional-info" name="creditors-after-after-one-year-additional-info" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </details>
+          </div>
+        </div>
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
 
-</main>{% endblock %}
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

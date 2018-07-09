@@ -176,7 +176,15 @@ module.exports = {
 	"within-one-year-additional-info": "Not entered",
 
 	//Small Full Creditors amounts falling due AFTER on year note
-	// TO DO
+	"creditors-after-bank-loans-current": "0",
+	"creditors-after-bank-loans-previous": "0",
+	"creditors-after-finance-leases-current": "0",
+	"creditors-after-finance-leases-previous": "0",
+	"creditors-after-other-creditors-current": "0",
+	"creditors-after-other-creditors-previous": "0",
+	"creditors-after-one-year-total-current": "0",
+	"creditors-after-one-year-total-previous": "0",
+	"creditors-after-after-one-year-additional-info": "Not entered",
 
 	//Small Full Employees note
 	"average-number-of-employees-current": "0",
