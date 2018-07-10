@@ -86,6 +86,48 @@ module.exports = {
 	"small-full-valuation-information-policy": "Not entered",
 	"small-full-other-policies": "Not entered",
 
+	//Intangible assets note
+	"cost-start-goodwill": "0",
+	"cost-start-other": "0",
+	"cost-start-total": "0",
+	"additions-goodwill": "0",
+	"additions-other": "0",
+	"additions-total": "0",
+	"disposals-goodwill": "0",
+	"disposals-other": "0",
+	"disposals-total": "0",
+	"revaluations-goodwill": "0",
+	"revaluations-other": "0",
+	"revaluations-total": "0",
+	"transfers-goodwill": "0",
+	"transfers-other": "0",
+	"transfers-total": "0",
+	"cost-end-goodwill": "0",
+	"cost-end-other": "0",
+	"cost-end-total": "0",
+	"amortisation-start-goodwill": "0",
+	"amortisation-start-other": "0",
+	"amortisation-start-total": "0",
+	"charge-year-goodwill": "0",
+	"charge-year-other": "0",
+	"charge-year-total": "0",
+	"on-disposals-goodwill": "0",
+	"on-disposals-other": "0",
+	"on-disposals-total": "0",
+	"other-adjustments-goodwill": "0",
+	"other-adjustments-other": "0",
+	"other-adjustments-total": "0",
+	"amortisation-end-goodwill": "0",
+	"amortisation-end-other": "0",
+	"amortisation-end-total": "0",
+	"net-book-value-end-goodwill": "0",
+	"net-book-value-end-other": "0",
+	"net-book-value-end-total": "0",
+	"net-book-value-start-goodwill": "0",
+	"net-book-value-start-other": "0",
+	"net-book-value-start-total": "0",
+
+
 	//Tangible assets note
 	"cost-start-land-buildings": "0",
 	"cost-start-plant-machinery": "0",
@@ -186,6 +228,11 @@ module.exports = {
 	"creditors-after-one-year-total-previous": "0",
 	"creditors-after-after-one-year-additional-info": "Not entered",
 
+	//Small Full Revaluation reserve note
+	"revaluation-reserve-start": "0",
+	"surplus-deficit-previous": "0",
+	"bank-loans-end": "0",
+
 	//Small Full Employees note
 	"average-number-of-employees-current": "0",
 	"average-number-of-employees-previous": "0",
@@ -210,16 +257,7 @@ module.exports = {
 	// TO DO
 
 	// Small Full post balance sheet events note
-	"small-full-post-balance-sheet-events-note": "Not entered",
-	"": "0",
-	"": "0",
-	"": "0",
-	"": "0",
-	"": "0",
-	"": "0",
-	"": "0",
-	"": "0",
-	"": "0",
+	"small-full-post-balance-sheet-events-note": "Not entered"
 
 
 }

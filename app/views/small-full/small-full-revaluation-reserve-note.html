@@ -1,131 +1,92 @@
 {% extends "layout.html" %}
- {% block pageTitle %}
- Revaluation reserve note
- {% endblock %}
-  {% block main %}
-<main class="two-column-accounts" id="content" role="main">
-	{% include "includes/phase_banner_beta.html" %}
-	<nav class="content" role="navigation">
-		<ul class="mobile-hidden" id="navigation">
-			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
-			</li>
-			<li>
-				<a href="javascript:void(0)">Your details</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="">Companies you follow</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="user-signout">Sign out</a>
-			</li>
-		</ul>
-	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
-	<h1 class="govuk-heading-l">
-		<span class="circle circle-step-large">5</span> Balance sheet notes <span class="circle-subheading">Revaluation reserve</span>
-	</h1>
-	<div class="left-indent">
-		<div class="panel panel-border-wide">
-			<p>Use this note to provide information about the revaluation reserve value from your balance sheet.</p>
-		</div>
-		<form action="/" class="form" id="" method="post" name="">
-      <div class="grid-row accounts-row-spacer" id="accounts-header">
+{% block pageTitle %}
+  Revaluation reserve
+{% endblock %}
+{% block main %}
 
-      <div class="column-half">
-        <h2 class="govuk-heading-m">
-          &nbsp;
-        </h2>
-      </div>
-      <div class="column-quarter">
-        <h2 class="govuk-heading-s">
-          £
-        </h2>
-      </div>
-      <div class="column-quarter">
-        <h2 class="govuk-heading-s"></h2>
-      </div>
-    </div>
-      <!--Start "At start of period"  -->
-			<div class="grid-row">
-				<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">At 1 April 2017</span>
-						</summary>
-						<div class="panel panel-border-narrow">
-	            <p>The total amount of revaluation reserve (surplus or deficit) at the start of the financial period.</p>
-	            <p class="bold-small">This amount is usually already given in the box, as it is the revaluation reserve figure you entered in your balance sheet for the previous year.</p>
-							<p>If the revaluation results in a deficit (reduction in value) of the asset, then you’ll see a negative value with a minus sign.</p>
-	        </div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="revaluation-reserve-start"><span class="visuallyhidden">At start of period</span>
-            <input class="form-control" id="revaluation-reserve-start" type="number" value="100" readonly=""></label>
-					</div>
-			</div>
-		</div><!--grid-row-->
-		<!--End "At start of period"  -->
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-			<!--Start Surplus or deficit after revaluatio-->
-			<div class="grid-row">
-				<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">Surplus or deficit after revaluation</span>
-						</summary>
-						<div class="panel panel-border-narrow">
-							<p>The total increase or reduction in the value of all tangible (physical) and intangible (non-physical) assets that were revalued in the period.</p>
-              <p>If assets reduced in value after a revaluation, enter a negative value using a minus sign. For example, if your company's machinery was valued at £10,000 less than the previous period, enter -10000. </p>
-						</div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="surplus-deficit-previous">
-						<input class="form-control" id="surplus-deficit-previous" type="number"></label>
-					</div>
-				</div>
-			</div><!--End Surplus or deficit after revaluatio-->
-			<!--Start Bank loans and overdrafts  -->
-			<div class="grid-row accounts-total">
-				<div class="column-half">
-					<details>
-						<summary>
-							<span class="summary">Balance at 31 March 2017</span>
-						</summary>
-						<div class="panel panel-border-narrow">
-							<p>The total revaluation reserve at the end of the period. This is calculated by adding together the revaluation reserve at the start of the period and any surplus arising from revaluations (or subtracting any deficit arising from revaluations).</p>
-              <p class="govuk-heading-s">This should match the revaluation reserve figure you entered in the balance sheet for the period you're filing for. </p>
-						</div>
-					</details>
-				</div>
-				<div class="column-quarter">
-					<div class="form-group">
-						<label for="bank-loans-end">
-						<input class="form-control" id="bank-loans-end" type="number"></label>
-					</div>
-				</div>
-			</div><!--End Balance at 31 March 2017 -->
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper two-column-accounts">
 
+      <h1 class="govuk-heading-l">Revaluation reserve</h1>
 
-			<details class="accounts-row-spacer text">
-				<summary>
-					<span class="summary">Add additional information?</span>
-				</summary>
-				<div class="panel panel-border-narrow">
-					<label class="visuallyhidden" for="textarea">Add additional information?</label>
-          <span class="govuk-hint">Enter details of any other revaluation reserve information not already covered.</span>
-					<textarea class="form-control" id="textarea" rows="10"></textarea>
-				</div>
-			</details>
-			<div class="form-group accounts-row-spacer">
-				<a class="button" href="/small-full/small-full-other-notes-yes-no">Save and continue</a>
-			</div>
-		</form>
-	</div><!--left-indent-->
-</main>{% endblock %}
+      <form action="/small-full/small-full-other-notes-yes-no" class="form currency-included-within-inputs govuk-body" id="" method="get" name="">
+
+        <!--Start "At start of period" -->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">At 1 April 2017
+            <span class="govuk-hint">This amount is usually already given in the box, as it is the revaluation reserve figure you entered in your balance sheet for the previous year.</span>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="revaluation-reserve-start">
+                <span class="mobile-only-label">At 1 April 2017</span>
+                <input class="govuk-input" id="revaluation-reserve-start" name="revaluation-reserve-start" type="number" value="{{ data['revaluation-reserve-previous'] }}" readonly=""></label>
+            </div>
+          </div>
+        </div>
+        <!--grid-row-->
+        <!--End "At start of period" -->
+
+        <!--Start Surplus or deficit after revaluatio-->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">Surplus or deficit after revaluation
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="surplus-deficit-previous">
+                <span class="mobile-only-label">Surplus or deficit after revaluation</span>
+                <input class="govuk-input" id="surplus-deficit-previous" name="surplus-deficit-previous" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Surplus or deficit after revaluatio-->
+        <!--Start Bank loans and overdrafts -->
+        <div class="govuk-grid-row accounts-total">
+          <div class="govuk-grid-column-one-half">Balance at 31 March 2017</div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label for="bank-loans-end">
+                <span class="mobile-only-label">Balance at 31 March 2017</span>
+                <input class="govuk-input" id="bank-loans-end" name="bank-loans-end" type="number"></label>
+            </div>
+          </div>
+        </div>
+        <!--End Balance at 31 March 2017 -->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Add additional information about your 'revaluation reserve' note?</span>
+              </summary>
+              <div class="govuk-govuk-govuk-form-group">
+
+                <label class="govuk-visually-hidden" for="revaluation-reserve-note-additional-info">Add additional information about your 'revaluation reserve' note?</label>
+                <span id="more-detail-hint" class="govuk-hint">Enter details of any other 'revaluation reserve' information not already covered</span>
+                <textarea class="govuk-textarea" id="revaluation-reserve-note-additional-info" name="revaluation-reserve-note-additional-info" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

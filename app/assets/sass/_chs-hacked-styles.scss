@@ -42,20 +42,21 @@ ul#navigation {
 .search-bar-active {
   background: $govuk-canvas-background-colour none repeat scroll 0 0;
   padding: 0.4em 0.4em 0;
+  margin-bottom: 20px;
 }
 
-.searchfield input {
+.js-search-focus {
   font-size: 19px;
   font-weight: 400;
-  height: 42px;
+  height: 52px;
   line-height: 1.31579;
   margin: 0;
   padding: 0 0 0 10px;
   text-transform: none;
-  width: 92%;
+  width: 93%;
 }
 
-.searchfield .button {
+.govuk-button-search {
   background-color: $govuk-link-colour;
   background-image: url("/public/images/search-button.png");
   background-position: -12.5% 50%;
@@ -67,6 +68,12 @@ ul#navigation {
   text-indent: -5000px;
   width: 54px;
   z-index: 4;
+  margin-bottom: 5px;
+
+  &:focus,
+  &:hover {
+    background-color: #2b8cc4;
+  }
 }
 
 sup.label {
@@ -160,6 +167,7 @@ ul.pager {
 b,
 strong {
   font-weight: bold;
+  margin: 0;
 }
 
 .view {
@@ -204,6 +212,10 @@ strong {
   list-style: outside none none;
   margin: 0;
   padding: 0;
+
+  h1 {
+    margin: 0;
+  }
 }
 @media (max-width: 640px) {
   .section-tabs ul li {
