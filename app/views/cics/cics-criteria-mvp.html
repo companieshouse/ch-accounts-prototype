@@ -1,33 +1,33 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Do your prepared full accounts meet the criteria? {% endblock %}
+{% block pageTitle %}
+  Do your prepared full accounts meet the criteria?
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/cics/cics-criteria-report" method="GET">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/cics/general-description" method="GET">
 
-<h1 class="govuk-heading-l">Do your prepared full accounts meet the criteria?</h1>
-<p>Your full accounts must meet at least 2 of the following:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>turnover is not over £10.2 million</li>
-  <li>balance sheet total is not over £5.1 million</li>
-  <li>average number of employees is not over 50</li>
-</ul>
+            <h1 class="govuk-heading-l">Do your prepared full accounts meet the criteria?</h1>
+            <p>Your full accounts must meet at least 2 of the following:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>turnover is not over £10.2 million</li>
+              <li>balance sheet total is not over £5.1 million</li>
+              <li>average number of employees is not over 50</li>
+            </ul>
 
-        {{ govukRadios({
+            {{ govukRadios({
           classes: "govuk-radios--inline",
           idPrefix: "cicsr1",
           name: "cicsr1",
@@ -51,20 +51,18 @@
           ]
         }) }}
 
-
-
-
-
-        {{ govukButton({
+            {{ govukButton({
           text: "Continue"
         }) }}
-      </form>
+          </form>
 
-  </div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

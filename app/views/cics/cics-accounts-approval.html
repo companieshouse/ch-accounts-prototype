@@ -32,17 +32,32 @@
     }
     }) %}
 
-            {{ govukInput({
-    label: {
-      html: 'Which director approved the accounts?',
-      classes: "govuk-label--m"
-    },
-    hint: {
-      text: "If the company has two or more directors, give the name of the director acting on their behalf."
-    },
-    id: "address-line-1",
-    name: "address-line-1"
-  }) }}
+            {{ govukRadios({
+idPrefix: "director-approved-accounts",
+name: "director-approved-accounts",
+fieldset: {
+legend: {
+text: " Which director approved the accounts? ",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m"
+}
+},
+hint: {
+text: "If the company has two or more directors, give the name of the director acting on their behalf."
+},
+items: [
+{
+value: "john-smith",
+text: "John Smith"
+},
+{
+value: "jane-smith",
+text: "Jane Smith"
+}
+]
+}) }}
+            <!-- {{ govukInput({ label: { html: 'Which director approved the accounts?', classes: "govuk-label--m" }, hint: { text: "If the company has two or more directors, give the name of the director acting on their behalf." }, id: "address-line-1", name:
+            "address-line-1" }) }}-->
 
             {{ govukDateInput({
     id: "dob",

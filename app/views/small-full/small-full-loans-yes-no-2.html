@@ -16,30 +16,34 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-loans-yes-no-additional-1" method="get" class="form">
+          <form action="/small-full/small-full-loans-additional-info-yes-no" method="get" class="form">
 
             <h1 class="govuk-heading-l">Loans to directors added</h1>
 
             <dl class="app-check-your-answers app-check-your-answers--short">
               <div class="app-check-your-answers__contents">
                 <dt class="app-check-your-answers__question">
-                  John Smith
+                  {{ data['loan-1-director'] }}
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  Short term loan
+                  {{ data['loan-1-director-description'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
                   <p class="govuk-!-margin-bottom-2">
-                    <a href="small-full/small-full-loans-yes-1-completed">
+                    <a href="javascript:void(0)">
                       Change<span class="govuk-visually-hidden">
-                        John Smith - Short term loan
+                        {{ data['loan-1-director'] }}
+                        -
+                        {{ data['loan-1-director-description'] }}
                       </span>
                     </a>
                   </p>
 
                   <a href="javascript:void(0)">
                     Delete<span class="govuk-visually-hidden">
-                      John Smith - Short term loan</span>
+                      {{ data['loan-1-director'] }}
+                      -
+                      {{ data['loan-1-director-description'] }}</span>
                   </a>
 
                 </dd>
@@ -47,8 +51,31 @@
 
             </dl>
 
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "anyotherloanstodirectors1",
+        name: "anyotherloanstodirectors1",
+        fieldset: {
+          legend: {
+            text: "Do your prepared accounts include any other 'loans to directors' notes?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m  govuk-!-margin-top-7"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
             {{ govukButton({
-              text: "Continue"
+              text: "Save and continue"
             }) }}
           </form>
 

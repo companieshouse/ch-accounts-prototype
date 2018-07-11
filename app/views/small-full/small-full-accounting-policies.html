@@ -1,41 +1,27 @@
 {% extends "layout.html" %}
-{% block pageTitle %} How did you prepare your accounts? {% endblock %}
+{% block pageTitle %}
+  How did you prepare your accounts?
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" method="get" action="/small-full//small-full-other-accounting-policies">
+          <form class="form" method="get" action="/small-full//small-full-other-accounting-policies">
 
-
-              {% set myHTML %}
-              <details class="govuk-details">
-               <summary class="govuk-details__summary">
-                 <span class="govuk-details__summary-text">
-                   What's this?
-                 </span>
-               </summary>
-               <div class="govuk-details__text">
-                 This policy is about the accounting standards you've prepared your accounts to. As a small company you're likely to have prepared your full accounts for shareholders or members using the simpler provisions of Section 1A (Small Entities) of Financial Reporting Standard 102. Your accounts should include a statement about the basis of measurement and preparation.
-               </div>
-             </details>
-             {% endset -%}
-
-             {% set anotherHtml %}
-           {{ govukTextarea({
+            {% set anotherHtml %}
+            {{ govukTextarea({
              id: "another",
              name: "another",
              classes: "",
@@ -44,51 +30,51 @@
                classes: "govuk-visually-hidden"
              }
            }) }}
-           {% endset -%}
+            {% endset -%}
 
-  {{ govukRadios({
-    idPrefix: "basis-of-preparation",
-    name: "basis-of-preparation",
-    fieldset: {
-      legend: {
-        text: "How did you prepare your accounts?",
-        classes: "govuk-fieldset__legend--l"
-      }
-    },
-    hint: {
-      html: myHTML
-    },
-    items: [
-      {
-        value: "1A",
-        text: "These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102 "
-      },
-      {
-        value: "another",
-        text: "These accounts have been prepared in accordance with another standard",
-        conditional: {
-          html: anotherHtml
-        }
-      }
-    ]
-  }) }}
+            {% call govukFieldset({
+              legend: {
+                text: "How did you prepare your accounts?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            }) %}
+            {{ govukDetails({
+                summaryText: "What's this?",
+                text: "This policy is about the accounting standards you've prepared your accounts to. As a small company you're likely to have prepared your full accounts for shareholders or members using the simpler provisions of Section 1A (Small Entities) of Financial
+                      Reporting Standard 102. Your accounts should include a statement about the basis of measurement and preparation."
+              }) }}
+            {{ govukRadios({
+                idPrefix: "how-did-you-prepare-your-accounts",
+                name: "how-did-you-prepare-your-accounts",
+                items: [
+                  {
+                    value: "standard-102",
+                    text: "These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102"
+                  },
+                  {
+                    value: "other-standard",
+                    text: "These accounts have been prepared in accordance with another standard",
+                    conditional: {
+                      html: anotherHtml
+                    }
+                  }
+                ]
+              }) }}
+            {% endcall %}
 
-
-
-
-
-
-      {{ govukButton({
+            {{ govukButton({
         text: "Save and continue"
       }) }}
-    </form>
+          </form>
 
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-  </div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
-
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

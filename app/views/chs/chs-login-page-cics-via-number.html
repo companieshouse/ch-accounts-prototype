@@ -1,18 +1,19 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Sign in to Companies House {% endblock %}
+{% block pageTitle %}
+  Sign in to Companies House
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/chs/chs-authenticate-page-cics-via-number" method="GET">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/chs/chs-authenticate-page-cics-via-number" method="GET">
 
-
-        {% call govukFieldset({
+            {% call govukFieldset({
   legend: {
     text: "Sign in to Companies House",
     classes: "govuk-fieldset__legend--xl",
@@ -20,9 +21,7 @@
   }
 }) %}
 
-
-
-  {{ govukInput({
+            {{ govukInput({
     label: {
       text: "Email address"
     },
@@ -31,7 +30,7 @@
     name: "chs-email"
   }) }}
 
-  {{ govukInput({
+            {{ govukInput({
     label: {
       text: "Password"
     },
@@ -40,22 +39,27 @@
     name: "chs-password"
   }) }}
 
+            {% endcall %}
 
-{% endcall %}
-
-  {{ govukButton({
+            {{ govukButton({
     text: "Sign in"
   }) }}
-</form>
+          </form>
 
-        <p class="action-link"><a class="button-link" id="register" href="javascript:void(0)">Register</a></p>
-        <p><a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a></p>
+          <p class="action-link">
+            <a class="button-link" id="register" href="javascript:void(0)">Register</a>
+          </p>
+          <p>
+            <a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a>
+          </p>
 
-    </div><!--govuk-grid-row-->
-    </div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
     </main>
-    </div><!---govuk-width-container-->
+  </div>
+  <!---govuk-width-container-->
 
-
-    {% endblock %}
+{% endblock %}

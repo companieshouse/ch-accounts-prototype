@@ -1,62 +1,66 @@
 {% extends "layout.html" %}
-{% block pageTitle %}  Approve your CIC report {% endblock %}
+{% block pageTitle %}
+  Approve your CIC report
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <form action="/small-full/small-full-accounts-dates" method="get" class="form">
 
+            {% set myHTML %}
+            <p class="govuk-hint">This is the date the CIC report was approved by the director.<br/>
+              For example, 31 3 2017</p>
+            {% endset -%}
 
-  <form action="/small-full/small-full-accounts-dates" method="get" class="form">
-
-
-
-
-
-
-
-
-
-    {% set myHTML %}
-                <p class="govuk-hint">This is the date the CIC report was approved by the director.<br /> For example, 31 3 2017</p>
-              {% endset -%}
-
-
-
-
-      {% call govukFieldset({
+            {% call govukFieldset({
   legend: {
     text: "Approve your CIC report",
     classes: "govuk-fieldset__legend--l"
     }
     }) %}
 
-  {{ govukInput({
-    label: {
-      html: 'Which director approved the CIC report?',
-      classes: "govuk-label--m"
+            {{ govukRadios({
+  idPrefix: "director-approved-cic-report",
+  name: "director-approved-cic-report",
+  fieldset: {
+    legend: {
+      text: " Which director approved the CIC report? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "If the company has two or more directors, give the name of the director acting on their behalf."
+  },
+  items: [
+    {
+      value: "john-smith",
+      text: "John Smith"
     },
-    hint: {
-      text: "If the company has two or more directors, give the name of the director acting on their behalf."
-    },
-    id: "address-line-1",
-    name: "address-line-1"
-  }) }}
+    {
+      value: "jane-smith",
+      text: "Jane Smith"
+    }
+  ]
+}) }}
 
-  {{ govukDateInput({
+            <!-- {{ govukInput({ label: { html: 'Which director approved the CIC report?', classes: "govuk-label--m" }, hint: { text: "If the company has two or more directors, give the name of the director acting on their behalf." }, id: "address-line-1", name:
+            "address-line-1" }) }}-->
+
+            {{ govukDateInput({
     id: "dob",
     name: "dob",
     fieldset: {
@@ -80,20 +84,20 @@
       }
     ]
   }) }}
-{% endcall %}
+            {% endcall %}
 
-
-
-      {{ govukButton({
+            {{ govukButton({
         text: "Save and continue to accounts"
       }) }}
-    </form>
+          </form>
 
-</div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

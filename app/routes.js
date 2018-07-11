@@ -838,9 +838,9 @@ router.get( '/cics/cics-criteria-profit', function ( req, res ) {
 } );
 
 router.get( '/cics/general-description', function ( req, res ) {
-	var criteriaprofit = req.query.criteriaprofit;
-	if ( criteriaprofit == "yes" ) {
-		res.redirect( "/cics/cics-criteria-no-DR-PL" );
+	var cicsr1 = req.query.cicsr1;
+	if ( cicsr1 == "no" ) {
+		res.redirect( "/cics/cics-criteria-not-met" );
 	} else {
 		res.render( 'cics/general-description' );
 	}
@@ -1107,7 +1107,7 @@ router.get( '/small-full/small-full-loans-yes-1', function ( req, res ) {
 router.get( '/small-full/small-full-loans-additional-info-yes-no', function ( req, res ) {
 	var anyotherloanstodirectors1 = req.query.anyotherloanstodirectors1;
 	if ( anyotherloanstodirectors1 == "yes" ) {
-		res.redirect( "/small-full/small-full-loans-yes-no-3" ); // Temporary URL until real page created
+		res.redirect( "/small-full/small-full-loans-yes-no-2" ); // Temporary URL until real page created
 	} else {
 		res.render( 'small-full/small-full-loans-additional-info-yes-no' );
 	}
