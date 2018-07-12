@@ -21,9 +21,18 @@ module.exports = function ( router ) {
 		}
 	} );
 
-	router.get( '/cics/general-description', function ( req, res ) {
+	router.get( '/cics/cics-criteria-audit', function ( req, res ) {
 		var cicsr1 = req.query.cicsr1;
 		if ( cicsr1 == "no" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
+		} else {
+			res.render( 'cics/cics-criteria-audit' );
+		}
+	} );
+
+	router.get( '/cics/general-description', function ( req, res ) {
+		var accountsaudited = req.query.accountsaudited;
+		if ( accountsaudited == "yes" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/general-description' );

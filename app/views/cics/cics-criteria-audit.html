@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Are your accounts audited?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/cics/general-description" method="get" class="form">
+
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "accountsaudited",
+        name: "accountsaudited",
+        fieldset: {
+          legend: {
+            text: "Are your accounts audited?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Currently, you can’t use this service if your accounts are audited."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
