@@ -54,6 +54,12 @@
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+          <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
               Called up share capital not paid
             </dt>
@@ -69,10 +75,11 @@
               </a>
             </dd>
           </div>
+
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">Fixed assets</dt>
-            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
-            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__answer"></dd>
+            <dd class="app-check-your-answers__answer"></dd>
             <dd class="app-check-your-answers__change"></dd>
           </div>
           <div class="app-check-your-answers__contents">
@@ -123,12 +130,11 @@
               <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total fixed assets</span></a>
             </dd>
           </div>
-        </dl>
-        <dl class="app-check-your-answers app-check-your-answers--short">
+
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">Current assets</dt>
-            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
-            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__answer"></dd>
+            <dd class="app-check-your-answers__answer"></dd>
             <dd class="app-check-your-answers__change"></dd>
           </div>
           <div class="app-check-your-answers__contents">
@@ -308,13 +314,11 @@
               <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total net assets (liabilities)</span></a>
             </dd>
           </div>
-        </dl>
 
-        <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">Capital and reserves</dt>
-            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
-            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s"></dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s"></dd>
             <dd class="app-check-your-answers__change"></dd>
           </div>
           <div class="app-check-your-answers__contents">
@@ -1310,6 +1314,49 @@
     </div>
     <!--cya-small-full-financial-commitments-note-->
 
+    <div id="cya-loans-to-directors-note">
+
+      <h2 class="govuk-heading-m">Loans to directors</h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__answer">{{ data['loan-1-director'] }}</dt>
+          <dt class="app-check-your-answers__answer">{{ data['loan-1-description'] }}</dt>
+          <dd class="app-check-your-answers__change">
+            <a href="javascript:void(0)">
+              Change<span class="govuk-visually-hidden">
+                First loan to director note</span>
+            </a>
+            <p class="govuk-!-margin-top-1">
+              <span id="delete-summary">
+                <a href="javascript:void(0)" class="" id="content-delete">Delete
+                  <span class="govuk-visually-hidden">
+                    First loan to director note</span></a>
+              </span>
+            </p>
+          </dd>
+        </div>
+        <div id="content-delete-warning" style="display:none;">
+          <div class="govuk-error-summary" id="delete-summary">
+            <p class="govuk-!-font-weight-bold">Are you sure you want to delete this loans to directors note? This cannot be undone.</p>
+            <p>
+              <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                <span class="govuk-visually-hidden">
+                  First loan to director note</span></a>
+
+              <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                  First loan to director note</span></a>
+            </p>
+          </div>
+          <!--delete-summary-->
+        </div>
+        <!--content-delete-warning-->
+
+      </dl>
+
+    </div>
+    <!--cya-loans-to-directors-note-->
+
     <div id="cya-small-full-changes-in-presentation-and-prior-period-adjustment-note">
 
       <h2 class="govuk-heading-m">Changes in presentation and prior period adjustments</h2>
@@ -1350,6 +1397,49 @@
 
     </div>
     <!--cya-small-full-changes-in-presentation-and-prior-period-adjustment-note-->
+
+    <div id="cya-related-party-transactions-note">
+
+      <h2 class="govuk-heading-m">Related party transactions</h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__answer">{{ data['transaction-1-director'] }}</dt>
+          <dt class="app-check-your-answers__answer">{{ data['transaction-1-description'] }}</dt>
+          <dd class="app-check-your-answers__change">
+            <a href="javascript:void(0)">
+              Change<span class="govuk-visually-hidden">
+                First related party transaction note</span>
+            </a>
+            <p class="govuk-!-margin-top-1">
+              <span id="delete-summary">
+                <a href="javascript:void(0)" class="" id="content-delete">Delete
+                  <span class="govuk-visually-hidden">
+                    First related party transaction note</span></a>
+              </span>
+            </p>
+          </dd>
+        </div>
+        <div id="content-delete-warning" style="display:none;">
+          <div class="govuk-error-summary" id="delete-summary">
+            <p class="govuk-!-font-weight-bold">Are you sure you want to delete this related party transaction note? This cannot be undone.</p>
+            <p>
+              <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                <span class="govuk-visually-hidden">
+                  First related party transaction note</span></a>
+
+              <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                  First related party transaction note</span></a>
+            </p>
+          </div>
+          <!--delete-summary-->
+        </div>
+        <!--content-delete-warning-->
+
+      </dl>
+
+    </div>
+    <!--cya-related-party-transactions-note-->
 
     <div id="cya-small-full-post-balance-sheet-events-note">
 
