@@ -1,40 +1,58 @@
-{% extends "layout.html" %} {% block pageTitle %} Company authentication {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Company authentication
+{% endblock %}
+{% block main %}
 
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li>
+          <a href="javascript:void(0)" id="user-signin">Sign in / Register</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <header class="text">
+            <h1 id="page-header" class="govuk-heading-xl">Company authentication</h1>
+          </header>
 
+          <p>To file company information you will need an authentication code.</p>
+          <p>Authenticating for<br>
+            <span id="company_details" class="govuk-heading-m">A TEST CIC ({{ data['company-number'] }})</span></p>
 
+          <form action="chs/chs-profile-page-logged-in-cics#overview-tabs" method="GET">
 
+            {{ govukInput({
+    label: {
+      text: "Authentication code"
+    },
+    classes: "govuk-input--width-10",
+    id: "authentication-code",
+    name: "authentication-code"
+  }) }}
 
-<main id="content" role="main" class="search">
+            {{ govukButton({
+      text: "Authenticate"
+    }) }}
+          </form>
 
-  {% include "includes/phase_banner_beta.html" %}
+          <p class="text">
+            <a href="javascript:void(0)" id="auth_code_request">Request an authentication code</a>
+          </p>
 
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-  <header class="text">
-    <h1 id="page-header" class="govuk-heading-xl">Company authentication</h1>
-  </header>
-
-
-  <p>To file company information you will need an authentication code.</p>
-  <p class="normal">Authenticating for<br><span id="company_details" class="govuk-heading-m">A TEST CIC (01234567)</span></p>
-
-  <div class="form-group">
-    <label class="form-label" for="auth_code">Authentication code</label>
-    <input type="password" class="form-control medium" maxlength="6" value="" id="auth_code" name="auth_code" autocomplete="off">
+    </main>
   </div>
-  <div class="form-group">
-    <a href="chs-profile-page-logged-in-cics#overview-tabs" class="button">Authenticate</a>
-  </div>
-  <input type="hidden" value="" id="request" name="request">
-
-  <p class="text"><a href="javascript:void(0)" id="auth_code_request">Request an authentication code</a></p>
-
-</main>
+  <!---govuk-width-container-->
 
 {% endblock %}

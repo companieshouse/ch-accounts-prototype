@@ -85,10 +85,9 @@ sup.label {
 
 ul.search-tabs {
   border-bottom: 1px solid $govuk-border-colour;
-  font-size: 0.8em;
   margin-bottom: 30px;
   overflow: auto;
-  padding-top: 2.75em;
+  padding: 0;
 
   li {
     float: left;
@@ -408,4 +407,9 @@ ol.example-icon-list {
   display: block;
   padding-top: 0.5em;
   max-width: 13em;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }
