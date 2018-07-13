@@ -223,7 +223,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-any-other-accounting-policies', function ( req, res ) {
 		var anyotheraccountingpolicies = req.query.anyotheraccountingpolicies;
 		if ( anyotheraccountingpolicies == "no" ) {
-			res.redirect( "/small-full/small-full-tangible-assets-choose" );
+			res.redirect( "/small-full/small-full-intangible-assets-note" );
 		} else {
 			res.render( 'small-full/small-full-any-other-accounting-policies' );
 		}
