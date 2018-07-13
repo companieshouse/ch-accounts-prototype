@@ -61,6 +61,7 @@
           </div>
 
           {% if data['called-up-share-capital-not-paid-current'] != '' or data['called-up-share-capital-not-paid-previous'] != '' %}
+            <!-- If either of these values (from the Balance sheet) is NOT emptythen show this div-->
             <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
                 Called up share capital not paid
@@ -639,13 +640,291 @@
 
           <dl class="app-check-your-answers app-check-your-answers--short">
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">Question</dt>
-              <dd class="app-check-your-answers__answer">Answer</dd>
-              <dd class="app-check-your-answers__change">
-                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">Intangible assets</span></a>
-              </dd>
+              <dt class="app-check-your-answers__question">Cost</dt>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Goodwill</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Other</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+              <dd class="app-check-your-answers__change"></dd>
             </div>
+
+            {% if data['cost-start-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Cost at 1 April 2017</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['cost-start-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['cost-start-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['cost-start-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Cost at 1 April 2017</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['additions-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Additions</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['additions-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['additions-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['additions-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note)Additions</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['disposals-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Disposals</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['disposals-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['disposals-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['disposals-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Disposals</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['revaluations-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Revaluations</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['revaluations-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['revaluations-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['revaluations-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Revaluations</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['transfers-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Transfers</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['transfers-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['transfers-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['transfers-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Transfers</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['cost-end-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Cost at 31 March 2018
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['cost-end-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['cost-end-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['cost-end-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Cost at 31 March 2018
+                    </span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
           </dl>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Amortisation</dt>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Goodwill</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Other</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+              <dd class="app-check-your-answers__change"></dd>
+            </div>
+
+            {% if data['amortisation-start-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Amortisation at 1 April 2015</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['amortisation-start-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['amortisation-start-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['amortisation-start-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Amortisation at 1 April 2015</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['charge-year-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Charge for year</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['charge-year-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['charge-year-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['charge-year-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Charge for year</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['on-disposals-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">On disposals</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['on-disposals-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['on-disposals-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['on-disposals-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) On disposals</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['other-debtors-current'] != '' or data['other-debtors-previous'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Other adjustments
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['other-adjustments-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['other-adjustments-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['other-adjustments-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Other adjustments
+                    </span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['amortisation-end-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Amortisation at 31 March 2018</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['amortisation-end-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['amortisation-end-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['amortisation-end-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Amortisation at 31 March 2018
+                    </span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+          </dl>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Net book value</dt>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Goodwill</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Other</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+              <dd class="app-check-your-answers__change"></dd>
+            </div>
+
+            {% if data['net-book-value-end-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Net book value at 31 March 2018</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['net-book-value-end-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['net-book-value-end-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['net-book-value-end-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Net book value at 31 March 2018</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['net-book-value-start-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Net book value at 31 March 2017</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Goodwill</span>
+                  {{ data['net-book-value-start-goodwill'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Other</span>
+                  {{ data['net-book-value-start-other'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">Total</span>
+                  {{ data['net-book-value-start-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Net book value at 31 March 2017</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+          </dl>
+
+          {% if data['small-full-tangible-note-additional-info'] != '' %}
+
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Additional information</dt>
+                <dd class="app-check-your-answers__answer">{{ data['small-full-tangible-note-additional-info'] }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Debtors after more than one year</span></a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+
         </div>
         <!--cya-small-full-intangible-assets-note-->
 
@@ -1357,14 +1636,59 @@
       <h2 class="govuk-heading-m">Revaluation reserve</h2>
 
       <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">Question</dt>
-          <dd class="app-check-your-answers__answer">Answer</dd>
-          <dd class="app-check-your-answers__change">
-            <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">Revaluation reserve</span></a>
-          </dd>
-        </div>
+
+        {% if data['revaluation-reserve-start'] != '' %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">At 1 April 2017
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['revaluation-reserve-start'] | displayPound }}</dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) At 1 April 2017
+                </span>
+              </a>
+            </dd>
+          </div>
+        {% endif %}
+
+        {% if data['surplus-deficit-previous'] != '' %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Surplus or deficit after revaluation
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['surplus-deficit-previous'] | displayPound }}</dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) Surplus or deficit after revaluation
+                </span>
+              </a>
+            </dd>
+          </div>
+        {% endif %}
+
+        {% if data['revaluation-reserve-end'] != '' %}
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Balance at 31 March 2017</dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['revaluation-reserve-end'] | displayPound }}</dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) Balance at 31 March 2017</span></a>
+            </dd>
+          </div>
+        {% endif %}
       </dl>
+
+      {% if data['revaluation-reserve-note-additional-info'] != '' %}
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Additional information</dt>
+            <dd class="app-check-your-answers__answer">{{ data['revaluation-reserve-note-additional-info'] }}</dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) Debtors after more than one year</span></a>
+            </dd>
+          </div>
+        </dl>
+      {% endif %}
+
     </div>
     <!--cya-small-full-revaluation reserve-note-->
 
