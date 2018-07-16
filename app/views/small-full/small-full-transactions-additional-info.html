@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Enter your additional 'loans to directors' note information{% endblock %}
+  Enter your additional 'related party transactions' note information{% endblock %}
 {% block main %}
 
   <div class="govuk-width-container">
@@ -16,13 +16,13 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-changes-in-presentation-yes-no" method="get" class="form">
+          <form action="/small-full/small-full-post-events-yes-no" method="get" class="form">
 
             {{ govukTextarea({
-  name: "loanstodirectorsadditionalinfo",
-  id: "loanstodirectorsadditionalinfo",
+  name: "relatedpartytransactionsadditionalinfo",
+  id: "relatedpartytransactionsadditionalinfo",
   label: {
-    text: " Enter your additional 'loans to directors' note information",
+    text: " Enter your additional 'related party transactions' note information",
     classes: "govuk-label--l"
   }
 

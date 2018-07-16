@@ -16,17 +16,17 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-post-events-yes-no" method="get" class="form">
+          <form action="/small-full/small-full-transactions-additional-info-yes-no" method="get" class="form">
 
             <h1 class="govuk-heading-l">Related party transactions added</h1>
 
             <dl class="app-check-your-answers app-check-your-answers--short">
               <div class="app-check-your-answers__contents">
                 <dt class="app-check-your-answers__question">
-                  John Smith
+                  {{ data['transaction-1-director'] }}
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  Description goes here
+                  {{ data['transaction-1-description'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
                   <p class="govuk-!-margin-bottom-2">
@@ -47,8 +47,31 @@
 
             </dl>
 
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "anyotherrelatedpartytransactions1",
+        name: "anyotherrelatedpartytransactions1",
+        fieldset: {
+          legend: {
+            text: "Do your prepared accounts include any other 'related party transactions' notes?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m  govuk-!-margin-top-7"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
             {{ govukButton({
-              text: "Continue"
+              text: "Save and continue"
             }) }}
           </form>
 

@@ -348,6 +348,17 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	// (CICs) Accounts - Do your prepared accounts include any additional 'related party transactions' information?
+
+	router.get( '/small-full/small-full-transactions-additional-info', function ( req, res ) {
+		var relatedpartytransactionsadditionalinfoyesno = req.query.relatedpartytransactionsadditionalinfoyesno;
+		if ( relatedpartytransactionsadditionalinfoyesno == "no" ) {
+			res.redirect( "/small-full/small-full-post-events-yes-no" );
+		} else {
+			res.render( 'small-full/small-full-transactions-additional-info' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include a 'post balance sheet events' note?
 
 	router.get( '/small-full/small-full-post-balance-sheet-events-note', function ( req, res ) {
