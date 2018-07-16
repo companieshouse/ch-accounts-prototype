@@ -26,7 +26,7 @@
         <p class="govuk-heading-xl" id="company-name">
           <span class="uppercase">{{ data['company-name-for-testing'] }}</span></p>
         <p id="company-number">Company number
-          <strong>01234567</strong>
+          <strong>{{ data['company-number'] }}</strong>
         </p>
         <div id="action-buttons">
           <a id="" class="govuk-button" href="javascript:void(0)">Follow this company</a>
@@ -58,7 +58,7 @@
 
       <dl>
         <dt>Registered office address</dt>
-        <dd class="text data">1 Any Street, Cardiff, Wales, CF12 3AB
+        <dd class="text data">{{ data['company-address-for-testing'] }}
           <br>
           <a href="javascript:void(0)" class="normal">Change address</a>
         </dd>

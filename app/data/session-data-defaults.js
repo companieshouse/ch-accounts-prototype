@@ -22,6 +22,7 @@ module.exports = {
 	// User sign in and company authentication
 	"company-name-for-testing": "A TEST CIC",
 	"company-number": "01234567",
+	"company-address-for-testing": "1 Any Street, Cardiff, Wales, CF12 3AB ",
 	"chs-email": "jsmith@testcompany.co.uk",
 
 	//CIC Report
