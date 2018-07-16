@@ -1,27 +1,27 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Enter your intangible fixed assets amortisation' policy {% endblock %}
+{% block pageTitle %}
+  Enter your intangible fixed assets amortisation' policy
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/small-full/small-full-valuation-policy-yes-no" method="get" class="form">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/small-full/small-full-valuation-policy-yes-no" method="get" class="form">
 
-          {{ govukTextarea({
-            name: "more-detail",
-            id: "more-detail",
+            {{ govukTextarea({
+            name: "small-full-intangible-fixed-assets-amortisation-policy",
+            id: "small-full-intangible-fixed-assets-amortisation-policy",
             label: {
               text: "Enter your 'intangible fixed assets amortisation' policy",
               isPageHeading: true,
@@ -29,18 +29,18 @@
             }
           }) }}
 
-
             {{ govukButton({
               text: "Save and continue"
             }) }}
           </form>
 
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-        </div><!--govuk-grid-row-->
-      </div><!--govuk-grid-column-two-thirds-->
-
-      </main>
-      </div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}
