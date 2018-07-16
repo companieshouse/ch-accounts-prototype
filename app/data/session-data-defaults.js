@@ -212,7 +212,7 @@ module.exports = {
 	"social-security-current": "0",
 	"social-security-previous": "0",
 	"accruals-current": "0",
-	"accruals-current": "0",
+	"accruals-previous": "0",
 	"other-creditors-current": "0",
 	"other-creditors-previous": "0",
 	"within-one-year-total-current": "0",
@@ -234,6 +234,8 @@ module.exports = {
 	"revaluation-reserve-start": "0",
 	"surplus-deficit-previous": "0",
 	"bank-loans-end": "0",
+	"revaluation-reserve-end": "0",
+
 
 	//Small Full Employees note
 	"average-number-of-employees-current": "0",
