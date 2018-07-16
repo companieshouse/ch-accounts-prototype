@@ -168,7 +168,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-turnover-policy-yes-no', function ( req, res ) {
 		var smallfullotherpolicies = req.query.smallfullotherpolicies;
 		if ( smallfullotherpolicies == "no" ) {
-			res.redirect( "/small-full/small-full-tangible-assets-choose" );
+			res.redirect( "/small-full/small-full-intangible-assets-note" );
 		} else {
 			res.render( 'small-full/small-full-turnover-policy-yes-no' );
 		}
