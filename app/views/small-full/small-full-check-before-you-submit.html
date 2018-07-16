@@ -63,7 +63,7 @@
           {% if data['called-up-share-capital-not-paid-current'] != '' or data['called-up-share-capital-not-paid-previous'] != '' %}
             <!-- If either of these values (from the Balance sheet) is NOT emptythen show this div-->
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
                 Called up share capital not paid
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -90,7 +90,7 @@
 
           {% if data['intangible-assets-current'] != '' or data['intangible-assets-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Intangible assets</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Intangible assets</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['intangible-assets-current'] | displayPound }}</dd>
@@ -105,7 +105,7 @@
 
           {% if data['tangible-assets-current'] != '' or data['tangible-assets-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Tangible assets</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Tangible assets</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['tangible-assets-current'] | displayPound }}</dd>
@@ -120,7 +120,7 @@
 
           {% if data['investments-fixed-assets-current'] != '' or data['investments-fixed-assets-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Investments</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Investments</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['investments-fixed-assets-current'] | displayPound }}</dd>
@@ -135,7 +135,7 @@
 
           {% if data['total-fixed-assets-current'] != '' or data['total-fixed-assets-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Total fixed assets</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3">Total fixed assets</dt>
               <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['total-fixed-assets-current'] | displayPound }}</dd>
@@ -157,7 +157,7 @@
 
           {% if data['stocks-current'] != '' or data['stocks-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Stocks</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Stocks</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['stocks-current'] | displayPound }}</dd>
@@ -172,7 +172,7 @@
 
           {% if data['debtors-current'] != '' or data['debtors-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Debtors</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Debtors</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['debtors-current'] | displayPound }}</dd>
@@ -187,7 +187,7 @@
 
           {% if data['cash-at-bank-and-in-hand-current'] != '' or data['cash-at-bank-and-in-hand-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
                 Cash at bank and in hand
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -206,7 +206,7 @@
 
           {% if data['investments-current-assets-current'] != '' or data['investments-current-assets-current'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Investments
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Investments
               </dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
@@ -224,7 +224,7 @@
 
           {% if data['total-current-assets-current'] != '' or data['total-current-assets-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Total current assets</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3">Total current assets</dt>
               <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['total-current-assets-current'] | displayPound }}</dd>
@@ -239,7 +239,7 @@
 
           {% if data['prepayments-and-and-accrued-income-current'] != '' or data['prepayments-and-and-accrued-income-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
                 Prepayments and accrued income
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -258,7 +258,7 @@
 
           {% if data['creditors-amounts-falling-due-within-one-year-current'] != '' or data['creditors-amounts-falling-due-within-one-year-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Creditors - amounts falling due within one year</dt>
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Creditors - amounts falling due within one year</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['creditors-amounts-falling-due-within-one-year-current'] | displayPound }}</dd>
@@ -273,7 +273,7 @@
 
           {% if data['net-current-assets-liabilities-current'] != '' or data['net-current-assets-liabilities-current'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
                 Net current assets (liabilities)
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -292,7 +292,7 @@
 
           {% if data['total-assets-less-current-liabilities-current'] != '' or data['total-assets-less-current-liabilities-current'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Total assets less current liabilities</dt>
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Total assets less current liabilities</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['total-assets-less-current-liabilities-current'] | displayPound }}</dd>
@@ -307,7 +307,7 @@
 
           {% if data['creditors-amounts-falling-due-after-more-than-one-year-current'] != '' or data['creditors-amounts-falling-due-after-more-than-one-year-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
                 Creditors - amounts falling due after more than one year
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -326,7 +326,7 @@
 
           {% if data['provision-for-liabilities-current'] != '' or data['provision-for-liabilities-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Provision for liabilities</dt>
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Provision for liabilities</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['provision-for-liabilities-current'] | displayPound }}</dd>
@@ -341,7 +341,7 @@
 
           {% if data['accruals-and-deferred-income-current'] != '' or data['accruals-and-deferred-income-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Accruals and deferred income</dt>
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Accruals and deferred income</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['accruals-and-deferred-income-current'] | displayPound }}</dd>
@@ -358,7 +358,7 @@
 
           {% if data['total-net-assets-liabilities-current'] != '' or data['total-net-assets-liabilities-previou'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Total net assets (liabilities)</dt>
+              <dt class="app-check-your-answers__question">Total net assets (liabilities)</dt>
               <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['total-net-assets-liabilities-current'] | displayPound }}</dd>
@@ -380,7 +380,7 @@
 
           {% if data['called-up-share-capital-current'] != '' or data['called-up-share-capital-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Called up share capital</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Called up share capital</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['called-up-share-capital-current'] | displayPound }}</dd>
@@ -395,7 +395,7 @@
 
           {% if data['share-premium-account-current'] != '' or data['share-premium-account-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Share premium account</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Share premium account</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['share-premium-account-current'] | displayPound }}</dd>
@@ -410,7 +410,7 @@
 
           {% if data['revaluation-reserve-current'] != '' or data['revaluation-reserve-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
                 Revaluation reserve
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -429,7 +429,7 @@
 
           {% if data['other-reserves-current'] != '' or data['other-reserves-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
                 Other reserves
               </dt>
               <dd class="app-check-your-answers__answer">
@@ -448,7 +448,7 @@
 
           {% if data['profit-and-loss-account-current'] != '' or data['profit-and-loss-account-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question  govuk-!-padding-left-2">Profit and loss account</dt>
+              <dt class="app-check-your-answers__question  govuk-!-padding-left-3 govuk-!-font-weight-regular">Profit and loss account</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['profit-and-loss-account-current'] | displayPound }}</dd>
@@ -463,7 +463,7 @@
 
           {% if data['total-shareholders-funds-current'] != '' or data['total-shareholders-funds-previous'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Total shareholders' funds</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3">Total shareholders' funds</dt>
               <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
                 <span class="mobile-only-label">(2018)</span>
                 {{ data['total-shareholders-funds-current'] | displayPound }}</dd>
@@ -652,7 +652,7 @@
 
               {% if data['cost-start-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Cost at 1 April 2017</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Cost at 1 April 2017</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['cost-start-goodwill'] | displayPound }}</dd>
@@ -670,7 +670,7 @@
 
               {% if data['additions-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Additions</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Additions</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['additions-goodwill'] | displayPound }}</dd>
@@ -688,7 +688,7 @@
 
               {% if data['disposals-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Disposals</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Disposals</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['disposals-goodwill'] | displayPound }}</dd>
@@ -706,7 +706,7 @@
 
               {% if data['revaluations-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Revaluations</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Revaluations</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['revaluations-goodwill'] | displayPound }}</dd>
@@ -724,7 +724,7 @@
 
               {% if data['transfers-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Transfers</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Transfers</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['transfers-goodwill'] | displayPound }}</dd>
@@ -742,7 +742,7 @@
 
               {% if data['cost-end-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
                     Cost at 31 March 2018
                   </dt>
                   <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
@@ -774,7 +774,7 @@
 
               {% if data['amortisation-start-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Amortisation at 1 April 2015</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Amortisation at 1 April 2015</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['amortisation-start-goodwill'] | displayPound }}</dd>
@@ -792,7 +792,7 @@
 
               {% if data['charge-year-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Charge for year</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Charge for year</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['charge-year-goodwill'] | displayPound }}</dd>
@@ -810,7 +810,7 @@
 
               {% if data['on-disposals-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">On disposals</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">On disposals</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['on-disposals-goodwill'] | displayPound }}</dd>
@@ -828,7 +828,7 @@
 
               {% if data['other-debtors-current'] != '' or data['other-debtors-previous'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Other adjustments
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Other adjustments
                   </dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
@@ -849,7 +849,7 @@
 
               {% if data['amortisation-end-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Amortisation at 31 March 2018</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Amortisation at 31 March 2018</dt>
                   <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['amortisation-end-goodwill'] | displayPound }}</dd>
@@ -879,7 +879,7 @@
 
               {% if data['net-book-value-end-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Net book value at 31 March 2018</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2018</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['net-book-value-end-goodwill'] | displayPound }}</dd>
@@ -897,7 +897,7 @@
 
               {% if data['net-book-value-start-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Net book value at 31 March 2017</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2017</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">Goodwill</span>
                     {{ data['net-book-value-start-goodwill'] | displayPound }}</dd>
@@ -951,7 +951,7 @@
 
               {% if data['cost-start-land-buildings'] != '' or data['cost-start-plant-machinery'] != '' or data['cost-start-office-equipment'] != '' or data['cost-start-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Cost at 1 April 2017</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Cost at 1 April 2017</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">(Land & buildings)</span>
                     {{ data['cost-start-land-buildings'] | displayPound }}</dd>
@@ -973,7 +973,7 @@
 
               {% if data['additions-land-buildings'] != '' or data['additions-plant-machinery'] != '' or data['additions-office-equipment'] != '' or data['additions-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Additions</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Additions</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">(Land & buildings)</span>
                     {{ data['additions-land-buildings'] | displayPound }}</dd>
@@ -994,7 +994,7 @@
 
               {% if data['disposals-land-buildings'] != '' or data['disposals-plant-machinery'] != '' or data['disposals-office-equipment'] != '' or data['disposals-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Disposals</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Disposals</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">(Land & buildings)</span>
                     {{ data['disposals-land-buildings'] | displayPound }}</dd>
@@ -1015,7 +1015,7 @@
 
               {% if data['revaluations-land-buildings'] != '' or data['revaluations-plant-machinery'] != '' or data['revaluations-office-equipment'] != '' or data['revaluations-total'] != '' %}
                 <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question govuk-!-padding-left-2">Revaluations</dt>
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Revaluations</dt>
                   <dd class="app-check-your-answers__answer">
                     <span class="mobile-only-label">(Land & buildings)</span>
                     {{ data['revaluations-land-buildings'] | displayPound }}</dd>
@@ -1036,7 +1036,7 @@
 
             {% if data['cost-end-land-buildings'] != '' or data['cost-end-plant-machinery'] != '' or data['cost-end-office-equipment'] != '' or data['cost-end-total'] != '' %}
               <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question govuk-!-padding-left-2">Cost at 31 March 2018</dt>
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Cost at 31 March 2018</dt>
                 <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
                   <span class="mobile-only-label">(Land & buildings)</span>
                   {{ data['cost-end-land-buildings'] | displayPound }}</dd>
@@ -1069,7 +1069,7 @@
 
             {% if data['depreciation-start-land-buildings'] != '' or data['depreciation-start-plant-machinery'] != '' or data['depreciation-start-office-equipment'] != '' or data['depreciation-start-total'] != '' %}
               <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question govuk-!-padding-left-2">Depreciation at 1 April 2017</dt>
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Depreciation at 1 April 2017</dt>
                 <dd class="app-check-your-answers__answer">
                   <span class="mobile-only-label">(Land & buildings)</span>
                   {{ data['depreciation-start-land-buildings'] | displayPound }}</dd>
@@ -1091,7 +1091,7 @@
 
             {% if data['charge-year-land-buildings'] != '' or data['charge-year-plant-machinery'] != '' or data['charge-year-office-equipment'] != '' or data['charge-year-total'] != '' %}
               <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question govuk-!-padding-left-2">Charge for year</dt>
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Charge for year</dt>
                 <dd class="app-check-your-answers__answer">
                   <span class="mobile-only-label">(Land & buildings)</span>
                   {{ data['charge-year-land-buildings'] | displayPound }}</dd>
@@ -1112,7 +1112,7 @@
 
             {% if data['on-disposals-land-buildings'] != '' or data['on-disposals-plant-machinery'] != '' or data['on-disposals-office-equipment'] != '' or data['on-disposals-total'] != '' %}
               <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question govuk-!-padding-left-2">On disposals</dt>
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">On disposals</dt>
                 <dd class="app-check-your-answers__answer">
                   <span class="mobile-only-label">(Land & buildings)</span>
                   {{ data['on-disposals-land-buildings'] | displayPound }}</dd>
@@ -1133,7 +1133,7 @@
 
             {% if data['other-adjustments-land-buildings'] != '' or data['other-adjustments-plant-machinery'] != '' or data['other-adjustments-office-equipment'] != '' or data['other-adjustments-total'] != '' %}
               <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question govuk-!-padding-left-2">Other adjustments</dt>
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Other adjustments</dt>
                 <dd class="app-check-your-answers__answer">
                   <span class="mobile-only-label">(Land & buildings)</span>
                   {{ data['other-adjustments-land-buildings'] | displayPound }}</dd>
@@ -1154,7 +1154,7 @@
 
           {% if data['depreciation-end-land-buildings'] != '' or data['depreciation-end-plant-machinery'] != '' or data['depreciation-end-office-equipment'] != '' or data['depreciation-end-total'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Depreciation at 31 March 2018</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Depreciation at 31 March 2018</dt>
               <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
                 <span class="mobile-only-label">(Land & buildings)</span>
                 {{ data['depreciation-end-land-buildings'] | displayPound }}</dd>
@@ -1187,7 +1187,7 @@
 
           {% if data['net-book-value-end-land-buildings'] != '' or data['net-book-value-end-plant-machinery'] != '' or data['net-book-value-end-office-equipment'] != '' or data['net-book-value-end-total'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Net book value at 31 March 2018</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2018</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(Land & buildings)</span>
                 {{ data['net-book-value-end-land-buildings'] | displayPound }}</dd>
@@ -1209,7 +1209,7 @@
 
           {% if data['net-book-value-start-land-buildings'] != '' or data['net-book-value-start-plant-machinery'] != '' or data['net-book-value-start-office-equipment'] != '' or data['net-book-value-start-total'] != '' %}
             <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question govuk-!-padding-left-2">Net book value at 31 March 2017</dt>
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2017</dt>
               <dd class="app-check-your-answers__answer">
                 <span class="mobile-only-label">(Land & buildings)</span>
                 {{ data['net-book-value-start-land-buildings'] | displayPound }}</dd>
