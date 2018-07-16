@@ -128,6 +128,7 @@ module.exports = {
 	"net-book-value-start-goodwill": "0",
 	"net-book-value-start-other": "0",
 	"net-book-value-start-total": "0",
+	"small-full-intangible-note-additional-info": "Not entered",
 
 
 	//Tangible assets note
@@ -235,6 +236,7 @@ module.exports = {
 	"surplus-deficit-previous": "0",
 	"bank-loans-end": "0",
 	"revaluation-reserve-end": "0",
+	"revaluation-reserve-note-additional-info": "Not entered",
 
 
 	//Small Full Employees note

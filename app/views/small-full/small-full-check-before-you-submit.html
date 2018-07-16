@@ -34,7 +34,7 @@
 
       <form action="/cics/cics-accounts-approval" method="get" class="form">
 
-        <h2 class="govuk-heading-m">Comspany account dates</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Company account dates</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -478,7 +478,7 @@
 
         </dl>
 
-        <h2 class="govuk-heading-m">Balance sheet statements</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Balance sheet statements</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -494,11 +494,12 @@
           </div>
         </dl>
 
-        <h2 class="govuk-heading-m">Basis of accounts preparation</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Basis of accounts preparation</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__answer">These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</dt>
+            <dt class="app-check-your-answers__answer">{{ data['how-did-you-prepare-your-accounts'] }}<br/>{{ data['another-accounting-standard'] }}
+            </dt>
 
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
@@ -509,7 +510,7 @@
           </div>
         </dl>
         <div id="cya-small-full-turnover-policy">
-          <h2 class="govuk-heading-m">Turnover policy</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Turnover policy</h2>
           <dl class="app-check-your-answers app-check-your-answers--short">
             <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__answer">
@@ -533,7 +534,7 @@
 
         <div id="cya-small-full-tangible-fixed-assets-depreciation-policy">
 
-          <h2 class="govuk-heading-m">Tangible fixed assets depreciation policy</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Tangible fixed assets depreciation policy</h2>
 
           <dl class="app-check-your-answers app-check-your-answers--short">
             <div class="app-check-your-answers__contents">
@@ -558,7 +559,7 @@
 
         <div id="cya-small-full-intangible-fixed-assets-amortisation-policy">
 
-          <h2 class="govuk-heading-m">Intangible fixed assets amortisation policy</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Intangible fixed assets amortisation policy</h2>
 
           <dl class="app-check-your-answers app-check-your-answers--short">
             <div class="app-check-your-answers__contents">
@@ -584,7 +585,7 @@
 
         <div id="cya-small-full-valuation-information-policy">
 
-          <h2 class="govuk-heading-m">Valuation information policy</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Valuation information policy</h2>
 
           <dl class="app-check-your-answers app-check-your-answers--short">
             <div class="app-check-your-answers__contents">
@@ -610,7 +611,7 @@
 
         <div id="cya-small-full-other-policies">
 
-          <h2 class="govuk-heading-m">Other accounting policies</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Other accounting policies</h2>
 
           <dl class="app-check-your-answers app-check-your-answers--short">
             <div class="app-check-your-answers__contents">
@@ -638,7 +639,7 @@
 
           <div id="cya-small-full-intangible-assets-note">
 
-            <h2 class="govuk-heading-m">Intangible assets</h2>
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Intangible assets</h2>
 
             <dl class="app-check-your-answers app-check-your-answers--short">
               <div class="app-check-your-answers__contents">
@@ -914,12 +915,12 @@
 
             </dl>
 
-            {% if data['small-full-tangible-note-additional-info'] != '' %}
+            {% if data['small-full-intangible-note-additional-info'] != '' %}
 
               <dl class="app-check-your-answers app-check-your-answers--short">
                 <div class="app-check-your-answers__contents">
                   <dt class="app-check-your-answers__question">Additional information</dt>
-                  <dd class="app-check-your-answers__answer">{{ data['small-full-tangible-note-additional-info'] }}</dd>
+                  <dd class="app-check-your-answers__answer">{{ data['small-full-intangible-note-additional-info'] }}</dd>
                   <dd class="app-check-your-answers__change">
                     <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Debtors after more than one year</span></a>
                   </dd>
@@ -936,7 +937,7 @@
 
           <div id="cya-small-full-tangible-assets-note">
 
-            <h2 class="govuk-heading-m">Tangible assets</h2>
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Tangible assets</h2>
 
             <dl class="app-check-your-answers app-check-your-answers--short">
               <div class="app-check-your-answers__contents">
@@ -1251,7 +1252,7 @@
 
       <div id="cya-small-full-stocks-note">
 
-        <h2 class="govuk-heading-m">Stocks</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Stocks</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1316,7 +1317,7 @@
 
       <div id="cya-small-full-debtors-note">
 
-        <h2 class="govuk-heading-m">Debtors</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Debtors</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1424,7 +1425,7 @@
 
       <div id="cya-small-full-creditors-amounts-falling-due-within-one-year-note">
 
-        <h2 class="govuk-heading-m">Creditors - amounts falling due within one year</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Creditors - amounts falling due within one year</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1566,7 +1567,7 @@
 
       <div id="cya-small-full-creditors-amounts-falling-due-after-one-year-note">
 
-        <h2 class="govuk-heading-m">Creditors - amounts falling due after one year</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Creditors - amounts falling due after one year</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1659,7 +1660,7 @@
 
       <div id="cya-small-full-revaluation-reserve-note">
 
-        <h2 class="govuk-heading-m">Revaluation reserve</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Revaluation reserve</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
 
@@ -1724,7 +1725,7 @@
 
       <div id="cya-small-full-employees-note">
 
-        <h2 class="govuk-heading-m">Employees</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Employees</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1768,7 +1769,7 @@
 
       <div id="cya-small-full-fixed-assets-investments-note">
 
-        <h2 class="govuk-heading-m">Fixed assets investments</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Fixed assets investments</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1813,7 +1814,7 @@
 
       <div id="cya-small-full-current-assets-investments-note">
 
-        <h2 class="govuk-heading-m">Current assets investments</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Current assets investments</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1858,7 +1859,7 @@
 
       <div id="cya-small-full-financial-commitments-note">
 
-        <h2 class="govuk-heading-m">Financial commitments</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Financial commitments</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1903,7 +1904,7 @@
 
       <div id="cya-loans-to-directors-note">
 
-        <h2 class="govuk-heading-m">Loans to directors</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Loans to directors</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1950,7 +1951,7 @@
 
       <div id="cya-small-full-changes-in-presentation-and-prior-period-adjustment-note">
 
-        <h2 class="govuk-heading-m">Changes in presentation and prior period adjustments</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Changes in presentation and prior period adjustments</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -1995,7 +1996,7 @@
 
       <div id="cya-related-party-transactions-note">
 
-        <h2 class="govuk-heading-m">Related party transactions</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Related party transactions</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
@@ -2042,7 +2043,7 @@
 
       <div id="cya-small-full-post-balance-sheet-events-note">
 
-        <h2 class="govuk-heading-m">Post balance sheet events</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Post balance sheet events</h2>
 
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
