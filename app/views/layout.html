@@ -37,8 +37,8 @@ govukTag %}
 {% endblock %}
 {% if useAutoStoreData %}
   {% block footer %}
-    {{ govukFooter({
-meta: { items: [ { href: "/prototype-admin/clear-data", text: "Clear data" } ] } }) }}
+    <!--{{ govukFooter({ meta: { items: [ { href: "/prototype-admin/clear-data", text: "Clear data" } ] } }) }}-->
+    {% include "includes/chs-footer.html" %}
   {% endblock %}
 {% endif %}
 {% block bodyEnd %}
