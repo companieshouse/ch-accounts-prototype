@@ -20,6 +20,7 @@ Example usage:
 module.exports = {
 
 	// User sign in and company authentication
+	"company-name-for-testing": "A TEST CIC",
 	"company-number": "01234567",
 	"chs-email": "jsmith@testcompany.co.uk",
 

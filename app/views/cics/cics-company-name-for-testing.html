@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What company name do you want to test with?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/gov-uk/gov-uk-start-page-cics" method="post">
+            {{ govukInput({
+            label: {
+            text: "What company name do you want to test with?",
+            classes: "govuk-label--xl"
+              },
+              hint: {
+                text: "Before starting the test, enter the name of the test company - this name will be shown on screen to the user after they have entered a company number."
+              },
+            classes: "govuk-input all-caps",
+            id: "company-name-for-testing",
+            name: "company-name-for-testing"
+          }) }}
+
+            {{ govukButton({
+            text: "Continue"
+          }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

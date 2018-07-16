@@ -1,46 +1,60 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Filing accounts or a TEST CIC {% endblock %}
+{% block pageTitle %}
+  Filing accounts or a TEST CIC
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {{ govukBackLink({
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <h1 class="govuk-heading-l">Filing accounts for
+            <span class="uppercase">{{ data['company-name-for-testing'] }}</span></h1>
+          <p>Company number
+            <strong>{{ data['company-number'] }}</strong>
+          </p>
+          <p>Registered office address
+            <strong>1 Any Street, Cardiff, Wales, CF12 3AB
+            </strong>
+          </p>
 
+          <div class="govuk-inset-text">
+            <p>Next accounts made up to
+              <strong>31 March 2018</strong><br/>due by
+              <strong>31 December 2018</strong>
+            </p>
+            <p>Last accounts made up to
+              <strong>31 March 2017</strong>
+            </p>
+          </div>
 
-    <h1 class="govuk-heading-l">Filing accounts for A TEST CIC</h1>
-    <p>Company number <strong>{{ data['company-number'] }}</strong></p>
-    <p>Registered office address <strong>1 Any Street, Cardiff, Wales, CF12 3AB </strong></p>
-
-
-    <div class="govuk-inset-text">
-      <p>Next accounts made up to <strong>31 March 2018</strong><br />due by <strong>31 December 2018</strong> </p>
-      <p>Last accounts made up to <strong>31 March 2017</strong></p>
-    </div>
-
-    <form action="/chs/chs-login-page-cics-via-number" method="GET">
-      {{ govukButton({
+          <form action="/chs/chs-login-page-cics-via-number" method="GET">
+            {{ govukButton({
         text: "File CIC report and accounts for this company"
       }) }}
-    </form>
+          </form>
 
-    <p>or, <a href="javascript:history.back()">file for a different company</a></p>
-    <a href="/chs/chs-confirm-company-alternative-chs-search-not-yet" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Not yet</a>
-    <a href="/chs/chs-confirm-company-alternative-chs-search-cannot-file" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right; margin-right:20px; display:inline-block;">No</a>
+          <p>or,
+            <a href="javascript:history.back()">file for a different company</a>
+          </p>
+          <a href="/chs/chs-confirm-company-alternative-chs-search-not-yet" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Not yet</a>
+          <a href="/chs/chs-confirm-company-alternative-chs-search-cannot-file" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right; margin-right:20px; display:inline-block;">No</a>
 
-  </div><!--govuk-grid-row-->
-  </div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-  </main>
-  </div><!---govuk-width-container-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
-
-  {% endblock %}
+{% endblock %}

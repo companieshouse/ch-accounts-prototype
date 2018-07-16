@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Payment
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+      <form action="/cics/cics-submission" method="get" class="form">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">Enter card details</h1>
+              </legend>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-line-1">Card number
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text">
+                <div class="card-images">
+                  <img class="original-accepted" id="original-accepted" src="/public/images/accepted-cards-x2.png">
+                </div>
+                <p class="govuk-hint">Accepted credit and debit card types</p>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-line-1">
+                  Expiry date
+                </label>
+                <span id="dob-hint" class="govuk-hint">
+                  For example, 10/20
+                </span>
+                <div class="govuk-date-input" id="dob">
+
+                  <div class="govuk-date-input__item govuk-date-input__item--month">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item govuk-date-input__item--year">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-town">Name on card</label>
+                <input class="govuk-input govuk-input--width-20" id="address-town" name="address-town" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-county">
+                  Card security code
+                </label>
+                <span id="dob-hint" class="govuk-hint">The last 3 digits on the back of the card
+                </span>
+                <input class="govuk-input" id="address-county" name="address-county" type="text" style="width:100px;">
+                <!-- inline style as no suitable wioth in GDS tolkit-->
+                <img class="card-image" src="/public/images/card-security-code-2.png">
+              </div>
+
+              <h2 class="govuk-heading-m">Billing address</h2>
+              <span id="dob-hint" class="govuk-hint">
+                This is the address associated with the card
+              </span>
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-line-1">
+                  Country or territory
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text" value="United Kingdom">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-line-1">
+                  Building number or name and street
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-line-2">
+                  <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-line-2" name="address-line-2" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-town" name="address-town" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-!-width-one-quarter" id="address-postcode" name="address-postcode" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="address-postcode">
+                  Email
+                </label>
+                <span id="dob-hint" class="govuk-hint">
+                  We’ll send your payment confirmation here
+                </span>
+                <input class="govuk-input govuk-input--width-20" id="address-postcode" name="address-postcode" type="text">
+              </div>
+              {{ govukButton({
+              text: "Pay and submit"
+            }) }}
+              <p>
+
+                <a href="javascript:history.back()" class="govuk-body govuk-link">Cancel payment</a>
+              </p>
+            </fieldset>
+          </div>
+          <!--govuk-grid-column-two-thirds-->
+          <div class="govuk-grid-column-one-third">
+            <div class="payment-summary-small">
+              <h2 class="govuk-heading-s">Payment summary</h2>
+              <p class="govuk-heading-m">CIC report and full annual accounts</p>
+              <h3 class="govuk-body govuk-!-font-size-19">Total amount:
+              </h3>
+              <p class="govuk-!-font-size-48 govuk-!-font-weight-bold">£15</p>
+            </div>
+            <!--payment-summary-small-->
+          </div>
+          <!--govuk-grid-column-one-third-->
+
+        </div>
+
+        <!--govuk-grid-row-->
+      </form>
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

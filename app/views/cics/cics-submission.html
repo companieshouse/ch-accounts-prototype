@@ -8,11 +8,6 @@
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/chs-user-menu-logged-in.html" %}
 
-    {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
-
     <!-- START script to display current date and time-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript">
@@ -49,7 +44,7 @@
           <div class="govuk-panel govuk-panel--confirmation">
             <div class="govuk-panel__body govuk-!-margin-bottom-6">
               <strong>
-                A TEST CIC
+                <span class="uppercase">{{ data['company-name-for-testing'] }}</span>
                 <br/>Company number
                 {{ data['company-number'] }}</strong>
             </div>
