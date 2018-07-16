@@ -229,6 +229,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.post( '/small-full/small-full-any-other-accounting-policies-yes-no', function ( req, res ) {
+		var anyotheraccountingpolicies = req.body.anyotheraccountingpolicies;
+		if ( anyotheraccountingpolicies == "no" ) {
+			res.redirect( "/small-full/small-full-intangible-assets-note" );
+		} else {
+			res.render( 'small-full/small-full-any-other-accounting-policies' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include any other notes?
 
 	router.get( '/small-full/small-full-employees-yes-no', function ( req, res ) {
@@ -349,5 +358,9 @@ module.exports = function ( router ) {
 			res.render( 'small-full/small-full-post-balance-sheet-events-note' );
 		}
 	} );
+
+
+
+
 
 }
