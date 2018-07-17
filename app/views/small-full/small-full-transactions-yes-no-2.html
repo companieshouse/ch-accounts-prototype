@@ -16,7 +16,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-transactions-additional-info-yes-no" method="get" class="form">
+          <form action="/small-full/small-full-transactions-any-other" method="get" class="form">
 
             <h1 class="govuk-heading-l">Related party transactions added</h1>
 
@@ -47,31 +47,9 @@
 
             </dl>
 
-            {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "anyotherrelatedpartytransactions1",
-        name: "anyotherrelatedpartytransactions1",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include any other 'related party transactions' notes?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m  govuk-!-margin-top-7"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
             {{ govukButton({
-              text: "Save and continue"
+              text: "Continue",
+              classes: "govuk-!-margin-top-6"
             }) }}
           </form>
 
