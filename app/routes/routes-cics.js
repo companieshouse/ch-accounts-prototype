@@ -309,7 +309,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-loans-additional-info-yes-no', function ( req, res ) {
 		var anyotherloanstodirectors1 = req.query.anyotherloanstodirectors1;
 		if ( anyotherloanstodirectors1 == "yes" ) {
-			res.redirect( "/small-full/small-full-loans-yes-no-2" ); // Temporary URL until real page created
+			res.redirect( "/small-full/small-full-loans-any-other" ); // Temporary URL until real page created
 		} else {
 			res.render( 'small-full/small-full-loans-additional-info-yes-no' );
 		}
