@@ -1,42 +1,41 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Give details about assets transferred other than for full consideration {% endblock %}
+{% block pageTitle %}
+  Give details of any transfer of assets that have not reached market value
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <h1 class="govuk-heading-l">
+            Give details of any transfer of assets that have not reached market value
+          </h1>
 
-    <h1 class="govuk-heading-l">
-      Give details about assets transferred other than for full consideration
-    </h1>
+          <form action="/cics/cics-check-before-you-submit" method="get" class="form">
 
-    <form action="/cics/cics-check-before-you-submit" method="get" class="form">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See an example
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>There was a transfer to a local community group of £100 to purchase a laptop.</p>
+              </div>
+            </details>
 
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          See an example
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>There was a transfer to a local community group of £100 to purchase a laptop.</p>
-      </div>
-    </details>
-
-    {{ govukTextarea({
+            {{ govukTextarea({
       name: "cics-transfer-assets",
       id: "cics-transfer-assets",
       rows: "20",
@@ -46,19 +45,18 @@
       }
     }) }}
 
-
-
-
-      {{ govukButton({
+            {{ govukButton({
         text: "Save and continue"
       }) }}
-    </form>
+          </form>
 
-</div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

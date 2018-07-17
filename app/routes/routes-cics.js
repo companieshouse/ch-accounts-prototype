@@ -309,7 +309,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-loans-additional-info-yes-no', function ( req, res ) {
 		var anyotherloanstodirectors1 = req.query.anyotherloanstodirectors1;
 		if ( anyotherloanstodirectors1 == "yes" ) {
-			res.redirect( "/small-full/small-full-loans-yes-no-2" ); // Temporary URL until real page created
+			res.redirect( "/small-full/small-full-loans-any-other" ); // Temporary URL until real page created
 		} else {
 			res.render( 'small-full/small-full-loans-additional-info-yes-no' );
 		}
@@ -331,7 +331,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-changes-in-presentation-note', function ( req, res ) {
 		var changesinpresentation = req.query.changesinpresentation;
 		if ( changesinpresentation == "no" ) {
-			res.redirect( "/small-full/small-full-related-transactions-yes-no" ); // Temporary URL until real page created
+			res.redirect( "/small-full/small-full-related-transactions-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-changes-in-presentation-note' );
 		}
@@ -342,9 +342,20 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-related-transactions-yes-1', function ( req, res ) {
 		var relatedtransactions = req.query.relatedtransactions;
 		if ( relatedtransactions == "no" ) {
-			res.redirect( "/small-full/small-full-post-events-yes-no" ); // Temporary URL until real page created
+			res.redirect( "/small-full/small-full-post-events-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-related-transactions-yes-1' );
+		}
+	} );
+
+	// (CICs) Accounts - Do your prepared accounts include any other 'related party transactions' notes?
+
+	router.get( '/small-full/small-full-transactions-additional-info-yes-no', function ( req, res ) {
+		var anyothertransactions1 = req.query.anyothertransactions1;
+		if ( anyothertransactions1 == "yes" ) {
+			res.redirect( "/small-full/small-full-transactions-any-other" ); // Temporary URL until real page created
+		} else {
+			res.render( 'small-full/small-full-transactions-additional-info-yes-no' );
 		}
 	} );
 
