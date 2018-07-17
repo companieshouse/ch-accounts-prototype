@@ -82,11 +82,11 @@ module.exports = {
 	"total-shareholders-funds-previous": "0",
 
 	//Small Full Policies
-	"small-full-turnover-policy": "Not entered",
-	"small-full-tangible-fixed-assets-depreciation-policy": "Not entered",
-	"small-full-intangible-fixed-assets-amortisation-policy": "Not entered",
-	"small-full-valuation-information-policy": "Not entered",
-	"small-full-other-policies": "Not entered",
+	"small-full-turnover-policy": "None",
+	"small-full-tangible-fixed-assets-depreciation-policy": "None",
+	"small-full-intangible-fixed-assets-amortisation-policy": "None",
+	"small-full-valuation-information-policy": "None",
+	"small-full-other-policies": "None",
 
 	//Intangible assets note
 	"cost-start-goodwill": "0",
@@ -128,7 +128,7 @@ module.exports = {
 	"net-book-value-start-goodwill": "0",
 	"net-book-value-start-other": "0",
 	"net-book-value-start-total": "0",
-	"small-full-intangible-note-additional-info": "Not entered",
+	"small-full-intangible-note-additional-info": "None",
 
 
 	//Tangible assets note
@@ -180,7 +180,7 @@ module.exports = {
 	"net-book-value-start-plant-machinery": "0",
 	"net-book-value-start-office-equipment": "0",
 	"net-book-value-start-total": "0",
-	"small-full-tangible-note-additional-info": "Not entered",
+	"small-full-tangible-note-additional-info": "None",
 
 	//Small Full Stocks Note
 	"stocks-stocks-current": "0",
@@ -201,7 +201,7 @@ module.exports = {
 	"total-debtors-previous": "0",
 	"debtors-after-current": "0",
 	"debtors-after-previous": "0",
-	"stocks-note-additional-info": "Not entered",
+	"stocks-note-additional-info": "None",
 
 	//Small Full Creditors amounts falling due WITHIN on year note
 	"bank-loans-current": "0",
@@ -218,7 +218,7 @@ module.exports = {
 	"other-creditors-previous": "0",
 	"within-one-year-total-current": "0",
 	"within-one-year-total-previous": "0",
-	"within-one-year-additional-info": "Not entered",
+	"within-one-year-additional-info": "None",
 
 	//Small Full Creditors amounts falling due AFTER on year note
 	"creditors-after-bank-loans-current": "0",
@@ -229,41 +229,41 @@ module.exports = {
 	"creditors-after-other-creditors-previous": "0",
 	"creditors-after-one-year-total-current": "0",
 	"creditors-after-one-year-total-previous": "0",
-	"creditors-after-after-one-year-additional-info": "Not entered",
+	"creditors-after-after-one-year-additional-info": "None",
 
 	//Small Full Revaluation reserve note
 	"revaluation-reserve-start": "0",
 	"surplus-deficit-previous": "0",
 	"bank-loans-end": "0",
 	"revaluation-reserve-end": "0",
-	"revaluation-reserve-note-additional-info": "Not entered",
+	"revaluation-reserve-note-additional-info": "None",
 
 
 	//Small Full Employees note
 	"average-number-of-employees-current": "0",
 	"average-number-of-employees-previous": "0",
-	"employees-note-additional-info": "Not entered",
+	"employees-note-additional-info": "None",
 
 	//Small Full fixed assets investments note
-	"small-full-fixed-assets-investments-note": "Not entered",
+	"small-full-fixed-assets-investments-note": "None",
 
 	//Small Full current assets investments note
-	"small-full-current-assets-investments-note": "Not entered",
+	"small-full-current-assets-investments-note": "None",
 
 	//Small Full financial commitments note
-	"small-full-financial-commitments-note": "Not entered",
+	"small-full-financial-commitments-note": "None",
 
 	//Small Full loans to directors note
 	// TO DO
 
 	//Small Full changes in presentation and prior period adjustments note
-	"small-full-changes-in-presentation-note": "Not entered",
+	"small-full-changes-in-presentation-note": "None",
 
 	//Small Full related party transactions note
 	// TO DO
 
 	// Small Full post balance sheet events note
-	"small-full-post-balance-sheet-events-note": "Not entered"
+	"small-full-post-balance-sheet-events-note": "None"
 
 
 }
