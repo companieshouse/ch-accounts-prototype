@@ -1,82 +1,74 @@
-{% extends "layout-chs.html" %} {% block page_title %} Tangible assets note {% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Which tangible assets are included in your prepared accounts?
+{% endblock %}
+{% block main %}
 
-<main class="two-column-accounts" id="content" role="main">
-	{% include "includes/phase_banner_beta.html" %}
-	<nav class="content" role="navigation">
-		<ul class="mobile-hidden" id="navigation">
-			<li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
-			</li>
-			<li>
-				<a href="javascript:void(0)">Your details</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="recent_filings">Your filings</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="">Companies you follow</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)" id="user-signout">Sign out</a>
-			</li>
-		</ul>
-	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a> {% include 'includes/error.html' %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-	<div class="text">
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper">
 
-		<h1 class="heading-large">
-	Which tangible assets are included in your prepared accounts?
-	</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-		<form action="/small-full/small-full-tangible-assets-note-custom" class="form" id="" method="get" name="">
+          <form action="/small-full/small-full-tangible-assets-note-custom" class="form" id="" method="get" name="">
+            {{ govukCheckboxes({
+              idPrefix: "nationality",
+              name: "nationality",
+              fieldset: {
+                legend: {
+                  text: "Which tangible assets are included in your prepared accounts?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: "Select all that apply"
+              },
+              items: [
+                {
+                  value: "land",
+                  text: "Land and buildings"
+                },
+                {
+                  value: "plant",
+                  text: "Plant and machinery"
+                },
+                {
+                  value: "fixtures",
+                  text: "Fixtures and fittings"
+                },
+                {
+                  value: "office",
+                  text: "Office equipment"
+                },
+                {
+                  value: "motor",
+                  text: "Motor vehicles"
+                }
+              ]
+            }) }}
 
+            {{ govukButton({
+                  text: "Save and continue"
+                }) }}
+          </form>
 
-			<p>Select all that apply</p>
+        </div>
+        <!--govuk-grid-column-two-thirds-->
 
+      </div>
+      <!--govuk-grid-row-->
 
-			<fieldset data-required data-error=" You must choose at least one option">
-
-				<legend class="visuallyhidden">Which tangible assets are included in your prepared accounts?</legend>
-				<div class="form-group">
-					<label for="tangible-asset-category-land" class="block-label selection-button-checkbox">
-						<input type="checkbox" name="tangible-asset-category" value="Land" id="tangible-asset-category-land">
-						Land and buildings
-					</label>
-
-					<label for="tangible-asset-category-plant" class="block-label selection-button-checkbox">
-						<input type="checkbox" name="tangible-asset-category" value="Plant" id="tangible-asset-category-plant">
-						Plant and machinery
-					</label>
-
-					<label for="tangible-asset-category-fixtures" class="block-label selection-button-checkbox">
-						<input type="checkbox" name="tangible-asset-category" value="Fixtures" id="tangible-asset-category-fixtures">
-						Fixtures and fittings
-					</label>
-
-					<label for="tangible-asset-category-office" class="block-label selection-button-checkbox">
-						<input type="checkbox" name="tangible-asset-category" value="Office" id="tangible-asset-category-office">
-						Office equipment
-					</label>
-
-					<label for="tangible-asset-category-motor" class="block-label selection-button-checkbox">
-						<input type="checkbox" name="tangible-asset-category" value="Motor" id="tangible-asset-category-motor">
-						Motor vehicles
-					</label>
-				</div>
-
-
-			</fieldset>
-
-
-			<div class="form-group">
-				<input type="submit" class="button" value="Save and continue">
-			</div>
-			<!--form-group-->
-		</form>
-
-	</div>
-	<!-- text-->
-
-</main>
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

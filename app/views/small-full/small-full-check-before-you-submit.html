@@ -1,663 +1,2096 @@
-{%- extends "layout-chs.html" %} {% block page_title %} Check before you submit {% endblock %} {% block content %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+{% block main %}
 
-<script type="text/javascript">
-  $(document).ready(function() { //Only show the button if javascript is on
-    $('.turnover').on('click', function() {
-      $(this).parent().parent().remove();
+  <!-- TO DO - Sort mobile styles -->
+  <!-- TO DO - Sort data passings -->
+
+  <!-- START script which hides the delete container if user clicks 'No, keep' on Delete warning -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () { //Only show the button if javascript is on
+      $('.post-balance-sheet-events-keep').on('click', function () {
+        $(this).parent().parent().remove();
+      });
     });
-  });
-</script>
+  </script>
+  <!-- END script which hides the delete container if user clicks 'No, keep' on Delete warning -->
 
-<main id="content" role="main" class="two-column-accounts">
-  {% include "includes/phase_banner_beta.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+    <main class="govuk-main-wrapper two-column-accounts">
 
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
+      <form action="/cics/cics-accounts-approval" method="get" class="form">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Company account dates</h2>
 
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              1 April 2017 to 31 March 2018</dt>
 
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  Company account dates</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
+        <h2 class="govuk-heading-m">Balance sheet</h2>
 
-  <h1 class="heading-large">Check your answers</h1>
-  <br />
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
 
-  <form action="/cics/cics-accounts-approval" method="get" class="form">
-    <h2 class="heading-medium">Company account dates</h2>
+          {% if data['called-up-share-capital-not-paid-current'] != '' or data['called-up-share-capital-not-paid-previous'] != '' %}
+            <!-- If either of these values (from the Balance sheet) is NOT emptythen show this div-->
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
+                Called up share capital not paid
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">1 April 2017 to 31 March 2018</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> company account dates</div></a>
-        </dd>
-      </div>
-    </dl>
+                {{ data['called-up-share-capital-not-paid-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['called-up-share-capital-not-paid-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Called up share capital not paid
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Fixed assets</dt>
+            <dd class="app-check-your-answers__answer"></dd>
+            <dd class="app-check-your-answers__answer"></dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
 
-    <h2 class="heading-medium">Balance sheet</h2>
+          {% if data['intangible-assets-current'] != '' or data['intangible-assets-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Intangible assets</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['intangible-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['intangible-assets-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Intangible assets</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question heading-medium">Fixed assets</dt>
-        <dd class="cya-answer heading-small">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Tangible assets </dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £37,440</div>
-          <div><span class="mobile-only-label">(2017)</span> £30,740</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet tangible assets</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total fixed assets</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £37,440</div>
-          <div><span class="mobile-only-label">(2017)</span> £30,740</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet tangible assets</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question heading-medium">Current assets</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Stocks</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £35,455</div>
-          <div><span class="mobile-only-label">(2017)</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet stocks</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Debtors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £1,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet debtors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total current assets</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £35,955</div>
-          <div><span class="mobile-only-label">(2017)</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Total current assets</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Creditors - amounts falling due within one year</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £5,500</div>
-          <div><span class="mobile-only-label">(2017)</span> £4,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Creditors - amounts falling due within one year</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Net current assets (liabilities)</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £30,455</div>
-          <div><span class="mobile-only-label">(2017)</span> £2,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Net current assets (liabilities)</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total assets less current liabilities</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £67,895</div>
-          <div><span class="mobile-only-label">(2017)</span> £33,240</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Total assets less current liabilities</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Provision for liabilities</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £15,600</div>
-          <div><span class="mobile-only-label">(2017)</span> £12,050</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Provision for liabilities</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total net assets (liabilities)</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £52,295</div>
-          <div><span class="mobile-only-label">(2017)</span> £21,190</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Total net assets (liabilities)</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question heading-medium">Capital and reserves</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Called up share capital</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £24,400</div>
-          <div><span class="mobile-only-label">(2017)</span> £18,900</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Called up share capital</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Share premium account</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £18,000</div>
-          <div><span class="mobile-only-label">(2017)</span> £1,750</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Share premium account</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Profit and loss account</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £9,895</div>
-          <div><span class="mobile-only-label">(2017)</span> £540</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet profit and loss account</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total shareholders' funds</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £52,295</div>
-          <div><span class="mobile-only-label">(2017)</span> £21,190</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet total shareholders' funds</div></a>
-        </dd>
-      </div>
-    </dl>
+          {% if data['tangible-assets-current'] != '' or data['tangible-assets-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Tangible assets</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['tangible-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['tangible-assets-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Tangible assets</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['investments-fixed-assets-current'] != '' or data['investments-fixed-assets-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Investments</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['investments-fixed-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['investments-fixed-assets-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Fixed Assets Investments</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <h2 class="heading-medium">Balance sheet statements</h2>
+          {% if data['total-fixed-assets-current'] != '' or data['total-fixed-assets-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3">Total fixed assets</dt>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-fixed-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['total-fixed-assets-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total fixed assets</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">
-          <ul class="list list-bullet">
-            <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
-            <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
-            <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
-            <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
-            <li>The directors have chosen not to file a copy of the company’s profit and loss account. </li>
-          </ul>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> balance sheet statements</div></a>
-        </dd>
-      </div>
-    </dl>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Current assets</dt>
+            <dd class="app-check-your-answers__answer"></dd>
+            <dd class="app-check-your-answers__answer"></dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
 
+          {% if data['stocks-current'] != '' or data['stocks-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Stocks</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['stocks-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['stocks-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Stocks</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['debtors-current'] != '' or data['debtors-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Debtors</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['debtors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['debtors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Debtors</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <h2 class="heading-medium">Basis of accounts preparation</h2>
+          {% if data['cash-at-bank-and-in-hand-current'] != '' or data['cash-at-bank-and-in-hand-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
+                Cash at bank and in hand
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['cash-at-bank-and-in-hand-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['cash-at-bank-and-in-hand-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Cash at bank and in hand
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> basis of accounts preparation</div></a>
-        </dd>
-      </div>
-    </dl>
+          {% if data['investments-current-assets-current'] != '' or data['investments-current-assets-current'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Investments
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['investments-current-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['investments-current-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Current Assets Investments
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['total-current-assets-current'] != '' or data['total-current-assets-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3">Total current assets</dt>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-current-assets-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['total-current-assets-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total current assets</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['prepayments-and-and-accrued-income-current'] != '' or data['prepayments-and-and-accrued-income-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
+                Prepayments and accrued income
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['prepayments-and-and-accrued-income-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['prepayments-and-and-accrued-income-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Prepayments and accrued income
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <h2 class="heading-medium">Turnover policy</h2>
+          {% if data['creditors-amounts-falling-due-within-one-year-current'] != '' or data['creditors-amounts-falling-due-within-one-year-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Creditors - amounts falling due within one year</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['creditors-amounts-falling-due-within-one-year-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['creditors-amounts-falling-due-within-one-year-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Creditors - amounts falling due within one year</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> turnover policy</div></a>
-          <span id="delete-summary">
-            <a href="javascript:void(0)" class="" id="content-delete">Delete <span class="visuallyhidden"> turnover policy</span></a>
-          </span>
-        </dd>
-      </div>
-    </dl>
-    <div id="content-delete-warning" style="display:none;">
-      <div class="error-summary" id="delete-summary">
-        <p><strong>Are you sure you want to delete the turnover policy?</strong></p>
-        <p>
-          <a href="javascript:void" class="button">Yes, delete <span class="visuallyhidden"> turnover policy</span></a>
-          <a class="button no-delete turnover" href="javascript:void(0)">No, keep<span class="visuallyhidden"> turnover policy</span></a>
-        </p>
-      </div>
-      <!--delete-summary-->
-    </div>
-    <!--content-delete-warning-->
+          {% if data['net-current-assets-liabilities-current'] != '' or data['net-current-assets-liabilities-current'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
+                Net current assets (liabilities)
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['net-current-assets-liabilities-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['net-current-assets-liabilities-current'] | displayPound  }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Net current assets (liabilities)
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['total-assets-less-current-liabilities-current'] != '' or data['total-assets-less-current-liabilities-current'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Total assets less current liabilities</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-assets-less-current-liabilities-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['total-assets-less-current-liabilities-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total assets less current liabilities</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <h2 class="heading-medium">Tangible assets</h2>
+          {% if data['creditors-amounts-falling-due-after-more-than-one-year-current'] != '' or data['creditors-amounts-falling-due-after-more-than-one-year-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">
+                Creditors - amounts falling due after more than one year
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['creditors-amounts-falling-due-after-more-than-one-year-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['creditors-amounts-falling-due-after-more-than-one-year-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Creditors - amounts falling due after more than one year
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dt class="cya-question heading-medium">Cost</dt>
-        <dd class="cya-answer heading-small">
-          <div>Land & buildings</div>
-          <div>Plant & machinery</div>
-          <div>Office equipment</div>
-          <div>Total</div>
-        </dd>
-        <dd class="cya-change">
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Cost at 1 April 2017</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £28,500</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £6,380</div>
-          <div><span class="mobile-only-label">Office equipment</span> £9,850</div>
-          <div><span class="mobile-only-label">Total</span> £44,730</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Cost at 1 April 2017</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Additions</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £350</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £165</div>
-          <div><span class="mobile-only-label">Office equipment</span> £700</div>
-          <div><span class="mobile-only-label">Total</span> £1,215</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Additions</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Disposals</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £370</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £100</div>
-          <div><span class="mobile-only-label">Office equipment</span> £395</div>
-          <div><span class="mobile-only-label">Total</span> £865</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Disposals</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Revaluations</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £5,450</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £800</div>
-          <div><span class="mobile-only-label">Office equipment</span> £100</div>
-          <div><span class="mobile-only-label">Total</span> £6,350</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Revaluations</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Cost at 31 March 2018</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £33,390</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £7,245</div>
-          <div><span class="mobile-only-label">Office equipment</span> £10,255</div>
-          <div><span class="mobile-only-label">Total</span> £51,430</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Cost at 31 March 2018</div></a>
-        </dd>
-      </div>
+          {% if data['provision-for-liabilities-current'] != '' or data['provision-for-liabilities-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Provision for liabilities</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['provision-for-liabilities-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['provision-for-liabilities-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Provision for liabilities</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['accruals-and-deferred-income-current'] != '' or data['accruals-and-deferred-income-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-font-weight-regular">Accruals and deferred income</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['accruals-and-deferred-income-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['accruals-and-deferred-income-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Accruals and deferred income
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
+          {% if data['total-net-assets-liabilities-current'] != '' or data['total-net-assets-liabilities-previou'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Total net assets (liabilities)</dt>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-net-assets-liabilities-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['total-net-assets-liabilities-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total net assets (liabilities)</span></a>
+              </dd>
+            </div>
+          {% endif %}
 
-      <div>
-        <dt class="cya-question heading-medium">Depreciation</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Depreciation at 1 April 2017</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £8,800</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £1,400</div>
-          <div><span class="mobile-only-label">Office equipment</span> £3,980</div>
-          <div><span class="mobile-only-label">Total</span> £14,260</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Depreciation at 1 April 2017</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Charge for year</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £100</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £100</div>
-          <div><span class="mobile-only-label">Office equipment</span> £100</div>
-          <div><span class="mobile-only-label">Total</span> £300</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets charge for year</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">On disposals</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £70</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £200</div>
-          <div><span class="mobile-only-label">Office equipment</span> £350</div>
-          <div><span class="mobile-only-label">Total</span> £620</dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets on disposals</div></a>
-        </dd>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Capital and reserves</dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s"></dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s"></dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+
+          {% if data['called-up-share-capital-current'] != '' or data['called-up-share-capital-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Called up share capital</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['called-up-share-capital-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['called-up-share-capital-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Called up share capital</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['share-premium-account-current'] != '' or data['share-premium-account-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Share premium account</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['share-premium-account-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['share-premium-account-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Share premium account</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['revaluation-reserve-current'] != '' or data['revaluation-reserve-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
+                Revaluation reserve
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['revaluation-reserve-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['revaluation-reserve-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Revaluation reserve
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['other-reserves-current'] != '' or data['other-reserves-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
+                Other reserves
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['other-reserves-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['other-reserves-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Other reserves
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['profit-and-loss-account-current'] != '' or data['profit-and-loss-account-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question  govuk-!-padding-left-3 govuk-!-font-weight-regular">Profit and loss account</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['profit-and-loss-account-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['profit-and-loss-account-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Profit and loss account</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['total-shareholders-funds-current'] != '' or data['total-shareholders-funds-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3">Total shareholders' funds</dt>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-shareholders-funds-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['total-shareholders-funds-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Balance sheet) Total shareholders' funds</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Balance sheet statements</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+                <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+                <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+                <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+                <li>The directors have chosen not to file a copy of the company’s profit and loss account.</li>
+              </ul>
+            </dt>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Basis of accounts preparation</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['how-did-you-prepare-your-accounts'] }}{{ data['another-accounting-standard'] }}
+            </dt>
+
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  Basis of accounts preparation</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <div id="cya-small-full-turnover-policy">
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Turnover policy</h2>
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                {{ data['small-full-turnover-policy'] }}</dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">
+                  Change<span class="govuk-visually-hidden">
+                    Turnover policy</span>
+                </a>
+                <p class="govuk-!-margin-top-1">
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      Turnover policy</span></p>
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
-        <div>
-          <dt class="cya-question">Other adjustments</dt>
-          <dd class="cya-answer">
-            <div><span class="mobile-only-label">Land & buildings</span> £50</div>
-            <div class="cya-answer-empty">&nbsp;</div>
-            <div class="cya-answer-empty">&nbsp;</div>
-            <div><span class="mobile-only-label">Total</span> £50</div>
-          </dd>
-          <dd class="cya-change">
-            <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets other adjustments</div></a>
-          </dd>
+        <!--cya-small-full-turnover-policy-->
+
+        <div id="cya-small-full-tangible-fixed-assets-depreciation-policy">
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Tangible fixed assets depreciation policy</h2>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                {{ data['small-full-tangible-fixed-assets-depreciation-policy'] }}</dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">
+                  Change<span class="govuk-visually-hidden">
+                    tangible fixed assets depreciation policy</span>
+                </a>
+                <p class="govuk-!-margin-top-1">
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      tangible fixed assets depreciation policy</span></p>
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
-        <div>
-          <dt class="cya-question">Depreciation at 31 March 2018</dt>
-          <dd class="cya-answer">
-            <div><span class="mobile-only-label">Land & buildings</span> £8,960</div>
-            <div><span class="mobile-only-label">Plant & machinery</span> £1,300</div>
-            <div><span class="mobile-only-label">Office equipment</span> £3,730</div>
-            <div><span class="mobile-only-label">Total</span> £13,990</div>
-          </dd>
-          <dd class="cya-change">
-            <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Depreciation at 31 March 2018</div></a>
-          </dd>
+        <!--cya-small-full-tangible-fixed-assets-depreciation-policy-->
+
+        <div id="cya-small-full-intangible-fixed-assets-amortisation-policy">
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Intangible fixed assets amortisation policy</h2>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                {{ data['small-full-intangible-fixed-assets-amortisation-policy'] }}</dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">
+                  Change<span class="govuk-visually-hidden">
+                    tangible fixed assets depreciation policy</span>
+                </a>
+                <p class="govuk-!-margin-top-1">
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      intangible fixed assets amortisation policy</span></p>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
         </div>
+        <!--cya-small-full-intangible-fixed-assets-amortisation-policy-->
 
-        <div>
-          <dt class="cya-question heading-medium">Net book value</dt>
-          <dd class="cya-answer"></dd>
-          <dd class="cya-change"></dd>
+        <div id="cya-small-full-valuation-information-policy">
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Valuation information policy</h2>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                {{ data['small-full-valuation-information-policy'] }}</dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">
+                  Change<span class="govuk-visually-hidden">
+                    valuation information policy</span>
+                </a>
+                <p class="govuk-!-margin-top-1">
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      valuation information policy</span></p>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
         </div>
-        <div>
-          <dt class="cya-question">Net book value at 31 March 2018</dt>
-          <dd class="cya-answer">
-            <div><span class="mobile-only-label">Land & buildings</span> £24,970</div>
-            <div><span class="mobile-only-label">Plant & machinery</span> £5,945</div>
-            <div><span class="mobile-only-label">Office equipment</span> £6,625</div>
-            <div><span class="mobile-only-label">Total</span> £37,440</div>
-          </dd>
-          <dd class="cya-change">
-            <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Net book value at 31 March 2018</div></a>
-          </dd>
+        <!--cya-small-full-valuation-information-policy-->
+
+        <div id="cya-small-full-other-policies">
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Other accounting policies</h2>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                {{ data['small-full-other-policies'] }}</dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">
+                  Change<span class="govuk-visually-hidden">
+                    Other policies</span>
+                </a>
+                <p class="govuk-!-margin-top-1">
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      Other policies</span></p>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
         </div>
-        <div>
-          <dt class="cya-question">Net book value at 31 March 2017</dt>
-          <dd class="cya-answer">
-            <div><span class="mobile-only-label">Land & buildings</span> £19,620</div>
-            <div><span class="mobile-only-label">Plant & machinery</span> £4,980</div>
-            <div><span class="mobile-only-label">Office equipment</span> £5,870</div>
-            <div><span class="mobile-only-label">Total</span> £3,740</div>
-          </dd>
-          <dd class="cya-change">
-            <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Net book value at 31 March 2017</div></a>
-          </dd>
-        </div>
+        <!--cya-small-full-other-policies-->
 
-    </dl>
+        {% if data['intangible-assets-current'] != '' or data['intangible-assets-previous'] != '' %}
 
+          <div id="cya-small-full-intangible-assets-note">
 
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Intangible assets</h2>
 
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Cost</dt>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Goodwill</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Other</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+                <dd class="app-check-your-answers__change"></dd>
+              </div>
 
+              {% if data['cost-start-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Cost at 1 April 2017</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['cost-start-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['cost-start-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['cost-start-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Cost at 1 April 2017</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <h2 class="heading-medium">Stocks</h2>
+              {% if data['additions-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Additions</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['additions-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['additions-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['additions-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note)Additions</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question"></dt>
-        <dd class="cya-answer heading-small">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Stocks</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £7,000</div>
-          <div><span class="mobile-only-label">2017</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet notes stocks</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Payment on account</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £28,455</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet notes stocks payment on account</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £35,455</div>
-          <div><span class="mobile-only-label">2017</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet notes stocks payment on account</div></a>
-        </dd>
-      </div>
-    </dl>
+              {% if data['disposals-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Disposals</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['disposals-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['disposals-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['disposals-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Disposals</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
+              {% if data['revaluations-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Revaluations</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['revaluations-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['revaluations-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['revaluations-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Revaluations</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <h2 class="heading-medium">Debtors</h2>
+              {% if data['transfers-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Transfers</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['transfers-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['transfers-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['transfers-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Transfers</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question"></dt>
-        <dd class="cya-answer heading-small">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Trade debtors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £350</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors trade debtors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Prepayments and accrued income</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £690</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors Prepayments and accrued income</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Other debtors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £560</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors other debtors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £1,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors total</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Debtors after more than one year</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £300</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors Debtors after more than one year</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Additional information</dt>
-        <dd class="cya-answer">The current debtors figure includes trade debtors expected to be fully paid within the next financial period.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors Additional information</div></a>
-        </dd>
-      </div>
-    </dl>
+              {% if data['cost-end-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">
+                    Cost at 31 March 2018
+                  </dt>
+                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['cost-end-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['cost-end-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['cost-end-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Cost at 31 March 2018
+                      </span>
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+            </dl>
 
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Amortisation</dt>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Goodwill</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Other</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+                <dd class="app-check-your-answers__change"></dd>
+              </div>
 
-    <h2 class="heading-medium">Creditors - amounts falling due within one year</h2>
+              {% if data['amortisation-start-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Amortisation at 1 April 2015</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['amortisation-start-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['amortisation-start-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['amortisation-start-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Amortisation at 1 April 2015</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question"></dt>
-        <dd class="cya-answer heading-small">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Bank loans and overdrafts</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £2,475</div>
-          <div><span class="mobile-only-label">2018</span> £1,300</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Bank loans and overdrafts</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Amounts due under finance leases and hire purchase contracts</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £1,405</div>
-          <div><span class="mobile-only-label">2017</span> £1,200</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Amounts due under finance leases and hire purchase contracts</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Trade creditors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £560</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Trade creditors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Accruals and deferred income</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Accruals and deferred income</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Other creditors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £560</div>
-          <div><span class="mobile-only-label">2017</span> £2,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Other creditors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">2018</span> £5,500</div>
-          <div><span class="mobile-only-label">2017</span> £4,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Total</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Additional information</dt>
-        <dd class="cya-answer">Purchases of various technology shares have recently been acquired as a short term investment and are expected to be sold within the next five months.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Additional information</div></a>
-        </dd>
-      </div>
-    </dl>
+              {% if data['charge-year-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Charge for year</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['charge-year-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['charge-year-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['charge-year-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Charge for year</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <h2 class="heading-medium">Post balance sheet events</h2>
+              {% if data['on-disposals-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">On disposals</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['on-disposals-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['on-disposals-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['on-disposals-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) On disposals</span></a>
+                  </dd>
+                </div>
+              {% endif %}
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">On 5 April 2018, the company acquired the goodwill and net assets of CoHo Marketing Associates for £40,000 financed by a secured bank loan, repayable over 5 years.</dd>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Post balance sheet events</div></a>
-          <span id="delete-summary">
-            <a href="javascript:void(0)" class="" id="content-delete">Delete <span class="visuallyhidden"> Post balance sheet events</span></a>
-          </span>
-        </dd>
+              {% if data['other-debtors-current'] != '' or data['other-debtors-previous'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Other adjustments
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['other-adjustments-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['other-adjustments-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['other-adjustments-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Other adjustments
+                      </span>
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              {% if data['amortisation-end-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Amortisation at 31 March 2018</dt>
+                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['amortisation-end-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['amortisation-end-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['amortisation-end-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Intangible assets note) Amortisation at 31 March 2018
+                      </span>
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+            </dl>
+
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Net book value</dt>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Goodwill</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Other</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+                <dd class="app-check-your-answers__change"></dd>
+              </div>
+
+              {% if data['net-book-value-end-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2018</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['net-book-value-end-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['net-book-value-end-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['net-book-value-end-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Net book value at 31 March 2018</span></a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              {% if data['net-book-value-start-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2017</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Goodwill</span>
+                    {{ data['net-book-value-start-goodwill'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Other</span>
+                    {{ data['net-book-value-start-other'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">Total</span>
+                    {{ data['net-book-value-start-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Net book value at 31 March 2017</span></a>
+                  </dd>
+                </div>
+              {% endif %}
+
+            </dl>
+
+            {% if data['small-full-intangible-note-additional-info'] != '' %}
+
+              <dl class="app-check-your-answers app-check-your-answers--short">
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">Additional information</dt>
+                  <dd class="app-check-your-answers__answer">{{ data['small-full-intangible-note-additional-info'] }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Debtors after more than one year</span></a>
+                  </dd>
+                </div>
+              </dl>
+            {% endif %}
+
+          </div>
+          <!--cya-small-full-intangible-assets-note-->
+
+        {% endif %}
+
+        {% if data['tangible-assets-current'] != '' or data['tangible-assets-previous'] != '' %}
+
+          <div id="cya-small-full-tangible-assets-note">
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Tangible assets</h2>
+
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Cost</dt>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Land & buildings</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Plant & machinery</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Office equipment</dd>
+                <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+                <dd class="app-check-your-answers__change"></dd>
+              </div>
+
+              {% if data['cost-start-land-buildings'] != '' or data['cost-start-plant-machinery'] != '' or data['cost-start-office-equipment'] != '' or data['cost-start-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Cost at 1 April 2017</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Land & buildings)</span>
+                    {{ data['cost-start-land-buildings'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Plant & machinery)</span>
+                    {{ data['cost-start-plant-machinery'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Office equipment)</span>
+                    {{ data['cost-start-office-equipment'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Total)</span>
+                    {{ data['cost-start-total'] | displayPound }}</dd>
+
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Cost at 1 April 2017</span></a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              {% if data['additions-land-buildings'] != '' or data['additions-plant-machinery'] != '' or data['additions-office-equipment'] != '' or data['additions-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Additions</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Land & buildings)</span>
+                    {{ data['additions-land-buildings'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Plant & machinery)</span>
+                    {{ data['additions-plant-machinery'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Office equipment)</span>
+                    {{ data['additions-office-equipment'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Total)</span>
+                    {{ data['additions-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Additions</span></a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              {% if data['disposals-land-buildings'] != '' or data['disposals-plant-machinery'] != '' or data['disposals-office-equipment'] != '' or data['disposals-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Disposals</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Land & buildings)</span>
+                    {{ data['disposals-land-buildings'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Plant & machinery)</span>
+                    {{ data['disposals-plant-machinery'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Office equipment)</span>
+                    {{ data['disposals-office-equipment'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Total)</span>
+                    {{ data['disposals-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Disposals</span></a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              {% if data['revaluations-land-buildings'] != '' or data['revaluations-plant-machinery'] != '' or data['revaluations-office-equipment'] != '' or data['revaluations-total'] != '' %}
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Revaluations</dt>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Land & buildings)</span>
+                    {{ data['revaluations-land-buildings'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Plant & machinery)</span>
+                    {{ data['revaluations-plant-machinery'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Office equipment)</span>
+                    {{ data['revaluations-office-equipment'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__answer">
+                    <span class="mobile-only-label">(Total)</span>
+                    {{ data['revaluations-total'] | displayPound }}</dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Revaluations</span></span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['cost-end-land-buildings'] != '' or data['cost-end-plant-machinery'] != '' or data['cost-end-office-equipment'] != '' or data['cost-end-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Cost at 31 March 2018</dt>
+                <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                  <span class="mobile-only-label">(Land & buildings)</span>
+                  {{ data['cost-end-land-buildings'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                  <span class="mobile-only-label">(Plant & machinery)</span>
+                  {{ data['cost-end-plant-machinery'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                  <span class="mobile-only-label">(Office equipment)</span>
+                  {{ data['cost-end-office-equipment'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                  <span class="mobile-only-label">(Total)</span>
+                  {{ data['cost-end-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Cost at 31 March 2018</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+          </dl>
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Depreciation</dt>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Land & buildings</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Plant & machinery</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Office equipment</dd>
+              <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+              <dd class="app-check-your-answers__change"></dd>
+            </div>
+
+            {% if data['depreciation-start-land-buildings'] != '' or data['depreciation-start-plant-machinery'] != '' or data['depreciation-start-office-equipment'] != '' or data['depreciation-start-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Depreciation at 1 April 2017</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Land & buildings)</span>
+                  {{ data['depreciation-start-land-buildings'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Plant & machinery)</span>
+                  {{ data['depreciation-start-plant-machinery'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Office equipment)</span>
+                  {{ data['depreciation-start-office-equipment'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Total)</span>
+                  {{ data['depreciation-start-total'] | displayPound }}</dd>
+
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Depreciation at 1 April 2017</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['charge-year-land-buildings'] != '' or data['charge-year-plant-machinery'] != '' or data['charge-year-office-equipment'] != '' or data['charge-year-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Charge for year</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Land & buildings)</span>
+                  {{ data['charge-year-land-buildings'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Plant & machinery)</span>
+                  {{ data['charge-year-plant-machinery'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Office equipment)</span>
+                  {{ data['charge-year-office-equipment'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Total)</span>
+                  {{ data['charge-year-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Charge for year</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['on-disposals-land-buildings'] != '' or data['on-disposals-plant-machinery'] != '' or data['on-disposals-office-equipment'] != '' or data['on-disposals-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">On disposals</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Land & buildings)</span>
+                  {{ data['on-disposals-land-buildings'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Plant & machinery)</span>
+                  {{ data['on-disposals-plant-machinery'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Office equipment)</span>
+                  {{ data['on-disposals-office-equipment'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Total)</span>
+                  {{ data['on-disposals-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) On disposals</span></a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['other-adjustments-land-buildings'] != '' or data['other-adjustments-plant-machinery'] != '' or data['other-adjustments-office-equipment'] != '' or data['other-adjustments-total'] != '' %}
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Other adjustments</dt>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Land & buildings)</span>
+                  {{ data['other-adjustments-land-buildings'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Plant & machinery)</span>
+                  {{ data['other-adjustments-plant-machinery'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Office equipment)</span>
+                  {{ data['other-adjustments-office-equipment'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__answer">
+                  <span class="mobile-only-label">(Total)</span>
+                  {{ data['other-adjustments-total'] | displayPound }}</dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Other adjustments</span></span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['depreciation-end-land-buildings'] != '' or data['depreciation-end-plant-machinery'] != '' or data['depreciation-end-office-equipment'] != '' or data['depreciation-end-total'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Depreciation at 31 March 2018</dt>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(Land & buildings)</span>
+                {{ data['depreciation-end-land-buildings'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(Plant & machinery)</span>
+                {{ data['depreciation-end-plant-machinery'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(Office equipment)</span>
+                {{ data['depreciation-end-office-equipment'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(Total)</span>
+                {{ data['depreciation-end-total'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Depreciation at 31 March 2018</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Net book value</dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">Land & buildings</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">Plant & machinery</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">Office equipment</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">Total</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+
+          {% if data['net-book-value-end-land-buildings'] != '' or data['net-book-value-end-plant-machinery'] != '' or data['net-book-value-end-office-equipment'] != '' or data['net-book-value-end-total'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2018</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Land & buildings)</span>
+                {{ data['net-book-value-end-land-buildings'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Plant & machinery)</span>
+                {{ data['net-book-value-end-plant-machinery'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Office equipment)</span>
+                {{ data['net-book-value-end-office-equipment'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Total)</span>
+                {{ data['net-book-value-end-total'] | displayPound }}</dd>
+
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Net book value at 31 March 2018</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['net-book-value-start-land-buildings'] != '' or data['net-book-value-start-plant-machinery'] != '' or data['net-book-value-start-office-equipment'] != '' or data['net-book-value-start-total'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question govuk-!-padding-left-3 govuk-!-font-weight-regular">Net book value at 31 March 2017</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Land & buildings)</span>
+                {{ data['net-book-value-start-land-buildings'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Plant & machinery)</span>
+                {{ data['net-book-value-start-plant-machinery'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Office equipment)</span>
+                {{ data['net-book-value-start-office-equipment'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(Total)</span>
+                {{ data['net-book-value-start-total'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Tangible assets note) Net book value at 31 March 2017</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        {% if data['small-full-tangible-note-additional-info'] != '' %}
+
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Additional information</dt>
+              <dd class="app-check-your-answers__answer">{{ data['small-full-tangible-note-additional-info'] }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Debtors after more than one year</span></a>
+              </dd>
+            </div>
+          </dl>
+        {% endif %}
+
       </div>
-    </dl>
+      <!--cya-small-full-tangible-assets-note-->
 
+    {% endif %}
 
-    <div class="accounts-row-spacer">
-      <input type="submit" class="button" value="Continue" id="">
-    </div>
+    {% if data['stocks-current'] != '' or data['stocks-previous'] != '' %}
+
+      <div id="cya-small-full-stocks-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Stocks</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+
+          {% if data['stocks-stocks-current'] != '' or data['stocks-stocks-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Stocks</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['stocks-stocks-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['stocks-stocks-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Stocks note) Stocks</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['payment-on-account-current'] != '' or data['payment-on-account-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Payment on account</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['payment-on-account-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['payment-on-account-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Stocks note) Payment on account</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['total-stocks-current'] != '' or data['total-stocks-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Total</dt>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-stocks-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-stocks-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Stocks note) Total</span></a>
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+
+      </div>
+      <!--cya-small-full-stocks-note-->
+
+    {% endif %}
+
+    {% if data['debtors-current'] != '' or data['debtors-previous'] != '' %}
+
+      <div id="cya-small-full-debtors-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Debtors</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+
+          {% if data['trade-debtors-current'] != '' or data['trade-debtors-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Trade debtors</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['trade-debtors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['trade-debtors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Debtors note) Trade debtors</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['prepayments-and-accrued-income-current'] != '' or data['prepayments-and-accrued-income-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Prepayments and accrued income</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['prepayments-and-accrued-income-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['prepayments-and-accrued-income-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Debtors note) Prepayments and accrued income</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['other-debtors-current'] != '' or data['other-debtors-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Other debtors</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['other-debtors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['other-debtors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Debtors note) Other debtors</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['total-debtors-current'] != '' or data['total-debtors-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Total</dt>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-debtors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['total-debtors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Debtors note) Total</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['debtors-after-current'] != '' or data['debtors-after-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Debtors after more than one year</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['debtors-after-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['debtors-after-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Debtors note) Debtors after more than one year</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        {% if data['stocks-note-additional-info'] != '' %}
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Additional information</dt>
+              <dd class="app-check-your-answers__answer">{{ data['stocks-note-additional-info'] }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Debtors note) Additional information</span></a>
+              </dd>
+            </div>
+          </dl>
+        {% endif %}
+
+      </div>
+      <!--cya-small-full-debtors-note-->
+
+    {% endif %}
+
+    {% if data['creditors-amounts-falling-due-within-one-year-current'] != '' or data['creditors-amounts-falling-due-within-one-year-previous'] != '' %}
+
+      <div id="cya-small-full-creditors-amounts-falling-due-within-one-year-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Creditors - amounts falling due within one year</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+
+          {% if data['bank-loans-current'] != '' or data['bank-loans-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Bank loans and overdrafts</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['bank-loans-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['bank-loans-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Bank loans and overdrafts</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['finance-leases-current'] != '' or data['finance-leases-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Amounts due under finance leases and hire purchase contracts</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['finance-leases-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['finance-leases-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Amounts due under finance leases and hire purchase contracts</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['trade-creditors-current'] != '' or data['trade-creditors-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Trade creditors</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['trade-creditors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['trade-creditors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Trade creditors</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['social-security-current'] != '' or data['social-security-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Taxation and social security
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['social-security-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['social-security-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Taxation and social security
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['accruals-current'] != '' or data['accruals-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Accruals and deferred income</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['accruals-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['accruals-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Accruals and deferred income</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['other-creditors-current'] != '' or data['other-creditors-previou'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Other creditors</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['other-creditors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['other-creditors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Other creditors</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['within-one-year-total-current'] != '' or data['within-one-year-total-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Total</dt>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['within-one-year-total-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['within-one-year-total-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Total</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        {% if data['within-one-year-additional-info'] != '' %}
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Additional information</dt>
+              <dd class="app-check-your-answers__answer">{{ data['within-one-year-additional-info'] }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due within one year note) Debtors after more than one year</span></a>
+              </dd>
+            </div>
+          </dl>
+        {% endif %}
+
+      </div>
+      <!--cya-small-full-creditors-amounts-falling-due-within-one-year-note-->
+
+    {% endif %}
+
+    {% if data['creditors-amounts-falling-due-after-one-year-current'] != '' or data['creditors-amounts-falling-due-after-one-year-previous'] != '' %}
+
+      <div id="cya-small-full-creditors-amounts-falling-due-after-one-year-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Creditors - amounts falling due after one year</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+
+          {% if data['creditors-after-bank-loans-current'] != '' or data['creditors-after-bank-loans-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Bank loans and overdrafts</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['creditors-after-bank-loans-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['creditors-after-bank-loans-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due after one year note) Bank loans and overdrafts</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['creditors-after-finance-leases-current'] != '' or data['creditors-after-finance-leases-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Amounts due under finance leases and hire purchase contracts</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['creditors-after-finance-leases-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['creditors-after-finance-leases-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due after one year note) Amounts due under finance leases and hire purchase contracts</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['creditors-after-other-creditors-current'] != '' or data['creditors-after-other-creditors-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Other creditors</dt>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['creditors-after-other-creditors-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['creditors-after-other-creditors-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due after one year note) Other creditors</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['creditors-after-one-year-total-current'] != '' or data['creditors-after-one-year-total-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Total</dt>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2018)</span>
+                {{ data['creditors-after-one-year-total-current'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                <span class="mobile-only-label">(2017)</span>
+                {{ data['creditors-after-one-year-total-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due after one year note) Total</span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        {% if data['creditors-after-after-one-year-additional-info'] != '' %}
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Additional information</dt>
+              <dd class="app-check-your-answers__answer">{{ data['creditors-after-after-one-year-additional-info'] }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Creditors - amounts falling due after one year note) Debtors after more than one year</span></a>
+              </dd>
+            </div>
+          </dl>
+        {% endif %}
+
+      </div>
+      <!--cya-small-full-creditors-amounts-falling-due-after-one-year-note-->
+
+    {% endif %}
+
+    {% if data['revaluation-reserve-current'] != '' or data['revaluation-reserve-previous'] != '' %}
+
+      <div id="cya-small-full-revaluation-reserve-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Revaluation reserve</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+          {% if data['revaluation-reserve-start'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">At 1 April 2017
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['revaluation-reserve-start'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) At 1 April 2017
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['surplus-deficit-previous'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Surplus or deficit after revaluation
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['surplus-deficit-previous'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) Surplus or deficit after revaluation
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['revaluation-reserve-end'] != '' %}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Balance at 31 March 2017</dt>
+              <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
+                {{ data['revaluation-reserve-end'] | displayPound }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) Balance at 31 March 2017</span></a>
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+
+        {% if data['revaluation-reserve-note-additional-info'] != '' %}
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Additional information</dt>
+              <dd class="app-check-your-answers__answer">{{ data['revaluation-reserve-note-additional-info'] }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Revaluation reserve note) Debtors after more than one year</span></a>
+              </dd>
+            </div>
+          </dl>
+        {% endif %}
+
+      </div>
+      <!--cya-small-full-revaluation reserve-note-->
+
+    {% endif %}
+
+    {% if (data['employeesnoteyesno'] == "yes") %}
+
+      <div id="cya-small-full-employees-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Employees</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question"></dt>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2018</dd>
+            <dd class="app-check-your-answers__answer govuk-heading-s">2017</dd>
+            <dd class="app-check-your-answers__change"></dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">Average number of employees</dt>
+            <dd class="app-check-your-answers__answer">
+              <span class="mobile-only-label">(2018)</span>
+              {{ data['average-number-of-employees-current'] }}</dd>
+            <dd class="app-check-your-answers__answer">
+              <span class="mobile-only-label">(2017)</span>
+              {{ data['average-number-of-employees-previous'] }}</dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Employees note) Average number of employees</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        {% if data['employees-note-additional-info'] != '' %}
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">Additional information</dt>
+              <dd class="app-check-your-answers__answer">{{ data['employees-note-additional-info'] }}</dd>
+              <dd class="app-check-your-answers__change">
+                <a href="javascript:void(0)">Change<span class="govuk-visually-hidden">(Employees note) Additional information</span></a>
+              </dd>
+            </div>
+          </dl>
+        {% endif %}
+
+      </div>
+      <!--cya-small-full-employees-note-->
+
+    {% endif %}
+
+    {% if (data['fixedassetsinvestmentsyesno'] == "yes") %}
+
+      <div id="cya-small-full-fixed-assets-investments-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Fixed assets investments</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['small-full-fixed-assets-investments-note'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  fixed assets investments note</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      fixed assets investments note</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete fixed assets investments note? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    fixed assets investments note</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    fixed assets investments note</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+        </dl>
+
+      </div>
+      <!--cya-small-full-fixed-assets-investments-note-->
+
+    {% endif %}
+
+    {% if (data['currentassetsinvestmentsyesno'] == "yes") %}
+
+      <div id="cya-small-full-current-assets-investments-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Current assets investments</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['small-full-current-assets-investments-note'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  current assets investments note</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      current assets investments note</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete current assets investments note? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    current assets investments note</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    current assets investments note</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+        </dl>
+
+      </div>
+      <!--cya-small-full-current-assets-investments-note-->
+
+    {% endif %}
+
+    {% if (data['financialcommitments'] == "yes") %}
+
+      <div id="cya-small-full-financial-commitments-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Financial commitments</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['small-full-financial-commitments-note'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  financial commitments note</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      financial commitments note</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete financial commitments note? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    financial commitments note</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    financial commitments note</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+        </dl>
+
+      </div>
+      <!--cya-small-full-financial-commitments-note-->
+
+    {% endif %}
+
+    {% if (data['loanstodirectors'] == "yes") %}
+
+      <div id="cya-loans-to-directors-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Loans to directors</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['loan-1-director'] }}</dt>
+            <dt class="app-check-your-answers__answer">{{ data['loan-1-description'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  First loan to director note</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      First loan to director note</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete this loans to directors note? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    First loan to director note</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    First loan to director note</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+
+        </dl>
+
+      </div>
+      <!--cya-loans-to-directors-note-->
+
+    {% endif %}
+
+    {% if (data['changesinpresentation'] == "yes") %}
+
+      <div id="cya-small-full-changes-in-presentation-and-prior-period-adjustment-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Changes in presentation and prior period adjustments</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['small-full-changes-in-presentation-note'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  changes in presentation and prior period adjustments note</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      changes in presentation and prior period adjustments note</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete financial commitments note? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    changes in presentation and prior period adjustments note</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    changes in presentation and prior period adjustments note</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+        </dl>
+
+      </div>
+      <!--cya-small-full-changes-in-presentation-and-prior-period-adjustment-note-->
+
+    {% endif %}
+
+    {% if (data['relatedtransactions'] == "yes") %}
+
+      <div id="cya-related-party-transactions-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Related party transactions</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['transaction-1-director'] }}</dt>
+            <dt class="app-check-your-answers__answer">{{ data['transaction-1-description'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  First related party transaction note</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      First related party transaction note</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete this related party transaction note? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    First related party transaction note</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    First related party transaction note</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+
+        </dl>
+
+      </div>
+      <!--cya-related-party-transactions-note-->
+
+    {% endif %}
+
+    {% if (data['postbalancesheetevents'] == "yes") %}
+
+      <div id="cya-small-full-post-balance-sheet-events-note">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Post balance sheet events</h2>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">{{ data['small-full-post-balance-sheet-events-note'] }}</dt>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  Post balance sheet events</span>
+              </a>
+              <p class="govuk-!-margin-top-1">
+                <span id="delete-summary">
+                  <a href="javascript:void(0)" class="" id="content-delete">Delete
+                    <span class="govuk-visually-hidden">
+                      Post balance sheet events</span></a>
+                </span>
+              </p>
+            </dd>
+          </div>
+          <div id="content-delete-warning" style="display:none;">
+            <div class="govuk-error-summary" id="delete-summary">
+              <p class="govuk-!-font-weight-bold">Are you sure you want to delete post balance sheet events? This cannot be undone.</p>
+              <p>
+                <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
+                  <span class="govuk-visually-hidden">
+                    post balance sheet events</span></a>
+
+                <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
+                    post balance sheet events</span></a>
+              </p>
+            </div>
+            <!--delete-summary-->
+          </div>
+          <!--content-delete-warning-->
+        </dl>
+
+      </div>
+      <!--cya-small-full-post-balance-sheet-events-note-->
+
+    {% endif %}
+
+    {{ govukButton({
+              text: "Continue"
+            }) }}
   </form>
-  <p>
-    <a href="/small-full/small-full-check-before-you-submit-full-tangible" style="float:right; color: #DEE0E2; font-size:14px;">Including full tangible</a>
-  </p>
 
 </main>
+</div>
+<!---govuk-width-container-->
 
 {% endblock %}

@@ -1,8 +1,8 @@
-{% extends "layout-chs.html" %} {% block page_title %} Choose payment type {% endblock %} {% block proposition_header %}
+{% extends "layout.html" %} {% block pageTitle %} Choose payment type {% endblock %} {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block header_class %}
 <!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% endblock %} {% block main %}
 
 
 
@@ -23,7 +23,7 @@
 
 
     <header>
-      <h1 id="page-header" class="heading-large">Choose payment type</h1>
+      <h1 id="page-header" class="govuk-heading-l">Choose payment type</h1>
     </header>
 
 
@@ -42,11 +42,11 @@
 
           <label class="block-label selection-button-radio" for="choosepaymentcard">
                         <input id="choosepaymentcard" type="radio" name="choosepayment" value="card">
-                        Credit or debit card<span class="form-hint">Payment is taken on submission</span>
+                        Credit or debit card<span class="govuk-hint">Payment is taken on submission</span>
                       </label>
           <label class="block-label selection-button-radio" for="choosepaymentaccount" data-target="choosepaymentaccount-reveal">
                         <input id="choosepaymentaccount" type="radio" name="choosepayment" value="onlineaccounts">
-                      Companies House online filing account<span class="form-hint">Payment is debited when you receive email confirmation of accepted submission</span>
+                      Companies House online filing account<span class="govuk-hint">Payment is debited when you receive email confirmation of accepted submission</span>
                       </label>
 
 

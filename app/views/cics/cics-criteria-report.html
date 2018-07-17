@@ -1,56 +1,62 @@
-{% extends "layout-chs.html" %} {% block page_title %} Directors’ report {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Directors' report
+{% endblock %}
+{% block main %}
 
-<main id="content" role="main">
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-  {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+    <main class="govuk-main-wrapper">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-  <div class="text">
+          <form action="/cics/cics-criteria-profit" method="get" class="form">
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "criteriareport",
+        name: "criteriareport",
+        fieldset: {
+          legend: {
+            text: "Do you want to file a directors’ report?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Currently, you can’t use this service to file a directors’ report."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
-    <header>
-      <h1 id="page-header" class="heading-large">Do you want to file a directors’ report?</h1>
-    </header>
-
-    <form action="/cics/cics-criteria-profit" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error="Please confirm if you want to file a directors’ report?">
-        <legend class="visually-hidden">Do you want to file a directors’ report?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="criteriareportyes">
-          <input id="criteriareportyes" type="radio" name="criteriareport" value="yes">
-          Yes
-          </label>
-          <label class="block-label selection-button-radio" for="criteriareportno">
-          <input id="criteriareportno" type="radio" name="criteriareport" value="no">
-          No
-          </label>
+            {{ govukButton({
+        text: "Continue"
+      }) }}
+          </form>
 
         </div>
-      </fieldset>
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Continue">
+        <!--govuk-grid-row-->
       </div>
-    </form>
+      <!--govuk-grid-column-two-thirds-->
 
+    </main>
   </div>
-  <!--text-->
-
-</main>
+  <!---govuk-width-container-->
 
 {% endblock %}

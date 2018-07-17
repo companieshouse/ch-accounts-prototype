@@ -1,79 +1,52 @@
-{% extends "layout-chs.html" %} {% block page_title %} What is the company number? {% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %} What is the company number? {% endblock %}
+{% block main %}
 
-
-
-
-
-
-<main id="content" role="main" class="search">
-
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+  <main class="govuk-main-wrapper">
 
-  <div class="text">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-
-    <header>
-      <h1 id="page-header" class="heading-large">What is the company number?</h1>
-    </header>
-
-
-    <!--  <h2 class="heading-medium">Where was the company registered?</h2>-->
-
-    <form action="/cics/cics-company-number-confirm" method="get" class="form">
-      <!--  <div class="form-group">
-      <fieldset>
-
-        <legend class="visually-hidden">Where was the company registered?</legend>
-
-        <label for="radio-1" class="block-label selection-button-radio">
-              <input id="radio-1" type="radio" name="radio-group" value="England/Wales">
-England/Wales</label>
+        <form action="/cics/cics-company-number-confirm" method="post">
 
 
+    {{ govukInput({
+      label: {
+        text: "What is the company number?",
+        classes: "govuk-label--xl"
+      },
+      hint: {
+        text: "This is the 8-character reference issued by Companies House when the company was set up."
+      },
+      classes: "govuk-input--width-10",
+      id: "company-number",
+      name: "company-number"
+    }) }}
 
-        <label for="radio-2" class="block-label selection-button-radio">
-            <input id="radio-2" type="radio" name="radio-group" value="Scotland">Scotland</label>
-
-
-        <label for="radio-3" class="block-label selection-button-radio">
-              <input id="radio-3" type="radio" name="radio-group" value="Northern Ireland">
-              Northern Ireland</label>
-
-
-      </fieldset>
-    </div>-->
+    {{ govukDetails({
+  summaryText: "Help with company number",
+  text: "A company number is a unique number issued by Companies House when a limited company is set up. Your company number has 8 numbers, or 2 letters followed by 6 numbers. You can find this by using the"
+}) }}
 
 
 
-      <div class="form-group">
-        <label class=" visuallyhidden" for="co-num">What's the company number?</label>
-        <p class="form-hint">This is the 8-character reference issued by Companies House when the company was set up.</p>
-
-        <input type="numeric" class="form-control" maxlength="8" value="" id="co-num" name="co-num" autocomplete="off">
-
-      </div>
-
-      <details>
-
-        <summary><span class="summary">Help with company number</span></summary>
-        <div class="panel panel-border-narrow">
-          <p>A company number is a unique number issued by Companies House when a limited company is set up. Your company number has 8 numbers, or 2 letters followed by 6 numbers. You can find this by using the <a href="https://beta.companieshouse.gov.uk/"
-              target="_blank">Companies House service</a>.</p>
-        </div>
-
-      </details>
-
-      <br />
-      <div class="form-group">
-        <a href="/cics/cics-company-number-confirm" class="button">Continue</a>
-      </div>
-      <input type="hidden" value="" id="request" name="request">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
     </form>
 
-  </div>
-  <!-- text-->
+</div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
+
 </main>
+</div><!---govuk-width-container-->
+
 
 {% endblock %}

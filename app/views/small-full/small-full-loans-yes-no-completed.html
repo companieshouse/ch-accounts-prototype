@@ -1,10 +1,10 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Balance sheet notes - Loans to directors
 {% endblock %}
 
-{% block content %}
+{% block main %}
 
 <style type="text/css">
 .left-indent {margin-left:3em}
@@ -31,7 +31,7 @@ Balance sheet notes - Loans to directors
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
+    <h1 class="govuk-heading-l"><span class="circle circle-step-large">5</span>
       Balance sheet notes
       <span class="circle-subheading">Loans to directors</span>
     </h1>
@@ -43,11 +43,11 @@ Balance sheet notes - Loans to directors
 
       <form action="/small-full/small-full-loans-yes-no-2" method="get" class="form">
           <div class="text">
-                 <p class="heading-medium">Do your prepared accounts include any 'loans to directors' notes?<span class="form-hint"></span></p>
+                 <p class="govuk-heading-m">Do your prepared accounts include any 'loans to directors' notes?<span class="govuk-hint"></span></p>
 
                  <details class="form-group" role="group">
                    <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-                   <div class="panel panel-border-narrow form-hint" id="details-content-0" aria-hidden="true">
+                   <div class="panel panel-border-narrow govuk-hint" id="details-content-0" aria-hidden="true">
                      <p>The disclosure of any loans with your company's directors, such as advances and credits, or loans guaranteed by a director.</p>
                      <p>Details of any other elements that support the understanding of the financial statements should be provided as additional information. For example, the rate of interest on advances and details of any guarantees given by the company on behalf of a director.</p>
                  </div>
@@ -83,9 +83,9 @@ Balance sheet notes - Loans to directors
                  </div>
 
 
-          <h2 class="heading-large">First loan</h2>
+          <h2 class="govuk-heading-l">First loan</h2>
 
-                      <h3 class="heading-medium">Name of director receiving advance or credit</h3>
+                      <h3 class="govuk-heading-m">Name of director receiving advance or credit</h3>
 
 
                       <div class="form-group">
@@ -107,16 +107,16 @@ Balance sheet notes - Loans to directors
                       </div>
 
                       <br />
-                      <h3 class="heading-medium">Description of the loan</h3>
+                      <h3 class="govuk-heading-m">Description of the loan</h3>
 
-                      <p class="text form-hint">A brief description of the loan, for example, an advance or loan for a car.</p>
+                      <p class="text govuk-hint">A brief description of the loan, for example, an advance or loan for a car.</p>
 
                       <textarea rows="5" class="form-control text" id="textarea" type="text">Short term loan</textarea>
 
 
 
 
-                    <h3 class="heading-medium">Breakdown of the loan</h3>
+                    <h3 class="govuk-heading-m">Breakdown of the loan</h3>
 
                       <!--Start balance at start-->
 
@@ -125,7 +125,7 @@ Balance sheet notes - Loans to directors
                           &nbsp;
                         </div>
                         <div class="column-quarter">
-                          <h2 class="heading-small">£</h2>
+                          <h2 class="govuk-heading-s">£</h2>
                         </div>
                       </div>
 

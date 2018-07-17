@@ -1,155 +1,102 @@
-{% extends "layout-chs.html" %} {% block page_title %} Approval {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Approve your accounts
+{% endblock %}
+{% block main %}
 
-<script>
-  $(document).ready(function() {
-    $("a.PDF").addClass("hidden");
-    $("a.pop").removeClass("hidden");
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-  });
-</script>
-<script>
-  function openWin() {
-    window.open("/public/pdf/abridged-accounts-sample.pdf", "_blank", "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=500, top=500, left=200");
-  }
-</script>
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <form action="/accounts/accounts-payment" method="get" class="form">
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            {% set myHTML %}
+            <p class="govuk-hint">This is the date the accounts were approved by the director.<br/>
+              For example, 31 3 2017</p>
+            {% endset -%}
 
-<main id="content" role="main">
+            {% call govukFieldset({
+  legend: {
+    text: "Approve your accounts",
+    classes: "govuk-fieldset__legend--l"
+    }
+    }) %}
 
-  {% include "includes/phase_banner_beta.html" %}
+            {{ govukRadios({
+idPrefix: "director-approved-accounts",
+name: "director-approved-accounts",
+fieldset: {
+legend: {
+text: " Which director approved the accounts? ",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m"
+}
+},
+hint: {
+text: "If the company has two or more directors, give the name of the director acting on their behalf."
+},
+items: [
+{
+value: "john-smith",
+text: "John Smith"
+},
+{
+value: "jane-smith",
+text: "Jane Smith"
+}
+]
+}) }}
+            <!-- {{ govukInput({ label: { html: 'Which director approved the accounts?', classes: "govuk-label--m" }, hint: { text: "If the company has two or more directors, give the name of the director acting on their behalf." }, id: "address-line-1", name:
+            "address-line-1" }) }}-->
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+            {{ govukDateInput({
+    id: "dob",
+    name: "dob",
+    fieldset: {
+      legend: {
+        text: "When were the accounts approved?",
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+        html: myHTML
+    },
+    items: [
+      {
+        name: "day"
+      },
+      {
+        name: "month"
+      },
+      {
+        name: "year"
+      }
+    ]
+  }) }}
+            {% endcall %}
 
+            {{ govukButton({
+        text: "Save and continue to payment"
+      }) }}
+          </form>
 
-
-  <div class="text">
-
-    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
-
-
-
-    <form action="/accounts/accounts-payment" method="get" class="form">
-
-
-      <h1 class="heading-large"><!--<span class="circle circle-step-large">5</span>--> Approve your accounts</h1>
-
-
-
-
-
-      <div class="">
-
-
-        <h2 class="heading-medium">Which director approved the accounts?</h2>
-        <p class="form-hint">If the company has two or more directors, give the name of the director acting on their behalf.</p>
-
-        <div class="form-group">
-          <fieldset data-error=" You need to provide the name of a director">
-            <legend class="visuallyhidden">Who approved the accounts?</legend>
-
-            <label class="form-label visuallyhidden" for="name">Who approved the accounts?</label>
-            <input class="form-control" id="name" name="directorName" type="text" style="width:100%;">
-            <!-- <label class="block-label selection-button-radio" for="john-smith">
-                      <input type="radio" id="john-smith" value="john-smith" name="name-of-approver">
-                      John Smith
-                    </label>
-                    <label class="block-label selection-button-radio" for="david-smith">
-                      <input type="radio" id="david-smith" value="david-smith" name="name-of-approver">
-                      David Smith
-                    </label>-->
-
-          </fieldset>
         </div>
-
-
-
-
-
-        <h2 class="heading-medium">When were the accounts approved?</h2>
-
-
-        <fieldset>
-
-          <legend class="visuallyhidden">When were the accounts approved?</legend>
-
-
-          <div class="form-date">
-            <p class="form-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2017</p>
-
-            <div class="form-group form-group-day">
-              <label for="dob-day">Day</label>
-              <input class="form-control" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-            </div>
-
-            <div class="form-group form-group-month">
-              <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" min="0" max="12">
-            </div>
-
-            <div class="form-group form-group-year">
-              <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" min="0" max="2016">
-            </div>
-          </div>
-
-        </fieldset>
-
-        <p>&nbsp;</p>
-
-
-
-
-        <!--<h2 class="heading-medium">View your accounts before submitting</h2>-->
-
-        <!--  <a href="/public/pdf/small-full-accounts-sample.pdf" download="/public/pdf/small-full-accounts-sample.pdf">View your draft accounts</a>
-        <a id="" href="javascript:void(0)" onclick="openWin()" class="pop hidden">Save or print a copy of your accounts<span class="visuallyhidden"> (Opens PDF in new window)</span</a>-->
-        <div class="panel panel-border-wide">
-          <p><a id="" href="/public/pdf/cics-sample.pdf" class="PDF" target="_blank">Save or print a copy of your CIC report and accounts<span class="visuallyhidden"> (Opens PDF in new window)</span></a>
-            <span class="form-hint">(Opens in new tab/window)</span></p>
-        </div>
-
-
-
-
-
-        <!--  <h2 class="heading-medium">Submit your full accounts</h2>
-      <p class="text">By submitting these accounts, you’re confirming that to the best of your knowledge, the details provided are correct.</p>
-    -->
-        <div class="form-group">
-          <input type="submit" class="button" value="Save and continue to payment">
-        </div>
-        <!--form-group-->
-
+        <!--govuk-grid-row-->
       </div>
-      <!--left-indent-->
+      <!--govuk-grid-column-two-thirds-->
 
-    </form>
-
-
-
-
-
-
+    </main>
   </div>
-  <!-- text-->
-
-</main>
+  <!---govuk-width-container-->
 
 {% endblock %}

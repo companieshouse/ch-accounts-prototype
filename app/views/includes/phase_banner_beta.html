@@ -1,6 +1,6 @@
-<div class="phase-banner-beta">
-  <p>
-    <strong class="phase-tag">BETA</strong>
-    <span>This is a trial service. Help us improve it by <a href="javascript:void(0)"><span class="visuallyhidden">This is a new service. Help us improve it by </span>completing our quick survey</a>.</span>
-  </p>
-</div>
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a trial service. Help us improve it by <a href="javascript:void(0)" class="govuk-link"><span class="govuk-visually-hidden">This is a new service. Help us improve it by </span>completing our quick survey</a>'
+}) }}

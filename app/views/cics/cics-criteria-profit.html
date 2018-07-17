@@ -1,57 +1,62 @@
-{% extends "layout-chs.html" %} {% block page_title %} Profit and loss account {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Profit and loss account
+{% endblock %}
+{% block main %}
 
-<main id="content" role="main">
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-  {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+    <main class="govuk-main-wrapper">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/cics/general-description" method="get" class="form">
 
-  <div class="text">
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "criteriaprofit",
+        name: "criteriaprofit",
+        fieldset: {
+          legend: {
+            text: "Do you want to file a profit and loss account (income statement)?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Currently, you can’t use this service to file a profit and loss account."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
-    <header>
-      <h1 id="page-header" class="heading-large">Do you want to file a profit and loss account?</h1>
-    </header>
-
-    <form action="/cics/cics-save-info" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error="Please confirm if your want to file a profit and loss account?">
-        <legend class="visually-hidden">Do your want to file a profit and loss account?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="criteriaprofityes">
-          <input id="criteriaprofityes" type="radio" name="criteriaprofit" value="Yes">
-          Yes
-          </label>
-          <label class="block-label selection-button-radio" for="criteriaprofitno">
-          <input id="criteriaprofitno" type="radio" name="criteriaprofit" value="No">
-          No
-          </label>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </form>
 
         </div>
-      </fieldset>
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Continue">
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
-    </form>
-
+    </main>
   </div>
-  <!--text-->
-
-</main>
+  <!---govuk-width-container-->
 
 {% endblock %}

@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Example - Forms
 {% endblock %}
 
-{% block content %}
+{% block main %}
 <main id="content" role="main">
 
   {% include "includes/breadcrumb_examples.html" %}
@@ -18,7 +18,7 @@
     <!-- Full name -->
     <div class="form-group">
       <label class="form-label-bold" for="full-name">Full name</label>
-      <p class="form-hint">As shown on your birth certificate or passport</p>
+      <p class="govuk-hint">As shown on your birth certificate or passport</p>
       <input type="text" class="form-control" id="full-name">
     </div>
 
@@ -26,7 +26,7 @@
     <div class="form-group">
       <label class="form-label-bold" for="ni-number">
         National Insurance number
-        <span class="form-hint">
+        <span class="govuk-hint">
           It's on your National Insurance card, benefit letter, payslip or P60.
           <br>
           For example, 'VO 12 34 56 D'.
@@ -42,7 +42,7 @@
 
         <div class="form-date">
 
-          <p class="form-hint">For example, 31 3 1980</p>
+          <p class="govuk-hint">For example, 31 3 1980</p>
 
           <div class="form-group form-group-day">
             <label for="dob-day">Day</label>

@@ -1,72 +1,60 @@
-{% extends "layout-chs.html" %} {% block page_title %} Balance sheet notes - Post balance sheet events {% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Do your prepared accounts include a 'post balance sheet events' note?
+{% endblock %}
+{% block main %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
-  }
-</style>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-<main id="content" role="main" class="two-column-accounts">
-  {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <form action="/small-full/small-full-post-balance-sheet-events-note" method="get" class="form">
 
+            {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "postbalancesheetevents",
+        name: "postbalancesheetevents",
+        fieldset: {
+          legend: {
+            text: "Do your prepared accounts include a 'post balance sheet events' note? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
 
-
-  <div class="text">
-    <h1 class="heading-large">
-Do your prepared accounts include a 'post balance sheet events' note?
-  </h1>
-
-
-
-    <form action="/small-full/small-full-check-before-you-submit" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error=" Please confirm if you want to include a 'post balance sheet events' note">
-        <legend class="visually-hidden">Do your prepared accounts include a 'post balance sheet events' note?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="posteventsnoteyes" data-target="posteventsnoteyes-reveal">
-                    <input id="posteventsnoteyes" name="posteventsnoteyn" value="Yes" aria-controls="posteventsnoteyes-reveal" type="radio">
-                    Yes
-                  </label>
-          <label class="block-label selection-button-radio" for="posteventsnoteno">
-                    <input id="posteventsnoteno" name="posteventsnoteyn" value="No" type="radio">
-                    No
-                    </label>
         </div>
-        <!--form-group-->
-
-      </fieldset>
-
-
-
-      <div class="panel panel-border-narrow js-hidden" id="posteventsnoteyes-reveal">
-        <label for="textarea" class="heading-medium">Enter your 'post balance sheet events' note</label>
-        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+        <!--govuk-grid-row-->
       </div>
-      <!--posteventsnoteyes-reveal-->
+      <!--govuk-grid-column-two-thirds-->
 
-
-
-      <input type="submit" class="button" value="Save and continue" id="">
-
-    </form>
+    </main>
   </div>
-  <!--text-->
+  <!---govuk-width-container-->
 
-
-
-</main>
 {% endblock %}

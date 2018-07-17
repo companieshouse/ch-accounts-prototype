@@ -1,33 +1,24 @@
-{% extends "layout-chs.html" %} {% block page_title %} Community Interest Company annual report - Directors' remuneration {% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %} Was directors' remuneration received? {% endblock %}
+{% block main %}
 
-<style type="text/css">
-  .left-indent {
-    margin-left: 3em
-  }
-</style>
-
-<main id="content" role="main" class="two-column-accounts">
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
-
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
 
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+  <main class="govuk-main-wrapper">
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-  <div class="text">
-    <h1 class="heading-large">
-      <!--<span class="circle-subheading text">CIC report</span>-->
+    <h1 class="govuk-heading-l">
       Was directors' remuneration received?
     </h1>
 
@@ -36,39 +27,46 @@
     <form action="/cics/directors-remuneration-yes" method="get" class="form">
 
       <p>Directors' remuneration is any money paid to the CIC director(s). This includes their usual pay, as well as other benefits.</p>
-      <fieldset class="inline" data-required="" data-error="Please confirm directors' remuneration was recieved">
-        <legend class="visuallyhidden">Was directors' remuneration received?</legend>
-        <div class="form-group">
 
-          <label class="block-label selection-button-radio" for="directorsremunerationyes">
-                    <input id="directorsremunerationyes" name="directorsremunerationyn" value="Yes" type="radio" aria-controls="directorsremunerationyes-reveal">
-                    Yes
-                  </label>
-          <label class="block-label selection-button-radio" for="directorsremunerationno">
-                    <input id="directorsremunerationno" name="directorsremunerationyn" value="No" type="radio">
-                    No
-                    </label>
-        </div>
-        <!--form-group-->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "directorsremunerationyn",
+        name: "directorsremunerationyn",
+        fieldset: {
+          legend: {
+            text: "Was directors' remuneration received?",
+            classes: "govuk-visually-hidden"
+          }
+        },
 
-      </fieldset>
-
-
-
-
-
-
-
-
-
-
-      <input type="submit" class="button" value="Save and continue" id="">
-    </form>
-  </div>
-  <!--left-indent-->
-  </div>
-  <!--text-->
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
 
-</main>
-{% endblock %}
+
+
+
+
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+      </div><!--govuk-grid-row-->
+      </div><!--govuk-grid-column-two-thirds-->
+
+      </main>
+      </div><!---govuk-width-container-->
+
+
+      {% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Give details of any consultation with stakeholders {% endblock %}
+{% block main %}
+
+<div class="govuk-width-container">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/chs-user-menu-logged-in.html" %}
+
+
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+      Give details of any consultation with stakeholders
+    </h1>
+
+    <form action="/cics/directors-remuneration" method="get" class="form">
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          See an example
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>The company’s stakeholders are residents of and visitors to The Village, and local producers of food and drink products in the surrounding area. The directors of the company have lived in The Village for a number of years and developed the business
+               model for the shop based on their experience of talking to other residents.</p>
+             <p>We ask everyone using the shop for the first time to fill in a short questionnaire about their shopping habits. This has helped us to build up a profile of local consumers’ needs and what we can do to meet them more effectively. Our research
+               has enabled us to identify that there are about 120 households in the village without access to cars or where residents have impaired mobility, and a further 200 or so households who now use the shop for at least 40 per cent of their grocery
+               shopping. We encourage those working in the shop to pick up ideas for the business when talking to customers and we keep a “suggestions box” for customers to provide details of products which they would like to see stocked in the shop.</p>
+        </div>
+    </details>
+
+    {{ govukTextarea({
+      name: "cics-consultation-stakeholders",
+      id: "cics-consultation-stakeholders",
+      rows: "20",
+      label: {
+        text: "Give details of any consultation with stakeholders",
+        classes: "govuk-visually-hidden"
+      }
+    }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+</div><!--govuk-grid-row-->
+</div><!--govuk-grid-column-two-thirds-->
+
+</main>
+</div><!---govuk-width-container-->
+
+
+{% endblock %}

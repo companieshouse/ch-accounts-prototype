@@ -1,32 +1,60 @@
-{% extends "layout-chs.html" %} {% block page_title %} Filing accounts for A TEST CIC {% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Filing accounts or A TEST CIC
+{% endblock %}
+{% block main %}
 
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <h1 class="govuk-heading-l">Filing accounts for
+            <span class="uppercase">{{ data['company-name-for-testing'] }}</span></h1>
+          <p>Company number
+            <strong>{{ data['company-number'] }}</strong>
+          </p>
+          <p>Registered office address
+            <strong>{{ data['company-address-for-testing'] }}
+            </strong>
+          </p>
 
+          <div class="govuk-inset-text">
+            <p>Next accounts made up to
+              <strong>31 March 2018</strong><br/>due by
+              <strong>31 December 2018</strong>
+            </p>
+            <p>Last accounts made up to
+              <strong>31 March 2017</strong>
+            </p>
+          </div>
 
+          <form action="/chs/chs-login-page-cics-via-number" method="GET">
+            {{ govukButton({
+        text: "File CIC report and accounts for this company"
+      }) }}
+          </form>
 
+          <p>or,
+            <a href="javascript:history.back()">file for a different company</a>
+          </p>
+          <a href="/chs/chs-confirm-company-alternative-chs-search-not-yet" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Not yet</a>
+          <a href="/chs/chs-confirm-company-alternative-chs-search-cannot-file" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right; margin-right:20px; display:inline-block;">No</a>
 
-<main id="content" role="main" class="profile">
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-  {% include "includes/phase_banner_beta.html" %}
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
-  <div class="text">
-
-    <h1 class="heading-large">Filing accounts for A TEST CIC</h1>
-    <p>Company number <strong>01234567</strong></p>
-    <p>Registered office address <strong>1 Any Street, Cardiff, Wales, CF12 3AB </strong></p>
-    <div class="panel panel-border-wide">
-      <p>Next accounts made up to <strong>31 March 2018</strong><br />due by <strong>31 December 2018</strong> </p>
-      <p>Last accounts made up to <strong>31 March 2017</strong></p>
-    </div>
-
-    <p><a class="button" href="/chs/chs-login-page-cics-via-number">File CIC report and accounts for this company</a></p>
-    <p>or, <a href="javascript:history.back()">file for a different company</a></p>
-    <a href="/chs/chs-confirm-company-alternative-chs-search-not-yet" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Not yet</a>
-    <a href="/chs/chs-confirm-company-alternative-chs-search-cannot-file" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right; margin-right:20px; display:inline-block;">No</a>
-
+    </main>
   </div>
-</main>
+  <!---govuk-width-container-->
 
 {% endblock %}

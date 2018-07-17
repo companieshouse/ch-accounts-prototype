@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+{% block pageTitle %}Firstl loan to directors
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper two-column-accounts">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-loans-yes-no-2" method="get" class="form currency-included-within-inputs govuk-body">
+
+            <h1 class="govuk-heading-l">First loan to director</h1>
+
+            <div class="govuk-inset-text">
+              <p>Only provide the details for each individual loan to the director. You can report more loans for the same director or other directors later if you need to.</p>
+              <p>
+                <strong>You can report up to 20 loans.</strong>
+              </p>
+            </div>
+
+            {{ govukInput({
+            label: {
+              text: "Name of director receiving advance or credit",
+              classes: "govuk-label--s"
+            },
+            id: "loan-1-director",
+            name: "loan-1-director",
+            classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+            {{ govukTextarea({
+              name: "loan-1-description",
+              id: "loan-1-description",
+              label: {
+                text: "Description of the loan",
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: "A brief description of the loan, for example, an advance or loan for a car."
+              },
+              classes: "govuk-!-margin-bottom-9"
+
+          }) }}
+
+            <!--Start balance at start-->
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                Balance at 1 April 2017
+              </div>
+              <!--govuk-grid-column-one-half-->
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="loans-to-directors-balance-at-start">
+                    <span class="mobile-only-label">Balance at 1 April 2017</span>
+                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-start">
+                  </label>
+                </div>
+                <!--govuk-form-group-->
+              </div>
+              <!--govuk-grid-column-one-third-->
+            </div>
+            <!--govuk-grid-row-->
+            <!--End balance at start-->
+
+            <!--Start Advances or credits made -->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!-- <details> <summary><span class="summary">-->Advances or credits made
+                <!--</span></summary> <div class="panel panel-border-narrow"> <p>The amount of the advance or credit made to the director for this particular loan.</p> </div> </details>-->
+              </div>
+              <!--govuk-grid-column-one-half-->
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="loans-to-directors-advances-or-credits-made">
+                    <span class="mobile-only-label">Advances or credits made</span>
+                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-made">
+                  </label>
+                </div>
+                <!--govuk-form-group-->
+              </div>
+              <!--govuk-grid-column-one-third-->
+            </div>
+            <!--govuk-grid-row-->
+            <!--End Advances or credits made -->
+
+            <!--Start Advances or credits repaid-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                Advances or credits repaid
+              </div>
+              <!--govuk-grid-column-one-half-->
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="loans-to-directors-advances-or-credits-repaid">
+                    <span class="mobile-only-label">Advances or credits repaid</span>
+                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-repaid">
+                  </label>
+                </div>
+                <!--govuk-form-group-->
+              </div>
+              <!--govuk-grid-column-onethirdquarter-->
+            </div>
+            <!--govuk-grid-row-->
+            <!--End Advances or credits repaid-->
+
+            <!--Start balance at end-->
+            <div class="govuk-grid-row accounts-total">
+              <div class="govuk-grid-column-one-half">
+                Balance at 31 March 2018
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="loans-to-directors-balance-at-end">
+                    <span class="mobile-only-label">
+                      Balance at 31 March 2018</span>
+                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-end" readonly="readonly">
+                  </label>
+                </div>
+                <!--govuk-form-group-->
+              </div>
+              <!--govuk-grid-column-one-third-->
+            </div>
+            <!--govuk-grid-row-->
+            <!--End balance at end--->
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

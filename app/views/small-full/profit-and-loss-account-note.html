@@ -1,10 +1,10 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 Profit and loss account note
 {% endblock %}
 
-{% block content %}
+{% block main %}
 
 <style type="text/css">
 .left-indent {margin-left:3em}
@@ -31,7 +31,7 @@ Profit and loss account note
 
 
   <div class="text">
-    <h1 class="heading-xlarge"><span class="circle circle-step-large">2</span>
+    <h1 class="govuk-heading-l"><span class="circle circle-step-large">2</span>
       Profit and loss account
       <span class="circle-subheading">Note</span>
     </h1>
@@ -39,10 +39,10 @@ Profit and loss account note
 
 
     <div class="left-indent">
-        <h2 class="heading-medium">Do your prepared accounts include a 'profit and loss account' note?</h2>
+        <h2 class="govuk-heading-m">Do your prepared accounts include a 'profit and loss account' note?</h2>
         <details class="form-group">
           <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-          <div class="panel panel-border-narrow form-hint">
+          <div class="panel panel-border-narrow govuk-hint">
             <p>Use this note to record any exceptional or unexpected activities that impacted your profit and loss account, or any information to support your profit and loss activities.</p>
           </div>
         </details>
@@ -67,7 +67,7 @@ Profit and loss account note
 
 
             <div class="panel panel-border-narrow js-hidden" id="profitandlossaccountnotenoteyes-reveal">
-              <label for="textarea" class="heading-medium">Enter your 'profit and loss account' note</label>
+              <label for="textarea" class="govuk-heading-m">Enter your 'profit and loss account' note</label>
               <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
 
             </div><!--profitandlossaccountnotenoteyes-reveal-->

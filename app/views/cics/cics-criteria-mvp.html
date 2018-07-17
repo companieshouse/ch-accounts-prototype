@@ -1,64 +1,68 @@
-{% extends "layout-chs.html" %} {% block page_title %} Full accounts {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Do your prepared full accounts meet the criteria?
+{% endblock %}
+{% block main %}
 
-<main id="content" role="main">
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-  {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+    <main class="govuk-main-wrapper">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a> {% include 'includes/error.html' %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/cics/cics-criteria-audit" method="GET">
 
-  <div class="text">
+            <h1 class="govuk-heading-l">Do your prepared full accounts meet the criteria?</h1>
+            <p>Your full accounts must meet at least 2 of the following:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>turnover is not over £10.2 million</li>
+              <li>balance sheet total is not over £5.1 million</li>
+              <li>average number of employees is not over 50</li>
+            </ul>
 
-    <header>
-      <h1 id="page-header" class="heading-large">Do your prepared full accounts meet the criteria?</h1>
-    </header>
+            {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "cicsr1",
+          name: "cicsr1",
+          fieldset: {
+            legend: {
+              text: "Do your prepared full accounts meet the criteria?",
+              isPageHeading: true,
+              classes: "govuk-visually-hidden"
+            }
+          },
 
-    <p>Your full accounts must meet at least 2 of the following:</p>
-    <ul class="list list-bullet">
-      <li>turnover is not over £10.2 million</li>
-      <li>balance sheet total is not over £5.1 million</li>
-      <li>average number of employees is not over 50</li>
-    </ul>
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
-    <form action="/cics/cics-criteria-report" method="get" class="form">
-      <fieldset class="inline" data-required="" data-error="Please confirm if your prepared full accounts meet the criteria">
-        <legend class="visually-hidden">Do your prepared full accounts meet the criteria?</legend>
-        <div class="form-group">
-
-          <label class="block-label selection-button-radio" for="release1yes">
-                  <input id="release1yes" type="radio" name="cicsr1" value="Yes">
-                  Yes
-          </label>
-          <label class="block-label selection-button-radio" for="release1no">
-                  <input id="release1no" type="radio" name="cicsr1" value="No">
-                  No
-          </label>
+            {{ govukButton({
+          text: "Continue"
+        }) }}
+          </form>
 
         </div>
-      </fieldset>
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Continue">
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
+    </main>
   </div>
-  <!--text-->
-
-  </form>
-
-</main>
+  <!---govuk-width-container-->
 
 {% endblock %}

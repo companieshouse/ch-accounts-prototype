@@ -1,55 +1,66 @@
-{% extends "layout-chs.html" %} {% block page_title %} Sign in to Companies House {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Sign in to Companies House
+{% endblock %}
+{% block main %}
 
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/chs/chs-authenticate-page-cics-via-number" method="GET">
 
+            {% call govukFieldset({
+  legend: {
+    text: "Sign in to Companies House",
+    classes: "govuk-fieldset__legend--xl",
+    isPageHeading: true
+  }
+}) %}
 
+            {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "chs-email",
+    name: "chs-email"
+  }) }}
 
+            {{ govukInput({
+    label: {
+      text: "Password"
+    },
+    classes: "govuk-input--width-10",
+    id: "chs-password",
+    name: "chs-password",
+    type: "password"
+  }) }}
 
-<main id="content" role="main" class="search">
+            {% endcall %}
 
-  {% include "includes/phase_banner_beta.html" %}
+            {{ govukButton({
+    text: "Sign in"
+  }) }}
+          </form>
 
+          <p class="action-link">
+            <a class="button-link" id="register" href="javascript:void(0)">Register</a>
+          </p>
+          <p>
+            <a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a>
+          </p>
 
-
-  <header class="text">
-    <h1 id="page-header" class="heading-large">Sign in to Companies House</h1>
-  </header>
-
-  <!--<p class="warning-note warning-note-large text">Your existing WebFiling or WebCheck password will not work with this service, you will need to <a href="chs-register-page">register</a>.</p>-->
-
-  <form method="POST" action="/oauth2/user/signin" class="form " name="signin">
-    <fieldset>
-      <legend class="visuallyhidden">Sign in details</legend>
-
-      <div class="form-group ">
-        <label class="form-label" for="signin_email">Email address</label>
-        <input type="email" class="form-control" autocomplete="off" value="" id="signin_email" name="signin_email">
+        </div>
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
-      <div class="form-group">
-        <label class="form-label" for="choose-password">Password</label>
-        <span class="error-message" id="webfiling-password" style="display:none;  margin:0 0 0.7em;">Invalid email address or password, 4 attempts remain.</span>
-        <input type="password" class="form-control password" value="" id="choose-password" name="password" autocomplete="off">
-      </div>
-
-      <div class="form-group">
-        <a href="chs-authenticate-page-cics-via-number" class="button" id="submit">Sign in</a>
-      </div>
-
-      <div class="form-group">
-        <p class="action-link"><a class="button-link" id="register" href="javascript:void(0)">Register</a></p>
-        <input type="hidden" value="" id="request" name="request">
-        <p><a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a></p>
-      </div>
-
-    </fieldset>
-  </form>
-
-</main>
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

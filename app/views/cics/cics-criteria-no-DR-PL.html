@@ -1,34 +1,32 @@
-{% extends "layout-chs.html" %} {% block page_title %} You can’t file online yet {% endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %} You can't file online yet {% endblock %}
+{% block main %}
 
-<main id="content" role="main">
-
+<div class="govuk-width-container">
   {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/chs-user-menu-logged-in.html" %}
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+  <main class="govuk-main-wrapper">
 
-  <div class="text">
-
-    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
 
 
-    <h1 class="heading-large">You can’t file online yet</h1>
+    <h1 class="govuk-heading-l">You can’t file online yet</h1>
     <p>For now you can only file a 'small' or 'filleted' set of full accounts here.</p>
     <p>If you want to include a directors' report or profit and loss account, you need to <a href="/cics/cics-file-paper">file on paper</a>.</p>
 
+  </div><!--govuk-grid-row-->
+  </div><!--govuk-grid-column-two-thirds-->
 
-  </div>
-  <!-- text-->
+  </main>
+  </div><!---govuk-width-container-->
 
-</main>
 
-{% endblock %}
+  {% endblock %}

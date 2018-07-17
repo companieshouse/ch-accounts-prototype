@@ -1,6 +1,6 @@
-{% extends "layout-chs.html" %}
+{% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
   Approval
 {% endblock %}
 
@@ -12,7 +12,7 @@
   <!-- blank to remove the proposition header -->
 {% endblock %}
 
-{% block content %}
+{% block main %}
 
 <script>
   $(document).ready(function(){
@@ -58,7 +58,7 @@ function openWin() {
   <form action="/small-full/small-full-submission" method="get" class="form">
 
 
-      <h1 class="heading-xlarge"><span class="circle circle-step-large">7</span> Approve your accounts</h1>
+      <h1 class="govuk-heading-l"><span class="circle circle-step-large">7</span> Approve your accounts</h1>
 
 
 
@@ -67,8 +67,8 @@ function openWin() {
       <div class="left-indent">
 
 
-      <h2 class="heading-medium">Which director approved the accounts?</h2>
-      <p class="form-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
+      <h2 class="govuk-heading-m">Which director approved the accounts?</h2>
+      <p class="govuk-hint">If the company has two or more directors, you should select one director authorised to act on their behalf.</p>
 
       <div class="form-group">
               <fieldset data-required data-error=" You need to provide the name of a director">
@@ -92,7 +92,7 @@ function openWin() {
 
 
 
-      <h2 class="heading-medium">When were the accounts approved?</h2>
+      <h2 class="govuk-heading-m">When were the accounts approved?</h2>
 
 
       <fieldset >
@@ -101,7 +101,7 @@ function openWin() {
 
 
             <div class="form-date">
-              <p class="form-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2017</p>
+              <p class="govuk-hint" id="dob-hint">This is the date the accounts were approved by the director. For example, 31 3 2017</p>
 
               <div class="form-group form-group-day">
                 <label for="dob-day">Day</label>
@@ -126,20 +126,20 @@ function openWin() {
 
 
 
-<!--<h2 class="heading-medium">View your accounts before submitting</h2>-->
+<!--<h2 class="govuk-heading-m">View your accounts before submitting</h2>-->
 
     <!--  <a href="/public/pdf/small-full-accounts-sample.pdf" download="/public/pdf/small-full-accounts-sample.pdf">View your draft accounts</a>
         <a id="" href="javascript:void(0)" onclick="openWin()" class="pop hidden">Save or print a copy of your accounts<span class="visuallyhidden"> (Opens PDF in new window)</span</a>-->
     <div class="panel panel-border-wide">
       <p><a id="" href="/public/pdf/small-full-accounts-sample.pdf" class="PDF" target="_blank">Save or print a copy of your accounts<span class="visuallyhidden"> (Opens PDF in new window)</span></a>
-    <span class="form-hint">(Opens PDF in new window)</span></p>
+    <span class="govuk-hint">(Opens PDF in new window)</span></p>
     </div>
 
 
 
 
 
-      <h2 class="heading-medium">Submit your full accounts</h2>
+      <h2 class="govuk-heading-m">Submit your full accounts</h2>
       <p class="text">By submitting these accounts, you’re confirming that to the best of your knowledge, the details provided are correct.</p>
       <div class="form-group">
         <input type="submit" class="button" value="Submit your full accounts">

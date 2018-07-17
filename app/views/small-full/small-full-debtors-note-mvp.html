@@ -1,8 +1,8 @@
-{% extends "layout-chs.html" %}
- {% block page_title %}
+{% extends "layout.html" %}
+ {% block pageTitle %}
  Debtors note
  {% endblock %}
-  {% block content %}
+  {% block main %}
 <main class="two-column-accounts" id="content" role="main">
 	{% include "includes/phase_banner_beta.html" %}
 	<nav class="content" role="navigation">
@@ -23,7 +23,7 @@
 			</li>
 		</ul>
 	</nav><a class="link-back" href="javascript:history.back()" id="back">Back</a>
-	<h1 class="heading-xlarge">
+	<h1 class="govuk-heading-l">
 		<span class="circle circle-step-large">3</span> Balance sheet notes <span class="circle-subheading" style="margin-left:1.5em;">Debtors</span>
 	</h1>
 	<div class="left-indent">
@@ -34,15 +34,15 @@
 		<form action="/" class="form" id="" method="post" name="">
 			<div class="grid-row" id="accounts-header">
 				<div class="column-half">
-					<h2 class="heading-medium" style="text-align:left;">
+					<h2 class="govuk-heading-m" style="text-align:left;">
 						Debtors
 					</h2><!-- To do - move this style into the SASS file-->
 				</div>
 				<div class="column-quarter">
-					<h2 class="heading-small">2018<br />£</h2>
+					<h2 class="govuk-heading-s">2018<br />£</h2>
 				</div>
 				<div class="column-quarter">
-					<h2 class="heading-small">2017<br />£</h2>
+					<h2 class="govuk-heading-s">2017<br />£</h2>
 				</div>
 			</div>
 
@@ -79,8 +79,8 @@
 							<span class="summary">Prepayments and accrued income</span>
 						</summary>
 						<div class="panel panel-border-narrow">
-							<p><span class="heading-small">Prepayments:</span> The amount you paid for goods and services that you hadn't received at the end of the period, for example, advance rent payments.</p>
-							<p><span class="heading-small">Accrued income:</span> The amount you've earned (excluding from debtors) but haven't received, for example, interest earned on a bond to be paid in the future.</p>
+							<p><span class="govuk-heading-s">Prepayments:</span> The amount you paid for goods and services that you hadn't received at the end of the period, for example, advance rent payments.</p>
+							<p><span class="govuk-heading-s">Accrued income:</span> The amount you've earned (excluding from debtors) but haven't received, for example, interest earned on a bond to be paid in the future.</p>
 						</div>
 					</details>
 				</div>
@@ -185,7 +185,7 @@
 				</summary>
 				<div class="panel panel-border-narrow">
 					<label class="visuallyhidden" for="textarea">Add additional information about your 'debtors' note?</label>
-          <span class="form-hint">Enter details of any other debtors information not already covered</span>
+          <span class="govuk-hint">Enter details of any other debtors information not already covered</span>
 					<textarea class="form-control" id="textarea" rows="10"></textarea>
 				</div>
 			</details>
