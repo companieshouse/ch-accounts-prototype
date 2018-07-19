@@ -19,27 +19,29 @@
           <form action="/small-full/small-full-related-transactions-yes-1" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "relatedtransactions",
-        name: "relatedtransactions",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include any 'related party transactions' notes?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "relatedtransactions",
+                name: "relatedtransactions",
+                fieldset: {
+                  legend: {
+                    text: "Do your prepared accounts include any 'related party transactions' notes?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('relatedtransactions','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('relatedtransactions','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

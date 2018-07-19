@@ -22,13 +22,8 @@
             {{ govukTextarea({
             name: "small-full-turnover-policy",
             id: "small-full-turnover-policy",
-            label: {
-              text: "Enter your 'turnover' policy",
-              isPageHeading: true,
-              classes: "govuk-label--l"
-            }
-          }) }}
-
+            value: data['small-full-turnover-policy'],
+            label: { text: "Enter your 'turnover' policy", isPageHeading: true, classes: "govuk-label--l" } }) }}
             {{ govukButton({
               text: "Save and continue"
             }) }}

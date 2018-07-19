@@ -19,27 +19,29 @@
           <form action="/small-full/small-full-loans-additional-info-yes-no" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "anyotherloanstodirectors1",
-        name: "anyotherloanstodirectors1",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include any other 'loans to directors' notes? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "anyotherloanstodirectors1",
+                name: "anyotherloanstodirectors1",
+                fieldset: {
+                  legend: {
+                    text: "Do your prepared accounts include any other 'loans to directors' notes? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('anyotherloanstodirectors1','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('anyotherloanstodirectors1','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

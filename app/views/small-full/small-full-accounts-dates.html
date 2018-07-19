@@ -28,31 +28,33 @@
             <p class="govuk-hint">This should match the dates on your prepared accounts.</p>
 
             {{ govukRadios({
-  classes: "govuk-radios--inline",
-  idPrefix: "changecompanydates",
-  name: "changecompanydates",
-  fieldset: {
-    legend: {
-      text: "Do you want to change your company account dates?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m govuk-!-margin-top-6"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "changecompanydates",
+                name: "changecompanydates",
+                fieldset: {
+                  legend: {
+                    text: "Do you want to change your company account dates?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-top-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('changecompanydates','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('changecompanydates','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
-          text: "Save and continue"
-        }) }}
+              text: "Save and continue"
+            }) }}
           </form>
 
         </div>

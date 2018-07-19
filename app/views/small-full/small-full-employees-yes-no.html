@@ -23,27 +23,29 @@
           <form action="/small-full/small-full-employees-note" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "employeesnoteyesno",
-        name: "employeesnoteyesno",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include an 'employees' note?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                  classes: "govuk-radios--inline",
+                  idPrefix: "employeesnoteyesno",
+                  name: "employeesnoteyesno",
+                  fieldset: {
+                    legend: {
+                      text: "Do your prepared accounts include an 'employees' note?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      checked: checked('employeesnoteyesno','yes')
+                    },
+                    {
+                      value: "no",
+                      text: "No",
+                      checked: checked('employeesnoteyesno','no')
+                    }
+                  ]
+                }) }}
 
             {{ govukButton({
               text: "Save and continue"

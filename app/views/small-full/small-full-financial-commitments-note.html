@@ -22,14 +22,15 @@
           <form action="/small-full/small-full-loans-yes-no" method="get" class="form">
 
             {{ govukTextarea({
-  name: "small-full-financial-commitments-note",
-  id: "small-full-financial-commitments-note",
-  label: {
-    text: " Enter your 'financial commitments' note",
-    classes: "govuk-label--l"
-  }
+                name: "small-full-financial-commitments-note",
+                id: "small-full-financial-commitments-note",
+                value: data['small-full-financial-commitments-note'],
+                label: {
+                  text: " Enter your 'financial commitments' note",
+                  classes: "govuk-label--l"
+                }
 
-}) }}
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

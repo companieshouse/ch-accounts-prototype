@@ -20,32 +20,34 @@
 
           <form action="/small-full/small-full-valuation-policy" method="get" class="form">
             {{ govukRadios({
-classes: "govuk-radios--inline",
-idPrefix: "valuationinformationpolicy",
-name: "valuationinformationpolicy",
-fieldset: {
-  legend: {
-    text: "Do your prepared accounts include a 'valuation information' policy?",
-    isPageHeading: true,
-    classes: "govuk-fieldset__legend--l"
-  }
-},
+                classes: "govuk-radios--inline",
+                idPrefix: "valuationinformationpolicy",
+                name: "valuationinformationpolicy",
+                fieldset: {
+                  legend: {
+                    text: "Do your prepared accounts include a 'valuation information' policy?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
 
-items: [
-  {
-    value: "yes",
-    text: "Yes"
-  },
-  {
-    value: "no",
-    text: "No"
-  }
-]
-}) }}
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('valuationinformationpolicy','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('valuationinformationpolicy','no')
+                  }
+                ]
+                }) }}
 
             {{ govukButton({
-            text: "Save and continue"
-          }) }}
+                  text: "Save and continue"
+                }) }}
           </form>
 
         </div>

@@ -49,7 +49,7 @@
               <span class="currency-type">£</span>
               <label for="called-up-share-capital-not-paid-current">
                 <span class="mobile-only-label">Called up share capital not paid (2016)</span>
-                <input type="number" class="govuk-input" id="called-up-share-capital-not-paid-current" name="called-up-share-capital-not-paid-current">
+                <input type="number" class="govuk-input" id="called-up-share-capital-not-paid-current" name="called-up-share-capital-not-paid-current" value="{{ data['called-up-share-capital-not-paid-current'] }}">
               </label>
             </div>
           </div>
@@ -58,7 +58,7 @@
               <span class="currency-type">£</span>
               <label for="called-up-share-capital-not-paid-previous">
                 <span class="mobile-only-label">Called up share capital not paid (2015)</span>
-                <input type="number" class="govuk-input" id="called-up-share-capital-not-paid-previous" name="called-up-share-capital-not-paid-previous">
+                <input type="number" class="govuk-input" id="called-up-share-capital-not-paid-previous" name="called-up-share-capital-not-paid-previous" value="{{ data['called-up-share-capital-not-paid-previous'] }}">
               </label>
             </div>
           </div>
@@ -81,7 +81,7 @@
               <span class="currency-type">£</span>
               <label for="intangible-assets-current">
                 <span class="mobile-only-label">Intangible assets (2016)</span>
-                <input type="number" class="govuk-input" id="intangible-assets-current" name="intangible-assets-current">
+                <input type="number" class="govuk-input" id="intangible-assets-current" name="intangible-assets-current" value="{{ data['intangible-assets-current'] }}">
               </label>
             </div>
           </div>
@@ -90,7 +90,7 @@
               <span class="currency-type">£</span>
               <label for="intangible-assets-previous">
                 <span class="mobile-only-label">Intangible assets (2015)</span>
-                <input type="number" class="govuk-input" id="intangible-assets-previous" name="intangible-assets-previous">
+                <input type="number" class="govuk-input" id="intangible-assets-previous" name="intangible-assets-previous" value="{{ data['intangible-assets-previous'] }}">
               </label>
             </div>
           </div>
@@ -117,7 +117,7 @@
               <span class="currency-type">£</span>
               <label class="form-label" for="tangible-assets-current">
                 <span class="mobile-only-label">Tangible assets (2016)</span>
-                <input type="number" class="govuk-input" name="tangible-assets-current" id="tangible-assets-current" style="text-align:right;"><!-- changed type to text to get error validation (character) to work--></label>
+                <input type="number" class="govuk-input" name="tangible-assets-current" id="tangible-assets-current" value="{{ data['tangible-assets-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -125,7 +125,7 @@
               <span class="currency-type">£</span>
               <label class="form-label" for="tangible-assets-previous">
                 <span class="mobile-only-label">Tangible assets (2015)</span>
-                <input type="number" class="govuk-input" id="tangible-assets-previous" name="tangible-assets-previous">
+                <input type="number" class="govuk-input" id="tangible-assets-previous" name="tangible-assets-previous" value="{{ data['tangible-assets-previous'] }}">
               </label>
             </div>
           </div>
@@ -144,7 +144,7 @@
               <span class="currency-type">£</span>
               <label for="investments-fixed-assets-current">
                 <span class="mobile-only-label">Investments (2016)</span>
-                <input type="number" class="govuk-input" id="investments-fixed-assets-current" name="investments-fixed-assets-current">
+                <input type="number" class="govuk-input" id="investments-fixed-assets-current" name="investments-fixed-assets-current" value="{{ data['investments-fixed-assets-current'] }}">
               </label>
             </div>
           </div>
@@ -153,7 +153,7 @@
               <span class="currency-type">£</span>
               <label class="form-label" for="investments-fixed-assets-previous">
                 <span class="mobile-only-label">Investments (2015)</span>
-                <input type="number" class="govuk-input" id="investments-fixed-assets-previous" name="investments-fixed-assets-previous">
+                <input type="number" class="govuk-input" id="investments-fixed-assets-previous" name="investments-fixed-assets-previous" value="{{ data['investments-fixed-assets-previous'] }}">
               </label>
             </div>
           </div>
@@ -171,7 +171,7 @@
               <span class="currency-type">£</span>
               <label class="form-label-bold" for="total-fixed-assets-current">
                 <span class="mobile-only-label">Total fixed assets (2016)</span>
-                <input type="number" class="govuk-input" id="total-fixed-assets-current" name="total-fixed-assets-current" readonly="readonly">
+                <input type="number" class="govuk-input" id="total-fixed-assets-current" name="total-fixed-assets-current" readonly="readonly" value="{{ data['total-fixed-assets-current'] }}">
               </label>
             </div>
           </div>
@@ -180,7 +180,7 @@
               <span class="currency-type">£</span>
               <label class="form-label-bold" for="total-fixed-assets-previous">
                 <span class="mobile-only-label">Total fixed assets (2015)</span>
-                <input type="number" class="govuk-input" id="total-fixed-assets-previous" name="total-fixed-assets-previous" readonly="readonly">
+                <input type="number" class="govuk-input" id="total-fixed-assets-previous" name="total-fixed-assets-previous" readonly="readonly" value="{{ data['total-fixed-assets-previous'] }}">
               </label>
             </div>
           </div>
@@ -202,7 +202,7 @@
               <span class="currency-type">£</span>
               <label for="stocks-current">
                 <span class="mobile-only-label">Stocks (2016)</span>
-                <input type="number" class="govuk-input" id="stocks-current" name="stocks-current">
+                <input type="number" class="govuk-input" id="stocks-current" name="stocks-current" value="{{ data['stocks-current'] }}">
               </label>
             </div>
           </div>
@@ -211,7 +211,7 @@
               <span class="currency-type">£</span>
               <label for="stocks-current">
                 <span class="mobile-only-label">Stocks (2015)</span>
-                <input type="number" class="govuk-input" id="stocks-previous" name="stocks-previous">
+                <input type="number" class="govuk-input" id="stocks-previous" name="stocks-previous" value="{{ data['stocks-previous'] }}">
               </label>
             </div>
           </div>
@@ -231,7 +231,7 @@
               <span class="currency-type">£</span>
               <label for="debtors-current">
                 <span class="mobile-only-label">Debtors (2016)</span>
-                <input type="number" class="govuk-input" id="debtors-current" name="debtors-current">
+                <input type="number" class="govuk-input" id="debtors-current" name="debtors-current" value="{{ data['debtors-current'] }}">
               </label>
             </div>
           </div>
@@ -240,7 +240,7 @@
               <span class="currency-type">£</span>
               <label class="form-label" for="debtors-previous">
                 <span class="mobile-only-label">Debtors (2015)</span>
-                <input type="number" class="govuk-input" id="debtors-previous" name="debtors-previous">
+                <input type="number" class="govuk-input" id="debtors-previous" name="debtors-previous" value="{{ data['debtors-previous'] }}">
               </label>
             </div>
           </div>
@@ -257,7 +257,7 @@
           <div class="govuk-grid-column-one-quarter">
             <div class="govuk-form-group">
               <span class="currency-type">£</span <label for="cash-at-bank-and-in-hand-current"><span class="mobile-only-label">Cash at bank and in hand (2016)</span>
-              <input type="number" class="govuk-input" id="cash-at-bank-and-in-hand-current" name="cash-at-bank-and-in-hand-current">
+              <input type="number" class="govuk-input" id="cash-at-bank-and-in-hand-current" name="cash-at-bank-and-in-hand-current" value="{{ data['cash-at-bank-and-in-hand-current'] }}">
             </label>
           </div>
         </div>
@@ -266,7 +266,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="cash-at-bank-and-in-hand-previous">
               <span class="mobile-only-label">Cash at bank and in hand (2015)</span>
-              <input type="number" class="govuk-input" id="cash-at-bank-and-in-hand-previous" name="cash-at-bank-and-in-hand-previous">
+              <input type="number" class="govuk-input" id="cash-at-bank-and-in-hand-previous" name="cash-at-bank-and-in-hand-previous" value="{{ data['cash-at-bank-and-in-hand-previous'] }}">
             </label>
           </div>
         </div>
@@ -285,7 +285,7 @@
             <span class="currency-type">£</span>
             <label for="investments-current-assets-current">
               <span class="mobile-only-label">Investments (current assets) (2016)</span>
-              <input type="number" class="govuk-input" id="investments-current-assets-current" name="investments-current-assets-current">
+              <input type="number" class="govuk-input" id="investments-current-assets-current" name="investments-current-assets-current" value="{{ data['investments-current-assets-current'] }}">
             </label>
           </div>
         </div>
@@ -294,7 +294,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="investments-current-assets-previous">
               <span class="mobile-only-label">Investments (current assets) (2015)</span>
-              <input type="number" class="govuk-input" id="investments-current-assets-previous" name="investments-current-assets-previous">
+              <input type="number" class="govuk-input" id="investments-current-assets-previous" name="investments-current-assets-previous" value="{{ data['investments-current-assets-previous'] }}">
             </label>
           </div>
         </div>
@@ -314,7 +314,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="total-fixed-current-current">
               <span class="mobile-only-label">Total current assets (2016)</span>
-              <input type="number" class="govuk-input" id="total-current-assets-current" name="total-current-assets-current" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-current-assets-current" name="total-current-assets-current" readonly="readonly" value="{{ data['total-current-assets-current'] }}">
             </label>
           </div>
         </div>
@@ -323,7 +323,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="total-current-assets-previous">
               <span class="mobile-only-label">Total current assets (2015)</span>
-              <input type="number" class="govuk-input" id="total-current-assets-previous" name="total-current-assets-previous" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-current-assets-previous" name="total-current-assets-previous" readonly="readonly" value="{{ data['total-current-assets-previous'] }}">
             </label>
           </div>
         </div>
@@ -342,7 +342,7 @@
             <span class="currency-type">£</span>
             <label for="prepayments-and-and-accrued-income-current">
               <span class="mobile-only-label">Prepayments and accrued income (2016)</span>
-              <input type="number" class="govuk-input" id="prepayments-and-and-accrued-income-current" name="prepayments-and-and-accrued-income-current">
+              <input type="number" class="govuk-input" id="prepayments-and-and-accrued-income-current" name="prepayments-and-and-accrued-income-current" value="{{ data['prepayments-and-and-accrued-income-current'] }}">
             </label>
           </div>
         </div>
@@ -351,7 +351,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="prepayments-and-and-accrued-income-previous">
               <span class="mobile-only-label">Prepayments and accrued income (2015)</span>
-              <input type="number" class="govuk-input" id="prepayments-and-and-accrued-income-previous" name="prepayments-and-and-accrued-income-previous">
+              <input type="number" class="govuk-input" id="prepayments-and-and-accrued-income-previous" name="prepayments-and-and-accrued-income-previous" value="{{ data['prepayments-and-and-accrued-income-previous'] }}">
             </label>
           </div>
         </div>
@@ -379,7 +379,7 @@
             <span class="currency-type">£</span>
             <label for="creditors-amounts-falling-due-within-one-year-current">
               <span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-              <input type="number" class="govuk-input" name="creditors-amounts-falling-due-within-one-year-current" id="creditors-amounts-falling-due-within-one-year-current" style="text-align:right;">
+              <input type="number" class="govuk-input" name="creditors-amounts-falling-due-within-one-year-current" id="creditors-amounts-falling-due-within-one-year-current" value="{{ data['creditors-amounts-falling-due-within-one-year-current'] }}">
               <!-- changed type to text to get error validation (character) to work-->
             </label>
           </div>
@@ -389,7 +389,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous">
               <span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-              <input type="number" class="govuk-input" id="creditors-amounts-falling-due-within-one-year-previous" name="creditors-amounts-falling-due-within-one-year-previous">
+              <input type="number" class="govuk-input" id="creditors-amounts-falling-due-within-one-year-previous" name="creditors-amounts-falling-due-within-one-year-previous" value="{{ data['creditors-amounts-falling-due-within-one-year-previous'] }}">
             </label>
           </div>
         </div>
@@ -409,7 +409,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="net-current-assets-liabilities-current">
               <span class="mobile-only-label">Net current assets (liabilities) (2016)</span>
-              <input type="number" class="govuk-input" id="net-current-assets-liabilities-current" name="net-current-assets-liabilities-current" readonly="readonly">
+              <input type="number" class="govuk-input" id="net-current-assets-liabilities-current" name="net-current-assets-liabilities-current" readonly="readonly" value="{{ data['net-current-assets-liabilities-current'] }}">
             </label>
           </div>
         </div>
@@ -418,7 +418,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="net-current-assets-liabilities-previous">
               <span class="mobile-only-label">Net current assets (liabilities) (2015)</span>
-              <input type="number" class="govuk-input" id="net-current-assets-liabilities-previous" name="net-current-assets-liabilities-previous" readonly="readonly">
+              <input type="number" class="govuk-input" id="net-current-assets-liabilities-previous" name="net-current-assets-liabilities-previous" readonly="readonly" value="{{ data['net-current-assets-liabilities-previous'] }}">
             </label>
           </div>
         </div>
@@ -438,7 +438,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="total-assets-less-current-liabilities-current">
               <span class="mobile-only-label">Total assets less current liabilities (2016)</span>
-              <input type="number" class="govuk-input" id="total-assets-less-current-liabilities-current" name="total-assets-less-current-liabilities-current" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-assets-less-current-liabilities-current" name="total-assets-less-current-liabilities-current" readonly="readonly" value="{{ data['total-assets-less-current-liabilities-current'] }}">
             </label>
           </div>
         </div>
@@ -447,7 +447,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="total-assets-less-current-liabilities-previous">
               <span class="mobile-only-label">Total assets less current liabilities (2015)</span>
-              <input type="number" class="govuk-input" id="total-assets-less-current-liabilities-previous" name="total-assets-less-current-liabilities-previous" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-assets-less-current-liabilities-previous" name="total-assets-less-current-liabilities-previous" readonly="readonly" value="{{ data['total-assets-less-current-liabilities-previous'] }}">
             </label>
           </div>
         </div>
@@ -468,7 +468,12 @@
             <span class="currency-type">£</span>
             <label for="creditors-amounts-falling-due-after-more-than-one-year-current">
               <span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-              <input type="number" class="govuk-input" id="creditors-amounts-falling-due-after-more-than-one-year-current" name="creditors-amounts-falling-due-after-more-than-one-year-current">
+              <input
+                type="number"
+                class="govuk-input"
+                id="creditors-amounts-falling-due-after-more-than-one-year-current"
+                name="creditors-amounts-falling-due-after-more-than-one-year-current"
+                value="{{ data['creditors-amounts-falling-due-after-more-than-one-year-current'] }}">
             </label>
           </div>
         </div>
@@ -477,7 +482,12 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous">
               <span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-              <input type="number" class="govuk-input" id="creditors-amounts-falling-due-after-more-than-one-year-previous" name="creditors-amounts-falling-due-after-more-than-one-year-previous">
+              <input
+                type="number"
+                class="govuk-input"
+                id="creditors-amounts-falling-due-after-more-than-one-year-previous"
+                name="creditors-amounts-falling-due-after-more-than-one-year-previous"
+                value="{{ data['creditors-amounts-falling-due-after-more-than-one-year-previous'] }}">
             </label>
           </div>
         </div>
@@ -496,7 +506,7 @@
             <span class="currency-type">£</span>
             <label for="provision-for-liabilities-current">
               <span class="mobile-only-label">Provision for liabilities (2016)</span>
-              <input type="number" class="govuk-input" id="provision-for-liabilities-current" name="provision-for-liabilities-current">
+              <input type="number" class="govuk-input" id="provision-for-liabilities-current" name="provision-for-liabilities-current" value="{{ data['provision-for-liabilities-current'] }}">
             </label>
           </div>
         </div>
@@ -505,7 +515,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="provision-for-liabilities-previous">
               <span class="mobile-only-label">Provision for liabilities (2015)</span>
-              <input type="number" class="govuk-input" id="provision-for-liabilities-previous" name="provision-for-liabilities-previous">
+              <input type="number" class="govuk-input" id="provision-for-liabilities-previous" name="provision-for-liabilities-previous" value="{{ data['provision-for-liabilities-previous'] }}">
             </label>
           </div>
         </div>
@@ -524,7 +534,7 @@
             <span class="currency-type">£</span>
             <label for="accruals-and-deferred-income-current">
               <span class="mobile-only-label">Accruals and deferred income (2016)</span>
-              <input type="number" class="govuk-input" id="accruals-and-deferred-income-current" name="accruals-and-deferred-income-current">
+              <input type="number" class="govuk-input" id="accruals-and-deferred-income-current" name="accruals-and-deferred-income-current" value="{{ data['accruals-and-deferred-income-current'] }}">
             </label>
           </div>
         </div>
@@ -533,7 +543,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="accruals-and-deferred-income-previous">
               <span class="mobile-only-label">Accruals and deferred income (2015)</span>
-              <input type="number" class="govuk-input" id="accruals-and-deferred-income-previous" name="accruals-and-deferred-income-previous">
+              <input type="number" class="govuk-input" id="accruals-and-deferred-income-previous" name="accruals-and-deferred-income-previous" value="{{ data['accruals-and-deferred-income-previous'] }}">
             </label>
           </div>
         </div>
@@ -554,7 +564,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="total-net-assets-liabilities-current">
               <span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
-              <input type="number" class="govuk-input" id="total-net-assets-liabilities-current" name="total-net-assets-liabilities-current" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-net-assets-liabilities-current" name="total-net-assets-liabilities-current" readonly="readonly" value="{{ data['total-net-assets-liabilities-current'] }}">
             </label>
           </div>
         </div>
@@ -563,7 +573,7 @@
             <span class="currency-type">£</span>
             <label class="form-label-bold" for="total-net-assets-liabilities-previous">
               <span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
-              <input type="number" class="govuk-input" id="total-net-assets-liabilities-previous" name="total-net-assets-liabilities-previous" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-net-assets-liabilities-previous" name="total-net-assets-liabilities-previous" readonly="readonly" value="{{ data['total-net-assets-liabilities-previous'] }}">
             </label>
           </div>
         </div>
@@ -585,7 +595,7 @@
             <span class="currency-type">£</span>
             <label for="called-up-share-capital-current">
               <span class="mobile-only-label">Called up share capital (2016)</span>
-              <input type="number" class="govuk-input" id="called-up-share-capital-current" name="called-up-share-capital-current">
+              <input type="number" class="govuk-input" id="called-up-share-capital-current" name="called-up-share-capital-current" value="{{ data['called-up-share-capital-current'] }}">
             </label>
           </div>
         </div>
@@ -594,7 +604,7 @@
             <span class="currency-type">£</span>
             <label for="called-up-share-capital-current">
               <span class="mobile-only-label">Called up share capital (2015)</span>
-              <input type="number" class="govuk-input" id="called-up-share-capital-previous" name="called-up-share-capital-previous">
+              <input type="number" class="govuk-input" id="called-up-share-capital-previous" name="called-up-share-capital-previous" value="{{ data['called-up-share-capital-previous'] }}">
             </label>
           </div>
         </div>
@@ -613,7 +623,7 @@
             <span class="currency-type">£</span>
             <label for="share-premium-account-current">
               <span class="mobile-only-label">Share premium account (2016)</span>
-              <input type="number" class="govuk-input" id="share-premium-account-current" name="share-premium-account-current">
+              <input type="number" class="govuk-input" id="share-premium-account-current" name="share-premium-account-current" value="{{ data['share-premium-account-current'] }}">
             </label>
           </div>
         </div>
@@ -622,7 +632,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="share-premium-account-previous">
               <span class="mobile-only-label">Share premium account (2015)</span>
-              <input type="number" class="govuk-input" id="share-premium-account-previous" name="share-premium-account-previous">
+              <input type="number" class="govuk-input" id="share-premium-account-previous" name="share-premium-account-previous" value="{{ data['share-premium-account-previous'] }}">
             </label>
           </div>
         </div>
@@ -641,7 +651,7 @@
             <span class="currency-type">£</span>
             <label for="revaluation-reserve-current">
               <span class="mobile-only-label">Revaluation reserve (2016)</span>
-              <input type="number" class="govuk-input" id="revaluation-reserve-current" name="revaluation-reserve-current">
+              <input type="number" class="govuk-input" id="revaluation-reserve-current" name="revaluation-reserve-current" value="{{ data['revaluation-reserve-current'] }}">
             </label>
           </div>
         </div>
@@ -650,7 +660,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="revaluation-reserve-previous">
               <span class="mobile-only-label">Revaluation reserve (2015)</span>
-              <input type="number" class="govuk-input" id="revaluation-reserve-previous" name="revaluation-reserve-previous">
+              <input type="number" class="govuk-input" id="revaluation-reserve-previous" name="revaluation-reserve-previous" value="{{ data['revaluation-reserve-previous'] }}">
             </label>
           </div>
         </div>
@@ -669,7 +679,7 @@
             <span class="currency-type">£</span>
             <label for="other-reserves-current">
               <span class="mobile-only-label">Other reserves (2016)</span>
-              <input type="number" class="govuk-input" id="other-reserves-current" name="other-reserves-current">
+              <input type="number" class="govuk-input" id="other-reserves-current" name="other-reserves-current" value="{{ data['other-reserves-current'] }}">
             </label>
           </div>
         </div>
@@ -678,7 +688,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="other-reserves-previous">
               <span class="mobile-only-label">Other reserves (2015)</span>
-              <input type="number" class="govuk-input" id="other-reserves-previous" name="other-reserves-previous">
+              <input type="number" class="govuk-input" id="other-reserves-previous" name="other-reserves-previous" value="{{ data['other-reserves-previous'] }}">
             </label>
           </div>
         </div>
@@ -698,7 +708,7 @@
             <span class="currency-type">£</span>
             <label for="profit-and-loss-account-current">
               <span class="mobile-only-label">Profit and loss account (2016)</span>
-              <input type="number" class="govuk-input" id="profit-and-loss-account-current" name="profit-and-loss-account-current">
+              <input type="number" class="govuk-input" id="profit-and-loss-account-current" name="profit-and-loss-account-current" value="{{ data['profit-and-loss-account-current'] }}">
             </label>
           </div>
         </div>
@@ -707,7 +717,7 @@
             <span class="currency-type">£</span>
             <label class="form-label" for="profit-and-loss-account-previous">
               <span class="mobile-only-label">Profit and loss account (2015)</span>
-              <input type="number" class="govuk-input" id="profit-and-loss-account-previous" name="profit-and-loss-account-previous">
+              <input type="number" class="govuk-input" id="profit-and-loss-account-previous" name="profit-and-loss-account-previous" value="{{ data['profit-and-loss-account-previous'] }}">
             </label>
           </div>
         </div>
@@ -729,7 +739,7 @@
             <label class="form-label-bold" for="total-shareholders-funds-current">
               <span class="mobile-only-label">
                 Total shareholders' funds (2016)</span>
-              <input type="number" class="govuk-input" id="total-shareholders-funds-current" name="total-shareholders-funds-current" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-shareholders-funds-current" name="total-shareholders-funds-current" value="{{ data['total-shareholders-funds-current'] }}" readonly="readonly">
             </label>
           </div>
         </div>
@@ -739,7 +749,7 @@
             <label class="form-label-bold" for="total-shareholders-funds-previous">
               <span class="mobile-only-label">
                 Total shareholders' funds (2015)</span>
-              <input type="number" class="govuk-input" id="total-shareholders-funds-previous" name="total-shareholders-funds-previous" readonly="readonly">
+              <input type="number" class="govuk-input" id="total-shareholders-funds-previous" name="total-shareholders-funds-previous" value="{{ data['total-shareholders-funds-previous'] }}" readonly="readonly">
             </label>
           </div>
         </div>

@@ -1,62 +1,61 @@
 {% extends "layout.html" %}
-{% block pageTitle %}  Do your prepared accounts include an 'intangible fixed assets amortisation' policy? {% endblock %}
+{% block pageTitle %}
+  Do your prepared accounts include an 'intangible fixed assets amortisation' policy?
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-    <form action="/small-full/small-full-intangible-policy" method="get" class="form">
-      {{ govukRadios({
-classes: "govuk-radios--inline",
-idPrefix: "intangiblefixedassetsamortisationpolicy",
-name: "intangiblefixedassetsamortisationpolicy",
-fieldset: {
-  legend: {
-    text: "Do your prepared accounts include an 'intangible fixed assets amortisation' policy?",
-    isPageHeading: true,
-    classes: "govuk-fieldset__legend--l"
-  }
-},
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/small-full/small-full-intangible-policy" method="get" class="form">
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "intangiblefixedassetsamortisationpolicy",
+                name: "intangiblefixedassetsamortisationpolicy",
+                fieldset: {
+                  legend: {
+                    text: "Do your prepared accounts include an 'intangible fixed assets amortisation' policy?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
 
-items: [
-  {
-    value: "yes",
-    text: "Yes"
-  },
-  {
-    value: "no",
-    text: "No"
-  }
-]
-}) }}
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('intangiblefixedassetsamortisationpolicy','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('intangiblefixedassetsamortisationpolicy','no')
+                  }
+                ]
+                }) }}
 
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
 
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-    </form>
-
-
-  </div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
-
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

@@ -49,7 +49,7 @@
               <span class="currency-type">£</span>
               <label for="trade-debtors-current">
                 <span class="mobile-only-label">Trade debtors - 2017</span>
-                <input class="govuk-input" id="trade-debtors-current" name="trade-debtors-current" type="number"></label>
+                <input class="govuk-input" id="trade-debtors-current" name="trade-debtors-current" type="number" value="{{ data['trade-debtors-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -57,7 +57,7 @@
               <span class="currency-type">£</span>
               <label for="trade-debtors-previous">
                 <span class="mobile-only-label">Trade debtors - 2016</span>
-                <input class="govuk-input" id="trade-debtors-previous" name="trade-debtors-previous" type="number"></label>
+                <input class="govuk-input" id="trade-debtors-previous" name="trade-debtors-previous" type="number" value="{{ data['trade-debtors-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
               <span class="currency-type">£</span>
               <label for="prepayments-and-accrued-income-current">
                 <span class="mobile-only-label">Prepayments and accrued income - 2017</span>
-                <input class="govuk-input" id="prepayments-and-accrued-income-current" name="prepayments-and-accrued-income-current" type="number"></label>
+                <input class="govuk-input" id="prepayments-and-accrued-income-current" name="prepayments-and-accrued-income-current" type="number" value="{{ data['prepayments-and-accrued-income-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -82,7 +82,7 @@
               <span class="currency-type">£</span>
               <label for="prepayments-and-accrued-income-previous">
                 <span class="mobile-only-label">Prepayments and accrued income - 2016</span>
-                <input class="govuk-input" id="prepayments-and-accrued-income-previous" name="prepayments-and-accrued-income-previous" type="number"></label>
+                <input class="govuk-input" id="prepayments-and-accrued-income-previous" name="prepayments-and-accrued-income-previous" type="number" value="{{ data['prepayments-and-accrued-income-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@
               <span class="currency-type">£</span>
               <label for="other-debtors-current">
                 <span class="mobile-only-label">Other debtors - 2017</span>
-                <input class="govuk-input" id="other-debtors-current" name="other-debtors-current" type="number"></label>
+                <input class="govuk-input" id="other-debtors-current" name="other-debtors-current" type="number" value="{{ data['other-debtors-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -107,7 +107,7 @@
               <span class="currency-type">£</span>
               <label for="other-debtors-previous">
                 <span class="mobile-only-label">Other debtors - 2016</span>
-                <input class="govuk-input" id="other-debtors-previous" name="other-debtors-previous" type="number"></label>
+                <input class="govuk-input" id="other-debtors-previous" name="other-debtors-previous" type="number" value="{{ data['other-debtors-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@
               <span class="currency-type">£</span>
               <label for="total-debtors-current">
                 <span class="mobile-only-label">Total debtors - 2017</span>
-                <input class="govuk-input" id="total-debtors-current" name="total-debtors-current" type="number"></label>
+                <input class="govuk-input" id="total-debtors-current" name="total-debtors-current" type="number" value="{{ data['total-debtors-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -133,7 +133,7 @@
               <span class="currency-type">£</span>
               <label for="total-debtors-previous">
                 <span class="mobile-only-label">Total debtors - 2016</span>
-                <input class="govuk-input" id="total-debtors-previous" name="total-debtors-previous" type="number"></label>
+                <input class="govuk-input" id="total-debtors-previous" name="total-debtors-previous" type="number" value="{{ data['total-debtors-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@
               <span class="currency-type">£</span>
               <label for="debtors-after-current">
                 <span class="mobile-only-label">Debtors after more than one year - 2017</span>
-                <input class="govuk-input" id="debtors-after-current" name="debtors-after-current" type="number"></label>
+                <input class="govuk-input" id="debtors-after-current" name="debtors-after-current" type="number" value="{{ data['debtors-after-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -158,7 +158,7 @@
               <span class="currency-type">£</span>
               <label for="debtors-after-previous">
                 <span class="mobile-only-label">Debtors after more than one year - 2016</span>
-                <input class="govuk-input" id="debtors-after-previous" name="debtors-after-previous" type="number"></label>
+                <input class="govuk-input" id="debtors-after-previous" name="debtors-after-previous" type="number" value="{{ data['debtors-after-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -171,9 +171,9 @@
                 <span class="govuk-details__summary-text">Add additional information about your 'debtors' note?</span>
               </summary>
               <div class="govuk-govuk-form-group">
-                <label class="govuk-visually-hidden" for="stocks-note-additional-info">Add additional information about your 'debtors' note?</label>
+                <label class="govuk-visually-hidden" for="debtors-note-additional-info">Add additional information about your 'debtors' note?</label>
                 <span id="more-detail-hint" class="govuk-hint">Enter details of any other 'debtors' information not already covered</span>
-                <textarea class="govuk-textarea" id="stocks-note-additional-info" name="stocks-note-additional-info" rows="5" aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="debtors-note-additional-info" name="debtors-note-additional-info" value="{{ data['debtors-note-additional-info'] }}" rows="5" aria-describedby="more-detail-hint"></textarea>
               </div>
             </details>
           </div>

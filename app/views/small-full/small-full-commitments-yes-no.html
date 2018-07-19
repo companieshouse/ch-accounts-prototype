@@ -23,27 +23,29 @@
           <form action="/small-full/small-full-financial-commitments-note" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "financialcommitments",
-        name: "financialcommitments",
-        fieldset: {
-          legend: {
-            text: " Do your prepared accounts include a 'financial commitments' note? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "financialcommitments",
+                name: "financialcommitments",
+                fieldset: {
+                  legend: {
+                    text: " Do your prepared accounts include a 'financial commitments' note? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('financialcommitments','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('financialcommitments','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

@@ -1,756 +1,1102 @@
-{%- extends "layout-chs.html" %} {% block pageTitle %} Check before you submit {% endblock %} {% block main %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+{% block main %}
 
+  <!-- TO DO - Sort mobile styles -->
+  <!-- TO DO - Sort data passings -->
 
-<main id="content" role="main" class="two-column-accounts">
-  {% include "includes/phase_banner_beta.html" %}
+  <!-- START script which hides the delete container if user clicks 'No, keep' on Delete warning -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+  <script type="text/javascript">
+    $(document).ready(function () { //Only show the button if javascript is on
+      $('.post-balance-sheet-events-keep').on('click', function () {
+        $(this).parent().parent().remove();
+      });
+    });
+  </script>
+  <!-- END script which hides the delete container if user clicks 'No, keep' on Delete warning -->
 
-  <nav class="content" role="navigation">
-    <ul id="navigation" class="mobile-hidden">
-      <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-      <li><a href="javascript:void(0)">Your details</a></li>
-      <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-      <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-      <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-    </ul>
-  </nav>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
+    <main class="govuk-main-wrapper two-column-accounts">
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
+      <form action="/cics/cics-accounts-approval" method="get" class="form">
+        <h2 class="govuk-heading-m">Company account dates</h2>
 
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dd class="cya-answer">1 April 2017 to 31 March 2018</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  company account dates</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
+        <h2 class="govuk-heading-m">Balance sheet</h2>
 
-  <h1 class="govuk-heading-l">Check your answers</h1>
-  <br />
+        <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+          <div>
+            <dt class="cya-question govuk-heading-m">Fixed assets</dt>
+            <dd class="cya-answer govuk-heading-s">
+              <div>2018</div>
+              <div>2017</div>
+            </dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Tangible assets
+            </dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £37,440</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £30,740</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">
+                  Balance sheet tangible assets</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total fixed assets</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £37,440</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £30,740</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">
+                  Balance sheet tangible assets</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question govuk-heading-m">Current assets</dt>
+            <dd class="cya-answer"></dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Stocks</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £35,455</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £7,000</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet stocks</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Debtors</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £1,500</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet debtors</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total current assets</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £35,955</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £7,000</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet Total current assets</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Creditors - amounts falling due within one year</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £5,500</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £4,500</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet Creditors - amounts falling due within one year</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Net current assets (liabilities)</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £30,455</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £2,500</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet Net current assets (liabilities)</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total assets less current liabilities</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £67,895</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £33,240</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet Total assets less current liabilities</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Provision for liabilities</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £15,600</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £12,050</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">Balance sheet Provision for liabilities</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total net assets (liabilities)</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £52,295</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £21,190</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">Balance sheet Total net assets (liabilities)</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question govuk-heading-m">Capital and reserves</dt>
+            <dd class="cya-answer"></dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Called up share capital</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £24,400</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £18,900</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">Balance sheet Called up share capital</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Share premium account</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £18,000</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £1,750</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">Balance sheet Share premium account</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Profit and loss account</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £9,895</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £540</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">Balance sheet profit and loss account</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total shareholders' funds</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £52,295</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £21,190</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">Balance sheet total shareholders' funds</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-  <form action="/cics/cics-accounts-approval" method="get" class="form">
-    <h2 class="govuk-heading-m">Company account dates</h2>
+        <h2 class="govuk-heading-m">Balance sheet statements</h2>
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">1 April 2017 to 31 March 2018</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> company account dates</div></a>
-        </dd>
-      </div>
-    </dl>
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dd class="cya-answer">
+              <ul class="govuk-list">
+                <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+                <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+                <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+                <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+                <li>The directors have chosen not to file a copy of the company’s profit and loss account.
+                </li>
+              </ul>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  balance sheet statements</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
+        <h2 class="govuk-heading-m">Basis of accounts preparation</h2>
 
-    <h2 class="govuk-heading-m">Balance sheet</h2>
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dd class="cya-answer">These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  basis of accounts preparation</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question govuk-heading-m">Fixed assets</dt>
-        <dd class="cya-answer govuk-heading-s">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Tangible assets </dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £37,440</div>
-          <div><span class="mobile-only-label">(2017)</span> £30,740</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet tangible assets</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total fixed assets</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £37,440</div>
-          <div><span class="mobile-only-label">(2017)</span> £30,740</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet tangible assets</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question govuk-heading-m">Current assets</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Stocks</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £35,455</div>
-          <div><span class="mobile-only-label">(2017)</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet stocks</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Debtors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £1,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet debtors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total current assets</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £35,955</div>
-          <div><span class="mobile-only-label">(2017)</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Total current assets</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Creditors - amounts falling due within one year</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £5,500</div>
-          <div><span class="mobile-only-label">(2017)</span> £4,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Creditors - amounts falling due within one year</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Net current assets (liabilities)</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £30,455</div>
-          <div><span class="mobile-only-label">(2017)</span> £2,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Net current assets (liabilities)</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total assets less current liabilities</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £67,895</div>
-          <div><span class="mobile-only-label">(2017)</span> £33,240</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet Total assets less current liabilities</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Provision for liabilities</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £15,600</div>
-          <div><span class="mobile-only-label">(2017)</span> £12,050</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Provision for liabilities</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total net assets (liabilities)</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £52,295</div>
-          <div><span class="mobile-only-label">(2017)</span> £21,190</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Total net assets (liabilities)</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question govuk-heading-m">Capital and reserves</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Called up share capital</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £24,400</div>
-          <div><span class="mobile-only-label">(2017)</span> £18,900</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Called up share capital</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Share premium account</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £18,000</div>
-          <div><span class="mobile-only-label">(2017)</span> £1,750</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet Share premium account</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Profit and loss account</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £9,895</div>
-          <div><span class="mobile-only-label">(2017)</span> £540</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet profit and loss account</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total shareholders' funds</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £52,295</div>
-          <div><span class="mobile-only-label">(2017)</span> £21,190</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden">Balance sheet total shareholders' funds</div></a>
-        </dd>
-      </div>
-    </dl>
+        <h2 class="govuk-heading-m">Turnover policy</h2>
 
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dd class="cya-answer">Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  turnover policy</div>
+              </a>
+              <a href="" class="cya-delete">Delete<div class="visually-hidden">
+                  turnover policy</div>
+              </a>
+            </dd>
 
-    <h2 class="govuk-heading-m">Balance sheet statements</h2>
+          </div>
+        </dl>
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">
-          <ul class="govuk-list">
-            <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
-            <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
-            <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
-            <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
-            <li>The directors have chosen not to file a copy of the company’s profit and loss account. </li>
-          </ul>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> balance sheet statements</div></a>
-        </dd>
-      </div>
-    </dl>
+        <h2 class="govuk-heading-m">Tangible assets</h2>
 
+        <dl class="govuk-check-your-answers cya-questions-short cya-accounts-long">
+          <div>
+            <dt class="cya-question govuk-heading-m">Cost</dt>
+            <dd class="cya-answer govuk-heading-s">
+              <div>Land & buildings</div>
+              <div>Plant & machinery</div>
+              <div>Fixtures & fittings</div>
+              <div>Office equipment</div>
+              <div>Motor vehicles</div>
+              <div>Total</div>
+            </dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Cost at 1 April 2017</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £28,500</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £9,850</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £28,500</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Cost at 1 April 2017</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Additions</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £350</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £165</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £28,500</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Additions</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Disposals</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £370</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £100</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £395</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £865</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Disposals</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Revaluations</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £5,450</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £800</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £100</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £6,350</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Revaluations</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Cost at 31 March 2018</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £33,390</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £7,245</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £10,255</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £51,430</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Cost at 31 March 2018</div>
+              </a>
+            </dd>
+          </div>
 
+          <div>
+            <dt class="cya-question govuk-heading-m">Depreciation</dt>
+            <dd class="cya-answer"></dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Depreciation at 1 April 2017</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £8,800</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £1,400</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £3,980</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £14,260</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Depreciation at 1 April 2017</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Charge for year</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £100</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £100</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £100</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £300</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets charge for year</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">On disposals</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £70</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £200</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £350</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £620</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets on disposals</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Other adjustments</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £50</div>
+              <div class="cya-answer-empty">&nbsp;</div>
+              <div class="cya-answer-empty">&nbsp;</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £50</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets other adjustments</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Depreciation at 31 March 2018</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £8,960</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £1,300</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £3,730</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £13,990</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Depreciation at 31 March 2018</div>
+              </a>
+            </dd>
+          </div>
 
-    <h2 class="govuk-heading-m">Basis of accounts preparation</h2>
+          <div>
+            <dt class="cya-question govuk-heading-m">Net book value</dt>
+            <dd class="cya-answer"></dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Net book value at 31 March 2018</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £24,970</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £5,945</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £6,625</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £37,440</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Net book value at 31 March 2018</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Net book value at 31 March 2017</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">Land & buildings</span>
+                £19,620</div>
+              <div>
+                <span class="mobile-only-label">Plant & machinery</span>
+                £4,980</div>
+              <div>
+                <span class="mobile-only-label">Fixtures & fittings</span>
+                £5,870</div>
+              <div>
+                <span class="mobile-only-label">Office equipment</span>
+                £3,740</div>
+              <div>
+                <span class="mobile-only-label">Motor vehicles</span>
+                £6,380</div>
+              <div>
+                <span class="mobile-only-label">Total</span>
+                £8,888,888</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">Balance sheet notes tangible assets Net book value at 31 March 2017</div>
+              </a>
+            </dd>
+          </div>
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> basis of accounts preparation</div></a>
-        </dd>
-      </div>
-    </dl>
+        </dl>
 
+        <h2 class="govuk-heading-m">Stocks</h2>
 
+        <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+          <div>
+            <dt class="cya-question"></dt>
+            <dd class="cya-answer govuk-heading-s">
+              <div>2018</div>
+              <div>2017</div>
+            </dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Stocks</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £7,000</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £7,000</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">
+                  Balance sheet notes stocks</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Payment on account</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £28,455</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">
+                  Balance sheet notes stocks payment on account</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £35,455</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £7,000</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">
+                Change<div class="visually-hidden">
+                  Balance sheet notes stocks payment on account</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-    <h2 class="govuk-heading-m">Turnover policy</h2>
+        <h2 class="govuk-heading-m">Debtors</h2>
 
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">Turnover represents gross invoiced sales of services provided to customers, net of VAT calculated at a flat rate on those gross sales.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> turnover policy</div></a>
-          <a href="" class="cya-delete">Delete<div class="visually-hidden"> turnover policy</div></a>
-        </dd>
+        <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+          <div>
+            <dt class="cya-question"></dt>
+            <dd class="cya-answer govuk-heading-s">
+              <div>2018</div>
+              <div>2017</div>
+            </dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Trade debtors</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £350</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes debtors trade debtors</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Prepayments and accrued income</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £690</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes debtors Prepayments and accrued income</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Other debtors</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £560</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes debtors other debtors</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £1,500</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes debtors total</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Debtors after more than one year</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £300</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes debtors Debtors after more than one year</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Additional information</dt>
+            <dd class="cya-answer">The current debtors figure includes trade debtors expected to be fully paid within the next financial period.</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes debtors Additional information</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-      </div>
-    </dl>
+        <h2 class="govuk-heading-m">Creditors - amounts falling due within one year</h2>
 
+        <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+          <div>
+            <dt class="cya-question"></dt>
+            <dd class="cya-answer govuk-heading-s">
+              <div>2018</div>
+              <div>2017</div>
+            </dd>
+            <dd class="cya-change"></dd>
+          </div>
+          <div>
+            <dt class="cya-question">Bank loans and overdrafts</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £2,475</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £1,300</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Bank loans and overdrafts</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Amounts due under finance leases and hire purchase contracts</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £1,405</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £1,200</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Amounts due under finance leases and hire purchase contracts</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Trade creditors</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £560</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Trade creditors</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Accruals and deferred income</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £500</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Accruals and deferred income</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Other creditors</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £560</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £2,000</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Other creditors</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Total</dt>
+            <dd class="cya-answer">
+              <div>
+                <span class="mobile-only-label">(2018)</span>
+                £5,500</div>
+              <div>
+                <span class="mobile-only-label">(2017)</span>
+                £4,500</div>
+            </dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Total</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Additional information</dt>
+            <dd class="cya-answer">Purchases of various technology shares have recently been acquired as a short term investment and are expected to be sold within the next five months.</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Balance sheet notes Creditors - amounts falling due within one year Additional information</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
+        <h2 class="govuk-heading-m">Loans to directors</h2>
 
-    <h2 class="govuk-heading-m">Tangible assets</h2>
+        <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+          <div>
+            <dt class="cya-question">Name of director receiving advance or credit</dt>
+            <dd class="cya-answer">John Smith</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (John Smith) Name of director receiving advance or credit</div>
+              </a>
+              <a href="" class="cya-delete">Delete<div class="visually-hidden">
+                  Loans to directors (John Smith) Name of director receiving advance or credit</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Description of the transaction</dt>
+            <dd class="cya-answer">Short term loan</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (John Smith) Description of the transaction</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Balance at 1 April 2017</dt>
+            <dd class="cya-answer">£60,000</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (John Smith) Balance at 1 April 2017</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Advances or credits made</dt>
+            <dd class="cya-answer">£10,000</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (John Smith) Advances or credits made</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Advances or credits repaid</dt>
+            <dd class="cya-answer">£5,000</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (John Smith) Advances or credits repaid</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Balance at 31 March 2018</dt>
+            <dd class="cya-answer">£65,000</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (John Smith) Balance at 31 March 2018</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <br/>
+        <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
+          <div>
+            <dt class="cya-question">Name of director receiving advance or credit</dt>
+            <dd class="cya-answer">David Smith</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (David Smith) Name of director receiving advance or credit</div>
+              </a>
+              <a href="" class="cya-delete">Delete<div class="visually-hidden">
+                  Loans to directors (David Smith) Name of director receiving advance or credit</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Description of the transaction</dt>
+            <dd class="cya-answer">Car loan</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (David Smith) Description of the transaction</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Balance at 1 April 2017</dt>
+            <dd class="cya-answer">£12,500</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (David Smith) Balance at 1 April 2017</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Advances or credits repaid</dt>
+            <dd class="cya-answer">£5,000</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (David Smith) Advances or credits repaid</div>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">Balance at 31 March 2018</dt>
+            <dd class="cya-answer">£12,000</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Loans to directors (David Smith) Balance at 31 March 2018</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-    <dl class="govuk-check-your-answers cya-questions-short cya-accounts-long">
-      <div>
-        <dt class="cya-question govuk-heading-m">Cost</dt>
-        <dd class="cya-answer govuk-heading-s">
-          <div>Land & buildings</div>
-          <div>Plant & machinery</div>
-          <div>Fixtures & fittings</div>
-          <div>Office equipment</div>
-          <div>Motor vehicles</div>
-          <div>Total</div>
-        </dd>
-        <dd class="cya-change">
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Cost at 1 April 2017</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £28,500</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £6,380</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £9,850</div>
-          <div><span class="mobile-only-label">Office equipment</span> £28,500</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Cost at 1 April 2017</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Additions</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £350</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £165</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £28,500</div>
-          <div><span class="mobile-only-label">Office equipment</span> £6,380</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Additions</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Disposals</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £370</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £100</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £395</div>
-          <div><span class="mobile-only-label">Office equipment</span> £865</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Disposals</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Revaluations</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £5,450</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £800</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £100</div>
-          <div><span class="mobile-only-label">Office equipment</span> £6,350</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Revaluations</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Cost at 31 March 2018</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £33,390</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £7,245</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £10,255</div>
-          <div><span class="mobile-only-label">Office equipment</span> £51,430</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Cost at 31 March 2018</div></a>
-        </dd>
-      </div>
+        <h2 class="govuk-heading-m">Post balance sheet events</h2>
 
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dd class="cya-answer">On 5 April 2018, the company acquired the goodwill and net assets of CoHo Marketing Associates for £40,000 financed by a secured bank loan, repayable over 5 years.</dd>
+            <dd class="cya-change">
+              <a href="">Change<div class="visually-hidden">
+                  Post balance sheet events</div>
+              </a>
+              <a href="" class="cya-delete">Delete<div class="visually-hidden">
+                  turnover policy</div>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
+        {{ govukButton({
+              text: "Continue"
+            }) }}
+      </form>
 
-      <div>
-        <dt class="cya-question govuk-heading-m">Depreciation</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Depreciation at 1 April 2017</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £8,800</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £1,400</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £3,980</div>
-          <div><span class="mobile-only-label">Office equipment</span> £14,260</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Depreciation at 1 April 2017</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Charge for year</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £100</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £100</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £100</div>
-          <div><span class="mobile-only-label">Office equipment</span> £300</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets charge for year</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">On disposals</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £70</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £200</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £350</div>
-          <div><span class="mobile-only-label">Office equipment</span> £620</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets on disposals</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Other adjustments</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £50</div>
-          <div class="cya-answer-empty">&nbsp;</div>
-          <div class="cya-answer-empty">&nbsp;</div>
-          <div><span class="mobile-only-label">Office equipment</span> £50</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets other adjustments</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Depreciation at 31 March 2018</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £8,960</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £1,300</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £3,730</div>
-          <div><span class="mobile-only-label">Office equipment</span> £13,990</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Depreciation at 31 March 2018</div></a>
-        </dd>
-      </div>
-
-      <div>
-        <dt class="cya-question govuk-heading-m">Net book value</dt>
-        <dd class="cya-answer"></dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Net book value at 31 March 2018</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £24,970</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £5,945</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £6,625</div>
-          <div><span class="mobile-only-label">Office equipment</span> £37,440</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Net book value at 31 March 2018</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Net book value at 31 March 2017</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">Land & buildings</span> £19,620</div>
-          <div><span class="mobile-only-label">Plant & machinery</span> £4,980</div>
-          <div><span class="mobile-only-label">Fixtures & fittings</span> £5,870</div>
-          <div><span class="mobile-only-label">Office equipment</span> £3,740</div>
-          <div><span class="mobile-only-label">Motor vehicles</span> £6,380</div>
-          <div><span class="mobile-only-label">Total</span> £8,888,888</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden">Balance sheet notes tangible assets Net book value at 31 March 2017</div></a>
-        </dd>
-      </div>
-
-    </dl>
-
-
-
-
-
-    <h2 class="govuk-heading-m">Stocks</h2>
-
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question"></dt>
-        <dd class="cya-answer govuk-heading-s">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Stocks</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £7,000</div>
-          <div><span class="mobile-only-label">(2017)</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet notes stocks</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Payment on account</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £28,455</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet notes stocks payment on account</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £35,455</div>
-          <div><span class="mobile-only-label">(2017)</span> £7,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href=""> Change<div class="visually-hidden"> Balance sheet notes stocks payment on account</div></a>
-        </dd>
-      </div>
-    </dl>
-
-
-    <h2 class="govuk-heading-m">Debtors</h2>
-
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question"></dt>
-        <dd class="cya-answer govuk-heading-s">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Trade debtors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £350</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors trade debtors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Prepayments and accrued income</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £690</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors Prepayments and accrued income</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Other debtors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £560</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors other debtors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £1,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors total</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Debtors after more than one year</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £300</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors Debtors after more than one year</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Additional information</dt>
-        <dd class="cya-answer">The current debtors figure includes trade debtors expected to be fully paid within the next financial period.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes debtors Additional information</div></a>
-        </dd>
-      </div>
-    </dl>
-
-
-    <h2 class="govuk-heading-m">Creditors - amounts falling due within one year</h2>
-
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question"></dt>
-        <dd class="cya-answer govuk-heading-s">
-          <div>2018</div>
-          <div>2017</div>
-        </dd>
-        <dd class="cya-change"></dd>
-      </div>
-      <div>
-        <dt class="cya-question">Bank loans and overdrafts</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £2,475</div>
-          <div><span class="mobile-only-label">(2017)</span> £1,300</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Bank loans and overdrafts</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Amounts due under finance leases and hire purchase contracts</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £1,405</div>
-          <div><span class="mobile-only-label">(2017)</span> £1,200</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Amounts due under finance leases and hire purchase contracts</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Trade creditors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £560</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Trade creditors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Accruals and deferred income</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Accruals and deferred income</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Other creditors</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £560</div>
-          <div><span class="mobile-only-label">(2017)</span> £2,000</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Other creditors</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Total</dt>
-        <dd class="cya-answer">
-          <div><span class="mobile-only-label">(2018)</span> £5,500</div>
-          <div><span class="mobile-only-label">(2017)</span> £4,500</div>
-        </dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Total</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Additional information</dt>
-        <dd class="cya-answer">Purchases of various technology shares have recently been acquired as a short term investment and are expected to be sold within the next five months.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Balance sheet notes Creditors - amounts falling due within one year Additional information</div></a>
-        </dd>
-      </div>
-    </dl>
-
-    <h2 class="govuk-heading-m">Loans to directors</h2>
-
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question">Name of director receiving advance or credit</dt>
-        <dd class="cya-answer">John Smith</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (John Smith) Name of director receiving advance or credit</div></a>
-          <a href="" class="cya-delete">Delete<div class="visually-hidden"> Loans to directors (John Smith) Name of director receiving advance or credit</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Description of the transaction</dt>
-        <dd class="cya-answer">Short term loan</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (John Smith) Description of the transaction</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Balance at 1 April 2017</dt>
-        <dd class="cya-answer">£60,000</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (John Smith) Balance at 1 April 2017</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Advances or credits made</dt>
-        <dd class="cya-answer">£10,000</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (John Smith) Advances or credits made</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Advances or credits repaid</dt>
-        <dd class="cya-answer">£5,000</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (John Smith) Advances or credits repaid</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Balance at 31 March 2018</dt>
-        <dd class="cya-answer">£65,000</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (John Smith) Balance at 31 March 2018</div></a>
-        </dd>
-      </div>
-    </dl>
-    <br />
-    <dl class="govuk-check-your-answers check-your-answers-accounts cya-questions-short">
-      <div>
-        <dt class="cya-question">Name of director receiving advance or credit</dt>
-        <dd class="cya-answer">David Smith</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (David Smith) Name of director receiving advance or credit</div></a>
-          <a href="" class="cya-delete">Delete<div class="visually-hidden"> Loans to directors (David Smith) Name of director receiving advance or credit</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Description of the transaction</dt>
-        <dd class="cya-answer">Car loan</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (David Smith) Description of the transaction</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Balance at 1 April 2017</dt>
-        <dd class="cya-answer">£12,500</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (David Smith) Balance at 1 April 2017</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Advances or credits repaid</dt>
-        <dd class="cya-answer">£5,000</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (David Smith) Advances or credits repaid</div></a>
-        </dd>
-      </div>
-      <div>
-        <dt class="cya-question">Balance at 31 March 2018</dt>
-        <dd class="cya-answer">£12,000</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Loans to directors (David Smith) Balance at 31 March 2018</div></a>
-        </dd>
-      </div>
-    </dl>
-
-
-    <h2 class="govuk-heading-m">Post balance sheet events</h2>
-
-    <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dd class="cya-answer">On 5 April 2018, the company acquired the goodwill and net assets of CoHo Marketing Associates for £40,000 financed by a secured bank loan, repayable over 5 years.</dd>
-        <dd class="cya-change">
-          <a href="">Change<div class="visually-hidden"> Post balance sheet events</div></a>
-          <a href="" class="cya-delete">Delete<div class="visually-hidden"> turnover policy</div></a>
-        </dd>
-      </div>
-    </dl>
-
-
-    <div class="accounts-row-spacer">
-      <input type="submit" class="button" value="Continue" id="">
-    </div>
-  </form>
-  <p>
-    <a href="/small-full/small-full-check-before-you-submit" style="float:right; color: #DEE0E2; font-size:14px;">Not including full tangible</a>
-  </p>
-
-</main>
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

@@ -29,7 +29,7 @@
               <span class="currency-type">£</span>
               <label for="revaluation-reserve-start">
                 <span class="mobile-only-label">At 1 April 2017</span>
-                <input class="govuk-input" id="revaluation-reserve-start" name="revaluation-reserve-start" type="number" value=""></label>
+                <input class="govuk-input" id="revaluation-reserve-start" name="revaluation-reserve-start" type="number" value="{{ data['revaluation-reserve-start'] }}"></label>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
               <span class="currency-type">£</span>
               <label for="surplus-deficit-previous">
                 <span class="mobile-only-label">Surplus or deficit after revaluation</span>
-                <input class="govuk-input" id="surplus-deficit-previous" name="surplus-deficit-previous" type="number"></label>
+                <input class="govuk-input" id="surplus-deficit-previous" name="surplus-deficit-previous" type="number" value="{{ data['surplus-deficit-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
               <span class="currency-type">£</span>
               <label for="revaluation-reserve-end">
                 <span class="mobile-only-label">Balance at 31 March 2017</span>
-                <input class="govuk-input" id="revaluation-reserve-end" name="revaluation-reserve-end" type="number"></label>
+                <input class="govuk-input" id="revaluation-reserve-end" name="revaluation-reserve-end" type="number" value="{{ data['revaluation-reserve-end'] }}"></label>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
 
                 <label class="govuk-visually-hidden" for="revaluation-reserve-note-additional-info">Add additional information about your 'revaluation reserve' note?</label>
                 <span id="more-detail-hint" class="govuk-hint">Enter details of any other 'revaluation reserve' information not already covered</span>
-                <textarea class="govuk-textarea" id="revaluation-reserve-note-additional-info" name="revaluation-reserve-note-additional-info" rows="5" aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="revaluation-reserve-note-additional-info" name="revaluation-reserve-note-additional-info" value="{{ data['revaluation-reserve-note-additional-info'] }}" rows="5" aria-describedby="more-detail-hint"></textarea>
               </div>
             </details>
           </div>

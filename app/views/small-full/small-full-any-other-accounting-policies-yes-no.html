@@ -45,18 +45,20 @@
                 items: [
                 {
                   value: "yes",
-                  text: "Yes"
+                  text: "Yes",
+                  checked: checked('anyotheraccountingpolicies','yes')
                 },
                 {
                   value: "no",
-                  text: "No"
+                  text: "No",
+                  checked: checked('anyotheraccountingpolicies','no')
                 }
                 ]
                 }) }}
 
             {{ govukButton({
-      text: "Save and continue"
-    }) }}
+              text: "Save and continue"
+            }) }}
           </form>
 
         </div>

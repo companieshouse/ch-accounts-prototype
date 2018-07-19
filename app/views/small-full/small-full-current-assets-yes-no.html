@@ -23,27 +23,29 @@
           <form action="/small-full/small-full-current-assets-investments-note" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "currentassetsinvestmentsyesno",
-        name: "currentassetsinvestmentsyesno",
-        fieldset: {
-          legend: {
-            text: " Do your prepared accounts include a 'current assets investments' note? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "currentassetsinvestmentsyesno",
+                name: "currentassetsinvestmentsyesno",
+                fieldset: {
+                  legend: {
+                    text: " Do your prepared accounts include a 'current assets investments' note? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('currentassetsinvestmentsyesno','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('currentassetsinvestmentsyesno','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

@@ -21,30 +21,32 @@
           <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "smallfullothernotes",
-        name: "smallfullothernotes",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include any other notes? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "For example, 'employees', 'fixed asset investments' or 'debtors'"
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "smallfullothernotes",
+                name: "smallfullothernotes",
+                fieldset: {
+                  legend: {
+                    text: "Do your prepared accounts include any other notes? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                  text: "For example, 'employees', 'fixed asset investments' or 'loans to directors'"
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('smallfullothernotes','no')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('smallfullothernotes','yes')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

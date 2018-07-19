@@ -50,7 +50,7 @@
               <span class="currency-type">£</span>
               <label for="bank-loans-current">
                 <span class="mobile-only-label">Bank loans and overdrafts - 2018</span>
-                <input class="govuk-input" id="creditors-after-bank-loans-current" name="creditors-after-bank-loans-current" type="number"></label>
+                <input class="govuk-input" id="creditors-after-bank-loans-current" name="creditors-after-bank-loans-current" type="number" value="{{ data['creditors-after-bank-loans-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -58,7 +58,7 @@
               <span class="currency-type">£</span>
               <label for="bank-loans-previous">
                 <span class="mobile-only-label">Bank loans and overdrafts - 2017</span>
-                <input class="govuk-input" id="creditors-after-bank-loans-previous" name="creditors-after-bank-loans-previous" type="number"></label>
+                <input class="govuk-input" id="creditors-after-bank-loans-previous" name="creditors-after-bank-loans-previous" type="number" value="{{ data['creditors-after-bank-loans-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
               <span class="currency-type">£</span>
               <label for="finance-leases-current">
                 <span class="mobile-only-label">Amounts due under finance leases and hire purchase contracts - 2018</span>
-                <input class="govuk-input" id="creditors-after-finance-leases-current" name="creditors-after-finance-leases-current" type="number"></label>
+                <input class="govuk-input" id="creditors-after-finance-leases-current" name="creditors-after-finance-leases-current" type="number" value="{{ data['creditors-after-finance-leases-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -83,7 +83,7 @@
               <span class="currency-type">£</span>
               <label for="finance-leases-previous">
                 <span class="mobile-only-label">Amounts due under finance leases and hire purchase contracts - 2017</span>
-                <input class="govuk-input" id="creditors-after-finance-leases-previous" name="creditors-after-finance-leases-previous" type="number"></label>
+                <input class="govuk-input" id="creditors-after-finance-leases-previous" name="creditors-after-finance-leases-previous" type="number" value="{{ data['creditors-after-finance-leases-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
               <span class="currency-type">£</span>
               <label for="other-creditors-current">
                 <span class="mobile-only-label">Other creditors - 2018</span>
-                <input class="govuk-input" id="creditors-after-other-creditors-current" name="creditors-after-other-creditors-current" type="number"></label>
+                <input class="govuk-input" id="creditors-after-other-creditors-current" name="creditors-after-other-creditors-current" type="number" value="{{ data['creditors-after-other-creditors-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -109,7 +109,7 @@
               <span class="currency-type">£</span>
               <label for="other-creditors-previous">
                 <span class="mobile-only-label">Other creditors - 2017</span>
-                <input class="govuk-input" id="creditors-after-other-creditors-previous" name="creditors-after-other-creditors-previous" type="number"></label>
+                <input class="govuk-input" id="creditors-after-other-creditors-previous" name="creditors-after-other-creditors-previous" type="number" value="{{ data['creditors-after-other-creditors-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@
               <span class="currency-type">£</span>
               <label for="total-current">
                 <span class="mobile-only-label">Total - 2018</span>
-                <input class="govuk-input" id="creditors-after-one-year-total-current" name="creditors-after-one-year-total-current" type="number"></label>
+                <input class="govuk-input" id="creditors-after-one-year-total-current" name="creditors-after-one-year-total-current" type="number" value="{{ data['creditors-after-one-year-total-current'] }}"></label>
             </div>
           </div>
           <div class="govuk-grid-column-one-quarter">
@@ -135,7 +135,7 @@
               <span class="currency-type">£</span>
               <label for="total-previous">
                 <span class="mobile-only-label">Total - 2017</span>
-                <input class="govuk-input" id="creditors-after-one-year-total-previous" name="creditors-after-one-year-total-previous" type="number"></label>
+                <input class="govuk-input" id="creditors-after-one-year-total-previous" name="creditors-after-one-year-total-previous" type="number" value="{{ data['creditors-after-one-year-total-previous'] }}"></label>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@
               <div class="govuk-govuk-form-group">
                 <label class="govuk-visually-hidden" for="after-one-year-additional-info">Add additional information about your 'creditors - amounts falling due after one year' note?</label>
                 <span id="creditors-after-more-detail-hint" class="govuk-hint">Enter details of any other 'creditors - amounts falling due after one year' information not already covered</span>
-                <textarea class="govuk-textarea" id="creditors-after-after-one-year-additional-info" name="creditors-after-after-one-year-additional-info" rows="5" aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="creditors-after-one-year-additional-info" name="creditors-after-one-year-additional-info" value="{{ data['creditors-after-one-year-additional-info'] }}" rows="5" aria-describedby="more-detail-hint"></textarea>
               </div>
             </details>
           </div>

@@ -21,27 +21,29 @@
           <form action="/small-full/small-full-changes-in-presentation-note" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "changesinpresentation",
-        name: "changesinpresentation",
-        fieldset: {
-          legend: {
-            text: "  Do your prepared accounts include a 'changes in presentation and prior period adjustments' note?  ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "changesinpresentation",
+                name: "changesinpresentation",
+                fieldset: {
+                  legend: {
+                    text: "  Do your prepared accounts include a 'changes in presentation and prior period adjustments' note?  ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('changesinpresentation','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('changesinpresentation','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"
