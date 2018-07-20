@@ -21,19 +21,19 @@
               ({{ data['company-number'] }})</span></p>
 
           {{ govukInput({
-    label: {
-      text: "Authentication code"
-    },
-    classes: "govuk-input--width-10",
-    id: "authentication-code",
-    name: "authentication-code",
-    type: "password"
-  }) }}
+              label: {
+                text: "Authentication code"
+              },
+              classes: "govuk-input--width-10",
+              id: "authentication-code",
+              name: "authentication-code",
+              type: "password"
+            }) }}
 
           <form action="/cics/cics-criteria-info" method="GET">
             {{ govukButton({
-      text: "Authenticate"
-    }) }}
+                text: "Authenticate"
+              }) }}
           </form>
 
           <p class="text">
