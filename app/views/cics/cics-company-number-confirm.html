@@ -12,34 +12,34 @@
   }) }}
 
     <main class="govuk-main-wrapper">
+      <form action="/chs/chs-login-page-cics-via-number" method="GET">
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
 
-          <h1 class="govuk-heading-l">Filing accounts for
-            <span class="uppercase">{{ data['company-name-for-testing'] }}</span></h1>
-          <p>Company number
-            <strong>{{ data['company-number'] }}</strong>
-          </p>
-          <p>Registered office address
-            <strong>{{ data['company-address-for-testing'] }}
-            </strong>
-          </p>
-
-          <div class="govuk-inset-text">
-            <p>Next accounts made up to
-              <strong>31 March 2018</strong><br/>due by
-              <strong>31 December 2018</strong>
+            <h1 class="govuk-heading-l">Filing accounts for
+              <span class="uppercase">{{ data['company-name-for-testing'] }}</span></h1>
+            <p>Company number
+              <strong>{{ data['company-number'] }}</strong>
             </p>
-            <p>Last accounts made up to
-              <strong>31 March 2017</strong>
+            <p>Registered office address
+              <strong>{{ data['company-address-for-testing'] }}
+              </strong>
             </p>
-          </div>
 
-          <form action="/chs/chs-login-page-cics-via-number" method="GET">
+            <div class="govuk-inset-text">
+              <p>Next accounts made up to
+                <strong>{{ data['company-made-up-date-for-testing'] }}</strong><br/>due by
+                <strong>{{ data['company-due-by-date-for-testing'] }}</strong>
+              </p>
+              <p>Last accounts made up to
+                <strong>{{ data['company-last-accounts-date-for-testing'] }}</strong>
+              </p>
+            </div>
+
             {{ govukButton({
-        text: "File CIC report and accounts for this company"
-      }) }}
+                text: "File CIC report and accounts for this company"
+              }) }}
           </form>
 
           <p>or,

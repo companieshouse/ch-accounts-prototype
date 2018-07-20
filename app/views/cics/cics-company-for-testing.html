@@ -21,7 +21,7 @@
           </h1>
 
           {{ govukInsetText({
-            text: "User researchers should enter these details before the test starts (this screen should not be seen by the user)"
+            text: "User researchers should enter these details BEFORE the test starts (this screen should not be seen by the user)"
           }) }}
 
           <form action="/gov-uk/gov-uk-start-page-cics" method="post">
@@ -50,6 +50,45 @@
                   classes: "govuk-input",
                   id: "company-address-for-testing",
                   name: "company-address-for-testing"
+                }) }}
+
+            {{ govukInput({
+              label: {
+              text: "What is the date the next accounts made up to?",
+              classes: "govuk-label--m govuk-!-margin-bottom-0"
+                },
+                hint: {
+                  text: "For example, '31 March 2018'"
+                },
+                  classes: "govuk-input govuk-!-width-one-third",
+                  id: "company-made-up-date-for-testing",
+                  name: "company-made-up-date-for-testing"
+                }) }}
+
+            {{ govukInput({
+              label: {
+              text: "What is the date the next accounts are due by?",
+              classes: "govuk-label--m govuk-!-margin-bottom-0"
+                },
+                hint: {
+                  text: "For example, '31 December 2018'"
+                },
+                  classes: "govuk-input govuk-!-width-one-third",
+                  id: "company-due-by-date-for-testing",
+                  name: "company-due-by-date-for-testing"
+                }) }}
+
+            {{ govukInput({
+              label: {
+              text: "What is the date the last accounts were made up?",
+              classes: "govuk-label--m govuk-!-margin-bottom-0"
+                },
+                hint: {
+                  text: "For example, '31 March 2017'"
+                },
+                  classes: "govuk-input govuk-!-width-one-third",
+                  id: "company-last-accounts-date-for-testing",
+                  name: "company-last-accounts-date-for-testing"
                 }) }}
 
             {{ govukButton({

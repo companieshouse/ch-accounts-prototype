@@ -22,10 +22,13 @@ module.exports = {
 
 	// Have removed a lot of the default answers, hence there are numerous instances of  "" - these MAY be removed completely at some point
 
-	// User sign in and company authentication
+	// Variables to set BEFORE the user starts the test
 	"company-name-for-testing": "A TEST CIC",
 	"company-number": "01234567",
-	"company-address-for-testing": "1 Any Street, Cardiff, Wales, CF12 3AB ",
+	"company-address-for-testing": "1 Any Street, Cardiff, Wales, CF12 3AB",
+	"company-made-up-date-for-testing": "31 March 2018",
+	"company-due-by-date-for-testing": "31 December 2018",
+	"company-last-accounts-date-for-testing": "31 March 2017",
 	"chs-email": "jsmith@testcompany.co.uk",
 
 	//CIC Report
