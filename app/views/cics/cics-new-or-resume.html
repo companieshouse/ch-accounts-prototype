@@ -1,54 +1,60 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Are you starting a new filing? {% endblock %}
+{% block pageTitle %}
+  Resume your CIC report and full annual accounts?
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {{ govukBackLink({
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        <form action="/cics/cics-company-number" method="GET">
+          <form action="/cics/cics-company-number" method="GET">
 
-      {{ govukRadios({
-        idPrefix: "changed-name",
-        name: "cicsneworresume",
-        fieldset: {
-          legend: {
-            text: "Are you starting a new filing?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No - I'm continuing an existing filing"
-          }
-        ]
-      }) }}
+            {{ govukRadios({
+              idPrefix: "changed-name",
+              name: "cicsneworresume",
+              fieldset: {
+                legend: {
+                  text: "Resume your CIC report and full annual accounts?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: "Last time you logged in, you were filing a CIC report and full annual accounts which you have not completed. Would you like to:"
+              },
+              items: [
+                {
+                  value: "resume",
+                  text: "Resume"
+                },
+                {
+                  value: "new",
+                  text: "Start a new filing"
+                }
+              ]
+            }) }}
 
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-  </div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
-
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}
