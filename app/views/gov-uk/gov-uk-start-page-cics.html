@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
-{% block pageTitle %} File your CIC report and full annual accounts with Companies House {% endblock %}
+{% block pageTitle %}
+  File your CIC report and full annual accounts with Companies House
+{% endblock %}
 {% block main %}
 
-
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {{ govukBreadcrumbs({
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBreadcrumbs({
   items: [
     {
       text: "Home",
@@ -21,50 +22,37 @@
     }
   ]
 }) }}
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <h1 class="govuk-heading-xl">File your CIC report and full annual accounts with Companies House</h1>
 
+          <p>Use this service to file your CIC report and full annual accounts with Companies House</p>
 
+          {{ govukButton({ text: "Start now", href: "/cics/cics-new-or-resume", classes: "govuk-button--start" }) }}
+          <!-- <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;"> on the Companies House service</span>-->
 
+          <h2 class="govuk-heading-m">Before you start</h2>
 
+          <p class="govuk-body">You must get your accounts approved by your company directors before you file them.</p>
+          <p class="govuk-body">It costs £15 to file. You can pay by MasterCard, Visa, Electron, Maestro or Delta debit or credit card.</p>
+          <p class="govuk-body">Read guidance on
+            <a href="https://www.gov.uk/prepare-file-annual-accounts-for-limited-company">what your annual accounts should include</a>.</p>
+          <p class="govuk-body">See a
+            <a href="/public/pdf/cic-report-completed-example.pdf">completed example of a CIC report (PDF 111kb)</a>.</p>
+          <p class="govuk-body">You’ll need a Companies House password and authentication code to use this service - you’ll be able to register for these if you don’t have them.</p>
+          <p class="govuk-body">The authentication code will be sent by post within 5 days. For security reasons, it can’t be sent by email or text.</p>
+          <p class="govuk-body">
+            <a href="https://www.gov.uk/contact-companies-house">Contact Companies House</a>
+            to get help filing your company’s accounts online.</p>
 
-      <h1 class="govuk-heading-xl">File your CIC report and full annual accounts with Companies House</h1>
+        </div>
+      </div>
 
-
-      <p>Use this service to file your CIC report and full annual accounts with Companies House</p>
-
-
-
-
-      {{ govukButton({ text: "Start now", href: "/cics/cics-about-service#", classes: "govuk-button--start" }) }}
-    <!--  <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;"> on the Companies House service</span>-->
-
-      <h2 class="govuk-heading-m">Before you start</h2>
-
-      <p class="govuk-body">You must get your accounts approved by your company directors before you file them.</p>
-      <p class="govuk-body">It costs £15 to file. You can pay by MasterCard, Visa, Electron, Maestro or Delta debit or credit card.</p>
-      <p class="govuk-body">Read guidance on <a href="https://www.gov.uk/prepare-file-annual-accounts-for-limited-company">what your annual accounts should include</a>.</p>
-      <p class="govuk-body">See a <a href="/public/pdf/cic-report-completed-example.pdf">completed example of a CIC report (PDF 111kb)</a>.</p>
-      <p class="govuk-body">You’ll need a Companies House password and authentication code to use this service - you’ll be able to register for these if you don’t have them.</p>
-      <p class="govuk-body">The authentication code will be sent by post within 5 days. For security reasons, it can’t be sent by email or text.</p>
-      <p class="govuk-body"><a href="https://www.gov.uk/contact-companies-house">Contact Companies House</a> to get help filing your company’s accounts online.</p>
-
-
-
-
-
-
-
-
-
-    </div>
+    </main>
   </div>
-
-</main>
-</div><!---govuk-width-container-->
-
+  <!---govuk-width-container-->
 
 {% endblock %}

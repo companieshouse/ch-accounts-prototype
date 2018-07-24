@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Resume your CIC report and full annual accounts?
+
+  Are you starting a new filing?
+
 {% endblock %}
 {% block main %}
 
@@ -16,29 +18,26 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/cics/cics-company-number" method="GET">
+          <form action="/cics/cics-about-service" method="GET">
 
             {{ govukRadios({
-              idPrefix: "changed-name",
-              name: "cicsneworresume",
+              idPrefix: "cicsNewOrResume",
+              name: "cicsNewOrResume",
               fieldset: {
                 legend: {
-                  text: "Resume your CIC report and full annual accounts?",
+                  text: "Are you starting a new filing?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
               },
-              hint: {
-                text: "Last time you logged in, you were filing a CIC report and full annual accounts which you have not completed. Would you like to:"
-              },
               items: [
                 {
-                  value: "resume",
-                  text: "Resume"
+                  value: "yes",
+                  text: "Yes"
                 },
                 {
-                  value: "new",
-                  text: "Start a new filing"
+                  value: "no",
+                  text: "No - I'm continuing an existing filing "
                 }
               ]
             }) }}

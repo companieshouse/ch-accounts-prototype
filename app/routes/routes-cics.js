@@ -3,14 +3,7 @@
 
 module.exports = function ( router ) {
 
-	router.get( '/cics/cics-criteria-report', function ( req, res ) {
-		var cicsr1 = req.query.cicsr1;
-		if ( cicsr1 == "no" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
-		} else {
-			res.render( 'cics/cics-criteria-report' );
-		}
-	} );
+
 
 	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
 		var criteriareport = req.query.criteriareport;
@@ -21,18 +14,36 @@ module.exports = function ( router ) {
 		}
 	} );
 
-	router.get( '/cics/cics-criteria-audit', function ( req, res ) {
+	router.get( '/cics/choose-cic-report-choose-accounts', function ( req, res ) {
 		var cicsr1 = req.query.cicsr1;
 		if ( cicsr1 == "no" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
+		} else {
+			res.render( 'cics/choose-cic-report-choose-accounts' );
+		}
+	} );
+
+	router.get( '/cics/cics-criteria-audit', function ( req, res ) {
+		var cicReportType = req.query.cicReportType;
+		if ( cicReportType == "detailed" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/cics-criteria-audit' );
 		}
 	} );
 
-	router.get( '/cics/general-description', function ( req, res ) {
+	router.get( '/cics/cics-criteria-report', function ( req, res ) {
 		var accountsaudited = req.query.accountsaudited;
 		if ( accountsaudited == "yes" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
+		} else {
+			res.render( 'cics/cics-criteria-report' );
+		}
+	} );
+
+	router.get( '/cics/general-description', function ( req, res ) {
+		var criteriaprofit = req.query.criteriaprofit;
+		if ( criteriaprofit == "yes" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/general-description' );
@@ -106,6 +117,17 @@ module.exports = function ( router ) {
 
 
 	// CICS - detailed or simplified accounts
+
+	router.get( '/cics/cics-about-service', function ( req, res ) {
+		var cicsNewOrResume = req.query.cicsNewOrResume;
+		if ( cicsNewOrResume == "no" ) {
+			res.redirect( "/chs/chs-login-page-cics-via-number" );
+		} else {
+			res.render( 'cics/cics-about-service' );
+		}
+	} );
+
+	// CICS - new filing or resume an existing one
 
 	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
 		var choosecicreporttype = req.query.choosecicreporttype;
