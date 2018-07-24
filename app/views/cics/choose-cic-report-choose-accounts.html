@@ -19,36 +19,33 @@
         <div class="govuk-grid-column-two-thirds">
           <form action="/cics/cics-criteria-audit" method="get" class="form">
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="cicReportType-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h1 class="govuk-fieldset__heading">
-                    Which type of CIC report do you want to file?
-                  </h1>
-                </legend>
-                <span id="cicReportType-hint" class="govuk-hint">Currently, you can’t use this service if you're filing a detailed CIC report.
-                </span>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="cicReportType-1" name="cicReportType" type="radio" value="simple">
-                    <label class="govuk-label govuk-radios__label" for="cicReportType-1">
-                      Simplified
-                      <span class="govuk-hint">The majority of CICs complete the simplified report</span>
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="cicReportType-2" name="cicReportType" type="radio" value="detailed">
-                    <label class="govuk-label govuk-radios__label" for="cicReportType-2">
-                      Detailed
-                      <span class="govuk-hint">This is for CICs that have more complex financial arrangements</span>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+            {{ govukRadios({
+                classes: "govuk-radios",
+                idPrefix: "cicReportType",
+                name: "cicReportType",
+                fieldset: {
+                  legend: {
+                    text: "Which type of CIC report do you want to file?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                  text: "This is not the type of accounts you've prepared."
+                },
+                items: [
+                  {
+                    value: "simplified",
+                    "html": "Simplified<span class=\"govuk-hint\">The majority of CICs complete the simplified report</span> " },
+                  {
+                    value: "detailed",
+                    "html": "Detailed<span class=\"govuk-hint\">This is for CICs that have more complex financial arrangements. Currently, you can’t use this service if you're filing a detailed CIC report.</span> "
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
-              text: "Continue"
+              text: "Save and continue"
             }) }}
           </form>
 
