@@ -97,8 +97,13 @@ $error-button-hover: #8e0513;
     display: block;
     width: 100%;
     clear: both;
-    margin-bottom: 30px;
+    margin-bottom: 2.2em;
     position: static;
+  }
+  @include govuk-media-query(desktop) {
+    .currency-included-within-inputs input[type="number"] {
+      margin-bottom: 0.5em;
+    }
   }
 
   .currency-included-within-inputs .govuk-grid-column-one-half {
