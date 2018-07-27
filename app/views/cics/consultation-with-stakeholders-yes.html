@@ -39,20 +39,19 @@
               </div>
             </details>
 
-            {{ govukTextarea({
-      name: "cics-consultation-stakeholders",
-      id: "cics-consultation-stakeholders",
-      value: data['cics-consultation-stakeholders'],
-      rows: "20",
-      label: {
-        text: "Give details of any consultation with stakeholders",
-        classes: "govuk-visually-hidden"
-      }
-    }) }}
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="Please enter the company’s activities and impact">
+                <legend class="govuk-visually-hidden">Give details of any consultation with stakeholders</legend>
+                <label class="govuk-label govuk-visually-hidden" for="cics-consultation-stakeholders">
+                  Give details of any consultation with stakeholders
+                </label>
+                <textarea class="govuk-textarea" id="cics-consultation-stakeholders" name="cics-consultation-stakeholders" rows="20"></textarea>
+              </fieldset>
+            </div>
 
             {{ govukButton({
-        text: "Save and continue"
-      }) }}
+                text: "Save and continue"
+              }) }}
           </form>
 
         </div>
