@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -20,32 +22,32 @@
 
           <form action="/cics/transfer-of-assets" method="get" class="form">
 
-            {% call govukFieldset({
-      legend: {
-        text: "Enter your directors' remuneration information here",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
-      }
-    }) %}
-            {{ govukDetails({
-        summaryText: "See an example",
-        text: "The total amount paid to or receivable by directors in respect of qualifying services was £10,000"
-      }) }}
-            {{ govukTextarea({
-      name: "cics-directors-remuneration",
-      id: "cics-directors-remuneration",
-      value: data['cics-directors-remuneration'],
-      rows: "20",
-      label: {
-        text: "Enter your directors' remuneration information here",
-        classes: "govuk-visually-hidden"
-      }
-    }) }}
-            {% endcall %}
+            <h1 class="govuk-heading-l">Enter your directors' remuneration information here</h1>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See an example
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                The total amount paid to or receivable by directors in respect of qualifying services was £10,000
+              </div>
+            </details>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="Please enter your directors' remuneration information">
+                <legend class="govuk-visually-hidden">Enter your directors' remuneration information here</legend>
+                <label class="govuk-label govuk-visually-hidden" for="cics-directors-remuneration">
+                  Enter your directors' remuneration information here
+                </label>
+                <textarea class="govuk-textarea" id="cics-directors-remuneration" name="cics-directors-remuneration" rows="20"></textarea>
+              </fieldset>
+            </div>
 
             {{ govukButton({
-        text: "Save and continue"
-      }) }}
+              text: "Save and continue"
+            }) }}
           </form>
 
         </div>

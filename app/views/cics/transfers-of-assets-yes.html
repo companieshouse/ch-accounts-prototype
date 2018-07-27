@@ -35,20 +35,19 @@
               </div>
             </details>
 
-            {{ govukTextarea({
-      name: "cics-transfer-assets",
-      id: "cics-transfer-assets",
-      value: data['cics-transfer-assets'],
-      rows: "20",
-      label: {
-        text: "Give details about assets transferred other than for full consideration",
-        classes: "govuk-visually-hidden"
-      }
-    }) }}
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="Please give details about assets transferred other than for full consideration">
+                <legend class="govuk-visually-hidden">Give details about assets transferred other than for full consideration</legend>
+                <label class="govuk-label govuk-visually-hidden" for="cics-transfer-assets">
+                  Give details about assets transferred other than for full consideration
+                </label>
+                <textarea class="govuk-textarea" id="cics-transfer-assets" name="cics-transfer-assets" rows="20"></textarea>
+              </fieldset>
+            </div>
 
             {{ govukButton({
-        text: "Save and continue"
-      }) }}
+              text: "Save and continue"
+            }) }}
           </form>
 
         </div>
