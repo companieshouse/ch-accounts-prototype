@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -21,32 +23,36 @@
           <form action="/small-full/small-full-turnover-policy-yes-no" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "smallfullotherpolicies",
-        name: "smallfullotherpolicies",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include any additional accounting policies?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "For example, 'turnover policy', 'tangible fixed assets depreciation policy', 'intangible fixed assets amortisation policy', or 'valuation information policy'"
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: checked('smallfullotherpolicies','yes')
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: checked('smallfullotherpolicies','no')
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "smallfullotherpolicies",
+                name: "smallfullotherpolicies",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if your prepared accounts include any additional accounting policies"
+                    },
+                  legend: {
+                    text: "Do your prepared accounts include any additional accounting policies?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                  text: "For example, 'turnover policy', 'tangible fixed assets depreciation policy', 'intangible fixed assets amortisation policy', or 'valuation information policy'"
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('smallfullotherpolicies','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('smallfullotherpolicies','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"

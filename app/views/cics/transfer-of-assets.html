@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -20,39 +22,43 @@
 
           <form action="/cics/cics-check-before-you-submit" method="get" class="form">
             {% call govukFieldset({
-    legend: {
-      text: "Was there any transfer of assets that have not reached market value?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  }) %}
+              legend: {
+                text: "Was there any transfer of assets that have not reached market value?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            }) %}
             {{ govukDetails({
-      summaryText: "What's this?",
-      text: "Give full details of any transfer of the CIC's assets that have not reached full market value during this financial year. For example, if an asset was valued at £1,000 and the CIC sold it for less (say £500), you should declare why. This also
-        applies if the CIC gave any assets to another CIC or a charity."
-    }) }}
+                summaryText: "What's this?",
+                text: "Give full details of any transfer of the CIC's assets that have not reached full market value during this financial year. For example, if an asset was valued at £1,000 and the CIC sold it for less (say £500), you should declare why. This also
+                  applies if the CIC gave any assets to another CIC or a charity."
+              }) }}
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "assetstransferred",
-        name: "assetstransferred",
-        fieldset: {
-          legend: {
-            text: "Were any assets transferred other than for full consideration?",
-            classes: "govuk-visually-hidden"
-          }
-        },
+                  classes: "govuk-radios--inline",
+                  idPrefix: "assetstransferred",
+                  name: "assetstransferred",
+                  fieldset: {
+                    attributes : {
+                      'data-required': "data-required",
+                      'data-error': "Please confirm if there were any transfer of assets that have not reached market value"
+                      },
+                    legend: {
+                      text: "Were any assets transferred other than for full consideration?",
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
 
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                }) }}
             {% endcall %}
 
             {{ govukButton({

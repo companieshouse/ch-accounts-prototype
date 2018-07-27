@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -21,29 +23,33 @@
           <form action="/small-full/small-full-post-balance-sheet-events-note" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "postbalancesheetevents",
-        name: "postbalancesheetevents",
-        fieldset: {
-          legend: {
-            text: "Do your prepared accounts include a 'post balance sheet events' note? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: checked('postbalancesheetevents','yes')
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: checked('postbalancesheetevents','no')
-          }
-        ]
-      }) }}
+              classes: "govuk-radios--inline",
+              idPrefix: "postbalancesheetevents",
+              name: "postbalancesheetevents",
+              fieldset: {
+                attributes : {
+                  'data-required': "data-required",
+                  'data-error': "Please confirm if your prepared accounts include a 'post balance sheet events' note"
+                  },
+                legend: {
+                  text: "Do your prepared accounts include a 'post balance sheet events' note? ",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  checked: checked('postbalancesheetevents','yes')
+                },
+                {
+                  value: "no",
+                  text: "No",
+                  checked: checked('postbalancesheetevents','no')
+                }
+              ]
+            }) }}
 
             {{ govukButton({
               text: "Save and continue"

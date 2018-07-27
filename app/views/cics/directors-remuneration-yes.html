@@ -1,71 +1,70 @@
 {% extends "layout.html" %}
-{% block pageTitle %}   Is directors' remuneration information included in your accounts? {% endblock %}
+{% block pageTitle %}
+  Is directors' remuneration information included in your accounts?
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    {% include 'includes/error.html' %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <main class="govuk-main-wrapper">
 
-    <h1 class="govuk-heading-l">
-      <!--<span class="circle-subheading text">CIC report</span>-->
-      Is directors' remuneration information included in your accounts?
-    </h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <h1 class="govuk-heading-l">
+            <!--<span class="circle-subheading text">CIC report</span>-->
+            Is directors' remuneration information included in your accounts?
+          </h1>
 
+          <form action="/cics/transfer-of-assets" method="get" class="form">
 
-    <form action="/cics/transfer-of-assets" method="get" class="form">
+            {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "directorsremunerationaccounts",
+              name: "directorsremunerationaccounts",
+              fieldset: {
+                attributes : {
+                  'data-required': "data-required",
+                  'data-error': "Please confirm if directors' remuneration information included in your accounts"
+                  },
+                  legend: {
+                  text: "Is directors' remuneration information included in your accounts?",
+                  classes: "govuk-visualy-hidden"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
 
-
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "directorsremunerationaccounts",
-        name: "directorsremunerationaccounts",
-        fieldset: {
-          legend: {
-            text: "Is directors' remuneration information included in your accounts?",
-            classes: "govuk-visualy-hidden"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-
-
-
-
-
-                  {{ govukButton({
+            {{ govukButton({
                     text: "Save and continue"
                   }) }}
-                </form>
+          </form>
 
-            </div><!--govuk-grid-row-->
-            </div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-            </main>
-            </div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

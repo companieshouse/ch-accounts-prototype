@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -25,6 +27,10 @@
                 idPrefix: "smallfullothernotes",
                 name: "smallfullothernotes",
                 fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if your prepared accounts include any other notes"
+                    },
                   legend: {
                     text: "Do your prepared accounts include any other notes? ",
                     isPageHeading: true,

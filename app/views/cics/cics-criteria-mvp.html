@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -28,28 +30,32 @@
             </ul>
 
             {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "cicsr1",
-          name: "cicsr1",
-          fieldset: {
-            legend: {
-              text: "Do your prepared full accounts meet the criteria?",
-              isPageHeading: true,
-              classes: "govuk-visually-hidden"
-            }
-          },
+                  classes: "govuk-radios--inline",
+                  idPrefix: "cicsr1",
+                  name: "cicsr1",
+                  fieldset: {
+                    attributes : {
+                      'data-required': "data-required",
+                      'data-error': "Please confirm if your prepared full accounts meet the criteria"
+                      },
+                    legend: {
+                      text: "Do your prepared full accounts meet the criteria?",
+                      isPageHeading: false,
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
 
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                }) }}
 
             {{ govukButton({
           text: "Continue"

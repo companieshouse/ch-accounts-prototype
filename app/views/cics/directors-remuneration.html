@@ -1,72 +1,72 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Was directors' remuneration received? {% endblock %}
+{% block pageTitle %}
+  Was directors' remuneration received?
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
 
+    {% include 'includes/error.html' %}
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+    <main class="govuk-main-wrapper">
 
-  <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+            Was directors' remuneration received?
+          </h1>
 
-    <h1 class="govuk-heading-l">
-      Was directors' remuneration received?
-    </h1>
+          <form action="/cics/directors-remuneration-yes" method="get" class="form">
 
+            <p>Directors' remuneration is any money paid to the CIC director(s). This includes their usual pay, as well as other benefits.</p>
 
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "directorsremunerationyn",
+                name: "directorsremunerationyn",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if directors' remuneration was received"
+                    },
+                    legend: {
+                    text: "Was directors' remuneration received?",
+                    classes: "govuk-visually-hidden"
+                  }
+                },
 
-    <form action="/cics/directors-remuneration-yes" method="get" class="form">
-
-      <p>Directors' remuneration is any money paid to the CIC director(s). This includes their usual pay, as well as other benefits.</p>
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "directorsremunerationyn",
-        name: "directorsremunerationyn",
-        fieldset: {
-          legend: {
-            text: "Was directors' remuneration received?",
-            classes: "govuk-visually-hidden"
-          }
-        },
-
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-
-
-
-
-
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no",
+                    text: "No"
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Save and continue"
             }) }}
           </form>
 
-      </div><!--govuk-grid-row-->
-      </div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-      </main>
-      </div><!---govuk-width-container-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
-
-      {% endblock %}
+{% endblock %}

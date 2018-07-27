@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -20,30 +22,34 @@
           <form action="/cics/general-description" method="get" class="form">
 
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "criteriaprofit",
-        name: "criteriaprofit",
-        fieldset: {
-          legend: {
-            text: "Do you want to file a profit and loss account (income statement)?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "Currently, you can’t use this service to file a profit and loss account."
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+              classes: "govuk-radios--inline",
+              idPrefix: "criteriaprofit",
+              name: "criteriaprofit",
+              fieldset: {
+                attributes : {
+                  'data-required': "data-required",
+                  'data-error': "Please confirm if your want to file a profit and loss account (income statement)"
+                  },
+                legend: {
+                  text: "Do you want to file a profit and loss account (income statement)?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: "Currently, you can’t use this service to file a profit and loss account."
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
 
             {{ govukButton({
               text: "Continue"

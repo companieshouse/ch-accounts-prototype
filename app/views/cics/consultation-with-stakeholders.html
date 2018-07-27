@@ -1,77 +1,79 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Consultation with stakeholders {% endblock %}
+{% block pageTitle %}
+  Consultation with stakeholders
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
-
-  <main class="govuk-main-wrapper">
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-
-    <h1 class="govuk-heading-l">
-      <!--<span class="circle-subheading text">CIC report</span>-->
-      Has there been a consultation with stakeholders?
-    </h1>
-
-
-
-    <form action="/cics/consultation-with-stakeholders-yes" method="get" class="form">
-
-      <p>A stakeholder is a party that has an interest in the CIC and can either affect or be affected by its business and activities.</p>
-      <p>If there's been any consultation with stakeholders, you should mention:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>who the company's stakeholders are</li>
-        <li>how the stakeholders have been consulted</li>
-        <li>any action the company has taken in response to feedback from its consultations</li>
-      </ul>
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "consultationwithstakeholders",
-        name: "consultationwithstakeholders",
-        fieldset: {
-          legend: {
-            text: "Has there been a consultation with stakeholders? ",
-            isPageHeading: true,
-            classes: "govuk-visually-hidden"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
       }) }}
 
+    {% include 'includes/error.html' %}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-    </form>
+          <h1 class="govuk-heading-l">
+            <!--<span class="circle-subheading text">CIC report</span>-->
+            Has there been a consultation with stakeholders?
+          </h1>
 
-</div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
+          <form action="/cics/consultation-with-stakeholders-yes" method="get" class="form">
 
-</main>
-</div><!---govuk-width-container-->
+            <p>A stakeholder is a party that has an interest in the CIC and can either affect or be affected by its business and activities.</p>
+            <p>If there's been any consultation with stakeholders, you should mention:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>who the company's stakeholders are</li>
+              <li>how the stakeholders have been consulted</li>
+              <li>any action the company has taken in response to feedback from its consultations</li>
+            </ul>
 
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "consultationwithstakeholders",
+                name: "consultationwithstakeholders",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if there been a consultation with stakeholders"
+                    },
+                  legend: {
+                    text: "Has there been a consultation with stakeholders? ",
+                    isPageHeading: true,
+                    classes: "govuk-visually-hidden"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no",
+                    text: "No"
+                  }
+                ]
+              }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

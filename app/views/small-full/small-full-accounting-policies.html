@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -64,16 +66,15 @@
                       </label>
                       <textarea class="govuk-textarea" id="another-accounting-standard" name="another-accounting-standard" rows="5" aria-describedby="more-detail-hint"></textarea>
                     </div>
-
                   </div>
-
                 </div>
+
               </div>
             </fieldset>
 
             {{ govukButton({
-        text: "Save and continue"
-      }) }}
+              text: "Save and continue"
+            }) }}
           </form>
 
         </div>

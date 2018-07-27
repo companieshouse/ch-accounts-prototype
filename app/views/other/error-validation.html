@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Error validation
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="" method="GET">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="I am a checkbox error">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    What is your nationality?
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="british">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-1">
+                      British
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                      Irish
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="I am a radio button error">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    Have you changed your name?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="I am a textarea error">
+                <label class="govuk-label--s" for="more-detail">
+                  Can you provide more detail?
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="I am a textinput error">
+                <label class="govuk-label--s" for="email">
+                  Email address
+                </label>
+                <input class="govuk-input" id="email" name="email" type="text" aria-describedby="email-hint">
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required="data-required" data-error="I am a date error">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                      Date of birth
+                    </h1>
+                  </legend>
+                  <div class="govuk-date-input">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group form-group-day">
+                        <label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
+                        <input class="govuk-input" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group form-group-month">
+                        <label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
+                        <input class="govuk-input" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" min="0" max="12">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group form-group-year">
+                        <label class="govuk-label govuk-date-input__label" for="dob-year">Year</label>
+                        <input class="govuk-input" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" min="0" max="2016">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+            </form>
+
+          </div>
+          <!--govuk-grid-row-->
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+
+      </main>
+    </div>
+    <!---govuk-width-container-->
+
+  {% endblock %}

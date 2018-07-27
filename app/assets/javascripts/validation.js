@@ -1,224 +1,217 @@
-//WARNING: For prototypes only. Do not use in production under any circumstances
+// Config
+var defaultErrorHeading = 'There\'s been a problem';
+var defaultErrorDescription = 'Check the following';
+var defaultErrorMessage = 'There is an error';
 
-$('form').on('submit', function (e) {
-  validate(e);
-});
+function clearValidation() {
+	$( '.govuk-error-summary' )
+		.remove();
 
-function validate(e) {
-  var valid = [];
-  var invalid = [];
-  var num = 1;
+	$( '.govuk-input--error' )
+		.each( function () {
+			$( this )
+				.removeClass( 'govuk-input--error' );
+		} );
 
-  // Check all data-required tags
-  $('[data-required]').each(function () {
-    var textInputs = $(this).find('input[type="text"]');
-    var radioInputs = $(this).find('input[type="radio"]');
-    var checkboxInputs = $(this).find('input[type="checkbox"]');
-    var textAreas = $(this).find('textarea');
+	$( '.govuk-error-message' )
+		.each( function () {
+			$( this )
+				.remove();
+		} );
 
-    var selected = false;
-    var id;
-    var formGroup;
-    var text;
-    var errorMessage;
-
-    // Checkboxes
-    if (checkboxInputs.length > 0) {
-      formGroup = $(this).find('.form-group');
-      id = $(this).find('input').attr('id');
-      selected = false;
-
-      $(checkboxInputs).each(function () {
-        if ($(this).parent().hasClass('selected')) {
-          selected = true;
-          return;
-        }
-      });
-
-      if (selected === false) {
-        invalid.push($(this).find('input').attr('name'));
-        text = $(this).parents('.form-group').prev('h2').text();
-        errorMessage = $(this).attr('data-error');
-
-        if (errorMessage === undefined) {
-          errorMessage = 'choose an option';
-        }
-
-        if ($(this).find('.error-message').length === 0) {
-          formGroup.addClass('error');
-          formGroup.prepend(
-            String(
-              '<span id="error-message-' + num + '" class="error-message">' + errorMessage + '</span>'
-            )
-          );
-
-          $('.error-summary-list:first').append(
-            String(
-              '<li><a href="#' + id + '"> ' + text + errorMessage + '</a></li>'
-            )
-          );
-        }
-      } else {
-        formGroup.removeClass('error');
-        formGroup.find('.error-message').remove();
-        $('.error-summary-list').find('a[href="#' + id + '"]').remove();
-      }
-
-      num++;
-    }
-
-    // Radios
-    if (radioInputs.length > 0) {
-      formGroup = $(this).find('.form-group');
-      id = $(this).find('input').attr('id');
-      selected = false;
-
-      $(radioInputs).each(function () {
-        if ($(this).parent().hasClass('selected')) {
-          selected = true;
-          return;
-        }
-      });
-
-      if (selected === false) {
-        invalid.push($(this).find('input').attr('name'));
-        text = $(this).parents('.form-group').prev('h2').text();
-
-        errorMessage = $(this).attr('data-error');
-
-        if (errorMessage === undefined) {
-          errorMessage = 'choose an option';
-        }
-
-        if ($(this).find('.error-message').length === 0) {
-          formGroup.addClass('error');
-          formGroup.prepend(
-            String(
-              '<span id="error-message-' + num + '" class="error-message">' + errorMessage + '</span>'
-            )
-          );
-
-          $('.error-summary-list:first').append(
-            String(
-              '<li><a href="#' + id + '"> ' + text + errorMessage + '</a></li>'
-            )
-          );
-        }
-      } else {
-        formGroup.removeClass('error');
-        formGroup.find('.error-message').remove();
-        $('.error-summary-list').find('a[href="#' + id + '"]').remove();
-      }
-
-      num++;
-    }
-
-    // Text inputs
-    if (textInputs.length > 0) {
-      $(textInputs).each(function () {
-        var id = $(this).attr('id');
-        var formGroup = $(this).parents('.form-group');
-        var label = $('label[for="' + $(this).attr('id') + '"]');
-        var errorMessage = $(this).parents('fieldset').attr('data-error');
-
-        if ($(this).val().length === 0) {
-          invalid.push($(this).attr('id'));
-          // Get the text from the label and remove any hint text
-          var text = $(this).parents('.form-group').find('label').html();
-          text = text.replace(/(<span class=")(.*)(">)(.*)(<\/span>)/, '');
-
-          // If there is no error message set, then make a default one
-          if (errorMessage === undefined) {
-            errorMessage = 'There is an error';
-          }
-
-          // Find the formgroup for this input and add the error class
-          formGroup.addClass('error');
-          label.css('font-weight', 'bold');
-
-          // If the error message is not already showing, add it to the page
-          if ($(this).parents('.form-group').find('.error-message').length === 0) {
-            label.after(
-              String(
-                '<span id="error-message-' + num + '" class="error-message">' + errorMessage + '</span>'
-              )
-            );
-
-            // Add the error to the summary list at the top of the page
-            $('.error-summary-list:first').append(
-              String(
-                '<li><a href="#' + id + '"> ' + text + errorMessage + '</a></li>'
-              )
-            );
-
-            num++;
-          }
-        } else {
-          valid.push($(this).attr('id'));
-          $(this).parents('.form-group').removeClass('error');
-          $(this).parents('.form-group').find('.error-message').remove();
-          $('.error-summary-list').find('a[href="#' + id + '"]').remove();
-        }
-      });
-    }
-
-    // Textareas
-    if (textAreas.length > 0) {
-      $(textAreas).each(function () {
-        var id = $(this).attr('id');
-        var formGroup = $(this).parents('.form-group');
-        var label = $('label[for="' + $(this).attr('id') + '"]');
-        var errorMessage = $(this).parents('fieldset').attr('data-error');
-
-        if ($(this).val().length === 0) {
-          invalid.push($(this).attr('id'));
-          // Get the text from the label and remove any hint text
-          var text = $(this).parents('.form-group').find('label').html();
-          text = text.replace(/(<span class=")(.*)(">)(.*)(<\/span>)/, '');
-
-          // If there is no error message set, then make a default one
-          if (errorMessage === undefined) {
-            errorMessage = 'There is an error';
-          }
-
-          // Find the formgroup for this input and add the error class
-          formGroup.addClass('error');
-          label.css('font-weight', 'bold');
-
-          // If the error message is not already showing, add it to the page
-          if ($(this).parents('.form-group').find('.error-message').length === 0) {
-            label.after(
-              String(
-                '<span id="error-message-' + num + '" class="error-message">' + errorMessage + '</span>'
-              )
-            );
-
-            // Add the error to the summary list at the top of the page
-            $('.error-summary-list:first').append(
-              String(
-                '<li><a href="#' + id + '">- ' + text + ' - ' + errorMessage + '</a></li>'
-              )
-            );
-
-            num++;
-          }
-        } else {
-          valid.push($(this).attr('id'));
-          $(this).parents('.form-group').removeClass('error');
-          $(this).parents('.form-group').find('.error-message').remove();
-          $('.error-summary-list').find('a[href="#' + id + '"]').remove();
-        }
-      });
-    }
-  });
-
-  // If there is more than one invalid field
-  if (invalid.length > 0) {
-    // Stop the form from submitting
-    e.preventDefault();
-    // Show the error summary
-    $('.error-summary:first').show();
-    // Scroll to the top of the page
-    $('body').scrollTop(0);
-  }
+	$( '.govuk-form-group--error' )
+		.each( function () {
+			$( this )
+				.removeClass( 'govuk-form-group--error' );
+		} );
 }
+
+function checkTextFields( errors ) {
+	$( document )
+		.find( 'input[type="text"],input[type="password"], textarea' )
+		.each( function () {
+			var $formgroup = $( this )
+				.parents( 'fieldset' );
+			var label = $( this )
+				.parent()
+				.find( 'label' )
+				.clone()
+				.children()
+				.remove()
+				.end()
+				.text();
+
+			if ( $formgroup.attr( 'data-required' ) !== undefined && $( this )
+				.val() === '' && !$( this )
+				.parent()
+				.hasClass( 'js-hidden' ) ) {
+				if ( $( this )
+					.attr( 'id' ) === undefined ) {
+					$( this )
+						.attr( 'id', $( this )
+							.attr( 'name' ) );
+				}
+
+				errors.push( {
+					id: $( this )
+						.attr( 'id' ),
+					name: $( this )
+						.attr( 'name' ),
+					//	errorMessage: $formgroup.attr( 'data-error' )
+					//		.toLowerCase() || defaultErrorMessage.toLowerCase(),
+					errorMessage: $formgroup.attr( 'data-error' ), // Don't need messages in lower case
+					label: label,
+					type: 'text, password'
+				} );
+			}
+		} );
+	return;
+}
+
+function checkSelectors( errors ) {
+	var checked = [];
+
+	$( document )
+		.find( 'input[type="radio"], input[type="checkbox"]' )
+		.each( function () {
+			var $fieldset = $( this )
+				.parents( 'fieldset' );
+			var label = $fieldset.find( 'legend' )
+				.clone()
+				.children()
+				.remove()
+				.end()
+				.text();
+
+			if ( $fieldset.attr( 'data-required' ) !== undefined && $fieldset.find( ':checked' )
+				.length === 0 ) {
+				if ( $( this )
+					.attr( 'id' ) === undefined ) {
+					$( this )
+						.attr( 'id', $( this )
+							.attr( 'name' ) );
+				}
+
+				if ( checked.indexOf( $( this )
+						.attr( 'name' ) ) < 0 ) {
+					checked.push( $( this )
+						.attr( 'name' ) );
+					errors.push( {
+						id: $( this )
+							.attr( 'id' ),
+						name: $( this )
+							.attr( 'name' ),
+						//	errorMessage: $fieldset.attr( 'data-error' )
+						//		.toLowerCase() || defaultErrorMessage.toLowerCase(),
+						errorMessage: $fieldset.attr( 'data-error' ), // Don't need messages in lower case
+						//label: label,
+						label: '', //Temporaily hiding label from error summary
+						type: 'text, password'
+					} );
+				}
+			}
+		} );
+}
+
+function appendErrorSummary() {
+	var summaryNotPresent = $( document )
+		.find( '.govuk-error-summary' )
+		.length === 0;
+	var summary = '<div class="govuk-error-summary" role="alert" aria-labelledby="error-summary-heading" data-module="error-summary"  tabindex="-1">' +
+		'<h2 class="govuk-error-summary__title" id="error-summary-title">' +
+		defaultErrorHeading +
+		'</h2>' +
+		'<ul class="govuk-list govuk-error-summary__list">' +
+		'</ul>' +
+		'</div>';
+
+
+
+
+
+	if ( summaryNotPresent ) {
+		$( 'form' )
+			.before( summary );
+	}
+}
+
+function appendErrorMessages( errors ) {
+	for ( var i = 0; i < errors.length; i++ ) {
+		if ( $( document )
+			.find( 'a[href="#' + errors[ i ].id + '"]' )
+			.length === 0 ) {
+			$( '.govuk-error-summary__list' )
+				.append(
+					//	'<li><a href="#' + errors[ i ].id + '">' + errors[ i ].label + ' - ' + errors[ i ].errorMessage + '</a></li>'
+					'<li><a href="#' + errors[ i ].id + '">' + errors[ i ].errorMessage + '</a></li>' // Current GDS standard seems to be just to repeat the error message, NOT the label/legend
+
+				);
+			var $formgroup = $( document )
+				.find( '#' + errors[ i ].id )
+				.parents( '.govuk-form-group' );
+			$formgroup.addClass( 'govuk-form-group--error' );
+
+			if ( $formgroup.find( '.govuk-error-message' )
+				.length === 0 ) {
+				if ( $formgroup.find( 'input[type="text"], input[type="password"]' )
+					.length > 0 || $formgroup.find( 'textarea' )
+					.length > 0 ) {
+					if ( $formgroup.find( '.govuk-date-input' ) // Date error not quite right, showing data-error three times in the summary - ie one for each input
+						.length > 0 ) {
+						$formgroup.find( '.govuk-date-input' )
+							.before(
+								'<span class="govuk-error-message">' +
+								errors[ i ].errorMessage +
+								'</span>'
+							);
+					} else {
+						$formgroup.find( 'label' )
+							.append(
+								'<span class="govuk-error-message">' +
+								errors[ i ].errorMessage +
+								'</span>'
+							);
+						$formgroup.find( '.govuk-textarea' )
+							.addClass( 'govuk-textarea--error' );
+						$formgroup.find( '.govuk-input' )
+							.addClass( 'govuk-input--error' );
+					}
+
+				} else if ( $formgroup.find( 'input[type="radio"]' )
+					.length > 0 || $formgroup.find( 'input[type="checkbox"]' ) ) {
+					$formgroup.find( 'fieldset' ) // changing from legend to fieldset for instances where legend has a class of .govuk-visually-hidden
+						.prepend( // changes append to prepend because error message needs to be shown BEFORE fieldset (rather than AFTER legend)
+							'<span class="govuk-error-message">' +
+							errors[ i ].errorMessage +
+							'</span>'
+						);
+				}
+			}
+		}
+	}
+}
+
+$( document )
+	.on( 'submit', 'form', function ( e ) {
+		var requiredFieldsPresent = $( document )
+			.find( '[data-required]' )
+			.length > 0;
+
+		clearValidation();
+
+		if ( requiredFieldsPresent ) {
+			var errors = [];
+
+			checkTextFields( errors );
+			checkSelectors( errors );
+
+			if ( errors.length > 0 ) {
+				e.preventDefault();
+				appendErrorSummary();
+				appendErrorMessages( errors );
+				$( document )
+					.scrollTop( 0 );
+			}
+
+		}
+	} );

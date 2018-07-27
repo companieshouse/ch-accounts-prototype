@@ -1,147 +1,145 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Confirm your company account dates {% endblock %}
+{% block pageTitle %}
+  Confirm your company account dates
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    {% include 'includes/error.html' %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <main class="govuk-main-wrapper">
 
-        <form action="/small-full/small-full-balance-sheet" method="GET">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <form action="/small-full/small-full-balance-sheet" method="GET">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">Confirm your new company account date</h1>
-              </legend>
-              <span id="new-company-account-date-hint" class="govuk-hint">
-              You can change the end date of the period you're filing for by up to 7 days.
-            </span>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="Please confirm your new company account date">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">Confirm your new company account date</h1>
+                </legend>
+                <span id="new-company-account-date-hint" class="govuk-hint">
+                  You can change the end date of the period you're filing for by up to 7 days.
+                </span>
 
+                <div class="govuk-radios">
 
-              <div class="govuk-radios">
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-1" name="new-company-date" type="radio" value="24-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-1">
+                          24 March 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-2" name="new-company-date" type="radio" value="25-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-2">
+                          25 March 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-3" name="new-company-date" type="radio" value="26-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-3">
+                          26 March 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-4" name="new-company-date" type="radio" value="27-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-4">
+                          27 March 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-5" name="new-company-date" type="radio" value="28-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-5">
+                          28 March 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-6" name="new-company-date" type="radio" value="29-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-6">
+                          29 March 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-7" name="new-company-date" type="radio" value="30-march-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-7">
+                          30 March 2018
+                        </label>
+                      </div>
+                    </div>
 
-                <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-one-half">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-1" name="new-company-date" type="radio" value="24-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-1">
-                  24 March 2018
-                </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-2" name="new-company-date" type="radio" value="25-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-2">
-                  25 March 2018
-                </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-3" name="new-company-date" type="radio" value="26-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-3">
-                  26 March 2018
-                </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-4" name="new-company-date" type="radio" value="27-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-4">
-                  27 March 2018
-                </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-5" name="new-company-date" type="radio" value="28-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-5">
-                  28 March 2018
-                </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-6" name="new-company-date" type="radio" value="29-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-6">
-                  29 March 2018
-                </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="new-company-date-7" name="new-company-date" type="radio" value="30-march-2018">
-                  <label class="govuk-label govuk-radios__label" for="new-company-date-7">
-                  30 March 2018
-                </label>
-                </div>
+                    <div class="govuk-grid-column-one-half">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-8" name="new-company-date" type="radio" value="1-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-8">
+                          1 April 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-9" name="new-company-date" type="radio" value="2-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-9">
+                          2 April 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-10" name="new-company-date" type="radio" value="3-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-10">
+                          3 April 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date114" name="new-company-date" type="radio" value="4-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-11">
+                          4 April 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-12" name="new-company-date" type="radio" value="5-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-12">
+                          5 April 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-13" name="new-company-date" type="radio" value="6-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-13">
+                          6 April 2018
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="new-company-date-14" name="new-company-date" type="radio" value="7-april-2018">
+                        <label class="govuk-label govuk-radios__label" for="new-company-date-14">
+                          7 April 2018
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                </fieldset>
               </div>
 
-              <div class="govuk-grid-column-one-half">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date-8" name="new-company-date" type="radio" value="1-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-8">
-                1 April 2018
-              </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date-9" name="new-company-date" type="radio" value="2-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-9">
-                2 April 2018
-              </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date-10" name="new-company-date" type="radio" value="3-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-10">
-                3 April 2018
-              </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date114" name="new-company-date" type="radio" value="4-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-11">
-                4 April 2018
-              </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date-12" name="new-company-date" type="radio" value="5-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-12">
-                5 April 2018
-              </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date-13" name="new-company-date" type="radio" value="6-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-13">
-                6 April 2018
-              </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-company-date-14" name="new-company-date" type="radio" value="7-april-2018">
-                <label class="govuk-label govuk-radios__label" for="new-company-date-14">
-                7 April 2018
-              </label>
-              </div>
-            </div>
-            </div>
-
-
-
-
-            </fieldset>
-          </div>
-
-          {{ govukButton({
+              {{ govukButton({
             text: "Save and continue"
           }) }}
-        </form>
+            </form>
 
+          </div>
+          <!--govuk-grid-row-->
+        </div>
+        <!--govuk-grid-column-two-thirds-->
 
-    </div><!--govuk-grid-row-->
-  </div><!--govuk-grid-column-two-thirds-->
-
-  </main>
-  </div><!---govuk-width-container-->
-
+      </main>
+    </div>
+    <!---govuk-width-container-->
 
   {% endblock %}

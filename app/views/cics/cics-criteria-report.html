@@ -9,9 +9,11 @@
     {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -20,34 +22,38 @@
 
           <form action="/cics/cics-criteria-profit" method="get" class="form">
             {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "criteriareport",
-        name: "criteriareport",
-        fieldset: {
-          legend: {
-            text: "Do you want to file a directors’ report?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "Currently, you can’t use this service to file a directors’ report."
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
+                classes: "govuk-radios--inline",
+                idPrefix: "criteriareport",
+                name: "criteriareport",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if your want to file a directors’ report"
+                    },
+                  legend: {
+                    text: "Do you want to file a directors’ report?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                  text: "Currently, you can’t use this service to file a directors’ report."
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no",
+                    text: "No"
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
-        text: "Continue"
-      }) }}
+                text: "Continue"
+              }) }}
           </form>
 
         </div>
