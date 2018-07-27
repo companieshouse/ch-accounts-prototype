@@ -9,9 +9,11 @@
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
     {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
 
@@ -24,6 +26,10 @@
               idPrefix: "cicsNewOrResume",
               name: "cicsNewOrResume",
               fieldset: {
+                attributes : {
+                  'data-required': "data-required",
+                  'data-error': "Please confirm if you are starting a new filing or continuing an existing filing"
+                  },
                 legend: {
                   text: "Are you starting a new filing?",
                   isPageHeading: true,
