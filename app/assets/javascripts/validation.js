@@ -165,8 +165,8 @@ function appendErrorMessages( errors ) {
 								'</span>'
 							);
 					} else {
-						$formgroup.find( 'label' )
-							.append(
+						$formgroup.find( 'fieldset' ) // prepending to fieldset rather than appending to label for when form elements have hidden labels
+							.prepend(
 								'<span class="govuk-error-message">' +
 								errors[ i ].errorMessage +
 								'</span>'

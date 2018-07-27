@@ -45,19 +45,13 @@
               </div>
             </details>
 
-            <div class="form-group">
+            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" data-required="data-required" data-error="Please enter the company’s activities and impact">
                 <legend class="govuk-visually-hidden">Give a summary of the company's activities in this financial year, including how they’ve benefited the community</legend>
-
-                {{ govukTextarea({
-                name: "more-detail",
-                id: "more-detail",
-                rows: "10",
-                label: {
-                  text: "Give a summary of the company's activities in this financial year, including how they’ve benefited the community",
-                  classes: "govuk-visually-hidden"
-                }
-                }) }}
+                <label class="govuk-label govuk-visually-hidden" for="cics-activities">
+                  Give a summary of the company&#39;s activities in this financial year, including how they’ve benefited the community
+                </label>
+                <textarea class="govuk-textarea" id="cics-activities" name="cics-activities" rows="20">{{ data['cics-activities'] }}</textarea>
               </fieldset>
             </div>
 
