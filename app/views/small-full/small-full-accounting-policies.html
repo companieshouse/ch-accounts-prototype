@@ -16,11 +16,10 @@
     {% include 'includes/error.html' %}
 
     <main class="govuk-main-wrapper">
+      <form class="form" method="get" action="/small-full//small-full-other-accounting-policies">
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-
-          <form class="form" method="get" action="/small-full//small-full-other-accounting-policies">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
@@ -75,12 +74,12 @@
             {{ govukButton({
               text: "Save and continue"
             }) }}
-          </form>
 
+          </div>
+          <!--govuk-grid-row-->
         </div>
-        <!--govuk-grid-row-->
-      </div>
-      <!--govuk-grid-column-two-thirds-->
+        <!--govuk-grid-column-two-thirds-->
+      </form>
 
     </main>
   </div>
