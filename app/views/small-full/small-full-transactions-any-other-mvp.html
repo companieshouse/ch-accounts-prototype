@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block pageTitle %}Do your prepared accounts include any other 'related party transactions' notes??{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-transactions-additional-info-yes-no-mvp" method="get" class="form">
+
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "anyothertransactions1",
+                name: "anyothertransactions1",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if your prepared accounts include any other 'related party transactions' notes"
+                    },
+                  legend: {
+                    text: "Do your prepared accounts include any other 'related party transactions' notes?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('anyothertransactions1','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('anyothertransactions1','no')
+                  }
+                ]
+              }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

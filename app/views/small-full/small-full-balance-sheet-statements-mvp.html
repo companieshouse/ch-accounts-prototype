@@ -1,99 +1,54 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  Balance Sheet statements
+  Balance sheet statements
 {% endblock %}
-
-{% block proposition_header %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
-{% block header_class %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
 {% block main %}
 
-<main id="content" role="main">
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-{% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <form action="/small-full/small-full-accounting-policies-mvp" method="get" class="form">
 
+            <h1 class="govuk-heading-l">
+              <!--<span class="circle circle-step-large">2</span>-->
+              Balance sheet statements</h1>
 
-  <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+            {{ govukWarningText({
+      text: "The following statements about your accounts will be included on the public record.",
+      iconFallbackText: "Warning"
+    }) }}
 
-  {% include 'includes/error.html' %}
+            <ul class="govuk-list govuk-list--bullet">
+              <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+              <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+              <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+              <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+              <li>The directors have chosen not to file a copy of the company’s profit and loss account.</li>
+            </ul>
 
-  <form action="/small-full/small-full-accounting-policies-mvp" method="get" class="form">
+            {{ govukButton({
+        text: "Continue"
+      }) }}
+          </form>
 
-
-
-
-
-      <h1 class="govuk-heading-l"><span class="circle circle-step-large">2</span> Balance sheet statements</h1>
-
-<div class="text left-indent">
-      <div class="notice">
-      <p>
-        <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
-        <strong class="bold-small">You’re legally required to include statements describing your accounts with your balance sheet.</strong>
-      </p>
+        </div>
+        <!--govuk-grid-row-->
       </div>
+      <!--govuk-grid-column-two-thirds-->
 
-
-        <ul class="govuk-list">
-          <li>For the year ending 31 March 2018 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
-          <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
-          <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
-          <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
-          <li>The directors have chosen not to file a copy of the company’s profit and loss account.</li>
-        </ul>
-
-
-
-
-      <h2 class="govuk-heading-m">Confirmation</h2>
-
-
-      <fieldset data-required="" data-error="You must agree to the legal statements">
-
-              <legend class="visuallyhidden">Confirmation</legend>
-              <div class="form-group">
-                <label class="block-label selection-button-checkbox" for="confirmation">
-                  <input id="confirmation" value="agree" name="confirmation" type="checkbox">
-                  I agree to the legal statements - include them with my balance sheet.
-                </label>
-              </div>
-
-            </fieldset>
-
-
-
-
-
-        <input type="submit" class="button" value="Save and continue" id="statements-button">
-
-    </form>
-
-
-
-
-
-
-
-  </div><!-- text-->
-
-</main>
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

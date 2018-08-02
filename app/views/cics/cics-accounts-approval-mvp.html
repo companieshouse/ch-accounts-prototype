@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Approve your accounts
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/accounts/small-full-submission" method="get" class="form">
+
+            {% set myHTML %}
+            <p class="govuk-hint">This is the date the accounts were approved by the director.<br/>
+              For example, 31 3 2017</p>
+            {% endset -%}
+
+            {% call govukFieldset({
+              legend: {
+                text: "Approve your accounts",
+                classes: "govuk-fieldset__legend--l"
+                }
+            }) %}
+
+            {{ govukInput({
+              label: {
+                text: "Which director approved the accounts?",
+                classes: "govuk-label--m"
+              },
+              hint: {
+                text: "If the company has two or more directors, give the name of the director acting on their behalf."
+              },
+              id: "director-approved-accounts",
+              name: "director-approved-accounts"
+            }) }}
+
+            {{ govukDateInput({
+                  id: "dob",
+                  name: "dob",
+                  fieldset: {
+                    legend: {
+                      text: "When were the accounts approved?",
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                      html: myHTML
+                  },
+                  items: [
+                    {
+                      name: "day"
+                    },
+                    {
+                      name: "month"
+                    },
+                    {
+                      name: "year"
+                    }
+                  ]
+                }) }}
+            {% endcall %}
+
+            <div class="govuk-inset-text">
+              <a id="" href="/public/pdf/small-full-accounts-sample.pdf" class="PDF" target="_blank">Save or print a copy of your accounts<span class="govuk-visually-hidden">
+                  (Opens PDF in new window)</span></a>
+              <span class="govuk-hint">(Opens PDF in new window)</span>
+            </div>
+
+            {{ govukButton({
+        text: "Save and continue"
+      }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

@@ -1,62 +1,52 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-File abridged or full accounts
+  File abridged or full accounts
 {% endblock %}
-
-{% block proposition_header %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
-{% block header_class %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
-
 {% block main %}
 
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
 
+    <main class="govuk-main-wrapper">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 id="page-header" class="govuk-heading-xl">File abridged or full accounts</h1>
 
+          <p>You can now file abridged or full accounts here too. While we develop this new service, you should continue to use
+            <a href="/chs/chs-other-document-filings">WebFiling</a>
+            for other types of accounts.</p>
+          <h2 class="govuk-heading-m">How to use the service</h2>
+          <p>You’ll need to:</p>
+          <ol class="govuk-list govuk-list--number">
+            <li>enter your company name or number in
+              <a href="javascript:history.back()">‘Search the register’</a>
+            </li>
+            <li>select ‘File for this company’ on the company overview page</li>
+            <li>sign in or register to Companies House</li>
+            <li>enter your company authentication code</li>
+            <li>select ‘File accounts’</li>
+          </ol>
 
+          <h2 class="govuk-heading-m">Signing in</h2>
+          <p>If you normally use WebFiling to file your accounts, you won’t be able to use your WebFiling sign-in details here. You’ll have to register for a new password for the new service.</p>
+          <p>Your company authentication code won’t change.</p>
 
+          <h3 class="govuk-heading-s">Get help</h3>
+          <p>If you need any help with the service, please get in touch with us at
+            <a href="mailto:privatebeta@companieshouse.gov.uk">privatebeta@companieshouse.gov.uk</a>
+          </p>
 
-    <main id="content" role="main" class="search">
+          <h3 class="govuk-heading-s">Your feedback</h3>
+          <p>This is a new service and you can help us improve it by
+            <a href="javascript:void(0)">completing our quick survey</a>.</p>
+        </div>
 
-{% include "includes/phase_banner_beta.html" %}
-
-
-
-    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
-
-    <div class="text">
-
-    <header>
-    	<h1 id="page-header" class="govuk-heading-xl">File abridged or full accounts</h1>
-    </header>
-
-    <p>You can now file abridged or full accounts here too. While we develop this new service, you should continue to use <a href="/chs/chs-other-document-filings">WebFiling</a> for other types of accounts.</p>
-    <h2 class="govuk-heading-m">How to use the service</h2>
-    <p>You’ll need to:</p>
-    <ol class="list list-bullet">
-      <li>enter your company name or number in <a href="javascript:history.back()">‘Search the register’</a></li>
-      <li>select ‘File for this company’ on the company overview page</li>
-      <li>sign in or register to Companies House</li>
-      <li>enter your company authentication code</li>
-      <li>select ‘File accounts’</li>
-    </ol>
-
-
-   <h2 class="govuk-heading-m">Signing in</h2>
-    <p>If you normally use WebFiling to file your accounts, you won’t be able to use your WebFiling sign-in details here. You’ll have to register for a new password for the new service.</p>
-    <p>Your company authentication code won’t change.</p>
-
-    <h3 class="govuk-heading-s">Get help</h3>
-    <p>If you need any help with the service, please get in touch with us at <a href="mailto:privatebeta@companieshouse.gov.uk">privatebeta@companieshouse.gov.uk</a></p>
-
-    <h3 class="govuk-heading-s">Your feedback</h3>
-    <p>This is a new service and you can help us improve it by <a href="javascript:void(0)">completing our quick survey</a>.</p>
+      </div>
     </div>
 
-</main>
+  </main>
+</div>
+<!---govuk-width-container-->
 
 {% endblock %}

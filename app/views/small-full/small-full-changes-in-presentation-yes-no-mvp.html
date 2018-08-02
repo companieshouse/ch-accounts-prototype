@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Do your prepared accounts include a 'changes in presentation and prior period adjustments' note?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-changes-in-presentation-note-mvp" method="get" class="form">
+
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "changesinpresentation",
+                name: "changesinpresentation",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if your prepared accounts include a 'changes in presentation and prior period adjustments' note"
+                    },
+                  legend: {
+                    text: "  Do your prepared accounts include a 'changes in presentation and prior period adjustments' note?  ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('changesinpresentation','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('changesinpresentation','no')
+                  }
+                ]
+              }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

@@ -731,23 +731,7 @@ module.exports = function ( router ) {
 
 
 
-	// full accounts - MVP or Full journey
 
-	router.get( '/gov-uk/gov-uk-start-page-small-full', function ( req, res ) {
-
-		var smallfullroute1 = req.query.smallfullroute1;
-
-		if ( smallfullroute1 == "mvp" ) {
-
-			res.redirect( "/accounts/accounts-start-page-small-full-mvp" );
-
-		} else {
-
-			res.render( 'gov-uk/gov-uk-start-page-small-full' );
-
-		}
-
-	} );
 
 
 
@@ -758,16 +742,37 @@ module.exports = function ( router ) {
 	router.get( '/chs/chs-choose-small-full-or-other', function ( req, res ) {
 		var chooseaccountsradio = req.query.chooseaccountsradio;
 		if ( chooseaccountsradio == "Micro" ) {
-			res.redirect( "/accounts/accounts-start-page-micros" );
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/accounts/accounts-start-page-micros" );
 		} else if ( chooseaccountsradio == "Abridged" ) {
-			res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
-		} else if ( chooseaccountsradio == "Full" ) {
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/chs/chs-choose-abridged-or-other-r1" );
+		} else if ( chooseaccountsradio == "FullCH" ) {
+			res.redirect( "/chs/chs-choose-small-full-or-other" );
+		} else if ( chooseaccountsradio == "FullJoint" ) {
 			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
 		} else if ( chooseaccountsradio == "Dormant" ) {
-			res.redirect( "/accounts/accounts-start-page-dormant" );
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/accounts/accounts-start-page-dormant" );
 		} else {
 			res.render( 'chs/chs-choose-small-full-or-other' );
 		}
 	} );
+
+
+
+
+
+	router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
+		var smallfullcriteria = req.query.smallfullcriteria;
+		if ( smallfullcriteria == "No" ) {
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/chs/chs-alternative-abridged-filing-options" );
+		} else if ( smallfullcriteria == "Other" ) {
+			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
+		} else {
+			res.render( 'accounts/accounts-start-page-small-full-mvp' );
+		}
+	} );
+
+
+
+
 
 }

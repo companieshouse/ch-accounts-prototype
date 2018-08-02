@@ -60,24 +60,24 @@ module.exports = function ( router ) {
 	} );
 
 	//Choose CICS or full journey
-	router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
-		var cicssmallfullroute1 = req.query.cicssmallfullroute1;
-		if ( cicssmallfullroute1 == "cic" ) {
-			res.redirect( "/gov-uk/gov-uk-start-page-cics" );
-		} else {
-			res.render( 'accounts/accounts-start-page-small-full-mvp' );
-		}
-	} );
+	//	router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
+	//	var cicssmallfullroute1 = req.query.cicssmallfullroute1;
+	//	if ( cicssmallfullroute1 == "cic" ) {
+	//		res.redirect( "/gov-uk/gov-uk-start-page-cics" );
+	//		} else {
+	//			res.render( 'accounts/accounts-start-page-small-full-mvp' );
+	//		}
+	//	} );
 
-	router.post( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
-		req.session.cicssmallfullroute1 = null;
-		if ( req.body.cicssmallfullroute1 == "sf" ) {
-			req.session.cicssmallfullroute1 = "sf";
-		} else {
-			req.session.cicssmallfullroute1 = "cic";
-		}
-		res.redirect( 301, '/gov-uk/gov-uk-start-page-cics' );
-	} );
+	//	router.post( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
+	//		req.session.cicssmallfullroute1 = null;
+	//		if ( req.body.cicssmallfullroute1 == "sf" ) {
+	//			req.session.cicssmallfullroute1 = "sf";
+	//		} else {
+	//			req.session.cicssmallfullroute1 = "cic";
+	//		}
+	//		res.redirect( 301, '/gov-uk/gov-uk-start-page-cics' );
+	//	} );
 
 
 
@@ -196,6 +196,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-turnover-policy-yes-no-mvp', function ( req, res ) {
+		var smallfullotherpolicies = req.query.smallfullotherpolicies;
+		if ( smallfullotherpolicies == "no" ) {
+			res.redirect( "/small-full/small-full-intangible-assets-note-mvp" );
+		} else {
+			res.render( 'small-full/small-full-turnover-policy-yes-no-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include a 'turnover' policy?
 
 	router.get( '/small-full/small-full-turnover-policy', function ( req, res ) {
@@ -207,6 +216,16 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-turnover-policy-mvp', function ( req, res ) {
+		var turnoverpolicy = req.query.turnoverpolicy;
+		if ( turnoverpolicy == "no" ) {
+			res.redirect( "/small-full/small-full-tangible-policy-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-turnover-policy-mvp' );
+		}
+	} );
+
+
 	// (CICs) Accounts - Do your prepared accounts include a 'tangible fixed assets depreciation' policy?
 
 	router.get( '/small-full/small-full-tangible-policy', function ( req, res ) {
@@ -215,6 +234,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-intangible-policy-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-tangible-policy' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-tangible-policy-mvp', function ( req, res ) {
+		var tangiblefixedassetsdepreciationpolicy = req.query.tangiblefixedassetsdepreciationpolicy;
+		if ( tangiblefixedassetsdepreciationpolicy == "no" ) {
+			res.redirect( "/small-full/small-full-intangible-policy-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-tangible-policy-mvp' );
 		}
 	} );
 
@@ -229,6 +257,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-intangible-policy-mvp', function ( req, res ) {
+		var intangiblefixedassetsamortisationpolicy = req.query.intangiblefixedassetsamortisationpolicy;
+		if ( intangiblefixedassetsamortisationpolicy == "no" ) {
+			res.redirect( "/small-full/small-full-valuation-policy-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-intangible-policy-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include a 'valuation information' policy?
 
 	router.get( '/small-full/small-full-valuation-policy', function ( req, res ) {
@@ -237,6 +274,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-any-other-accounting-policies-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-valuation-policy' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-valuation-policy-mvp', function ( req, res ) {
+		var valuationinformationpolicy = req.query.valuationinformationpolicy;
+		if ( valuationinformationpolicy == "no" ) {
+			res.redirect( "/small-full/small-full-any-other-accounting-policies-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-valuation-policy-mvp' );
 		}
 	} );
 
@@ -251,12 +297,30 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-any-other-accounting-policies-mvp', function ( req, res ) {
+		var anyotheraccountingpolicies = req.query.anyotheraccountingpolicies;
+		if ( anyotheraccountingpolicies == "no" ) {
+			res.redirect( "/small-full/small-full-intangible-assets-note-mvp" );
+		} else {
+			res.render( 'small-full/small-full-any-other-accounting-policies-mvp' );
+		}
+	} );
+
 	router.post( '/small-full/small-full-any-other-accounting-policies-yes-no', function ( req, res ) {
 		var anyotheraccountingpolicies = req.body.anyotheraccountingpolicies;
 		if ( anyotheraccountingpolicies == "no" ) {
 			res.redirect( "/small-full/small-full-intangible-assets-note" );
 		} else {
 			res.render( 'small-full/small-full-any-other-accounting-policies' );
+		}
+	} );
+
+	router.post( '/small-full/small-full-any-other-accounting-policies-yes-no-mvp', function ( req, res ) {
+		var anyotheraccountingpolicies = req.body.anyotheraccountingpolicies;
+		if ( anyotheraccountingpolicies == "no" ) {
+			res.redirect( "/small-full/small-full-intangible-assets-note-mvp" );
+		} else {
+			res.render( 'small-full/small-full-any-other-accounting-policies-mvp' );
 		}
 	} );
 
@@ -271,6 +335,7 @@ module.exports = function ( router ) {
 		}
 	} );
 
+
 	// (CICs) Accounts - Do your prepared accounts include an 'employees' note?
 
 	router.get( '/small-full/small-full-employees-note', function ( req, res ) {
@@ -279,6 +344,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-fixed-assets-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-employees-note' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-employees-note-mvp', function ( req, res ) {
+		var employeesnoteyesno = req.query.employeesnoteyesno;
+		if ( employeesnoteyesno == "no" ) {
+			res.redirect( "/small-full/small-full-fixed-assets-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-employees-note-mvp' );
 		}
 	} );
 
@@ -293,6 +367,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-fixed-assets-investments-note-mvp', function ( req, res ) {
+		var fixedassetsinvestmentsyesno = req.query.fixedassetsinvestmentsyesno;
+		if ( fixedassetsinvestmentsyesno == "no" ) {
+			res.redirect( "/small-full/small-full-current-assets-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-fixed-assets-investments-note-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include a 'fixed assets investments' note?
 
 	router.get( '/small-full/small-full-current-assets-investments-note', function ( req, res ) {
@@ -301,6 +384,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-commitments-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-current-assets-investments-note' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-current-assets-investments-note-mvp', function ( req, res ) {
+		var currentassetsinvestmentsyesno = req.query.currentassetsinvestmentsyesno;
+		if ( currentassetsinvestmentsyesno == "no" ) {
+			res.redirect( "/small-full/small-full-commitments-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-current-assets-investments-note-mvp' );
 		}
 	} );
 
@@ -315,6 +407,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-financial-commitments-note-mvp', function ( req, res ) {
+		var financialcommitments = req.query.financialcommitments;
+		if ( financialcommitments == "no" ) {
+			res.redirect( "/small-full/small-full-loans-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-financial-commitments-note-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include any 'loans to directors' notes?
 
 	router.get( '/small-full/small-full-loans-yes-1', function ( req, res ) {
@@ -323,6 +424,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-changes-in-presentation-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-loans-yes-1' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-loans-yes-1-mvp', function ( req, res ) {
+		var loanstodirectors = req.query.loanstodirectors;
+		if ( loanstodirectors == "no" ) {
+			res.redirect( "/small-full/small-full-changes-in-presentation-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-loans-yes-1-mvp' );
 		}
 	} );
 
@@ -337,6 +447,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-loans-additional-info-yes-no-mvp', function ( req, res ) {
+		var anyotherloanstodirectors1 = req.query.anyotherloanstodirectors1;
+		if ( anyotherloanstodirectors1 == "yes" ) {
+			res.redirect( "/small-full/small-full-loans-any-other-mvp" ); // Temporary URL until real page created
+		} else {
+			res.render( 'small-full/small-full-loans-additional-info-yes-no-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include any additional 'loans to directors' information?
 
 	router.get( '/small-full/small-full-loans-additional-info', function ( req, res ) {
@@ -345,6 +464,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-changes-in-presentation-yes-no" ); // Temporary URL until real page created
 		} else {
 			res.render( 'small-full/small-full-loans-additional-info' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-loans-additional-info-mvp', function ( req, res ) {
+		var loanstodirectorsadditionalinfoyesno = req.query.loanstodirectorsadditionalinfoyesno;
+		if ( loanstodirectorsadditionalinfoyesno == "no" ) {
+			res.redirect( "/small-full/small-full-changes-in-presentation-yes-no-mvp" ); // Temporary URL until real page created
+		} else {
+			res.render( 'small-full/small-full-loans-additional-info-mvp' );
 		}
 	} );
 
@@ -359,6 +487,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-changes-in-presentation-note-mvp', function ( req, res ) {
+		var changesinpresentation = req.query.changesinpresentation;
+		if ( changesinpresentation == "no" ) {
+			res.redirect( "/small-full/small-full-related-transactions-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-changes-in-presentation-note-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include any 'related party transactions' notes?
 
 	router.get( '/small-full/small-full-related-transactions-yes-1', function ( req, res ) {
@@ -367,6 +504,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-post-events-yes-no" );
 		} else {
 			res.render( 'small-full/small-full-related-transactions-yes-1' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-related-transactions-yes-1-mvp', function ( req, res ) {
+		var relatedtransactions = req.query.relatedtransactions;
+		if ( relatedtransactions == "no" ) {
+			res.redirect( "/small-full/small-full-post-events-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-related-transactions-yes-1-mvp' );
 		}
 	} );
 
@@ -381,6 +527,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-transactions-additional-info-yes-no-mvp', function ( req, res ) {
+		var anyothertransactions1 = req.query.anyothertransactions1;
+		if ( anyothertransactions1 == "yes" ) {
+			res.redirect( "/small-full/small-full-transactions-any-other-mvp" ); // Temporary URL until real page created
+		} else {
+			res.render( 'small-full/small-full-transactions-additional-info-yes-no-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include any additional 'related party transactions' information?
 
 	router.get( '/small-full/small-full-transactions-additional-info', function ( req, res ) {
@@ -392,6 +547,15 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/small-full/small-full-transactions-additional-info-mvp', function ( req, res ) {
+		var relatedpartytransactionsadditionalinfoyesno = req.query.relatedpartytransactionsadditionalinfoyesno;
+		if ( relatedpartytransactionsadditionalinfoyesno == "no" ) {
+			res.redirect( "/small-full/small-full-post-events-yes-no-mvp" );
+		} else {
+			res.render( 'small-full/small-full-transactions-additional-info-mvp' );
+		}
+	} );
+
 	// (CICs) Accounts - Do your prepared accounts include a 'post balance sheet events' note?
 
 	router.get( '/small-full/small-full-post-balance-sheet-events-note', function ( req, res ) {
@@ -400,6 +564,15 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-check-before-you-submit" ); // Temporary URL until real page created
 		} else {
 			res.render( 'small-full/small-full-post-balance-sheet-events-note' );
+		}
+	} );
+
+	router.get( '/small-full/small-full-post-balance-sheet-events-note-mvp', function ( req, res ) {
+		var postbalancesheetevents = req.query.postbalancesheetevents;
+		if ( postbalancesheetevents == "no" ) {
+			res.redirect( "/small-full/small-full-check-before-you-submit-mvp" ); // Temporary URL until real page created
+		} else {
+			res.render( 'small-full/small-full-post-balance-sheet-events-note-mvp' );
 		}
 	} );
 

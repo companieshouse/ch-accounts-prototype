@@ -852,6 +852,19 @@ img.card-image {
   margin: -0.4em 0.5em 0 0;
 }
 
+.circle-step-black {
+  height: 1.4em;
+  width: 1.4em;
+  background-color: govuk-colour("black");
+  color: govuk-colour("white");
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  margin: -0.4em 0.5em 1em 0;
+}
+
 .flash-card {
   padding: 2em 3em;
   background: $govuk-link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;

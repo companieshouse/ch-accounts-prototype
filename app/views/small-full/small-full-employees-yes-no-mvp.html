@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+
+  Do your prepared accounts include an 'employees' note?
+
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-employees-note-mvp" method="get" class="form">
+
+            {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "employeesnoteyesno",
+                  name: "employeesnoteyesno",
+                  fieldset: {
+                    attributes : {
+                      'data-required': "data-required",
+                      'data-error': "Please confirm if your prepared accounts include an 'employees' note"
+                      },
+                    legend: {
+                      text: "Do your prepared accounts include an 'employees' note?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      checked: checked('employeesnoteyesno','yes')
+                    },
+                    {
+                      value: "no",
+                      text: "No",
+                      checked: checked('employeesnoteyesno','no')
+                    }
+                  ]
+                }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Do your prepared accounts include any other notes?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
+
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "smallfullothernotes",
+                name: "smallfullothernotes",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Please confirm if your prepared accounts include any other notes"
+                    },
+                  legend: {
+                    text: "Do your prepared accounts include any other notes? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                  text: "For example, 'employees', 'fixed asset investments', 'current asset investments', 'financial commitments', 'loans to directors', 'changes in presentation and prior period adjustments', 'related party transactions' or 'post balance sheet events'"
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('smallfullothernotes','no')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('smallfullothernotes','yes')
+                  }
+                ]
+              }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

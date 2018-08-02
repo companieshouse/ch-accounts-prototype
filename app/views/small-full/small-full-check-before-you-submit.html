@@ -5,19 +5,6 @@
 {% block main %}
 
   <!-- TO DO - Sort mobile styles -->
-  <!-- TO DO - Sort data passings -->
-
-  <!-- START script which hides the delete container if user clicks 'No, keep' on Delete warning -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function () { //Only show the button if javascript is on
-      $('.post-balance-sheet-events-keep').on('click', function () {
-        $(this).parent().parent().remove();
-      });
-    });
-  </script>
-  <!-- END script which hides the delete container if user clicks 'No, keep' on Delete warning -->
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
@@ -460,11 +447,6 @@
                     Change<span class="govuk-visually-hidden">
                       Turnover policy</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <a href="javascript:void(0)">
-                      Delete<span class="govuk-visually-hidden">
-                        Turnover policy</span></p>
-                  </a>
                 </dd>
               </div>
             </dl>
@@ -488,11 +470,6 @@
                     Change<span class="govuk-visually-hidden">
                       tangible fixed assets depreciation policy</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <a href="javascript:void(0)">
-                      Delete<span class="govuk-visually-hidden">
-                        tangible fixed assets depreciation policy</span></p>
-                  </a>
                 </dd>
               </div>
             </dl>
@@ -515,11 +492,6 @@
                   <a href="0/small-full/small-full-intangible-policy-yes-no">
                     Change<span class="govuk-visually-hidden">
                       intangible fixed assets depreciation policy</span>
-                  </a>
-                  <p class="govuk-!-margin-top-1">
-                    <a href="javascript:void(0)">
-                      Delete<span class="govuk-visually-hidden">
-                        intangible fixed assets amortisation policy</span></p>
                   </a>
                 </dd>
               </div>
@@ -545,11 +517,6 @@
                     Change<span class="govuk-visually-hidden">
                       valuation information policy</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <a href="javascript:void(0)">
-                      Delete<span class="govuk-visually-hidden">
-                        valuation information policy</span></p>
-                  </a>
                 </dd>
               </div>
             </dl>
@@ -573,11 +540,6 @@
                   <a href="/small-full/small-full-any-other-accounting-policies-yes-no">
                     Change<span class="govuk-visually-hidden">
                       Other policies</span>
-                  </a>
-                  <p class="govuk-!-margin-top-1">
-                    <a href="javascript:void(0)">
-                      Delete<span class="govuk-visually-hidden">
-                        Other policies</span></p>
                   </a>
                 </dd>
               </div>
@@ -1623,30 +1585,8 @@
                     Change<span class="govuk-visually-hidden">
                       fixed assets investments note</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          fixed assets investments note</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete fixed assets investments note? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        fixed assets investments note</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        fixed assets investments note</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
             </dl>
 
           </div>
@@ -1668,30 +1608,8 @@
                     Change<span class="govuk-visually-hidden">
                       current assets investments note</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          current assets investments note</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete current assets investments note? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        current assets investments note</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        current assets investments note</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
             </dl>
 
           </div>
@@ -1713,30 +1631,8 @@
                     Change<span class="govuk-visually-hidden">
                       financial commitments note</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          financial commitments note</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete financial commitments note? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        financial commitments note</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        financial commitments note</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
             </dl>
 
           </div>
@@ -1759,31 +1655,8 @@
                     Change<span class="govuk-visually-hidden">
                       First loan to director note</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          First loan to director note</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete this loans to directors note? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        First loan to director note</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        First loan to director note</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
-
             </dl>
 
           </div>
@@ -1805,30 +1678,8 @@
                     Change<span class="govuk-visually-hidden">
                       changes in presentation and prior period adjustments note</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          changes in presentation and prior period adjustments note</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete financial commitments note? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        changes in presentation and prior period adjustments note</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        changes in presentation and prior period adjustments note</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
             </dl>
 
           </div>
@@ -1851,31 +1702,8 @@
                     Change<span class="govuk-visually-hidden">
                       First related party transaction note</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          First related party transaction note</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete this related party transaction note? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        First related party transaction note</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        First related party transaction note</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
-
             </dl>
 
           </div>
@@ -1897,30 +1725,8 @@
                     Change<span class="govuk-visually-hidden">
                       Post balance sheet events</span>
                   </a>
-                  <p class="govuk-!-margin-top-1">
-                    <span id="delete-summary">
-                      <a href="javascript:void(0)" class="" id="content-delete">Delete
-                        <span class="govuk-visually-hidden">
-                          Post balance sheet events</span></a>
-                    </span>
-                  </p>
                 </dd>
               </div>
-              <div id="content-delete-warning" style="display:none;">
-                <div class="govuk-error-summary" id="delete-summary">
-                  <p class="govuk-!-font-weight-bold">Are you sure you want to delete post balance sheet events? This cannot be undone.</p>
-                  <p>
-                    <a href="javascript:void" class="govuk-link govuk-!-margin-right-3">Yes, delete
-                      <span class="govuk-visually-hidden">
-                        post balance sheet events</span></a>
-
-                    <a class="govuk-link no-delete post-balance-sheet-events-keep" href="javascript:void(0)">No, keep<span class="govuk-visually-hidden">
-                        post balance sheet events</span></a>
-                  </p>
-                </div>
-                <!--delete-summary-->
-              </div>
-              <!--content-delete-warning-->
             </dl>
 
           </div>
