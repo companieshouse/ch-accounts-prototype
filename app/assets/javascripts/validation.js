@@ -1,5 +1,5 @@
 // Config
-var defaultErrorHeading = 'There\'s been a problem';
+var defaultErrorHeading = 'There is a problem';
 var defaultErrorDescription = 'Check the following';
 var defaultErrorMessage = 'There is an error';
 
