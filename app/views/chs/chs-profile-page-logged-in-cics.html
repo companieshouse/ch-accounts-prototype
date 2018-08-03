@@ -6,13 +6,8 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    <nav class="content" role="navigation">
-      <ul id="navigation" class="mobile-hidden">
-        <li>
-          <a href="javascript:void(0)" id="user-signin">Sign in / Register</a>
-        </li>
-      </ul>
-    </nav>
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
     <main class="govuk-main-wrapper govuk-body">
 
       <form id="search" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
