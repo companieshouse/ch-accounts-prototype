@@ -199,7 +199,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-turnover-policy-yes-no-mvp', function ( req, res ) {
 		var smallfullotherpolicies = req.query.smallfullotherpolicies;
 		if ( smallfullotherpolicies == "no" ) {
-			res.redirect( "/small-full/small-full-intangible-assets-note-mvp" );
+			res.redirect( "/small-full/small-full-tangible-assets-note-mvp" );
 		} else {
 			res.render( 'small-full/small-full-turnover-policy-yes-no-mvp' );
 		}
@@ -300,29 +300,13 @@ module.exports = function ( router ) {
 	router.get( '/small-full/small-full-any-other-accounting-policies-mvp', function ( req, res ) {
 		var anyotheraccountingpolicies = req.query.anyotheraccountingpolicies;
 		if ( anyotheraccountingpolicies == "no" ) {
-			res.redirect( "/small-full/small-full-intangible-assets-note-mvp" );
+			res.redirect( "/small-full/small-full-tangible-assets-note-mvp" );
 		} else {
 			res.render( 'small-full/small-full-any-other-accounting-policies-mvp' );
 		}
 	} );
 
-	router.post( '/small-full/small-full-any-other-accounting-policies-yes-no', function ( req, res ) {
-		var anyotheraccountingpolicies = req.body.anyotheraccountingpolicies;
-		if ( anyotheraccountingpolicies == "no" ) {
-			res.redirect( "/small-full/small-full-intangible-assets-note" );
-		} else {
-			res.render( 'small-full/small-full-any-other-accounting-policies' );
-		}
-	} );
 
-	router.post( '/small-full/small-full-any-other-accounting-policies-yes-no-mvp', function ( req, res ) {
-		var anyotheraccountingpolicies = req.body.anyotheraccountingpolicies;
-		if ( anyotheraccountingpolicies == "no" ) {
-			res.redirect( "/small-full/small-full-intangible-assets-note-mvp" );
-		} else {
-			res.render( 'small-full/small-full-any-other-accounting-policies-mvp' );
-		}
-	} );
 
 	// (CICs) Accounts - Do your prepared accounts include any other notes?
 
