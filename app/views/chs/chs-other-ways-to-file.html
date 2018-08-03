@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Other ways to file full accounts
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <header>
+            <h1 id="page-header" class="govuk-heading-l">Other ways to file full accounts</h1>
+          </header>
+          <p class="govuk-body-l">There are currently two other ways to file abridged company accounts to Companies House:</p>
+          <h2 class="govuk-heading-m">1. Using the Companies House-HMRC joint filing service</h2>
+          <p class="govuk-body">You’ll need to use your Government Gateway account or register if you don’t have one. This method lets you file your tax return to HMRC at the same time.</p>
+          <p>
+            <a href="https://www.gov.uk/file-your-company-accounts-and-tax-return" class="govuk-button">Go to HMRC to use the joint filing accounts service<span class="govuk-visually-hidden">
+                Link opens in a new tab/window<span></a>
+              </p>
+              <h2 class="govuk-heading-m">2. Using third party software</h2>
+              <p class="govuk-body">This service is open to everyone, but will mostly benefit those who file frequently - on a daily or weekly basis. The more documents you file, the more appropriate software filing is likely to be.</p>
+              <p>
+                <a href="https://www.gov.uk/company-filing-software/filing-annual-accounts-returns-and-tax-accounts" class="govuk-button">View list of third-party software providers<span class="govuk-visually-hidden">
+                    Link opens in a new tab/window<span></a>
+                  </p>
+                </div>
+                <!--govuk-grid-row-->
+              </div>
+              <!--govuk-grid-column-two-thirds-->
+
+            </main>
+          </div>
+          <!---govuk-width-container-->
+
+        {% endblock %}

@@ -763,7 +763,7 @@ module.exports = function ( router ) {
 	router.get( '/accounts/accounts-start-page-small-full-mvp', function ( req, res ) {
 		var smallfullcriteria = req.query.smallfullcriteria;
 		if ( smallfullcriteria == "No" ) {
-			res.redirect( "https://ch-accounts-v20.herokuapp.com/chs/chs-alternative-abridged-filing-options" );
+			res.redirect( "/chs/chs-other-ways-to-file" );
 		} else if ( smallfullcriteria == "Other" ) {
 			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
 		} else {
