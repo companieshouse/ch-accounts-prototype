@@ -40,11 +40,13 @@
               items: [
                 {
                   value: "given-by",
-                  text: "Something given to the company by a related party"
+                  text: "Something given to the company by a related party",
+                  checked: checked("sort-transaction", "given-by")
                 },
                 {
                   value: "given-to",
-                  text: "Something given to a related party by the company "
+                  text: "Something given to a related party by the company",
+                  checked: checked("sort-transaction", "given-to")
                 }
               ]
             }) }}
@@ -66,6 +68,7 @@
             {{ govukTextarea({
               name: "transaction-1-description",
               id: "transaction-1-description",
+              value: data['transaction-1-description'],
               label: {
                 text: "Description of the transaction",
                 classes: "govuk-label--s"
@@ -89,7 +92,7 @@
                   <span class="currency-type">£</span>
                   <label for="transactions-note-balance-at-start">
                     <span class="mobile-only-label">Balance at 1 April 2017</span>
-                    <input type="number" class="govuk-input" id="transactions-note-balance-at-start">
+                    <input type="number" class="govuk-input" id="transactions-note-balance-at-start" name="transactions-note-balance-at-start" value="{{ data['transactions-note-balance-at-start'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -110,7 +113,7 @@
                   <label for="transactions-note-balance-at-end">
                     <span class="mobile-only-label">
                       Balance at 31 March 2018</span>
-                    <input type="number" class="govuk-input" id="transactions-note-balance-at-end">
+                    <input type="number" class="govuk-input" id="transactions-note-balance-at-end" name="transactions-note-balance-at-end" value="{{ data['transactions-note-balance-at-end'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->

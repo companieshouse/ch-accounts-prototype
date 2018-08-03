@@ -42,6 +42,7 @@
             {{ govukTextarea({
               name: "loan-1-description",
               id: "loan-1-description",
+              value: data['loan-1-description'],
               label: {
                 text: "Description of the loan",
                 classes: "govuk-label--s"
@@ -65,7 +66,7 @@
                   <span class="currency-type">£</span>
                   <label for="loans-to-directors-balance-at-start">
                     <span class="mobile-only-label">Balance at 1 April 2017</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-start">
+                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-start" name="loans-to-directors-balance-at-start" value="{{ data['loans-to-directors-balance-at-start'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -87,7 +88,7 @@
                   <span class="currency-type">£</span>
                   <label for="loans-to-directors-advances-or-credits-made">
                     <span class="mobile-only-label">Advances or credits made</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-made">
+                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-made" name="loans-to-directors-advances-or-credits-made" value="{{ data['loans-to-directors-advances-or-credits-made'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -108,7 +109,7 @@
                   <span class="currency-type">£</span>
                   <label for="loans-to-directors-advances-or-credits-repaid">
                     <span class="mobile-only-label">Advances or credits repaid</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-repaid">
+                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-repaid" name="loans-to-directors-advances-or-credits-repaid" value="{{ data['loans-to-directors-advances-or-credits-repaid'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -129,7 +130,7 @@
                   <label for="loans-to-directors-balance-at-end">
                     <span class="mobile-only-label">
                       Balance at 31 March 2018</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-end" readonly="readonly">
+                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-end" name="loans-to-directors-balance-at-end" readonly="readonly" value="{{ data['loans-to-directors-balance-at-end'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
