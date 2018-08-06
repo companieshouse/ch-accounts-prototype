@@ -41,12 +41,12 @@ module.exports = function ( router ) {
 		}
 	} );
 
-	router.get( '/cics/general-description', function ( req, res ) {
+	router.get( '/cics/cics-company-number', function ( req, res ) {
 		var criteriaprofit = req.query.criteriaprofit;
 		if ( criteriaprofit == "yes" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
-			res.render( 'cics/general-description' );
+			res.render( 'cics/cics-company-number' );
 		}
 	} );
 

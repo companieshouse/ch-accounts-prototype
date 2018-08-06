@@ -22,78 +22,95 @@
 
           <form action="/small-full/small-full-accounts-dates" method="get" class="form">
 
-            {% set myHTML %}
-            <p class="govuk-hint">This is the date the CIC report was approved by the director.<br/>
-              For example, 31 3 2017</p>
-            {% endset -%}
+            <div class="govuk-form-group">
 
-            {% call govukFieldset({
-              legend: {
-                text: "Approve your CIC report",
-                classes: "govuk-fieldset__legend--l"
-                }
-                }) %}
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="Tell us which director approved the CIC report?">
 
-            {{ govukInput({
-                  label: {
-                    text: "Which director approved the CIC report?",
-                    classes: "govuk-label--m"
-                  },
-                  hint: {
-                    text: "If the company has two or more directors, give the name of the director acting on their behalf."
-                  },
-                  id: "director-approved-cic-report",
-                  name: "director-approved-cic-report"
-                }) }}
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  Approve your CIC report
+                </legend>
 
-            {{ govukDateInput({
-                id: "dob",
-                name: "dob",
-                fieldset: {
-                  legend: {
-                    text: "When was the CIC report approved?",
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                hint: {
-                    html: myHTML
-                },
-                items: [
-                  {
-                    name: "day"
-                  },
-                  {
-                    name: "month"
-                  },
-                  {
-                    name: "year"
-                  }
-                ]
-              }) }}
-            {% endcall %}
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--m" for="director-approved-cic-report">
+                    Which director approved the CIC report?
+                  </label>
 
-            <!-- ----- <div class="govuk-form-group"> <fieldset class="govuk-fieldset"> <legend class="govuk-fieldset__legend govuk-fieldset__legend--l"> Approve your CIC report </legend> <div class="govuk-form-group"> <label class="govuk-label govuk-label--m"
-            for="director-approved-cic-report"> Which director approved the CIC report? </label> <span id="director-approved-cic-report-hint" class="govuk-hint"> If the company has two or more directors, give the name of the director acting on their behalf.
-            </span> <input class="govuk-input" id="director-approved-cic-report" name="director-approved-cic-report" type="text" aria-describedby="director-approved-cic-report-hint"> </div> </fieldset> </div> <div class="govuk-form-group"> <fieldset
-            class="govuk-fieldset" aria-describedby="dob-hint" role="group"> <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> When was the CIC report approved? </legend> <span id="dob-hint" class="govuk-hint"> <p class="govuk-hint">This is the
-            date the CIC report was approved by the director.<br/> For example, 31 3 2017</p> </span> <div class="govuk-date-input" id="dob"> <div class="govuk-date-input__item govuk-date-input__item--day"> <div class="govuk-form-group"> <label
-            class="govuk-label govuk-date-input__label" for="dob-day"> Day </label> <input class="govuk-input govuk-date-input__input" id="dob-day" name="dob-day" type="number" pattern="[0-9]*"> </div> </div> <div class="govuk-date-input__item
-            govuk-date-input__item--month"> <div class="govuk-form-group"> <label class="govuk-label govuk-date-input__label" for="dob-month"> Month </label> <input class="govuk-input govuk-date-input__input" id="dob-month" name="dob-month" type="number"
-            pattern="[0-9]*"> </div> </div> <div class="govuk-date-input__item govuk-date-input__item--year"> <div class="govuk-form-group"> <label class="govuk-label govuk-date-input__label" for="dob-year"> Year </label> <input class="govuk-input
-            govuk-date-input__input" id="dob-year" name="dob-year" type="number" pattern="[0-9]*"> </div> </div> </div> </fieldset> </div> </fieldset>-->
+                  <span id="director-approved-cic-report-hint" class="govuk-hint">
+                    If the company has two or more directors, give the name of the director acting on their behalf.
+                  </span>
 
-            {{ govukButton({
+                  <input class="govuk-input" id="director-approved-cic-report" name="director-approved-cic-report" type="text" aria-describedby="director-approved-cic-report-hint">
+                </div>
+
+              </fieldset>
+
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group" data-required="data-required" data-error="Cannot be blank">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  When was the CIC report approved?
+                </legend>
+
+                <span id="dob-hint" class="govuk-hint">
+
+                  <p class="govuk-hint">This is the date the CIC report was approved by the director.<br/>
+                    For example, 31 3 2017</p>
+
+                </span>
+
+                <div class="govuk-date-input" id="dob">
+
+                  <div class="govuk-date-input__item govuk-date-input__item--day">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-day">
+                        Day
+                      </label>
+
+                      <input class="govuk-input govuk-date-input__input" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+
+                  <div class="govuk-date-input__item govuk-date-input__item--month">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-month">
+                        Month
+                      </label>
+
+                      <input class="govuk-input govuk-date-input__input" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+
+                  <div class="govuk-date-input__item govuk-date-input__item--year">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-year">
+                        Year
+                      </label>
+
+                      <input class="govuk-input govuk-date-input__input" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+          </fieldset>
+
+          {{ govukButton({
                 text: "Save and continue to accounts"
               }) }}
-          </form>
+        </form>
 
-        </div>
-        <!--govuk-grid-row-->
       </div>
-      <!--govuk-grid-column-two-thirds-->
+      <!--govuk-grid-row-->
+    </div>
+    <!--govuk-grid-column-two-thirds-->
 
-    </main>
-  </div>
-  <!---govuk-width-container-->
+  </main>
+</div>
+<!---govuk-width-container-->
 
 {% endblock %}
