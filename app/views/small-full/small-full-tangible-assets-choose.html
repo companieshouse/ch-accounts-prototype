@@ -20,8 +20,8 @@
 
           <form action="/small-full/small-full-tangible-assets-note-custom" class="form" id="" method="get" name="">
             {{ govukCheckboxes({
-              idPrefix: "nationality",
-              name: "nationality",
+              idPrefix: "tangibleType",
+              name: "tangibleType",
               fieldset: {
                 legend: {
                   text: "Which tangible assets are included in your prepared accounts?",
@@ -35,23 +35,28 @@
               items: [
                 {
                   value: "land",
-                  text: "Land and buildings"
+                  text: "Land and buildings",
+                  checked: checked('tangibleType','land')
                 },
                 {
                   value: "plant",
-                  text: "Plant and machinery"
+                  text: "Plant and machinery",
+                  checked: checked('tangibleType','plant')
                 },
                 {
                   value: "fixtures",
-                  text: "Fixtures and fittings"
+                  text: "Fixtures and fittings",
+                  checked: checked('tangibleType','fixtures')
                 },
                 {
                   value: "office",
-                  text: "Office equipment"
+                  text: "Office equipment",
+                  checked: checked('tangibleType','office')
                 },
                 {
                   value: "motor",
-                  text: "Motor vehicles"
+                  text: "Motor vehicles",
+                  checked: checked('tangibleType','motor')
                 }
               ]
             }) }}
