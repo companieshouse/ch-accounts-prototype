@@ -20,11 +20,6 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <h1 class="govuk-heading-l">
-            <!--<span class="circle-subheading text">CIC report</span>-->
-            Is directors' remuneration information included in your accounts?
-          </h1>
-
           <form action="/cics/transfer-of-assets" method="get" class="form">
 
             {{ govukRadios({
@@ -38,7 +33,8 @@
                   },
                   legend: {
                   text: "Is directors' remuneration information included in your accounts?",
-                  classes: "govuk-visualy-hidden"
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
                 }
               },
               items: [
