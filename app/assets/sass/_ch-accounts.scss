@@ -57,6 +57,13 @@ $error-button-hover: #8e0513;
     }
   }
 
+  .cya-desktop-only {
+    display: none; // Hide from mobiles
+    @include govuk-media-query(desktop) {
+      display: table-row; // Show on desktop
+    }
+  }
+
   .accounts-total {
     .govuk-input {
       border-left: 0;
