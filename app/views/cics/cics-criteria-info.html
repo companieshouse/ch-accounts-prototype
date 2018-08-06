@@ -1,50 +1,43 @@
 {% extends "layout.html" %}
-{% block pageTitle %} Check before you start {% endblock %}
+{% block pageTitle %}
+  Check before you start
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {% include "includes/chs-user-menu-logged-in.html" %}
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
-
-
-  {{ govukBackLink({
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
+          <header>
+            <h1 id="page-header" class="govuk-heading-l">Check before you start</h1>
+          </header>
 
+          <p>We're going to ask some questions.</p>
+          <p>Your answers will show whether you can use this service to file your CIC report and full accounts.</p>
 
-
-      <header>
-        <h1 id="page-header" class="govuk-heading-l">Check before you start</h1>
-      </header>
-
-
-      <p>We're going to ask some questions.</p>
-      <p>Your answers will show whether you can use this service to file your CIC report and full accounts.</p>
-
-
-
-
-
-
-      <form action="/cics/cics-criteria-mvp" method="GET">
-        {{ govukButton({
+          <form action="/cics/cics-criteria-mvp" method="GET">
+            {{ govukButton({
           text: "Continue to questions"
         }) }}
-      </form>
+          </form>
 
-  </div><!--govuk-grid-row-->
-</div><!--govuk-grid-column-two-thirds-->
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-</main>
-</div><!---govuk-width-container-->
-
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
 {% endblock %}
