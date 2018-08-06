@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  We've saved your answers and signed you out
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">We've saved your answers and signed you out</h1>
+          <p>We'll delete your answers after 90 days of inactivity.</p>
+          <p>To continue your filing later, save this link:</p>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+      <p>
+        <a href="/cics/general-description">https://beta.companieshouse.gov.uk/company/10366471/file-cic-report-and-accounts</a>
+      </p>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
