@@ -23,30 +23,30 @@
           <form action="/cics/transfer-of-assets" method="get" class="form">
 
             {{ govukRadios({
-              classes: "govuk-radios--inline",
-              idPrefix: "directorsremunerationaccounts",
-              name: "directorsremunerationaccounts",
+              classes: "govuk-radios",
+              idPrefix: "directorsRemunerationAccounts",
+              name: "directorsRemunerationAccounts",
               fieldset: {
                 attributes : {
                   'data-required': "data-required",
                   'data-error': "Tell us if directors' remuneration information is included in your accounts"
                   },
                   legend: {
-                  text: "Is directors' remuneration information included in your accounts?",
+                  text: "Is directors' remuneration information included in your accounts or CIC report?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
               },
               items: [
                 {
-                  value: "yes",
-                  text: "Yes",
-                  checked: checked('directorsremunerationaccounts','yes')
+                  value: "cic",
+                  text: "CIC Report",
+                  checked: checked('directorsRemunerationAccounts','yes')
                 },
                 {
-                  value: "no",
-                  text: "No",
-                  checked: checked('directorsremunerationaccounts','no')
+                  value: "accounts",
+                  text: "Accounts",
+                  checked: checked('directorsRemunerationAccounts','no')
                 }
               ]
             }) }}

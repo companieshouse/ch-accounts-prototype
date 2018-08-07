@@ -155,8 +155,8 @@ module.exports = function ( router ) {
 	// CICS - Is directors' remuneration included in accounts?
 
 	router.get( '/cics/transfer-of-assets', function ( req, res ) {
-		var directorsremunerationaccounts = req.query.directorsremunerationaccounts;
-		if ( directorsremunerationaccounts == "no" ) {
+		var directorsRemunerationAccounts = req.query.directorsRemunerationAccounts;
+		if ( directorsRemunerationAccounts == "cic" ) {
 			res.redirect( "/cics/directors-remuneration-accounts" );
 		} else {
 			res.render( 'cics/transfer-of-assets' );
