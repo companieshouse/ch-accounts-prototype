@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Company authentication
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <header class="text">
+            <h1 id="page-header" class="govuk-heading-xl">Company authentication</h1>
+          </header>
+
+          <p>To file company information you will need an authentication code.</p>
+          <p>Authenticating for<br>
+            <span id="company_details" class="govuk-heading-m"><span class="uppercase"><!--{{ data['company-name-for-testing'] }}-->A TEST COMPANY</span>
+              (01234567)</span></p>
+
+          <form action="/accounts/accounts-start-page-small-full-mvp" method="GET">
+
+            {{ govukInput({
+              label: {
+                text: "Authentication code"
+              },
+              classes: "govuk-input--width-10",
+              id: "authentication-code",
+              name: "authentication-code",
+              type: "password"
+              }) }}
+
+            {{ govukButton({
+              text: "Authenticate"
+            }) }}
+          </form>
+
+          <p class="text">
+            <a href="javascript:void(0)" id="auth_code_request">Request an authentication code</a>
+          </p>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

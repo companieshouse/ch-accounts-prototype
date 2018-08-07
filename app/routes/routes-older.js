@@ -756,6 +756,23 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/accounts/file-full-accounts', function ( req, res ) {
+		var chooseAccountsRadioGovUk = req.query.chooseAccountsRadioGovUk;
+		if ( chooseAccountsRadioGovUk == "Micro" ) {
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/accounts/accounts-start-page-micros" );
+		} else if ( chooseAccountsRadioGovUk == "Abridged" ) {
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/chs/chs-choose-abridged-or-other-r1" );
+		} else if ( chooseAccountsRadioGovUk == "FullCH" ) {
+			res.redirect( "/accounts/file-full-accounts" );
+		} else if ( chooseAccountsRadioGovUk == "FullJoint" ) {
+			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
+		} else if ( chooseAccountsRadioGovUk == "Dormant" ) {
+			res.redirect( "https://ch-accounts-v20.herokuapp.com/accounts/accounts-start-page-dormant" );
+		} else {
+			res.render( 'accounts/file-full-accounts' );
+		}
+	} );
+
 
 
 
@@ -768,6 +785,17 @@ module.exports = function ( router ) {
 			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
 		} else {
 			res.render( 'accounts/accounts-start-page-small-full-mvp' );
+		}
+	} );
+
+	router.get( '/accounts/full-company-number', function ( req, res ) {
+		var smallFullCriteriaGovUk = req.query.smallFullCriteriaGovUk;
+		if ( smallFullCriteriaGovUk == "No" ) {
+			res.redirect( "/chs/chs-other-ways-to-file" );
+		} else if ( smallFullCriteriaGovUk == "Other" ) {
+			res.redirect( "/chs/chs-choose-accounts-small-full-radio-from-gov-uk" );
+		} else {
+			res.render( 'accounts/full-company-number' );
 		}
 	} );
 

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  File full accounts
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <header>
+            <h1 id="page-header" class="govuk-heading-l">File full accounts</h1>
+          </header>
+
+          <h2 class="govuk-heading-m">Criteria</h2>
+
+          <div class="panel panel-border-wide">
+            <p>Check your prepared accounts to see if you meet the criteria.</p>
+          </div>
+
+          <p>You can file full accounts here if:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <!--<li>your accounting period starts on or after 1 January 2016</li>-->
+            <li>you don't need to include a directors' report or profit and loss account</li>
+            <li>you don't need to change the date the accounts are made up to</li>
+            <li>your balance sheet doesn’t have 'fixed asset investments', 'current asset investements', 'revaluation reserve', or 'intangible assets'</li>
+            <li>you only need to add notes (if applicable) for 'accounting policies', 'tangible assets', 'stocks', 'debtors', 'creditors - amounts falling due within one year', or 'creditors - amounts falling due after one year'</li>
+          </ul>
+
+          <p>Your company must also meet at least 2 of the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>turnover is not over £10.2 million</li>
+            <li>balance sheet total is not over £5.1 million</li>
+            <li>average number of employees is not over 50</li>
+          </ul>
+
+          <h2 class="govuk-heading-m">Do your prepared full accounts meet the criteria?</h2>
+
+          <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
+
+          <form action="/accounts/full-company-number" method="get" class="form">
+            {{ govukRadios({
+                idPrefix: "smallFullCriteriaGovUk",
+                name: "smallFullCriteriaGovUk",
+                fieldset: {
+                  legend: {
+                    text: "Do your prepared full accounts meet the criteria?",
+                    isPageHeading: false,
+                    classes: "govuk-visually-hidden"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "No",
+                    text: "No - show me other ways to file full accounts"
+                  },
+                  {
+                    value: "Other",
+                    text: "No - I'll file other types of accounts"
+                  }
+                ]
+              }) }}
+            <div class="form-group">
+              <input type="submit" class="govuk-button" value="Continue">
+            </div>
+
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Sign in to Companies House
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/chs/chs-authenticate-page-full-mvp" method="GET">
+
+            {% call govukFieldset({
+              legend: {
+                text: "Sign in to Companies House",
+                classes: "govuk-fieldset__legend--xl",
+                isPageHeading: true
+              }
+            }) %}
+
+            {{ govukInput({
+                label: {
+                  text: "Email address"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "chs-email",
+                name: "chs-email"
+              }) }}
+
+            {{ govukInput({
+                label: {
+                  text: "Password"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "chs-password",
+                name: "chs-password",
+                type: "password"
+              }) }}
+
+            {% endcall %}
+
+            {{ govukButton({
+              text: "Sign in"
+            }) }}
+          </form>
+
+          <p class="action-link">
+            <a class="button-link" id="register" href="javascript:void(0)">Register</a>
+          </p>
+          <p>
+            <a id="forgotten_password" href="javascript:void(0)">Forgotten your password?</a>
+          </p>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
