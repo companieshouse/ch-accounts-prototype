@@ -560,7 +560,24 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	//Choose accounts type
 
+	router.get( '/cics/cics-new-or-resume', function ( req, res ) {
+		var chooseAccountsRadioGovCics = req.query.chooseAccountsRadioGovCics;
+		if ( chooseAccountsRadioGovCics == "Micro" ) {
+			res.redirect( "/cics/cics-accounts-type" );
+		} else if ( chooseAccountsRadioGovCics == "Abridged" ) {
+			res.redirect( "/cics/cics-accounts-type" );
+		} else if ( chooseAccountsRadioGovCics == "FullCH" ) {
+			res.redirect( "/cics/cics-new-or-resume" );
+		} else if ( chooseAccountsRadioGovCics == "FullJoint" ) {
+			res.redirect( "/cics/cics-accounts-type" );
+		} else if ( chooseAccountsRadioGovCics == "Dormant" ) {
+			res.redirect( "/cics/cics-accounts-typ" );
+		} else {
+			res.render( 'cics/cics-new-or-resume' );
+		}
+	} );
 
 
 

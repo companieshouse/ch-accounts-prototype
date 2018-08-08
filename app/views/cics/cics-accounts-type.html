@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  You can't file online yet
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">You can’t file online yet</h1>
+          <p>For now, you can only file full accounts with Companies House here</p>
+          <p>You need to
+            <a href="/cics/cics-file-paper">file your CIC report and accounts on paper</a>.</p>
+
+          <!-- text-->
+          <a href="/cics/cics-criteria-not-met-alt" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alternative</a>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
