@@ -555,15 +555,15 @@ module.exports = function ( router ) {
 
 	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
 		var chooseAccountsRadioGovCics = req.query.chooseAccountsRadioGovCics;
-		if ( chooseAccountsRadioGovCics == "Micro" ) {
+		if ( chooseAccountsRadioGovCics == "micro-entity" ) {
 			res.redirect( "/cics/cics-accounts-type" );
-		} else if ( chooseAccountsRadioGovCics == "Abridged" ) {
+		} else if ( chooseAccountsRadioGovCics == "abridged" ) {
 			res.redirect( "/cics/cics-accounts-type" );
 		} else if ( chooseAccountsRadioGovCics == "FullCH" ) {
 			res.redirect( "/cics/cics-criteria-mvp" );
-		} else if ( chooseAccountsRadioGovCics == "FullJoint" ) {
-			res.redirect( "/cics/cics-accounts-type" );
-		} else if ( chooseAccountsRadioGovCics == "Dormant" ) {
+			//	} else if ( chooseAccountsRadioGovCics == "FullJoint" ) {
+			//		res.redirect( "/cics/cics-accounts-type" );
+		} else if ( chooseAccountsRadioGovCics == "dormant company" ) {
 			res.redirect( "/cics/cics-accounts-type" );
 		} else {
 			res.render( 'cics/cics-criteria-mvp' );
