@@ -118,12 +118,12 @@ module.exports = function ( router ) {
 
 	// CICS - detailed or simplified accounts
 
-	router.get( '/cics/cics-about-service', function ( req, res ) {
+	router.get( '/chs/chs-choose-accounts-small-full-radio-cics', function ( req, res ) {
 		var cicsNewOrResume = req.query.cicsNewOrResume;
 		if ( cicsNewOrResume == "no" ) {
 			res.redirect( "/chs/chs-login-page-cics-via-number" );
 		} else {
-			res.render( 'cics/cics-about-service' );
+			res.render( 'chs/chs-choose-accounts-small-full-radio-cics' );
 		}
 	} );
 
@@ -562,20 +562,20 @@ module.exports = function ( router ) {
 
 	//Choose accounts type
 
-	router.get( '/cics/cics-new-or-resume', function ( req, res ) {
+	router.get( '/cics/cics-about-service', function ( req, res ) {
 		var chooseAccountsRadioGovCics = req.query.chooseAccountsRadioGovCics;
 		if ( chooseAccountsRadioGovCics == "Micro" ) {
 			res.redirect( "/cics/cics-accounts-type" );
 		} else if ( chooseAccountsRadioGovCics == "Abridged" ) {
 			res.redirect( "/cics/cics-accounts-type" );
 		} else if ( chooseAccountsRadioGovCics == "FullCH" ) {
-			res.redirect( "/cics/cics-new-or-resume" );
+			res.redirect( "/cics/cics-about-service" );
 		} else if ( chooseAccountsRadioGovCics == "FullJoint" ) {
 			res.redirect( "/cics/cics-accounts-type" );
 		} else if ( chooseAccountsRadioGovCics == "Dormant" ) {
 			res.redirect( "/cics/cics-accounts-typ" );
 		} else {
-			res.render( 'cics/cics-new-or-resume' );
+			res.render( 'cics/cics-about-service' );
 		}
 	} );
 
