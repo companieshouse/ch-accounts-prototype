@@ -1,42 +1,55 @@
 {% extends "layout.html" %}
-{% block pageTitle %} How to file your CIC report and accounts on paper {% endblock %}
+{% block pageTitle %}
+  How to file your CIC report and accounts on paper
+{% endblock %}
 {% block main %}
 
-<div class="govuk-width-container">
-  {% include "includes/phase_banner_beta.html" %}
-  {{ govukBackLink({
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 
-  <main class="govuk-main-wrapper">
+    <main class="govuk-main-wrapper">
 
-  <div class="flash-card flash-card-paper">
-    <header>
-      <h1 class="govuk-heading-l">How to file your CIC report and accounts on paper</h1>
-    </header>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <ul class="govuk-list">
-          <li><span class="circle-step-white">1</span>
-            <h2 class="govuk-heading-m"><a href="https://www.gov.uk/annual-accounts">Prepare your accounts</a></h2>
-          </li>
+      <div class="flash-card flash-card-paper">
+        <header>
+          <h1 class="govuk-heading-l">How to file your CIC report and
+            {{ data['chooseAccountsRadioGovCics'] }}
+            accounts on paper</h1>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <ul class="govuk-list">
+              <li>
+                <span class="circle-step-white">1</span>
+                <h2 class="govuk-heading-m">
+                  <a href="https://www.gov.uk/annual-accounts">Prepare your
+                    {{ data['chooseAccountsRadioGovCics'] }}
+                    accounts</a>
+                </h2>
+              </li>
 
-          <li><span class="circle-step-white">2</span>
-            <h2 class="govuk-heading-m">Complete a <a href="https://www.gov.uk/government/publications/form-cic34-community-interest-company-report">paper CIC report</a> made up to the same date as the accounts</h2>
-          </li>
+              <li>
+                <span class="circle-step-white">2</span>
+                <h2 class="govuk-heading-m">Complete a
+                  <a href="https://www.gov.uk/government/publications/form-cic34-community-interest-company-report">paper CIC report</a>
+                  made up to the same date as the accounts</h2>
+              </li>
 
-          <li><span class="circle-step-white">3</span>
-            <h2 class="govuk-heading-m">Post both items to <a href="https://www.gov.uk/government/organisations/companies-house/about/access-and-opening">the Registrar of Companies</a>, with a cheque for £15 made payable to Companies House</h2>
-          </li>
-        </ul>
+              <li>
+                <span class="circle-step-white">3</span>
+                <h2 class="govuk-heading-m">Post both items to
+                  <a href="https://www.gov.uk/government/organisations/companies-house/about/access-and-opening">the Registrar of Companies</a>, with a cheque for £15 made payable to Companies House</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+
+    </main>
   </div>
-
-
-</main>
-</div><!---govuk-width-container-->
-
+  <!---govuk-width-container-->
 
 {% endblock %}

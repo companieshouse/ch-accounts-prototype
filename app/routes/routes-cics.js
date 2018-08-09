@@ -44,7 +44,7 @@ module.exports = function ( router ) {
 	router.get( '/cics/cics-company-number', function ( req, res ) {
 		var criteriaprofit = req.query.criteriaprofit;
 		if ( criteriaprofit == "yes" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
+			res.redirect( "/cics/cics-criteria-no-DR-PL" );
 		} else {
 			res.render( 'cics/cics-company-number' );
 		}
@@ -559,7 +559,7 @@ module.exports = function ( router ) {
 			res.redirect( "/cics/cics-accounts-type" );
 		} else if ( chooseAccountsRadioGovCics == "abridged" ) {
 			res.redirect( "/cics/cics-accounts-type" );
-		} else if ( chooseAccountsRadioGovCics == "FullCH" ) {
+		} else if ( chooseAccountsRadioGovCics == "full" ) {
 			res.redirect( "/cics/cics-criteria-mvp" );
 			//	} else if ( chooseAccountsRadioGovCics == "FullJoint" ) {
 			//		res.redirect( "/cics/cics-accounts-type" );
