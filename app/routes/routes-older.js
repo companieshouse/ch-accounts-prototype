@@ -730,6 +730,7 @@ module.exports = function ( router ) {
 
 
 
+	// full accounts - Corporation tax
 
 
 	router.get( '/chs/chs-choose-accounts-small-full-radio-from-gov-uk', function ( req, res ) {
@@ -738,6 +739,15 @@ module.exports = function ( router ) {
 			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
 		} else {
 			res.render( 'chs/chs-choose-accounts-small-full-radio-from-gov-uk' );
+		}
+	} );
+
+	router.get( '/chs/chs-choose-accounts-small-full-radio', function ( req, res ) {
+		var corporationTaxProfile = req.query.corporationTaxProfile;
+		if ( corporationTaxProfile == "yes" ) {
+			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
+		} else {
+			res.render( 'chs/chs-choose-accounts-small-full-radio' );
 		}
 	} );
 
