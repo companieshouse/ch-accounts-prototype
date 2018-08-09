@@ -732,6 +732,15 @@ module.exports = function ( router ) {
 
 
 
+	router.get( '/chs/chs-choose-accounts-small-full-radio-from-gov-uk', function ( req, res ) {
+		var corporationTax = req.query.corporationTax;
+		if ( corporationTax == "yes" ) {
+			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
+		} else {
+			res.render( 'chs/chs-choose-accounts-small-full-radio-from-gov-uk' );
+		}
+	} );
+
 
 
 
@@ -747,8 +756,6 @@ module.exports = function ( router ) {
 			res.redirect( "https://ch-accounts-v20.herokuapp.com/chs/chs-choose-abridged-or-other-r1" );
 		} else if ( chooseaccountsradio == "FullCH" ) {
 			res.redirect( "/chs/chs-choose-small-full-or-other" );
-		} else if ( chooseaccountsradio == "FullJoint" ) {
-			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
 		} else if ( chooseaccountsradio == "Dormant" ) {
 			res.redirect( "https://ch-accounts-v20.herokuapp.com/accounts/accounts-start-page-dormant" );
 		} else {
