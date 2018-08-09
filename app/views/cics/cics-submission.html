@@ -6,7 +6,24 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li class="user" id="signed-in-user">{{ data['chs-email'] }}:
+        </li>
+        <li>
+          <a href="javascript:void(0)">Your details</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" id="recent_filings">Your filings</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" id="">Companies you follow</a>
+        </li>
+        <li>
+          <a href="/chs/chs-profile-page-cics" id="user-signout">Sign out</a>
+        </li>
+      </ul>
+    </nav>
 
     <!-- START script to display current date and time-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
