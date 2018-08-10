@@ -135,8 +135,8 @@ module.exports = function ( router ) {
 
 	router.get( '/cics/directors-remuneration-yes', function ( req, res ) {
 
-		var directorsremunerationyn = req.query.directorsremunerationyn;
-		if ( directorsremunerationyn == "no" ) {
+		var cicsDirectorsRemuneration = req.query.cicsDirectorsRemuneration;
+		if ( cicsDirectorsRemuneration == "No remuneration was received" ) {
 			res.redirect( "/cics/transfer-of-assets" );
 		} else {
 			res.render( 'cics/directors-remuneration-yes' );
@@ -146,8 +146,8 @@ module.exports = function ( router ) {
 	// CICS - Is directors' remuneration included in accounts?
 
 	router.get( '/cics/transfer-of-assets', function ( req, res ) {
-		var directorsRemunerationAccounts = req.query.directorsRemunerationAccounts;
-		if ( directorsRemunerationAccounts == "cic" ) {
+		var cicsDirectorsRemuneration = req.query.cicsDirectorsRemuneration;
+		if ( cicsDirectorsRemuneration == "cic" ) {
 			res.redirect( "/cics/directors-remuneration-accounts" );
 		} else {
 			res.render( 'cics/transfer-of-assets' );

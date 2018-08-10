@@ -24,8 +24,8 @@
 
             {{ govukRadios({
               classes: "govuk-radios",
-              idPrefix: "directorsRemunerationAccounts",
-              name: "directorsRemunerationAccounts",
+              idPrefix: "cicsDirectorsRemuneration",
+              name: "cicsDirectorsRemuneration",
               fieldset: {
                 attributes : {
                   'data-required': "data-required",
@@ -44,7 +44,7 @@
                   checked: checked('directorsRemunerationAccounts','yes')
                 },
                 {
-                  value: "accounts",
+                  value: "Directors remuneration information is provided in the accounts",
                   text: "Accounts",
                   checked: checked('directorsRemunerationAccounts','no')
                 }
