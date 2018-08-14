@@ -35,7 +35,7 @@ module.exports = {
 	"cics-activities": "",
 	"cics-consultation-stakeholders": "There has not been a consultation with stakeholders",
 	"cicsDirectorsRemuneration": "No remuneration was received",
-	"cics-transfer-assets": "No transfer of assets other than for full consideration has been made",
+	"cics-transfer-assets": "No transfer of assets that have not reached market value",
 
 	//Small Full Balance sheet
 	"called-up-share-capital-not-paid-current": "",

@@ -29,7 +29,7 @@
             <p>Directors' remuneration is any money paid to the CIC director(s). This includes their usual pay, as well as other benefits.</p>
 
             {{ govukRadios({
-                classes: "govuk-radios",
+                classes: "govuk-radios--inline",
                 idPrefix: "cicsDirectorsRemuneration",
                 name: "cicsDirectorsRemuneration",
                 fieldset: {
@@ -44,20 +44,17 @@
                 },
 
                 items: [
+
+
                   {
                     value: "No directors' remuneration was received",
-                    text: "No remuneration was received",
+                    text: "No",
                     checked: checked('cicsDirectorsRemuneration',"No directors' remuneration was received")
                   },
                   {
                     value: "Yes - CIC",
-                    text: "Yes - I'm providing details as part of my CIC report",
+                    text: "Yes",
                     checked: checked('cicsDirectorsRemuneration','Yes - CIC')
-                  },
-                  {
-                    value: "Details will be provided as part of the accounts",
-                    text: "Yes - I'm providing details as part of my accounts",
-                    checked: checked('cicsDirectorsRemuneration','Details will be provided as part of the accounts')
                   }
                 ]
               }) }}
