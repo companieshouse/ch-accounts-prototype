@@ -137,7 +137,7 @@ module.exports = function ( router ) {
 
 	router.get( '/cics/directors-remuneration-accounts', function ( req, res ) {
 		var cicsDirectorsRemuneration = req.query.cicsDirectorsRemuneration;
-		if ( cicsDirectorsRemuneration == "No remuneration was received" ) {
+		if ( cicsDirectorsRemuneration == "No directors' remuneration was received" ) {
 			res.redirect( "/cics/transfer-of-assets" );
 		} else if ( cicsDirectorsRemuneration == "Details will be provided as part of the accounts" ) {
 			res.redirect( "/cics/transfer-of-assets" );
