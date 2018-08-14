@@ -24,12 +24,12 @@
             Was directors' remuneration received?
           </h1>
 
-          <form action="/cics/directors-remuneration-yes" method="get" class="form">
+          <form action="/cics/directors-remuneration-accounts" method="get" class="form">
 
             <p>Directors' remuneration is any money paid to the CIC director(s). This includes their usual pay, as well as other benefits.</p>
 
             {{ govukRadios({
-                classes: "govuk-radios--inline",
+                classes: "govuk-radios",
                 idPrefix: "cicsDirectorsRemuneration",
                 name: "cicsDirectorsRemuneration",
                 fieldset: {
@@ -45,14 +45,19 @@
 
                 items: [
                   {
-                    value: "yes",
-                    text: "Yes",
-                    checked: checked('directorsremunerationyn','yes')
+                    value: "No remuneration was received",
+                    text: "No remuneration was received",
+                    checked: checked('cicsDirectorsRemuneration','no')
                   },
                   {
-                    value: "No remuneration was received",
-                    text: "No",
-                    checked: checked('directorsremunerationyn','no')
+                    value: "Yes - CIC",
+                    text: "Yes - I'm providing details as part of my CIC report",
+                    checked: checked('cicsDirectorsRemuneration','cic')
+                  },
+                  {
+                    value: "Details will be provided as part of the accounts",
+                    text: "Yes - I'm providing details as part of my accounts",
+                    checked: checked('cicsDirectorsRemuneration','accounts')
                   }
                 ]
               }) }}
@@ -61,7 +66,6 @@
               text: "Save and continue"
             }) }}
           </form>
-          <a href="/cics/directors-remuneration-alt" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Alt</a>
 
         </div>
         <!--govuk-grid-row-->
