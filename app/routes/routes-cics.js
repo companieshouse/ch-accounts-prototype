@@ -154,6 +154,19 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	router.get( '/cics/directors-remuneration-accounts', function ( req, res ) {
+		var cicsDirectorsRemunerationAlt = req.query.cicsDirectorsRemunerationAlt;
+		if ( cicsDirectorsRemunerationAlt == "No remuneration was received" ) {
+			res.redirect( "/cics/transfer-of-assets" );
+		} else if ( cicsDirectorsRemunerationAlt == "Yes - I'm providing details as part of my accounts" ) {
+			res.redirect( "/cics/transfer-of-assets" );
+		} else {
+			res.render( 'cics/directors-remuneration-accounts' );
+		}
+	} );
+
+
+
 	// CICS - Were any assets transferred other than for full consideration?
 
 	router.get( '/cics/cics-check-before-you-submit', function ( req, res ) {
