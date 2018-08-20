@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block pageTitle %}Loans to directors added{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-loans-additional-info-yes-no" method="get" class="form">
+
+            <h1 class="govuk-heading-l">Loans to directors added</h1>
+
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  {{ data['loan-1-director'] }}
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['loan-1-description'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <p class="govuk-!-margin-bottom-2">
+                    <a href="/small-full/small-full-loans-yes-1">
+                      Change<span class="govuk-visually-hidden">
+                        {{ data['loan-1-director'] }}
+                        -
+                        {{ data['loan-1-director-description'] }}
+                      </span>
+                    </a>
+                  </p>
+
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      {{ data['loan-1-director'] }}
+                      -
+                      {{ data['loan-1-director-description'] }}</span>
+                  </a>
+
+                </dd>
+              </div>
+
+            </dl>
+
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "anyotherloanstodirectors1",
+                name: "anyotherloanstodirectors1",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Tell us if your prepared accounts include any other 'loans to directors' notes"
+                    },
+                  legend: {
+                    text: "Do your prepared accounts include any other 'loans to directors' notes? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-top-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('anyotherloanstodirectors1','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('anyotherloanstodirectors1','no')
+                  }
+                ]
+              }) }}
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-top-6"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

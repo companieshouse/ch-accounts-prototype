@@ -62,7 +62,7 @@ module.exports = function ( router ) {
 		if ( parseInt( req.session.data[ 'revaluation-reserve-current' ], 10 ) > 0 || parseInt( req.session.data[ 'revaluation-reserve-previous' ], 10 ) > 0 ) {
 			res.render( 'small-full/small-full-revaluation-reserve-note' );
 		} else {
-			res.redirect( "/small-full/small-full-other-notes-yes-no" );
+			res.redirect( "/small-full/small-full-employees-yes-no" );
 		}
 	} );
 
