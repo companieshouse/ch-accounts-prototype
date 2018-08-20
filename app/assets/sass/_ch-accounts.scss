@@ -758,6 +758,12 @@ th .panel {
   margin-top: 2em;
 }
 
+.sticky {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
+}
+
 .card-images {
   position: relative;
 
