@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block pageTitle %}First loan to director
+{% block pageTitle %}Second loan to director
 {% endblock %}
 {% block main %}
 
@@ -17,32 +17,28 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-loans-yes-no-1" method="get" class="form currency-included-within-inputs govuk-body">
+          <form action="/small-full/small-full-loans-yes-no-2" method="get" class="form currency-included-within-inputs govuk-body">
 
-            <h1 class="govuk-heading-l">First loan to director</h1>
+            <h1 class="govuk-heading-l">Second loan to director</h1>
 
-            <div class="govuk-inset-text">
-              <p>Only provide the details for each individual loan to the director. You can report more loans for the same director or other directors later if you need to.</p>
-              <p>
-                <strong>You can report up to 20 loans.</strong>
-              </p>
-            </div>
+            <!-- <div class="govuk-inset-text"> <p>Only provide the details for each individual loan to the director. You can report more loans for the same director or other directors later if you need to.</p> <p> <strong>You can report up to 20 loans.</strong>
+            </p> </div>-->
 
             {{ govukInput({
             label: {
               text: "Name of director receiving advance or credit",
               classes: "govuk-label--s"
             },
-            id: "loan-1-director",
-            name: "loan-1-director",
-            value: data['loan-1-director'],
+            id: "loan-2-director",
+            name: "loan-2-director",
+            value: data['loan-2-director'],
             classes: "govuk-!-margin-bottom-8"
             }) }}
 
             {{ govukTextarea({
-              name: "loan-1-description",
-              id: "loan-1-description",
-              value: data['loan-1-description'],
+              name: "loan-2-description",
+              id: "loan-2-description",
+              value: data['loan-2-description'],
               label: {
                 text: "Description of the loan",
                 classes: "govuk-label--s"
@@ -64,9 +60,9 @@
               <div class="govuk-grid-column-one-third">
                 <div class="govuk-form-group">
                   <span class="currency-type">£</span>
-                  <label for="loans-to-directors-balance-at-start">
+                  <label for="loans-to-directors-balance-at-start-2">
                     <span class="mobile-only-label">Balance at 1 April 2017</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-start" name="loans-to-directors-balance-at-start" value="{{ data['loans-to-directors-balance-at-start'] }}">
+                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-start-2" name="loans-to-directors-balance-at-start-2" value="{{ data['loans-to-directors-balance-at-start-2'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -86,9 +82,9 @@
               <div class="govuk-grid-column-one-third">
                 <div class="govuk-form-group">
                   <span class="currency-type">£</span>
-                  <label for="loans-to-directors-advances-or-credits-made">
+                  <label for="loans-to-directors-advances-or-credits-made-2">
                     <span class="mobile-only-label">Advances or credits made</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-made" name="loans-to-directors-advances-or-credits-made" value="{{ data['loans-to-directors-advances-or-credits-made'] }}">
+                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-made-2" name="loans-to-directors-advances-or-credits-made-2" value="{{ data['loans-to-directors-advances-or-credits-made-2'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -107,9 +103,9 @@
               <div class="govuk-grid-column-one-third">
                 <div class="govuk-form-group">
                   <span class="currency-type">£</span>
-                  <label for="loans-to-directors-advances-or-credits-repaid">
+                  <label for="loans-to-directors-advances-or-credits-repaid-2">
                     <span class="mobile-only-label">Advances or credits repaid</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-repaid" name="loans-to-directors-advances-or-credits-repaid" value="{{ data['loans-to-directors-advances-or-credits-repaid'] }}">
+                    <input type="number" class="govuk-input" id="loans-to-directors-advances-or-credits-repaid-2" name="loans-to-directors-advances-or-credits-repaid-2" value="{{ data['loans-to-directors-advances-or-credits-repaid-2'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->
@@ -127,10 +123,10 @@
               <div class="govuk-grid-column-one-third">
                 <div class="govuk-form-group">
                   <span class="currency-type">£</span>
-                  <label for="loans-to-directors-balance-at-end">
+                  <label for="loans-to-directors-balance-at-end-2">
                     <span class="mobile-only-label">
                       Balance at 31 March 2018</span>
-                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-end" name="loans-to-directors-balance-at-end" readonly="readonly" value="{{ data['loans-to-directors-balance-at-end'] }}">
+                    <input type="number" class="govuk-input" id="loans-to-directors-balance-at-end" name="loans-to-directors-balance-at-end-2" readonly="readonly" value="{{ data['loans-to-directors-balance-at-end-2'] }}">
                   </label>
                 </div>
                 <!--govuk-form-group-->

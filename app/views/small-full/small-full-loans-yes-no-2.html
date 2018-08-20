@@ -16,7 +16,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-loans-any-other" method="get" class="form">
+          <form action="/small-full/small-full-loans-additional-info-yes-no" method="get" class="form">
 
             <h1 class="govuk-heading-l">Loans to directors added</h1>
 
@@ -30,7 +30,7 @@
                 </dd>
                 <dd class="app-check-your-answers__change">
                   <p class="govuk-!-margin-bottom-2">
-                    <a href="javascript:void(0)">
+                    <a href="/small-full/small-full-loans-yes-1">
                       Change<span class="govuk-visually-hidden">
                         {{ data['loan-1-director'] }}
                         -
@@ -49,7 +49,64 @@
                 </dd>
               </div>
 
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  {{ data['loan-2-director'] }}
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['loan-2-description'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <p class="govuk-!-margin-bottom-2">
+                    <a href="/small-full/small-full-loans-yes-2">
+                      Change<span class="govuk-visually-hidden">
+                        {{ data['loan-2-director'] }}
+                        -
+                        {{ data['loan-2-director-description'] }}
+                      </span>
+                    </a>
+                  </p>
+
+                  <a href="javascript:void(0)">
+                    Delete<span class="govuk-visually-hidden">
+                      {{ data['loan-2-director'] }}
+                      -
+                      {{ data['loan-2-director-description'] }}</span>
+                  </a>
+
+                </dd>
+              </div>
+
             </dl>
+
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "anyotherloanstodirectors2",
+                name: "anyotherloanstodirectors2",
+                fieldset: {
+                  attributes : {
+                    'data-required': "data-required",
+                    'data-error': "Tell us if your prepared accounts include any other 'loans to directors' notes"
+                    },
+                  legend: {
+                    text: "Do your prepared accounts include any other 'loans to directors' notes? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m govuk-!-margin-top-6"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked('anyotherloanstodirectors2','yes')
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked('anyotherloanstodirectors2','no')
+                  }
+                ]
+              }) }}
 
             {{ govukButton({
               text: "Continue",

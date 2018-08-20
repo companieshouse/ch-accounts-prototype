@@ -1618,18 +1618,22 @@
 
           <div id="cya-loans-to-directors-note">
 
-            <h2 class="govuk-heading-m govuk-!-margin-top-8">Loans to directors note</h2>
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Loans to directors note
+              <a href="/small-full/small-full-loans-yes-no-2" class="govuk-body float-right">Change<span class="govuk-visually-hidden">Loans to directors note</span></a>
+            </h2>
 
             <dl class="app-check-your-answers app-check-your-answers--short">
               <div class="app-check-your-answers__contents">
                 <dt class="app-check-your-answers__answer">{{ data['loan-1-director'] }}</dt>
                 <dt class="app-check-your-answers__answer">{{ data['loan-1-description'] }}</dt>
-                <dd class="app-check-your-answers__change">
-                  <a href="/small-full/small-full-loans-yes-no">
-                    Change<span class="govuk-visually-hidden">
-                      First loan to director note</span>
-                  </a>
-                </dd>
+              </div>
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__answer">{{ data['loan-2-director'] }}</dt>
+                <dt class="app-check-your-answers__answer">{{ data['loan-2-description'] }}</dt>
+              </div>
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">Additional information</dt>
+                <dt class="app-check-your-answers__answer">{{ data['loanstodirectorsadditionalinfo'] }}</dt>
               </div>
             </dl>
 
