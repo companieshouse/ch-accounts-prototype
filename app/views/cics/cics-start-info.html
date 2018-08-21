@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  You’re about to start your CIC report
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <header>
+            <h1 id="page-header" class="govuk-heading-l">You’re about to start your CIC report</h1>
+          </header>
+
+          <p>If you’ve prepared your CIC information, you’ll need to refer to it now.</p>
+          <p>After completing your CIC report, you’ll file your accounts.</p>
+          {{ govukInsetText({
+              text: "Your answers will be saved as you go on. You can leave at any time and resume filing later."
+            }) }}
+
+          <form action="/cics/general-description" method="GET">
+            {{ govukButton({
+          text: "Continue to CIC report"
+        }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
