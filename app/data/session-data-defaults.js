@@ -33,7 +33,7 @@ module.exports = {
 
 	//CIC Report
 	"cics-activities": "",
-	"cics-consultation-stakeholders": "There has not been a consultation with stakeholders",
+	"cics-consultation-stakeholders": "No consultation with stakeholders",
 	"cicsDirectorsRemuneration": "No remuneration was received",
 	"cics-transfer-assets": "No transfer of assets other than for full consideration",
 
