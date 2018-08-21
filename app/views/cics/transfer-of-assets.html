@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Were any assets transferred other than for full consideration?
+  Was there any transfer of assets other than for full consideration?
 {% endblock %}
 {% block main %}
 
@@ -23,16 +23,25 @@
           <form action="/cics/cics-check-before-you-submit" method="get" class="form">
             {% call govukFieldset({
               legend: {
-                text: "Was there any transfer of assets that have not reached market value?",
+                text: "Was there any transfer of assets other than for full consideration?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             }) %}
-            {{ govukDetails({
-                summaryText: "What's this?",
-                text: "Give full details of any transfer of the CIC's assets that have not reached full market value during this financial year. For example, if an asset was valued at £1,000 and the CIC sold it for less (say £500), you should declare why. This also
-                  applies if the CIC gave any assets to another CIC or a charity."
-              }) }}
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What's this?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>This generally means any transfer of the CIC's assets that have not reached full market value during this financial year. For example, if an asset was valued at £1,000 and the CIC sold it for less (say £500), you should declare why. This also
+                  applies if the CIC gave any assets to another CIC or a charity.</p>
+                <p>For more details,
+                  <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/605418/14-1089-community-interest-companies-chapter-6-the-asset-lock.pdf">read our guidance (PDF 297kb)</a>
+                  or speak to your accountant.</p>
+              </div>
+            </details>
             {{ govukRadios({
                   classes: "govuk-radios--inline",
                   idPrefix: "assetstransferred",
@@ -40,7 +49,7 @@
                   fieldset: {
                     attributes : {
                       'data-required': "data-required",
-                      'data-error': "Tell us if there were any transfer of assets that have not reached market value"
+                      'data-error': "Tell us if there there any transfer of assets other than for full consideration"
                       },
                     legend: {
                       text: "Were any assets transferred other than for full consideration?",
