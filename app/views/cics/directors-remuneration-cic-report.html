@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Enter your directors' remuneration information here
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/cics/transfer-of-assets" method="get" class="form">
+
+            <h1 class="govuk-heading-l">Enter your directors' remuneration information here</h1>
+            {{ govukInsetText({
+              text: "If your remuneration information is in your accounts, you must enter it here in your CIC report."
+            }) }}
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  See an example
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                The total amount paid to or receivable by directors in respect of qualifying services was £10,000
+              </div>
+            </details>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" data-required="data-required" data-error="Enter the directors' remuneration information">
+                <legend class="govuk-visually-hidden">Enter your directors' remuneration information here</legend>
+                <label class="govuk-label govuk-visually-hidden" for="cicsDirectorsRemuneration">
+                  Enter your directors' remuneration information here
+                </label>
+                <textarea class="govuk-textarea" id="cicsDirectorsRemuneration" name="cicsDirectorsRemuneration" rows="20"></textarea>
+              </fieldset>
+            </div>
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

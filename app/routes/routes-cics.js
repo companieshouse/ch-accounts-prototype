@@ -135,12 +135,22 @@ module.exports = function ( router ) {
 
 
 
-	router.get( '/cics/directors-remuneration-accounts', function ( req, res ) {
+	router.get( '/cics/directors-remuneration-cic-report', function ( req, res ) {
 		var cicsDirectorsRemuneration = req.query.cicsDirectorsRemuneration;
 		if ( cicsDirectorsRemuneration == "No directors' remuneration was received" ) {
 			res.redirect( "/cics/transfer-of-assets" );
-		} else if ( cicsDirectorsRemuneration == "Details will be provided as part of the accounts" ) {
-			res.redirect( "/cics/transfer-of-assets" );
+		} else {
+			res.render( 'cics/directors-remuneration-cic-report' );
+		}
+	} );
+
+	// CICS - Where is the directors' remuneration information?
+
+
+	router.get( '/cics/directors-remuneration-accounts', function ( req, res ) {
+		var cicsDirectorsRemunerationLocation = req.query.cicsDirectorsRemunerationLocation;
+		if ( cicsDirectorsRemunerationLocation == "CIC" ) {
+			res.redirect( "/cics/directors-remuneration-cic-report" );
 		} else {
 			res.render( 'cics/directors-remuneration-accounts' );
 		}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Was directors' remuneration received?
+  Is directors' remuneration information included in your CIC report or your prepared accounts?
 {% endblock %}
 {% block main %}
 
@@ -21,21 +21,19 @@
         <div class="govuk-grid-column-two-thirds">
 
           <h1 class="govuk-heading-l">
-            Was directors' remuneration received?
+            Is directors' remuneration information included in your CIC report or your prepared accounts?
           </h1>
 
-          <form action="/cics/directors-remuneration-cic-report" method="get" class="form">
-
-            <p>Directors' remuneration is any money paid to the CIC director(s). This includes their usual pay, as well as other benefits.</p>
+          <form action="/cics/directors-remuneration-accounts" method="get" class="form">
 
             {{ govukRadios({
-                classes: "govuk-radios--inline",
-                idPrefix: "cicsDirectorsRemuneration",
-                name: "cicsDirectorsRemuneration",
+                classes: "govuk-radios",
+                idPrefix: "cicsDirectorsRemunerationLocation",
+                name: "cicsDirectorsRemunerationLocation",
                 fieldset: {
                   attributes : {
                     'data-required': "data-required",
-                    'data-error': "Tell us if directors' remuneration was received"
+                    'data-error': "Tell us if directors' remuneration included in your CIC report or your prepared accounts?"
                     },
                     legend: {
                     text: "Was directors' remuneration received?",
@@ -44,14 +42,14 @@
                 },
                 items: [
                 {
-                  value: "Yes",
-                  text: "Yes",
-                  checked: checked('cicsDirectorsRemuneration','Yes')
+                  value: "CIC",
+                  text: "CIC report",
+                  checked: checked('cicsDirectorsRemunerationLocation','CIC')
                 },
                   {
-                    value: "No directors' remuneration was received",
-                    text: "No",
-                    checked: checked('cicsDirectorsRemuneration',"No directors' remuneration was received")
+                    value: "Accounts",
+                    text: "Accounts",
+                    checked: checked('cicsDirectorsRemunerationLocation','Accounts')
                   }
 
                 ]
