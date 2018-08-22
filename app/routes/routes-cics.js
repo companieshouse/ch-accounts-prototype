@@ -23,18 +23,11 @@ module.exports = function ( router ) {
 		}
 	} );
 
-	router.get( '/cics/cics-criteria-audit', function ( req, res ) {
-		var cicReportType = req.query.cicReportType;
-		if ( cicReportType == "detailed" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
-		} else {
-			res.render( 'cics/cics-criteria-audit' );
-		}
-	} );
+
 
 	router.get( '/cics/cics-criteria-report', function ( req, res ) {
-		var accountsaudited = req.query.accountsaudited;
-		if ( accountsaudited == "yes" ) {
+		var cicReportType = req.query.cicReportType;
+		if ( cicReportType == "detailed" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/cics-criteria-report' );
