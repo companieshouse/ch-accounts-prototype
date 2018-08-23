@@ -30,7 +30,10 @@
           <h1 class="govuk-heading-xl">File your CIC report and accounts</h1>
 
           <p>Use this service to file your CIC report and annual accounts with Companies House</p>
-
+          {{ govukWarningText({
+            text: "Your filed CIC report and accounts will appear on the public record and online.",
+            iconFallbackText: "Warning"
+          }) }}
           {{ govukButton({ text: "Start now", href: "/cics/cics-new-or-resume", classes: "govuk-button--start" }) }}
           <!-- <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;"> on the Companies House service</span>-->
 
