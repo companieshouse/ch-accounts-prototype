@@ -26,17 +26,11 @@
               For example, 31 3 2017</p>
             {% endset -%}
 
-            {% call govukFieldset({
-              legend: {
-                text: "Approve your CIC report",
-                classes: "govuk-fieldset__legend--l"
-                }
-                }) %}
-
             {{ govukInput({
                   label: {
                     text: "Which director approved the CIC report?",
-                    classes: "govuk-label--m"
+                    isPageHeading: true,
+                    classes: "govuk-label--l"
                   },
                   hint: {
                     text: "If the company has two or more directors, give the name of the director acting on their behalf."
@@ -51,7 +45,7 @@
                 fieldset: {
                   legend: {
                     text: "When was the CIC report approved?",
-                    classes: "govuk-fieldset__legend--m"
+                    classes: "govuk-fieldset__legend--l"
                   }
                 },
                 hint: {
@@ -69,7 +63,6 @@
                   }
                 ]
               }) }}
-            {% endcall %}
 
             {{ govukButton({
                 text: "Save and continue to accounts"

@@ -14,32 +14,32 @@ module.exports = function ( router ) {
 		}
 	} );
 
-	router.get( '/cics/choose-cic-report-choose-accounts', function ( req, res ) {
+	router.get( '/cics/cics-criteria-report', function ( req, res ) {
 		var cicsr1 = req.query.cicsr1;
 		if ( cicsr1 == "no" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
-		} else {
-			res.render( 'cics/choose-cic-report-choose-accounts' );
-		}
-	} );
-
-
-
-	router.get( '/cics/cics-criteria-report', function ( req, res ) {
-		var cicReportType = req.query.cicReportType;
-		if ( cicReportType == "detailed" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/cics-criteria-report' );
 		}
 	} );
 
-	router.get( '/cics/cics-company-number', function ( req, res ) {
+
+
+	router.get( '/chs/chs-choose-accounts-small-full-radio-cics', function ( req, res ) {
+		var cicReportType = req.query.cicReportType;
+		if ( cicReportType == "detailed" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
+		} else {
+			res.render( 'chs/chs-choose-accounts-small-full-radio-cics' );
+		}
+	} );
+
+	router.get( '/cics/cics-about-service', function ( req, res ) {
 		var criteriaprofit = req.query.criteriaprofit;
 		if ( criteriaprofit == "yes" ) {
 			res.redirect( "/cics/cics-criteria-no-DR-PL" );
 		} else {
-			res.render( 'cics/cics-company-number' );
+			res.render( 'cics/cics-about-service' );
 		}
 	} );
 
@@ -111,12 +111,12 @@ module.exports = function ( router ) {
 
 	// CICS - detailed or simplified accounts
 
-	router.get( '/cics/cics-about-service', function ( req, res ) {
+	router.get( '/cics/cics-criteria-info', function ( req, res ) {
 		var cicsNewOrResume = req.query.cicsNewOrResume;
 		if ( cicsNewOrResume == "no" ) {
 			res.redirect( "/chs/chs-login-page-cics-via-number" );
 		} else {
-			res.render( 'cics/cics-about-service' );
+			res.render( 'cics/cics-criteria-info' );
 		}
 	} );
 
@@ -166,7 +166,7 @@ module.exports = function ( router ) {
 
 	router.get( '/small-full/small-full-balance-sheet', function ( req, res ) {
 		var changecompanydates = req.query.changecompanydates;
-		if ( changecompanydates == "yes" ) {
+		if ( changecompanydates == "no" ) {
 			res.redirect( "/small-full/small-full-accounts-dates-change" );
 		} else {
 			res.render( 'small-full/small-full-balance-sheet' );
