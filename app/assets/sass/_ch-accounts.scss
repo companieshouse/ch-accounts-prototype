@@ -850,7 +850,7 @@ img.card-image {
     float: right;
   }
 }
-/// Flash card ///
+/// interruption card ///
 
 .circle-step-white {
   height: 1.4em;
@@ -878,12 +878,26 @@ img.card-image {
   margin: -0.4em 0.5em 1em 0;
 }
 
-.flash-card {
+.interruption-card {
   padding: 2em 3em;
-  background: $govuk-link-colour url("/public/images/file-accounts-transparent.png") no-repeat 95% 60%;
+  background: $govuk-link-colour url("/public/images/file-accounts-and-cic-report-transparent.png") no-repeat 95% 60%;
 
-  &.flash-card-paper {
+  &.interruption-card-paper {
     background: $govuk-link-colour url("/public/images/file-paper.png") no-repeat 90% 100%;
+  }
+  @include govuk-media-query($until: tablet) {
+    background-image: none !important;
+  }
+
+  &.interruption-card-cic-only {
+    background: $govuk-link-colour url("/public/images/file-cic-report-transparent.png") no-repeat 90% 30%;
+  }
+  @include govuk-media-query($until: tablet) {
+    background-image: none !important;
+  }
+
+  &.interruption-card-accounts-only {
+    background: $govuk-link-colour url("/public/images/file-accounts-transparent.png") no-repeat 90% 30%;
   }
   @include govuk-media-query($until: tablet) {
     background-image: none !important;

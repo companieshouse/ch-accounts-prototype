@@ -24,9 +24,7 @@
 
           <p>If you’ve prepared your CIC information, you’ll need to refer to it now.</p>
           <p>After completing your CIC report, you’ll file your accounts.</p>
-          {{ govukInsetText({
-              text: "Your answers will be saved as you go on. You can leave at any time and resume filing later."
-            }) }}
+          <div class="govuk-inset-text">Your answers will be saved as you go on. You can leave at any time and resume filing later.</div>
 
           <form action="/cics/general-description" method="GET">
             {{ govukButton({
