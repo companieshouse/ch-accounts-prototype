@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Which items are included in your prepared balance sheet?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/small-full-tangible-assets-note-custom" class="form" id="" method="get" name="">
+
+            <h1 class="govuk-heading-l">
+              Which items are included in your prepared balance sheet?
+            </h1>
+
+            <p class="govuk-hint">
+              Select all that apply
+            </p>
+
+            {{ govukCheckboxes({
+              idPrefix: "balanceSheetItems",
+              name: "balanceSheetItems",
+              fieldset: {
+                legend: {
+                  text: "Fixed assets",
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              govukInsetText: {
+                text: "Fixed assets"
+              },
+              items: [
+                {
+                  value: "intangible-assets",
+                  text: "Intangible assets",
+                  checked: checked('balanceSheetItems','intangible-assets')
+                },
+                {
+                  value: "tangible-assets",
+                  text: "Tangible assets ",
+                  checked: checked('balanceSheetItems','tangible-assets')
+                },
+                {
+                  value: "investments ",
+                  text: "Investments ",
+                  checked: checked('balanceSheetItems','investments ')
+                }
+              ]
+            }) }}
+
+            {{ govukCheckboxes({
+              idPrefix: "balanceSheetItems",
+              name: "balanceSheetItems",
+              fieldset: {
+                legend: {
+                  text: "Current assets",
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              govukInsetText: {
+                text: "Current assets"
+              },
+              items: [
+                {
+                  value: "stocks",
+                  text: "Stocks",
+                  checked: checked('balanceSheetItems','stocks')
+                },
+                {
+                  value: "debtors",
+                  text: "Debtors ",
+                  checked: checked('balanceSheetItems','debtors')
+                },
+                {
+                  value: "cash-at-bank-and-in-hand",
+                  text: "Cash at bank and in hand",
+                  checked: checked('balanceSheetItems','cash-at-bank-and-in-hand')
+                },
+                {
+                  value: "investments",
+                  text: "Investments",
+                  checked: checked('balanceSheetItems','investments')
+                }
+              ]
+            }) }}
+
+            {{ govukCheckboxes({
+              idPrefix: "balanceSheetItems",
+              name: "balanceSheetItems",
+              fieldset: {
+                legend: {
+                  text: "Other balance sheet entries",
+                  classes: "govuk-visually-hidden"
+                }
+              },
+              items: [
+                {
+                  value: "prepayments-and-accrued-income",
+                  text: "Prepayments and accrued income",
+                  checked: checked('balanceSheetItems','prepayments-and-accrued-income')
+                },
+                {
+                  value: "creditors-amounts-falling-due-within-one-year",
+                  text: "Creditors - amounts falling due within one year",
+                  checked: checked('balanceSheetItems','creditors-amounts-falling-due-within-one-year')
+                },
+                {
+                  value: "creditors-amounts-falling-due-after-one-year",
+                  text: "Creditors - amounts falling due after more than one year",
+                  checked: checked('balanceSheetItems','creditors-amounts-falling-due-after-one-year')
+                },
+                {
+                  value: "provision-for-liabilities",
+                  text: "Provision for liabilities",
+                  checked: checked('balanceSheetItems','provision-for-liabilities')
+                },
+                {
+                  value: "accruals-and-deferred-income",
+                  text: "Accruals and deferred income",
+                  checked: checked('balanceSheetItems','accruals-and-deferred-income')
+                }
+              ]
+            }) }}
+
+            {{ govukCheckboxes({
+              idPrefix: "balanceSheetItems",
+              name: "balanceSheetItems",
+              fieldset: {
+                legend: {
+                  text: "Capital and reserves",
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              govukInsetText: {
+                text: "Capital and reserves"
+              },
+              items: [
+                {
+                  value: "called-up-share-capital",
+                  text: "Called up share capital",
+                  checked: checked('balanceSheetItems','called-up-share-capital')
+                },
+                {
+                  value: "share-premium-account",
+                  text: "Share premium account",
+                  checked: checked('balanceSheetItems','share-premium-account')
+                },
+                {
+                  value: "revaluation-reserve",
+                  text: "Revaluation reserve",
+                  checked: checked('balanceSheetItems','revaluation-reserve')
+                },
+                {
+                  value: "other-reserves",
+                  text: "Other reserves",
+                  checked: checked('balanceSheetItems','other-reserves')
+                },
+                {
+                  value: "profit-and-loss-account",
+                  "html": "Profit and loss account<span class=\"govuk-hint\">(also known as 'retained earnings')</span> " }
+              ]
+            }) }}
+
+            {{ govukButton({
+                  text: "Save and continue"
+                }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+
+      </div>
+      <!--govuk-grid-row-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
