@@ -18,7 +18,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-tangible-assets-note-custom" class="form" id="" method="get" name="">
+          <form action="/small-full/small-full-balance-sheet" class="form" id="" method="get" name="">
 
             <h1 class="govuk-heading-l">
               Which items are included in your prepared balance sheet?
@@ -27,6 +27,24 @@
             <p class="govuk-hint">
               Select all that apply
             </p>
+
+            {{ govukCheckboxes({
+              idPrefix: "balanceSheetItems",
+              name: "balanceSheetItems",
+              fieldset: {
+                legend: {
+                  text: "Called up share capital not paid",
+                  classes: "govuk-visually-hidden"
+                }
+              },
+              items: [
+                {
+                  value: "balanceSheetItems-called-up-share-capital-not-paid",
+                  text: "Called up share capital not paid",
+                  checked: checked('balanceSheetItems','balanceSheetItems-called-up-share-capital-not-paid')
+                }
+              ]
+            }) }}
 
             {{ govukCheckboxes({
               idPrefix: "balanceSheetItems",
@@ -42,19 +60,19 @@
               },
               items: [
                 {
-                  value: "intangible-assets",
+                  value: "balanceSheetItems-intangible-assets",
                   text: "Intangible assets",
-                  checked: checked('balanceSheetItems','intangible-assets')
+                  checked: checked('balanceSheetItems','balanceSheetItems-intangible-assets')
                 },
                 {
-                  value: "tangible-assets",
+                  value: "balanceSheetItems-tangible-assets",
                   text: "Tangible assets ",
-                  checked: checked('balanceSheetItems','tangible-assets')
+                  checked: checked('balanceSheetItems','balanceSheetItems-tangible-assets')
                 },
                 {
-                  value: "investments ",
+                  value: "balanceSheetItems-investments ",
                   text: "Investments ",
-                  checked: checked('balanceSheetItems','investments ')
+                  checked: checked('balanceSheetItems','balanceSheetItems-investments ')
                 }
               ]
             }) }}
@@ -73,24 +91,24 @@
               },
               items: [
                 {
-                  value: "stocks",
+                  value: "balanceSheetItems-stocks",
                   text: "Stocks",
-                  checked: checked('balanceSheetItems','stocks')
+                  checked: checked('balanceSheetItems','balanceSheetItems-stocks')
                 },
                 {
-                  value: "debtors",
+                  value: "balanceSheetItems-debtors",
                   text: "Debtors ",
-                  checked: checked('balanceSheetItems','debtors')
+                  checked: checked('balanceSheetItems','balanceSheetItems-debtors')
                 },
                 {
-                  value: "cash-at-bank-and-in-hand",
+                  value: "balanceSheetItems-cash-at-bank-and-in-hand",
                   text: "Cash at bank and in hand",
-                  checked: checked('balanceSheetItems','cash-at-bank-and-in-hand')
+                  checked: checked('balanceSheetItems','balanceSheetItems-cash-at-bank-and-in-hand')
                 },
                 {
-                  value: "investments",
+                  value: "balanceSheetItems-investments",
                   text: "Investments",
-                  checked: checked('balanceSheetItems','investments')
+                  checked: checked('balanceSheetItems','balanceSheetItems-investments')
                 }
               ]
             }) }}
@@ -98,6 +116,7 @@
             {{ govukCheckboxes({
               idPrefix: "balanceSheetItems",
               name: "balanceSheetItems",
+              classes: "govuk-!-padding-top-2",
               fieldset: {
                 legend: {
                   text: "Other balance sheet entries",
@@ -106,29 +125,29 @@
               },
               items: [
                 {
-                  value: "prepayments-and-accrued-income",
+                  value: "balanceSheetItems-prepayments-and-accrued-income",
                   text: "Prepayments and accrued income",
-                  checked: checked('balanceSheetItems','prepayments-and-accrued-income')
+                  checked: checked('balanceSheetItems','balanceSheetItems-prepayments-and-accrued-income')
                 },
                 {
-                  value: "creditors-amounts-falling-due-within-one-year",
+                  value: "balanceSheetItems-creditors-amounts-falling-due-within-one-year",
                   text: "Creditors - amounts falling due within one year",
-                  checked: checked('balanceSheetItems','creditors-amounts-falling-due-within-one-year')
+                  checked: checked('balanceSheetItems','balanceSheetItems-creditors-amounts-falling-due-within-one-year')
                 },
                 {
-                  value: "creditors-amounts-falling-due-after-one-year",
+                  value: "balanceSheetItems-creditors-amounts-falling-due-after-one-year",
                   text: "Creditors - amounts falling due after more than one year",
-                  checked: checked('balanceSheetItems','creditors-amounts-falling-due-after-one-year')
+                  checked: checked('balanceSheetItems','balanceSheetItems-creditors-amounts-falling-due-after-one-year')
                 },
                 {
-                  value: "provision-for-liabilities",
+                  value: "balanceSheetItems-provision-for-liabilities",
                   text: "Provision for liabilities",
-                  checked: checked('balanceSheetItems','provision-for-liabilities')
+                  checked: checked('balanceSheetItems','balanceSheetItems-provision-for-liabilities')
                 },
                 {
-                  value: "accruals-and-deferred-income",
+                  value: "balanceSheetItems-accruals-and-deferred-income",
                   text: "Accruals and deferred income",
-                  checked: checked('balanceSheetItems','accruals-and-deferred-income')
+                  checked: checked('balanceSheetItems','balanceSheetItems-accruals-and-deferred-income')
                 }
               ]
             }) }}
@@ -147,27 +166,28 @@
               },
               items: [
                 {
-                  value: "called-up-share-capital",
+                  value: "balanceSheetItems-called-up-share-capital",
                   text: "Called up share capital",
-                  checked: checked('balanceSheetItems','called-up-share-capital')
+                  checked: checked('balanceSheetItems','balanceSheetItems-called-up-share-capital')
                 },
                 {
-                  value: "share-premium-account",
+                  value: "balanceSheetItems-share-premium-account",
                   text: "Share premium account",
-                  checked: checked('balanceSheetItems','share-premium-account')
+                  checked: checked('balanceSheetItems','balanceSheetItems-share-premium-account')
                 },
                 {
-                  value: "revaluation-reserve",
+                  value: "balanceSheetItems-revaluation-reserve",
                   text: "Revaluation reserve",
-                  checked: checked('balanceSheetItems','revaluation-reserve')
+                  checked: checked('balanceSheetItems','balanceSheetItems-revaluation-reserve')
                 },
                 {
-                  value: "other-reserves",
+                  value: "balanceSheetItems-other-reserves",
                   text: "Other reserves",
-                  checked: checked('balanceSheetItems','other-reserves')
+                  checked: checked('balanceSheetItems','balanceSheetItems-other-reserves')
                 },
                 {
-                  value: "profit-and-loss-account",
+                  value: "balanceSheetItems-profit-and-loss-account",
+                  checked: checked('balanceSheetItems','balanceSheetItems-profit-and-loss-account'),
                   "html": "Profit and loss account<span class=\"govuk-hint\">(also known as 'retained earnings')</span> " }
               ]
             }) }}
