@@ -1,0 +1,891 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Balance sheet
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper two-column-accounts">
+
+      <h1 class="govuk-heading-l">
+        <!--<span class="circle circle-step-large">3</span>-->
+        Balance sheet
+      </h1>
+
+      <!--<p class="warning-note warning-note-large">You only need to enter items included in your prepared accounts.</p>-->
+
+      <div class="govuk-grid-row" id="accounts-header">
+
+        <div class="govuk-grid-column-one-half">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <h2 class="govuk-heading-s">2018</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <h2 class="govuk-heading-s">2017</h2>
+        </div>
+      </div>
+
+      <form action="/small-full/small-full-balance-sheet-statements" method="get" class="form currency-included-within-inputs govuk-body" id="balance-sheet">
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-called-up-share-capital-not-paid' %}
+            <!--Start called-up share capital not paid-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!--<details> <summary><span class="summary">-->Called up share capital not paid
+                <!--</span></summary> <div class="panel panel-border-narrow"> <p>This is the amount that has been called for when shares have been allotted but that amount has not been received as at the date of the balance sheet.</p> </div> </details>-->
+                <span class="govuk-hint">This should not be confused with ‘Called up share capital', which can be found under 'Capital and reserves' at the end of this Balance sheet</span>
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="called-up-share-capital-not-paid-current">
+                    <span class="mobile-only-label">Called up share capital not paid (2016)</span>
+                    <input type="number" class="govuk-input" id="called-up-share-capital-not-paid-current" name="called-up-share-capital-not-paid-current" value="{{ data['called-up-share-capital-not-paid-current'] }}">
+                  </label>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="called-up-share-capital-not-paid-previous">
+                    <span class="mobile-only-label">Called up share capital not paid (2015)</span>
+                    <input type="number" class="govuk-input" id="called-up-share-capital-not-paid-previous" name="called-up-share-capital-not-paid-previous" value="{{ data['called-up-share-capital-not-paid-previous'] }}">
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <!--End called-up share capital not paid-->
+          {% endif %}
+        {% endfor %}
+
+        {% set fixedAssetsHeading = false %}
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-stocks' or something === 'balanceSheetItems-debtors' or something === 'balanceSheetItems-cash-at-bank-and-in-hand' or something === 'balanceSheetItems-current-asset-investments'%}
+            {% set fixedAssetsHeading = true %}
+          {% endif %}
+        {% endfor %}
+        {% if fixedAssetsHeading %}
+          <h2 class="govuk-heading-m">Fixed assets</h2>
+        {% endif %}
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-intangible-assets' %}
+            <!--Start intangible assets-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!--<details> <summary><span class="summary">-->Intangible assets
+                <!--</span> </summary> <div class="panel panel-border-narrow"> <p>The value after depreciation of your company's assets that are not physical. Examples include:</p> <ul class="govuk-list"> <li>patents</li> <li>trademarks</li> <li>copyrights</li>
+                <li>brand value</li> <li>goodwill</li> </div> </details>-->
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="intangible-assets-current">
+                    <span class="mobile-only-label">Intangible assets (2016)</span>
+                    <input type="number" class="govuk-input" id="intangible-assets-current" name="intangible-assets-current" value="{{ data['intangible-assets-current'] }}">
+                  </label>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="intangible-assets-previous">
+                    <span class="mobile-only-label">Intangible assets (2015)</span>
+                    <input type="number" class="govuk-input" id="intangible-assets-previous" name="intangible-assets-previous" value="{{ data['intangible-assets-previous'] }}">
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <!--End intangible assets-->
+          {% endif %}
+        {% endfor %}
+
+        <div class="govuk-grid-row" id="tangible-comma-error" style="display:none; margin-bottom:-2em;">
+          <div class="govuk-grid-column-one-half">&nbsp;</div>
+          <div class="govuk-grid-column-one-quarter">
+            <span class="error-message" id="">Please enter a value between 0 and 99999999 without commas, brackets or other symbols.</span></div>
+          <div class="govuk-grid-column-one-quarter">&nbsp;</div>
+        </div>
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-tangible-assets' %}
+            <!--Start tangible assets-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!--<details> <summary><span class="summary">-->Tangible assets
+                <!--</span></summary> <div class="panel panel-border-narrow"> <p>The value of physical assets your business owns, after depreciation. Examples include:</p> <ul class="govuk-list"> <li>machinery</li> <li>fixtures and fittings</li> <li>office
+                equipment</li> <li>vehicles</li> <li>land and buildings</li> </ul> </div> </details>-->
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label class="form-label" for="tangible-assets-current">
+                    <span class="mobile-only-label">Tangible assets (2016)</span>
+                    <input type="number" class="govuk-input" name="tangible-assets-current" id="tangible-assets-current" value="{{ data['tangible-assets-current'] }}"></label>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label class="form-label" for="tangible-assets-previous">
+                    <span class="mobile-only-label">Tangible assets (2015)</span>
+                    <input type="number" class="govuk-input" id="tangible-assets-previous" name="tangible-assets-previous" value="{{ data['tangible-assets-previous'] }}">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!--End tangible assets-->
+          {% endif %}
+        {% endfor %}
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-investments' %}
+            <!--Start investments (fixed assets) -->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!--<details> <summary><span class="summary">-->Investments
+                <!--</summary> <div class="panel panel-border-narrow"> <p>Fixed asset investment refers to any investment made this reporting period in assets used to generate income that will be held for more than one year. Examples include:</p> <ul
+                class="govuk-list"> <li>new vehicles</li> <li>buildings and refurbishment</li> <li>equipment</li> </div> </details>-->
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="investments-fixed-assets-current">
+                    <span class="mobile-only-label">Investments (2016)</span>
+                    <input type="number" class="govuk-input" id="investments-fixed-assets-current" name="investments-fixed-assets-current" value="{{ data['investments-fixed-assets-current'] }}">
+                  </label>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label class="form-label" for="investments-fixed-assets-previous">
+                    <span class="mobile-only-label">Investments (2015)</span>
+                    <input type="number" class="govuk-input" id="investments-fixed-assets-previous" name="investments-fixed-assets-previous" value="{{ data['investments-fixed-assets-previous'] }}">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!--End investments (fixed assets)-->
+          {% endif %}
+        {% endfor %}
+
+        {% set totalFixedAssetsHeading = false %}
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-stocks' or something === 'balanceSheetItems-debtors' or something === 'balanceSheetItems-cash-at-bank-and-in-hand' or something === 'balanceSheetItems-current-asset-investments'%}
+            {% set totalFixedAssetsHeading = true %}
+          {% endif %}
+        {% endfor %}
+        {% if totalFixedAssetsHeading %}
+          <!--Start total fixed assets-->
+          <div class="govuk-grid-row accounts-total">
+            <div class="govuk-grid-column-one-half">
+              <strong>Total fixed assets</strong>
+              <!--<details> <summary><span class="summary">Total fixed assets</span></summary> <div class="panel panel-border-narrow"> <p><strong>Calculation:</strong> 'Intangible assets' plus 'tangible assets' plus 'investments'.</p> </div> </details>-->
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label-bold" for="total-fixed-assets-current">
+                  <span class="mobile-only-label">Total fixed assets (2016)</span>
+                  <input type="number" class="govuk-input" id="total-fixed-assets-current" name="total-fixed-assets-current" readonly="readonly" value="{{ data['total-fixed-assets-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label-bold" for="total-fixed-assets-previous">
+                  <span class="mobile-only-label">Total fixed assets (2015)</span>
+                  <input type="number" class="govuk-input" id="total-fixed-assets-previous" name="total-fixed-assets-previous" readonly="readonly" value="{{ data['total-fixed-assets-previous'] }}">
+                </label>
+              </div>
+            </div>
+
+          </div>
+          <!--End total fixed assets-->
+        {% endif %}
+
+        {% set currentAssetsHeading = false %}
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-stocks' or something === 'balanceSheetItems-debtors' or something === 'balanceSheetItems-cash-at-bank-and-in-hand' or something === 'balanceSheetItems-current-asset-investments'%}
+            {% set currentAssetsHeading = true %}
+          {% endif %}
+        {% endfor %}
+        {% if currentAssetsHeading %}
+          <h2 class="govuk-heading-m">Current assets</h2>
+        {% endif %}
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-stocks' %}
+            <!--Start stocks-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!-- <details> <summary><span class="summary">-->Stocks
+                <!--</span></summary> <div class="panel panel-border-narrow"> <p>Goods and services for resale, but unsold as on the date of the balance sheet. Examples include:</p> <ul class="govuk-list"> <li>raw materials</li> <li>the balance of long term
+                contracts</li> </ul> </div> </details>-->
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="stocks-current">
+                    <span class="mobile-only-label">Stocks (2016)</span>
+                    <input type="number" class="govuk-input" id="stocks-current" name="stocks-current" value="{{ data['stocks-current'] }}">
+                  </label>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="stocks-current">
+                    <span class="mobile-only-label">Stocks (2015)</span>
+                    <input type="number" class="govuk-input" id="stocks-previous" name="stocks-previous" value="{{ data['stocks-previous'] }}">
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <!--End stocks-->
+          {% endif %}
+        {% endfor %}
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-debtors' %}
+            <!--Start debtors-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!-- <details> <summary><span class="summary">-->Debtors
+                <!--</span></summary> <div class="panel panel-border-narrow"> <p>Amounts owed to your business from trading activity. Examples include:</p> <ul class="govuk-list"> <li>debts</li> <li>outstanding invoices</li> </ul> </div> </details>-->
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label for="debtors-current">
+                    <span class="mobile-only-label">Debtors (2016)</span>
+                    <input type="number" class="govuk-input" id="debtors-current" name="debtors-current" value="{{ data['debtors-current'] }}">
+                  </label>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span>
+                  <label class="form-label" for="debtors-previous">
+                    <span class="mobile-only-label">Debtors (2015)</span>
+                    <input type="number" class="govuk-input" id="debtors-previous" name="debtors-previous" value="{{ data['debtors-previous'] }}">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!--End debtors-->
+          {% endif %}
+        {% endfor %}
+
+        {% for something in data['balanceSheetItems'] %}
+          {% if something === 'balanceSheetItems-cash-at-bank-and-in-hand' %}
+            <!--Start cash at bank and in hand-->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <!-- <details> <summary><span class="summary">-->Cash at bank and in hand
+                <!--</span></summary> <div class="panel panel-border-narrow"> <p>Total cash available either in the bank, or petty cash.</p> </div> </details>-->
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-form-group">
+                  <span class="currency-type">£</span <label for="cash-at-bank-and-in-hand-current"><span class="mobile-only-label">Cash at bank and in hand (2016)</span>
+                  <input type="number" class="govuk-input" id="cash-at-bank-and-in-hand-current" name="cash-at-bank-and-in-hand-current" value="{{ data['cash-at-bank-and-in-hand-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="cash-at-bank-and-in-hand-previous">
+                  <span class="mobile-only-label">Cash at bank and in hand (2015)</span>
+                  <input type="number" class="govuk-input" id="cash-at-bank-and-in-hand-previous" name="cash-at-bank-and-in-hand-previous" value="{{ data['cash-at-bank-and-in-hand-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End cash at bank and in hand-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-current-asset-investments' %}
+          <!--Start investments (current assets)-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!--<details> <summary><span class="summary">-->Investments
+              <!--</summary> <div class="panel panel-border-narrow"> <p>A resource held by the company for investment rather than trading purposes, and is likely to be sold soon.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="investments-current-assets-current">
+                  <span class="mobile-only-label">Investments (current assets) (2016)</span>
+                  <input type="number" class="govuk-input" id="investments-current-assets-current" name="investments-current-assets-current" value="{{ data['investments-current-assets-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="investments-current-assets-previous">
+                  <span class="mobile-only-label">Investments (current assets) (2015)</span>
+                  <input type="number" class="govuk-input" id="investments-current-assets-previous" name="investments-current-assets-previous" value="{{ data['investments-current-assets-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End investments (current assets)-->
+        {% endif %}
+      {% endfor %}
+
+      {% set totaCurrentAssetsHeading = false %}
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-stocks' or something === 'balanceSheetItems-debtors' or something === 'balanceSheetItems-cash-at-bank-and-in-hand' or something === 'balanceSheetItems-current-asset-investments'%}
+          {% set totaCurrentAssetsHeading = true %}
+        {% endif %}
+      {% endfor %}
+      {% if totaCurrentAssetsHeading %}
+        <!--Start total current assets-->
+        <div class="govuk-grid-row accounts-total">
+          <div class="govuk-grid-column-one-half">
+            <!-- <details> <summary><span class="summary">-->
+
+            <strong>Total current assets</strong>
+
+            <!--</span></summary> <div class="panel panel-border-narrow"> <p><strong>Calculation:</strong> 'Stocks' plus 'debtors' plus 'cash at bank and in hand' plus 'investments'. </p> </div> </details>-->
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label class="form-label-bold" for="total-fixed-current-current">
+                <span class="mobile-only-label">Total current assets (2016)</span>
+                <input type="number" class="govuk-input" id="total-current-assets-current" name="total-current-assets-current" readonly="readonly" value="{{ data['total-current-assets-current'] }}">
+              </label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label class="form-label-bold" for="total-current-assets-previous">
+                <span class="mobile-only-label">Total current assets (2015)</span>
+                <input type="number" class="govuk-input" id="total-current-assets-previous" name="total-current-assets-previous" readonly="readonly" value="{{ data['total-current-assets-previous'] }}">
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--End total current assets-->
+      {% endif %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-prepayments-and-accrued-income' %}
+          <!--Start prepayments and accrued income-->
+          <div class="govuk-grid-row accounts-row-spacer">
+            <div class="govuk-grid-column-one-half">
+              <!--<details> <summary><span class="summary">-->Prepayments and accrued income
+              <!--</span></summary> <div class="panel panel-border-narrow"> <p>The amount paid this period for goods and services that weren’t yet received at the end of the period, for example, advance rent payments.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="prepayments-and-and-accrued-income-current">
+                  <span class="mobile-only-label">Prepayments and accrued income (2016)</span>
+                  <input type="number" class="govuk-input" id="prepayments-and-and-accrued-income-current" name="prepayments-and-and-accrued-income-current" value="{{ data['prepayments-and-and-accrued-income-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="prepayments-and-and-accrued-income-previous">
+                  <span class="mobile-only-label">Prepayments and accrued income (2015)</span>
+                  <input type="number" class="govuk-input" id="prepayments-and-and-accrued-income-previous" name="prepayments-and-and-accrued-income-previous" value="{{ data['prepayments-and-and-accrued-income-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End prepayments and accrued income-->
+        {% endif %}
+      {% endfor %}
+
+      <div class="govuk-grid-row" id="creditors-bracket-error" style="display:none; margin-bottom:-2em;">
+        <div class="govuk-grid-column-one-half">&nbsp;</div>
+        <div class="govuk-grid-column-one-quarter">
+          <span class="error-message" id="">Please enter a value between 0 and 99999999 without commas, brackets or other symbols. Do not enter a minus sign.</span></div>
+        <div class="govuk-grid-column-one-quarter">&nbsp;</div>
+      </div>
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-creditors-amounts-falling-due-within-one-year' %}
+          <!--Start creditors - amounts falling due within one year-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!-- <details> <summary><span class="summary">-->Creditors - amounts falling due within one year
+              <!--</span></summary> <div class="panel panel-border-narrow">-->
+              <p class="govuk-hint">Enter this number as a positive value and we'll calculate your net current assets</p>
+              <!-- <p>Debts you expect to settle within a year. Examples include:</p> <ul class="govuk-list"> <li>unpaid invoices</li> <li>bank loans</li> <li>overdrafts</li> </ul> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="creditors-amounts-falling-due-within-one-year-current">
+                  <span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
+                  <input type="number" class="govuk-input" name="creditors-amounts-falling-due-within-one-year-current" id="creditors-amounts-falling-due-within-one-year-current" value="{{ data['creditors-amounts-falling-due-within-one-year-current'] }}">
+                  <!-- changed type to text to get error validation (character) to work-->
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous">
+                  <span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
+                  <input type="number" class="govuk-input" id="creditors-amounts-falling-due-within-one-year-previous" name="creditors-amounts-falling-due-within-one-year-previous" value="{{ data['creditors-amounts-falling-due-within-one-year-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End creditors - amounts falling due within one year-->
+        {% endif %}
+      {% endfor %}
+
+      <!--Start net current assets (liabilities)-->
+      <div class="govuk-grid-row accounts-total">
+        <div class="govuk-grid-column-one-half">
+          <!--<details> <summary><span class="summary">-->
+          <strong>Net current assets (liabilities)</strong>
+          <!--</span></summary> <div class="panel panel-border-narrow"> <p><strong>Calculation:</strong> 'Total current assets' minus 'creditors amounts falling due within one year'.</p> </div> </details>-->
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group">
+            <span class="currency-type">£</span>
+            <label class="form-label-bold" for="net-current-assets-liabilities-current">
+              <span class="mobile-only-label">Net current assets (liabilities) (2016)</span>
+              <input type="number" class="govuk-input" id="net-current-assets-liabilities-current" name="net-current-assets-liabilities-current" readonly="readonly" value="{{ data['net-current-assets-liabilities-current'] }}">
+            </label>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group">
+            <span class="currency-type">£</span>
+            <label class="form-label-bold" for="net-current-assets-liabilities-previous">
+              <span class="mobile-only-label">Net current assets (liabilities) (2015)</span>
+              <input type="number" class="govuk-input" id="net-current-assets-liabilities-previous" name="net-current-assets-liabilities-previous" readonly="readonly" value="{{ data['net-current-assets-liabilities-previous'] }}">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End net current assets (liabilities)-->
+
+      <!--Start total assets less current liabilities-->
+      <div class="govuk-grid-row accounts-total">
+        <div class="govuk-grid-column-one-half">
+          <!-- <details> <summary><span class="summary">-->
+          <strong>Total assets less current liabilities</strong>
+          <!--</span></summary> <div class="panel panel-border-narrow"> <p><strong>Calculation:</strong> 'Total fixed assets' plus 'net current assets or liabilities'.</p> </div> </details>-->
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group">
+            <span class="currency-type">£</span>
+            <label class="form-label-bold" for="total-assets-less-current-liabilities-current">
+              <span class="mobile-only-label">Total assets less current liabilities (2016)</span>
+              <input type="number" class="govuk-input" id="total-assets-less-current-liabilities-current" name="total-assets-less-current-liabilities-current" readonly="readonly" value="{{ data['total-assets-less-current-liabilities-current'] }}">
+            </label>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group">
+            <span class="currency-type">£</span>
+            <label class="form-label-bold" for="total-assets-less-current-liabilities-previous">
+              <span class="mobile-only-label">Total assets less current liabilities (2015)</span>
+              <input type="number" class="govuk-input" id="total-assets-less-current-liabilities-previous" name="total-assets-less-current-liabilities-previous" readonly="readonly" value="{{ data['total-assets-less-current-liabilities-previous'] }}">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End total assets less current liabilities-->
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-creditors-amounts-falling-due-after-one-year' %}
+          <!--Start creditors - amounts falling due after more than one year-->
+          <div class="govuk-grid-row accounts-row-spacer">
+            <div class="govuk-grid-column-one-half">
+              <!--<details> <summary><span class="summary">-->Creditors - amounts falling due after more than one year
+              <!--</span> </summary> <div class="panel panel-border-narrow">-->
+              <p class="govuk-hint">Enter this number as a positive value and we'll calculate your net current assets</p>
+              <!-- <p>Debts you expect to settle after more than one year. For example, bank loans with instalments due after more than a year.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="creditors-amounts-falling-due-after-more-than-one-year-current">
+                  <span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
+                  <input
+                    type="number"
+                    class="govuk-input"
+                    id="creditors-amounts-falling-due-after-more-than-one-year-current"
+                    name="creditors-amounts-falling-due-after-more-than-one-year-current"
+                    value="{{ data['creditors-amounts-falling-due-after-more-than-one-year-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous">
+                  <span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
+                  <input
+                    type="number"
+                    class="govuk-input"
+                    id="creditors-amounts-falling-due-after-more-than-one-year-previous"
+                    name="creditors-amounts-falling-due-after-more-than-one-year-previous"
+                    value="{{ data['creditors-amounts-falling-due-after-more-than-one-year-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End creditors - amounts falling due after more than one year-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-provision-for-liabilities' %}
+          <!--Start provision for liabilities-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!--<details> <summary><span class="summary">-->Provision for liabilities
+              <!--</span></summary> <div class="panel panel-border-narrow"> <p>Money set aside to cover future costs such as:</p> <ul class="govuk-list"> <li>tax</li> <li>pensions</li> <li>restructuring costs</li> </ul> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="provision-for-liabilities-current">
+                  <span class="mobile-only-label">Provision for liabilities (2016)</span>
+                  <input type="number" class="govuk-input" id="provision-for-liabilities-current" name="provision-for-liabilities-current" value="{{ data['provision-for-liabilities-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="provision-for-liabilities-previous">
+                  <span class="mobile-only-label">Provision for liabilities (2015)</span>
+                  <input type="number" class="govuk-input" id="provision-for-liabilities-previous" name="provision-for-liabilities-previous" value="{{ data['provision-for-liabilities-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End provision for liabilities-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-accruals-and-deferred-income' %}
+          <!--Start accruals and deferred income-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!-- <details> <summary><span class="summary">-->Accruals and deferred income
+              <!--</span> </summary> <div class="panel panel-border-narrow"> <p>Goods and services invoiced or billed but not yet provided, plus payments you’ve received before providing goods or services.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="accruals-and-deferred-income-current">
+                  <span class="mobile-only-label">Accruals and deferred income (2016)</span>
+                  <input type="number" class="govuk-input" id="accruals-and-deferred-income-current" name="accruals-and-deferred-income-current" value="{{ data['accruals-and-deferred-income-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="accruals-and-deferred-income-previous">
+                  <span class="mobile-only-label">Accruals and deferred income (2015)</span>
+                  <input type="number" class="govuk-input" id="accruals-and-deferred-income-previous" name="accruals-and-deferred-income-previous" value="{{ data['accruals-and-deferred-income-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End accruals and deferred income-->
+        {% endif %}
+      {% endfor %}
+
+      <!--Start total net assets (liabilities)-->
+      <div class="govuk-grid-row accounts-total">
+        <div class="govuk-grid-column-one-half">
+          <!-- <details> <summary><span class="summary">-->
+          <strong>Total net assets (liabilities)</strong>
+          <!--</span></summary> <div class="panel panel-border-narrow"> <p><strong>Calculation:</strong> 'Total assets less current liabilities' minus 'creditors amounts falling due after more than one year' minus 'provision for liabilities'. This must match
+          'total shareholders' funds'.</p> </div> </details>-->
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group">
+            <span class="currency-type">£</span>
+            <label class="form-label-bold" for="total-net-assets-liabilities-current">
+              <span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
+              <input type="number" class="govuk-input" id="total-net-assets-liabilities-current" name="total-net-assets-liabilities-current" readonly="readonly" value="{{ data['total-net-assets-liabilities-current'] }}">
+            </label>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group">
+            <span class="currency-type">£</span>
+            <label class="form-label-bold" for="total-net-assets-liabilities-previous">
+              <span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
+              <input type="number" class="govuk-input" id="total-net-assets-liabilities-previous" name="total-net-assets-liabilities-previous" readonly="readonly" value="{{ data['total-net-assets-liabilities-previous'] }}">
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End total net assets (liabilities)-->
+
+      {% set capitalAndReservesHeading = false %}
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-called-up-share-capital' or something === 'balanceSheetItems-share-premium-account' or something === 'balanceSheetItems-revaluation-reserve' or something === 'balanceSheetItems-other-reserves' or something === 'balanceSheetItems-profit-and-loss-account'%}
+          {% set capitalAndReservesHeading = true %}
+        {% endif %}
+      {% endfor %}
+      {% if capitalAndReservesHeading %}
+        <h2 class="govuk-heading-m">Capital and reserves</h2>
+      {% endif %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-called-up-share-capital' %}
+          <!--Start called up share capital-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <label class="form-label" for="stocks-previous">
+                <!-- <details> <summary><span class="summary">-->Called up share capital<!--</span></summary> <div class="panel panel-border-narrow"> <p>The total value of company shares issued at this date. For example, if you issued 100 shares at £1 each at
+                  incorporation, and a further 50 shares at £1 each in this period, your called up share capital would be £150.</p> </div> </details>--></label>
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="called-up-share-capital-current">
+                  <span class="mobile-only-label">Called up share capital (2016)</span>
+                  <input type="number" class="govuk-input" id="called-up-share-capital-current" name="called-up-share-capital-current" value="{{ data['called-up-share-capital-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="called-up-share-capital-current">
+                  <span class="mobile-only-label">Called up share capital (2015)</span>
+                  <input type="number" class="govuk-input" id="called-up-share-capital-previous" name="called-up-share-capital-previous" value="{{ data['called-up-share-capital-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End called up share capital-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-share-premium-account' %}
+          <!--Start share premium account-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!--<details> <summary><span class="summary">-->Share premium account
+              <!--</span></summary> <div class="panel panel-border-narrow"> <p>Amount your shareholders paid for their shares that was more than their value.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="share-premium-account-current">
+                  <span class="mobile-only-label">Share premium account (2016)</span>
+                  <input type="number" class="govuk-input" id="share-premium-account-current" name="share-premium-account-current" value="{{ data['share-premium-account-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="share-premium-account-previous">
+                  <span class="mobile-only-label">Share premium account (2015)</span>
+                  <input type="number" class="govuk-input" id="share-premium-account-previous" name="share-premium-account-previous" value="{{ data['share-premium-account-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End share premium account-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-revaluation-reserve' %}
+          <!--Start revaluation reserve-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!-- <details> <summary><span class="summary">-->Revaluation reserve
+              <!--</span></summary> <div class="panel panel-border-narrow"> <p>The change in asset values after revaluation when compared to their previous balance sheet values.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="revaluation-reserve-current">
+                  <span class="mobile-only-label">Revaluation reserve (2016)</span>
+                  <input type="number" class="govuk-input" id="revaluation-reserve-current" name="revaluation-reserve-current" value="{{ data['revaluation-reserve-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="revaluation-reserve-previous">
+                  <span class="mobile-only-label">Revaluation reserve (2015)</span>
+                  <input type="number" class="govuk-input" id="revaluation-reserve-previous" name="revaluation-reserve-previous" value="{{ data['revaluation-reserve-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End revaluation reserve-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-other-reserves' %}
+          <!--Start other reserves-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!--<details> <summary><span class="summary">-->Other reserves
+              <!--</span></summary> <div class="panel panel-border-narrow"> <p>Any reserves not covered in revaluation or profit and loss account reserve figures.</p> </div> </details>-->
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="other-reserves-current">
+                  <span class="mobile-only-label">Other reserves (2016)</span>
+                  <input type="number" class="govuk-input" id="other-reserves-current" name="other-reserves-current" value="{{ data['other-reserves-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="other-reserves-previous">
+                  <span class="mobile-only-label">Other reserves (2015)</span>
+                  <input type="number" class="govuk-input" id="other-reserves-previous" name="other-reserves-previous" value="{{ data['other-reserves-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End other reserves-->
+        {% endif %}
+      {% endfor %}
+
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-profit-and-loss-account' %}
+          <!--Start profit and loss account-->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <!-- <details> <summary><span class="summary">-->Profit and loss account
+              <!--</span></summary> <div class="panel panel-border-narrow"> <p>Earnings not paid out as dividends, but retained by your company. Also known as 'retained earnings' </p> </div> </details>-->
+              <span class="govuk-hint">Also known as 'retained earnings'</span>
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label for="profit-and-loss-account-current">
+                  <span class="mobile-only-label">Profit and loss account (2016)</span>
+                  <input type="number" class="govuk-input" id="profit-and-loss-account-current" name="profit-and-loss-account-current" value="{{ data['profit-and-loss-account-current'] }}">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <span class="currency-type">£</span>
+                <label class="form-label" for="profit-and-loss-account-previous">
+                  <span class="mobile-only-label">Profit and loss account (2015)</span>
+                  <input type="number" class="govuk-input" id="profit-and-loss-account-previous" name="profit-and-loss-account-previous" value="{{ data['profit-and-loss-account-previous'] }}">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--End profit and loss account-->
+        {% endif %}
+      {% endfor %}
+
+      {% set capitalAndReservesTotal = false %}
+      {% for something in data['balanceSheetItems'] %}
+        {% if something === 'balanceSheetItems-called-up-share-capital' or something === 'balanceSheetItems-share-premium-account' or something === 'balanceSheetItems-revaluation-reserve' or something === 'balanceSheetItems-other-reserves' or something === 'balanceSheetItems-profit-and-loss-account'%}
+          {% set capitalAndReservesTotal = true %}
+        {% endif %}
+      {% endfor %}
+      {% if capitalAndReservesTotal %}
+        <!--Start total shareholders' funds-->
+        <div class="govuk-grid-row accounts-total">
+          <div class="govuk-grid-column-one-half">
+            <!-- <details> <summary><span class="summary">-->
+            <strong>Total shareholders' funds</strong>
+            <!--</span></summary> <div class="panel panel-border-narrow"> <p><strong>Calculation:</strong> Called up share capital' plus 'share premium account' plus 'revaluation reserve' plus ‘other reserves' plus ‘profit and loss account'. This must match
+            'Total net assets (liabilities)'.</p> </div> </details>-->
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label class="form-label-bold" for="total-shareholders-funds-current">
+                <span class="mobile-only-label">
+                  Total shareholders' funds (2016)</span>
+                <input type="number" class="govuk-input" id="total-shareholders-funds-current" name="total-shareholders-funds-current" value="{{ data['total-shareholders-funds-current'] }}" readonly="readonly">
+              </label>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group">
+              <span class="currency-type">£</span>
+              <label class="form-label-bold" for="total-shareholders-funds-previous">
+                <span class="mobile-only-label">
+                  Total shareholders' funds (2015)</span>
+                <input type="number" class="govuk-input" id="total-shareholders-funds-previous" name="total-shareholders-funds-previous" value="{{ data['total-shareholders-funds-previous'] }}" readonly="readonly">
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--End total shareholders' funds-->
+      {% endif %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+  </main>
+</div>
+<!---govuk-width-container-->
+
+{% endblock %}
