@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  File your company's annual accounts with Companies House
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "javascript:void(0)"
+    },
+    {
+      text: "Business and self-employed",
+      href: "javascript:void(0)"
+    },
+    {
+      text: "Running a limited company",
+      href: "javascript:void(0)"
+    }
+  ]
+}) }}
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">File your company's annual accounts with Companies House
+          </h1>
+
+          <p class="govuk-body">Use this service to file your company’s annual accounts with Companies House.</p>
+
+          <div class="govuk-inset-text">Limited liability partnerships can’t use this service -
+            <a href="javascript:void(0)">send your annual accounts directly to Companies House</a>.</div>
+
+          <p class="govuk-body">If you have a private limited company that
+            <a href="javascript:void(0)">doesn’t need an auditor</a>, you could file your company accounts
+            <a href="javascript:void(0)">through the same service as your company tax return</a>.</p>
+
+          {{ govukButton({ text: "Start now", href: "/chs/chs-choose-accounts-current-chs-search", classes: "govuk-button--start" }) }}
+          <!-- <span class="destination" style="display:block; font-size:16px; margin-top: .5em; max-width: 13em;"> on the Companies House service</span>-->
+
+          <h2 class="govuk-heading-m">Before you start</h2>
+
+          <p class="govuk-body">You must get your accounts approved by your company directors before you file them.</p>
+          <p class="govuk-body">Read guidance on
+            <a href="javascript:void(0)">what your annual accounts should include</a>.</p>
+          <p class="govuk-body">You’ll need a Companies House password and authentication code to use this service - you’ll be able to register for these if you don’t have them.</p>
+          <p class="govuk-body">
+            <a href="javascript:void(0)">Contact Companies House</a>
+            to get help filing your company’s accounts online.</p>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
