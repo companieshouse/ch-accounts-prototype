@@ -5,23 +5,23 @@ module.exports = function ( router ) {
 
 
 
-	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
-		var criteriareport = req.query.criteriareport;
-		if ( criteriareport == "yes" ) {
-			res.redirect( "/cics/cics-criteria-no-DR-PL" );
-		} else {
-			res.render( 'cics/cics-criteria-profit' );
-		}
-	} );
+	///	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
+	///		var criteriareport = req.query.criteriareport;
+	///		if ( criteriareport == "yes" ) {
+	///			res.redirect( "/cics/cics-criteria-no-DR-PL" );
+	///		} else {
+	///			res.render( 'cics/cics-criteria-profit' );
+	///		}
+	///	} );
 
-	router.get( '/cics/cics-criteria-report', function ( req, res ) {
-		var cicsr1 = req.query.cicsr1;
-		if ( cicsr1 == "no" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
-		} else {
-			res.render( 'cics/cics-criteria-report' );
-		}
-	} );
+	///	router.get( '/cics/cics-criteria-report', function ( req, res ) {
+	///	var cicsr1 = req.query.cicsr1;
+	///		if ( cicsr1 == "no" ) {
+	///			res.redirect( "/cics/cics-criteria-not-met" );
+	///		} else {
+	///			res.render( 'cics/cics-criteria-report' );
+	///	}
+	///	} );
 
 
 
@@ -35,9 +35,9 @@ module.exports = function ( router ) {
 	} );
 
 	router.get( '/cics/cics-about-service', function ( req, res ) {
-		var criteriaprofit = req.query.criteriaprofit;
-		if ( criteriaprofit == "yes" ) {
-			res.redirect( "/cics/cics-criteria-no-DR-PL" );
+		var cicsr1 = req.query.cicsr1;
+		if ( cicsr1 == "no" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/cics-about-service' );
 		}

@@ -24,6 +24,15 @@
 
           <p>We're going to ask some questions.</p>
           <p>Your answers will show whether you can use this service to file your CIC report and accounts.</p>
+          <div class="govuk-inset-text">
+            <p>You
+              <a href="/cics/cics-file-paper">can’t file online yet</a>
+              if you want to include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a directors’ report with your accounts</li>
+              <li>a profit and loss account (income statement)</li>
+            </ul>
+          </div>
 
           <form action="/cics/choose-cic-report-choose-accounts" method="GET">
             {{ govukButton({
