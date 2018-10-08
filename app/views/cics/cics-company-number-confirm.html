@@ -18,45 +18,65 @@
           <div class="govuk-grid-column-two-thirds">
 
             <h1 class="govuk-heading-l">Confirm CIC details</h1>
-            <p>Company name
-              <strong>{{ data['company-name-for-testing'] }}</strong>
-            </p>
-            <p>Company number
-              <strong>{{ data['company-number'] }}</strong>
-            </p>
-            <p>Registered office address
-              <strong>{{ data['company-address-for-testing'] }}
-              </strong>
-            </p>
 
-            <div class="govuk-inset-text">
-              <p>Next accounts made up to
-                <strong>{{ data['company-made-up-date-for-testing'] }}</strong><br/>due by
-                <strong>{{ data['company-due-by-date-for-testing'] }}</strong>
-              </p>
-              <p>Last accounts made up to
-                <strong>{{ data['company-last-accounts-date-for-testing'] }}</strong>
-              </p>
-            </div>
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Company name
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['company-name-for-testing'] }}
+                </dd>
+              </div>
 
-            {{ govukButton({
-                text: "File CIC report and accounts for this company"
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Company number
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['company-number'] }}
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Registered office address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['company-address-for-testing'] }}
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Next accounts made up to
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['company-made-up-date-for-testing'] }}<br/>due by
+                  {{ data['company-due-by-date-for-testing'] }}
+                </dd>
+              </div>
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Last accounts made up to
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['company-last-accounts-date-for-testing'] }}
+                </div>
+              </dl>
+
+              {{ govukButton({
+                text: "Continue"
               }) }}
-          </form>
+            </form>
 
-          <p>or,
-            <a href="javascript:history.back()">file for a different company</a>
-          </p>
-          <a href="/chs/chs-confirm-company-alternative-chs-search-not-yet" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right;">Not yet</a>
-          <a href="/chs/chs-confirm-company-alternative-chs-search-cannot-file" style="font-size:14px; margin-top:20px; color:#DEE0E2; float:right; margin-right:20px; display:inline-block;">No</a>
-
+          </div>
+          <!--govuk-grid-row-->
         </div>
-        <!--govuk-grid-row-->
-      </div>
-      <!--govuk-grid-column-two-thirds-->
+        <!--govuk-grid-column-two-thirds-->
 
-    </main>
-  </div>
-  <!---govuk-width-container-->
+      </main>
+    </div>
+    <!---govuk-width-container-->
 
-{% endblock %}
+  {% endblock %}
