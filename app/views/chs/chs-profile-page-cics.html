@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  A TEST CIC - Overview (free company information from Companies House)
+  A DEMO COMPANY LIMITED - Overview (free company information from Companies House)
 {% endblock %}
 {% block main %}
 
@@ -24,7 +24,8 @@
 
       <div class="company-header">
         <p class="govuk-heading-xl" id="company-name">
-          <span class="uppercase">{{ data['company-name-for-testing'] }}</span></p>
+          <span class="uppercase">A DEMO COMPANY LIMITED
+            <!--{{ data['company-name-for-testing'] }}--></span></p>
         <p id="company-number">Company number
           <strong>{{ data['company-number'] }}</strong>
         </p>
@@ -47,11 +48,11 @@
           </li>
           <li>
             <a href="javascript:void(0)" id="filing-history-tab">Filing history<span class="govuk-visually-hidden">
-                for A TEST CIC (01234567)</span></a>
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
           </li>
           <li>
             <a href="javascript:void(0)" id="people-tab">People<span class="govuk-visually-hidden">
-                for A TEST CIC (01234567)</span></a>
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
           </li>
         </ul>
       </div>
