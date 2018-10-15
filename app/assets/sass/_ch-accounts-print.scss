@@ -1,137 +1,73 @@
-html 
-};
-62.5%:font-size{
-html 
-};
--ms-filter: none;
-filter: none;
-none:text-shadow;
-black:color;
-transparent:background{
-* 
-};
-100%:width;
-0:padding;
-0:margin;
-1.4:line-height;
-11pt:font-size;
-none:text-transform;
-400:font-weight;
-sans-serif:font-family{
-body 
-};
-none !important:display{
-#global-cookie-message,
-#skiplink-container,
-.visuallyhidden,
-footer,
-nav 
-};
-10px:padding;
-5px solid grey:border{
-#confirmation-details 
-};
-100%:width{
-.govuk-grid-column-two-thirds 
-};
-none:background{
-.govuk-panel--confirmation 
-};
-90%:font-size;
-" ("attr(href) ")":content{
-a[href^="http://"]:after,
-a[href^="https://"]:after 
-};
-none:content{
-.govuk-header__link .govuk-header__link--homepage 
-};
-none:border-bottom{
-.govuk-header__container 
-};
-black !important:color{
-a:link,
-a:visited 
-};
-10px !important:margin-bottom;
-19pt !important:font-size{
-.govuk-panel__body 
-};
-10px !important:margin-bottom;
-24pt !important:font-size{
-.govuk-panel__title 
-};
--18px:left;
-relative:position{
-.govuk-header__container 
-};
-none:border;
-url("royal-coat-of-arms-black.svg"):background-image{
-#global-header a#logo 
-};
-#fff:background-color{
-#global-header 
-};
-#fff !important:color;
-#000 !important:background-color{
-.govuk-phase-banner__content__tag,
-.govuk-tag 
-};
-black:color{
-a:link,
-a:visited 
+//Hide these elements
+
+.mobile-only-label,
+a.button,
+a.link-back,
+a.menu,
+nav.content {
+  display: none;
+}
 //Hide number spinners
-};
-right:text-align;
-0:margin;
-none:appearance;
-none:-moz-appearance;
-none:-webkit-appearance{
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button 
-};
-right:text-align;
-textfield:-moz-appearance{
-input[type='number'] 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  text-align: right;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  text-align: right;
+}
 //Ensure balance sheet etc maintain columns
-};
-inline-block:display;
-50%:width;
-left:float{
+
 .two-column-accounts .column-half,
-.two-column-accounts .column-one-half 
-};
-inline-block:display;
-25%:width;
-left:float{
+.two-column-accounts .column-one-half {
+  float: left;
+  width: 50%;
+  display: inline-block;
+}
+
 .two-column-accounts .column-one-quarter,
-.two-column-accounts .column-quarter 
-};
-inline-block:display;
-33.3333%:width;
-left:float{
+.two-column-accounts .column-quarter {
+  float: left;
+  width: 25%;
+  display: inline-block;
+}
+
 .two-column-accounts .column-one-third,
-.two-column-accounts .column-third 
-};
-inline-block:display;
-66.6667%:width;
-left:float{
-.two-column-accounts .column-two-thirds 
-};
-block:display{
-.two-column-accounts .grid-row 
+.two-column-accounts .column-third {
+  float: left;
+  width: 33.3333%;
+  display: inline-block;
+}
+
+.two-column-accounts .column-two-thirds {
+  float: left;
+  width: 66.6667%;
+  display: inline-block;
+}
+
+.two-column-accounts .grid-row {
+  display: block;
+}
 //Reduce font sizes where appropriate
-};
-12px:font-size{
+
 #accounts-header h2,
 p.warning,
-strong.no-help 
-};
-14px:font-size{
+strong.no-help {
+  font-size: 12px;
+}
+
 #balance-sheet h2,
-#balance-sheet h3 
-};
-both:clear;
-block:display;
-0 0 20px:margin{
-#balance-sheet .grid-row 
+#balance-sheet h3 {
+  font-size: 14px;
+}
+
+#balance-sheet .grid-row {
+  margin: 0 0 20px;
+  display: block;
+  clear: both;
 }
