@@ -73,7 +73,7 @@
 
         {% set fixedAssetsHeading = false %}
         {% for something in data['balanceSheetItems'] %}
-          {% if something === 'balanceSheetItems-stocks' or something === 'balanceSheetItems-debtors' or something === 'balanceSheetItems-cash-at-bank-and-in-hand' or something === 'balanceSheetItems-current-asset-investments'%}
+          {% if something === 'balanceSheetItems-intangible-assets' or something === 'balanceSheetItems-tangible-assets' or something === 'balanceSheetItems-investments'%}
             {% set fixedAssetsHeading = true %}
           {% endif %}
         {% endfor %}
@@ -187,7 +187,7 @@
 
         {% set totalFixedAssetsHeading = false %}
         {% for something in data['balanceSheetItems'] %}
-          {% if something === 'balanceSheetItems-stocks' or something === 'balanceSheetItems-debtors' or something === 'balanceSheetItems-cash-at-bank-and-in-hand' or something === 'balanceSheetItems-current-asset-investments'%}
+          {% if something === 'balanceSheetItems-intangible-assets' or something === 'balanceSheetItems-tangible-assets' or something === 'balanceSheetItems-investments'%}
             {% set totalFixedAssetsHeading = true %}
           {% endif %}
         {% endfor %}
