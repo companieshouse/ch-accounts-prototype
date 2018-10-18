@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Did NAME HERE approve the accounts on DATE HERE?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+      <form action="/accounts/accounts-payment" method="GET">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">Did
+              {{ data['director-approved-cic-report'] }}
+              approve the accounts on
+              {{ data['date-approved-cic-report'] }}?</h1>
+
+            <!-- <dl class="app-check-your-answers app-check-your-answers--long"> <div class="app-check-your-answers__contents"> <dt class="app-check-your-answers__question"> Director who approved CIC report </dt> <dd class="app-check-your-answers__answer"> {{
+            data['director-approved-cic-report'] }} </dd> </div> <div class="app-check-your-answers__contents"> <dt class="app-check-your-answers__question"> Date CIC report was approved </dt> <dd class="app-check-your-answers__answer"> {{
+            data['date-approved-cic-report'] }} </dd> </div> </dl>-->
+
+            {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "cicReportAccountsSameDate",
+              name: "cicReportAccountsSameDate",
+              fieldset: {
+                legend: {
+                  text: "Did NAME HERE approve the accounts on DATE HERE",
+                  isPageHeading: false,
+                  classes: "govuk-visually-hidden"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

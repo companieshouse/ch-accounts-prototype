@@ -557,6 +557,27 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	// (CICs) Accounts - Did NAME HERE approve the accounts?
+	router.get( '/cics/cics-accounts-approval-same-dates', function ( req, res ) {
+		var cicReportAccountsSameDirector = req.query.cicReportAccountsSameDirector;
+		if ( cicReportAccountsSameDirector == "no" ) {
+			res.redirect( "/cics/cics-accounts-approval" ); // Temporary URL until real page created
+		} else {
+			res.render( 'cics/cics-accounts-approval-same-dates' );
+		}
+	} );
+
+	// (CICs) Accounts - Did NAME HERE approve the accounts?
+	router.get( '/accounts/accounts-payment', function ( req, res ) {
+
+		var cicReportAccountsSameDate = req.query.cicReportAccountsSameDate;
+		if ( cicReportAccountsSameDate == "no" ) {
+			res.redirect( "/cics/cics-accounts-approval" ); // Temporary URL until real page created
+		} else {
+			res.render( 'accounts/accounts-payment' );
+		}
+	} );
+
 	//Choose accounts type
 
 	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {

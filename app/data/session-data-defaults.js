@@ -269,7 +269,8 @@ module.exports = {
 	// TO DO
 
 	// Small Full post balance sheet events note
-	"small-full-post-balance-sheet-events-note": ""
+	"director-approved-cic-report": "John Smith",
+	"date-approved-cic-report": "30 September 2018"
 
-
+	//
 }
