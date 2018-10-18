@@ -8,7 +8,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
       text: "Back",
@@ -22,17 +22,24 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-current-assets-investments-note" method="get" class="form">
+          <form action="/small-full/small-full-commitments-yes-no" method="get" class="form">
+
+            {% set textAreaHtml %}
+            {{ govukTextarea({
+              name: "small-full-current-assets-investments-note",
+              id: "small-full-current-assets-investments-note",
+              value: data['small-full-current-assets-investments-note'],
+                label: {
+                  text: "Enter your 'current assets investments' note"
+                }
+              }) }}
+            {% endset -%}
 
             {{ govukRadios({
-                classes: "govuk-radios--inline",
+                classes: "govuk-radios",
                 idPrefix: "currentassetsinvestmentsyesno",
                 name: "currentassetsinvestmentsyesno",
                 fieldset: {
-                  attributes : {
-                    'data-required': "data-required",
-                    'data-error': "Tell us if your prepared accounts include a 'current assets investments' note"
-                    },
                   legend: {
                     text: " Do your prepared accounts include a 'current assets investments' note? ",
                     isPageHeading: true,
@@ -43,7 +50,10 @@
                   {
                     value: "yes",
                     text: "Yes",
-                    checked: checked('currentassetsinvestmentsyesno','yes')
+                    checked: checked('currentassetsinvestmentsyesno','yes'),
+                    conditional: {
+                      html: textAreaHtml
+                      }
                   },
                   {
                     value: "no",
@@ -57,6 +67,10 @@
               text: "Save and continue"
             }) }}
           </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
 
         </div>
         <!--govuk-grid-row-->

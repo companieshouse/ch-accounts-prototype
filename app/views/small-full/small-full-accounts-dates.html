@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
         text: "Back",
@@ -20,7 +20,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-balance-sheet" method="GET">
+          <form action="/small-full/small-full-balance-sheet-choose" method="GET">
 
             <h1 class="govuk-heading-l">
               <!--<span class="circle circle-step-large">1</span>-->
@@ -62,6 +62,10 @@
               text: "Save and continue"
             }) }}
           </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
 
         </div>
         <!--govuk-grid-row-->

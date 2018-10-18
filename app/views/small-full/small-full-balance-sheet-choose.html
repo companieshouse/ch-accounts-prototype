@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
     text: "Back",
@@ -70,7 +70,7 @@
                   checked: checked('balanceSheetItems','balanceSheetItems-tangible-assets')
                 },
                 {
-                  value: "balanceSheetItems-investments ",
+                  value: "balanceSheetItems-investments",
                   text: "Investments ",
                   checked: checked('balanceSheetItems','balanceSheetItems-investments ')
                 }
@@ -196,6 +196,10 @@
                   text: "Save and continue"
                 }) }}
           </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
 
         </div>
         <!--govuk-grid-column-two-thirds-->

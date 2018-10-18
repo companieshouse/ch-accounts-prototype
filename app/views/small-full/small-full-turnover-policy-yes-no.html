@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
       text: "Back",
@@ -19,31 +19,41 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="/small-full/small-full-turnover-policy" method="get" class="form">
+          <form action="/small-full/small-full-tangible-policy-yes-no" method="get" class="form">
+
+            {% set textAreaHtml %}
+            {{ govukTextarea({
+              name: "small-full-turnover-policy",
+              id: "small-full-turnover-policy",
+              value: data['small-full-turnover-policy'],
+                label: {
+                  text: "Enter your 'turnover' policy"
+                }
+              }) }}
+            {% endset -%}
 
             {{ govukRadios({
-              classes: "govuk-radios--inline",
+              classes: "govuk-radios",
               idPrefix: "turnoverpolicy",
               name: "turnoverpolicy",
               fieldset: {
-                attributes : {
-                  'data-required': "data-required",
-                  'data-error': "Tell us if your prepared accounts include a 'turnover' policy"
-                  },
+
                 legend: {
                   text: "Do your prepared accounts include a 'turnover' policy?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
               },
-
               items: [
                 {
                   value: "yes",
                   text: "Yes",
-                  checked: checked('turnoverpolicy','yes')
-                },
-                {
+                  checked: checked('turnoverpolicy','yes'),
+                  conditional: {
+                    html: textAreaHtml
+                    }
+                  },
+                  {
                   value: "no",
                   text: "No",
                   checked: checked('turnoverpolicy','no')
@@ -55,7 +65,9 @@
               text: "Save and continue"
             }) }}
           </form>
-
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
         </div>
         <!--govuk-grid-row-->
       </div>

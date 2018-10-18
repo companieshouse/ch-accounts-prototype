@@ -8,7 +8,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
     text: "Back",
@@ -1710,6 +1710,10 @@
               text: "Continue"
             }) }}
       </form>
+
+      <p>
+        <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+      </p>
 
     </main>
   </div>

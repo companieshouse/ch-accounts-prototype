@@ -164,12 +164,12 @@ module.exports = function ( router ) {
 
 	// (CICs) Accounts - Change accounting reference dates
 
-	router.get( '/small-full/small-full-balance-sheet', function ( req, res ) {
+	router.get( '/small-full/small-full-balance-sheet-choose', function ( req, res ) {
 		var changecompanydates = req.query.changecompanydates;
 		if ( changecompanydates == "no" ) {
 			res.redirect( "/small-full/small-full-accounts-dates-change" );
 		} else {
-			res.render( 'small-full/small-full-balance-sheet' );
+			res.render( 'small-full/small-full-balance-sheet-choose' );
 		}
 	} );
 

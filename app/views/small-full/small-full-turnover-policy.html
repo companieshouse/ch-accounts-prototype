@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
     text: "Back",
@@ -23,13 +23,15 @@
             name: "small-full-turnover-policy",
             id: "small-full-turnover-policy",
             value: data['small-full-turnover-policy'],
-            label: { text: "Enter your 'turnover' policy", isPageHeading: true, classes: "govuk-label--l" } }) 
+            label: { text: "Enter your 'turnover' policy", isPageHeading: true, classes: "govuk-label--l" } })
             }}
             {{ govukButton({
               text: "Save and continue"
             }) }}
           </form>
-
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
         </div>
         <!--govuk-grid-row-->
       </div>

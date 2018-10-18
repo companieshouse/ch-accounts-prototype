@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
       text: "Back",
@@ -20,7 +20,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-any-other-accounting-policies" method="get" class="form">
+          <form action="/small-full/small-full-employees-yes-no" method="get" class="form">
 
             <h1 class="govuk-heading-l">
               Do your prepared accounts include any other accounting policies?</h1>
@@ -28,15 +28,23 @@
             <!-- <p>These are other policies not already covered in this report, such as:</p> <ul class="govuk-list govuk-list--bullet"> <li>depreciation of assets obtained under hire purchases or leases</li> <li>deferred taxation</li> <li>pensions or retirement
             benefits</li> </ul>-->
 
+            {% set textAreaHtml %}
+            {{ govukTextarea({
+              name: "small-full-other-policies",
+              id: "small-full-other-policies",
+              value: data['small-full-other-policies'],
+                label: {
+                  text: "Enter your other policies"
+                }
+              }) }}
+            {% endset -%}
+
             {{ govukRadios({
-                classes: "govuk-radios--inline",
+                classes: "govuk-radios",
                 idPrefix: "anyotheraccountingpolicies",
                 name: "anyotheraccountingpolicies",
                 fieldset: {
-                  attributes : {
-                    'data-required': "data-required",
-                    'data-error': "Tell us if your prepared accounts include any other accounting policies"
-                    },
+
                 legend: {
                   text: "Do your prepared accounts include any other accounting policies?",
                   isPageHeading: true,
@@ -48,7 +56,10 @@
                 {
                   value: "yes",
                   text: "Yes",
-                  checked: checked('anyotheraccountingpolicies','yes')
+                  checked: checked('anyotheraccountingpolicies','yes'),
+                  conditional: {
+                    html: textAreaHtml
+                    }
                 },
                 {
                   value: "no",
@@ -62,6 +73,10 @@
               text: "Save and continue"
             }) }}
           </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
 
         </div>
         <!--govuk-grid-row-->

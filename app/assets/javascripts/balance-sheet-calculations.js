@@ -2,20 +2,41 @@
 $( document )
 	.ready( function () {
 		function compute() {
-			var calledupsharecapitalnotpaidcurrent = $( '#called-up-share-capital-not-paid-current' )
-				.val();
-			var intangibleassetscurrent = $( '#intangible-assets-current' )
-				.val();
-			var tangibleassetscurrent = $( '#tangible-assets-current' )
-				.val();
-			var investmentsfixedassetscurrent = $( '#investments-fixed-assets-current' )
-				.val();
-			var total = +calledupsharecapitalnotpaidcurrent + +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent;
-			// var total = tangibleassetscurrent; //For Release 1 only, when we only want tangible assets
+			var total = 0 // Start total off at zero
+
+			if ( typeof $( '#called-up-share-capital-not-paid-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var calledupsharecapitalnotpaidcurrent = $( '#called-up-share-capital-not-paid-current' )
+					.val();
+				total += +calledupsharecapitalnotpaidcurrent // Total (0) plus whatever value is in nere
+			}
+
+			if ( typeof $( '#intangible-assets-current' )
+				.val() !== 'undefined' ) {
+				var intangibleassetscurrent = $( '#intangible-assets-current' )
+					.val();
+				total += +intangibleassetscurrent
+			}
+
+			if ( typeof $( '#tangible-assets-current' )
+				.val() !== 'undefined' ) {
+				var tangibleassetscurrent = $( '#tangible-assets-current' )
+					.val();
+				total += +tangibleassetscurrent
+			}
+
+			if ( typeof $( '#investments-fixed-assets-current' )
+				.val() !== 'undefined' ) {
+				var investmentsfixedassetscurrent = $( '#investments-fixed-assets-current' )
+					.val();
+				total += +investmentsfixedassetscurrent
+			}
 
 			$( '#total-fixed-assets-current' )
 				.val( total );
 		}
+
+
 		$( '#called-up-share-capital-not-paid-current, #intangible-assets-current, #tangible-assets-current, #investments-fixed-assets-current' )
 			.change( compute );
 	} );
@@ -24,16 +45,34 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var calledupsharecapitalnotpaidprevious = $( '#called-up-share-capital-not-paid-previous' )
-				.val();
-			var intangibleassetsprevious = $( '#intangible-assets-previous' )
-				.val();
-			var tangibleassetsprevious = $( '#tangible-assets-previous' )
-				.val();
-			var investmentsfixedassetsprevious = $( '#investments-fixed-assets-previous' )
-				.val();
-			var total = +calledupsharecapitalnotpaidprevious + +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious;
-			//var total = tangibleassetsprevious; //For Release 1 only, when we only want tangible assets
+			var total = 0 // Start total off at zero
+
+			if ( typeof $( '#called-up-share-capital-not-paid-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var calledupsharecapitalnotpaidprevious = $( '#called-up-share-capital-not-paid-previous' )
+					.val();
+				total += +calledupsharecapitalnotpaidprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#intangible-assets-previous' )
+				.val() !== 'undefined' ) {
+				var intangibleassetsprevious = $( '#intangible-assets-previous' )
+					.val();
+				total += +intangibleassetsprevious
+			}
+
+			if ( typeof $( '#tangible-assets-previous' )
+				.val() !== 'undefined' ) {
+				var tangibleassetsprevious = $( '#tangible-assets-previous' )
+					.val();
+				total += +tangibleassetsprevious
+			}
+
+			if ( typeof $( '#investments-fixed-assets-previous' )
+				.val() !== 'undefined' ) {
+				var investmentsfixedassetsprevious = $( '#investments-fixed-assets-previous' )
+					.val();
+				total += +investmentsfixedassetsprevious
+			}
 
 			$( '#total-fixed-assets-previous' )
 				.val( total );
@@ -46,15 +85,32 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var stockscurrent = $( '#stocks-current' )
-				.val();
-			var debtorscurrent = $( '#debtors-current' )
-				.val();
-			var cashatbankandinhandcurrent = $( '#cash-at-bank-and-in-hand-current' )
-				.val();
-			var investmentscurrentassetscurrent = $( '#investments-current-assets-current' )
-				.val();
-			var total = +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#stocks-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var stockscurrent = $( '#stocks-current' )
+					.val();
+				total += +stockscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#debtors-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var debtorscurrent = $( '#debtors-current' )
+					.val();
+				total += +debtorscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#cash-at-bank-and-in-hand-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var cashatbankandinhandcurrent = $( '#cash-at-bank-and-in-hand-current' )
+					.val();
+				total += +cashatbankandinhandcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-current-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentscurrentassetscurrent = $( '#investments-current-assets-current' )
+					.val();
+				total += +investmentscurrentassetscurrent // Total (0) plus whatever value is in nere
+			}
+
 			$( '#total-current-assets-current' )
 				.val( total );
 		}
@@ -66,15 +122,32 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var stocksprevious = $( '#stocks-previous' )
-				.val();
-			var debtorsprevious = $( '#debtors-previous' )
-				.val();
-			var cashatbankandinhandprevious = $( '#cash-at-bank-and-in-hand-previous' )
-				.val();
-			var investmentscurrentassetsprevious = $( '#investments-current-assets-previous' )
-				.val();
-			var total = +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious + +investmentscurrentassetsprevious;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#stocks-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var stocksprevious = $( '#stocks-previous' )
+					.val();
+				total += +stocksprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#debtors-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var debtorsprevious = $( '#debtors-previous' )
+					.val();
+				total += +debtorsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#cash-at-bank-and-in-hand-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var cashatbankandinhandprevious = $( '#cash-at-bank-and-in-hand-previous' )
+					.val();
+				total += +cashatbankandinhandprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-current-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentscurrentassetsprevious = $( '#investments-current-assets-previous' )
+					.val();
+				total += +investmentscurrentassetsprevious // Total (0) plus whatever value is in nere
+			}
+
 			$( '#total-current-assets-previous' )
 				.val( total );
 		}
@@ -90,11 +163,13 @@ $( document )
 				.val();
 			var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
 				.val();
-			var total = +totalcurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent;
+			var prepaymentsandandaccruedincomecurrent = $( '#prepayments-and-and-accrued-income-current' )
+				.val();
+			var total = +totalcurrentassetscurrent + +prepaymentsandandaccruedincomecurrent - +creditorsamountsfallingduewithinoneyearcurrent;
 			$( '#net-current-assets-liabilities-current' )
 				.val( total );
 		}
-		$( '#total-current-assets-current, #creditors-amounts-falling-due-within-one-year-current' )
+		$( '#total-current-assets-current, #creditors-amounts-falling-due-within-one-year-current, #prepayments-and-and-accrued-income-current' )
 			.change( compute );
 	} );
 
@@ -104,13 +179,15 @@ $( document )
 		function compute() {
 			var totalcurrentassetsprevious = $( '#total-current-assets-previous' )
 				.val();
+			var prepaymentsandandaccruedincomeprevious = $( '#prepayments-and-and-accrued-income-previous' )
+				.val();
 			var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
 				.val();
-			var total = +totalcurrentassetsprevious - +creditorsamountsfallingduewithinoneyearprevious;
+			var total = +totalcurrentassetsprevious + +prepaymentsandandaccruedincomeprevious - +creditorsamountsfallingduewithinoneyearprevious;
 			$( '#net-current-assets-liabilities-previous' )
 				.val( total );
 		}
-		$( '#total-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous' )
+		$( '#total-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous, #prepayments-and-and-accrued-income-previous' )
 			.change( compute );
 	} );
 
@@ -119,23 +196,55 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var intangibleassetscurrent = $( '#intangible-assets-current' )
-				.val();
-			var tangibleassetscurrent = $( '#tangible-assets-current' )
-				.val();
-			var investmentsfixedassetscurrent = $( '#investments-fixed-assets-current' )
-				.val();
-			var stockscurrent = $( '#stocks-current' )
-				.val();
-			var debtorscurrent = $( '#debtors-current' )
-				.val();
-			var cashatbankandinhandcurrent = $( '#cash-at-bank-and-in-hand-current' )
-				.val();
-			var investmentscurrentassetscurrent = $( '#investments-current-assets-current' )
-				.val();
-			var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
-				.val();
-			var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent + +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#intangible-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var intangibleassetscurrent = $( '#intangible-assets-current' )
+					.val();
+				total += +intangibleassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#tangible-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var tangibleassetscurrent = $( '#tangible-assets-current' )
+					.val();
+				total += +tangibleassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-fixed-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentsfixedassetscurrent = $( '#investments-fixed-assets-current' )
+					.val();
+				total += +investmentsfixedassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#stocks-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var stockscurrent = $( '#stocks-current' )
+					.val();
+				total += +stockscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#debtors-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var debtorscurrent = $( '#debtors-current' )
+					.val();
+				total += +debtorscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#cash-at-bank-and-in-hand-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var cashatbankandinhandcurrent = $( '#cash-at-bank-and-in-hand-current' )
+					.val();
+				total += +cashatbankandinhandcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-current-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentscurrentassetscurrent = $( '#investments-current-assets-current' )
+					.val();
+				total += +investmentscurrentassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-within-one-year-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
+					.val();
+				total += +creditorsamountsfallingduewithinoneyearcurrent // Total (0) plus whatever value is in nere
+			}
 			$( '#total-assets-less-current-liabilities-current' )
 				.val( total );
 		}
@@ -147,27 +256,59 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var intangibleassetsprevious = $( '#intangible-assets-previous' )
-				.val();
-			var tangibleassetsprevious = $( '#tangible-assets-previous' )
-				.val();
-			var investmentsfixedassetsprevious = $( '#investments-fixed-assets-previous' )
-				.val();
-			var stocksprevious = $( '#stocks-previous' )
-				.val();
-			var debtorsprevious = $( '#debtors-previous' )
-				.val();
-			var cashatbankandinhandprevious = $( '#cash-at-bank-and-in-hand-previous' )
-				.val();
-			var investmentscurrentassetsprevious = $( '#investments-current-assets-previous' )
-				.val();
-			var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
-				.val();
-			var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious + +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious + +investmentscurrentassetsprevious - +creditorsamountsfallingduewithinoneyearprevious;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#intangible-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var intangibleassetsprevious = $( '#intangible-assets-previous' )
+					.val();
+				total += +intangibleassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#tangible-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var tangibleassetsprevious = $( '#tangible-assets-previous' )
+					.val();
+				total += +tangibleassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-fixed-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentsfixedassetsprevious = $( '#investments-fixed-assets-previous' )
+					.val();
+				total += +investmentsfixedassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#stocks-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var stocksprevious = $( '#stocks-previous' )
+					.val();
+				total += +stocksprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#debtors-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var debtorsprevious = $( '#debtors-previous' )
+					.val();
+				total += +debtorsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#cash-at-bank-and-in-hand-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var cashatbankandinhandprevious = $( '#cash-at-bank-and-in-hand-previous' )
+					.val();
+				total += +cashatbankandinhandprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-current-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentscurrentassetsprevious = $( '#investments-current-assets-previous' )
+					.val();
+				total += +investmentscurrentassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-within-one-year-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
+					.val();
+				total += +creditorsamountsfallingduewithinoneyearprevious // Total (0) plus whatever value is in nere
+			}
 			$( '#total-assets-less-current-liabilities-previous' )
 				.val( total );
 		}
-		$( '#intangible-assets-previous, #tangible-assets-previous, #investments-current-assets-previous, #stocks-previous, #debtors-previous, #cash-at-bank-and-in-hand-previous, #investments-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous' )
+		$( '#intangible-assets-previous, #tangible-assets-previous, #investments-current-assets-curpreviousrent, #stocks-previous, #debtors-previous, #cash-at-bank-and-in-hand-previous, #investments-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous' )
 			.change( compute );
 	} );
 
@@ -175,27 +316,68 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var intangibleassetscurrent = $( '#intangible-assets-current' )
-				.val();
-			var tangibleassetscurrent = $( '#tangible-assets-current' )
-				.val();
-			var investmentsfixedassetscurrent = $( '#investments-fixed-assets-current' )
-				.val();
-			var stockscurrent = $( '#stocks-current' )
-				.val();
-			var debtorscurrent = $( '#debtors-current' )
-				.val();
-			var cashatbankandinhandcurrent = $( '#cash-at-bank-and-in-hand-current' )
-				.val();
-			var investmentscurrentassetscurrent = $( '#investments-current-assets-current' )
-				.val();
-			var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
-				.val();
-			var creditorsamountsfallingdueaftermorethanoneyearcurrent = $( '#creditors-amounts-falling-due-after-more-than-one-year-current' )
-				.val();
-			var provisionforliabilitiescurrent = $( '#provision-for-liabilities-current' )
-				.val();
-			var total = +intangibleassetscurrent + +tangibleassetscurrent + +investmentsfixedassetscurrent + +stockscurrent + +debtorscurrent + +cashatbankandinhandcurrent + +investmentscurrentassetscurrent - +creditorsamountsfallingduewithinoneyearcurrent - +creditorsamountsfallingdueaftermorethanoneyearcurrent - +provisionforliabilitiescurrent;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#intangible-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var intangibleassetscurrent = $( '#intangible-assets-current' )
+					.val();
+				total += +intangibleassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#tangible-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var tangibleassetscurrent = $( '#tangible-assets-current' )
+					.val();
+				total += +tangibleassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-fixed-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentsfixedassetscurrent = $( '#iinvestments-fixed-assets-current' )
+					.val();
+				total += +investmentsfixedassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#stocks-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var stockscurrent = $( '#stocks-current' )
+					.val();
+				total += +stockscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#debtors-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var debtorscurrent = $( '#debtors-current' )
+					.val();
+				total += +debtorscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#cash-at-bank-and-in-hand-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var cashatbankandinhandcurrent = $( '#cash-at-bank-and-in-hand-current' )
+					.val();
+				total += +cashatbankandinhandcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-current-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentscurrentassetscurrent = $( '#investments-current-assets-current' )
+					.val();
+				total += +investmentscurrentassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-within-one-year-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
+					.val();
+				total += +creditorsamountsfallingduewithinoneyearcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-after-more-than-one-year-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingdueaftermorethanoneyearcurrent = $( '#creditors-amounts-falling-due-after-more-than-one-year-current' )
+					.val();
+				total += +creditorsamountsfallingdueaftermorethanoneyearcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#provision-for-liabilities-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var provisionforliabilitiescurrent = $( '#provision-for-liabilities-current' )
+					.val();
+				total += +provisionforliabilitiescurrent // Total (0) plus whatever value is in nere
+			}
+
 			$( '#total-net-assets-liabilities-current' )
 				.val( total );
 		}
@@ -207,27 +389,68 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var intangibleassetsprevious = $( '#intangible-assets-previous' )
-				.val();
-			var tangibleassetsprevious = $( '#tangible-assets-previous' )
-				.val();
-			var investmentsfixedassetsprevious = $( '#investments-fixed-assets-previous' )
-				.val();
-			var stocksprevious = $( '#stocks-previous' )
-				.val();
-			var debtorsprevious = $( '#debtors-previous' )
-				.val();
-			var cashatbankandinhandprevious = $( '#cash-at-bank-and-in-hand-previous' )
-				.val();
-			var investmentscurrentassetsprevious = $( '#investments-current-assets-previous' )
-				.val();
-			var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
-				.val();
-			var creditorsamountsfallingdueaftermorethanoneyearprevious = $( '#creditors-amounts-falling-due-after-more-than-one-year-previous' )
-				.val();
-			var provisionforliabilitiesprevious = $( '#provision-for-liabilities-previous' )
-				.val();
-			var total = +intangibleassetsprevious + +tangibleassetsprevious + +investmentsfixedassetsprevious + +stocksprevious + +debtorsprevious + +cashatbankandinhandprevious + +investmentscurrentassetsprevious - +creditorsamountsfallingduewithinoneyearprevious - +creditorsamountsfallingdueaftermorethanoneyearprevious - +provisionforliabilitiesprevious;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#intangible-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var intangibleassetsprevious = $( '#intangible-assets-previous' )
+					.val();
+				total += +intangibleassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#tangible-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var tangibleassetsprevious = $( '#tangible-assets-curpreviousrent' )
+					.val();
+				total += +tangibleassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-fixed-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentsfixedassetsprevious = $( '#iinvestments-fixed-assets-previous' )
+					.val();
+				total += +investmentsfixedassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#stocks-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var stocksprevious = $( '#stocks-previous' )
+					.val();
+				total += +stocksprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#debtors-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var debtorsprevious = $( '#debtors-previous' )
+					.val();
+				total += +debtorsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#cash-at-bank-and-in-hand-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var cashatbankandinhandprevious = $( '#cash-at-bank-and-in-hand-previous' )
+					.val();
+				total += +cashatbankandinhandprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#investments-current-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var investmentscurrentassetsprevious = $( '#investments-current-assets-previous' )
+					.val();
+				total += +investmentscurrentassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-within-one-year-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
+					.val();
+				total += +creditorsamountsfallingduewithinoneyearprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-after-more-than-one-year-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingdueaftermorethanoneyearprevious = $( '#creditors-amounts-falling-due-after-more-than-one-year-previous' )
+					.val();
+				total += +creditorsamountsfallingdueaftermorethanoneyearprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#provision-for-liabilities-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var provisionforliabilitiesprevious = $( '#provision-for-liabilities-previous' )
+					.val();
+				total += +provisionforliabilitiesprevious // Total (0) plus whatever value is in nere
+			}
+
 			$( '#total-net-assets-liabilities-previous' )
 				.val( total );
 		}
@@ -239,18 +462,38 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var calledupsharecapitalcurrent = $( '#called-up-share-capital-current' )
-				.val();
-			var sharepremiumaccountcurrent = $( '#share-premium-account-current' )
-				.val();
-			var revaluationreservecurrent = $( '#revaluation-reserve-current' )
-				.val();
-			var otherreservescurrent = $( '#other-reserves-current' )
-				.val();
-			var profitandlossaccountcurrent = $( '#profit-and-loss-account-current' )
-				.val();
-			var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +revaluationreservecurrent + +otherreservescurrent + +profitandlossaccountcurrent;
-			//var total = +calledupsharecapitalcurrent + +sharepremiumaccountcurrent + +otherreservescurrent + +profitandlossaccountcurrent; // For Release 1 only, when we don't ask for revaluation reserve
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#called-up-share-capital-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var calledupsharecapitalcurrent = $( '#called-up-share-capital-current' )
+					.val();
+				total += +calledupsharecapitalcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#share-premium-account-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var sharepremiumaccountcurrent = $( '#share-premium-account-current' )
+					.val();
+				total += +sharepremiumaccountcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#revaluation-reserve-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var revaluationreservecurrent = $( '#revaluation-reserve-current' )
+					.val();
+				total += +revaluationreservecurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#other-reserves-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var otherreservescurrent = $( '#other-reserves-current' )
+					.val();
+				total += +otherreservescurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#profit-and-loss-account-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var profitandlossaccountcurrent = $( '#profit-and-loss-account-current' )
+					.val();
+				total += +profitandlossaccountcurrent // Total (0) plus whatever value is in nere
+			}
+
 			$( '#total-shareholders-funds-current' )
 				.val( total );
 		}
@@ -262,19 +505,37 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var calledupsharecapitalprevious = $( '#called-up-share-capital-previous' )
-				.val();
-			var sharepremiumaccountprevious = $( '#share-premium-account-previous' )
-				.val();
-			var revaluationreserveprevious = $( '#revaluation-reserve-previous' )
-				.val();
-			var otherreservesprevious = $( '#other-reserves-previous' )
-				.val();
-			var profitandlossaccountprevious = $( '#profit-and-loss-account-previous' )
-				.val();
-			var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +revaluationreserveprevious + +otherreservesprevious + +profitandlossaccountprevious;
-			//var total = +calledupsharecapitalprevious + +sharepremiumaccountprevious + +otherreservesprevious + +profitandlossaccountprevious; // For Release 1 only, when we don't ask for revaluation reserve
-
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#called-up-share-capital-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var calledupsharecapitalprevious = $( '#called-up-share-capital-previous' )
+					.val();
+				total += +calledupsharecapitalprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#share-premium-account-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var sharepremiumaccountprevious = $( '#share-premium-account-previous' )
+					.val();
+				total += +sharepremiumaccountprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#revaluation-reserve-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var revaluationreserveprevious = $( '#revaluation-reserve-previous' )
+					.val();
+				total += +revaluationreserveprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#other-reserves-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var otherreservesprevious = $( '#other-reserves-previous' )
+					.val();
+				total += +otherreservesprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#profit-and-loss-account-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var profitandlossaccountprevious = $( '#profit-and-loss-account-previous' )
+					.val();
+				total += +profitandlossaccountprevious // Total (0) plus whatever value is in nere
+			}
 			$( '#total-shareholders-funds-previous' )
 				.val( total );
 		}

@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
       text: "Back",
@@ -19,16 +19,25 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="/small-full/small-full-intangible-policy" method="get" class="form">
+          <form action="/small-full/small-full-valuation-policy-yes-no" method="get" class="form">
+
+            {% set textAreaHtml %}
+            {{ govukTextarea({
+              name: "small-full-intangible-fixed-assets-amortisation-policy",
+              id: "small-full-intangible-fixed-assets-amortisation-policy",
+              value: data['small-full-intangible-fixed-assets-depreciation-policy'],
+                label: {
+                  text: "Enter your 'intangible fixed assets amortisation' policy"
+                }
+              }) }}
+            {% endset -%}
+
             {{ govukRadios({
-                classes: "govuk-radios--inline",
+                classes: "govuk-radios",
                 idPrefix: "intangiblefixedassetsamortisationpolicy",
                 name: "intangiblefixedassetsamortisationpolicy",
                 fieldset: {
-                  attributes : {
-                    'data-required': "data-required",
-                    'data-error': "Tell us if your prepared accounts include an 'intangible fixed assets amortisation' policy"
-                    },
+
                   legend: {
                     text: "Do your prepared accounts include an 'intangible fixed assets amortisation' policy?",
                     isPageHeading: true,
@@ -40,7 +49,10 @@
                   {
                     value: "yes",
                     text: "Yes",
-                    checked: checked('intangiblefixedassetsamortisationpolicy','yes')
+                    checked: checked('intangiblefixedassetsamortisationpolicy','yes'),
+                    conditional: {
+                      html: textAreaHtml
+                      }
                   },
                   {
                     value: "no",
@@ -54,7 +66,9 @@
                 text: "Save and continue"
               }) }}
           </form>
-
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
         </div>
         <!--govuk-grid-row-->
       </div>

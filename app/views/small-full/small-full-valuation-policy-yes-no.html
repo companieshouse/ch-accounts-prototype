@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
 
     {{ govukBackLink({
       text: "Back",
@@ -20,16 +20,24 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-valuation-policy" method="get" class="form">
+          <form action="/small-full/small-full-any-other-accounting-policies-yes-no" method="get" class="form">
+
+            {% set textAreaHtml %}
+            {{ govukTextarea({
+              name: "small-full-valuation-information-policy",
+              id: "small-full-valuation-information-policy",
+              value: data['small-full-valuation-information-policy'],
+                label: {
+                  text: "Enter your 'valuation information' policy"
+                }
+              }) }}
+            {% endset -%}
+
             {{ govukRadios({
-                classes: "govuk-radios--inline",
+                classes: "govuk-radios",
                 idPrefix: "valuationinformationpolicy",
                 name: "valuationinformationpolicy",
                 fieldset: {
-                  attributes : {
-                    'data-required': "data-required",
-                    'data-error': "Tell us if your prepared accounts include a 'valuation information' policy"
-                    },
                   legend: {
                     text: "Do your prepared accounts include a 'valuation information' policy?",
                     isPageHeading: true,
@@ -41,7 +49,10 @@
                   {
                     value: "yes",
                     text: "Yes",
-                    checked: checked('valuationinformationpolicy','yes')
+                    checked: checked('valuationinformationpolicy','yes'),
+                    conditional: {
+                      html: textAreaHtml
+                      }
                   },
                   {
                     value: "no",
@@ -55,7 +66,9 @@
                   text: "Save and continue"
                 }) }}
           </form>
-
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
         </div>
         <!--govuk-grid-row-->
       </div>
