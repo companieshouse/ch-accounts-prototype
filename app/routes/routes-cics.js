@@ -111,12 +111,12 @@ module.exports = function ( router ) {
 
 	// CICS - detailed or simplified accounts
 
-	router.get( '/cics/cics-criteria-info', function ( req, res ) {
+	router.get( 'chs/corporation-tax', function ( req, res ) {
 		var cicsNewOrResume = req.query.cicsNewOrResume;
 		if ( cicsNewOrResume == "no" ) {
 			res.redirect( "/chs/chs-login-page-cics-via-number" );
 		} else {
-			res.render( 'cics/cics-criteria-info' );
+			res.render( 'chs/corporation-tax' );
 		}
 	} );
 
@@ -580,18 +580,18 @@ module.exports = function ( router ) {
 
 	//Choose accounts type
 
-	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
+	router.get( '/cics/cics-criteria-info', function ( req, res ) {
 		var chooseAccountsRadio = req.query.chooseAccountsRadio;
 		if ( chooseAccountsRadio == "micros" ) {
 			res.redirect( "/accounts/accounts-start-page-micros" );
 		} else if ( chooseAccountsRadio == "abridged" ) {
 			res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
 		} else if ( chooseAccountsRadio == "full" ) {
-			res.redirect( "/cics/cics-criteria-mvp" );
+			res.redirect( "/cics/cics-criteria-info" );
 		} else if ( chooseAccountsRadio == "dormant" ) {
 			res.redirect( "/accounts/accounts-start-page-dormant" );
 		} else {
-			res.render( 'cics/cics-criteria-mvp' );
+			res.render( 'cics/cics-criteria-info' );
 		}
 	} );
 
