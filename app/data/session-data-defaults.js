@@ -23,7 +23,7 @@ module.exports = {
 	// Have removed a lot of the default answers, hence there are numerous instances of  "" - these MAY be removed completely at some point
 
 	// Variables to set BEFORE the user starts the test
-	"company-name-for-testing": "A TEST CIC",
+	"company-name-for-testing": "A TEST COMPANY LTD",
 	"company-number": "01234567",
 	"company-address-for-testing": "1 Any Street, Cardiff, Wales, CF12 3AB",
 	"company-made-up-date-for-testing": "31 March 2018",

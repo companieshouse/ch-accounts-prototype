@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  You’re about to start filing your accounts
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="javascript:void(0)" method="get" class="form">
+
+            <header>
+              <h1 id="page-header" class="govuk-heading-l">File dormant accounts with Companies House</h1>
+            </header>
+            <h2 class="govuk-heading-m">Before you start
+            </h2>
+
+            <p class="govuk-body">You'll need:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>your email address and password you used to sign up for the Companies House WebFiling service</li>
+              <li>the authentication code Companies House sent you</li>
+            </ul>
+
+            <h3 class="govuk-heading-s">If you’re filing for the first time
+            </h3>
+
+            <p class="govuk-body">You can
+              <a rel="external" href="/webfiling/webfiling-register">register online</a>. You’ll need your email address and create a password.</p>
+            <p class="govuk-body">Once registered, we’ll post an authentication code to your registered office. If your company already has a code, a reminder will be sent.</p>
+            <p class="govuk-body">Allow up to 5 days for delivery of your code.</p>
+            <p class="govuk-body">For security reasons your code can’t be provided by email or over the phone.</p>
+
+            {{ govukButton({
+                        text: "File dormant accounts"
+                      }) }}
+
+          </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

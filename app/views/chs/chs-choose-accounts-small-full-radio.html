@@ -6,7 +6,6 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
     text: "Back",
@@ -23,98 +22,56 @@
           <h1 class="govuk-heading-l">Which type of accounts have you prepared?</h1>
           <p class="lede">If you’re not sure, you may want to ask an accountant.</p>
 
-          <form action="/chs/chs-choose-small-full-or-other" method="get" class="form">
+          <form action="/cics/cics-criteria-mvp" method="get" class="form">
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-visually-hidden">Which type of accounts have you prepared?</legend>
-                <div class="govuk-radios" data-module="radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="chooseaccountsradio-conditional-1" name="chooseaccountsradio" type="radio" value="Micro" data-aria-controls="conditional-chooseaccountsradio-conditional-1">
-                    <label class="govuk-label govuk-radios__label" for="chooseaccountsradio-conditional-1">
-                      Micro-entity accounts
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional" id="conditional-chooseaccountsradio-conditional-1">
-                    <div class="govuk-form-group">
-                      <p>Must meet at least 2 of the following:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>Turnover is no more than £632,000</li>
-                        <li>Balance sheet total is no more than £316,000</li>
-                        <li>Average number of employees is no more than 10</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="chooseaccountsradio-conditional-2" name="chooseaccountsradio" type="radio" value="Abridged" data-aria-controls="conditional-chooseaccountsradio-conditional-2">
-                    <label class="govuk-label govuk-radios__label" for="chooseaccountsradio-conditional-2">
-                      Abridged accounts
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional" id="conditional-chooseaccountsradio-conditional-2">
-                    <div class="govuk-form-group">
-                      <p>Must meet at least 2 of the following:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>Turnover is no more than £10.2 million</li>
-                        <li>Balance sheet total is no more than £5.1 million</li>
-                        <li>Average number of employees is no more than 50</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="chooseaccountsradio-conditional-3" name="chooseaccountsradio" type="radio" value="FullCH" data-aria-controls="conditional-chooseaccountsradio-conditional-3">
-                    <label class="govuk-label govuk-radios__label" for="chooseaccountsradio-conditional-3">
-                      Full accounts
-                      <!--(with Companies House only)-->
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional" id="conditional-chooseaccountsradio-conditional-3">
-                    <div class="govuk-form-group">
-                      <p>Must meet at least 2 of the following:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>Turnover is no more than £10.2 million</li>
-                        <li>Balance sheet total is no more than £5.1 million</li>
-                        <li>Average number of employees is no more than 50</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!--<div class="govuk-radios__item"> <input class="govuk-radios__input" id="chooseaccountsradio-conditional-4" name="chooseaccountsradio" type="radio" value="FullJoint" data-aria-controls="conditional-chooseaccountsradio-conditional-4"> <label
-                  class="govuk-label govuk-radios__label" for="chooseaccountsradio-conditional-4"> Full accounts (with Companies House and HMRC) </label> </div> <div class="govuk-radios__conditional" id="conditional-chooseaccountsradio-conditional-4"> <div
-                  class="govuk-form-group"> <p>These joint accounts are suitable for small audit exempt full accounts to both Companies House and HMRC.</p> </div> </div>-->
+            {{ govukRadios({
+                idPrefix: "chooseAccountsRadio",
+                name: "chooseAccountsRadio",
+                fieldset: {
+                  legend: {
+                    text: "Which type of accounts have you prepared?",
+                    isPageHeading: false,
+                    classes: "govuk-visually-hidden"
+                  }
+                },
+                items: [
+                  {
+                    value: "micros",
+                    text: "Micro-entity accounts "
+                  },
+                  {
+                    value: "abridged",
+                    text: "Abridged accounts "
+                  },
+                  {
+                    value: "full",
+                    text: "Full accounts "
+                  },
+                  {
+                    value: "dormant",
+                    text: "Dormant company accounts "
+                  }
+                ]
+              }) }}
 
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="chooseaccountsradio-conditional-5" name="chooseaccountsradio" type="radio" value="Dormant" data-aria-controls="conditional-chooseaccountsradio-conditional-5">
-                    <label class="govuk-label govuk-radios__label" for="chooseaccountsradio-conditional-5">
-                      Dormant company accounts
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional" id="conditional-chooseaccountsradio-conditional-5">
-                    <div class="govuk-form-group">
-                      <p>These accounts are suitable for companies limited by shares or by guarantee that have never traded.</p>
-                    </div>
-                  </div>
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
 
-                </fieldset>
-              </div>
+          </form>
+          <!--<p>Are you filing for a <a href="/gov-uk/gov-uk-start-page-cics">Community Interest Company</a>?</p>-->
 
-              <div class="form-group">
-                <input type="submit" class="govuk-button" value="Continue">
-              </div>
+          <p>Looking to file
+            <a href="javascript:void(0)">abbreviated accounts</a>?
+          </p>
 
-            </form>
-            <!--<p>Are you filing for a <a href="/gov-uk/gov-uk-start-page-cics">Community Interest Company</a>?</p>-->
-
-            <p>Looking to file
-              <a href="https://ch-accounts-v20.herokuapp.com/webfiling/webfiling-login-page-chs-search">abbreviated accounts</a>?
-            </p>
-
-          </div>
-          <!--govuk-grid-row-->
         </div>
-        <!--govuk-grid-column-two-thirds-->
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-      </main>
-    </div>
-    <!---govuk-width-container-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
-  {% endblock %}
+{% endblock %}

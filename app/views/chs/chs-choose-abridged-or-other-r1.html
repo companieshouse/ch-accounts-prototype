@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  You’re about to start filing your accounts
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="javascript:void(0)" method="get" class="form">
+
+            <header>
+              <h1 id="page-header" class="govuk-heading-l">
+                File abridged accounts
+
+              </h1>
+            </header>
+
+            <h2 class="govuk-heading-m">Criteria</h2>
+
+            <div class="panel panel-border-wide">
+              <p>Check your prepared accounts to see if you meet the criteria.</p>
+            </div>
+
+            <p>You can file abridged accounts here if:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <!--<li>your accounting period starts on or after 1 January 2016</li>-->
+              <li>you don't need to change the date the accounts are made up to</li>
+              <li>your balance sheet doesn’t have 'fixed asset investments'</li>
+              <li>you don't have to add notes for 'revaluation, reserve', 'fixed assets investments, 'debtors', 'loans to directors', or 'related party transactions'
+              </li>
+            </ul>
+
+            <p>Your company must also meet at least 2 of the following:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>turnover is not over £10.2 million</li>
+              <li>balance sheet total is not over £5.1 million</li>
+              <li>average number of employees is not over 50</li>
+            </ul>
+
+            {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "chsr1",
+            name: "chsr1",
+            fieldset: {
+              legend: {
+                text: "Do your prepared abridged accounts meet the criteria?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No - show me other ways to file abridged accounts"
+              },
+              {
+                value: "Other",
+                text: "No - I'll file other types of accounts"
+              }
+            ]
+          }) }}
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

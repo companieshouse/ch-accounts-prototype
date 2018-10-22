@@ -25,21 +25,21 @@ module.exports = function ( router ) {
 
 
 
-	router.get( '/chs/chs-choose-accounts-small-full-radio-cics', function ( req, res ) {
-		var cicReportType = req.query.cicReportType;
-		if ( cicReportType == "detailed" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
+	router.get( '/chs/chs-choose-accounts-small-full-radio', function ( req, res ) {
+		var corporationTax = req.query.corporationTax;
+		if ( corporationTax == "yes" ) {
+			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
 		} else {
-			res.render( 'chs/chs-choose-accounts-small-full-radio-cics' );
+			res.render( 'chs/chs-choose-accounts-small-full-radio' );
 		}
 	} );
 
-	router.get( '/cics/cics-about-service', function ( req, res ) {
+	router.get( '/cics/cics-company-number', function ( req, res ) {
 		var cicsr1 = req.query.cicsr1;
 		if ( cicsr1 == "no" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
-			res.render( 'cics/cics-about-service' );
+			res.render( 'cics/cics-company-number' );
 		}
 	} );
 
@@ -581,17 +581,15 @@ module.exports = function ( router ) {
 	//Choose accounts type
 
 	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
-		var chooseAccountsRadioGovCics = req.query.chooseAccountsRadioGovCics;
-		if ( chooseAccountsRadioGovCics == "micro-entity" ) {
-			res.redirect( "/cics/cics-accounts-type" );
-		} else if ( chooseAccountsRadioGovCics == "abridged" ) {
-			res.redirect( "/cics/cics-accounts-type" );
-		} else if ( chooseAccountsRadioGovCics == "full" ) {
+		var chooseAccountsRadio = req.query.chooseAccountsRadio;
+		if ( chooseAccountsRadio == "micros" ) {
+			res.redirect( "/accounts/accounts-start-page-micros" );
+		} else if ( chooseAccountsRadio == "abridged" ) {
+			res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
+		} else if ( chooseAccountsRadio == "full" ) {
 			res.redirect( "/cics/cics-criteria-mvp" );
-			//	} else if ( chooseAccountsRadioGovCics == "FullJoint" ) {
-			//		res.redirect( "/cics/cics-accounts-type" );
-		} else if ( chooseAccountsRadioGovCics == "dormant company" ) {
-			res.redirect( "/cics/cics-accounts-type" );
+		} else if ( chooseAccountsRadio == "dormant" ) {
+			res.redirect( "/accounts/accounts-start-page-dormant" );
 		} else {
 			res.render( 'cics/cics-criteria-mvp' );
 		}

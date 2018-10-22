@@ -18,7 +18,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/accounts/accounts-payment" method="get" class="form">
+          <form action="/cics/cics-confirmation" method="get" class="form">
 
             {% set myHTML %}
             <p class="govuk-hint">This is the date the accounts were approved by the director.<br/>
@@ -64,13 +64,13 @@
                 }) }}
 
             <div class="govuk-inset-text">
-              <a id="" href="/public/pdf/cics-sample.pdf" class="PDF print" target="_blank">Save or print a copy of your accounts<span class="govuk-visually-hidden">
+              <a id="" href="/public/pdf/small-full-accounts-sample.pdf" class="PDF print" target="_blank">Save or print a copy of your accounts<span class="govuk-visually-hidden">
                   (Opens PDF in new window)</span></a>
               <span class="govuk-hint">(Opens PDF in new window)</span>
             </div>
 
             {{ govukButton({
-              text: "Save and continue to payment"
+              text: "Sumit your full accounts"
             }) }}
           </form>
 

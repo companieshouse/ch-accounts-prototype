@@ -6,7 +6,6 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
     text: "Back",
@@ -20,7 +19,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/chs/chs-choose-accounts-small-full-radio-from-gov-uk" method="get" class="form">
+          <form action="/chs/chs-choose-accounts-small-full-radio" method="get" class="form">
 
             {{ govukRadios({
               classes: "govuk-radios--inline",
@@ -46,7 +45,7 @@
             }) }}
 
             {{ govukButton({
-              text: "Continue"
+              text: "Save and continue"
             }) }}
 
           </form>
