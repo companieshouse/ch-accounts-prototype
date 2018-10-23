@@ -18,17 +18,24 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-transactions-additional-info" method="get" class="form">
+          <form action="/small-full/small-full-post-events-yes-no" method="get" class="form">
+
+            {% set textAreaHtml %}
+            {{ govukTextarea({
+              name: "relatedpartytransactionsadditionalinfo",
+              id: "relatedpartytransactionsadditionalinfo",
+              value: data['relatedpartytransactionsadditionalinfo'],
+                label: {
+                  text: "Enter your additional 'related party transactions' note information"
+                }
+              }) }}
+            {% endset -%}
 
             {{ govukRadios({
-                classes: "govuk-radios--inline",
+                classes: "govuk-radios",
                 idPrefix: "relatedpartytransactionsadditionalinfoyesno",
                 name: "relatedpartytransactionsadditionalinfoyesno",
                 fieldset: {
-                  attributes : {
-                    'data-required': "data-required",
-                    'data-error': "Tell us if your prepared accounts include any additional 'related party transactions' information"
-                    },
                   legend: {
                     text: "Do your prepared accounts include any additional 'related party transactions' information?",
                     isPageHeading: true,
@@ -39,7 +46,10 @@
                   {
                     value: "yes",
                     text: "Yes",
-                    checked: checked('relatedpartytransactionsadditionalinfoyesno','yes')
+                    checked: checked('relatedpartytransactionsadditionalinfoyesno','yes'),
+                    conditional: {
+                      html: textAreaHtml
+                      }
                   },
                   {
                     value: "no",

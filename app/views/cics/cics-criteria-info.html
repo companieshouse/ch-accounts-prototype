@@ -22,22 +22,22 @@
             <h1 id="page-header" class="govuk-heading-l">Check before you start</h1>
           </header>
 
-          <p>We're going to ask some questions.</p>
-          <p>Your answers will show whether you can use this service to file your accounts.</p>
-          <div class="govuk-inset-text">
-            <p>You
-              <a href="/chs/chs-other-ways-to-file">can’t file online yet</a>
-              if you want to include:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>a directors’ report with your accounts</li>
-              <li>a profit and loss account (income statement)</li>
-            </ul>
-          </div>
+          <p>You can’t file your full accounts here if you want to include:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-5">
+            <li>a directors’ report with your accounts</li>
+            <li class="govuk-body govuk-!-margin-bottom-4">a profit and loss account (income statement)</li>
+          </ul>
+
+          <p class="govuk-!-margin-bottom-7">
+            There are
+            <a href="/chs/chs-other-ways-to-file">other ways to file full accounts</a>.
+          </p>
 
           <form action="/cics/cics-criteria-mvp" method="GET">
             {{ govukButton({
-          text: "Continue to questions"
-        }) }}
+              text: "Continue"
+            }) }}
+
           </form>
 
         </div>

@@ -16,7 +16,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-transactions-any-other" method="get" class="form">
+          <form action="/small-full/small-full-transactions-additional-info-yes-no" method="get" class="form">
 
             <h1 class="govuk-heading-l">Related party transactions added</h1>
 
@@ -46,11 +46,39 @@
               </div>
 
             </dl>
+            {{ govukRadios({
+                            classes: "govuk-radios--inline",
+                            idPrefix: "anyothertransactions1",
+                            name: "anyothertransactions1",
+                            fieldset: {
+                              attributes : {
+                                'data-required': "data-required",
+                                'data-error': "Tell us if your prepared accounts include any other 'related party transactions' notes"
+                                },
+                              legend: {
+                                text: "Do your prepared accounts include any other 'related party transactions' notes?",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--m govuk-!-margin-top-6"
+                              }
+                            },
+                            items: [
+                              {
+                                value: "yes",
+                                text: "Yes",
+                                checked: checked('anyothertransactions1','yes')
+                              },
+                              {
+                                value: "no",
+                                text: "No",
+                                checked: checked('anyothertransactions1','no')
+                              }
+                            ]
+                          }) }}
 
             {{ govukButton({
-              text: "Continue",
-              classes: "govuk-!-margin-top-6"
-            }) }}
+                          text: "Continue",
+                          classes: "govuk-!-margin-top-6"
+                        }) }}
           </form>
           <p>
             <a href="javascript:void(0)" class="govuk-link">Sign out</a>
