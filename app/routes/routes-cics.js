@@ -596,5 +596,21 @@ module.exports = function ( router ) {
 	} );
 
 
+	//Tangible assets chooser
+	router.get( '/small-full/small-full-tangible-assets-note', function ( req, res ) {
+		var tangibleType = req.query.tangibleType;
+		if ( tangibleType.length == 1 ) {
+			res.redirect( "/small-full/small-full-tangible-assets-note-1" );
+		} else if ( tangibleType.length == 2 ) {
+			res.redirect( "/small-full/small-full-tangible-assets-note-2" );
+		} else if ( tangibleType.length == 3 ) {
+			res.redirect( "/small-full/small-full-tangible-assets-note-3" );
+		} else if ( tangibleType.length == 4 ) {
+			res.redirect( "/small-full/small-full-tangible-assets-note-4" );
+		} else {
+			res.render( 'small-full/small-full-tangible-assets-note' );
+		}
+	} );
+
 
 }

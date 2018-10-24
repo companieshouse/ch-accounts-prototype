@@ -20,7 +20,7 @@
       <h2 class="govuk-heading-m">Cost</h2>
 
       <div class="govuk-grid-row" id="accounts-header">
-        <div class="column-fifth">&nbsp;</div>
+        <div class="govuk-grid-column-one-quarter">&nbsp;</div>
         <div class="column-sixth">
           <h2 class="govuk-heading-s">Land &amp; buildings<!--<br />£--></h2>
         </div>
@@ -33,7 +33,8 @@
         <div class="column-sixth">
           <h2 class="govuk-heading-s">Office equipment<!--<br />£--></h2>
         </div>
-        <div class="column-sixth">
+        <div class="column-sixth" style="display:none;">
+          <!--hiding, because calculations won't work if entire div is removed-->
           <h2 class="govuk-heading-s">Motor vehicles<!--<br />£--></h2>
         </div>
         <div class="column-sixth">
@@ -45,7 +46,7 @@
 
         <!--Start Cost at start-->
         <div class="govuk-grid-row accounts-row-spacer">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->Cost at 1 April 2017
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> The cost of your tangible assets at the start of this accounting period. </p> </div> </details>-->
           </div>
@@ -85,7 +86,8 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
+            <!--hiding, because calculations won't work if entire div is removed-->
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="cost-start-motor-vehicles">
@@ -107,7 +109,7 @@
         <!--End Cost at start-->
         <!--Start Additions -->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!--<details> <summary> <span class="summary">-->Additions
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> The cost of your tangible assets aquired during this accounting period. </p> </div> </details>-->
           </div>
@@ -147,7 +149,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="additions-motor-vehicles">
@@ -169,7 +171,7 @@
         <!--End Additions-->
         <!--Start Disposals-->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!--<details> <summary> <span class="summary">-->Disposals
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> The cost of tangible assets disposed of in this acccounting period. </p> </div> </details>-->
           </div>
@@ -209,7 +211,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="disposals-motor-vehicles">
@@ -231,7 +233,7 @@
         <!--End Disposals=-->
         <!--Start Revaluations-->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->Revaluations
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> Valuation of any assets revalued during this accounting period. </p> <p> If the revaluation reduces the value of the asset, then enter a negative figure. </p> </div> </details>-->
           </div>
@@ -271,7 +273,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="revaluations-motor-vehicles">
@@ -293,7 +295,7 @@
         <!--End Revaluations=-->
         <!--Start Transfers-->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!--<details> <summary> <span class="summary">-->Transfers
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> The cost or valuation of any tangible assets that you've transferred during this accounting period. If the asset is being transferred out, enter a negative figure. </p> </div>
             </details>-->
@@ -334,7 +336,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="transfers-motor-vehicles">
@@ -356,7 +358,7 @@
         <!--End Transfers-->
         <!--Start Cost at end-->
         <div class="govuk-grid-row accounts-total">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!--<details> <summary> <span class="summary">-->
             <strong>Cost at 31 March 2018</strong>
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> <strong>Calculation:</strong> 'Cost at 1 April 2017' plus 'additions', plus 'revaluations' plus 'transfers' minus 'disposals'. </p> </div> </details>-->
@@ -397,7 +399,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="cost-end-motor-vehicles">
@@ -421,7 +423,7 @@
         <h2 class="govuk-heading-m">Depreciation</h2>
 
         <div class="govuk-grid-row accounts-row-spacer" id="accounts-header">
-          <div class="column-fifth">&nbsp;</div>
+          <div class="govuk-grid-column-one-quarter">&nbsp;</div>
           <!-- To do - move this style into the SASS file-->
           <div class="column-sixth">
             <h2 class="govuk-heading-s">Land &amp; buildings<!--<br />£--></h2>
@@ -435,7 +437,7 @@
           <div class="column-sixth">
             <h2 class="govuk-heading-s">Office equipment<!--<br />£--></h2>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <h2 class="govuk-heading-s">Motor vehicles<!--<br />£--></h2>
           </div>
           <div class="column-sixth">
@@ -444,7 +446,7 @@
         </div>
 
         <div class="govuk-grid-row accounts-row-spacer">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->Depreciation at 1 April 2017
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> The reduction in your tangible assets at the start of this accounting period. </p> </div> </details>-->
           </div>
@@ -484,7 +486,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="depreciation-start-motor-vehicles">
@@ -506,7 +508,7 @@
         <!--End Depreciation at start-->
         <!--Start Charge for year-->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->Charge for year
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> The reduction in tangible asset values during this accounting period. </p> </div> </details>-->
           </div>
@@ -546,7 +548,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="charge-year-motor-vehicles">
@@ -568,7 +570,7 @@
         <!--End Charge for year=-->
         <!--Start On disposals-->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->On disposals
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> Total depreciation for all tangible assets disposed of in this accounting period. </p> </div> </details>-->
           </div>
@@ -608,7 +610,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="on-disposals-motor-vehicles">
@@ -630,7 +632,7 @@
         <!--End On disposals-->
         <!--Start Other adjustments-->
         <div class="govuk-grid-row">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->Other adjustments
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> Any other depreciation adjustment on tangible assets. </p> </div> </details>-->
           </div>
@@ -670,7 +672,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="other-adjustments-motor-vehicles">
@@ -692,7 +694,7 @@
         <!--End Other adjustments-->
         <!--Start depreciation at end-->
         <div class="govuk-grid-row accounts-total">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->
             <strong>Depreciation at 31 March 2018</strong>
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> <strong>Calculation:</strong> 'Depreciation at 1 April 2017' plus 'Charge for year' plus 'Other adjustments' minus 'On disposals'. </p> </div> </details>-->
@@ -733,7 +735,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="depreciation-end-motor-vehicles">
@@ -757,7 +759,7 @@
         <h2 class="govuk-heading-m">Net book value</h2>
 
         <div class="govuk-grid-row accounts-row-spacer" id="accounts-header">
-          <div class="column-fifth">&nbsp;</div>
+          <div class="govuk-grid-column-one-quarter">&nbsp;</div>
           <!-- To do - move this style into the SASS file-->
           <div class="column-sixth">
             <h2 class="govuk-heading-s">Land &amp; buildings<!--<br />£--></h2>
@@ -771,7 +773,7 @@
           <div class="column-sixth">
             <h2 class="govuk-heading-s">Office equipment<!--<br />£--></h2>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <h2 class="govuk-heading-s">Motor vehicles<!--<br />£--></h2>
           </div>
           <div class="column-sixth">
@@ -780,7 +782,7 @@
         </div>
 
         <div class="govuk-grid-row accounts-total accounts-row-spacer">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->
             <strong>Net book value at 31 March 2018</strong>
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> <strong>Calculation:</strong> 'Cost at 31 March 2018' minus 'Depreciation at 31 March 2018'. </p> </details>-->
@@ -822,7 +824,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="net-book-value-end-motor-vehicles">
@@ -844,7 +846,7 @@
         <!--End depreciation at start-->
         <!--Start Additions -->
         <div class="govuk-grid-row accounts-total">
-          <div class="column-fifth">
+          <div class="govuk-grid-column-one-quarter">
             <!-- <details> <summary> <span class="summary">-->
             <strong>Net book value at 31 March 2017</strong>
             <!--</span> </summary> <div class="panel panel-border-narrow"> <p> <strong>Calculation:</strong> 'Cost at 1 April 2017' minus 'Depreciation at 1 April 2017'. </p> </div> </details>-->
@@ -885,7 +887,7 @@
               </label>
             </div>
           </div>
-          <div class="column-sixth">
+          <div class="column-sixth" style="display:none;">
             <div class="govuk-form-group">
               <span class="currency-type">£</span>
               <label for="net-book-value-start-motor-vehicles">
