@@ -4,6 +4,8 @@
 {% endblock %}
 {% block main %}
 
+  <!-- IMPORTANT Not for production At the moment, regardless of which tangible asset type is chosen, the inputs for land and buildings are rendered (however the visual labels on screen should show the correctly chosen tangible type) -->
+
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
     <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
@@ -24,7 +26,11 @@
 
         <div class="govuk-grid-column-one-third">&nbsp;</div>
         <div class="govuk-grid-column-one-quarter">
-          <h2 class="govuk-heading-s">Land &amp; buildings<!--<br />£--></h2>
+          <h2 class="govuk-heading-s">
+            {% for feature in data['tangibleType'] %}
+              {{ feature }}
+            {% endfor %}
+          </h2>
         </div>
         <div class="govuk-grid-column-one-quarter" style="display:none;">
           <h2 class="govuk-heading-s">Plant &amp; machinery<!--<br />£--></h2>
@@ -58,7 +64,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="cost-start-land-buildings">
-              <span class="mobile-only-label">Cost at 1 April 2017 - Land &amp; buildings</span>
+              <span class="mobile-only-label">Cost at 1 April 2017 -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="cost-start-land-buildings" name="cost-start-land-buildings" value="{{ data['cost-start-land-buildings'] }}">
             </label>
           </div>
@@ -122,7 +132,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="additions-land-buildings">
-              <span class="mobile-only-label">Additions - Land &amp; buildings</span>
+              <span class="mobile-only-label">Additions -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="additions-land-buildings" name="additions-land-buildings" value="{{ data['additions-land-buildings'] }}">
             </label>
           </div>
@@ -186,7 +200,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="disposals-land-buildings">
-              <span class="mobile-only-label">Disposals - Land &amp; buildings</span>
+              <span class="mobile-only-label">Disposals -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="disposals-land-buildings" name="disposals-land-buildings" value="{{ data['disposals-land-buildings'] }}">
             </label>
           </div>
@@ -251,7 +269,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="revaluations-land-buildings">
-              <span class="mobile-only-label">Revaluations - Land &amp; buildings</span>
+              <span class="mobile-only-label">Revaluations -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="revaluations-land-buildings" name="revaluations-land-buildings" value="{{ data['revaluations-land-buildings'] }}">
             </label>
           </div>
@@ -316,7 +338,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="transfers-land-buildings">
-              <span class="mobile-only-label">Transfers - Land &amp; buildings</span>
+              <span class="mobile-only-label">Transfers -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="transfers-land-buildings" name="transfers-land-buildings" value="{{ data['transfers-land-buildings'] }}">
             </label>
           </div>
@@ -381,7 +407,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="cost-end-land-buildings">
-              <span class="mobile-only-label">Cost at 31 March 2018 - Land &amp; buildings</span>
+              <span class="mobile-only-label">Cost at 31 March 2018 -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="cost-end-land-buildings" name="cost-end-land-buildings" value="{{ data['cost-end-land-buildings'] }}">
             </label>
           </div>
@@ -440,7 +470,12 @@
       <div class="govuk-grid-row accounts-row-spacer" id="accounts-header">
         <div class="govuk-grid-column-one-third">&nbsp;</div>
         <div class="govuk-grid-column-one-quarter">
-          <h2 class="govuk-heading-s">Land &amp; buildings<!--<br />£--></h2>
+          <h2 class="govuk-heading-s">
+            {% for feature in data['tangibleType'] %}
+              {{ feature }}
+            {% endfor %}
+            <!--<br />£-->
+          </h2>
         </div>
         <div class="govuk-grid-column-one-quarter" style="display:none;">
           <h2 class="govuk-heading-s">Plant &amp; machinery<!--<br />£--></h2>
@@ -470,7 +505,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="depreciation-start-land-buildings">
-              <span class="mobile-only-label">Depreciation at 1 April 2017 - Land &amp; buildings</span>
+              <span class="mobile-only-label">Depreciation at 1 April 2017 -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="depreciation-start-land-buildings" name="depreciation-start-land-buildings" value="{{ data['depreciation-start-land-buildings'] }}">
             </label>
           </div>
@@ -534,7 +573,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="charge-year-land-buildings">
-              <span class="mobile-only-label">Charge for year - Land &amp; buildings</span>
+              <span class="mobile-only-label">Charge for year -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="charge-year-land-buildings" name="charge-year-land-buildings" value="{{ data['charge-year-land-buildings'] }}">
             </label>
           </div>
@@ -598,7 +641,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="on-disposals-land-buildings">
-              <span class="mobile-only-label">On disposals - Land &amp; buildings</span>
+              <span class="mobile-only-label">On disposals -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="on-disposals-land-buildings" name="on-disposals-land-buildings" value="{{ data['on-disposals-land-buildings'] }}">
             </label>
           </div>
@@ -662,7 +709,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="other-adjustments-land-buildings">
-              <span class="mobile-only-label">Other adjustments - Land &amp; buildings</span>
+              <span class="mobile-only-label">Other adjustments -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="other-adjustments-land-buildings" name="other-adjustments-land-buildings" value="{{ data['other-adjustments-land-buildings'] }}">
             </label>
           </div>
@@ -727,7 +778,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="depreciation-end-land-buildings">
-              <span class="mobile-only-label">Depreciation at 31 March 2018 - Land &amp; buildings</span>
+              <span class="mobile-only-label">Depreciation at 31 March 2018 -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="depreciation-end-land-buildings" name="depreciation-end-land-buildings" value="{{ data['depreciation-end-land-buildings'] }}">
             </label>
           </div>
@@ -786,7 +841,12 @@
       <div class="govuk-grid-row accounts-row-spacer" id="accounts-header">
         <div class="govuk-grid-column-one-third">&nbsp;</div>
         <div class="govuk-grid-column-one-quarter">
-          <h2 class="govuk-heading-s">Land &amp; buildings<!--<br />£--></h2>
+          <h2 class="govuk-heading-s">
+            {% for feature in data['tangibleType'] %}
+              {{ feature }}
+            {% endfor %}
+            <!--<br />£-->
+          </h2>
         </div>
         <div class="govuk-grid-column-one-quarter" style="display:none;">
           <h2 class="govuk-heading-s">Plant &amp; machinery<!--<br />£--></h2>
@@ -817,7 +877,11 @@
           <div class="govuk-form-group">
             <span class="currency-type">£</span>
             <label for="net-book-value-end-land-buildings">
-              <span class="mobile-only-label">Net book value at 31 March 2018 - Land &amp; buildings</span>
+              <span class="mobile-only-label">Net book value at 31 March 2018 -
+                {% for feature in data['tangibleType'] %}
+                  {{ feature }}
+                {% endfor %}
+              </span>
               <input type="number" class="govuk-input" id="net-book-value-end-land-buildings" name="net-book-value-end-land-buildings" value="{{ data['net-book-value-end-land-buildings'] }}">
             </label>
           </div>
@@ -883,7 +947,11 @@
         <div class="govuk-form-group">
           <span class="currency-type">£</span>
           <label for="net-book-value-start-land-buildings">
-            <span class="mobile-only-label">Net book value at 31 March 2017 - Land &amp; buildings</span>
+            <span class="mobile-only-label">Net book value at 31 March 2017 -
+              {% for feature in data['tangibleType'] %}
+                {{ feature }}
+              {% endfor %}
+            </span>
             <input type="number" class="govuk-input" id="net-book-value-start-land-buildings" name="net-book-value-start-land-buildings" value="{{ data['net-book-value-start-land-buildings'] }}">
           </label>
         </div>
