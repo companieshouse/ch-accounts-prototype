@@ -22,23 +22,12 @@
             <h1 id="page-header" class="govuk-heading-l">Check before you start</h1>
           </header>
 
-          <p>You can’t file your full accounts here if you want to include:</p>
-          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-5">
-            <li>a directors’ report</li>
-            <li class="govuk-body govuk-!-margin-bottom-0">a profit and loss account (income statement)
-              <!---{{ govukInsetText({ text: "The detailed profit and loss account section of prepared accounts should not be confused with the balance sheet item called 'profit and loss account’ (retained earnings), under 'capital and reserves'.", classes:
-              "govuk-!-margin-top-3" }) }}-->
-              <span class="govuk-hint">The detailed profit and loss account section of prepared accounts should not be confused with the balance sheet item called 'profit and loss account’ (retained earnings), under 'capital and reserves'.</span>
-          </ul>
+          <p>We're going to ask some questions.</p>
+          <p>Your answers will show whether you can use this service to file your full accounts.</p>
 
-          <p class="govuk-!-margin-bottom-7">
-            There are
-            <a href="/chs/chs-other-ways-to-file">other ways to file full accounts</a>.
-          </p>
-
-          <form action="/cics/cics-criteria-mvp" method="GET">
+          <form action="/cics/cics-criteria-report" method="GET">
             {{ govukButton({
-              text: "Continue"
+              text: "Continue to questions"
             }) }}
 
           </form>
