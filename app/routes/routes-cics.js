@@ -5,23 +5,25 @@ module.exports = function ( router ) {
 
 
 
-	//	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
-	//		var criteriareport = req.query.criteriareport;
-	//		if ( criteriareport == "yes" ) {
-	//			res.redirect( "/cics/cics-criteria-not-met" );
-	//		} else {
-	//			res.render( 'cics/cics-criteria-profit' );
-	//		}
-	//	} );
+	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
+		var criteriareportalt = req.query.criteriareportalt;
+		if ( criteriareportalt == "yes" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
+		} else {
+			res.render( 'cics/cics-criteria-profit' );
+		}
+	} );
 
 	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
-		var criteriareport = req.query.criteriareport;
-		if ( criteriareport == "yes" ) {
+		var criteriaprofit = req.query.criteriaprofit;
+		if ( criteriaprofit == "yes" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/cics-criteria-mvp' );
 		}
 	} );
+
+
 
 	router.get( '/cics/cics-criteria-report', function ( req, res ) {
 		var cicsr1 = req.query.cicsr1;
