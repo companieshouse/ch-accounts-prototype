@@ -5,18 +5,18 @@ module.exports = function ( router ) {
 
 
 
-	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
-		var criteriareport = req.query.criteriareport;
-		if ( criteriareport == "yes" ) {
-			res.redirect( "/cics/cics-criteria-not-met" );
-		} else {
-			res.render( 'cics/cics-criteria-profit' );
-		}
-	} );
+	//	router.get( '/cics/cics-criteria-profit', function ( req, res ) {
+	//		var criteriareport = req.query.criteriareport;
+	//		if ( criteriareport == "yes" ) {
+	//			res.redirect( "/cics/cics-criteria-not-met" );
+	//		} else {
+	//			res.render( 'cics/cics-criteria-profit' );
+	//		}
+	//	} );
 
 	router.get( '/cics/cics-criteria-mvp', function ( req, res ) {
-		var criteriaprofit = req.query.criteriaprofit;
-		if ( criteriaprofit == "yes" ) {
+		var criteriareport = req.query.criteriareport;
+		if ( criteriareport == "yes" ) {
 			res.redirect( "/cics/cics-criteria-not-met" );
 		} else {
 			res.render( 'cics/cics-criteria-mvp' );
@@ -595,7 +595,7 @@ module.exports = function ( router ) {
 			res.redirect( "/accounts/accounts-start-page-micros" );
 		} else if ( chooseAccountsRadio == "abridged" ) {
 			res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
-		} else if ( chooseAccountsRadio == "full" ) {
+		} else if ( chooseAccountsRadio == "fullNotIncludingDRPL" ) {
 			res.redirect( "/cics/cics-criteria-info" );
 		} else if ( chooseAccountsRadio == "dormant" ) {
 			res.redirect( "/accounts/accounts-start-page-dormant" );
@@ -603,6 +603,24 @@ module.exports = function ( router ) {
 			res.render( 'cics/cics-criteria-info' );
 		}
 	} );
+
+	router.get( '/cics/cics-criteria-mvp-2', function ( req, res ) {
+		var chooseAccountsRadioAlt = req.query.chooseAccountsRadioAlt;
+		if ( chooseAccountsRadioAlt == "micros" ) {
+			res.redirect( "/accounts/accounts-start-page-micros" );
+		} else if ( chooseAccountsRadioAlt == "abridged" ) {
+			res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
+		} else if ( chooseAccountsRadioAlt == "fullInc" ) {
+			res.redirect( "/cics/cics-criteria-want-dr-pl" );
+		} else if ( chooseAccountsRadioAlt == "fullNotInc" ) {
+			res.redirect( "/cics/cics-criteria-mvp-2" );
+		} else if ( chooseAccountsRadioAlt == "dormant" ) {
+			res.redirect( "/accounts/accounts-start-page-dormant" );
+		} else {
+			res.render( 'cics/cics-criteria-mvp-2' );
+		}
+	} );
+
 
 
 	//Tangible assets chooser

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  You can't file your full accounts here
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">New page</h1>
+
+          <p>
+            You don't need to include a directors report and/or profit and loss account (income statement) when filing your accounts with Companies House!
+          </p>
+          <p>If you still want to include those items, then there are
+            <a href="/chs/chs-other-ways-to-file">other ways to file</a>
+            full accounts to Companies House.</p>
+
+          <p>
+            If you're happy to not include a directors report and/or profit and loss account (income statement) when filing your accounts with Companies House then you can
+            <a href="/cics/cics-criteria-mvp-2">continue into the service</a>!
+          </p>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

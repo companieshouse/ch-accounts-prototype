@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Which type of accounts have you prepared?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/cics/cics-criteria-mvp-2" method="get" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Which type of accounts have you prepared?
+                  </h1>
+                </legend>
+                <p class="lede">If you’re not sure, you may want to ask an accountant.</p>
+                <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="chooseAccountsRadioAlt-1" name="chooseAccountsRadioAlt" type="radio" value="micros">
+                    <label class="govuk-label govuk-radios__label" for="chooseAccountsRadioAlt-1">
+                      Micro-entity accounts
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="chooseAccountsRadioAlt-2" name="chooseAccountsRadioAlt" type="radio" value="abridged">
+                    <label class="govuk-label govuk-radios__label" for="chooseAccountsRadioAlt-2">
+                      Abridged accounts
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="chooseAccountsRadioAlt-3" name="hchooseAccountsRadioAlt" type="radio" value="full" data-aria-controls="conditional-chooseAccountsRadioAlt-3">
+                    <label class="govuk-label govuk-radios__label" for="chooseAccountsRadioAlt-3">
+                      Full accounts
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chooseAccountsRadioAlt-3">
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chooseAccountsRadioAlt-5" name="chooseAccountsRadioAlt" type="radio" value="fullInc">
+                        <label class="govuk-label govuk-radios__label" for="chooseAccountsRadioAlt-5">
+                          including a directors' report and/or profit and loss account (income statement)
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chooseAccountsRadioAlt-6" name="chooseAccountsRadioAlt" type="radio" value="fullNotInc">
+                        <label class="govuk-label govuk-radios__label" for="chooseAccountsRadioAlt-6">
+                          not including a directors' report and/or profit and loss account (income statement)
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="chooseAccountsRadioAlt-4" name="chooseAccountsRadioAlt" type="radio" value="dormant">
+                    <label class="govuk-label govuk-radios__label" for="chooseAccountsRadioAlt-4">
+                      Dormant company accounts
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+          </form>
+          <!--<p>Are you filing for a <a href="/gov-uk/gov-uk-start-page-cics">Community Interest Company</a>?</p>-->
+
+          <p>Looking to file
+            <a href="javascript:void(0)">abbreviated accounts</a>?
+          </p>
+
+          <a href="/chs/chs-choose-accounts-small-full-radio" style="float:right; color: #dee0e2; font-size:12px; ">Alternative</a>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
