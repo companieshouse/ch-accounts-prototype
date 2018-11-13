@@ -591,7 +591,7 @@ module.exports = function ( router ) {
 
 	//Choose accounts type
 
-	router.get( '/accounts/file-full-accounts', function ( req, res ) {
+	router.get( '/chs/corporation-tax', function ( req, res ) {
 		var chooseAccountsRadio = req.query.chooseAccountsRadio;
 		if ( chooseAccountsRadio == "micros" ) {
 			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
@@ -602,7 +602,7 @@ module.exports = function ( router ) {
 		} else if ( chooseAccountsRadio == "full" ) {
 			res.redirect( "/chs/corporation-tax" );
 		} else {
-			res.render( 'accounts/file-full-accounts' );
+			res.render( 'chs/corporation-tax' );
 		}
 	} );
 
