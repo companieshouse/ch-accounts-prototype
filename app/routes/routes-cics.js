@@ -36,12 +36,12 @@ module.exports = function ( router ) {
 
 
 
-	router.get( '/chs/chs-choose-accounts-small-full-radio', function ( req, res ) {
+	router.get( '/accounts/file-full-accounts', function ( req, res ) {
 		var corporationTax = req.query.corporationTax;
 		if ( corporationTax == "yes" ) {
 			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
 		} else {
-			res.render( 'chs/chs-choose-accounts-small-full-radio' );
+			res.render( 'accounts/file-full-accounts' );
 		}
 	} );
 
@@ -594,11 +594,13 @@ module.exports = function ( router ) {
 	router.get( '/accounts/file-full-accounts', function ( req, res ) {
 		var chooseAccountsRadio = req.query.chooseAccountsRadio;
 		if ( chooseAccountsRadio == "micros" ) {
-			res.redirect( "/accounts/accounts-start-page-micros" );
+			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
 		} else if ( chooseAccountsRadio == "abridged" ) {
-			res.redirect( "/chs/chs-choose-abridged-or-other-r1" );
+			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
 		} else if ( chooseAccountsRadio == "dormant" ) {
-			res.redirect( "/accounts/accounts-start-page-dormant" );
+			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
+		} else if ( chooseAccountsRadio == "full" ) {
+			res.redirect( "/chs/corporation-tax" );
 		} else {
 			res.render( 'accounts/file-full-accounts' );
 		}
