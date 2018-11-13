@@ -32,6 +32,11 @@
 
           <p class="govuk-body">Use this service to file your company’s annual accounts with Companies House.</p>
 
+          {{ govukWarningText({
+            text: "Your filed accounts will appear on the public record and online.",
+            iconFallbackText: "Warning"
+          }) }}
+
           <div class="govuk-inset-text">Limited liability partnerships can’t use this service -
             <a href="javascript:void(0)">send your annual accounts directly to Companies House</a>.</div>
 
