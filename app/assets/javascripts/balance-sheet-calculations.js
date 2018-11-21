@@ -159,13 +159,26 @@ $( document )
 $( document )
 	.ready( function () {
 		function compute() {
-			var totalcurrentassetscurrent = $( '#total-current-assets-current' )
-				.val();
-			var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
-				.val();
-			var prepaymentsandandaccruedincomecurrent = $( '#prepayments-and-and-accrued-income-current' )
-				.val();
-			var total = +totalcurrentassetscurrent + +prepaymentsandandaccruedincomecurrent - +creditorsamountsfallingduewithinoneyearcurrent;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#total-current-assets-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var totalcurrentassetscurrent = $( '#total-current-assets-current' )
+					.val();
+				total += +totalcurrentassetscurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-within-one-year-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
+					.val();
+				total -= +creditorsamountsfallingduewithinoneyearcurrent // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#prepayments-and-and-accrued-income-current' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var prepaymentsandandaccruedincomecurrent = $( '#prepayments-and-and-accrued-income-current' )
+					.val();
+				total += +prepaymentsandandaccruedincomecurrent // Total (0) plus whatever value is in nere
+			}
+
 			$( '#net-current-assets-liabilities-current' )
 				.val( total );
 		}
@@ -173,21 +186,35 @@ $( document )
 			.change( compute );
 	} );
 
+
 // Net current assets (liabilities) (previous year))
 $( document )
 	.ready( function () {
 		function compute() {
-			var totalcurrentassetsprevious = $( '#total-current-assets-previous' )
-				.val();
-			var prepaymentsandandaccruedincomeprevious = $( '#prepayments-and-and-accrued-income-previous' )
-				.val();
-			var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
-				.val();
-			var total = +totalcurrentassetsprevious + +prepaymentsandandaccruedincomeprevious - +creditorsamountsfallingduewithinoneyearprevious;
+			var total = 0 // Start total off at zero
+			if ( typeof $( '#total-current-assets-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var totalcurrentassetsprevious = $( '#total-current-assets-previous' )
+					.val();
+				total += +totalcurrentassetsprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#creditors-amounts-falling-due-within-one-year-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
+					.val();
+				total -= +creditorsamountsfallingduewithinoneyearprevious // Total (0) plus whatever value is in nere
+			}
+			if ( typeof $( '#prepayments-and-and-accrued-income-previous' )
+				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
+				var prepaymentsandandaccruedincomeprevious = $( '#prepayments-and-and-accrued-income-previous' )
+					.val();
+				total += +prepaymentsandandaccruedincomeprevious // Total (0) plus whatever value is in nere
+			}
+
 			$( '#net-current-assets-liabilities-previous' )
 				.val( total );
 		}
-		$( '#total-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous, #prepayments-and-and-accrued-income-previous' )
+		$( '#total-current-assets-current, #creditors-amounts-falling-due-within-one-year-current, #prepayments-and-and-accrued-income-current' )
 			.change( compute );
 	} );
 
@@ -249,7 +276,7 @@ $( document )
 				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
 				var creditorsamountsfallingduewithinoneyearcurrent = $( '#creditors-amounts-falling-due-within-one-year-current' )
 					.val();
-				total += +creditorsamountsfallingduewithinoneyearcurrent // Total (0) plus whatever value is in nere
+				total -= +creditorsamountsfallingduewithinoneyearcurrent // Total (0) plus whatever value is in nere
 			}
 			$( '#total-assets-less-current-liabilities-current' )
 				.val( total );
@@ -315,7 +342,7 @@ $( document )
 				.val() !== 'undefined' ) { // If this thing is NOT undefined (as in it DOES exist) then output it as a variable
 				var creditorsamountsfallingduewithinoneyearprevious = $( '#creditors-amounts-falling-due-within-one-year-previous' )
 					.val();
-				total += +creditorsamountsfallingduewithinoneyearprevious // Total (0) plus whatever value is in nere
+				total -= +creditorsamountsfallingduewithinoneyearprevious // Total (0) plus whatever value is in nere
 			}
 			$( '#total-assets-less-current-liabilities-previous' )
 				.val( total );
