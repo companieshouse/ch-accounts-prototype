@@ -214,7 +214,7 @@ $( document )
 			$( '#net-current-assets-liabilities-previous' )
 				.val( total );
 		}
-		$( '#total-current-assets-current, #creditors-amounts-falling-due-within-one-year-current, #prepayments-and-and-accrued-income-current' )
+		$( '#total-current-assets-previous, #creditors-amounts-falling-due-within-one-year-previous, #prepayments-and-and-accrued-income-previous' )
 			.change( compute );
 	} );
 
