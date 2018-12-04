@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Profit and loss account
+  Do you want to file an income statement (profit and loss account)?
 {% endblock %}
 {% block main %}
 
@@ -19,7 +19,7 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="/cics/cics-criteria-mvp" method="get" class="form">
+          <form action="/cics/cics-company-number" method="get" class="form">
 
             {{ govukRadios({
               classes: "govuk-radios--inline",
@@ -28,16 +28,16 @@
               fieldset: {
                 attributes : {
                   'data-required': "data-required",
-                  'data-error': "Tell us if you want to file a profit and loss account (income statement)"
+                  'data-error': "Tell us if you want to file an income statement (profit and loss account)"
                   },
                 legend: {
-                  text: "Do you want to file a profit and loss account (income statement)?",
+                  text: "Do you want to file an income statement (profit and loss account)?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
               },
               hint: {
-                text: "Even if you have a profit and loss account (income statement) in your accounts, you don't need to file it with Companies House. "
+                text: "Even if you have an income statement (profit and loss account) in your accounts, you don't need to file it with Companies House. "
               },
               items: [
                 {
