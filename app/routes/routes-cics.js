@@ -600,6 +600,8 @@ module.exports = function ( router ) {
 		} else if ( chooseAccountsRadio == "dormant" ) {
 			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
 		} else if ( chooseAccountsRadio == "full" ) {
+			res.redirect( "/cics/cics-criteria-not-met" );
+		} else if ( chooseAccountsRadio == "filetted" ) {
 			res.redirect( "/chs/corporation-tax" );
 		} else {
 			res.render( 'chs/corporation-tax' );
