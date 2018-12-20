@@ -1460,60 +1460,15 @@
 
         {% endif %}
 
-        {% if data['revaluation-reserve-current'] != '' or data['revaluation-reserve-previous'] != '' %}
-
-          <div id="cya-small-full-revaluation-reserve-note">
-
-            <h2 class="govuk-heading-m govuk-!-margin-top-8">Revaluation reserve note
-              <a href="/small-full/small-full-revaluation-reserve-note" class="govuk-body float-right">Change<span class="govuk-visually-hidden">Revaluation reserve note</span></a>
-            </h2>
-
-            <dl class="app-check-your-answers app-check-your-answers--short">
-
-              {% if data['revaluation-reserve-start'] != '' %}
-                <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">At 1 April 2017
-                  </dt>
-                  <dd class="app-check-your-answers__answer">
-                    {{ data['revaluation-reserve-start'] | displayPound }}</dd>
-                  <dd class="app-check-your-answers__change"></dd>
-                </div>
-              {% endif %}
-
-              {% if data['surplus-deficit-previous'] != '' %}
-                <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">Surplus or deficit after revaluation
-                  </dt>
-                  <dd class="app-check-your-answers__answer">
-                    {{ data['surplus-deficit-previous'] | displayPound }}</dd>
-                  <dd class="app-check-your-answers__change"></dd>
-                </div>
-              {% endif %}
-
-              {% if data['revaluation-reserve-end'] != '' %}
-                <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">Balance at 31 March 2017</dt>
-                  <dd class="app-check-your-answers__answer  govuk-!-font-weight-bold">
-                    {{ data['revaluation-reserve-end'] | displayPound }}</dd>
-                  <dd class="app-check-your-answers__change"></dd>
-                </div>
-              {% endif %}
-            </dl>
-
-            {% if data['revaluation-reserve-note-additional-info'] != '' %}
-              <dl class="app-check-your-answers app-check-your-answers--short">
-                <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">Additional information</dt>
-                  <dd class="app-check-your-answers__answer">{{ data['revaluation-reserve-note-additional-info'] }}</dd>
-                  <dd class="app-check-your-answers__change"></dd>
-                </div>
-              </dl>
-            {% endif %}
-
-          </div>
-          <!--cya-small-full-revaluation reserve-note-->
-
-        {% endif %}
+        <!-- {% if data['revaluation-reserve-current'] != '' or data['revaluation-reserve-previous'] != '' %} <div id="cya-small-full-revaluation-reserve-note"> <h2 class="govuk-heading-m govuk-!-margin-top-8">Revaluation reserve note <a
+        href="/small-full/small-full-revaluation-reserve-note" class="govuk-body float-right">Change<span class="govuk-visually-hidden">Revaluation reserve note</span></a> </h2> <dl class="app-check-your-answers app-check-your-answers--short"> {% if
+        data['revaluation-reserve-start'] != '' %} <div class="app-check-your-answers__contents"> <dt class="app-check-your-answers__question">At 1 April 2017 </dt> <dd class="app-check-your-answers__answer"> {{ data['revaluation-reserve-start'] |
+        displayPound }}</dd> <dd class="app-check-your-answers__change"></dd> </div> {% endif %} {% if data['surplus-deficit-previous'] != '' %} <div class="app-check-your-answers__contents"> <dt class="app-check-your-answers__question">Surplus or deficit
+        after revaluation </dt> <dd class="app-check-your-answers__answer"> {{ data['surplus-deficit-previous'] | displayPound }}</dd> <dd class="app-check-your-answers__change"></dd> </div> {% endif %} {% if data['revaluation-reserve-end'] != '' %} <div
+        class="app-check-your-answers__contents"> <dt class="app-check-your-answers__question">Balance at 31 March 2017</dt> <dd class="app-check-your-answers__answer govuk-!-font-weight-bold"> {{ data['revaluation-reserve-end'] | displayPound }}</dd> <dd
+        class="app-check-your-answers__change"></dd> </div> {% endif %} </dl> {% if data['revaluation-reserve-note-additional-info'] != '' %} <dl class="app-check-your-answers app-check-your-answers--short"> <div class="app-check-your-answers__contents"> <dt
+        class="app-check-your-answers__question">Additional information</dt> <dd class="app-check-your-answers__answer">{{ data['revaluation-reserve-note-additional-info'] }}</dd> <dd class="app-check-your-answers__change"></dd> </div> </dl> {% endif %}
+        </div> {% endif %}-->
 
         {% if data['average-number-of-employees-current'] != '' or data['average-number-of-employees-previous'] != '' %}
 
@@ -1686,25 +1641,9 @@
 
         {% endif %}
 
-        {% if (data['small-full-post-balance-sheet-events-note'] != '') %}
-
-          <div id="cya-small-full-post-balance-sheet-events-note">
-
-            <h2 class="govuk-heading-m govuk-!-margin-top-8">Post balance sheet events note
-              <a href="/small-full/small-full-post-events-yes-no" class="govuk-body float-right">Change<span class="govuk-visually-hidden">Post balance sheet events note</span></a>
-            </h2>
-
-            <dl class="app-check-your-answers app-check-your-answers--short">
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__answer">{{ data['small-full-post-balance-sheet-events-note'] }}</dt>
-
-              </div>
-            </dl>
-
-          </div>
-          <!--cya-small-full-post-balance-sheet-events-note-->
-
-        {% endif %}
+        <!-- {% if (data['small-full-post-balance-sheet-events-note'] != '') %} <div id="cya-small-full-post-balance-sheet-events-note"> <h2 class="govuk-heading-m govuk-!-margin-top-8">Post balance sheet events note <a
+        href="/small-full/small-full-post-events-yes-no" class="govuk-body float-right">Change<span class="govuk-visually-hidden">Post balance sheet events note</span></a> </h2> <dl class="app-check-your-answers app-check-your-answers--short"> <div
+        class="app-check-your-answers__contents"> <dt class="app-check-your-answers__answer">{{ data['small-full-post-balance-sheet-events-note'] }}</dt> </div> </dl> </div> {% endif %}-->
 
         {{ govukButton({
               text: "Continue"
