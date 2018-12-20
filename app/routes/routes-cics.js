@@ -36,12 +36,12 @@ module.exports = function ( router ) {
 
 
 
-	router.get( '/accounts/file-full-accounts', function ( req, res ) {
+	router.get( '/accounts/mvp-criteria', function ( req, res ) {
 		var corporationTax = req.query.corporationTax;
 		if ( corporationTax == "yes" ) {
 			res.redirect( "https://www.gov.uk/file-your-company-accounts-and-tax-return" );
 		} else {
-			res.render( 'accounts/file-full-accounts' );
+			res.render( 'accounts/mvp-criteria' );
 		}
 	} );
 
@@ -640,6 +640,18 @@ module.exports = function ( router ) {
 			res.redirect( "/small-full/small-full-tangible-assets-note-4" );
 		} else {
 			res.render( 'small-full/small-full-tangible-assets-note' );
+		}
+	} );
+
+
+	router.get( '/accounts/file-full-accounts', function ( req, res ) {
+		var smallfullcriteria = req.query.smallfullcriteria;
+		if ( smallfullcriteria == "No" ) {
+			res.redirect( "/chs/chs-other-ways-to-file" );
+		} else if ( smallfullcriteria == "Other" ) {
+			res.redirect( "/chs/chs-choose-accounts-small-full-radio" );
+		} else {
+			res.render( 'accounts/file-full-accounts' );
 		}
 	} );
 

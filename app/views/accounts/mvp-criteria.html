@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  File full accounts with Companies House
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <form action="/accounts/file-full-accounts" method="get" class="form">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">File full accounts with Companies House
+            </h1>
+
+            <p>You can file full accounts here if:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+
+              <li>you don't need to change the date the accounts are made up to</li>
+              <li>your balance sheet doesn’t have 'fixed asset investments', 'current asset investments', 'revaluation reserve', or 'intangible assets'</li>
+              <li>you only need to add notes (if applicable) for 'accounting policies', 'tangible assets', 'stocks', 'debtors', 'creditors - amounts falling due within one year', or 'creditors - amounts falling due after one year'</li>
+            </ul>
+            <h2 class="govuk-heading-m">Do your prepared full accounts meet the criteria?</h2>
+
+            <!-- For time reasons, currently both radio button answers ON THIS VERSION OF THE PAGE send you to Start page-->
+
+            <form action="/chs/chs-start-page-cics" method="get" class="form">
+              {{ govukRadios({
+                  idPrefix: "smallfullcriteria",
+                  name: "smallfullcriteria",
+                  fieldset: {
+                    legend: {
+                      text: "Do your prepared full accounts meet the criteria?",
+                      isPageHeading: false,
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "Yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "No",
+                      text: "No - show me other ways to file full accounts"
+                    },
+                    {
+                      value: "Other",
+                      text: "No - I'll file other types of accounts"
+                    }
+                  ]
+                }) }}
+              <div class="form-group">
+                <input type="submit" class="govuk-button" value="Continue">
+              </div>
+
+            </form>
+
+          </div>
+          <!--govuk-grid-row-->
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+      </form>
+    </main>
+    <!-- START script to show date-->
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
