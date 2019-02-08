@@ -24,43 +24,14 @@
 
           <form action="/small-full/small-full-current-assets-yes-no" method="get" class="form">
 
-            {% set textAreaHtml %}
             {{ govukTextarea({
               name: "small-full-fixed-assets-investments-note",
               id: "small-full-fixed-assets-investments-note",
               value: data['small-full-fixed-assets-investments-note'],
                 label: {
-                  text: "Enter your 'fixed assets investments' note"
+                  text: "Enter your 'fixed assets investments' note",
+                  classes: "govuk-label govuk-label--l"
                 }
-              }) }}
-            {% endset -%}
-
-            {{ govukRadios({
-                classes: "govuk-radios",
-                idPrefix: "fixedassetsinvestmentsyesno",
-                name: "fixedassetsinvestmentsyesno",
-                fieldset: {
-                  legend: {
-                    text: "Do your prepared accounts include a 'fixed assets investments' note?",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--l"
-                  }
-                },
-                items: [
-                  {
-                    value: "yes",
-                    text: "Yes",
-                    checked: checked('fixedassetsinvestmentsyesno','yes'),
-                    conditional: {
-                      html: textAreaHtml
-                      }
-                  },
-                  {
-                    value: "no",
-                    text: "No",
-                    checked: checked('fixedassetsinvestmentsyesno','no')
-                  }
-                ]
               }) }}
 
             {{ govukButton({
