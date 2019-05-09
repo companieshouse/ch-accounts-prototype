@@ -418,6 +418,28 @@ ol.example-icon-list {
   text-transform: uppercase;
 }
 
+#chs-customer-insights-top {
+  background-color: $govuk-link-colour;
+  padding: 1em;
+  margin: -1em 0 0;
+  color: govuk-colour("white");
+
+  a {
+    &:link,
+    &:visited {
+      color: govuk-colour("white");
+    }
+
+    &:hover {
+      color: govuk-colour("grey-3");
+    }
+
+    &.secondary-customer-insights {
+      float: right;
+    }
+  }
+}
+
 #chs-customer-insights {
   background-color: $govuk-link-colour;
   padding: 0.5em 1em 0.1em;
@@ -454,6 +476,18 @@ ol.example-icon-list {
   }
 }
 
+.accuracy-banner {
+  margin-top: 1em;
+}
+
 .govuk-footer {
   border-top: 10px solid govuk-colour("blue");
+}
+
+.warning-overview {
+  display: block;
+  border: 2px solid #ffbf47;
+  background-color: #fff2d3;
+  padding: 0.5em;
+  margin: 1em 0;
 }

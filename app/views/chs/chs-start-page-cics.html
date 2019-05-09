@@ -3,8 +3,16 @@
   Companies House service
 {% endblock %}
 {% block main %}
-
+  <div class="govuk-body" id="chs-customer-insights-top">
+    <div class="govuk-width-container">
+      <strong>Customer satisfaction survey:</strong>
+      <a href="http://resources.companieshouse.gov.uk/csat/index.shtml?Service=CHS">Tell us what you think of our services</a>
+    </div>
+  </div>
   <div class="govuk-width-container">
+    <div class="accuracy-banner small-text">
+      <a href="http://resources.companieshouse.gov.uk/serviceInformation.shtml#compInfo" target="_blank">Companies House does not verify the accuracy of the information displayed<span class="govuk-visually-hidden">(link opens a new window)</span></a>
+    </div>
     <!-- {% include "includes/phase_banner_beta.html" %}-->
     <nav class="content" role="navigation">
       <ul id="navigation" class="mobile-hidden">
@@ -13,6 +21,11 @@
         </li>
       </ul>
     </nav>
+
+    <div class="warning-overview govuk-body" id="">
+      <strong>Service update:</strong>
+      Our services will be offline from 9.00am until 5.00pm while we undergo some critical security testing. We apologise for any inconvenience this may cause.
+    </div>
     <main class="govuk-main-wrapper" id="main-content" role="main">
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
