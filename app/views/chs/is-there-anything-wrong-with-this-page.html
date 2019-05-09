@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Help us improve the Companies House service
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/chs/chs-authenticate-page-cics" method="GET">
+
+            {% call govukFieldset({
+              legend: {
+                text: "Help us improve the Companies House service",
+                classes: "govuk-fieldset__legend--xl",
+                isPageHeading: true
+              }
+            }) %}
+
+            <p>
+              <a href="https://www.gov.uk/stop-companies-house-from-publishing-your-address" target="_blank">Stop Companies House from publishing your address</a>
+            </p>
+
+            {{ govukTextarea({
+              name: "customer_feedback",
+              id: "feedback-textarea",
+              label: {
+                html: '<p><strong>What is wrong with this page?</strong>'
+              },
+              hint: {
+                text: "For example, information is missing or incorrect."
+              }
+            }) }}
+
+            {{ govukInput({
+              label: {
+                html: '<p><strong>What is your name?</strong> (optional)'
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "feedback-name",
+              name: "customer_name"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                html: '<p><strong>What is your email address?</strong> (optional)'
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "feedback-email",
+              name: "customer_email"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                html: '<p><strong>Enter these characters to prove your not a robot</strong> XYZ<br />'
+              },
+              classes: "govuk-input--width-3",
+              id: "feedback-auth",
+              name: "customer_auth"
+            }) }}
+
+            {% endcall %}
+
+            {{ govukButton({
+              text: "Submit report"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

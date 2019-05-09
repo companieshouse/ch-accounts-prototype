@@ -417,3 +417,43 @@ ol.example-icon-list {
 .uppercase {
   text-transform: uppercase;
 }
+
+#chs-customer-insights {
+  background-color: $govuk-link-colour;
+  padding: 0.5em 1em 0.1em;
+  margin: 2em 0 -30px;
+  height: auto;
+
+  a {
+    &:link,
+    &:visited {
+      color: govuk-colour("white");
+    }
+
+    &:hover {
+      color: govuk-colour("grey-3");
+    }
+
+    &.secondary-customer-insights {
+      float: right;
+    }
+  }
+}
+@include govuk-media-query($until: tablet) {
+  #chs-customer-insights {
+    padding-bottom: 3em;
+
+    a {
+      padding-bottom: 1em;
+
+      &.secondary-customer-insights {
+        float: left;
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+.govuk-footer {
+  border-top: 10px solid govuk-colour("blue");
+}
