@@ -7,7 +7,10 @@
   <div class="govuk-width-container">
 
     <main class="govuk-main-wrapper" id="main-content" role="main">
-
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form action="/chs/chs-authenticate-page-cics" method="GET">

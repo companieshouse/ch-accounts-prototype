@@ -476,6 +476,33 @@ ol.example-icon-list {
   }
 }
 
+.chs-customer-insights {
+  background-color: $govuk-link-colour;
+  padding: 0.5em 1em 1em;
+  margin: 2em 0 -2.5em;
+  height: auto;
+
+  .govuk-details__summary,
+  span {
+    color: govuk-colour("white");
+  }
+
+  div {
+    border: none;
+  }
+
+  a {
+    &:link,
+    &:visited {
+      color: govuk-colour("white");
+    }
+
+    &:hover {
+      color: govuk-colour("grey-3");
+    }
+  }
+}
+
 .accuracy-banner {
   margin-top: 1em;
 }
