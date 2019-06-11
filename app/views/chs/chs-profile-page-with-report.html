@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  A DEMO COMPANY LIMITED - Overview (free company information from Companies House)
+{% endblock %}
+{% block main %}
+
+  <style type="text/css">
+    .all-tab {
+      color: #ffffff !important;
+      background-color: #005ea5!important;
+    }
+  </style>
+
+  <div class="govuk-width-container">
+
+    <p style="font-size:16px; padding:10px 0 8px; margin-bottom:0; border-bottom: 1px solid #bfc1c3;">
+      Companies House does not verify the accuracy of the information filed
+    </p>
+
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li>
+          <a href="javascript:void(0)" id="user-signin">Sign in / Register</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="govuk-main-wrapper govuk-body">
+
+      <form id="search" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
+        <div class="searchfield search-bar-active">
+          <input type="search" autocomplete="off" name="q" id="site-search-text" placeholder="Search for a company or officer" autofocus="autofocus" class="js-search-focus govuk-input "/>
+          <a href="#" id="search-submit" class="search-submit enable-view2 govuk-button govuk-button-search">Search</a>
+        </div>
+      </form>
+
+      <div class="company-header">
+        <p class="govuk-heading-xl" id="company-name">
+          <span class="uppercase">A TEST COMPANY LTD
+            <!--{{ data['company-name-for-testing'] }}--></span></p>
+        <p id="company-number">Company number
+          <strong>{{ data['company-number'] }}</strong>
+        </p>
+        <div id="action-buttons">
+          <a id="" class="govuk-button" href="javascript:void(0)">Follow this company</a>
+          <a id="file-for-this-company" class="govuk-button" href="chs-login-page-cics">File for this company</a>
+          <!-- <a id="" class="button" href="javascript:void(0)">Download all this company's data</a>-->
+        </div>
+      </div>
+
+      <div class="section-tabs js-tabs">
+        <ul>
+          <li class="active">
+            <h1>
+              <a href="javascript:void(0)" id="company-overview-tab">
+                <span class="govuk-visually-hidden">Company
+                </span>Overview<span class="govuk-visually-hidden">
+                  for A TEST COMPANY (01234567)</span></a>
+            </h1>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="filing-history-tab">Filing history<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="people-tab">People<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="charges-tab">Charges<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="insolvency-tab">Insolvency<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="registers-tab">Registers<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="chs-profile-page-with-report-all" id="download-tab" class="all-tab">Download<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <dl>
+        <dt>Registered office address</dt>
+        <dd class="text data">{{ data['company-address-for-testing'] }}</dd>
+      </dl>
+
+      <div class="govuk-grid-row">
+        <dl class="govuk-grid-column-two-thirds">
+          <dt>Company status</dt>
+          <dd id="company-status" class="text data">
+            Active
+          </dd>
+        </dl>
+      </div>
+
+      <div class="govuk-grid-row">
+        <dl class="govuk-grid-column-two-thirds">
+          <dt>Company type</dt>
+          <dd class="text data" id="company-type">
+            Private limited Company
+            <br>
+            <span class="normal" id="company_subtype">Community Interest Company (CIC)</span>
+          </dd>
+        </dl>
+
+        <dl class="govuk-grid-column-one-third">
+          <dt id="company-birth-type">Incorporated on</dt>
+          <dd id="company-creation-date" class="data">27 November 1996</dd>
+        </dl>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+
+          <h2 class="govuk-heading-m">
+            <strong>Accounts</strong>
+          </h2>
+
+          <p>
+            Next accounts made up to
+            <strong>31 March 2018</strong>
+            <br>due by
+            <strong>31 December 2018</strong>
+          </p>
+          <p>Last accounts made up to
+            <strong>31 March 2017</strong>
+          </p>
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-m">
+            <strong>Confirmation statement</strong>
+          </h2>
+          Next statement date
+          <strong>22 November 2018</strong>
+          <br>
+          <p>
+
+            due by
+            <strong>6 December 2018</strong>
+          </p>
+
+          <p>
+            <span class="govuk-!-font-size-24 govuk-!-font-weight-bold">Annual return</span></p>
+          <p>Last annual return made up to
+            <strong>22 November 2016</strong>
+          </p>
+        </div>
+
+      </div>
+
+      <h2 class="govuk-heading-m" id="sic-title">Nature of business (SIC)</h2>
+      <ul class="govuk-list">
+        <li>
+          <span id="sic0">01234 - Example only</span>
+        </li>
+      </ul>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

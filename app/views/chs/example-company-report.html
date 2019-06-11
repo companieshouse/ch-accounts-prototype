@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>THE GIRLS&#39; DAY SCHOOL TRUST</title>
+    <style type="text/css">
+      body {
+        font-size: 12px;
+      }
+      .pagebreak {
+        page-break-before: always;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      b,
+      strong {
+        font-weight: bold;
+      }
+
+      table {
+        border-spacing: 10px;
+        border-top: 1px solid;
+      }
+
+      .text--left {
+        text-align: left !important;
+      }
+      .text--center {
+        text-align: center!important;
+      }
+      .text--right {
+        text-align: right !important;
+      }
+
+      .strong {
+        font-weight: bold;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .body {
+        font-size: 100%;
+      }
+
+      h1 {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      h3 {
+        font-weight: bold;
+        font-size: 12px;
+      }
+      p {
+        margin-top: 0.3125em;
+        margin-bottom: 1.25em;
+      }
+      p.accounts-upload {
+        font-size: 1.3em;
+      }
+      .accounts-body {
+        font-family: 'SourceSansPro-Regular';
+      }
+      .margin-large {
+        margin-top: 4em;
+      }
+      .margin-xx-large {
+        margin-top: 10em;
+      }
+      .header {
+        padding: 5px;
+      }
+      .text-area-display {
+        white-space: pre-line;
+      }
+
+      table {
+        font-family: 'SourceSansPro-Regular';
+        font-size: 12px;
+        width: 100%;
+        padding-bottom: 15px;
+      }
+      th {
+        font-weight: bold;
+        vertical-align: top;
+        text-align: left;
+      }
+      td {
+        vertical-align: top;
+        text-align: left;
+      }
+      .table-heading {
+        text-align: right;
+        font-style: italic;
+      }
+      td.figure,
+      td.grandtotal,
+      td.grandtotal-no-top-border,
+      td.total,
+      td.total-no-top-border,
+      td.total-no-top-border,
+      th.figure {
+        vertical-align: middle;
+        text-align: right;
+        white-space: nowrap;
+        width: 14%;
+      }
+      td.description {
+        width: 50%;
+      }
+      td.total {
+        border-top: black solid 1px;
+        border-bottom: black solid 1px;
+      }
+      td.total-no-top-border {
+        border-bottom: black solid 1px;
+      }
+      td.grandtotal-no-top-border {
+        border-bottom: black double 3px;
+      }
+      td.grandtotal {
+        border-top: black solid 1px;
+        border-bottom: black double 3px;
+      }
+      td.align-right {
+        text-align: right;
+      }
+      @media print {
+        td.figure,
+        td.grandtotal,
+        td.grandtotal-no-top-border,
+        td.total,
+        td.total-no-top-border,
+        td.total-no-top-border,
+        th.figure {
+          width: 15%;
+        }
+      }
+      ol,
+      ul {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        padding: 0;
+      }
+      ol,
+      ul {
+        list-style-type: none;
+      }
+      ul li {
+        margin-bottom: 5px;
+      }
+      .page-break {
+        min-height: 400px;
+        page-break-before: always;
+      }
+      .page {
+        min-height: 25cm;
+        border-style: solid;
+        border-width: 0;
+        page-break-after: always;
+        margin: 0 auto;
+        width: 170mm;
+        position: relative;
+      }
+      @page {
+        size: A4;
+      }
+      @media print {
+        body,
+        html {
+          height: 257mm;
+          margin: 0 auto;
+          width: 170mm;
+          font-size: 12px;
+        }
+      }
+      @media screen {
+        .page {
+          margin-bottom: 5em;
+        }
+      }
+      .section-marker {
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .draft #AccountsHeader,
+      .draft .page-break {
+        zoom: expression(this.runtimeStyle.zoom="1", this.insertBefore(document.createElement("i"), this.firstChild).className="ie-after");
+      }
+      .draft #AccountsHeader:after,
+      .draft .page-break:after,
+      .draft .page:after {
+        content: "Draft";
+        color: #888;
+        display: block;
+        font-size: 128px;
+        left: 50%;
+        line-height: 1em;
+        margin: -64px 0 0 -210px;
+        opacity: 0.5;
+        position: absolute;
+        text-transform: uppercase;
+        top: 50%;
+        -moz-transform: rotate(-30deg);
+        -webkit-transform: rotate(-30deg);
+        -o-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+        z-index: 5;
+      }
+      .draft #AccountsHeader .ie-after,
+      .draft .page .ie-after,
+      .draft .page-break .ie-after {
+        color: #888;
+        display: block;
+        filter: alpha(opacity=50);
+        font-size: 128px;
+        left: 50%;
+        line-height: 1em;
+        margin: -64px 0 0 -210px;
+        position: absolute;
+        text-transform: uppercase;
+        top: 50%;
+        z-index: 5;
+        zoom: expression(this.runtimeStyle.zoom="1", this.innerHTML = "DRAFT");
+      }
+      .table-margin-bottom-spacing {
+        margin-bottom: 12px;
+      }
+      .debit,
+      .negative {
+        white-space: nowrap;
+      }
+      * {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="page">
+
+        <div id="CompanyRecordHeader" class="page margin-xx-large">
+          <div class="header">
+            <h1 class="text--center">
+              The Company Record for:
+              <br/>
+              THE GIRLS&#39; DAY SCHOOL TRUST
+              <br/>
+              00006400
+            </h1>
+
+            <h2 class="text--center">
+              Created: 01/05/2019 09:28:01
+            </h2>
+          </div>
+          <h2 class="text--center margin-large">
+            Companies House does not verify the accuracy of the information filed.
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+
+      0
+      <div id="CompanyRegisterInfoHeader" class="page margin-xx-large">
+        <div class="header">
+          <h1 class="text--center">
+            Company Register Information
+            <br/>
+          </h1>
+        </div>
+
+        <table>
+          <tr>
+            <td>Company Number:</td>
+            <td>00006400</td>
+          </tr>
+          <tr>
+            <td>Company Name:</td>
+            <td>THE GIRLS&#39; DAY SCHOOL TRUST</td>
+          </tr>
+
+          <tr>
+            <td>Registered Office:</td>
+            <td>
+
+              100 Rochester Row
+              <br>
+
+              London
+              <br>
+
+              SW1P 1JP
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>Company Type:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Country of Origin:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Status:</td>
+            <td>
+              Liquidation</td>
+
+          </tr>
+          <tr>
+            <tr>
+              <td>Nature Of Business (SIC):</td>
+              <td>[map[sic_codes:85100 sic_codes_description:Pre-primary education] map[sic_codes:85200 sic_codes_description:Primary education] map[sic_codes:85310 sic_codes_description:General secondary education]]</tr>
+              <tr>
+                <td>Number Of Charges:</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-weight:bold">
+                    <h1>Previous Names</h1></span></td>
+              </tr>
+              <tr>
+
+                <td>
+                  <span style="font-weight:bold">Date of Change</span></td>
+                <td>
+                  <h1>Previous Name</h1>
+                </td>
+                <tr>
+                  <td>01-September-2003</td>
+                  <td>THE GIRLS&#39; DAY SCHOOL TRUST (1872)</td>
+                </tr>
+                <tr>
+                  <td>28-April-1998</td>
+                  <td>THE GIRLS&#39; PUBLIC DAY SCHOOL TRUST (1872)</td>
+                </tr>
+                <tr>
+                  <td>25-August-1993</td>
+                  <td>GIRL&#39;S PUBLIC DAY SCHOOL TRUST(THE)</td>
+                </tr>
+
+                <br>
+                <tr>
+                  <td>
+                    <h1>Key Filing Dates</h1>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Accounting Reference Date:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Last Accounts Made Up To:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Next Accounts Due:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Last Confirmation Statement Date:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Next Confirmation Statement Due:</td>
+                  <td></td>
+                </tr>
+                <br>
+                <tr>
+                  <td>Last members list:</td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="page">
+
+            1
+            <div id="CompanyStatusDetailsHeader" class="page margin-xx-large">
+              <div class="header">
+                <h1 class="text--center">
+                  Company Status Details
+                  <br/>
+                </h1>
+              </div>
+
+              <br>
+
+              <p>
+                Status:
+              </p>
+
+              <br>
+
+              <table>
+                <tr>
+                  <td>Case Number:</td>
+                  <td>**case number**</td>
+                </tr>
+                <tr>
+                  <td>Case Type:</td>
+                  <td>**case type**</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>Appointment Date:</td>
+                  <td>**appointment date**</td>
+                </tr>
+
+                <p>
+                  other details dependent on company status - more info required</p>
+              </table>
+
+            </div>
+          </div>
+
+          <div class="page">
+
+            2
+            <div id="currentAppointmentsHeader" class="page margin-xx-large">
+              <div class="header">
+                <h1 class="text--center">
+                  Current Appointments
+                  <br/>
+                </h1>
+              </div>
+
+              <br>
+              <p>
+                <b>
+                  Number of current appointments :</b>
+              </p>
+
+              <br>
+
+              <table>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Appointed:</b>
+                  </td>
+                  <td></td>
+
+                  <td>
+                    <b>Date of Birth:</b>
+                    ></td>
+
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>
+                    <b>No. of appointments:</b>
+                  </td>
+                  <td>** number of appointments?? **</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Address:</b>
+                  </td>
+                  <td>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Country/State of Residence:</td>
+                  <td></td>
+                </tr>
+
+              </table>
+
+            </div>
+
+            <div class="page">
+
+              3
+              <div id="pscAppointmentsHeader" class="page margin-xx-large">
+                <div class="header">
+                  <h1 class="text--center">
+                    PSC Appointments ?
+                    <br/>
+                  </h1>
+                </div>
+
+                <br>
+                <p>
+                  <b>
+                    Number of current psc appointments :</b>
+                  ** NUMBER OF CURRENT PSC APPOINTMENTS **</p>
+
+                <br>
+
+                <p>
+                  ADD LIST OF PSC APPOINTMENTS</p>
+
+              </div>
+
+              <div class="page">
+
+                4
+                <div id="mortgageChargeHeader" class="page margin-xx-large">
+                  <div class="header">
+                    <h1 class="text--center">
+                      Mortgage Charge Details
+                      <br/>
+                    </h1>
+                  </div>
+
+                  <br>
+                  <p>
+                    <b>
+                      Number of Charges :</b>
+                    ** NUMBER OF CHARGES **</p>
+
+                  <br>
+
+                  <p>
+                    ADD LIST OF CHARGES</p>
+
+                </div>
+
+                <div class="page">
+
+                  5
+                  <div id="filingHistoryHeader" class="page margin-xx-large">
+                    <div class="header">
+                      <h1 class="text--center">
+                        Recent Filing History
+                        <br/>
+                      </h1>
+                    </div>
+
+                    <br>
+                    <p>
+                      <b>
+                        Documents filed since :</b>
+                    </p>
+
+                    <table>
+                      <tr></tr>
+                      <tr>
+                        <td>
+                          <b>DATE:</b>
+                        </td>
+                        <td>
+                          <b>FORM:</b>
+                        </td>
+                        <td>
+                          <b>DESCRIPTION:</b>
+                        </td>
+                      </tr>
+
+                      <br>
+
+                      <p>
+                        **excludes share allotment documents????</p>
+
+                    </table>
+                  </div>
+
+                </body>
+              </html>

@@ -518,3 +518,16 @@ ol.example-icon-list {
   padding: 0.5em;
   margin: 1em 0;
 }
+
+.secondary-button {
+  background-color: govuk-colour("grey-3");
+  color: govuk-colour("black") !important;
+  box-shadow: 0 2px 0 govuk-colour("grey-2");
+
+  &:focus,
+  &:hover {
+    background-color: govuk-colour("grey-2");
+    color: govuk-colour("black");
+    box-shadow: 0 2px 0 govuk-colour("grey-1");
+  }
+}

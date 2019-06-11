@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  A DEMO COMPANY LIMITED - Overview (free company information from Companies House)
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+
+    <p style="font-size:16px; padding:10px 0 8px; margin-bottom:0; border-bottom: 1px solid #bfc1c3;">
+      Companies House does not verify the accuracy of the information filed
+    </p>
+
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li>
+          <a href="javascript:void(0)" id="user-signin">Sign in / Register</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="govuk-main-wrapper govuk-body">
+
+      <form id="search" action="results.html" method="get" accept-charset="utf-8" role="search" class="search-header js-search-hash">
+        <div class="searchfield search-bar-active">
+          <input type="search" autocomplete="off" name="q" id="site-search-text" placeholder="Search for a company or officer" autofocus="autofocus" class="js-search-focus govuk-input "/>
+          <a href="#" id="search-submit" class="search-submit enable-view2 govuk-button govuk-button-search">Search</a>
+        </div>
+      </form>
+
+      <div class="company-header">
+        <p class="govuk-heading-xl" id="company-name">
+          <span class="uppercase">A TEST COMPANY LTD
+            <!--{{ data['company-name-for-testing'] }}--></span></p>
+        <p id="company-number">Company number
+          <strong>{{ data['company-number'] }}</strong>
+        </p>
+        <div id="action-buttons">
+          <a id="" class="govuk-button" href="javascript:void(0)">Follow this company</a>
+          <a id="file-for-this-company" class="govuk-button" href="chs-login-page-cics">File for this company</a>
+          <!-- <a id="" class="button" href="javascript:void(0)">Download all this company's data</a>-->
+        </div>
+      </div>
+
+      <div class="section-tabs js-tabs">
+        <ul>
+          <li>
+            <h1>
+              <a href="javascript:void(0)" id="company-overview-tab">
+                <span class="govuk-visually-hidden">Company
+                </span>Overview<span class="govuk-visually-hidden">
+                  for A TEST COMPANY (01234567)</span></a>
+            </h1>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="filing-history-tab">Filing history<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="people-tab">People<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="charges-tab">Charges<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="insolvency-tab">Insolvency<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="registers-tab">Registers<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+          <li class="active">
+            <a href="javascript:void(0)" id="all-tab" class="download-tab">Download<span class="govuk-visually-hidden">
+                for A DEMO COMPANY LIMITED (01234567)</span></a>
+          </li>
+        </ul>
+      </div>
+      <p>
+        Download all company information
+      </p>
+      <a class="govuk-button secondary-button" href="example-company-report" target="_blank">Download report
+        <span class="govuk-visually-hidden">link opens in new tab/window</span></a>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
