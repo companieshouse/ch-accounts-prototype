@@ -430,8 +430,9 @@ ol.example-icon-list {
       color: govuk-colour("white");
     }
 
+    &:focus,
     &:hover {
-      color: govuk-colour("grey-3");
+      color: govuk-colour("grey-2");
     }
 
     &.secondary-customer-insights {
@@ -452,8 +453,9 @@ ol.example-icon-list {
       color: govuk-colour("white");
     }
 
+    &:focus,
     &:hover {
-      color: govuk-colour("grey-3");
+      color: govuk-colour("grey-2");
     }
 
     &.secondary-customer-insights {
@@ -485,6 +487,11 @@ ol.example-icon-list {
   .govuk-details__summary,
   span {
     color: govuk-colour("white");
+
+    &:focus,
+    &:hover {
+      color: govuk-colour("grey-2");
+    }
   }
 
   div {
@@ -497,8 +504,9 @@ ol.example-icon-list {
       color: govuk-colour("white");
     }
 
+    &:focus,
     &:hover {
-      color: govuk-colour("grey-3");
+      color: govuk-colour("grey-2");
     }
   }
 }
