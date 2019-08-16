@@ -527,6 +527,11 @@ ol.example-icon-list {
   margin: 1em 0;
 }
 
+.all-tab {
+  color: govuk-colour("white") !important;
+  background-color: $govuk-link-colour !important;
+}
+
 .secondary-button {
   background-color: govuk-colour("grey-3");
   color: govuk-colour("black") !important;
