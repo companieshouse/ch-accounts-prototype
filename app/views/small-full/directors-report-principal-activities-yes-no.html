@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+
+  Do the directors report in your prepared accounts include a 'principal activities of the company' note?
+
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/directors-report-principal-activities-note" method="get" class="form">
+
+            {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "principalactivitiesyesno",
+                  name: "principalactivitiesyesno",
+                  fieldset: {
+                    attributes : {
+                      'data-required': "data-required",
+                      'data-error': "Tell us if the directors report in your prepared accounts includes a 'principal activities of the company' note"
+                      },
+                    legend: {
+                      text: "  Do the directors report in your prepared accounts include a 'principal activities of the company' note?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      checked: checked('principalactivitiesyesno','yes')
+                    },
+                    {
+                      value: "no",
+                      text: "No",
+                      checked: checked('principalactivitiesyesno','no')
+                    }
+                  ]
+                }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

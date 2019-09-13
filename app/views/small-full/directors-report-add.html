@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Enter the name(s) of the directors who served in the accounting period you're filing for
+
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/chs-user-menu-logged-in.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Enter the name(s) of the directors who served in the accounting period you're filing for
+
+      </h1>
+
+      <div id="hidden-div" style="display:none;">
+        {{ govukTable({
+          caption: "Name",
+          captionClasses: "govuk-visually-hidden",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "Director's name"
+            },
+            {
+              text: "Action"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "John Smith"
+              },
+              {
+                html: '<a href="javascript:void(0)">Remove <span class="govuk-visually-hidden">Alan Jones</span></a>'
+              }
+            ]
+          ]
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Director's name"
+          },
+          id: "additional-company-number",
+          name: "additional-company-number",
+          classes: "govuk-!-width-one-half"
+        }) }}
+        <a href="javascript:void(0)" class="govuk-button secondary-button">Add director</a>
+
+      </div>
+      {{ govukInput({
+        label: {
+          text: "Director's name"
+        },
+          hint: {
+            text: "For example, John Smith"
+          },
+        id: "additional-company-number",
+        name: "additional-company-number",
+        classes: "govuk-!-width-one-half"
+      }) }}
+      <a href="javascript:void(0)" id="button-to-reveal-hidden-div" class="govuk-button secondary-button">Add director</a>
+      <p>
+        <a href="directors-report-company-secretary" class="govuk-button">Save and continue</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

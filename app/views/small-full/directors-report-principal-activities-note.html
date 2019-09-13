@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Enter your directors' report 'principal activities of the company' note
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/directors-report-political-yes-no" method="get" class="form">
+
+            {{ govukTextarea({
+              name: "directors-report-principal-activities-note",
+              id: "directors-report-principal-activities-note",
+              value: data['directors-report-principal-activities-note'],
+              label: {
+                text: "Enter your directors' report 'principal activities of the company' note",
+                classes: "govuk-label--l"
+              }
+
+            }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

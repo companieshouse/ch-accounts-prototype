@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+
+  Do the directors report in your prepared accounts include a 'political and charitable donations' note?
+
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/directors-report-political-note" method="get" class="form">
+
+            {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "politicalcharitableyesno",
+                  name: "politicalcharitableyesno",
+                  fieldset: {
+                    attributes : {
+                      'data-required': "data-required",
+                      'data-error': "Tell us if the directors report in your prepared accounts includes a 'political and charitable donations' note"
+                      },
+                    legend: {
+                      text: "  Do the directors report in your prepared accounts include a 'political and charitable donations' note?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      checked: checked('politicalcharitableyesno','yes')
+                    },
+                    {
+                      value: "no",
+                      text: "No",
+                      checked: checked('politicalcharitableyesno','no')
+                    }
+                  ]
+                }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

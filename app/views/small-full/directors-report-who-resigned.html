@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Which director(s) resigned during the accounting period?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/small-full/directors-report-when-resigned" method="get" class="form">
+
+            {{ govukCheckboxes({
+              idPrefix: "directors-report-started",
+              name: "directors-report-started",
+              fieldset: {
+                legend: {
+                  text: "Which director(s) resigned during the accounting period?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: "Select all that apply"
+              },
+              items: [
+                {
+                  value: "johnsmith",
+                  text: "John Smith"
+                },
+                {
+                  value: "davidedwards",
+                  text: "David Edwards"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+                  text: "Save and continue"
+                }) }}
+          </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

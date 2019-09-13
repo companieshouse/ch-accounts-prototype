@@ -1,134 +1,81 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-Directors' report
+  Directors' report
 {% endblock %}
-
 {% block main %}
 
-<style type="text/css">
-.left-indent {margin-left:3em}
-</style>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
-<main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
+    <main class="govuk-main-wrapper" id="main-content" role="main">
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/small-full/directors-report-add" method="get" class="form">
 
+            <h1 class="govuk-heading-l">Directors' report</h1>
 
+            <h2 class="govuk-heading-m">Directors at the end of the period</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>John Edwards</li>
+              <li>David Smith</li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <h2 class="govuk-heading-m">Directors appointed during the period</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>David Smith appointed 3 April 2019</li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <h2 class="govuk-heading-m">Directors resigned during the period</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Lisa Smith resigned 3 April 2019</li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <h2 class="govuk-heading-m">Company secretary</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Jane Edwards</li>
+            </ul>
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-{% include 'includes/error.html' %}
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "directorsreport1",
+              name: "directorsreport1",
+              fieldset: {
+                legend: {
+                  text: "Are these details correct?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--l  govuk-!-padding-top-7"
+                }
+              },
 
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No, I need to make changes"
+                }
+              ]
+            }) }}
 
-  <div class="text">
+            {{ govukButton({
+                  text: "Save and continue"
+                }) }}
+          </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
-    <h1 class="govuk-heading-l"><span class="circle circle-step-large">1</span> Directors' report</h1>
-
-  </div><!--text-->
-
-    <form action="/small-full/profit-and-loss-account" method="get" class="form">
-
-      <div class="left-indent">
-
-        <table class="check-your-answers">
-          <thead>
-            <tr>
-              <th colspan="3"><h2 class="govuk-heading-m">Directors at the end of the period</h2></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Smith</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>David Smith</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-
-          <thead>
-            <tr>
-              <th colspan="3"><h2 class="govuk-heading-m">Directors appointed during the period</h2></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>David Smith</td>
-              <td>appointed 3 April 2017</td>
-              <td></td>
-            </tr>
-          </tbody>
-
-          <thead>
-            <tr>
-              <th colspan="3"><h2 class="govuk-heading-m">Directors resigned during the period</h2></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lisa Smith</td>
-              <td>resigned 3 April 2017</td>
-              <td></td>
-            </tr>
-          </tbody>
-
-          <thead>
-          <tr>
-            <th colspan="3"><h2 class="govuk-heading-m">Company secretary</h2></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Arthur Smith</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 class="govuk-heading-m">Are these details correct?</h2>
-
-        <fieldset class="" data-required="" data-error="Please confirm if the directors' report details are correct">
-              <legend class="visually-hidden">Are the directors' report details correct?</legend>
-              <div class="form-group">
-
-              <label class="block-label selection-button-radio" for="directorsreport1yesnotes">
-                <input id="directorsreport1yesnotes" name="directorsreport1" value="Yesnotes" type="radio">
-                Yes
-              </label>
-              <!--<label class="block-label selection-button-radio" for="directorsreport1yesnonotes">
-                <input id="directorsreport1yesnonotes" name="directorsreport1" value="Yesnonotes" type="radio">
-                Yes  - I don't need to include directors' report notes
-              </label>-->
-              <label class="block-label selection-button-radio" for="directorsreport1no">
-                <input id="directorsreport1no" name="directorsreport1" value="No" type="radio">
-                No - I need to make changes
-                </label>
-              </div><!--form-group-->
-
-            </fieldset>
-
-
-                <div class="form-group">
-                  <input type="submit" class="button" value="Save and continue" id="">
-                </div>
-
-            </form>
-          </div><!--left-indent-->
-
-
-</main>
 {% endblock %}

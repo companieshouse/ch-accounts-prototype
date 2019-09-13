@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Did any of these directors resign during the accounting period?
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="/small-full/directors-report-who-resigned" method="get" class="form">
+
+            <h1 class="govuk-heading-l">Directors</h1>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>John Smith</li>
+              <li>David Edwards</li>
+            </ul>
+
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "directorsreportresign",
+              name: "directorsreportresign",
+              fieldset: {
+                legend: {
+                  text: "Did any of these directors resign during the accounting period?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--l  govuk-!-padding-top-7"
+                }
+              },
+
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes - at least one these directors resigned during the accounting period"
+                },
+                {
+                  value: "no",
+                  text: "No - none of directors resigned during the accounting period"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+                  text: "Save and continue"
+                }) }}
+          </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

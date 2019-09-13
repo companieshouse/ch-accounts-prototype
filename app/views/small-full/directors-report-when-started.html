@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  File full accounts
+  When was John Smith appointed?
 {% endblock %}
 {% block main %}
 
@@ -13,49 +13,34 @@
     href: "javascript:history.back()"
   }) }}
 
-    {% include 'includes/error.html' %}
-
     <main class="govuk-main-wrapper" id="main-content" role="main">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="/small-full/profit-loss-yes-no" method="get" class="form">
+          <form action="/small-full/directors-report-resign" method="get" class="form">
 
-            {{ govukRadios({
-                classes: "govuk-radios--inline",
-                idPrefix: "smallfulldirectorsreport",
-                name: "smallfulldirectorsreport",
+            {{ govukDateInput({
+                id: "first-director-appointed",
+                namePrefix: "first-director-appointed",
                 fieldset: {
                   legend: {
-                    text: "Do your prepared accounts include a directors' report?",
+                    text: "When was John Smith appointed?",
                     isPageHeading: true,
-                    classes: "govuk-fieldset__legend--l",
-                    id: "main-content"
+                    classes: "govuk-fieldset__legend--l"
                   }
                 },
-                items: [
-                  {
-                    value: "yes",
-                    text: "Yes"
-                  },
-                  {
-                    value: "no",
-                    text: "No"
-                  }
-                ]
+                hint: {
+                  text: "For example, 12 02 2019"
+                }
               }) }}
-
             {{ govukButton({
-                text: "Save and continue"
-              }) }}
-
+                  text: "Save and continue"
+                }) }}
           </form>
-
         </div>
         <!--govuk-grid-row-->
       </div>
       <!--govuk-grid-column-two-thirds-->
-
     </main>
   </div>
   <!---govuk-width-container-->
