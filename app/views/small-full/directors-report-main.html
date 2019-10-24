@@ -1,0 +1,427 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Directors' report
+{% endblock %}
+{% block main %}
+  <script type="text/javascript" src="/public/javascripts/require.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/public/javascripts/radio-buttons.js"></script>
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/chs-user-menu-logged-in.html" %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 id="page-title-heading" class="govuk-heading-l">
+            Directors' report
+          </h1>
+          <form action="/small-full/directors-report-principal-activities-yes-no" method="get" class="form">
+
+            <h2 id="page-subheading" class="govuk-heading-m">
+              Enter the name(s) of the directors who served in the accounting period you're filing for
+            </h2>
+            <span id="help-text" class="govuk-hint">This includes directors who were appointed or resigned during the accounting period.</span>
+
+            <!-- TABLE OF DIRECTORS -->
+            <div id="directors"></div>
+
+            <!-- DIRECTORS NAME -->
+            <h2 id="page-subheading" class="govuk-heading-m">
+              Director's name
+            </h2>
+            <span class="govuk-error-message" id="name-error" style="display: none;">Enter the director's name</span>
+            <input class="govuk-input" id="directorToAdd" type="text">
+            ​
+
+            <!-- APPOINTED ON -->
+            <div class="govuk-form-group" id="appointedOn">
+              ​
+              <fieldset class="govuk-fieldset" style="margin-bottom:-80px;">
+                ​
+                <h2 class="govuk-heading-m">
+                  Was the director appointed during the period?
+                </h2>​
+                <div class="govuk-radios govuk-radios--inline" data-module="radios">
+                  ​<span class="govuk-error-message" id="wasDirectorAppointed-error" style="display: none;">Tell us if the director was appointed in the accounting period</span>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input show-text" id="wasDirectorAppointedYesButton" type="radio" value="1" name="wasDirectorAppointed" data-target-text-field="appointed-date-fields">
+                    ​
+                    <label class="govuk-label govuk-radios__label" for="wasDirectorAppointedYesButton" id="wasDirectorAppointedYesButton-label">Yes</label>
+                  </div>​
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="wasDirectorAppointedNoButton" type="radio" value="0" name="wasDirectorAppointed" data-target-text-field="appointed-date-fields">
+                    ​
+                    <label class="govuk-label govuk-radios__label" for="wasDirectorAppointedNoButton" id="wasDirectorAppointedNoButton-label">No</label>
+                  </div>
+                </div>​
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="appointed-date-fields" style="display: block;">
+                  ​
+                  <div class="govuk-form-group">
+                    <div class="govuk-date-input">
+                      <label class="govuk-label" id="director-appinted-label" for="turnoverPolicyDetails">​Enter the date the director was appointed
+                        <span id="appointed-hint" class="govuk-hint">For example, 12 02 2019</span></label>
+                      <span class="govuk-error-message" id="appointedDate-error" style="display: none;">Enter a valid date</span>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="director-appointed-day">Day</label>
+                          ​
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-appointed-day" name="director-appointed-day" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="director-appointed-month">Month</label>
+                          ​
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-appointed-month" name="director-appointed-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="director-appointed-year">Year</label>
+                          ​
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="director-appointed-year" name="director-appointed-year" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>​
+                    </div>​ ​
+                  </div>
+                </div>​
+              </fieldset>​
+            </div>​
+
+            <!-- RESIGNED ON -->
+            <div class="govuk-form-group" id="resignedOn">
+              ​
+              <fieldset class="govuk-fieldset" style="margin-bottom:-50px;">
+                ​
+                <h2 class="govuk-heading-m">
+                  Did the director resign during the period?
+                </h2>​
+                <!-- Radio Buttons -->
+                <div class="govuk-radios govuk-radios--inline" data-module="radios">
+                  ​<span class="govuk-error-message" id="didDirectorResign-error" style="display: none;">Tell us if the director resigned in the accounting period</span>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input show-text" id="didDirectorResignYesButton" type="radio" value="1" name="didDirectorResign" data-target-text-field="resigned-date-fields">
+                    ​
+                    <label class="govuk-label govuk-radios__label" for="didDirectorResignYesButton" id="didDirectorResignYesButton-label">Yes</label>
+                  </div>​
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="didDirectorResignNoButton" type="radio" value="0" name="didDirectorResign" data-target-text-field="resigned-date-fields">
+                    ​
+                    <label class="govuk-label govuk-radios__label" for="didDirectorResignNoButton" id="didDirectorResignNoButton-label">No</label>
+                  </div>
+                </div>​
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="resigned-date-fields" style="display: block;">
+                  ​
+                  <div class="govuk-form-group">
+                    <div class="govuk-date-input">
+                      <label class="govuk-label" id="director-appinted-label" for="turnoverPolicyDetails">​Enter the date the director resigned
+                        <span id="resigned-hint" class="govuk-hint">For example, 12 02 2019</span></label>
+                      <span class="govuk-error-message" id="resignationDate-error" style="display: none;">Enter a valid date</span>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="director-resigned-day">Day</label>
+                          ​
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-resigned-day" name="director-resigned-day" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="director-resigned-month">Month</label>
+                          ​
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-resigned-month" name="director-resigned-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="director-resigned-year">Year</label>
+                          ​
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="director-resigned-year" name="director-resigned-year" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>​
+                    </div>​ ​
+                  </div>
+                </div>​
+              </fieldset>​
+            </div>​
+
+            <div class="govuk-form-group" style="margin-top: -10px; margin-bottom: 60px;">
+              <a href="javascript:void(0)" onclick="addDirector()" class="govuk-button secondary-button">Add director</a>
+            </div>
+
+            <!-- TABLE OF SECRETARIES -->
+            <div id="secretaries"></div>
+
+            <!-- SECRETARY NAME -->
+            <h2 id="page-subheading" class="govuk-heading-m">
+              Add company secretary (optional)
+            </h2>
+            <span class="govuk-error-message" id="secretaryName-error" style="display: none;">Add company secretary (optional)</span>
+            <input class="govuk-input" id="secretaryToAdd" type="text">
+            ​
+
+            <div class="govuk-form-group" style="margin-top: 20px; margin-bottom: 60px;">
+              <a href="javascript:void(0)" onclick="addSecretary()" class="govuk-button secondary-button">Add company secretary</a>
+            </div>
+
+            <!-- SAVE AND CONTINUE -->
+            <div class="govuk-form-group">
+              <input id="next-button" class="govuk-button" type="submit" role="button" value="Save and continue">
+            </div>
+          </form>
+
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Default data to pre-populate the page
+      let directorsData = [
+        //{    name: "Tom Jones",    appointed_on: "12 Jun 2019"  }, {    name: "Gareth Thomas",    resigned_on: "1 May 2019"  }
+      ]
+
+      let secretaryData = [
+        //  'John'
+      ]
+
+      // Hack-y workaround, without using moment or a similar js library, javascript doesn't handle dates well!
+      const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ]
+
+      function removeDirector(index) {
+        // Pop director off the stack
+        directorsData.splice(index, 1);
+        populateDirectorsTable();
+      }
+
+      function addDirector() {
+
+        clearErrors();
+
+        const isValid = validateDirectorToAdd();
+
+        if (isValid) {
+
+          let appointed_on;
+          if ($('#wasDirectorAppointedYesButton').prop('checked') === true) {
+            appointed_on = parseInt($('#director-appointed-day').val()).toString() + ' ' + months[parseInt($('#director-appointed-month').val()) - 1] + ' ' + $('#director-appointed-year').val();
+          }
+
+          let resigned_on;
+          if ($('#didDirectorResignYesButton').prop('checked') === true) {
+            resigned_on = parseInt($('#director-resigned-day').val()).toString() + ' ' + months[parseInt($('#director-resigned-month').val()) - 1] + ' ' + $('#director-resigned-year').val();
+          }
+
+          // Push new director onto the stack
+          directorsData.push({name: $('#directorToAdd').val(), appointed_on: appointed_on, resigned_on: resigned_on});
+
+          populateDirectorsTable();
+          clearDirectorForm();
+        }
+      }
+
+      // Remove any potential errors for a clean sheet
+      function clearErrors() {
+
+        $('#name-error').hide();
+        $('#directorToAdd').removeClass('govuk-input--error');
+        $('#wasDirectorAppointed-error').hide();
+        $('#appointedOn').removeClass('govuk-form-group--error');
+        $('#appointedDate-error').hide();
+        $('#director-appointed-day').removeClass('govuk-input--error');
+        $('#director-appointed-month').removeClass('govuk-input--error');
+        $('#director-appointed-year').removeClass('govuk-input--error');
+        $('#didDirectorResign-error').hide();
+        $('#resignedOn').removeClass('govuk-form-group--error');
+        $('#resignationDate-error').hide();
+        $('#director-resigned-day').removeClass('govuk-input--error');
+        $('#director-resigned-month').removeClass('govuk-input--error');
+        $('#director-resigned-year').removeClass('govuk-input--error');
+      }
+
+      function validateDirectorToAdd() {
+
+        let valid = true;
+
+        // Name empty
+        if (typeof $('#directorToAdd').val() === 'undefined' || $('#directorToAdd').val() === '') {
+          $('#name-error').show();
+          $('#directorToAdd').addClass('govuk-input--error');
+          valid = false;
+        }
+
+        // Neither radio button selected
+        if ($('#wasDirectorAppointedYesButton').prop('checked') === false && $('#wasDirectorAppointedNoButton').prop('checked') === false) {
+          $('#wasDirectorAppointed-error').show();
+          $('#appointedOn').addClass('govuk-form-group--error');
+          valid = false
+        } else if ($('#wasDirectorAppointedYesButton').prop('checked') === true) {
+          // Validate date if 'yes' radio selected
+          if (!isValidDate('director-appointed')) {
+            $('#appointedOn').addClass('govuk-form-group--error');
+            $('#appointedDate-error').show();
+            $('#director-appointed-day').addClass('govuk-input--error');
+            $('#director-appointed-month').addClass('govuk-input--error');
+            $('#director-appointed-year').addClass('govuk-input--error');
+            valid = false;
+          }
+        }
+
+        // Neither radio button selected
+        if ($('#didDirectorResignYesButton').prop('checked') === false && $('#didDirectorResignNoButton').prop('checked') === false) {
+          $('#didDirectorResign-error').show();
+          $('#resignedOn').addClass('govuk-form-group--error');
+          valid = false
+        } else if ($('#didDirectorResignYesButton').prop('checked') === true) {
+          // Validate date if 'yes' radio selected
+          if (!isValidDate('director-resigned')) {
+            $('#resignationDate-error').show();
+            $('#resignedOn').addClass('govuk-form-group--error');
+            $('#director-resigned-day').addClass('govuk-input--error');
+            $('#director-resigned-month').addClass('govuk-input--error');
+            $('#director-resigned-year').addClass('govuk-input--error');
+            valid = false;
+          }
+        }
+
+        return valid;
+      }
+
+      function isValidDate(field) {
+
+        // Any fields blank
+        if ($('#' + field + '-day').val() === '' || $('#' + field + '-month').val() === '' || $('#' + field + '-year').val() === '') {
+
+          return false;
+        } else {
+
+          // Construct date to ensure it's valid
+          let date = new Date($('#' + field + '-year').val() + '-' + $('#' + field + '-month').val() + '-' + $('#' + field + '-day').val());
+          return date instanceof Date && !isNaN(date);
+        }
+      }
+
+      // Remove all values to reset the form
+      function clearDirectorForm() {
+
+        $('#directorToAdd').val('');
+        $('#director-appointed-day').val('');
+        $('#director-appointed-month').val('');
+        $('#director-appointed-year').val('');
+        $('#appointed-date-fields').hide();
+        $('input[name="wasDirectorAppointed"]').prop('checked', false);
+        $('#director-resigned-day').val('');
+        $('#director-resigned-month').val('');
+        $('#director-resigned-year').val('');
+        $('#resigned-date-fields').hide();
+        $('input[name="didDirectorResign"]').prop('checked', false);
+      }
+
+      function populateDirectorsTable() {
+
+        let directorsTable = '';
+
+        // Construct table inline
+        if (directorsData.length > 0) {
+
+          directorsTable += '<table class="govuk-table"><thead class="govuk-table__head"><tr class="govuk-table__row"><th class="govuk-table__header" scope="col">Director\'s name</th><th class="govuk-table__header" scope="col">Appointed</th><th class="govuk-table__header" scop' +
+              'e="col">Resigned</th><th class="govuk-table__header" scope="col"></th></tr></thead><tbody class="govuk-table__body">';
+
+          for (let i = 0; i < directorsData.length; i++) {
+
+            directorsTable += '<tr class="govuk-table__row"><th class="govuk-table__header" scope="row">' + directorsData[i].name + '</th><td class="govuk-table__cell">' + (
+              typeof directorsData[i].appointed_on === 'undefined'
+                ? ''
+                : directorsData[i].appointed_on
+            ) + '</td><td class="govuk-table__cell">' + (
+              typeof directorsData[i].resigned_on === 'undefined'
+                ? ''
+                : directorsData[i].resigned_on
+            ) + '</td><td class="govuk-table__cell"><a href="javascript:void(0)" onclick="removeDirector(' + i + ')">Remove</a></td></tr>'
+          }
+
+          directorsTable += '</tbody></table>'
+        }
+
+        // Set the inner html of the 'directors' div
+        $('#directors').html(directorsTable);
+      }
+
+      function addSecretary() {
+
+        $('#secretaryName-error').hide();
+        $('#secretaryToAdd').removeClass('govuk-input--error');
+
+        if (typeof $('#secretaryToAdd').val() === 'undefined' || $('#secretaryToAdd').val() === '') {
+          $('#secretaryName-error').show();
+          $('#secretaryToAdd').addClass('govuk-input--error');
+        } else {
+          secretaryData.push($('#secretaryToAdd').val());
+          populateSecretaryTable();
+          $('#secretaryToAdd').val('');
+        }
+      }
+
+      function removeSecretary(index) {
+        // Pop director off the stack
+        secretaryData.splice(index, 1);
+        populateSecretaryTable();
+      }
+
+      function populateSecretaryTable() {
+
+        let secretaryTable = '';
+
+        // Construct table inline
+        if (secretaryData.length > 0) {
+
+          secretaryTable += '<table class="govuk-table"><thead class="govuk-table__head"><tr class="govuk-table__row"><th class="govuk-table__header" scope="col">Company secretary\'s name</th><th class="govuk-table__header" scope="col"></th></tr></thead><tbody class="govuk-tab' +
+              'le__body">';
+
+          for (let i = 0; i < secretaryData.length; i++) {
+
+            secretaryTable += '<tr class="govuk-table__row"><th class="govuk-table__header" scope="row">' + secretaryData[i] + '</th><td class="govuk-table__cell"><a href="javascript:void(0)" onclick="removeSecretary(' + i + ')">Remove</a></td></tr>'
+          }
+
+          secretaryTable += '</tbody></table>'
+        }
+
+        // Set the inner html of the 'secretaries' div
+        $('#secretaries').html(secretaryTable);
+      }
+
+      $(document).ready(function () {
+
+        populateDirectorsTable();
+        populateSecretaryTable();
+      })
+    </script>
+  </div>
+  <!--govuk-grid-row-->
+</div>
+<!--govuk-grid-column-two-thirds-->
+</main>
+</div>
+<!---govuk-width-container-->
+
+{% endblock %}

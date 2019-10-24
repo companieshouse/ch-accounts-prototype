@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase_banner_beta.html" %}
-    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+    {% include "includes/chs-user-menu-logged-in.html" %}
 
     {{ govukBackLink({
     text: "Back",
@@ -17,7 +17,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/profit-and-loss-account" method="get" class="form">
+          <form action="/small-full/check-your-answers-DR" method="get" class="form">
 
             {{ govukTextarea({
               name: "directors-report-additional-information-note",

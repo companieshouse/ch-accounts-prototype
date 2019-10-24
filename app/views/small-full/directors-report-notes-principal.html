@@ -1,59 +1,72 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Directors' report - principal activities of the company
+  Directors' report - principal activities of the company
 {% endblock %}
 
 {% block main %}
 
-<style type="text/css">
-.left-indent {margin-left:3em}
-</style>
+  <style type="text/css">
+    .left-indent {
+      margin-left: 3em;
+    }
+  </style>
 
-<main id="content" role="main" class="two-column-accounts">
-{% include "includes/phase_banner_beta.html" %}
+  <main id="content" role="main" class="two-column-accounts">
+    {% include "includes/phase_banner_beta.html" %}
 
-<nav class="content" role="navigation">
-  <ul id="navigation" class="mobile-hidden">
-    <li class="user" id="signed-in-user">jsmith@testcompany.co.uk: </li>
-    <li><a href="javascript:void(0)">Your details</a></li>
-    <li><a href="javascript:void(0)" id="recent_filings">Your filings</a></li>
-    <li><a href="javascript:void(0)" id="">Companies you follow</a></li>
-    <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
-  </ul>
-</nav>
+    <nav class="content" role="navigation">
+      <ul id="navigation" class="mobile-hidden">
+        <li class="user" id="signed-in-user">jsmith@testcompany.co.uk:
+        </li>
+        <li>
+          <a href="javascript:void(0)">Your details</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" id="recent_filings">Your filings</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" id="">Companies you follow</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" id="user-signout">Sign out</a>
+        </li>
+      </ul>
+    </nav>
 
+    <a id="back" class="link-back" href="javascript:history.back()">Back</a>
+    {% include 'includes/error.html' %}
 
+    <div class="text">
 
+      <h1 class="govuk-heading-l">
+        <span class="circle circle-step-large">1</span>
+        Directors' report
+        <span class="circle-subheading">Principal activities of the company</span></h1>
 
-<a id="back" class="link-back" href="javascript:history.back()">Back</a>
-{% include 'includes/error.html' %}
-
-
-  <div class="text">
-
-    <h1 class="govuk-heading-l"><span class="circle circle-step-large">1</span> Directors' report <span class="circle-subheading">Principal activities of the company</span></h1>
-
-
-        <div class="left-indent">
+      <div class="left-indent">
         <form action="/small-full/directors-report-notes-political" method="get" class="form">
-        <h2 class="govuk-heading-m">What were the principal activities of the company during the accounting period?</h2>
-        <details class="form-group">
-          <summary><span class="summary">What's this?</span></summary><span class="visuallyhidden">Fixed assets investments</span>
-          <div class="panel panel-border-narrow govuk-hint">
-            <p>For example: 'The company's principal activity during the period was the printing and distribution of newspapers.'</p>
-          </div>
-        </details>
+          <h2 class="govuk-heading-m">What were the principal activities of the company during the accounting period?</h2>
+          <details class="form-group">
+            <summary>
+              <span class="summary">What's this?</span></summary>
+            <span class="visuallyhidden">Fixed assets investments</span>
+            <div class="panel panel-border-narrow govuk-hint">
+              <p>For example: 'The company's principal activity during the period was the printing and distribution of newspapers.'</p>
+            </div>
+          </details>
 
-            <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+          <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
 
           <div class="accounts-row-spacer">
             <input type="submit" class="button" value="Save and continue" id="">
           </div>
 
         </form>
-      </div><!--left-indent-->
-    </div><!--text-->
+      </div>
+      <!--left-indent-->
+    </div>
+    <!--text-->
 
-</main>
+  </main>
 {% endblock %}
