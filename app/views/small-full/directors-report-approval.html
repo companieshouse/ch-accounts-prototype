@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Approve your directors report
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/check-your-answers-DR" method="get" class="form">
+            {% set myHTML %}
+            <p class="govuk-hint">For example, 31 3 2019</p>
+            {% endset -%}
+
+            {{ govukRadios({
+              idPrefix: "who-approved-directors-report",
+              name: "who-approved-directors-report",
+              fieldset: {
+                legend: {
+                  text: "Who approved the directors' report?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+                {
+                  value: "john-smith",
+                  text: "John Smith"
+                },
+                {
+                  value: "jane-smith",
+                  text: "Jane Smith"
+                },
+                {
+                  value: "lisa-smith",
+                  text: "Lisa Smith"
+                }
+              ]
+            }) }}
+
+            {{ govukDateInput({
+                id: "date-approved-cic-report",
+                name: "date-approved-cic-report",
+                fieldset: {
+                  legend: {
+                    text: "When was the directors' report approved?",
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                    html: myHTML
+                }
+
+              }) }}
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
+
+          <p>
+            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
+          </p>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
