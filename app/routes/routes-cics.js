@@ -656,4 +656,42 @@ module.exports = function ( router ) {
 	} );
 
 
+	//Directors report
+	//Does the directors' report in your prepared accounts include information on the principal activities of the company?
+	router.get( '/small-full/directors-report-principal-activities-note', function ( req, res ) {
+		var principalactivitiesyesno = req.query.principalactivitiesyesno;
+		if ( principalactivitiesyesno == "no" ) {
+			res.redirect( "/small-full/directors-report-political-yes-no" );
+		} else {
+			res.render( 'small-full/directors-report-principal-activities-note' );
+		}
+	} );
+	//Does the directors' report in your prepared accounts include information on political and charitable donations?
+	router.get( '/small-full/directors-report-political-note', function ( req, res ) {
+		var politicalcharitableyesno = req.query.politicalcharitableyesno;
+		if ( politicalcharitableyesno == "no" ) {
+			res.redirect( "/small-full/directors-report-disabled-yes-no" );
+		} else {
+			res.render( 'small-full/directors-report-political-note' );
+		}
+	} );
+	//Does the directors' report in your prepared accounts include a company policy on disabled employees?
+	router.get( '/small-full/directors-report-disabled-note', function ( req, res ) {
+		var disabledemployeesyesno = req.query.disabledemployeesyesno;
+		if ( disabledemployeesyesno == "no" ) {
+			res.redirect( "/small-full/directors-report-additional-yes-no" );
+		} else {
+			res.render( 'small-full/directors-report-disabled-note' );
+		}
+	} );
+	//Does the directors' report in your prepared accounts include additional information?
+	router.get( '/small-full/directors-report-additional-note', function ( req, res ) {
+		var directorsreportadditionalinformationyesno = req.query.directorsreportadditionalinformationyesno;
+		if ( directorsreportadditionalinformationyesno == "no" ) {
+			res.redirect( "/small-full/directors-report-approval" );
+		} else {
+			res.render( 'small-full/directors-report-additional-note' );
+		}
+	} );
+
 }
