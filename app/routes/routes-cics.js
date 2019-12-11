@@ -688,7 +688,7 @@ module.exports = function ( router ) {
 	router.get( '/small-full/directors-report-additional-note', function ( req, res ) {
 		var directorsreportadditionalinformationyesno = req.query.directorsreportadditionalinformationyesno;
 		if ( directorsreportadditionalinformationyesno == "no" ) {
-			res.redirect( "/small-full/directors-report-approval" );
+			res.redirect( "/small-full/check-your-answers-DR" );
 		} else {
 			res.render( 'small-full/directors-report-additional-note' );
 		}
