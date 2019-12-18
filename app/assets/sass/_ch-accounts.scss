@@ -981,5 +981,10 @@ img.card-image {
 }
 
 .app-check-your-answers--very-long .app-check-your-answers__question {
-  width: 100% !important;
+  width: auto;
+}
+@include govuk-media-query(desktop) {
+  .app-check-your-answers--very-long .app-check-your-answers__question {
+    width: 100% !important;
+  }
 }
