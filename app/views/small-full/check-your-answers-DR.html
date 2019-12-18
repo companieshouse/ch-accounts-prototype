@@ -21,76 +21,77 @@
           </h1>
 
           <!-- only add a heading for a list if there is more than one list -->
+
           <h2 class="govuk-heading-m">
             Directors who served in the accounting period
           </h2>
 
-          <div id="directors">
-            <table class="govuk-table">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col">Director's name</th>
-                  <th class="govuk-table__header" scope="col">Appointed</th>
-                  <th class="govuk-table__header" scope="col">Resigned</th>
-                  <th class="govuk-table__header" scope="col">&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="row">John Smith</th>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell">
-                    <a href="javascript:void(0)" onclick="removeDirector(0)">Change</a>
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="row">Jane Smith</th>
-                  <td class="govuk-table__cell">1 Jun 2019</td>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell">
-                    <a href="javascript:void(0)" onclick="removeDirector(1)">Change</a>
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="row">Lisa Smith</th>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell">1 Jun 2019</td>
-                  <td class="govuk-table__cell">
-                    <a href="javascript:void(0)" onclick="removeDirector(2)">Change</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <dl class="app-check-your-answers app-check-your-answers--very-long">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                John Smith
+              </dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="/cics/general-description">
+                  Change<span class="govuk-visually-hidden">
+                    John Smith (Director)
+                  </span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Lisa Smith
+                <span class="govuk-body govuk-!-font-weight-regular">(resigned 31 August 2019)</span>
+              </dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="/cics/general-description">
+                  Change<span class="govuk-visually-hidden">
+                    Lisa Smith (Director)
+                  </span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Jane Taylor
+                <span class="govuk-body govuk-!-font-weight-regular">(appointed 31 August 2019)</span>
+              </dt>
+
+              <dd class="app-check-your-answers__change">
+                <a href="/cics/general-description">
+                  Change<span class="govuk-visually-hidden">
+                    Jane Taylor Smith (Director)
+                  </span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
 
           <h2 class="govuk-heading-m">
             Company secretary
           </h2>
 
-          <div id="directors">
-            <table class="govuk-table">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col">Secretary's name</th>
-                  <th class="govuk-table__header" scope="col">&nbsp;</th>
-                  <th class="govuk-table__header" scope="col">&nbsp;</th>
-                  <th class="govuk-table__header" scope="col">&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="row">John Smith</th>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell">
-                    <a href="javascript:void(0)" onclick="removeDirector(0)">Change</a>
-                  </td>
-                </tr>
+          <dl class="app-check-your-answers app-check-your-answers--very-long">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                John Smith
+              </dt>
+              <dd class="app-check-your-answers__change">
+                <a href="/cics/general-description">
+                  Change<span class="govuk-visually-hidden">
+                    John Smith (Company Secretary)
+                  </span>
+                </a>
+              </dd>
+            </div>
 
-              </tbody>
-            </table>
-          </div>
+          </dl>
 
           <h2 class="govuk-heading-m">
             Directors' report notes
