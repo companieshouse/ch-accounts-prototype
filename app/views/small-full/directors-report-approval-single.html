@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Approve your directors report
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    {% include 'includes/error.html' %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/small-full/profit-and-loss-account" method="get" class="form">
+            {% set myHTML %}
+            <p class="govuk-hint">For example, 31 3 2019</p>
+            {% endset -%}
+
+            <h2 class="govuk-heading-l">
+              Officer who approved the directors' report
+            </h2>
+
+            <dl class="app-check-your-answers app-check-your-answers--very-long">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  John Smith
+                </dt>
+                <dd class="app-check-your-answers__change">
+                  <a href="javascript:void(0)">
+                    Change<span class="govuk-visually-hidden">
+                      John Smith (Officer who approved the directors' report)
+                    </span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+            {{ govukDateInput({
+                id: "date-approved-cic-report",
+                name: "date-approved-cic-report",
+                fieldset: {
+                  legend: {
+                    text: "When was the directors' report approved?",
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                hint: {
+                    html: myHTML
+                }
+
+              }) }}
+
+            {{ govukButton({
+                text: "Save and continue"
+              }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
