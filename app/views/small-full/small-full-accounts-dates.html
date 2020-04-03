@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Are these the correct company account dates?
+  Confirm your company account dates
 {% endblock %}
 {% block main %}
 
@@ -20,52 +20,38 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="/small-full/small-full-balance-sheet-choose" method="GET">
-
-            <h1 class="govuk-heading-l">
-              <!--<span class="circle circle-step-large">1</span>-->
-              Are these the correct company account dates?</h1>
-            <p>You need to file accounts for the period:</p>
-            <span class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">1 April 2017 to 31 March 2018</span>
-            <p class="govuk-hint">This should match the dates on your prepared accounts.</p>
+          <form action="/small-full/small-full-accounts-dates-choose" method="GET">
 
             {{ govukRadios({
                 classes: "govuk-radios--inline",
-                idPrefix: "changecompanydates",
-                name: "changecompanydates",
+                idPrefix: "confirm-accounts-dates-2020",
+                name: "confirm-accounts-dates-2020",
                 fieldset: {
-                  attributes : {
-                    'data-required': "data-required",
-                    'data-error': "Tell us if you want to change your company account dates"
-                    },
                   legend: {
-                    text: "Do you want to change your company account dates?",
-                    isPageHeading: false,
-                    classes: "govuk-visually-hidden"
+                    text: "Have the accounts been prepared for the period of 1 April 2019 to 31 March 2020?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
                   }
+                },
+                hint: {
+                  text: "A company can file its accounts within 7 days either side of its accounting period end date. This will not change the end date of its future accounting periods."
                 },
                 items: [
                   {
                     value: "yes",
-                    text: "Yes",
-                    checked: checked('changecompanydates','yes')
+                    text: "Yes"
                   },
                   {
                     value: "no",
-                    text: "No",
-                    checked: checked('changecompanydates','no')
+                    text: "No"
                   }
                 ]
-              }) }}
+}) }}
 
             {{ govukButton({
               text: "Save and continue"
             }) }}
           </form>
-
-          <p>
-            <a href="javascript:void(0)" class="govuk-link">Sign out</a>
-          </p>
 
         </div>
         <!--govuk-grid-row-->

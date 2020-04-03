@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Choose your company account dates
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+    <!--{% include "includes/chs-user-menu-logged-in.html" %}-->
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="" method="GET">
+
+            <h1 class="govuk-heading-l">Choose your company account date</h1>
+
+            <div class="govuk-radios govuk-radios">
+
+              <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-one-half">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="24-march-2020" type="radio" name="change-date" value="24 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="24-march-2020">
+                      24 March 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="25-march-2020" type="radio" name="change-date" value="25 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="25-march-2020">
+                      25 March 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="26-march-2020" type="radio" name="change-date" value="26 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="26-march-2020">
+                      26 March 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="27-march-2020" type="radio" name="change-date" value="27 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="27-march-2020">
+                      27 March 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="28-march-2020" type="radio" name="change-date" value="28 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="28-march-2020">
+                      28 March 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="29-march-2020" type="radio" name="change-date" value="29 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="29-march-2020">
+                      29 March 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="30-march-2020" type="radio" name="change-date" value="30 March 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="30-march-2020">
+                      30 March 2020
+                    </label>
+                  </div>
+                </div>
+
+                <div class="govuk-grid-column-one-half">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="1-april-2020" type="radio" name="change-date" value="1 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="1-april-2020">
+                      1 April 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="2-april-2020" type="radio" name="change-date" value="2 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="2-april-2020">
+                      2 April 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="3-april-2020" type="radio" name="change-date" value="3 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="3-april-2020">
+                      3 April 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="4-april-2020" type="radio" name="change-date" value="4 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="4-april-2020">
+                      4 April 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="5-april-2020" type="radio" name="change-date" value="5 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="5-april-2020">
+                      5 April 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="6-april-2020" type="radio" name="change-date" value="6 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="6-april-2020">
+                      6 April 2020
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="7-april-2020" type="radio" name="change-date" value="7 April 2020">
+
+                    <label class="govuk-label govuk-radios__label" for="7-april-2020">
+                      7 April 2020
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <br/>
+              {{ govukButton({
+              text: "Save and continue"
+            }) }}
+            </form>
+
+          </div>
+          <!--govuk-grid-row-->
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+
+      </main>
+    </div>
+    <!---govuk-width-container-->
+
+  {% endblock %}
