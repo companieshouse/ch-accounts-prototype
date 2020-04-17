@@ -693,5 +693,14 @@ module.exports = function ( router ) {
 			res.render( 'small-full/directors-report-additional-note' );
 		}
 	} );
+	//Have the accounts been prepared for the period of 1 April 2019 to 31 March 2020?
+	router.get( '/small-full/small-full-accounts-dates-choose', function ( req, res ) {
+		var confirmAccountsDates2020 = req.query.confirmAccountsDates2020;
+		if ( confirmAccountsDates2020 == "yes" ) {
+			res.redirect( "/small-full/profit-and-loss-account" );
+		} else {
+			res.render( 'small-full/small-full-accounts-dates-choose' );
+		}
+	} );
 
 }
